@@ -6,7 +6,7 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
 
   .config(function($routeProvider) {
     $routeProvider.when('/', {
-      redirectTo: '/view/Afrika'
+      redirectTo: '/view/USA'
     }).when('/view/:part', {
       controller : 'AppView',
       templateUrl : './static/tpl/view_tpl.html'

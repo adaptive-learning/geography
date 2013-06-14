@@ -14,7 +14,7 @@ angular.module('myApp.services', []).
         if ($rootScope.maps) {
             fn(worldPart ?$rootScope.maps[parts[worldPart]] : $rootScope.maps);
         } else {
-            $http.get('php/worldParts.json').success(function(data) {
+            $http.get('static/php/worldParts.json').success(function(data) {
                 $rootScope.maps = data;
                 fn(worldPart ?$rootScope.maps[parts[worldPart]] : $rootScope.maps);
             });
@@ -28,7 +28,7 @@ angular.module('myApp.services', []).
         if ($rootScope.places) {
             fn($rootScope.places);
         } else {
-            $http.get('php/places.json').success(function(data) {
+            $http.get('static/php/places.json').success(function(data) {
                 $rootScope.places = data;
                 fn(data);
             });

@@ -95,7 +95,7 @@ function initMap(data, controller) {
 
 $.fn.qtip.defaults.style.classes = 'qtip-dark';
 
-    map.loadMap('img/usa.svg', function() {
+    map.loadMap('static/img/usa.svg', function() {
         map.addLayer('usa', {
                 tooltips: function(d) {
                     return [d.name, ''];

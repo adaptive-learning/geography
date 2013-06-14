@@ -90,38 +90,17 @@
 .qtip-hover{}
 
 /* Default tooltip style */
-.qtip-default{
-	border-width: 1px;
-	border-style: solid;
-	border-color: #F1D031;
 
-	background-color: #FFFFA3;
-	color: #555;
-}
-
-	.qtip-default .qtip-titlebar{
-		background-color: #FFEF93;
-	}
-
-	.qtip-default .qtip-icon{
-		border-color: #CCC;
-		background: #F1F1F1;
-		color: #777;
-	}
-	
-	.qtip-default .qtip-titlebar .qtip-close{
-		border-color: #AAA;
-		color: #111;
-	}
 	
 	.qtip-dark{
-	background-color: #505050;
+	background-color: transparent;
 	border-color: #303030;
 	color: #f3f3f3;
 }
 
 	.qtip-dark .qtip-titlebar{
 		background-color: #404040;
+        border-radius: 2px;
 	}
 
 	.qtip-dark .qtip-icon{

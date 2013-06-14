@@ -46,7 +46,7 @@ angular.module('myApp.controllers', [])
     }
 
 
-    $http.get('php/places.json').success(function(data) {
+    $http.get('static/php/places.json').success(function(data) {
         $scope.placesTypes = data;
         $scope.$parent.placesTypes = data;
     });
@@ -117,7 +117,7 @@ angular.module('myApp.controllers', [])
 
     $scope.init = function (mapData) {
         $scope.map = initMap(mapData, $scope);
-        $http.get('php/questions.json').success(function(data) {
+        $http.get('static/php/questions.json').success(function(data) {
             $scope.questions = data;
             $scope.update();
         });
@@ -131,7 +131,7 @@ angular.module('myApp.controllers', [])
     if ($scope.$parent.placesTypes) {
         $scope.setPlaces($scope.$parent.placesTypes);
     } else {
-        $http.get('php/places.json').success(function(data) {
+        $http.get('static/php/places.json').success(function(data) {
             $scope.setPlaces(data);
         });
     }
