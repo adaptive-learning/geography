@@ -1,0 +1,12 @@
+[
+    {
+    "name": "Státy",
+    "places": [
+        {"code":"ca",
+        "name":"Californie"},
+        {"code":"ny","name":"New York"},
+        {"code":"tx","name":"Texas"},
+        {"code":"fl","name":"Florida"}
+        ]
+    }
+]
