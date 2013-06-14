@@ -1,0 +1,29 @@
+  <div class="map-container">
+    <center>
+    <div>
+    <div class="map-positioner">
+      <h1> {{part}}</h1>
+      <a href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" >Procvičovat</a>
+      <div id="map-holder">
+      </div>
+    </div>
+    </div>
+    </center>
+  </div>
+  <div id="container" class="span12 well">
+    <ul class="thumbnails">
+      <li class="span12" ng-repeat="type in placesTypes">
+        <div class="thumbnail">
+          <h3>{{type.name}}</h3>
+          <div class="view-places">
+          <span ng-repeat="place in type.places" class="label" ng-class="{'label-inverse': place.highlight}" ng-mouseenter="hover(place.code, true)" ng-mouseleave="hover(place.code, false)"> 
+            <i class="flag-us-{{place.code}}"></i> {{place.name || place}}
+          </span>
+          </br>
+          </br>
+          <!--<a href="#/practice/{{part}}/{{type.name}}" class="btn btn-primary" >Procvičovat</a>-->
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
