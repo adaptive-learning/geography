@@ -9,13 +9,13 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
       redirectTo: '/view/Afrika'
     }).when('/view/:part', {
       controller : 'AppView',
-      templateUrl : './tpl/view_tpl.html'
+      templateUrl : './static/tpl/view_tpl.html'
     }).when('/practice/:part', {
       controller : 'AppPractice',
-      templateUrl : './tpl/practice_tpl.html'
+      templateUrl : './static/tpl/practice_tpl.html'
     }).when('/practice/:part/:type', {
       controller : 'AppPractice',
-      templateUrl : './tpl/practice_tpl.html'
+      templateUrl : './static/tpl/practice_tpl.html'
     }).otherwise({
       //redirectTo: '/'
     });
