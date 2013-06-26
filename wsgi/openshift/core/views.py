@@ -5,6 +5,7 @@ from django.utils import simplejson
 from random import randint
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+import os
 
 from core.models import Place
 from core.models import Answer 
@@ -125,6 +126,7 @@ def logout_view(request):
     
 
 def updateStates_view(request):
+    raise Exception(os.getcwd())
     updateStates();
     return HttpResponse("states Updated")
 
