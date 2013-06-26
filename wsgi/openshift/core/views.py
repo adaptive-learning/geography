@@ -124,7 +124,7 @@ def logout_view(request):
     return user_view(request)
     
 
-def updateStates():
+def updateStates(request):
     Place.objects.all().delete()
     file = open('usa.txt')
     states = file.read()
