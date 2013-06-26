@@ -127,12 +127,13 @@ def logout_view(request):
 
 def updateStates_view(request):
     raise Exception(os.getcwd())
-    updateStates();
+    if (Place.objects.count() == 0):
+        updateStates();
     return HttpResponse("states Updated")
 
 def updateStates():
     Place.objects.all().delete()
-    file = open('usa.txt')
+    file = open('runtime/repo/usa.txt')
     states = file.read()
     ss = states.split("\n")
     for s in ss:
