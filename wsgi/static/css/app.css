@@ -189,6 +189,12 @@ ul.dropdown-menu.login li {
     margin-right: 10px;
     margin-left: 10px;
 }
+.version { 
+border: 0px none currentColor;
+left: 0px;
+position: absolute;
+top: 40px;
+}
 
 @media (max-width: 979px) {
 body {
