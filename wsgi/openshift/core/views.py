@@ -132,7 +132,7 @@ def updateStates_view(request):
 
 def updateStates():
     Place.objects.all().delete()
-    file = open('runtime/repo/usa.txt')
+    file = open('app-root/runtime/repo/usa.txt')
     states = file.read()
     ss = states.split("\n")
     for s in ss:
