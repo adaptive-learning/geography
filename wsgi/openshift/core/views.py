@@ -126,7 +126,6 @@ def logout_view(request):
     
 
 def updateStates_view(request):
-    raise Exception(os.getcwd())
     if (Place.objects.count() == 0):
         updateStates();
     return HttpResponse("states Updated")
