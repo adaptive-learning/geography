@@ -123,3 +123,15 @@ def logout_view(request):
     logout(request)
     return user_view(request)
     
+
+def updateStates():
+    Place.objects.all().delete()
+    file = open('usa.txt')
+    states = file.read()
+    ss = states.split("\n")
+    for s in ss:
+       state = s.split("\t")
+       if(len(state) > 3):
+          name = state[2]
+          code = 'us-' + state[0].lower()
+          Place(code=code, name = name).save()

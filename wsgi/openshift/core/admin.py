@@ -9,17 +9,6 @@ admin.site.register(UsersPlace)
 admin.site.register(Answer)
 admin.site.register(Student)
 
-def updateStates():
-    Place.objects.all().delete()
-    file = open('usa.txt')
-    states = file.read()
-    ss = states.split("\n")
-    for s in ss:
-       state = s.split("\t")
-       if(len(state) > 3):
-          name = state[2]
-          code = 'us-' + state[0].lower()
-          Place(code=code, name = name).save()
     
 def updateMap():
     Place.objects.all().delete()
