@@ -1,0 +1,48 @@
+AL	Ala.	Alabama	Alabama	Montgomery	Birmingham
+AZ	Ariz.	Arizona	Arizona	Phoenix	Phoenix
+AR	Ark.	Arkansas	Arkansas	Little Rock	Little Rock
+CA	Cal. nebo Calif.	Kalifornie	California	Sacramento	Los Angeles
+CO	Colo.	Colorado	Colorado	Denver	Denver
+CT	Conn.	Connecticut	Connecticut	Hartford	Bridgeport
+DE	Del.	Delaware	Delaware	Dover	Wilmington
+FL	Fla.	Florida	Florida	Tallahassee	Jacksonville
+GA	Ga.	Georgie	Georgia	Atlanta	Atlanta
+ID	Idaho	Idaho	Idaho	Boise	Boise
+IL	Ill.	Illinois	Illinois	Springfield	Chicago
+IN	Ind.	Indiana	Indiana	Indianapolis	Indianapolis
+IA	Ia.	Iowa	Iowa	Des Moines	Des Moines
+KS	Kan. nebo Kans.	Kansas	Kansas	Topeka	Wichita
+KY	Ky.	Kentucky	Kentucky	Frankfort	Louisville
+LA	La.	Louisiana	Louisiana	Baton Rouge	New Orleans[1]
+ME	Maine	Maine	Maine	Augusta	Portland
+MD	Md.	Maryland	Maryland	Annapolis	Baltimore
+MA	Mass.	Massachusetts	Massachusetts	Boston	Boston
+MI	Mich.	Michigan	Michigan	Lansing	Detroit
+MN	Minn.	Minnesota	Minnesota	Saint Paul	Minneapolis
+MS	Miss.	Mississippi	Mississippi	Jackson	Jackson
+MO	Mo.	Missouri	Missouri	Jefferson City	Kansas City
+MT	Mont.	Montana	Montana	Helena	Billings
+NE	Neb.	Nebraska	Nebraska	Lincoln	Omaha
+NV	Nev.	Nevada	Nevada	Carson City	Las Vegas
+NH	N.H.	New Hampshire	New Hampshire	Concord	Manchester
+NJ	N.J.	New Jersey	New Jersey	Trenton	Newark
+NM	N.M.	Nové Mexiko	New Mexico	Santa Fe	Albuquerque
+NY	N.Y.	New York	New York	Albany	New York City
+NC	N.C.	Severní Karolína	North Carolina	Raleigh	Charlotte
+ND	N.D. nebo N.Dak.	Severní Dakota	North Dakota	Bismarck	Fargo
+OH	O.	Ohio	Ohio	Columbus	Columbus
+OK	Okla.	Oklahoma	Oklahoma	Oklahoma City	Oklahoma City
+OR	Ore. nebo Oreg.	Oregon	Oregon	Salem	Portland
+PA	Penn. nebo Penna.	Pensylvánie	Pennsylvania	Harrisburg	Philadelphia
+RI	R.I.	Rhode Island	Rhode Island	Providence	Providence
+SC	S.C.	Jižní Karolína	South Carolina	Columbia	Columbia
+SD	S.D. nebo S.Dak.	Jižní Dakota	South Dakota	Pierre	Sioux Falls
+TN	Tenn.	Tennessee	Tennessee	Nashville	Memphis
+TX	Tex. nebo Texas	Texas	Texas	Austin	Houston
+UT	Utah	Utah	Utah	Salt Lake City	Salt Lake City
+VT	Vt.	Vermont	Vermont	Montpelier	Burlington
+VA	Va.	Virginie	Virginia	Richmond	Virginia Beach
+WA	Wash.	Washington	Washington	Olympia	Seattle
+WV	W.Va.	Západní Virginie	West Virginia	Charleston	Charleston
+WI	Wis. nebo Wisc.	Wisconsin	Wisconsin	Madison	Milwaukee
+WY	Wyo.	Wyoming	Wyoming	Cheyenne	Cheyenne
