@@ -11,7 +11,7 @@ PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
 if ON_OPENSHIFT:
     DEBUG = False
 else:
-    DEBUG = True
+    DEBUG = False 
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
