@@ -1,0 +1,11 @@
+
+svg .states {
+	\*fill: #fff;*\
+    stroke-width: 0.2;
+    cursor: pointer;
+}
+svg .states:hover {
+    \*fill: #f9f9f9;*\
+    stroke-width: 0.5,
+}
+
