@@ -603,7 +603,7 @@ CHECKS.tip = {
 $.extend(TRUE, QTIP.defaults, {
 	style: {
 		tip: {
-			corner: TRUE,
+			corner: FALSE,
 			mimic: FALSE,
 			width: 6,
 			height: 6,

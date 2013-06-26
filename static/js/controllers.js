@@ -3,20 +3,46 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('AppCtrl', function($rootScope) {
+  .controller('AppCtrl', function($scope, $rootScope, $http, $cookies) {
     $rootScope.topScope = $rootScope;
-    $rootScope.points = 0;
-    $('#points').tooltip({"placement" : "bottom"})
+    $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+    $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded'
+    $http.get('user/').success(function(data) {
+        $rootScope.user = data;
+    })
+
+    $('.atooltip').tooltip({"placement" : "bottom"});
+    $('.dropdown-menu').click(function(event){
+         event.stopPropagation();
+     });
     $('a#fdbk_tab').colorbox();
+
+    $rootScope.login = function(){
+        $scope.$apply();
+        var credentials = {
+            'username' : $scope.username,
+            'password' : $scope.password
+        }
+        $http.post('user/login/', credentials).success(function(data) {
+            $rootScope.user = data;
+            $rootScope.loginFail = undefined;
+        }).error(function(data) {
+            $rootScope.loginFail = "Přihllášení se nezdařilo";
+        });
+    }
+
+    $rootScope.logout = function(){
+        $http.get('user/logout/').success(function(data) {
+            $rootScope.user = data;
+        })
+    }
+
+    $rootScope.addPoint = function(){
+        $rootScope.user.points++;
+    }
   })
 
-  .controller('AppHomeCtrl', function($scope, $http, maps) {
-      maps(undefined, function(data) {
-        $scope.worldParts = data;
-      });
-  })
-
-  .controller('AppView', function($scope, $http,  $routeParams, maps) {
+  .controller('AppView', function($scope, $routeParams, places) {
     $scope.part = $routeParams.part;
     $scope.placesTypes = [];
     $scope.hover = function (code, isHovered) {
@@ -46,65 +72,66 @@ angular.module('myApp.controllers', [])
     }
 
 
-    $http.get('static/php/places.json').success(function(data) {
+    places($scope.part, function(data) {
         $scope.placesTypes = data;
         $scope.$parent.placesTypes = data;
+        var places = {};
+        angular.forEach(data[0].places, function(place) {
+            places[place.code] = place.name;
+        });
+        var mapConfig = {
+            name : $scope.part.toLowerCase(),
+            showTooltips : true,
+            states : places
+        }
+        $scope.map = initMap(mapConfig);
     });
 
-    maps($scope.part, function(data) {
-        $scope.map = initMap(data, $scope);
-    });
   })
 
-  .controller('AppPractice', function($scope, $http, $routeParams, $timeout, maps, places) {
+  .controller('AppPractice', function($scope, $routeParams, $timeout, $location, places, question) {
     $scope.part = $routeParams.part;
-    $scope.index = 0;
 
-    $scope.update = function() {
-        var questionTypes = [
-            "Vyber na mapě stát",
-            "Jak se jmenuje stát zvýrazněný na mapě?"
-        ];
-        var active = $scope.questions[$scope.index]
+    $scope.setQuestion = function(active) {
         $scope.question = active;
-        var place = $scope.places[active.place]; 
-        $scope.question.code = place.code;
-        $scope.question.name = place.name;
-        $scope.question.text = questionTypes[active.type];
-        var mapPlace = (active.type == 1 ? place.code : "");
-        //$scope.map.clearHighlights();
-        //$scope.map.highlightState(mapPlace);
+        $scope.map.clearHighlights();
+        if (active.type == 1) {
+            $scope.map.highlightState(active.code);
+        }
         $scope.canNext = false;
         $scope.select = undefined;
         $("select.select2").select2("val", $scope.select);
     }
+
     $scope.check = function(selected) {
        var correct = (selected == $scope.question.code);
-       //$scope.map.highlightState(selected, correct ? GOOD : BAD);
-       //$scope.map.highlightState($scope.question.code, selected ? GOOD : BAD);
+       $scope.map.highlightState(selected, correct ? GOOD : BAD);
+       $scope.map.highlightState($scope.question.code, selected ? GOOD : BAD);
        $scope.canNext = true;
-       $scope.progress = 100 * ($scope.index+1) / $scope.questions.length;
        $("select.select2").select2("val", $scope.question.code);
        if (correct) {
-           $scope.$parent.points++
+           $scope.$parent.addPoint();
        }
+       $scope.question.answer = selected;
+       $scope.progress = question.answer($scope.question);
     }
 
     $scope.next = function() {
-        $scope.index++;
-        if($scope.index < $scope.questions.length) {
-            $scope.update();
+        if($scope.progress < 100) {
+            question.next($scope.part, function(q) {
+                $scope.setQuestion(q);
+            })
         } else {
-            window.location.hash = "#/view/" + $scope.part;
+            $location.path("/view/" + $scope.part);
         }
     }
 
-    $scope.setPlaces = function(placesTypes) {
+    places($scope.part, function(placesTypes) {
         $scope.places = placesTypes[0].places;
         $timeout(function() {
             var format = function(state) {
                 if (!state.id) return state.text; // optgroup
-                    return '<i class="flag-us-'+state.id+'"></i> ' + state.text;
+                    return '<i class="flag-'+state.id+'"></i> ' + state.text;
             }
             $("select.select2").select2({
                 placeholder: "Vyber stát",
@@ -113,28 +140,22 @@ angular.module('myApp.controllers', [])
                 escapeMarkup: function(m) { return m; }
             });
         },100);
-    }
 
-    $scope.init = function (mapData) {
-        $scope.map = initMap(mapData, $scope);
-        $http.get('static/php/questions.json').success(function(data) {
-            $scope.questions = data;
-            $scope.update();
-        });
-    }
-
-    maps($scope.part, function(data) {
-        $scope.init(data);
-    });
-
-
-    if ($scope.$parent.placesTypes) {
-        $scope.setPlaces($scope.$parent.placesTypes);
-    } else {
-        $http.get('static/php/places.json').success(function(data) {
-            $scope.setPlaces(data);
-        });
-    }
+        var mapConfig = {
+            name : $scope.part.toLowerCase(),
+            click : function  (data) {
+                if ($scope.question.type == 0 && !$scope.canNext) {
+                    $scope.check(data);
+                    $scope.$apply();
+                }
+            }
+        }
+        $scope.map = initMap(mapConfig, function() {
+            question.first($scope.part, function(q) {
+                $scope.setQuestion(q);
+            })
+        })
+    })
     
   })
 

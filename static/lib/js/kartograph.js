@@ -853,7 +853,7 @@
       var me;
 
       me = this;
-      if ($.browser.msie) {
+      if (navigator.appName == 'Microsoft Internet Explorer') {
         return $.ajax({
           url: url,
           dataType: 'text',

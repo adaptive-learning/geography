@@ -4,6 +4,8 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
+from core import views
+
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'openshift.views.home', name='home'),
@@ -14,4 +16,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    
+    url(r'^places/', views.places, name='places'),
+    url(r'^question/', views.question, name='question'),
+    url(r'^user/login/', views.login_view, name='login_view'),
+    url(r'^user/logout/', views.logout_view, name='logout_view'),
+    url(r'^user/', views.user_view, name='user_view'),
+
 )

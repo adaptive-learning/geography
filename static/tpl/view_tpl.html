@@ -17,7 +17,7 @@
           <h3>{{type.name}}</h3>
           <div class="view-places">
           <span ng-repeat="place in type.places" class="label" ng-class="{'label-inverse': place.highlight}" ng-mouseenter="hover(place.code, true)" ng-mouseleave="hover(place.code, false)"> 
-            <i class="flag-us-{{place.code}}"></i> {{place.name || place}}
+            <i class="flag-{{place.code}}"></i> {{place.name || place}}
           </span>
           </br>
           </br>

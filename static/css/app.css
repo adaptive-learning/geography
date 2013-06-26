@@ -117,7 +117,7 @@ h2 span {
 .map-container .progress {
     margin-bottom: 0;
     height: 10px;
-    margin-top: -5px;
+    margin-top: -15px;
 }
 
 .map-holder {
@@ -180,14 +180,14 @@ margin-left: -4px;
   opacity:0;
 }
 
-svg .usa {
-	fill: #fff;
-    stroke-width: 0.2;
-    cursor: pointer;
+ul.dropdown-menu.login {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-svg .usa:hover {
-    fill: #f9f9f9;
-    stroke-width: 0.5,
+
+ul.dropdown-menu.login li {
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 @media (max-width: 979px) {
