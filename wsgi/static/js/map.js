@@ -1,5 +1,5 @@
 
-var GOOD = "#26bf00";
+var GOOD = "#0d0";
 var BAD = "#ff0000";
 
 function initMap(config, callback) {
@@ -16,12 +16,16 @@ function initMap(config, callback) {
         $(window).resize(resize);
 
     $.fn.qtip.defaults.style.classes = 'qtip-dark';
+
+    var scale = chroma.scale([BAD, "#ff4500", "#ffa500", "#ffff00", GOOD]);
     
     map.loadCSS('static/css/map.css', function() {
         map.loadMap('static/img/'+ config.name + '.svg', function() {
             var statesLayer = {styles: {
-                    'fill' : '#fff',
-                    'stroke-width': 0.2
+                    'fill' : function(d) { 
+                        return config.states && config.states[d.name] ? (scale(config.states[d.name].skill).hex()) :'#fff';
+                        },
+                    'stroke-width': 0.7
                 }
             }
             if (config.click) {
@@ -31,8 +35,10 @@ function initMap(config, callback) {
             }
             if (config.showTooltips) {
                 statesLayer.tooltips = function(d) {
-                    var name = '<span class="label">' + (config.states[d.name] ? '<i class="flag-'+d.name+'"></i> ' + config.states[d.name]: d.name) + '</span>'; 
-                    return [name, ''];
+                    var name = (config.states[d.name] ? '<span class="label">' + '<i class="flag-'+d.name+'"></i> ' + config.states[d.name].name + '</span>' : '<br>Neprozkoumané území<br><br>'); 
+                    var description = config.states[d.name] ? '<br><br> Úroveň znalosti: ' + 100 * config.states[d.name].skill + '%' : "";
+
+                    return [name + description, ''];
                 }
             }
             map.addLayer('states', statesLayer )

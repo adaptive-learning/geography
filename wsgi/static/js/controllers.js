@@ -12,6 +12,7 @@ angular.module('myApp.controllers', [])
     })
 
     $('.atooltip').tooltip({"placement" : "bottom"});
+    $('.input-tooltip').tooltip({"placement" : "bottom", trigger: "focus"});
     $('.dropdown-menu').click(function(event){
          event.stopPropagation();
      });
@@ -42,42 +43,19 @@ angular.module('myApp.controllers', [])
     }
   })
 
-  .controller('AppView', function($scope, $routeParams, places) {
+  .controller('AppView', function($scope, $routeParams, usersplaces) {
     $scope.part = $routeParams.part;
     $scope.placesTypes = [];
-    $scope.hover = function (code, isHovered) {
-        if (isHovered ) {
-            //$scope.map.highlightState(code);
-        } else {
-            //$scope.map.clearHighlights();
-        }
-    }
 
-    $scope.getPlaceByCode = function (code) {
-        var needle;
-        angular.forEach($scope.placesTypes, function(type) {
-            angular.forEach(type.places, function( place) {
-                if (place.code == code) {
-                    needle = place;
-                }
-            })
-
-        })
-        return needle;
-    }
-
-    $scope.highlight = function (code, isHovered) {
-        var place = $scope.getPlaceByCode(code);
-        place.highlight = isHovered;
-    }
-
-
-    places($scope.part, function(data) {
+    usersplaces($scope.part, function(data) {
         $scope.placesTypes = data;
         $scope.$parent.placesTypes = data;
         var places = {};
         angular.forEach(data[0].places, function(place) {
-            places[place.code] = place.name;
+            places[place.code] = {
+                name : place.name,
+                skill : place.skill
+            }
         });
         var mapConfig = {
             name : $scope.part.toLowerCase(),

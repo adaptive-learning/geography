@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
-# Create your views here.
 from django.http import HttpResponse
 from django.utils import simplejson
 from random import randint
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 import os
+from django.db.models import F
+
+from lazysignup.decorators import allow_lazy_user
+from lazysignup.utils import is_lazy_user
 
 from core.models import Place
 from core.models import Answer 
@@ -26,15 +29,14 @@ class JsonResponse(HttpResponse):
 
 class QuestionService():
 
-    @staticmethod
-    def getQuestion():
+    def __init__(self, user):
+        self.user = user
+
+    def questionFromPlace(self, place, type):
         questionTypes = [
                 u"Vyber na mapě stát",
                 u"Jak se jmenuje stát zvýrazněný na mapě?"
             ]
-        ps = Place.objects.all()
-        place = ps[randint(0,len(ps) -1)]
-        type = randint(0,1)
         question = {
             'type' : type,
             'text' : questionTypes[type], 
@@ -43,9 +45,37 @@ class QuestionService():
         }
         return question
 
-    @staticmethod
-    def answer(a):
-        student = Student.fromUser(a["user"])
+    def getQuestions(self, n):
+        places = self.getWeakPlaces(n)
+
+        remains = n - len(places) 
+        if (remains > 0):
+            places +=  self.getNewPlaces(remains)
+
+        remains = n - len(places) 
+        if (remains > 0):
+            places +=  self.getRandomPlaces(remains)
+
+        questions = []
+        for place in places:
+            type = randint(0,1)
+            questions.append(self.questionFromPlace(place, type))
+        return questions
+
+    def getNewPlaces(self, n):
+        return [up.place for up in UsersPlace.objects.filter(user=self.user).order_by('?')[:n]]
+
+    def getWeakPlaces(self, n):
+        return [up.place for up in UsersPlace.objects.filter(
+                user=self.user, 
+                askedCount__gt=F('correctlyAnsweredCount'),
+            ).order_by('?')[:n]]
+
+    def getRandomPlaces(self, n):
+        return Place.objects.all().order_by('?')[:n]
+
+    def answer(self, a):
+        student = Student.fromUser(self.user)
         place = Place.objects.get(code = a["code"])
         answerPlace = Place.objects.get(code = a["answer"]) if a["answer"] != "" else None
         Answer(
@@ -55,14 +85,17 @@ class QuestionService():
             type = a["type"],
             msResposeTime = a["msResponseTime"] 
         ).save()
+
         student.points += 1;
         student.save();
+
         usersPlace = UsersPlace.fromStudentAndPlace(student, place)
         usersPlace.askedCount += 1
         if (place == answerPlace):
             usersPlace.correctlyAnsweredCount += 1
         usersPlace.save()
 
+# Create your views here.
 def places(request):
     ps = Place.objects.all()
     response = [{
@@ -76,31 +109,41 @@ def places(request):
         })
     return JsonResponse(response)
 
-def question(request):
-    if (request.raw_post_data != ""):
-        answer = simplejson.loads(request.raw_post_data)
-        answer["user"] = request.user
-        QuestionService.answer(answer);
-
-    response = []
-    for i in range(0, 10):
-        response.append(QuestionService.getQuestion())
+@allow_lazy_user
+def users_places(request):
+    student = Student.fromUser(request.user)
+    ps = UsersPlace.objects.filter(user=student)
+    response = [{
+        'name': u'Státy',
+        'places': []
+    }]
+    for p in ps:
+        response[0]['places'].append({
+          'code' : p.place.code,
+          'name' : p.place.name,
+          'skill' : round(p.correctlyAnsweredCount / float(p.askedCount), 2),
+        })
     return JsonResponse(response)
 
+@allow_lazy_user
+def question(request):
+    qs = QuestionService(user = request.user)
+    if (request.raw_post_data != ""):
+        answer = simplejson.loads(request.raw_post_data)
+        qs.answer(answer);
+
+    response = qs.getQuestions(10)
+    return JsonResponse(response)
+
+@allow_lazy_user
 def user_view(request):
     student = Student.fromUser(request.user)
-    if (student != None):
-        response = {
-            'username' : student.user.username,
-            'points' :  student.points
-        }
-    else:
-        response = {
-            'username' : '',
-            'points' : 0 
-        }
-    #updateStates()
-    #updateMap()
+    isRegistredUser = not is_lazy_user(request.user)
+    username = student.user.username if isRegistredUser else ''
+    response = {
+        'username' : username,
+        'points' :  student.points,
+    }
     return JsonResponse(response)
 
 def login_view(request):

@@ -18,10 +18,13 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     
     url(r'^places/', views.places, name='places'),
+    url(r'^usersplaces/', views.users_places, name='usersplaces'),
     url(r'^question/', views.question, name='question'),
     url(r'^user/login/', views.login_view, name='login_view'),
     url(r'^user/logout/', views.logout_view, name='logout_view'),
     url(r'^user/', views.user_view, name='user_view'),
     url(r'^updateStates/', views.updateStates_view, name='updateStates_view'),
 
+    url(r'^convert/', include('lazysignup.urls')),
 )
+

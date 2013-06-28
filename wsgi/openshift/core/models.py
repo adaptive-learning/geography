@@ -22,6 +22,9 @@ class Student(models.Model):
             student = Student.objects.get(user = user)
         except User.DoesNotExist:
             student = None
+        except Student.DoesNotExist:
+            student = Student(user=user)
+            student.save()
         return student
     
 
