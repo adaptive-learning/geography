@@ -45,14 +45,24 @@
               </li>
             </ul>
           <div class="pull-right">
-            <form id="login-form" style="margin: 0;" accept-charset="utf-8" method="post" action="" ng-submit="login()">
             <ul class="nav">
                 <li class="dropdown" ng-show="user.username == ''">
-                  <a href="convert/" >Registrovat se </a>
+                  <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Registrovat se <b class="caret"></b></a>
+                  <ul class="dropdown-menu login" role="menu" aria-labelledby="drop1">
+    <form method="post" action="/convert/">
+                    {% csrf_token %}
+                   <li><input id="id_username" type="text" name="username" maxlength="30" placeholder="Uživatelské jméno" class="in" title="Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only" /></li>
+                    <li><input type="password" name="password1" id="id_password1"  placeholder="Heslo"/></li>
+                    <li><input type="password" name="password2" id="id_password2"  placeholder="Heslo Znovu"/> </li>
+                    <input type="hidden" name="redirect_to" value="lazysignup_convert_done">
+                    <li><button id="login-button" class="btn input-block-level" ng-disabled="username == '' || password == ''">Registrovat se</button></li>
+    </form>
+                  </ul>
                 </li>
                 <li class="dropdown" ng-show="user.username == ''">
                   <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Přihlásit se <b class="caret"></b></a>
                   <ul class="dropdown-menu login" role="menu" aria-labelledby="drop1">
+            <form id="login-form" style="margin: 0;" accept-charset="utf-8" method="post" action="" ng-submit="login()">
                     <!--
                     <li><span data-gapiattached="true" class="signup-gplus btn small" id="gplusSignIn"><span class="icon"></span>Sign in with Google</span></li>
                     <li><span class="signup-facebook btn small"><span class="icon"></span>Sign in with Facebook</span></li>
@@ -65,6 +75,7 @@
                     <!--
                     <li class="forgot-pwd"><a href="/#/forgot_password">Forgot password</a></li>
                     -->
+            </form>
                   </ul>
                 </li>
                 <li class="dropdown" ng-show="user.username != ''">
@@ -80,7 +91,6 @@
                 <a href="#/">Nastavení</a>
               </li>-->
             </ul>
-            </form>
           </div>
           </div>
         </div>
