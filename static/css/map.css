@@ -1,0 +1,12 @@
+
+svg .states {
+	\*fill: #fff;*\
+    stroke-width: 0.2;
+    cursor: pointer;
+    fill-opacity: 1;
+}
+svg .states:hover {
+    *fill: #f9f9f9;*\
+    fill-opacity: 0.8;
+}
+
