@@ -189,11 +189,16 @@ ul.dropdown-menu.login li {
     margin-right: 10px;
     margin-left: 10px;
 }
+
 .version { 
 border: 0px none currentColor;
 left: 0px;
 position: absolute;
 top: 40px;
+}
+
+.vip {
+  background: url(../img/flower_bg.jpg) bottom right;
 }
 
 @media (max-width: 979px) {
