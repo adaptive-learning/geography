@@ -6,15 +6,16 @@ import imp, os
 import os
 import sys
  
-os.environ['DJANGO_SETTINGS_MODULE'] = 'openshift.settings'
-sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
-virtenv = os.environ['OPENSHIFT_HOMEDIR']  + '/virtenv/'
-os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
-virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
-try:
-    execfile(virtualenv, dict(__file__=virtualenv))
-except:
-    pass
+if ON_OPENSHIFT:
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'openshift.settings'
+    sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
+    virtenv = os.environ['OPENSHIFT_HOMEDIR']  + '/virtenv/'
+    os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
+    virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
+    try:
+        execfile(virtualenv, dict(__file__=virtualenv))
+    except:
+        pass
 
 # a setting to determine whether we are running on OpenShift
 ON_OPENSHIFT = False
@@ -171,7 +172,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     #'south',
-    'lazysignup',
+    'django-lazysignup',
     'core',
 )
 
