@@ -2,6 +2,20 @@
 # Django settings for openshift project.
 import imp, os
 
+# https://www.openshift.com/kb/kb-e1064-python-app-still-throws-importerror-no-module-named-xyz-even-though-ive-configured
+import os
+import sys
+ 
+os.environ['DJANGO_SETTINGS_MODULE'] = 'openshift.settings'
+sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
+virtenv = os.environ['APPDIR'] + '/virtenv/'
+os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
+virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
+try:
+    execfile(virtualenv, dict(__file__=virtualenv))
+except:
+    pass
+
 # a setting to determine whether we are running on OpenShift
 ON_OPENSHIFT = False
 if os.environ.has_key('OPENSHIFT_REPO_DIR'):
