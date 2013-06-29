@@ -34,6 +34,13 @@ class UsersPlace(models.Model):
     askedCount = models.IntegerField(default=0)
     correctlyAnsweredCount = models.IntegerField(default=0)
     lastAsked = models.DateTimeField(default=datetime.now)
+    def skill(self):
+        correctlyAnsweredRatio = self.correctlyAnsweredCount / float(self.askedCount)
+        notSeenFor = datetime.now() - self.lastAsked
+        notSeenForRatio = 1 if self.correctlyAnsweredCount > notSeenFor.days else self.correctlyAnsweredCount / float(notSeenFor.days)
+        skill = correctlyAnsweredRatio * notSeenForRatio
+        return round(skill, 2)
+
     @staticmethod
     def fromStudentAndPlace(student, place):
         try:

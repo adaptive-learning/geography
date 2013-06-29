@@ -121,7 +121,7 @@ def users_places(request):
         response[0]['places'].append({
           'code' : p.place.code,
           'name' : p.place.name,
-          'skill' : round(p.correctlyAnsweredCount / float(p.askedCount), 2),
+          'skill' : p.skill(),
         })
     return JsonResponse(response)
 
