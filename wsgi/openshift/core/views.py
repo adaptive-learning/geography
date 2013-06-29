@@ -68,7 +68,7 @@ class QuestionService():
     def getWeakPlaces(self, n):
         return [up.place for up in UsersPlace.objects.filter(
                 user=self.user, 
-                askedCount__gt=F('correctlyAnsweredCount'),
+                askedCount__gt=F('correctlyAnsweredCount') * 10 / 9.0,
             ).order_by('?')[:n]]
 
     def getRandomPlaces(self, n):
