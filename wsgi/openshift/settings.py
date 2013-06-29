@@ -11,7 +11,7 @@ if os.environ.has_key('OPENSHIFT_REPO_DIR'):
     ON_OPENSHIFT = True
  
 # https://www.openshift.com/kb/kb-e1064-python-app-still-throws-importerror-no-module-named-xyz-even-though-ive-configured
- """
+"""
 if ON_OPENSHIFT:
     os.environ['DJANGO_SETTINGS_MODULE'] = 'openshift.settings'
     sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
@@ -22,7 +22,7 @@ if ON_OPENSHIFT:
         execfile(virtualenv, dict(__file__=virtualenv))
     except:
         pass
- """
+"""
 
 PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
 if ON_OPENSHIFT:
