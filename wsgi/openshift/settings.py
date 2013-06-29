@@ -158,7 +158,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'lazysignup',
     'core',
-    'south',
+    #'south',
 )
 
 # A sample logging configuration. The only tangible logging
