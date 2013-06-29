@@ -21,7 +21,7 @@ setup(
     author='Your Name',
     author_email='example@example.com',
     url='http://www.python.org/sigs/distutils-sig/',
-    install_requires=['Django<=1.4', 'lazysignup'],
+    install_requires=['Django<=1.4', 'django-lazysignup'],
     dependency_links = [
         "http://pypi.python.org/pypi/django-lazysignup/"
     ],
