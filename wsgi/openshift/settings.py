@@ -8,7 +8,7 @@ import sys
  
 os.environ['DJANGO_SETTINGS_MODULE'] = 'openshift.settings'
 sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
-virtenv = os.environ['APPDIR'] + '/virtenv/'
+virtenv = os.environ['OPENSHIFT_HOMEDIR']  + '/virtenv/'
 os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
 virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
 try:
