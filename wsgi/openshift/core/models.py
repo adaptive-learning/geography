@@ -37,7 +37,7 @@ class UsersPlace(models.Model):
     def skill(self):
         correctlyAnsweredRatio = self.correctlyAnsweredCount / float(self.askedCount)
         notSeenFor = datetime.now() - self.lastAsked
-        if (self.correctlyAnsweredCount > notSeenFor.days and notSeenFor.days > 0):
+        if (self.correctlyAnsweredCount < notSeenFor.days and notSeenFor.days > 0):
             notSeenForRatio = self.correctlyAnsweredCount / float(notSeenFor.days)
         else:
             notSeenForRatio = 1 
