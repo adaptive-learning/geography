@@ -13,7 +13,7 @@ class Place(models.Model):
     def updateDifficulty(self):
         usersPlaces = UsersPlace.objects.filter(place=self)
         skills = [ up.correctlyAnsweredCount / float(up.askedCount) for up in usersPlaces]
-        difficulty = sum(skills) / len(skills)
+        difficulty = sum(skills) / len(skills) if len(skills) else 0
         self.difficulty = int((1 - difficulty) * Place.DIFFICULTY_CONVERSION)
         self.save()
 
