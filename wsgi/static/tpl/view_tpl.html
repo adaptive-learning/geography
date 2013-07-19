@@ -2,8 +2,9 @@
     <center>
     <div>
     <div class="map-positioner">
-      <h1> {{part}}</h1>
-      <a href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" >Procvičovat</a>
+      <h1 ng-show="user==''"> {{part}}</h1>
+      <h1 ng-show="user!=''"> {{user}}</h1>
+      <a ng-show="user==''" href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" >Procvičovat</a>
       <div id="map-holder">
       </div>
     </div>

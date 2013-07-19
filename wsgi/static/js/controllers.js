@@ -45,9 +45,10 @@ angular.module('myApp.controllers', [])
 
   .controller('AppView', function($scope, $routeParams, usersplaces) {
     $scope.part = $routeParams.part;
+    $scope.user = $routeParams.user || "";
     $scope.placesTypes = [];
 
-    usersplaces($scope.part, function(data) {
+    usersplaces($scope.part, $scope.user, function(data) {
         $scope.placesTypes = data;
         $scope.$parent.placesTypes = data;
         var places = {};
@@ -83,8 +84,8 @@ angular.module('myApp.controllers', [])
 
     $scope.check = function(selected) {
        var correct = (selected == $scope.question.code);
+       $scope.map.highlightState($scope.question.code);
        $scope.map.highlightState(selected, correct ? GOOD : BAD);
-       $scope.map.highlightState($scope.question.code, selected ? GOOD : BAD);
        $scope.canNext = true;
        $("select.select2").select2("val", $scope.question.code);
        if (correct) {
@@ -100,7 +101,13 @@ angular.module('myApp.controllers', [])
                 $scope.setQuestion(q);
             })
         } else {
-            $location.path("/view/" + $scope.part);
+            $scope.summary = question.summary();
+            $scope.showSummary = true;
+            $scope.map.clearHighlights();
+            angular.forEach($scope.summary.questions, function(q){
+                var correct = q.code == q.answer;
+                $scope.map.highlightState(q.code, correct ? GOOD : BAD);
+            })
         }
     }
 

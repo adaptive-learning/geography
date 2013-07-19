@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     
     url(r'^places/', views.places, name='places'),
-    url(r'^usersplaces/', views.users_places, name='usersplaces'),
+    url(r'^usersplaces/(?P<part>\w+)/(?P<user>\w*)', views.users_places, name='usersplaces'),
     url(r'^question/', views.question, name='question'),
     url(r'^user/login/', views.login_view, name='login_view'),
     url(r'^user/logout/', views.logout_view, name='logout_view'),

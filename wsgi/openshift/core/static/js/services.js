@@ -19,8 +19,8 @@ angular.module('myApp.services', []).
 
   .factory('usersplaces', function($rootScope, $http) {
 
-    return function(part, fn) {
-        $http.get('usersplaces/' + part).success(function(data) {
+    return function(part, user, fn) {
+        $http.get('usersplaces/' + part + '/' + user).success(function(data) {
             fn(data);
         });
     }
@@ -32,15 +32,16 @@ angular.module('myApp.services', []).
     $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded'
       var qIndex = 0;
       function returnQuestion (fn){
-            var q = $rootScope.questions[qIndex++];
+            var q = questions[qIndex++];
             q.msResponseTime = - (new Date()).valueOf();
             fn(q);
       }
+      var questions = []
       return {
           first: function(part, fn){
                 $http.get('question/' + part).success(function(data) {
                     qIndex = 0;
-                    $rootScope.questions = data;
+                    questions = data;
                     returnQuestion(fn);
                 });
           },
@@ -49,10 +50,21 @@ angular.module('myApp.services', []).
           },
           answer: function(question) {
                 question.msResponseTime += (new Date()).valueOf();
+                questions[qIndex-1] = question;
                 $http.post('question/', question).success(function(data) {
                 });
 
-                return  100 * qIndex / $rootScope.questions.length;
+                return  100 * qIndex / questions.length;
+          },
+          summary: function() {
+              var correctlyAnswered = questions.filter(function(q){
+                      return q.code == q.answer;
+                  })
+
+              return {
+                  correctlyAnsweredRatio : correctlyAnswered.length / questions.length,
+                  questions : questions
+              }
           }
       }
 

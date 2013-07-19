@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 import os
 from django.db.models import F
+from datetime import datetime, timedelta 
 
 from lazysignup.decorators import allow_lazy_user
 from lazysignup.utils import is_lazy_user
@@ -63,12 +64,16 @@ class QuestionService():
         return questions
 
     def getNewPlaces(self, n):
-        return [up.place for up in UsersPlace.objects.filter(user=self.user).order_by('?')[:n]]
+        return Place.objects.exclude(
+                id__in = [up.place_id for up in UsersPlace.objects.filter(user=self.user)]
+            ).order_by('difficulty')[:n]
 
     def getWeakPlaces(self, n):
+        yesterday = datetime.now() - timedelta(days=1)
         return [up.place for up in UsersPlace.objects.filter(
                 user=self.user, 
                 askedCount__gt=F('correctlyAnsweredCount') * 10 / 9.0,
+                lastAsked__lt=yesterday,
             ).order_by('?')[:n]]
 
     def getRandomPlaces(self, n):
@@ -77,23 +82,20 @@ class QuestionService():
     def answer(self, a):
         student = Student.fromUser(self.user)
         place = Place.objects.get(code = a["code"])
-        answerPlace = Place.objects.get(code = a["answer"]) if a["answer"] != "" else None
-        Answer(
+        answerPlace = Place.objects.get(code = a["answer"]) if "answer" in a and a["answer"] != "" else None
+        answer = Answer(
             user = student, 
             place = place,
             answer = answerPlace,
             type = a["type"],
             msResposeTime = a["msResponseTime"] 
-        ).save()
+        )
+        answer.save()
 
         student.points += 1;
         student.save();
 
-        usersPlace = UsersPlace.fromStudentAndPlace(student, place)
-        usersPlace.askedCount += 1
-        if (place == answerPlace):
-            usersPlace.correctlyAnsweredCount += 1
-        usersPlace.save()
+        UsersPlace.addAnswer(answer)
 
 # Create your views here.
 def places(request):
@@ -110,8 +112,15 @@ def places(request):
     return JsonResponse(response)
 
 @allow_lazy_user
-def users_places(request):
-    student = Student.fromUser(request.user)
+def users_places(request, part,  user = ''):
+    if (user == ''):
+        user = request.user
+    else:
+        try:
+            user = User.objects.get(username = user)
+        except User.DoesNotExist:
+            raise Http400
+    student = Student.fromUser(user)
     ps = UsersPlace.objects.filter(user=student)
     response = [{
         'name': u'Státy',
@@ -132,7 +141,7 @@ def question(request):
         answer = simplejson.loads(request.raw_post_data)
         qs.answer(answer);
 
-    response = qs.getQuestions(10)
+    response = qs.getQuestions(5)
     return JsonResponse(response)
 
 @allow_lazy_user
@@ -171,6 +180,9 @@ def logout_view(request):
 def updateStates_view(request):
     if (Place.objects.count() == 0):
         updateStates();
+    else:
+        states = Place.objects.all()
+        [ s.updateDifficulty() for s in states ]
     return HttpResponse("states Updated")
 
 def updateStates():

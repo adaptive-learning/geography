@@ -3,11 +3,20 @@ from django.contrib.auth.models import User
 from datetime import datetime   
 
 class Place(models.Model):
+    DIFFICULTY_CONVERSION = 1000000.0
     code = models.CharField(max_length=10)
     name = models.CharField(max_length=100)
     difficulty = models.IntegerField(default=0)
     def __unicode__(self):
-        return u'{} ({})'.format(self.name, self.code)
+        return u'{} ({}) difficulty: {}'.format(self.name, self.code, self.difficulty / Place.DIFFICULTY_CONVERSION)
+    
+    def updateDifficulty(self):
+        usersPlaces = UsersPlace.objects.filter(place=self)
+        skills = [ up.correctlyAnsweredCount / float(up.askedCount) for up in usersPlaces]
+        difficulty = sum(skills) / len(skills)
+        self.difficulty = int((1 - difficulty) * Place.DIFFICULTY_CONVERSION)
+        self.save()
+
 
 class Student(models.Model):
     user = models.OneToOneField(User, primary_key=True)
@@ -37,11 +46,15 @@ class UsersPlace(models.Model):
     def skill(self):
         correctlyAnsweredRatio = self.correctlyAnsweredCount / float(self.askedCount)
         notSeenFor = datetime.now() - self.lastAsked
-        if (self.correctlyAnsweredCount < notSeenFor.days and notSeenFor.days > 0):
+        if (self.correctlyAnsweredCount > notSeenFor.days):
+            notSeenForRatio = 1
+        elif (self.correctlyAnsweredCount < notSeenFor.days and notSeenFor.days > 0):
             notSeenForRatio = self.correctlyAnsweredCount / float(notSeenFor.days)
         else:
             notSeenForRatio = 1 
         skill = correctlyAnsweredRatio * notSeenForRatio
+        if (self.correctlyAnsweredCount > notSeenFor.days):
+            skill = 1
         return round(skill, 2)
 
     @staticmethod
@@ -54,6 +67,17 @@ class UsersPlace(models.Model):
                 place = place,
             )
         return usersPlace 
+
+    @staticmethod
+    def addAnswer(a):
+        usersPlace = UsersPlace.fromStudentAndPlace(a.user, a.place)
+        usersPlace.askedCount += 1
+        if (a.place == a.answer):
+            usersPlace.correctlyAnsweredCount += 1
+            usersPlace.lastAsked = datetime.now()
+        usersPlace.save()
+        usersPlace.place.updateDifficulty()
+
     def __unicode__(self):
         return u'user: {}, place: {}'.format( self.user, self.place)
 
