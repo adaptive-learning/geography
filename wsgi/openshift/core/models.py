@@ -13,7 +13,7 @@ class Place(models.Model):
     def updateDifficulty(self):
         usersPlaces = UsersPlace.objects.filter(place=self)
         skills = [ up.correctlyAnsweredCount / float(up.askedCount) for up in usersPlaces]
-        difficulty = sum(skills) / len(skills) if len(skills) else 0
+        difficulty = sum(skills) / len(skills) if len(skills) > 0 else 0.5
         self.difficulty = int((1 - difficulty) * Place.DIFFICULTY_CONVERSION)
         self.save()
 
@@ -71,22 +71,30 @@ class UsersPlace(models.Model):
     @staticmethod
     def addAnswer(a):
         usersPlace = UsersPlace.fromStudentAndPlace(a.user, a.place)
-        usersPlace.askedCount += 1
+        usersPlace._addAnswer()
+
+    def _addAnswer(self, a):
+        self.askedCount += 1
         if (a.place == a.answer):
-            usersPlace.correctlyAnsweredCount += 1
-            usersPlace.lastAsked = datetime.now()
-        usersPlace.save()
-        usersPlace.place.updateDifficulty()
+            self.correctlyAnsweredCount += 1
+            self.lastAsked = datetime.now()
+        self.save()
+        self.place.updateDifficulty()
 
     def __unicode__(self):
         return u'user: {}, place: {}'.format( self.user, self.place)
+
+def yesterday():
+    yesterday = datetime.now() - timedelta(days=1)
+    return yesterday
 
 class Answer(models.Model):
     user = models.ForeignKey(Student)
     place = models.ForeignKey(Place, related_name='place_id')
     answer = models.ForeignKey(Place, related_name='answer_id', null=True, blank=True, default = None)
     type = models.IntegerField()
-    askedDate = models.DateTimeField(default=datetime.now)
+    askedDate = models.DateTimeField(default=yesterday)
     msResposeTime = models.IntegerField(default=0)
     def __unicode__(self):
         return u'user: {}, requested: {}, answered: {}, correct: {}'.format( self.user, self.place, self.answer, self.place == self.answer)
+
