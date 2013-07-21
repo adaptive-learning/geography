@@ -35,7 +35,7 @@
       <div ng-show="showSummary">
         <div>
         <div class="progress">
-          <div class="bar bar-success" style="width: {{summary.correctlyAnsweredRatio | percent }};">Úspěšnost</div>
+          <div class="bar bar-success" style="width: {{summary.correctlyAnsweredRatio | percent }};">Úspěšnost: {{summary.correctlyAnsweredRatio | percent }}</div>
         </div>
         <div>
             <span ng-repeat="q in summary.questions" class="label {{q.code != q.answer && 'label-important' || 'label-success' }} ">

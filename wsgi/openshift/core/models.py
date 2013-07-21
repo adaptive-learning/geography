@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from datetime import datetime   
+from datetime import datetime, timedelta 
 
 class Place(models.Model):
     DIFFICULTY_CONVERSION = 1000000.0
@@ -8,7 +8,7 @@ class Place(models.Model):
     name = models.CharField(max_length=100)
     difficulty = models.IntegerField(default=0)
     def __unicode__(self):
-        return u'{} ({}) difficulty: {}'.format(self.name, self.code, self.difficulty / Place.DIFFICULTY_CONVERSION)
+        return u'{0} ({1}) difficulty: {2}'.format(self.name, self.code, self.difficulty / Place.DIFFICULTY_CONVERSION)
     
     def updateDifficulty(self):
         usersPlaces = UsersPlace.objects.filter(place=self)
@@ -71,7 +71,7 @@ class UsersPlace(models.Model):
     @staticmethod
     def addAnswer(a):
         usersPlace = UsersPlace.fromStudentAndPlace(a.user, a.place)
-        usersPlace._addAnswer()
+        usersPlace._addAnswer(a)
 
     def _addAnswer(self, a):
         self.askedCount += 1
@@ -82,11 +82,11 @@ class UsersPlace(models.Model):
         self.place.updateDifficulty()
 
     def __unicode__(self):
-        return u'user: {}, place: {}'.format( self.user, self.place)
+        return u'user: {0}, place: [{1}]'.format( self.user, self.place)
 
 def yesterday():
-    yesterday = datetime.now() - timedelta(days=1)
-    return yesterday
+    y = datetime.now() - timedelta(days=1)
+    return y
 
 class Answer(models.Model):
     user = models.ForeignKey(Student)
@@ -96,5 +96,5 @@ class Answer(models.Model):
     askedDate = models.DateTimeField(default=yesterday)
     msResposeTime = models.IntegerField(default=0)
     def __unicode__(self):
-        return u'user: {}, requested: {}, answered: {}, correct: {}'.format( self.user, self.place, self.answer, self.place == self.answer)
+        return u'user: {0}, requested: {1}, answered: {2}, correct: {3}'.format( self.user, self.place, self.answer, self.place == self.answer)
 

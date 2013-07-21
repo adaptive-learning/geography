@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 import os
 from django.db.models import F
 from datetime import datetime, timedelta 
+from django.utils.translation import ugettext as _
 
 from lazysignup.decorators import allow_lazy_user
 from lazysignup.utils import is_lazy_user
@@ -77,7 +78,11 @@ class QuestionService():
             ).order_by('?')[:n]]
 
     def getRandomPlaces(self, n):
-        return Place.objects.all().order_by('?')[:n]
+        yesterday = datetime.now() - timedelta(days=1)
+        return [up.place for up in UsersPlace.objects.filter(
+                user=self.user, 
+                lastAsked__lt=yesterday,
+            ).order_by('?')[:n]]
 
     def answer(self, a):
         student = Student.fromUser(self.user)
@@ -140,10 +145,23 @@ def question(request):
     if (request.raw_post_data != ""):
         answer = simplejson.loads(request.raw_post_data)
         qs.answer(answer);
-
-    response = qs.getQuestions(5)
+    noOfQuestions = 5 if Student.fromUser(request.user).points < 10 else 10
+    response = qs.getQuestions(noOfQuestions)
     return JsonResponse(response)
 
+def to_view_format(student):
+    newObj = {
+        'username' : student.user.username,
+        'points' :  student.points,
+    }
+    return newObj
+
+@allow_lazy_user
+def user_list_view(request):
+    students = Student.objects.all()
+    response = [to_view_format(s) for s in students if not is_lazy_user(s.user)]
+    return JsonResponse(response)
+    
 @allow_lazy_user
 def user_view(request):
     student = Student.fromUser(request.user)
@@ -166,11 +184,20 @@ def login_view(request):
             if user.is_active:
                 login(request, user)
                 # Redirect to a success page.
-            #else:
+                response = {'success' : True }
+            else:
                 # Return a 'disabled account' error message
-        #else:
+                response = {
+                    'success' : False,
+                    'message' : 'Přihlašovací údaje jsou správné, ale účet je zablokován'
+                }
+        else:
             # Return an 'invalid login' error message.
-    return user_view(request)
+            response = {
+                'success' : False,
+                'message' : 'Nesprávné uživatelské jméno nebo heslo.'
+            }
+    return JsonResponse(response)
     
 def logout_view(request):
     logout(request)
