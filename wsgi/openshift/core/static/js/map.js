@@ -84,21 +84,24 @@ function initMap(config, callback) {
     })
     var myMap = {
         map: map,
-        highlightState : function(state, color, blink) {
-            var blink = blink || (color == undefined ? 6 : 0);
+        highlightState : function(state, color) {
             var color = color || NEUTRAL;
             var layer = map.getLayer('states');
             statePath = layer.getPaths({ name: state })[0];
             if (statePath) {
                 statePath.svgPath.attr('fill', color);
                 statePath.svgPath.attr('fill-opacity', 1);
-                var that = this
-                if (blink > 0) {
-                    setTimeout(function(){
-                        color = blink % 2 == 0 ? GOOD : NEUTRAL;
-                        that.highlightState(state, color, --blink);
-                    }, 50)
-                }
+            }
+        },
+        blink : function(state, count) {
+            var count = count || 0;
+            var that = this
+            if (count < 6) {
+                color = count % 2 == 0 ? "white" : NEUTRAL;
+                that.highlightState(state, color);
+                setTimeout(function(){
+                    that.blink(state, ++count)
+                }, 50)
             }
         },
         clearHighlights : function () {

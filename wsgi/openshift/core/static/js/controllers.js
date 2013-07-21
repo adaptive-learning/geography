@@ -78,7 +78,7 @@ angular.module('myApp.controllers', [])
         $scope.question = active;
         $scope.map.clearHighlights();
         if (active.type == 1) {
-            $scope.map.highlightState(active.code);
+            $scope.map.blink(active.code);
         }
         $scope.canNext = false;
         $scope.select = undefined;
@@ -87,7 +87,7 @@ angular.module('myApp.controllers', [])
 
     $scope.check = function(selected) {
        var correct = (selected == $scope.question.code);
-       $scope.map.highlightState($scope.question.code, NEUTRAL);
+       $scope.map.highlightState($scope.question.code);
        $scope.map.highlightState(selected, correct ? GOOD : BAD);
        $scope.canNext = true;
        $("select.select2").select2("val", $scope.question.code);
@@ -114,6 +114,12 @@ angular.module('myApp.controllers', [])
         }
     }
 
+    $scope.openPlacesSelect = function() {
+        $timeout(function() {
+            $("select.select2").select2("open");
+        },100);
+    }
+
     places($scope.part, function(placesTypes) {
         $scope.places = placesTypes[0].places;
         $timeout(function() {
@@ -126,6 +132,10 @@ angular.module('myApp.controllers', [])
                 formatResult: format,
                 formatSelection: format,
                 escapeMarkup: function(m) { return m; }
+            });
+            $("select.starters").select2({
+                placeholder: "Počáteční písmeno",
+                width : '100px'
             });
         },100);
 

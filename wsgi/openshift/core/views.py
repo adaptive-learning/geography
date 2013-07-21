@@ -104,7 +104,7 @@ class QuestionService():
 
 # Create your views here.
 def places(request):
-    ps = Place.objects.all()
+    ps = Place.objects.all().order_by('name')
     response = [{
         'name': u'Státy',
         'places': []
