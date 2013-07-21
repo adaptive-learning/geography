@@ -13,9 +13,6 @@ angular.module('myApp.controllers', [])
 
     $('.atooltip').tooltip({"placement" : "bottom"});
     $('.input-tooltip').tooltip({"placement" : "bottom", trigger: "focus"});
-    $('.dropdown-menu').click(function(event){
-         event.stopPropagation();
-     });
     $('a#fdbk_tab').colorbox();
 
     $rootScope.login = function(){

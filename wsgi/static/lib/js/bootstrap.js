@@ -362,7 +362,7 @@
         , that = this
         , e
 
-      this.sliding = true
+//      this.sliding = true
 
       isCycling && this.pause()
 

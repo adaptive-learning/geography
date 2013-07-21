@@ -1,17 +1,17 @@
-  <div class="map-container" ng-class="user.username == 'Verunka' && 'vip'">
+  <div class="map-container">
     <center>
     <div>
     <div class="map-positioner">
-      <h1 ng-show="user==''"> {{part}}</h1>
-      <h1 ng-show="user!=''"> {{user}}</h1>
-      <a ng-show="user==''" href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" >Procvičovat</a>
+      <h1 ng-show="part != undefined" ng-bind="part"></h1>
+      <h1 ng-show="user != undefined" ng-bind="user"></h1>
+      <a href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" >Procvičovat</a>
       <div id="map-holder">
       </div>
     </div>
     </div>
     </center>
   </div>
-  <div id="container" class="span12 well" ng-show="placesTypes[0].places.length != 0">
+  <div id="container" class="span12 well">
     <ul class="thumbnails">
       <li class="span12" ng-repeat="type in placesTypes">
         <div class="thumbnail">
