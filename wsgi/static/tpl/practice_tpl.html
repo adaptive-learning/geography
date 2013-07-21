@@ -20,9 +20,13 @@
           </h2>
           <span class="span7">
           <span ng-hide="question.type == 0">
+              <select class="starters" ng-model="starterLetters" ng-change="openPlacesSelect()">
+                <option ></option>
+                <option ng-repeat="starter in places | starters" value="{{starter}}">{{starter | shorten}}</option> 
+              </select>
               <select class="select2" ng-model="select">
                 <option ></option>
-                <option ng-repeat="place in places" value="{{place.code}}">{{place.name}}</option> 
+                <option ng-repeat="place in places | starterLettersFilter : starterLetters" value="{{place.code}}">{{place.name}}</option> 
               </select>
               <button class="btn btn-large {{canNext || 'btn-primary'}}" ng-click="check(select)" ng-disabled="!select || canNext" >Zkontrolovat</button>
           </span>
