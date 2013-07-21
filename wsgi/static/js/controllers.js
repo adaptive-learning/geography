@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('AppCtrl', function($scope, $rootScope, $http, $cookies) {
+  .controller('AppCtrl', function($scope, $rootScope, $http, $cookies, $route) {
     $rootScope.topScope = $rootScope;
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded'
@@ -25,10 +25,13 @@ angular.module('myApp.controllers', [])
             'password' : $scope.password
         }
         $http.post('user/login/', credentials).success(function(data) {
-            $rootScope.user = data;
-            $rootScope.loginFail = undefined;
+            $rootScope.loginResponse = data;
+            if (data.success) {
+                //$route.reload();
+                document.location.reload(true)
+            }
         }).error(function(data) {
-            $rootScope.loginFail = "Přihllášení se nezdařilo";
+            $rootScope.loginResponse = {'messgae' : "Přihllášení se nezdařilo"};
         });
     }
 
@@ -84,7 +87,7 @@ angular.module('myApp.controllers', [])
 
     $scope.check = function(selected) {
        var correct = (selected == $scope.question.code);
-       $scope.map.highlightState($scope.question.code);
+       $scope.map.highlightState($scope.question.code, NEUTRAL);
        $scope.map.highlightState(selected, correct ? GOOD : BAD);
        $scope.canNext = true;
        $("select.select2").select2("val", $scope.question.code);

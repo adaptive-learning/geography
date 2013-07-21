@@ -1,6 +1,7 @@
 
 var GOOD = "#0d0";
 var BAD = "#ff0000";
+var NEUTRAL = "#bbb";
 
 function initMap(config, callback) {
 
@@ -21,17 +22,27 @@ function initMap(config, callback) {
     
     map.loadCSS('static/css/map.css', function() {
         map.loadMap('static/img/'+ config.name + '.svg', function() {
-            var statesLayer = {styles: {
+
+            var bgLayer = {
+                name: 'bg'
+            }
+
+            var statesLayer = { }
+            if (config.states) {
+                statesLayer.styles = {
                     'fill' : function(d) { 
                         return config.states && config.states[d.name] ? (scale(config.states[d.name].skill).hex()) :'#fff';
                         },
-                    'stroke-width': 0.7
+                    'stroke-width': 0.7,
+                    'fill-opacity': 1
                 }
             }
             if (config.click) {
-                statesLayer.click = function(data, path, event) {
+                clickFn = function(data, path, event) {
                     config.click(data.name);
                 }
+                statesLayer.click = clickFn 
+                bgLayer.click = clickFn 
             }
             if (config.showTooltips) {
                 statesLayer.tooltips = function(d) {
@@ -41,12 +52,11 @@ function initMap(config, callback) {
                     return [name + description, ''];
                 }
             }
+            map.addLayer('states', bgLayer)
             map.addLayer('states', statesLayer )
-           /* 
-            .addLayer('states', {
-                name: 'bg'
-            })
 
+
+           /* 
             .addLayer('states', {
                 name: 'bgback'
             });
@@ -74,17 +84,27 @@ function initMap(config, callback) {
     })
     var myMap = {
         map: map,
-        highlightState : function(state, color) {
-            var color = color || "#ccc"
+        highlightState : function(state, color, blink) {
+            var blink = blink || (color == undefined ? 6 : 0);
+            var color = color || NEUTRAL;
             var layer = map.getLayer('states');
             statePath = layer.getPaths({ name: state })[0];
             if (statePath) {
                 statePath.svgPath.attr('fill', color);
+                statePath.svgPath.attr('fill-opacity', 1);
+                var that = this
+                if (blink > 0) {
+                    setTimeout(function(){
+                        color = blink % 2 == 0 ? GOOD : NEUTRAL;
+                        that.highlightState(state, color, --blink);
+                    }, 50)
+                }
             }
         },
         clearHighlights : function () {
             var layer = map.getLayer('states');
-            layer.style('fill', "#fff");
+            //layer.style('fill', "");
+            layer.style('fill-opacity', 0);
         }
     }
     return myMap; 

@@ -79,5 +79,5 @@ class QuestionServiceTest(TestCase):
 
     def testQuestion(self):
         questions = self.qs.getQuestions(5)
-        self.assertEqual(len(questions), 5)
-        #self.assertEqual(questions[0]['code'], 'ca')
+        self.assertEqual(len(questions), 2)
+        self.assertEqual(questions[0]['code'], 'ca')
