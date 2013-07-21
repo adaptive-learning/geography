@@ -111,7 +111,7 @@ h2 span {
     position: absolute;
     color: white;
     left: -70px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+    text-shadow: 1px 1px 9px rgba(0, 0, 0, .8), 0 0 30px rgba(0, 0, 0, .075);
 }
 
 .map-container .progress {
@@ -230,6 +230,9 @@ body {
 .map-positioner h1 {
     left: 0px;
     z-index: 200;
+}
+.version {
+    display: none;
 }
 }
 
