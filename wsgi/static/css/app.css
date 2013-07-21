@@ -236,3 +236,10 @@ body {
 }
 }
 
+@media (max-width: 767px) {
+.map-container {
+    margin-right: -20px;
+    margin-left: -20px;
+}
+}
+
