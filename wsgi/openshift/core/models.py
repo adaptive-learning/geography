@@ -37,12 +37,16 @@ class Student(models.Model):
         return student
     
 
+def yesterday():
+    y = datetime.now() - timedelta(days=1)
+    return y
+
 class UsersPlace(models.Model):
     user = models.ForeignKey(Student)
     place = models.ForeignKey(Place)
     askedCount = models.IntegerField(default=0)
     correctlyAnsweredCount = models.IntegerField(default=0)
-    lastAsked = models.DateTimeField(default=datetime.now)
+    lastAsked = models.DateTimeField(default=yesterday)
     def skill(self):
         correctlyAnsweredRatio = self.correctlyAnsweredCount / float(self.askedCount)
         notSeenFor = datetime.now() - self.lastAsked
@@ -53,8 +57,8 @@ class UsersPlace(models.Model):
         else:
             notSeenForRatio = 1 
         skill = correctlyAnsweredRatio * notSeenForRatio
-        if (self.correctlyAnsweredCount > notSeenFor.days):
-            skill = 1
+        #if (self.correctlyAnsweredCount > notSeenFor.days):
+        #    skill = 1
         return round(skill, 2)
 
     @staticmethod
@@ -84,16 +88,12 @@ class UsersPlace(models.Model):
     def __unicode__(self):
         return u'user: {0}, place: [{1}]'.format( self.user, self.place)
 
-def yesterday():
-    y = datetime.now() - timedelta(days=1)
-    return y
-
 class Answer(models.Model):
     user = models.ForeignKey(Student)
     place = models.ForeignKey(Place, related_name='place_id')
     answer = models.ForeignKey(Place, related_name='answer_id', null=True, blank=True, default = None)
     type = models.IntegerField()
-    askedDate = models.DateTimeField(default=yesterday)
+    askedDate = models.DateTimeField(default=datetime.now)
     msResposeTime = models.IntegerField(default=0)
     def __unicode__(self):
         return u'user: {0}, requested: {1}, answered: {2}, correct: {3}'.format( self.user, self.place, self.answer, self.place == self.answer)

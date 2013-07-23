@@ -2,9 +2,10 @@
     <center>
     <div>
     <div class="map-positioner">
-      <h1 ng-show="part != undefined" ng-bind="part"></h1>
-      <h1 ng-show="user != undefined" ng-bind="user"></h1>
-      <a href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" >Procvičovat</a>
+      <h1 ng-show="user == ''" ng-bind="part"></h1>
+      <h1 ng-show="user != ''" ng-bind="user"></h1>
+      <a  ng-show="user == ''" href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" >Procvičovat</a>
+      <!--<a href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" ng-disabled="practiceCount == 0" >Procvičovat ({{practiceCount}})</a>-->
       <div id="map-holder">
       </div>
     </div>

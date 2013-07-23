@@ -31,18 +31,26 @@ angular.module('myApp.services', []).
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded'
       var qIndex = 0;
+      var worldPart;
       function returnQuestion (fn){
             var q = questions[qIndex++];
-            q.msResponseTime = - (new Date()).valueOf();
+            if(q) q.msResponseTime = - (new Date()).valueOf();
             fn(q);
       }
       var questions = []
       return {
           first: function(part, fn){
+              worldPart = part
                 $http.get('question/' + part).success(function(data) {
                     qIndex = 0;
                     questions = data;
                     returnQuestion(fn);
+                });
+          },
+          availableCount: function(part, fn){
+              worldPart = part
+                $http.get('question/' + part).success(function(data) {
+                    fn(data.length);
                 });
           },
           next: function(part, fn){
@@ -50,8 +58,11 @@ angular.module('myApp.services', []).
           },
           answer: function(question) {
                 question.msResponseTime += (new Date()).valueOf();
+                question.index = qIndex-1;
                 questions[qIndex-1] = question;
-                $http.post('question/', question).success(function(data) {
+                $http.post('question/' + worldPart, question).success(function(data) {
+                    questions = questions.slice(0, questions.length - data.length).concat(data);
+                    console.log(questions)
                 });
 
                 return  100 * qIndex / questions.length;

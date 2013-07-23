@@ -33,7 +33,7 @@ function initMap(config, callback) {
                     'fill' : function(d) { 
                         return config.states && config.states[d.name] ? (scale(config.states[d.name].skill).hex()) :'#fff';
                         },
-                    'stroke-width': 0.7,
+                    'stroke-width': 1.7,
                     'fill-opacity': 1
                 }
             }
@@ -52,9 +52,25 @@ function initMap(config, callback) {
                     return [name + description, ''];
                 }
             }
+            map.addLayer('states',  {
+                name: 'glowbg'
+            })
             map.addLayer('states', bgLayer)
             map.addLayer('states', statesLayer )
 
+            map.addFilter('myglow', 'glow', {
+                    size: 2,
+                    color: '#ddd',
+                    inner: true
+                });
+                map.getLayer('bg').applyFilter('myglow');
+            map.addFilter('oglow', 'glow', {
+                size: 4,
+                color: '#333',
+                strength: 2,
+                inner: false
+            });
+            map.getLayer('glowbg').applyFilter('oglow');
 
            /* 
             .addLayer('states', {

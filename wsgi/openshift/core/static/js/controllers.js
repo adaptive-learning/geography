@@ -13,15 +13,13 @@ angular.module('myApp.controllers', [])
 
     $('.atooltip').tooltip({"placement" : "bottom"});
     $('.input-tooltip').tooltip({"placement" : "bottom", trigger: "focus"});
-    $('.dropdown-menu').click(function(event){
-         event.stopPropagation();
-     });
-    $('.dropdown-menu').on('ontouchstart', function(event){
-         event.stopPropagation();
-     });
-    $('.dropdown-menu').on('ontouchend', function(event){
-         event.stopPropagation();
-     });
+    $('.dropdown-menu li input').click(function(event){
+        var dropdown = $(this).parents('li.dropdown')
+        setTimeout(function(){
+            dropdown.addClass("open");
+        },10);
+        event.stopPropagation();
+    });
     $('a#fdbk_tab').colorbox();
 
     $rootScope.login = function(){
@@ -52,9 +50,9 @@ angular.module('myApp.controllers', [])
     }
   })
 
-  .controller('AppView', function($scope, $routeParams, usersplaces) {
+  .controller('AppView', function($scope, $routeParams, usersplaces, question) {
     $scope.part = $routeParams.part;
-    $scope.user = $routeParams.user || "";
+    $scope.user = $routeParams.user || undefined;
     $scope.placesTypes = [];
 
     usersplaces($scope.part, $scope.user, function(data) {
@@ -74,6 +72,10 @@ angular.module('myApp.controllers', [])
         }
         $scope.map = initMap(mapConfig);
     });
+
+    question.availableCount($scope.part, function(count) {
+        $scope.practiceCount = count;
+    })
 
   })
 
@@ -156,7 +158,11 @@ angular.module('myApp.controllers', [])
         }
         $scope.map = initMap(mapConfig, function() {
             question.first($scope.part, function(q) {
-                $scope.setQuestion(q);
+                if(q) $scope.setQuestion(q);
+                else {
+                    $scope.showSummary = true;
+                    $scope.errorMessage = 'Žádný stát není potřeba procvičovat.';
+                }
             })
         })
     })

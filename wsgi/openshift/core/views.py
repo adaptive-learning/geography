@@ -70,19 +70,25 @@ class QuestionService():
             ).order_by('difficulty')[:n]
 
     def getWeakPlaces(self, n):
-        yesterday = datetime.now() - timedelta(days=1)
-        return [up.place for up in UsersPlace.objects.filter(
-                user=self.user, 
+        return [up.place for up in self.getReadyUsersPlaces().filter(
                 askedCount__gt=F('correctlyAnsweredCount') * 10 / 9.0,
-                lastAsked__lt=yesterday,
-            ).order_by('?')[:n]]
+            )[:n]]
 
     def getRandomPlaces(self, n):
+        return [up.place for up in self.getReadyUsersPlaces()[:n]]
+
+    def getReadyUsersPlaces(self):
         yesterday = datetime.now() - timedelta(days=1)
-        return [up.place for up in UsersPlace.objects.filter(
+        minuteAgo = datetime.now() - timedelta(seconds=60)
+        return UsersPlace.objects.filter(
                 user=self.user, 
                 lastAsked__lt=yesterday,
-            ).order_by('?')[:n]]
+            ).exclude(
+                place_id__in = [a.place_id for a in Answer.objects.filter(
+                    user=self.user,
+                    askedDate__gt=minuteAgo
+                )]
+            ).order_by('?')
 
     def answer(self, a):
         student = Student.fromUser(self.user)
@@ -142,10 +148,13 @@ def users_places(request, part,  user = ''):
 @allow_lazy_user
 def question(request):
     qs = QuestionService(user = request.user)
+    questionIndex = 0
     if (request.raw_post_data != ""):
         answer = simplejson.loads(request.raw_post_data)
+        questionIndex = answer['index'] + 1
         qs.answer(answer);
     noOfQuestions = 5 if Student.fromUser(request.user).points < 10 else 10
+    noOfQuestions -= questionIndex
     response = qs.getQuestions(noOfQuestions)
     return JsonResponse(response)
 

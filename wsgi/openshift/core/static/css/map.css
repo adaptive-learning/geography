@@ -9,7 +9,7 @@ svg .bg:hover {
 }
 
 svg .states {
-    stroke-width: 0.2;
+    stroke-width: 0.6;
     cursor: pointer;
     fill-opacity: 0;
 }
