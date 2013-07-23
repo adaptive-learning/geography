@@ -18,7 +18,7 @@ angular.module('myApp.controllers', [])
         var dropdown = $(this).parents('li.dropdown')
         setTimeout(function(){
             dropdown.addClass("open");
-        },10);
+        },200);
         event.stopPropagation();
     });
     $('a#fdbk_tab').colorbox();
