@@ -14,6 +14,7 @@ angular.module('myApp.controllers', [])
     $('.atooltip').tooltip({"placement" : "bottom"});
     $('.input-tooltip').tooltip({"placement" : "bottom", trigger: "focus"});
     $('.dropdown-menu li input').click(function(event){
+        // hack to prevent login dropdown from premature closing on mobile platforms
         var dropdown = $(this).parents('li.dropdown')
         setTimeout(function(){
             dropdown.addClass("open");
@@ -52,7 +53,7 @@ angular.module('myApp.controllers', [])
 
   .controller('AppView', function($scope, $routeParams, usersplaces, question) {
     $scope.part = $routeParams.part;
-    $scope.user = $routeParams.user || undefined;
+    $scope.user = $routeParams.user || "";
     $scope.placesTypes = [];
 
     usersplaces($scope.part, $scope.user, function(data) {
