@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.utils import simplejson
 from random import randint
 from django.contrib.auth.models import User
@@ -130,7 +130,7 @@ def users_places(request, part,  user = ''):
         try:
             user = User.objects.get(username = user)
         except User.DoesNotExist:
-            raise Http400
+            raise HttpResponseBadRequest("Invalid username: {0}" % user)
     student = Student.fromUser(user)
     ps = UsersPlace.objects.filter(user=student)
     response = [{
@@ -227,8 +227,8 @@ def updateStates():
     states = file.read()
     ss = states.split("\n")
     for s in ss:
-       state = s.split("\t")
-       if(len(state) > 3):
-          name = state[2]
-          code = 'us-' + state[0].lower()
-          Place(code=code, name = name).save()
+        state = s.split("\t")
+        if(len(state) > 3):
+            name = state[2]
+            code = 'us-' + state[0].lower()
+            Place(code=code, name = name).save()

@@ -28,14 +28,11 @@ function initMap(config, callback) {
             }
 
             var statesLayer = { }
-            if (config.states) {
-                statesLayer.styles = {
-                    'fill' : function(d) { 
-                        return config.states && config.states[d.name] ? (scale(config.states[d.name].skill).hex()) :'#fff';
-                        },
-                    'stroke-width': 1.7,
-                    'fill-opacity': 1
-                }
+            statesLayer.styles = {
+                'fill' : function(d) { 
+                    return config.states && config.states[d.name] ? (scale(config.states[d.name].skill).hex()) :'#fff';
+                    },
+                'stroke-width': 1.7
             }
             if (config.click) {
                 clickFn = function(data, path, event) {
@@ -59,11 +56,12 @@ function initMap(config, callback) {
             map.addLayer('states', statesLayer )
 
             map.addFilter('myglow', 'glow', {
-                    size: 2,
-                    color: '#ddd',
+                    size: 5,
+                    color: '#000',
+                    opacity: 0.2,
                     inner: true
                 });
-                map.getLayer('bg').applyFilter('myglow');
+                map.getLayer('states').applyFilter('myglow');
             map.addFilter('oglow', 'glow', {
                 size: 4,
                 color: '#333',
@@ -106,7 +104,6 @@ function initMap(config, callback) {
             statePath = layer.getPaths({ name: state })[0];
             if (statePath) {
                 statePath.svgPath.attr('fill', color);
-                statePath.svgPath.attr('fill-opacity', 1);
             }
         },
         blink : function(state, count) {
@@ -122,8 +119,7 @@ function initMap(config, callback) {
         },
         clearHighlights : function () {
             var layer = map.getLayer('states');
-            //layer.style('fill', "");
-            layer.style('fill-opacity', 0);
+            layer.style('fill', "#fff");
         }
     }
     return myMap; 

@@ -1234,24 +1234,27 @@
       setTooltip = function(path, tt) {
         var cfg;
         var bbox = path.svgPath.getBBox()
-        var offset = $('#map-holder').offset();
         console.log(path.data.name)
         var idecko = path.data.fips;
-        $('body').append("<div id='"+idecko+"' style='position:absolute; width:"
+        $('#map-holder').append("<div id='"+idecko+"' style='position:absolute; width:"
           +bbox.width+"px; border:0px solid black; height:"
-          +bbox.height+"px; top: "+(bbox.y+ offset.top)+"px; left: "
-          +(bbox.x + offset.left)+"px'></div>")
+          +bbox.height+"px; top: "+(bbox.y)+"px; left: "
+          +(bbox.x)+"px'></div>")
         cfg = {
           position: {
             target: $("#" + idecko),
-            viewport: $(window),
+            viewport: $(document),
             adjust: {
               x: -(bbox.width/3),
               y: -1
             }
           },
           show: {
-            delay: delay != null ? delay : 20
+            delay: delay != null ? delay : 20,
+            effect: {
+              type: 'fade',
+              length: 1000
+            }
           },
           events: {
             show: function(evt, api) {

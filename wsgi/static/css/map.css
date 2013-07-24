@@ -1,20 +1,16 @@
 
 svg .bg {
-	fill: #fff;
+	fill: #000;
     fill-opacity: 1;
     cursor: pointer;
-}
-svg .bg:hover {
-    fill: #ddd;
 }
 
 svg .states {
     stroke-width: 0.6;
     cursor: pointer;
-    fill-opacity: 0;
+    fill-opacity: 1;
 }
 svg .states:hover {
-    *fill: #f9f9f9;*\
     fill-opacity: 0.8;
 }
 
