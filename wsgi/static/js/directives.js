@@ -22,4 +22,20 @@ angular.module('myApp.directives', []).
         element.html(template)
     }
 
+  })
+  
+  .directive('autocompleteUsername', function() {
+	  return function($scope, element) {
+	    return $scope.getUsername = function() {
+	      return element.val();
+	    };
+	  };
+  })
+
+  .directive('autocompletePassword', function() {
+	  return function($scope, element) {
+	    return $scope.getPassword = function() {
+	      return element.val();
+	    };
+	  };
   });

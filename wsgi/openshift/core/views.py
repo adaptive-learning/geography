@@ -4,7 +4,6 @@ from django.utils import simplejson
 from random import randint
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-import os
 from django.db.models import F
 from datetime import datetime, timedelta 
 from django.utils.translation import ugettext as _

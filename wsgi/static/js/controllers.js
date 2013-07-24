@@ -27,10 +27,9 @@ angular.module('myApp.controllers', [])
     $('a#fdbk_tab').colorbox();
 
     $rootScope.login = function(){
-        $scope.$apply();
         var credentials = {
-            'username' : $scope.username,
-            'password' : $scope.password
+            'username' : $scope.getUsername ? $scope.getUsername() : $scope.username,
+            'password' : $scope.getPassword ? $scope.getPassword() : $scope.password
         }
         $http.post('user/login/', credentials).success(function(data) {
             $rootScope.loginResponse = data;

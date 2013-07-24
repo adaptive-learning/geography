@@ -68,8 +68,8 @@
                     <li><span class="signup-facebook btn small"><span class="icon"></span>Sign in with Facebook</span></li>
                     <li class="or-divider"><hr><span>or</span></li>
                     -->
-                    <li><input ng-model="username" name="username" autocomplete="on" type="text" placeholder="Uživatelské jméno"></li>
-                    <li><input ng-model="password" name="password" autocomplete="on" type="password" placeholder="Heslo"></li>
+                    <li><input ng-model="username" name="username" autocomplete="on" type="text" placeholder="Uživatelské jméno" autocomplete-username></li>
+                    <li><input ng-model="password" name="password" autocomplete="on" type="password" placeholder="Heslo" autocomplete-password></li>
                     <li id="message" class="login-fail">
                         <div class="alert" ng:class="{true:'elert-success', false:'alert-error'}[loginResponse.success]" ng-show="loginResponse" ng-bind="loginResponse.message"></div>
                     </li>
