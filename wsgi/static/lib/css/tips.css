@@ -101,6 +101,7 @@
 	.qtip-dark .qtip-titlebar{
 		background-color: #404040;
         border-radius: 4px;
+        border-top-left-radius: 0px;
 	}
 
 	.qtip-dark .qtip-icon{

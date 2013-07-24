@@ -1234,7 +1234,6 @@
       setTooltip = function(path, tt) {
         var cfg;
         var bbox = path.svgPath.getBBox()
-        console.log(path.data.name)
         var idecko = path.data.fips;
         $('#map-holder').append("<div id='"+idecko+"' style='position:absolute; width:"
           +bbox.width+"px; border:0px solid black; height:"
@@ -1251,10 +1250,6 @@
           },
           show: {
             delay: delay != null ? delay : 20,
-            effect: {
-              type: 'fade',
-              length: 1000
-            }
           },
           events: {
             show: function(evt, api) {

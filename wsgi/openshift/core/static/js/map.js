@@ -27,13 +27,13 @@ function initMap(config, callback) {
                 name: 'bg'
             }
 
-            var statesLayer = { }
-            statesLayer.styles = {
-                'fill' : function(d) { 
-                    return config.states && config.states[d.name] ? (scale(config.states[d.name].skill).hex()) :'#fff';
-                    },
-                'stroke-width': 1.7
-            }
+            var statesLayer = { 
+	            styles : {
+	                'fill' : function(d) { 
+	                    return config.states && config.states[d.name] ? (scale(config.states[d.name].skill).hex()) :'#fff';
+	                    }
+	            }
+	        }
             if (config.click) {
                 clickFn = function(data, path, event) {
                     config.click(data.name);
@@ -49,9 +49,6 @@ function initMap(config, callback) {
                     return [name + description, ''];
                 }
             }
-            map.addLayer('states',  {
-                name: 'glowbg'
-            })
             map.addLayer('states', bgLayer)
             map.addLayer('states', statesLayer )
 
@@ -61,14 +58,15 @@ function initMap(config, callback) {
                     opacity: 0.2,
                     inner: true
                 });
-                map.getLayer('states').applyFilter('myglow');
+            map.getLayer('states').applyFilter('myglow');
+            
             map.addFilter('oglow', 'glow', {
                 size: 4,
                 color: '#333',
                 strength: 2,
                 inner: false
             });
-            map.getLayer('glowbg').applyFilter('oglow');
+            map.getLayer('bg').applyFilter('oglow');
 
            /* 
             .addLayer('states', {

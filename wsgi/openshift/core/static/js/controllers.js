@@ -15,12 +15,15 @@ angular.module('myApp.controllers', [])
     $('.input-tooltip').tooltip({"placement" : "bottom", trigger: "focus"});
     $('.dropdown-menu li input').click(function(event){
         // hack to prevent login dropdown from premature closing on mobile platforms
-        var dropdown = $(this).parents('li.dropdown')
+        var dropdown = $(this).parents('ul.dropdown-menu')
         setTimeout(function(){
-            dropdown.addClass("open");
+            if (!dropdown.is(":visible")) {
+            	dropdown.css("display", "block");
+            }
         },200);
         event.stopPropagation();
     });
+    
     $('a#fdbk_tab').colorbox();
 
     $rootScope.login = function(){

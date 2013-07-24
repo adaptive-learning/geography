@@ -1,12 +1,11 @@
 
 svg .bg {
 	fill: #000;
-    fill-opacity: 1;
-    cursor: pointer;
+    stroke-width: 1.5;
 }
 
 svg .states {
-    stroke-width: 0.6;
+    stroke-width: 1;
     cursor: pointer;
     fill-opacity: 1;
 }
