@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import random
+
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.utils import simplejson
 from random import randint
@@ -36,6 +38,7 @@ class QuestionService():
     def questionFromPlace(self, place, type):
         questionTypes = [
                 u"Vyber na mapě stát",
+                u"Jak se jmenuje stát zvýrazněný na mapě?",
                 u"Jak se jmenuje stát zvýrazněný na mapě?"
             ]
         question = {
@@ -44,7 +47,18 @@ class QuestionService():
             'place' :  place.name,
             'code' : place.code
         }
+        if (type == 2) :
+            question['options'] = self.getOptions(place)
         return question
+    
+    def getOptions(self, place):
+        options = []
+        ps = Place.objects.exclude(id=place.id).order_by('?')[:3]
+        for p in ps:
+            options.append(p.toSerializable())
+        options.append(place.toSerializable())
+        random.shuffle(options)
+        return options
 
     def getQuestions(self, n):
         places = self.getWeakPlaces(n)
@@ -57,11 +71,21 @@ class QuestionService():
         if (remains > 0):
             places +=  self.getRandomPlaces(remains)
 
+        successRate = self.successRate()
         questions = []
         for place in places:
-            type = randint(0,1)
+            type = randint(0,1) if successRate > 0.5 else 2
             questions.append(self.questionFromPlace(place, type))
         return questions
+
+    def successRate(self):
+        lastAnswers = Answer.objects.filter(
+                user=self.user, 
+            ).order_by("-askedDate")[:10]
+        correctLastAnswers = [a for a in lastAnswers if a.place == a.answer]
+        successRate = 1.0 * len(correctLastAnswers) / len(lastAnswers)  if len(lastAnswers) > 0 else 0
+        return successRate
+                
 
     def getNewPlaces(self, n):
         return Place.objects.exclude(

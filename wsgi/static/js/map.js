@@ -53,11 +53,12 @@ function initMap(config, callback) {
             map.addLayer('states', statesLayer )
 
             map.addFilter('myglow', 'glow', {
-                    size: 5,
-                    color: '#000',
-                    opacity: 0.2,
-                    inner: true
-                });
+                size: 1,
+                strength: 1,
+                color: '#000',
+                opacity: 0.2,
+                inner: true
+            });
             map.getLayer('states').applyFilter('myglow');
             
             map.addFilter('oglow', 'glow', {

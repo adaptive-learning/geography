@@ -16,6 +16,11 @@ class Place(models.Model):
         difficulty = sum(skills) / len(skills) if len(skills) > 0 else 0.5
         self.difficulty = int((1 - difficulty) * Place.DIFFICULTY_CONVERSION)
         self.save()
+    def toSerializable(self):
+        return {
+          'code' : self.code,
+          'name' : self.name
+        }
 
 
 class Student(models.Model):
