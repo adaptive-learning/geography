@@ -62,7 +62,6 @@ angular.module('myApp.services', []).
                 questions[qIndex-1] = question;
                 $http.post('question/' + worldPart, question).success(function(data) {
                     questions = questions.slice(0, questions.length - data.length).concat(data);
-                    console.log(questions)
                 });
 
                 return  100 * qIndex / questions.length;

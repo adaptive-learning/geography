@@ -34,7 +34,13 @@
               <button class="btn btn-large {{canNext || 'btn-primary'}}" ng-click="check(select)" ng-disabled="!select || canNext" >Zkontrolovat</button>
           </span>
           <span ng-show="question.type == 2">
-              <button ng-repeat="place in question.options" value="{{place.code}}" class="btn btn-large" ng-click="check(place.code)">
+              <button ng-repeat="place in question.options"
+                value="{{place.code}}"
+                class="btn btn-large"
+                ng-click="check(place.code)"
+                ng-class="{'btn-success': place.correct, 'btn-danger': place.selected && !place.correct }"
+                ng-disabled="place.disabled"
+              >
                  <i class="flag-{{place.code}}"></i> {{place.name}}
               </button>
           </span>

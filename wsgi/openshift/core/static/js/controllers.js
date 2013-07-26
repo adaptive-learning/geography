@@ -98,8 +98,14 @@ angular.module('myApp.controllers', [])
 
     $scope.check = function(selected) {
        var correct = (selected == $scope.question.code);
-       $scope.map.highlightState($scope.question.code);
+       console.log(correct)
+       if ($scope.question.type == 1 || $scope.question.type == 2) {
+           $scope.map.highlightState($scope.question.code, GOOD);
+       }
        $scope.map.highlightState(selected, correct ? GOOD : BAD);
+       if ($scope.question.type == 2) {
+           $scope.highlightOptions(selected);
+       }
        $scope.canNext = true;
        $("select.select2").select2("val", $scope.question.code);
        if (correct) {
@@ -125,6 +131,15 @@ angular.module('myApp.controllers', [])
         }
     }
 
+    $scope.highlightOptions = function(selected) {
+    	$scope.question.options.map(function(o) {
+			o.correct = o.code == $scope.question.code;
+			o.selected = o.code == selected;
+			o.disabled = true;
+			return o;
+		})
+    	
+    }
     $scope.openPlacesSelect = function() {
         $timeout(function() {
             $("select.select2").select2("open");

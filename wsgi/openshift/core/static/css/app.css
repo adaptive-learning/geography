@@ -106,6 +106,7 @@ h2 span {
 }
 .btn {
     margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .map-positioner h1 {
@@ -125,11 +126,12 @@ h2 span {
     height: 500px;
 }
 
-.navbar i.icon-user {
+.dropdown i.icon-user {
     opacity: 0.5;
 }
 
-.navbar *:hover > i.icon-user {
+.dropdown:hover i.icon-user,
+.dropdown.open i.icon-user {
     opacity: 1;
 }
 
