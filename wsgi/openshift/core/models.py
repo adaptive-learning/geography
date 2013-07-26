@@ -1,6 +1,6 @@
-from django.db import models
+from datetime import datetime, timedelta
 from django.contrib.auth.models import User
-from datetime import datetime, timedelta 
+from django.db import models
 
 class Place(models.Model):
     DIFFICULTY_CONVERSION = 1000000.0
@@ -32,8 +32,8 @@ class Student(models.Model):
     @staticmethod
     def fromUser(user):
         try:
-            user = User.objects.get(username = user.username)
-            student = Student.objects.get(user = user)
+            user = User.objects.get(username=user.username)
+            student = Student.objects.get(user=user)
         except User.DoesNotExist:
             student = None
         except Student.DoesNotExist:
@@ -62,18 +62,18 @@ class UsersPlace(models.Model):
         else:
             notSeenForRatio = 1 
         skill = correctlyAnsweredRatio * notSeenForRatio
-        #if (self.correctlyAnsweredCount > notSeenFor.days):
+        # if (self.correctlyAnsweredCount > notSeenFor.days):
         #    skill = 1
         return round(skill, 2)
 
     @staticmethod
     def fromStudentAndPlace(student, place):
         try:
-            usersPlace = UsersPlace.objects.get(user = student, place = place)
+            usersPlace = UsersPlace.objects.get(user=student, place=place)
         except UsersPlace.DoesNotExist:
             usersPlace = UsersPlace(
-                user = student, 
-                place = place,
+                user=student,
+                place=place,
             )
         return usersPlace 
 
@@ -91,15 +91,15 @@ class UsersPlace(models.Model):
         self.place.updateDifficulty()
 
     def __unicode__(self):
-        return u'user: {0}, place: [{1}]'.format( self.user, self.place)
+        return u'user: {0}, place: [{1}]'.format(self.user, self.place)
 
 class Answer(models.Model):
     user = models.ForeignKey(Student)
     place = models.ForeignKey(Place, related_name='place_id')
-    answer = models.ForeignKey(Place, related_name='answer_id', null=True, blank=True, default = None)
+    answer = models.ForeignKey(Place, related_name='answer_id', null=True, blank=True, default=None)
     type = models.IntegerField()
     askedDate = models.DateTimeField(default=datetime.now)
     msResposeTime = models.IntegerField(default=0)
     def __unicode__(self):
-        return u'user: {0}, requested: {1}, answered: {2}, correct: {3}'.format( self.user, self.place, self.answer, self.place == self.answer)
+        return u'user: {0}, requested: {1}, answered: {2}, correct: {3}'.format(self.user, self.place, self.answer, self.place == self.answer)
 

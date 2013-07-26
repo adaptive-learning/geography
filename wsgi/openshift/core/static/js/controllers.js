@@ -91,9 +91,6 @@ angular.module('myApp.controllers', [])
         if (active.type == 1 ||active.type == 2) {
             $scope.map.blink(active.code);
         }
-        if (active.type == 2) {
-            $scope.options = active.options;
-        }
         $scope.canNext = false;
         $scope.select = undefined;
         $("select.select2").select2("val", $scope.select);
