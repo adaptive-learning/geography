@@ -1,22 +1,15 @@
 # -*- coding: utf-8 -*-
-import random
 
+from core.models import Place, Student, UsersPlace
+from core.utils import QuestionService
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseBadRequest
 from django.utils import simplejson
-from random import randint
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login, logout
-from django.db.models import F
-from datetime import datetime, timedelta 
-from django.utils.translation import ugettext as _
-
 from lazysignup.decorators import allow_lazy_user
 from lazysignup.utils import is_lazy_user
 
-from core.models import Place
-from core.models import Answer 
-from core.models import Student 
-from core.models import UsersPlace 
+
 
 class JsonResponse(HttpResponse):
     """
@@ -30,119 +23,13 @@ class JsonResponse(HttpResponse):
             content_type=content_type,
         )
 
-class QuestionService():
-
-    def __init__(self, user):
-        self.user = user
-
-    def questionFromPlace(self, place, type):
-        questionTypes = [
-                u"Vyber na mapě stát",
-                u"Jak se jmenuje stát zvýrazněný na mapě?",
-                u"Jak se jmenuje stát zvýrazněný na mapě?"
-            ]
-        question = {
-            'type' : type,
-            'text' : questionTypes[type], 
-            'place' :  place.name,
-            'code' : place.code
-        }
-        if (type == 2) :
-            question['options'] = self.getOptions(place)
-        return question
-    
-    def getOptions(self, place):
-        options = []
-        ps = Place.objects.exclude(id=place.id).order_by('?')[:3]
-        for p in ps:
-            options.append(p.toSerializable())
-        options.append(place.toSerializable())
-        random.shuffle(options)
-        return options
-
-    def getQuestions(self, n):
-        places = self.getWeakPlaces(n)
-
-        remains = n - len(places) 
-        if (remains > 0):
-            places +=  self.getNewPlaces(remains)
-
-        remains = n - len(places) 
-        if (remains > 0):
-            places +=  self.getRandomPlaces(remains)
-
-        successRate = self.successRate()
-        questions = []
-        for place in places:
-            type = randint(0,1) if successRate > 0.5 else 2
-            questions.append(self.questionFromPlace(place, type))
-        return questions
-
-    def successRate(self):
-        lastAnswers = Answer.objects.filter(
-                user=self.user, 
-            ).order_by("-askedDate")[:10]
-        correctLastAnswers = [a for a in lastAnswers if a.place == a.answer]
-        successRate = 1.0 * len(correctLastAnswers) / len(lastAnswers)  if len(lastAnswers) > 0 else 0
-        return successRate
-                
-
-    def getNewPlaces(self, n):
-        return Place.objects.exclude(
-                id__in = [up.place_id for up in UsersPlace.objects.filter(user=self.user)]
-            ).order_by('difficulty')[:n]
-
-    def getWeakPlaces(self, n):
-        return [up.place for up in self.getReadyUsersPlaces().filter(
-                askedCount__gt=F('correctlyAnsweredCount') * 10 / 9.0,
-            )[:n]]
-
-    def getRandomPlaces(self, n):
-        return [up.place for up in self.getReadyUsersPlaces()[:n]]
-
-    def getReadyUsersPlaces(self):
-        yesterday = datetime.now() - timedelta(days=1)
-        minuteAgo = datetime.now() - timedelta(seconds=60)
-        return UsersPlace.objects.filter(
-                user=self.user, 
-                lastAsked__lt=yesterday,
-            ).exclude(
-                place_id__in = [a.place_id for a in Answer.objects.filter(
-                    user=self.user,
-                    askedDate__gt=minuteAgo
-                )]
-            ).order_by('?')
-
-    def answer(self, a):
-        student = Student.fromUser(self.user)
-        place = Place.objects.get(code = a["code"])
-        answerPlace = Place.objects.get(code = a["answer"]) if "answer" in a and a["answer"] != "" else None
-        answer = Answer(
-            user = student, 
-            place = place,
-            answer = answerPlace,
-            type = a["type"],
-            msResposeTime = a["msResponseTime"] 
-        )
-        answer.save()
-
-        student.points += 1;
-        student.save();
-
-        UsersPlace.addAnswer(answer)
-
 # Create your views here.
 def places(request):
     ps = Place.objects.all().order_by('name')
     response = [{
         'name': u'Státy',
-        'places': []
+        'places': [p.toSerializable() for p in ps]
     }]
-    for p in ps:
-        response[0]['places'].append({
-          'code' : p.code,
-          'name' : p.name
-        })
     return JsonResponse(response)
 
 @allow_lazy_user
@@ -246,8 +133,8 @@ def updateStates_view(request):
 
 def updateStates():
     Place.objects.all().delete()
-    file = open('app-root/runtime/repo/usa.txt')
-    states = file.read()
+    statesFile = open('app-root/runtime/repo/usa.txt')
+    states = statesFile.read()
     ss = states.split("\n")
     for s in ss:
         state = s.split("\t")
