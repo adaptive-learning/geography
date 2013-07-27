@@ -1,5 +1,4 @@
-  <div class="map-container" ng-class="user.username == 'Verunka' && 'vip'">
-    <center>
+  <center class="map-container" ng-class="user.username == 'Verunka' && 'vip'">
     <div class="map-positioner">
       <h1> {{part}}</h1>
       <div id="map-holder">
@@ -8,8 +7,7 @@
     <div class="progress">
       <div class="bar" style="width: {{progress}}%;"></div>
     </div>
-    </center>
-  </div>
+  </center>
   <div id="container" class="span12 well" ui-keypress="{enter: 'next()'}">
       <div ng-show="question == undefined">
 
@@ -23,11 +21,11 @@
           </h2>
           <span class="span7">
           <span ng-show="question.type == PICK_NAME_OF_QUESTION_TYPE">
-              <select class="starters" ng-model="starterLetters" ng-change="openPlacesSelect()" data-placeholder="Počáteční písmeno">
+              <select class="starters select2" ng-model="starterLetters" ng-change="openPlacesSelect()" data-placeholder="Počáteční písmeno">
                 <option ></option>
                 <option ng-repeat="starter in places | starters" value="{{starter}}">{{starter | shorten}}</option>
               </select>
-              <select class="select2" ng-model="select" ng-change="select!='' && check(select)" data-placeholder="Vyber stát">
+              <select class="places select2" ng-model="select" ng-change="select!='' && check(select)" data-placeholder="Vyber stát">
                 <option ></option>
                 <option ng-repeat="place in places | starterLettersFilter : starterLetters" value="{{place.code}}">{{place.name}}</option>
               </select>

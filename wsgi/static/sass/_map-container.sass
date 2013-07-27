@@ -1,0 +1,31 @@
+$blue-top: #73c5ef
+$blue-bottom: #1a82f7
+$map-height:500px
+
+.map-container
+  height: $map-height
+  background-color: $blue-top
+  background: -webkit-linear-gradient(top, $blue-top, $blue-bottom)
+  background: -moz-linear-gradient(top, $blue-top, $blue-bottom)
+  background: -o-linear-gradient(top, $blue-top, $blue-bottom)
+  background: -ms-linear-gradient(top, $blue-top, $blue-bottom)
+  box-shadow: 0px 0px 20px #888
+
+  .map-positioner
+    position: relative
+    display: inline-block
+    height: $map-height
+    width: 700px
+
+    h1
+      position: absolute
+      color: white
+      left: -70px
+      text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.075)
+    .map-holder
+      height: $map-height
+
+    .btn-practice
+      position: absolute
+      bottom: 10px
+      right: 10px
