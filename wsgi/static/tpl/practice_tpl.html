@@ -21,7 +21,7 @@
           </h2>
           <span class="span7">
           <span ng-show="question.type == PICK_NAME_OF_QUESTION_TYPE">
-              <select class="starters select2" ng-model="starterLetters" ng-change="openPlacesSelect()" data-placeholder="Počáteční písmeno">
+              <select class="starters select2" ng-model="starterLetters" ng-change="openPlacesSelect()" data-placeholder="Filtrovat">
                 <option ></option>
                 <option ng-repeat="starter in places | starters" value="{{starter}}">{{starter | shorten}}</option>
               </select>
