@@ -118,9 +118,7 @@ class QuestionService():
             ).order_by('difficulty')[:n]
 
     def getWeakPlaces(self, n):
-        return [up.place for up in self.getReadyUsersPlaces().filter(
-                askedCount__gt=F('correctlyAnsweredCount') * 10 / 9.0,
-            )[:n]]
+        return [up.place for up in self.getReadyUsersPlaces() if up.skill() < 1 ][:n]
 
     def getRandomPlaces(self, n):
         return [up.place for up in self.getReadyUsersPlaces()[:n]]
