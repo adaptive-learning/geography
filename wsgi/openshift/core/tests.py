@@ -5,17 +5,15 @@ when you run "manage.py test".
 Replace this with more appropriate tests for your application.
 """
 
+from core.models import Answer, Place, Student, UsersPlace
+from core.utils import QuestionService
+from datetime import datetime, timedelta
+from django.contrib.auth.models import User
 from django.test import TestCase
 from django.test.client import Client
 from django.utils import simplejson
 
-from django.contrib.auth.models import User
 
-from core.models import Place
-from core.models import Answer 
-from core.models import Student 
-from core.models import UsersPlace 
-from core.views import QuestionService 
 
 
 class UsersPlaceTest(TestCase):
@@ -50,6 +48,26 @@ class UsersPlaceTest(TestCase):
 
         usersPlace.correctlyAnsweredCount += 1
         self.assertEqual(usersPlace.skill(), 1)
+    
+    def testFirstAsked(self):
+        up = self.usersPlace 
+        
+        weekAgo = datetime.now() - timedelta(days=7)
+        
+        answer = Answer(
+            user=up.user,
+            place=up.place,
+            answer=None,
+            type=0,
+            msResposeTime=1000,
+            askedDate=weekAgo,
+        )
+        answer.save()
+        
+        firstAskedDate = up.firstAsked()
+        
+        self.assertEqual(firstAskedDate, weekAgo)
+        
         
 class QuestionServiceTest(TestCase):
 
@@ -78,6 +96,6 @@ class QuestionServiceTest(TestCase):
         self.qs = QuestionService(user)
 
     def testQuestion(self):
-        questions = self.qs.getQuestions(5)
+        questions = self.qs.getQuestions(2)
         self.assertEqual(len(questions), 2)
         self.assertEqual(questions[0]['code'], 'ca')

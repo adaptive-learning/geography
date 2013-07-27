@@ -42,11 +42,7 @@ def users_places(request, part, user=''):
         'places': []
     }]
     for p in ps:
-        response[0]['places'].append({
-          'code' : p.place.code,
-          'name' : p.place.name,
-          'skill' : p.skill(),
-        })
+        response[0]['places'].append(p.toSerializable())
     return JsonResponse(response)
 
 @allow_lazy_user

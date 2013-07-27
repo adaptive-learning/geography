@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from django.contrib.auth.models import User
 from django.db import models
+from django.db.models import Min
 
 class Place(models.Model):
     DIFFICULTY_CONVERSION = 1000000.0
@@ -59,17 +60,24 @@ class UsersPlace(models.Model):
     lastAsked = models.DateTimeField(default=yesterday)
     def skill(self):
         correctlyAnsweredRatio = self.correctlyAnsweredCount / float(self.askedCount)
+        if (correctlyAnsweredRatio == 1):
+            correctlyAnsweredRatio = 2
         notSeenFor = datetime.now() - self.lastAsked
-        if (self.correctlyAnsweredCount > notSeenFor.days):
-            notSeenForRatio = 1
-        elif (self.correctlyAnsweredCount < notSeenFor.days and notSeenFor.days > 0):
-            notSeenForRatio = self.correctlyAnsweredCount / float(notSeenFor.days)
+        knownFor = self.lastAsked - self.firstAsked()
+        if (float(notSeenFor.days) > 0):
+            notSeenForRatio = min(1.2, knownFor.days / float(notSeenFor.days))
         else:
-            notSeenForRatio = 1 
+            notSeenForRatio = 1.2
         skill = correctlyAnsweredRatio * notSeenForRatio
-        # if (self.correctlyAnsweredCount > notSeenFor.days):
-        #    skill = 1
-        return round(skill, 2)
+        skill = min(1,skill)
+        skill = round(skill, 2)
+        return skill
+    
+    def firstAsked(self):
+        return Answer.objects.filter(
+              user=self.user, 
+              place=self.place
+          ).aggregate(Min('askedDate'))['askedDate__min']
 
     @staticmethod
     def fromStudentAndPlace(student, place):
@@ -97,6 +105,13 @@ class UsersPlace(models.Model):
 
     def __unicode__(self):
         return u'user: {0}, place: [{1}]'.format(self.user, self.place)
+    
+    def toSerializable(self):
+        ret = self.place.toSerializable()
+        ret.update({
+          'skill' : self.skill(),
+        })
+        return ret
 
 class Answer(models.Model):
     user = models.ForeignKey(Student)
