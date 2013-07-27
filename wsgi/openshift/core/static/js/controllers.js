@@ -96,11 +96,14 @@ angular.module('myApp.controllers', [])
         if (active.type == $scope.PICK_NAME_OF_QUESTION_TYPE || active.type == $scope.PICK_NAME_OF_OPTIONS_QUESTION_TYPE) {
             $scope.map.blink(active.code);
         }
+        $("select.select2").select2("enable", true)
         $scope.canNext = false;
         $scope.select = undefined;
-        $("select.select2").select2("val", $scope.select);
+        $scope.starterLetters = undefined;
+        $("select.places").select2("val", $scope.select);
+        $("select.starters").select2("val", $scope.starterLetters);
         setTimeout(function() {
-            $("select.select2").select2('focus');
+            $("select.places").select2('focus');
         },100)
     }
 
@@ -115,7 +118,8 @@ angular.module('myApp.controllers', [])
            $scope.highlightOptions(selected);
        }
        $scope.canNext = true;
-       $("select.select2").select2("val", $scope.question.code);
+       $("select.places").select2("val", $scope.question.code);
+       $("select.select2").select2("enable", false)
        if (correct) {
            $scope.$parent.addPoint();
        }
@@ -153,7 +157,7 @@ angular.module('myApp.controllers', [])
     }
     $scope.openPlacesSelect = function() {
         $timeout(function() {
-            $("select.select2").select2("open");
+            $("select.places").select2("open");
         },100);
     }
 
@@ -161,10 +165,11 @@ angular.module('myApp.controllers', [])
         $scope.places = placesTypes[0].places;
         $timeout(function() {
             var format = function(state) {
+            	if (!state) return "";
                 if (!state.id) return state.text; // optgroup
                     return '<i class="flag-'+state.id+'"></i> ' + state.text;
             }
-            $("select.select2").select2({
+            $("select.places").select2({
                 formatResult: format,
                 formatSelection: format,
                 escapeMarkup: function(m) { return m; }

@@ -52,22 +52,23 @@ function initMap(config, callback) {
             map.addLayer('states', bgLayer)
             map.addLayer('states', statesLayer )
 
-            map.addFilter('myglow', 'glow', {
-                size: 1,
-                strength: 1,
-                color: '#000',
-                opacity: 0.2,
-                inner: true
-            });
-            map.getLayer('states').applyFilter('myglow');
-            
-            map.addFilter('oglow', 'glow', {
+            if (!config.click) {
+	            map.addFilter('inner-state-glow', 'glow', {
+	                size: 1,
+	                strength: 1,
+	                color: '#000',
+	                opacity: 0.2,
+	                inner: true
+	            });
+	            map.getLayer('states').applyFilter('inner-state-glow');
+            }
+            map.addFilter('outerglow', 'glow', {
                 size: 4,
                 color: '#333',
                 strength: 2,
                 inner: false
             });
-            map.getLayer('bg').applyFilter('oglow');
+            map.getLayer('bg').applyFilter('outerglow');
 
            /* 
             .addLayer('states', {
