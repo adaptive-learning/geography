@@ -41,6 +41,11 @@ class Student(models.Model):
             student.save()
         return student
     
+    def toSerializable(self):
+        return {
+            'username' : self.user.username,
+            'points' :  self.points,
+        }
 
 def yesterday():
     y = datetime.now() - timedelta(days=1)

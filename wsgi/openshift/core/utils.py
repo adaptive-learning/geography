@@ -2,9 +2,22 @@
 from core.models import Answer, Place, Student, UsersPlace
 from datetime import datetime, timedelta
 from django.db.models import F
+from django.http import HttpResponse
+from django.utils import simplejson
 from random import shuffle, choice
 
 
+class JsonResponse(HttpResponse):
+    """
+        JSON response
+    """
+    def __init__(self, content, mimetype='application/json', status=None, content_type=None):
+        super(JsonResponse, self).__init__(
+            content=simplejson.dumps(content),
+            mimetype=mimetype,
+            status=status,
+            content_type=content_type,
+        )
 
 
 class QuestionType():
