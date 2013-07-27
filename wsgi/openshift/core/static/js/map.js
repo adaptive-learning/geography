@@ -124,14 +124,3 @@ function initMap(config, callback) {
     return myMap; 
 }
 
-function inputKeyUp(e) {
-    e.which = e.which || e.keyCode;
-    if(e.which == 13) {
-        var ngView = $("#ng-view").children().scope();
-        if (!ngView.select && ngView.question && ngView.question.type == 1) {
-            $("select.select2").select2("open");
-        }
-        $('.btn-primary:not([disabled="disabled"])').click();
-    }
-}
-

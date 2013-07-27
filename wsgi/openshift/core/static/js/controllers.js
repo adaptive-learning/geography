@@ -79,31 +79,39 @@ angular.module('myApp.controllers', [])
     question.availableCount($scope.part, function(count) {
         $scope.practiceCount = count;
     })
+    $(".btn-practice").focus()
 
   })
 
   .controller('AppPractice', function($scope, $routeParams, $timeout, $location, places, question) {
+		$scope.FIND_ON_MAP_QUESTION_TYPE = 0;
+		$scope.PICK_NAME_OF_QUESTION_TYPE = 1;
+		$scope.PICK_NAME_OF_OPTIONS_QUESTION_TYPE = 2;
+	
     $scope.part = $routeParams.part;
 
     $scope.setQuestion = function(active) {
         $scope.question = active;
         $scope.map.clearHighlights();
-        if (active.type == 1 ||active.type == 2) {
+        if (active.type == $scope.PICK_NAME_OF_QUESTION_TYPE || active.type == $scope.PICK_NAME_OF_OPTIONS_QUESTION_TYPE) {
             $scope.map.blink(active.code);
         }
         $scope.canNext = false;
         $scope.select = undefined;
         $("select.select2").select2("val", $scope.select);
+        setTimeout(function() {
+            $("select.select2").select2('focus');
+        },100)
     }
 
     $scope.check = function(selected) {
        var correct = (selected == $scope.question.code);
-       console.log(correct)
-       if ($scope.question.type == 1 || $scope.question.type == 2) {
+       console.log($scope.question)
+       if ($scope.question.type == $scope.FIND_ON_MAP_QUESTION_TYPE) {
            $scope.map.highlightState($scope.question.code, GOOD);
        }
        $scope.map.highlightState(selected, correct ? GOOD : BAD);
-       if ($scope.question.type == 2) {
+       if ($scope.question.type == $scope.PICK_NAME_OF_OPTIONS_QUESTION_TYPE) {
            $scope.highlightOptions(selected);
        }
        $scope.canNext = true;
@@ -113,6 +121,9 @@ angular.module('myApp.controllers', [])
        }
        $scope.question.answer = selected;
        $scope.progress = question.answer($scope.question);
+       setTimeout(function() {
+       },100)
+       $("#btn-continue").focus()
     }
 
     $scope.next = function() {
@@ -154,13 +165,11 @@ angular.module('myApp.controllers', [])
                     return '<i class="flag-'+state.id+'"></i> ' + state.text;
             }
             $("select.select2").select2({
-                placeholder: "Vyber stát",
                 formatResult: format,
                 formatSelection: format,
                 escapeMarkup: function(m) { return m; }
             });
             $("select.starters").select2({
-                placeholder: "Počáteční písmeno",
                 width : '100px'
             });
         },100);

@@ -16,24 +16,23 @@
       </div>
       <div ng-show="question != undefined && !showSummary" class="practice">
           <h2><span>{{question.text}} </span>
-              <span class="label" ng-show="question.type == 0">
+              <span class="label" ng-show="question.type == FIND_ON_MAP_QUESTION_TYPE">
                 <i class="flag-{{question.code}}"></i> {{question.place}}
               </span>
               <br class="clearfix">
           </h2>
           <span class="span7">
-          <span ng-show="question.type == 1">
-              <select class="starters" ng-model="starterLetters" ng-change="openPlacesSelect()">
+          <span ng-show="question.type == PICK_NAME_OF_QUESTION_TYPE">
+              <select class="starters" ng-model="starterLetters" ng-change="openPlacesSelect()" data-placeholder="Počáteční písmeno">
                 <option ></option>
                 <option ng-repeat="starter in places | starters" value="{{starter}}">{{starter | shorten}}</option>
               </select>
-              <select class="select2" ng-model="select">
+              <select class="select2" ng-model="select" ng-change="select!='' && check(select)" data-placeholder="Vyber stát">
                 <option ></option>
                 <option ng-repeat="place in places | starterLettersFilter : starterLetters" value="{{place.code}}">{{place.name}}</option>
               </select>
-              <button class="btn btn-large {{canNext || 'btn-primary'}}" ng-click="check(select)" ng-disabled="!select || canNext" >Zkontrolovat</button>
           </span>
-          <span ng-show="question.type == 2">
+          <span ng-show="question.type == PICK_NAME_OF_OPTIONS_QUESTION_TYPE">
               <button ng-repeat="place in question.options"
                 value="{{place.code}}"
                 class="btn btn-large"
@@ -63,7 +62,7 @@
         </div>
         </div>
           <span class="pull-right" >
-              <a class="btn btn-large {{!showSummary || 'btn-primary'}}" href="#/view/{{part}}/" >Pokračovat</a>
+              <a id="btn-continue" class="btn btn-large {{!showSummary || 'btn-primary'}}" href="#/view/{{part}}/" >Pokračovat</a>
           </span>
       </div>
       <div class="clearfix"></div>
