@@ -8,10 +8,11 @@ ul.dropdown-menu.login {
   ul.dropdown-menu.login li {
     margin-right: 10px;
     margin-left: 10px; }
-  ul.dropdown-menu.login .dropdown i.icon-user {
-    opacity: 0.5; }
-  ul.dropdown-menu.login .dropdown:hover i.icon-user, ul.dropdown-menu.login .dropdown.open i.icon-user {
-    opacity: 1; }
+
+.dropdown i.icon-user {
+  opacity: 0.5; }
+.dropdown a:hover i.icon-user, .dropdown a:focus i.icon-user, .dropdown.open i.icon-user {
+  opacity: 1; }
 
 .version {
   border: 0px none currentColor;

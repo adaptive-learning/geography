@@ -1,9 +1,0 @@
-svg .bg {
-  fill: black;
-  stroke-width: 1.5; }
-svg .states {
-  stroke-width: 1;
-  cursor: pointer;
-  fill-opacity: 1; }
-  svg .states:hover {
-    fill-opacity: 0.8; }
