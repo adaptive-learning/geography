@@ -4,7 +4,7 @@ var BAD = "#ff0000";
 var NEUTRAL = "#bbb";
 
 function initMap(config, callback) {
-
+	
     var map = $K.map('#map-holder'); 
 
         var resize = function() {
@@ -22,6 +22,7 @@ function initMap(config, callback) {
     
     map.loadCSS('static/css/map.css', function() {
         map.loadMap('static/img/'+ config.name + '.svg', function() {
+        	var isPracticeView = config.click != undefined;
 
             var bgLayer = {
                 name: 'bg'
@@ -31,7 +32,8 @@ function initMap(config, callback) {
 	            styles : {
 	                'fill' : function(d) { 
 	                    return config.states && config.states[d.name] ? (scale(config.states[d.name].skill).hex()) :'#fff';
-	                    }
+	                    },
+                    'stroke-width' : 1
 	            }
 	        }
             if (config.click) {
@@ -39,7 +41,7 @@ function initMap(config, callback) {
                     config.click(data.name);
                 }
                 statesLayer.click = clickFn 
-                bgLayer.click = clickFn 
+                statesLayer.styles['stroke-width'] = 1.5;
             }
             if (config.showTooltips) {
                 statesLayer.tooltips = function(d) {
@@ -52,7 +54,7 @@ function initMap(config, callback) {
             map.addLayer('states', bgLayer)
             map.addLayer('states', statesLayer )
 
-            if (!config.click) {
+            if (!isPracticeView) {
 	            map.addFilter('inner-state-glow', 'glow', {
 	                size: 1,
 	                strength: 1,
@@ -70,30 +72,10 @@ function initMap(config, callback) {
             });
             map.getLayer('bg').applyFilter('outerglow');
 
-           /* 
-            .addLayer('states', {
-                name: 'bgback'
-            });
-
-            map.addFilter('oglow', 'glow', {
-                size: 10,
-                color: '#988',
-                strength: 1,
-                inner: false
-            });
-            map.getLayer('bgback').applyFilter('oglow');
-            map.addFilter('myglow', 'glow', {
-                size: 20,
-                color: '#945C1B',
-                inner: true
-            });
-            map.getLayer('bg').applyFilter('myglow');
-
-            map.addFilter('myglow', 'glow', { size: 9, color: '#945C1B', inner: true });
-            map.getLayer('bg').applyFilter('myglow');
-            */
             resize();
             callback && callback();
+
+        	$('#map-holder').find(".loading-indicator").hide();
         })
     })
     var myMap = {

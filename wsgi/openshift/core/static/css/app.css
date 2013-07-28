@@ -18,10 +18,17 @@ ul.dropdown-menu.login {
   border: 0px none currentColor;
   left: 0px;
   position: absolute;
-  top: 40px; }
+  top: 40px;
+  z-index: 10; }
 
 .vip {
   background: url(../img/flower_bg.jpg) bottom right; }
+
+.loading-indicator {
+  background: url(../img/ajax-loader.gif) no-repeat center;
+  min-height: 128px;
+  width: 100%;
+  height: 100%; }
 
 .view-places {
   margin: 10px; }
@@ -111,13 +118,16 @@ a#fdbk_tab {
       position: absolute;
       color: white;
       left: -70px;
+      top: 0px;
       text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.075); }
-    .map-container .map-positioner .map-holder {
-      height: 500px; }
-    .map-container .map-positioner .btn-practice {
-      position: absolute;
-      bottom: 10px;
-      right: 10px; }
+  .map-container #map-holder {
+    height: 500px; }
+  .map-container .loading-indicator {
+    background-image: url(../img/map-ajax-loader.gif); }
+  .map-container .btn-practice {
+    position: absolute;
+    bottom: 10px;
+    right: 10px; }
 
 .practice .btn {
   margin-left: 10px;
@@ -159,14 +169,26 @@ a#fdbk_tab {
 
   .map-container {
     margin-top: -20px; }
-
-  .map-positioner h1 {
-    left: 0px;
-    z-index: 200; }
+    .map-container .map-positioner h1 {
+      left: 10px;
+      bottom: -10px;
+      z-index: 20; }
 
   .version {
     display: none; } }
 @media (max-width: 767px) {
   .map-container {
     margin-right: -20px;
-    margin-left: -20px; } }
+    margin-left: -20px;
+    height: auto; }
+    .map-container .map-positioner {
+      height: auto;
+      width: 100%; }
+      .map-container .map-positioner h1 {
+        position: relative;
+        text-align: left;
+        margin-top: -30px;
+        margin-bottom: 10px;
+        margin-right: 150px; }
+      .map-container .map-positioner #map-holder {
+        margin-bottom: 20px; } }

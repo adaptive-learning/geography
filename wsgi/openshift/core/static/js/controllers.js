@@ -56,7 +56,7 @@ angular.module('myApp.controllers', [])
   .controller('AppView', function($scope, $routeParams, usersplaces, question) {
     $scope.part = $routeParams.part;
     $scope.user = $routeParams.user || "";
-    $scope.placesTypes = [];
+    $scope.placesTypes = undefined;
 
     usersplaces($scope.part, $scope.user, function(data) {
         $scope.placesTypes = data;
@@ -84,9 +84,9 @@ angular.module('myApp.controllers', [])
   })
 
   .controller('AppPractice', function($scope, $routeParams, $timeout, $location, places, question) {
-		$scope.FIND_ON_MAP_QUESTION_TYPE = 0;
-		$scope.PICK_NAME_OF_QUESTION_TYPE = 1;
-		$scope.PICK_NAME_OF_OPTIONS_QUESTION_TYPE = 2;
+	$scope.FIND_ON_MAP_QUESTION_TYPE = 0;
+	$scope.PICK_NAME_OF_QUESTION_TYPE = 1;
+	$scope.PICK_NAME_OF_OPTIONS_QUESTION_TYPE = 2;
 	
     $scope.part = $routeParams.part;
 

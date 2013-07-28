@@ -1,16 +1,16 @@
   <center class="map-container" ng-class="user.username == 'Verunka' && 'vip'">
     <div class="map-positioner">
-      <h1> {{part}}</h1>
       <div id="map-holder">
+        <div class="loading-indicator"></div>
       </div>
+      <h1> {{part}}</h1>
     </div>
     <div class="progress">
       <div class="bar" style="width: {{progress}}%;"></div>
     </div>
   </center>
   <div id="container" class="span12 well" ui-keypress="{enter: 'next()'}">
-      <div ng-show="question == undefined">
-
+      <div ng-show="!question && !showSummary" class="loading-indicator">
       </div>
       <div ng-show="question != undefined && !showSummary" class="practice">
           <h2><span>{{question.text}} </span>
