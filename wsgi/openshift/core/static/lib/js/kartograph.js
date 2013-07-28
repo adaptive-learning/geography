@@ -1235,13 +1235,20 @@
         var cfg;
         var bbox = path.svgPath.getBBox()
         var idecko = path.data.fips;
-        $('#map-holder').append("<div id='"+idecko+"' style='position:absolute; width:"
-          +bbox.width+"px; border:0px solid black; height:"
-          +bbox.height+"px; top: "+(bbox.y)+"px; left: "
-          +(bbox.x)+"px'></div>")
+        var offset = $('#map-holder').offset()
+        $('#map-holder').prepend("<div id='"+idecko+"' class='map-label'></div>")
+        var target = $("#" + idecko);
+        //target.html("<span>" + tt[1] + "</span>")
+        target.css({
+        	width: bbox.width+"px",
+        	height: bbox.height+"px",
+        	top: (bbox.y - offset.top/2) + "px",
+        	left: bbox.x+"px",
+        	border: "0px solid black",
+        })
         cfg = {
           position: {
-            target: $("#" + idecko),
+            target: target,
             viewport: $(document),
             adjust: {
               x: -(bbox.width/3),
@@ -1265,7 +1272,7 @@
             cfg.content.text = tt;
           } else if ($.isArray(tt)) {
             cfg.content.title = tt[0];
-            cfg.content.text = tt[1];
+            cfg.content.text = ""//tt[1];
           }
         } else {
           cfg.content.text = 'n/a';

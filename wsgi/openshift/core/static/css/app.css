@@ -121,13 +121,27 @@ a#fdbk_tab {
       top: 0px;
       text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.075); }
   .map-container #map-holder {
-    height: 500px; }
+    height: 500px;
+    position: relative; }
   .map-container .loading-indicator {
     background-image: url(../img/map-ajax-loader.gif); }
   .map-container .btn-practice {
     position: absolute;
     bottom: 10px;
     right: 10px; }
+  .map-container .map-label {
+    position: absolute;
+    vertical-align: middle;
+    display: table; }
+    .map-container .map-label span {
+      font-weight: bold;
+      color: white;
+      text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.075);
+      position: relative;
+      z-index: 10;
+      display: table-cell;
+      vertical-align: middle;
+      line-height: 100%; }
 
 .practice .btn {
   margin-left: 10px;

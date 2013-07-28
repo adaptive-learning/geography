@@ -87,6 +87,7 @@ angular.module('myApp.controllers', [])
 	$scope.FIND_ON_MAP_QUESTION_TYPE = 0;
 	$scope.PICK_NAME_OF_QUESTION_TYPE = 1;
 	$scope.PICK_NAME_OF_OPTIONS_QUESTION_TYPE = 2;
+	$scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE = 3
 	
     $scope.part = $routeParams.part;
 
@@ -95,6 +96,11 @@ angular.module('myApp.controllers', [])
         $scope.map.clearHighlights();
         if (active.type == $scope.PICK_NAME_OF_QUESTION_TYPE || active.type == $scope.PICK_NAME_OF_OPTIONS_QUESTION_TYPE) {
             $scope.map.blink(active.code);
+        }
+        if (active.type == $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE) {
+        	active.options.map(function(option) {
+        		$scope.map.blink(option.code);
+			})
         }
         $("select.select2").select2("enable", true)
         $scope.canNext = false;
@@ -109,8 +115,7 @@ angular.module('myApp.controllers', [])
 
     $scope.check = function(selected) {
        var correct = (selected == $scope.question.code);
-       console.log($scope.question)
-       if ($scope.question.type == $scope.FIND_ON_MAP_QUESTION_TYPE) {
+       if ($scope.isFindOnMapType()) {
            $scope.map.highlightState($scope.question.code, GOOD);
        }
        $scope.map.highlightState(selected, correct ? GOOD : BAD);
@@ -153,8 +158,15 @@ angular.module('myApp.controllers', [])
 			o.disabled = true;
 			return o;
 		})
-    	
+
     }
+    
+    $scope.isFindOnMapType = function() {
+    	return $scope.question &&
+    	       ($scope.question.type == $scope.FIND_ON_MAP_QUESTION_TYPE 
+    	     || $scope.question.type == $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE)
+    }
+    
     $scope.openPlacesSelect = function() {
         $timeout(function() {
             $("select.places").select2("open");
@@ -182,7 +194,7 @@ angular.module('myApp.controllers', [])
         var mapConfig = {
             name : $scope.part.toLowerCase(),
             click : function  (data) {
-                if ($scope.question.type == 0 && !$scope.canNext) {
+                if ($scope.isFindOnMapType() && !$scope.canNext) {
                     $scope.check(data);
                     $scope.$apply();
                 }

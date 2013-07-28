@@ -48,7 +48,7 @@ function initMap(config, callback) {
                     var name = (config.states[d.name] ? '<span class="label">' + '<i class="flag-'+d.name+'"></i> ' + config.states[d.name].name + '</span>' : '<br>Neprozkoumané území<br><br>'); 
                     var description = config.states[d.name] ? '<br><br> Úroveň znalosti: ' + Math.round(100 * config.states[d.name].skill) + '%' : "";
 
-                    return [name + description, ''];
+                    return [name + description, config.states[d.name] ? config.states[d.name].name : ""];
                 }
             }
             map.addLayer('states', bgLayer)

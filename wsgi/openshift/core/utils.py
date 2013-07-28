@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from core.models import Answer, Place, Student, UsersPlace
 from datetime import datetime, timedelta
-from django.db.models import F
 from django.http import HttpResponse
 from django.utils import simplejson
 from random import shuffle, choice
@@ -20,10 +19,11 @@ class JsonResponse(HttpResponse):
         )
 
 
-class QuestionType():
+class QuestionType(object):
     id = 0
     text = ""
     noOfOptions = 0
+    level = 1
     
     @classmethod
     def toSerializable(self):
@@ -43,7 +43,17 @@ class PickNameOfQuestionType(QuestionType):
 class PickNameOfOptionsQuestionType(PickNameOfQuestionType):
     id = 2
     noOfOptions = 4
+    level = 0
 
+class FindOnMapOfOptionsQuestionType(QuestionType):
+    id = 3
+    noOfOptions = 4
+    text = u"Ze čtyř zvýrazněných států na mapě vyber"
+    level = 0
+
+def all_subclasses(cls):
+    return cls.__subclasses__() + [g for s in cls.__subclasses__()
+                                   for g in all_subclasses(s)]
 
 class Question():
     options = []
@@ -73,11 +83,10 @@ class Question():
 
 
 class QuestionService():
-    easyQuestionTypes = [PickNameOfOptionsQuestionType]
-    hardQuestionTypes = [FindOnMapQuestionType, PickNameOfQuestionType]
-
     def __init__(self, user):
         self.user = user
+        self.easyQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 0]
+        self.hardQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 1]
 
     def getQuestions(self, n):
         places = self.getWeakPlaces(n)

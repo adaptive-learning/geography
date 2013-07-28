@@ -14,7 +14,7 @@
       </div>
       <div ng-show="question != undefined && !showSummary" class="practice">
           <h2><span>{{question.text}} </span>
-              <span class="label" ng-show="question.type == FIND_ON_MAP_QUESTION_TYPE">
+              <span class="label" ng-show="isFindOnMapType()">
                 <i class="flag-{{question.code}}"></i> {{question.place}}
               </span>
               <br class="clearfix">
