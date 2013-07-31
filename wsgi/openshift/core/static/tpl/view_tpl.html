@@ -1,5 +1,4 @@
-  <div class="map-container">
-    <center>
+  <center class="map-container">
     <div>
     <div class="map-positioner">
       <div id="map-holder">
@@ -11,9 +10,8 @@
       <!--<a href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" ng-disabled="practiceCount == 0" >Procvičovat ({{practiceCount}})</a>-->
     </div>
     </div>
-    </center>
-  </div>
-  <div id="container" class="span12 well">
+  </center>
+  <div id="container" class="col-10 well">
     <div ng-show="!placesTypes" class="loading-indicator">
     </div>
     <ul class="thumbnails">
@@ -24,8 +22,7 @@
           <span ng-repeat="place in type.places" class="label" ng-class="{'label-inverse': place.highlight}" ng-mouseenter="hover(place.code, true)" ng-mouseleave="hover(place.code, false)">
             <i class="flag-{{place.code}}"></i> {{place.name || place}}
           </span>
-          </br>
-          </br>
+          <div class="clearfix"></div>
           <!--<a href="#/practice/{{part}}/{{type.name}}" class="btn btn-primary" >Procvičovat</a>-->
           </div>
         </div>

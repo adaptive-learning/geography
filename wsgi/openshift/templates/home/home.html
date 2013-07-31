@@ -2,7 +2,7 @@
 <html data-ng-app="myApp" data-ng-controller="AppCtrl">
   <head>
     <meta charset="utf-8">
-    <title>Zeměpis</title>
+    <title>{{ title }}Zeměpis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -29,31 +29,35 @@
 
     <!-- Navbar
     ================================================== -->
+
+
     <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#/">Zeměpis</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li ng-class="{active : !mapData}">
-                <a href="#/">Domů</a>
-              </li>
-            </ul>
-          <div class="pull-right">
-            <ul class="nav ng-cloak">
+
+    <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+      <a class="navbar-brand" href="#">Zeměpis</a>
+      <div class="nav-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav  pull-left">
+                <li ng-class="getActiveClass('/view/')">
+                  <a href="#/view/">Mapa</a>
+                </li>
+        </ul>
+          ...
+            <ul class="nav ng-cloak navbar-nav pull-right">
                 <li class="dropdown" ng-show="user.username == ''">
                   <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Registrovat se <b class="caret"></b></a>
                   <ul class="dropdown-menu login" role="menu" aria-labelledby="drop1">
     <form method="post" action="/convert/" style="margin: 0;">
                     {% csrf_token %}
-                   <li><input id="id_username" type="text" name="username" maxlength="30" placeholder="Uživatelské jméno" class="in" title="Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only" /></li>
-                    <li><input type="password" name="password1" id="id_password1"  placeholder="Heslo"/></li>
-                    <li><input type="password" name="password2" id="id_password2"  placeholder="Heslo Znovu"/> </li>
+                   <li><input id="id_username" type="text" name="username" class="form-control" maxlength="30" placeholder="Uživatelské jméno" class="in" title="Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only" /></li>
+                    <li><input type="password" name="password1" class="form-control" id="id_password1"  placeholder="Heslo"/></li>
+                    <li><input type="password" name="password2" class="form-control" id="id_password2"  placeholder="Heslo Znovu"/> </li>
                     <input type="hidden" name="redirect_to" value="lazysignup_convert_done">
                     <li><button id="login-button" class="btn input-block-level" ng-disabled="username == '' || password == ''">Registrovat se</button></li>
     </form>
@@ -68,8 +72,8 @@
                     <li><span class="signup-facebook btn small"><span class="icon"></span>Sign in with Facebook</span></li>
                     <li class="or-divider"><hr><span>or</span></li>
                     -->
-                    <li><input ng-model="username" name="username" autocomplete="on" type="text" placeholder="Uživatelské jméno" autocomplete-username></li>
-                    <li><input ng-model="password" name="password" autocomplete="on" type="password" placeholder="Heslo" autocomplete-password></li>
+                    <li><input ng-model="username" name="username" class="form-control" autocomplete="on" type="text" placeholder="Uživatelské jméno" autocomplete-username></li>
+                    <li><input ng-model="password" name="password" class="form-control" autocomplete="on" type="password" placeholder="Heslo" autocomplete-password></li>
                     <li id="message" class="login-fail">
                         <div class="alert" ng:class="{true:'elert-success', false:'alert-error'}[loginResponse.success]" ng-show="loginResponse" ng-bind="loginResponse.message"></div>
                     </li>
@@ -93,16 +97,14 @@
                 <a href="#/">Nastavení</a>
               </li>-->
             </ul>
-          </div>
-          </div>
-        </div>
-      </div>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
     </div>
     <!-- Main content
     ================================================== -->
     <!--<a href="feedbackyform.html" id="fdbk_tab" class="fdbk_tab_left ">FEEDBACK</a>-->
   <img class="version" src="static/img/alpha.png" alt="Alfa verze"/>
-    <div data-ng-view id="ng-view" ng-animate="{enter: 'view-enter'}"></div>
+    <div data-ng-view id="ng-view" ng-animate="{enter: 'view-enter'}" ng-class="vip() && 'vip'"></div>
 
 
     <!-- Le javascript

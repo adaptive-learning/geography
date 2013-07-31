@@ -8,13 +8,17 @@ from django.http import HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render_to_response
 from django.utils import simplejson
 from lazysignup.decorators import allow_lazy_user
+from django.conf import settings
 
 
 
 # Create your views here.
 def home(request):
     request.META["CSRF_COOKIE_USED"] = True
-    c = {}
+    title = 'Loc - ' if not settings.ON_OPENSHIFT else ''
+    c = {
+         'title' : title
+    }
     c.update(csrf(request))
     return render_to_response('home/home.html', c)
 

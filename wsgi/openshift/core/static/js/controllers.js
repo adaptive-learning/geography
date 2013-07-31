@@ -3,13 +3,18 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('AppCtrl', function($scope, $rootScope, $http, $cookies, $route) {
+  .controller('AppCtrl', function($scope, $rootScope, $http, $cookies, $route, $location) {
     $rootScope.topScope = $rootScope;
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
-    $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded'
-    $http.get('user/').success(function(data) {
-        $rootScope.user = data;
-    })
+    $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded';
+    	
+    $scope.getUser = function() {
+        $http.get('user/').success(function(data) {
+            $rootScope.user = data;
+        })
+	}
+
+    $scope.getUser();
 
     $('.atooltip').tooltip({"placement" : "bottom"});
     $('.input-tooltip').tooltip({"placement" : "bottom", trigger: "focus"});
@@ -24,7 +29,7 @@ angular.module('myApp.controllers', [])
         event.stopPropagation();
     });
     
-    $('a#fdbk_tab').colorbox();
+    //$('a#fdbk_tab').colorbox();
 
     $rootScope.login = function(){
         var credentials = {
@@ -34,8 +39,9 @@ angular.module('myApp.controllers', [])
         $http.post('user/login/', credentials).success(function(data) {
             $rootScope.loginResponse = data;
             if (data.success) {
-                //$route.reload();
-                document.location.reload(true)
+            	$location.path("/view/")
+            	$scope.getUser();
+                //document.location.reload(true)
             }
         }).error(function(data) {
             $rootScope.loginResponse = {'messgae' : "Přihllášení se nezdařilo"};
@@ -51,6 +57,19 @@ angular.module('myApp.controllers', [])
     $rootScope.addPoint = function(){
         $rootScope.user.points++;
     }
+    
+    $scope.vip = function() {
+        return $scope.user.username == 'Verunka'
+    }
+    
+    $scope.getActiveClass = function(path) {
+        if ($location.path().substr(0, path.length) == path) {
+          return "active"
+        } else {
+          return ""
+        }
+    }
+    
   })
 
   .controller('AppView', function($scope, $routeParams, usersplaces, question) {
@@ -184,7 +203,8 @@ angular.module('myApp.controllers', [])
             $("select.places").select2({
                 formatResult: format,
                 formatSelection: format,
-                escapeMarkup: function(m) { return m; }
+                escapeMarkup: function(m) { return m; },
+                width : '200px'
             });
             $("select.starters").select2({
                 width : '100px'

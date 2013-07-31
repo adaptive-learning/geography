@@ -1,4 +1,4 @@
-  <center class="map-container" ng-class="user.username == 'Verunka' && 'vip'">
+  <center class="map-container">
     <div class="map-positioner">
       <div id="map-holder">
         <div class="loading-indicator"></div>
@@ -9,7 +9,7 @@
       <div class="bar" style="width: {{progress}}%;"></div>
     </div>
   </center>
-  <div id="container" class="span12 well" ui-keypress="{enter: 'next()'}">
+  <div id="container" class="col-10 well" ui-keypress="{enter: 'next()'}">
       <div ng-show="!question && !showSummary" class="loading-indicator">
       </div>
       <div ng-show="question != undefined && !showSummary" class="practice">
@@ -19,7 +19,7 @@
               </span>
               <br class="clearfix">
           </h2>
-          <span class="span7">
+          <span class="col-7">
           <span ng-show="question.type == PICK_NAME_OF_QUESTION_TYPE">
               <select class="starters select2" ng-model="starterLetters" ng-change="openPlacesSelect()" data-placeholder="Filtrovat">
                 <option ></option>
@@ -42,7 +42,7 @@
               </button>
           </span>
           </span>
-          <span class="span4" >
+          <span class="col-4" >
               <button class="btn btn-large" ng-click="check()" ng-disabled="canNext" >Nevím</button>
               <button class="btn btn-large {{!canNext || 'btn-primary'}}" ng-click="next()" ng-disabled="!canNext" >Pokračovat</button>
           </span>
