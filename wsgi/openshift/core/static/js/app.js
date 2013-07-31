@@ -6,10 +6,14 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
 
   .config(function($routeProvider) {
     $routeProvider.when('/', {
-      redirectTo: '/view/USA/'
+      templateUrl : './static/tpl/welcome_page_tpl.html'
+    }).when('/view/', {
+        redirectTo: '/view/USA/'
     }).when('/view/:part/:user', {
       controller : 'AppView',
       templateUrl : './static/tpl/view_tpl.html'
+    }).when('/practice/', {
+        redirectTo: '/practice/USA'
     }).when('/practice/:part', {
       controller : 'AppPractice',
       templateUrl : './static/tpl/practice_tpl.html'
