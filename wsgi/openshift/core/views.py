@@ -17,7 +17,8 @@ def home(request):
     request.META["CSRF_COOKIE_USED"] = True
     title = 'Loc - ' if not settings.ON_OPENSHIFT else ''
     c = {
-         'title' : title
+         'title' : title,
+         'isProduction' : settings.ON_OPENSHIFT,
     }
     c.update(csrf(request))
     return render_to_response('home/home.html', c)
