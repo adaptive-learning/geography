@@ -59,19 +59,24 @@ class UsersPlace(models.Model):
     correctlyAnsweredCount = models.IntegerField(default=0)
     lastAsked = models.DateTimeField(default=yesterday)
     def skill(self):
-        correctlyAnsweredRatio = self.correctlyAnsweredCount / float(self.askedCount)
-        if (correctlyAnsweredRatio == 1):
-            correctlyAnsweredRatio = 2
-        notSeenFor = datetime.now() - self.lastAsked
-        knownFor = self.lastAsked - self.firstAsked()
-        if (float(notSeenFor.days) > 0):
-            notSeenForRatio = min(1.2, knownFor.days / float(notSeenFor.days))
-        else:
-            notSeenForRatio = 1.2
-        skill = correctlyAnsweredRatio * notSeenForRatio
-        skill = min(1,skill)
+        skill = self.correctlyAnsweredCount / float(self.askedCount)
         skill = round(skill, 2)
         return skill
+    
+    def certainty(self):
+        if (self.askedCount < 3):
+            certainty = self.askedCount / 3.0
+        else :
+            notSeenFor = datetime.now() - self.lastAsked
+            knownFor = self.lastAsked - self.firstAsked()
+            if (float(notSeenFor.days) > 0):
+                notSeenForRatio = min(1, 0.9 * knownFor.days / float(notSeenFor.days))
+            else:
+                notSeenForRatio = 1
+                
+            certainty = notSeenForRatio
+        certainty = round(certainty, 2)
+        return certainty
     
     def firstAsked(self):
         return Answer.objects.filter(
@@ -110,6 +115,7 @@ class UsersPlace(models.Model):
         ret = self.place.toSerializable()
         ret.update({
           'skill' : self.skill(),
+          'certainty' : self.certainty(),
         })
         return ret
 

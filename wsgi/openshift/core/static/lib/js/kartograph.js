@@ -1242,7 +1242,7 @@
         target.css({
         	width: bbox.width+"px",
         	height: bbox.height+"px",
-        	top: (bbox.y - offset.top/2) + "px",
+        	top: (bbox.y) + "px",
         	left: bbox.x+"px",
         	border: "0px solid black",
         })

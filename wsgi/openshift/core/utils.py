@@ -127,17 +127,17 @@ class QuestionService():
             ).order_by('difficulty')[:n]
 
     def getWeakPlaces(self, n):
-        return [up.place for up in self.getReadyUsersPlaces() if up.skill() < 1 ][:n]
+        return [up.place for up in self.getReadyUsersPlaces() if up.certainty() < 1 ][:n]
 
     def getRandomPlaces(self, n):
         return [up.place for up in self.getReadyUsersPlaces()[:n]]
 
     def getReadyUsersPlaces(self):
-        yesterday = datetime.now() - timedelta(days=1)
         minuteAgo = datetime.now() - timedelta(seconds=60)
+        twoMinutesAgo = datetime.now() - timedelta(seconds=120)
         return UsersPlace.objects.filter(
                 user=self.user,
-                lastAsked__lt=yesterday,
+                lastAsked__lt=twoMinutesAgo,
             ).exclude(
                 place_id__in=[a.place_id for a in Answer.objects.filter(
                     user=self.user,

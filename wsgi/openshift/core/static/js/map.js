@@ -9,8 +9,8 @@ function initMap(config, callback) {
 
         var resize = function() {
             var c = $('#map-holder');
-            var ratio = map.viewAB.width / map.viewAB.height;
-            c.height( c.width() / ratio );
+            var ratio =  map.viewAB.height / map.viewAB.width;
+            c.width( c.height() / ratio );
             map.resize();
         };
 
@@ -31,7 +31,8 @@ function initMap(config, callback) {
             var statesLayer = { 
 	            styles : {
 	                'fill' : function(d) { 
-	                    return config.states && config.states[d.name] ? (scale(config.states[d.name].skill).hex()) :'#fff';
+	                	var state = config.states && config.states[d.name];
+	                    return state ? (scale(state.skill).brighten((1-state.certainty)*80).hex()) :'#fff';
 	                    },
                     'stroke-width' : 1
 	            }
@@ -45,13 +46,16 @@ function initMap(config, callback) {
             }
             if (config.showTooltips) {
                 statesLayer.tooltips = function(d) {
-                    var name = (config.states[d.name] ? '<span class="label">' + '<i class="flag-'+d.name+'"></i> ' + config.states[d.name].name + '</span>' : '<br>Neprozkoumané území<br><br>'); 
-                    var description = config.states[d.name] ? '<br><br> Úroveň znalosti: ' + Math.round(100 * config.states[d.name].skill) + '%' : "";
+                	var state = config.states && config.states[d.name];
+                    var name = (state ? '<span class="label">' + '<i class="flag-'+d.name+'"></i> ' + state.name + '</span>' : '<br>Neprozkoumané území<br><br>'); 
+                    var description = state ? '<div> <i class="color-indicator" style="background-color:'+scale(state.skill).hex()+'"></i> Znalost: ' + Math.round(100 * state.skill) + '%</div>' : "";
+                    description += (state ? '<div> <i class="color-indicator" style="background-color:'+chroma.color("#000").brighten((1-state.certainty)*130).hex()+'"></i>  Jistota: ' + Math.round(100 * state.certainty) + '%</div> ' : "");
 
                     return [name + description, config.states[d.name] ? config.states[d.name].name : ""];
                 }
             }
             map.addLayer('states', bgLayer)
+            resize();
             map.addLayer('states', statesLayer )
 
             if (!isPracticeView) {
@@ -102,7 +106,13 @@ function initMap(config, callback) {
         clearHighlights : function () {
             var layer = map.getLayer('states');
             layer.style('fill', "#fff");
-        }
+        },
+        updateStates : function(newConfig) {
+        	config = newConfig;
+        	map.getLayer('states').style('fill', function(d) {
+                return config.states && config.states[d.name] ? (scale(config.states[d.name].skill).hex()) :'#fff';
+        	})
+		}
     }
     return myMap; 
 }

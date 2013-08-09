@@ -18,11 +18,16 @@ angular.module('myApp.services', []).
   })
 
   .factory('usersplaces', function($rootScope, $http) {
-
+	var cache = {};
+	
     return function(part, user, fn) {
-        $http.get('usersplaces/' + part + '/' + user).success(function(data) {
+    	var url = 'usersplaces/' + part + '/' + user;
+        $http.get(url).success(function(data) {
+        	cache[url] = data;
             fn(data);
         });
+        console.log(cache[url])
+        return cache[url] || [];
     }
   })
 

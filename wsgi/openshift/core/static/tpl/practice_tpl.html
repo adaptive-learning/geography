@@ -6,7 +6,7 @@
       <h1> {{part}}</h1>
     </div>
     <div class="progress">
-      <div class="bar" style="width: {{progress}}%;"></div>
+      <div class="progress-bar" style="width: {{progress}}%;"></div>
     </div>
   </center>
   <div id="container" class="col-10 well" ui-keypress="{enter: 'next()'}">
@@ -50,11 +50,12 @@
       <div ng-show="showSummary">
         <div>
         <div class="progress" ng-show="summary != undefined">
-          <div class="bar bar-success" style="width: {{summary.correctlyAnsweredRatio | percent }};">Úspěšnost: {{summary.correctlyAnsweredRatio | percent }}</div>
+          <div class="progress-bar progress-bar-success" style="width: {{summary.correctlyAnsweredRatio | percent }};">Úspěšnost: {{summary.correctlyAnsweredRatio | percent }}</div>
+          <div class="progress-bar progress-bar-danger" style="width: {{(1 - summary.correctlyAnsweredRatio) | percent }};"></div>
         </div>
         <h2 ng-show="errorMessage != undefined" ng-bind="errorMessage"></h2>
         <div>
-            <span ng-repeat="q in summary.questions" class="label {{q.code != q.answer && 'label-important' || 'label-success' }} ">
+            <span ng-repeat="q in summary.questions" class="label {{q.code != q.answer && 'label-danger' || 'label-success' }} ">
             <i class="flag-{{q.code}}"></i> {{q.place}}
             </span>
         </div>

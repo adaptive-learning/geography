@@ -59,7 +59,7 @@ angular.module('myApp.controllers', [])
     }
     
     $scope.vip = function() {
-        return $scope.user.username == 'Verunka'
+        return $scope.user && ($scope.user.username == 'Verunka')
     }
     
     $scope.getActiveClass = function(path) {
@@ -82,10 +82,7 @@ angular.module('myApp.controllers', [])
         $scope.$parent.placesTypes = data;
         var places = {};
         angular.forEach(data[0].places, function(place) {
-            places[place.code] = {
-                name : place.name,
-                skill : place.skill
-            }
+            places[place.code] = place;
         });
         var mapConfig = {
             name : $scope.part.toLowerCase(),

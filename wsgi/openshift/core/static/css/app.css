@@ -280,8 +280,7 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   white-space: nowrap;
-  vertical-align: baseline;
-  background-color: #999999; }
+  vertical-align: baseline; }
 
 .label {
   -webkit-border-radius: 3px;
@@ -432,21 +431,23 @@ a#fdbk_tab {
   .map-container .map-positioner {
     position: relative;
     display: inline-block;
-    height: 500px;
-    width: 700px; }
+    height: 500px; }
     .map-container .map-positioner h1 {
       position: absolute;
       left: -70px;
-      top: 0px; }
+      top: 0px;
+      z-index: 6; }
   .map-container #map-holder {
     height: 500px;
-    position: relative; }
+    position: relative;
+    width: 700px; }
   .map-container .loading-indicator {
     background-image: url(../img/map-ajax-loader.gif); }
   .map-container .btn-practice {
     position: absolute;
     bottom: 10px;
-    right: 10px; }
+    right: 10px;
+    z-index: 6; }
   .map-container .map-label {
     position: absolute;
     vertical-align: middle;
@@ -460,6 +461,16 @@ a#fdbk_tab {
       display: table-cell;
       vertical-align: middle;
       line-height: 100%; }
+
+.color-indicator {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-top: 5px;
+  margin-bottom: -5x;
+  margin-left: 3px;
+  border: 1px solid white;
+  border-radius: 3px; }
 
 .practice .btn {
   margin-left: 10px;
@@ -522,4 +533,7 @@ a#fdbk_tab {
         margin-bottom: 10px;
         margin-right: 150px; }
       .map-container .map-positioner #map-holder {
-        margin-bottom: 20px; } }
+        margin-bottom: 20px; }
+
+  .welcome-page p {
+    padding: 10px; } }

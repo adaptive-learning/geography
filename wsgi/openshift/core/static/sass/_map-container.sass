@@ -17,16 +17,17 @@ $map-height:500px
     position: relative
     display: inline-block
     height: $map-height
-    width: 700px
 
     h1
       position: absolute
       left: -70px
       top: 0px
+      z-index: 6
 
   #map-holder
     height: $map-height
     position: relative
+    width: 700px
 
   .loading-indicator
     background-image: url(../img/map-ajax-loader.gif)
@@ -35,6 +36,8 @@ $map-height:500px
     position: absolute
     bottom: 10px
     right: 10px
+    z-index: 6
+
   .map-label
     position: absolute
     vertical-align: middle
@@ -48,3 +51,13 @@ $map-height:500px
       display: table-cell
       vertical-align: middle
       line-height: 100%
+
+.color-indicator
+  display: inline-block
+  width: 16px
+  height: 15px
+  margin-top: 5px
+  margin-bottom: -5x
+  margin-left: 3px
+  border: 1px solid white
+  border-radius: 3px
