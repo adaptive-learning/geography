@@ -64,17 +64,14 @@ class UsersPlace(models.Model):
         return skill
     
     def certainty(self):
-        if (self.askedCount < 3):
-            certainty = self.askedCount / 3.0
-        else :
-            notSeenFor = datetime.now() - self.lastAsked
-            knownFor = self.lastAsked - self.firstAsked()
-            if (float(notSeenFor.days) > 0):
-                notSeenForRatio = min(1, 0.9 * knownFor.days / float(notSeenFor.days))
-            else:
-                notSeenForRatio = 1
-                
-            certainty = notSeenForRatio
+        newCertainty = self.askedCount / 3.0
+        notSeenFor = datetime.now() - self.lastAsked
+        knownFor = self.lastAsked - self.firstAsked()
+        if (float(notSeenFor.days) > 0):
+            notSeenForRatio = min(1, 0.9 * knownFor.days / float(notSeenFor.days))
+        else:
+            notSeenForRatio = 1
+        certainty = min(newCertainty, notSeenForRatio)
         certainty = round(certainty, 2)
         return certainty
     
