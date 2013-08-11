@@ -101,19 +101,21 @@ angular.module('myApp.controllers', [])
 
   .controller('AppPractice', function($scope, $routeParams, $timeout, $location, places, question) {
 	$scope.FIND_ON_MAP_QUESTION_TYPE = 0;
-	$scope.PICK_NAME_OF_QUESTION_TYPE = 1;
-	$scope.PICK_NAME_OF_OPTIONS_QUESTION_TYPE = 2;
-	$scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE = 3
+	$scope.PICK_NAME_OF_6_OPTIONS_QUESTION_TYPE = 1;
+    $scope.PICK_NAME_OF_4_OPTIONS_QUESTION_TYPE = 2;
+    $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE = 3
+    $scope.PICK_NAME_OF_2_OPTIONS_QUESTION_TYPE = 4;
+    $scope.FIND_ON_MAP_OF_2_OPTIONS_QUESTION_TYPE = 5
 	
     $scope.part = $routeParams.part;
 
     $scope.setQuestion = function(active) {
         $scope.question = active;
         $scope.map.clearHighlights();
-        if (active.type == $scope.PICK_NAME_OF_QUESTION_TYPE || active.type == $scope.PICK_NAME_OF_OPTIONS_QUESTION_TYPE) {
+        if ($scope.isPickNameOfType()) {
             $scope.map.blink(active.code);
         }
-        if (active.type == $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE) {
+        if (active.type == $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE || active.type == $scope.FIND_ON_MAP_OF_2_OPTIONS_QUESTION_TYPE) {
         	active.options.map(function(option) {
         		$scope.map.blink(option.code);
 			})
@@ -178,9 +180,17 @@ angular.module('myApp.controllers', [])
     }
     
     $scope.isFindOnMapType = function() {
-    	return $scope.question &&
-    	       ($scope.question.type == $scope.FIND_ON_MAP_QUESTION_TYPE 
-    	     || $scope.question.type == $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE)
+        return $scope.question &&
+               ($scope.question.type == $scope.FIND_ON_MAP_QUESTION_TYPE 
+             || $scope.question.type == $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE
+             || $scope.question.type == $scope.FIND_ON_MAP_OF_2_OPTIONS_QUESTION_TYPE)
+    }
+    
+    $scope.isPickNameOfType = function() {
+        return $scope.question &&
+               ($scope.question.type == $scope.PICK_NAME_OF_6_OPTIONS_QUESTION_TYPE 
+             || $scope.question.type == $scope.PICK_NAME_OF_4_OPTIONS_QUESTION_TYPE
+             || $scope.question.type == $scope.PICK_NAME_OF_2_OPTIONS_QUESTION_TYPE)
     }
     
     $scope.openPlacesSelect = function() {

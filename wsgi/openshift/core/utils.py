@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 from django.http import HttpResponse
 from django.utils import simplejson
 from random import shuffle, choice
+from django.template.defaultfilters import last
 
 
 class JsonResponse(HttpResponse):
@@ -23,7 +24,7 @@ class QuestionType(object):
     id = 0
     text = ""
     noOfOptions = 0
-    level = 1
+    level = 2
     
     @classmethod
     def toSerializable(self):
@@ -39,16 +40,28 @@ class FindOnMapQuestionType(QuestionType):
 class PickNameOfQuestionType(QuestionType):
     id = 1
     text = u"Jak se jmenuje stát zvýrazněný na mapě?"
+    noOfOptions = 6
     
-class PickNameOfOptionsQuestionType(PickNameOfQuestionType):
+class PickNameOf4OptionsQuestionType(PickNameOfQuestionType):
     id = 2
     noOfOptions = 4
-    level = 0
+    level = 1
 
-class FindOnMapOfOptionsQuestionType(QuestionType):
+class FindOnMapOf4OptionsQuestionType(QuestionType):
     id = 3
     noOfOptions = 4
     text = u"Ze čtyř zvýrazněných států na mapě vyber"
+    level = 1
+    
+class PickNameOf2OptionsQuestionType(PickNameOfQuestionType):
+    id = 4
+    noOfOptions = 2
+    level = 0
+
+class FindOnMapOf2OptionsQuestionType(QuestionType):
+    id = 5
+    noOfOptions = 2
+    text = u"Ze dvou zvýrazněných států na mapě vyber"
     level = 0
 
 def all_subclasses(cls):
@@ -78,7 +91,7 @@ class Question():
         for p in ps:
             options.append(p.toSerializable())
         options.append(self.place.toSerializable())
-        shuffle(options)
+        options.sort(key=lambda tup: tup["name"])
         return options
 
 
@@ -86,7 +99,8 @@ class QuestionService():
     def __init__(self, user):
         self.user = user
         self.easyQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 0]
-        self.hardQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 1]
+        self.mediumQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 1]
+        self.hardQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 2]
 
     def getQuestions(self, n):
         places = self.getWeakPlaces(n)
@@ -104,7 +118,12 @@ class QuestionService():
 
     def placesToQuestions(self, places):
         successRate = self.successRate()
-        qTypeLevel = self.hardQuestionTypes if successRate > 0.5 else self.easyQuestionTypes
+        if (successRate > 0.66):
+            qTypeLevel = self.hardQuestionTypes
+        elif (successRate < 0.33):
+            qTypeLevel = self.easyQuestionTypes
+        else:
+            qTypeLevel = self.mediumQuestionTypes
         questions = []
         for place in places:
             qtype = choice(qTypeLevel)
@@ -113,11 +132,15 @@ class QuestionService():
         return questions
 
     def successRate(self):
+        PRIORITY_RATIO = 1.2
         lastAnswers = Answer.objects.filter(
                 user=self.user,
             ).order_by("-askedDate")[:10]
-        correctLastAnswers = [a for a in lastAnswers if a.place == a.answer]
-        successRate = 1.0 * len(correctLastAnswers) / len(lastAnswers)  if len(lastAnswers) > 0 else 0
+        successRate = 0
+        for i in range(len(lastAnswers)):
+            a = lastAnswers[i]
+            thisSuccess = 1 if a.place == a.answer else 0
+            successRate = (successRate * i + thisSuccess * PRIORITY_RATIO) / (i + PRIORITY_RATIO)
         return successRate
                 
 

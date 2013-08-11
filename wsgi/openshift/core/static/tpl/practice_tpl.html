@@ -20,17 +20,7 @@
               <br class="clearfix">
           </h2>
           <span class="col-7">
-          <span ng-show="question.type == PICK_NAME_OF_QUESTION_TYPE">
-              <select class="starters select2" ng-model="starterLetters" ng-change="openPlacesSelect()" data-placeholder="Filtrovat">
-                <option ></option>
-                <option ng-repeat="starter in places | starters" value="{{starter}}">{{starter | shorten}}</option>
-              </select>
-              <select class="places select2" ng-model="select" ng-change="select!='' && check(select)" data-placeholder="Vyber stát">
-                <option ></option>
-                <option ng-repeat="place in places | starterLettersFilter : starterLetters" value="{{place.code}}">{{place.name}}</option>
-              </select>
-          </span>
-          <span ng-show="question.type == PICK_NAME_OF_OPTIONS_QUESTION_TYPE">
+          <span ng-show="isPickNameOfType()">
               <button ng-repeat="place in question.options"
                 value="{{place.code}}"
                 class="btn btn-large"
