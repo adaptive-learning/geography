@@ -20,6 +20,8 @@ function initMap(config, callback) {
 
     var scale = chroma.scale([BAD, "#ff4500", "#ffa500", "#ffff00", GOOD]);
     
+    var statesLayer = {};
+    
     map.loadCSS('static/css/map.css', function() {
         map.loadMap('static/img/'+ config.name + '.svg', function() {
         	var isPracticeView = config.click != undefined;
@@ -28,14 +30,12 @@ function initMap(config, callback) {
                 name: 'bg'
             }
 
-            var statesLayer = { 
-	            styles : {
-	                'fill' : function(d) { 
-	                	var state = config.states && config.states[d.name];
-	                    return state ? (scale(state.skill).brighten((1-state.certainty)*80).hex()) :'#fff';
-	                    },
-                    'stroke-width' : 1
-	            }
+            statesLayer.styles = {
+                'fill' : function(d) { 
+                	var state = config.states && config.states[d.name];
+                    return state ? (scale(state.skill).brighten((1-state.certainty)*80).hex()) :'#fff';
+                    },
+                'stroke-width' : 1
 	        }
             if (config.click) {
                 clickFn = function(data, path, event) {
@@ -107,11 +107,10 @@ function initMap(config, callback) {
             var layer = map.getLayer('states');
             layer.style('fill', "#fff");
         },
-        updateStates : function(newConfig) {
-        	config = newConfig;
-        	map.getLayer('states').style('fill', function(d) {
-                return config.states && config.states[d.name] ? (scale(config.states[d.name].skill).hex()) :'#fff';
-        	})
+        updateStates : function(states) {
+        	config.states = states;
+        	map.getLayer('states').style('fill', statesLayer.styles.fill, 1);
+        	map.getLayer('states').tooltips(statesLayer.tooltips);
 		}
     }
     return myMap; 

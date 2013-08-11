@@ -72,25 +72,25 @@ angular.module('myApp.controllers', [])
     
   })
 
-  .controller('AppView', function($scope, $routeParams, usersplaces, question) {
+  .controller('AppView', function($scope, $routeParams, $filter, usersplaces, question) {
     $scope.part = $routeParams.part;
     $scope.user = $routeParams.user || "";
     $scope.placesTypes = undefined;
 
-    usersplaces($scope.part, $scope.user, function(data) {
+    var mapConfig = {
+        name : $scope.part.toLowerCase(),
+        showTooltips : true,
+        states : []
+    }
+    
+    var places = usersplaces($scope.part, $scope.user, function(data) {
         $scope.placesTypes = data;
         $scope.$parent.placesTypes = data;
-        var places = {};
-        angular.forEach(data[0].places, function(place) {
-            places[place.code] = place;
-        });
-        var mapConfig = {
-            name : $scope.part.toLowerCase(),
-            showTooltips : true,
-            states : places
-        }
-        $scope.map = initMap(mapConfig);
+        var states = $filter("StatesFromPlaces")(data);
+        $scope.map.updateStates(states);
     });
+    mapConfig.states = $filter("StatesFromPlaces")(places);
+    $scope.map = initMap(mapConfig);
 
     question.availableCount($scope.part, function(count) {
         $scope.practiceCount = count;
@@ -148,9 +148,9 @@ angular.module('myApp.controllers', [])
        }
        $scope.question.answer = selected;
        $scope.progress = question.answer($scope.question);
-       setTimeout(function() {
+       $timeout(function(){
+        $(".btn-continue").focus()
        },100)
-       $("#btn-continue").focus()
     }
 
     $scope.next = function() {

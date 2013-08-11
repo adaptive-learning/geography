@@ -56,4 +56,16 @@ angular.module('myApp.filters', []).
       var n = n || 0;
       return Math.round(100 * n) + '%';
     }
+  })
+  
+  .filter('StatesFromPlaces', function() {
+    return function(data) {
+        var places = {};
+        if (data[0] && data[0].places) {
+            angular.forEach(data[0].places, function(place) {
+                places[place.code] = place;
+            });
+        }
+        return places;
+    }
   });
