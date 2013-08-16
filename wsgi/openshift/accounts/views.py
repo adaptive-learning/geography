@@ -2,62 +2,64 @@
 
 from core.models import Student
 from core.utils import JsonResponse
-from django.contrib.auth import authenticate, login, logout
-from django.utils import simplejson
-from lazysignup.decorators import allow_lazy_user
-from lazysignup.utils import is_lazy_user
-
+from lazysignup.models import LazyUser
+from django.contrib.auth import logout
+from django.contrib.auth.models import User
 
 # Create your views here.
 
 
-@allow_lazy_user
 def user_list_view(request):
     students = Student.objects.all()
     response = [s.toSerializable() for s in students if not is_lazy_user(s.user)]
     return JsonResponse(response)
     
-@allow_lazy_user
 def user_view(request):
     student = Student.fromUser(request.user)
-    isRegistredUser = not is_lazy_user(request.user)
-    username = student.user.username if isRegistredUser else ''
+    if(is_lazy_user(request.user) and request.user.first_name != '' and request.user.last_name != ''):
+        convert_lazy_user(request.user)
+    username = student.user.username if student != None and not is_lazy_user(request.user) else ''
+    points = student.points if student != None else 0
     response = {
         'username' : username,
-        'points' :  student.points,
+        'points' :  points ,
     }
     return JsonResponse(response)
 
-def login_view(request):
-    if (request.raw_post_data != ""):
-        credentials = simplejson.loads(request.raw_post_data)
-        user = authenticate(
-            username=credentials["username"],
-            password=credentials["password"],
-        )
-        if user is not None:
-            if user.is_active:
-                login(request, user)
-                # Redirect to a success page.
-                response = {
-                    'success' : True,
-                    'message' : 'Uživatel {0} byl přihlášen'.format(user.username)
-                    }
-            else:
-                # Return a 'disabled account' error message
-                response = {
-                    'success' : False,
-                    'message' : 'Přihlašovací údaje jsou správné, ale účet je zablokován'
-                }
-        else:
-            # Return an 'invalid login' error message.
-            response = {
-                'success' : False,
-                'message' : 'Nesprávné uživatelské jméno nebo heslo.'
-            }
-    return JsonResponse(response)
-    
 def logout_view(request):
     logout(request)
     return user_view(request)
+
+def convert_lazy_user(user):
+    LazyUser.objects.filter(user=user).delete()
+    user.username = get_unused_username(user)
+    user.save()
+
+def get_unused_username(user):
+    condition = True
+    append = ""
+    i = 2
+    while condition:
+        username = user.first_name + user.last_name + append;
+        condition = username_present(username)
+        append = '{0}'.format(i)
+        i = i+1
+    return username
+
+def username_present(username):
+    if User.objects.filter(username=username).count():
+        return True
     
+    return False
+
+def is_lazy_user(user):
+    """ Return True if the passed user is a lazy user. """
+    # Anonymous users are not lazy.
+    if user.is_anonymous():
+        return False
+
+    if len(user.username) != 30 :
+        return False
+
+    # Otherwise, we have to fall back to checking the database.
+    return bool(LazyUser.objects.filter(user=user).count() > 0)

@@ -2,8 +2,10 @@
 # Django settings for openshift project.
 import imp, os
 
-import os
-import sys
+try:
+    from local_settings import *
+except ImportError:
+    pass
 
 # a setting to determine whether we are running on OpenShift
 ON_OPENSHIFT = False
@@ -168,6 +170,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     #'south',
+    'social_auth',
     'lazysignup',
     'core',
 )
@@ -198,4 +201,13 @@ LOGGING = {
 AUTHENTICATION_BACKENDS = (
   'django.contrib.auth.backends.ModelBackend',
   'lazysignup.backends.LazySignupBackend',
+  'social_auth.backends.twitter.TwitterBackend',
+  'social_auth.backends.facebook.FacebookBackend',
+  'social_auth.backends.google.GoogleOAuthBackend',
+  'social_auth.backends.google.GoogleOAuth2Backend',
+  'social_auth.backends.google.GoogleBackend',
 )
+
+LOGIN_REDIRECT_URL = '/#/view/'
+
+SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'

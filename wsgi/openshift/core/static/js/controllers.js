@@ -17,38 +17,13 @@ angular.module('myApp.controllers', [])
     $scope.getUser();
 
     $('.atooltip').tooltip({"placement" : "bottom"});
-    $('.input-tooltip').tooltip({"placement" : "bottom", trigger: "focus"});
-    $('.dropdown-menu li input').click(function(event){
-        // hack to prevent login dropdown from premature closing on mobile platforms
-        var dropdown = $(this).parents('ul.dropdown-menu')
-        setTimeout(function(){
-            if (!dropdown.is(":visible")) {
-            	dropdown.css("display", "block");
-            }
-        },200);
-        event.stopPropagation();
-    });
-    
     //$('a#fdbk_tab').colorbox();
 
-    $rootScope.login = function(){
-        var credentials = {
-            'username' : $scope.getUsername ? $scope.getUsername() : $scope.username,
-            'password' : $scope.getPassword ? $scope.getPassword() : $scope.password
-        }
-        $http.post('user/login/', credentials).success(function(data) {
-            $rootScope.loginResponse = data;
-            if (data.success) {
-            	$location.path("/view/")
-            	$scope.getUser();
-                //document.location.reload(true)
-            }
-        }).error(function(data) {
-            $rootScope.loginResponse = {'messgae' : "Přihllášení se nezdařilo"};
-        });
-    }
-
     $rootScope.logout = function(){
+        $rootScope.user = {
+            'username' : '',
+            'points' :  0 
+        }
         $http.get('user/logout/').success(function(data) {
             $rootScope.user = data;
         })
@@ -137,7 +112,7 @@ angular.module('myApp.controllers', [])
            $scope.map.highlightState($scope.question.code, GOOD);
        }
        $scope.map.highlightState(selected, correct ? GOOD : BAD);
-       if ($scope.question.type == $scope.PICK_NAME_OF_OPTIONS_QUESTION_TYPE) {
+       if ($scope.isPickNameOfType()) {
            $scope.highlightOptions(selected);
        }
        $scope.canNext = true;

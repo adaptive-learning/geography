@@ -65,7 +65,7 @@ class UsersPlace(models.Model):
     
     def certainty(self):
         newCertainty = self.askedCount / 3.0
-        notSeenFor = datetime.now() - self.lastAsked
+        notSeenFor = datetime.now() - max(self.lastAsked, datetime.now()) 
         knownFor = self.lastAsked - self.firstAsked()
         if (float(notSeenFor.days) > 0):
             notSeenForRatio = min(1, 0.9 * knownFor.days / float(notSeenFor.days))

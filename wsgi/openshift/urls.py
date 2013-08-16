@@ -9,6 +9,8 @@ from core import views
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', views.home, name='home'),
+    
+    url(r'', include('social_auth.urls')),
     # url(r'^openshift/', include('openshift.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

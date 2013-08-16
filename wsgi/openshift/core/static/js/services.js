@@ -26,7 +26,6 @@ angular.module('myApp.services', []).
         	cache[url] = data;
             fn(data);
         });
-        console.log(cache[url])
         return cache[url] || [];
     }
   })

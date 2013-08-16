@@ -3,8 +3,7 @@ from core.models import Answer, Place, Student, UsersPlace
 from datetime import datetime, timedelta
 from django.http import HttpResponse
 from django.utils import simplejson
-from random import shuffle, choice
-from django.template.defaultfilters import last
+from random import  choice
 
 
 class JsonResponse(HttpResponse):

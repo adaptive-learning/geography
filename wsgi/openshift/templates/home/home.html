@@ -25,7 +25,6 @@
 
     <!-- Le styles -->
     <link href="static/lib/css/bootstrap.css" rel="stylesheet">
-    <link href="static/lib/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="static/lib/css/flags.css" rel="stylesheet">
     <link href="static/lib/select2/select2.css" rel="stylesheet">
     <link href="static/lib/css/colorbox.css" rel="stylesheet">
@@ -67,37 +66,10 @@
           ...
             <ul class="nav ng-cloak navbar-nav pull-right">
                 <li class="dropdown" ng-show="user.username == ''">
-                  <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Registrovat se <b class="caret"></b></a>
-                  <ul class="dropdown-menu login" role="menu" aria-labelledby="drop1">
-    <form method="post" action="/convert/" style="margin: 0;">
-                    {% csrf_token %}
-                   <li><input id="id_username" type="text" name="username" class="form-control" maxlength="30" placeholder="Uživatelské jméno" class="in" title="Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only" /></li>
-                    <li><input type="password" name="password1" class="form-control" id="id_password1"  placeholder="Heslo"/></li>
-                    <li><input type="password" name="password2" class="form-control" id="id_password2"  placeholder="Heslo Znovu"/> </li>
-                    <input type="hidden" name="redirect_to" value="lazysignup_convert_done">
-                    <li><button id="login-button" class="btn input-block-level" ng-disabled="username == '' || password == ''">Registrovat se</button></li>
-    </form>
-                  </ul>
-                </li>
-                <li class="dropdown" ng-show="user.username == ''">
                   <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Přihlásit se <b class="caret"></b></a>
                   <ul class="dropdown-menu login" role="menu" aria-labelledby="drop1">
-            <form id="login-form" style="margin: 0;" accept-charset="utf-8" method="post" ng-submit="login()">
-                    <!--
-                    <li><span data-gapiattached="true" class="signup-gplus btn small" id="gplusSignIn"><span class="icon"></span>Sign in with Google</span></li>
-                    <li><span class="signup-facebook btn small"><span class="icon"></span>Sign in with Facebook</span></li>
-                    <li class="or-divider"><hr><span>or</span></li>
-                    -->
-                    <li><input ng-model="username" name="username" class="form-control" autocomplete="on" type="text" placeholder="Uživatelské jméno" autocomplete-username></li>
-                    <li><input ng-model="password" name="password" class="form-control" autocomplete="on" type="password" placeholder="Heslo" autocomplete-password></li>
-                    <li id="message" class="login-fail">
-                        <div class="alert" ng:class="{true:'elert-success', false:'alert-error'}[loginResponse.success]" ng-show="loginResponse" ng-bind="loginResponse.message"></div>
-                    </li>
-                    <li><button id="login-button" class="btn input-block-level" ng-disabled="username == '' || password == ''">Přihlásit se</button></li>
-                    <!--
-                    <li class="forgot-pwd"><a href="/#/forgot_password">Forgot password</a></li>
-                    -->
-            </form>
+                    <li><a class="btn btn-danger btn-large" href="/login/google/"><i class="social-google"></i> přes Google</a></li>
+                    <li><a class="btn btn-primary btn-large" href="/login/facebook/"><i class="social-facebook"></i> přes Facebook</a></li>
                   </ul>
                 </li>
                 <li class="dropdown" ng-show="user.username != ''">
