@@ -11,6 +11,8 @@
     display: none
 
 @media (max-width: 767px)
+  body
+    padding-top: 0px
   .map-container
     height: auto
     .map-positioner
@@ -27,3 +29,34 @@
   .welcome-page
     p
       padding: 10px
+  .navbar
+    margin-bottom: 0px
+    
+  .welcome-page
+    h1
+      font-size: 2em
+      margin-top: 0px
+      padding-top: 10px
+    p
+      font-size: 0.65em
+      padding: 5px
+    .main-paragraph
+      font-size: 1em
+  .jumbotron 
+    padding: 0px
+  h2
+    font-size: 16px
+  .well
+    padding: 0px
+  .map-container
+    #map-holder
+      width: 100%
+    
+@media (min-width: 767px)
+  $huge-radius: 9px
+  .btn-huge
+    padding: 21px 29px
+    font-size: 27.5px
+    -webkit-border-radius: $huge-radius
+    -moz-border-radius: $huge-radius
+    border-radius: $huge-radius

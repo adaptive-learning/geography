@@ -9,6 +9,9 @@ body
 h1, h2, h3
   font-weight: bold
 
+ul
+  padding: 0px
+
 ul.dropdown-menu.login
   padding-top: 10px
   li
@@ -133,11 +136,12 @@ a#fdbk_tab
     float: none
   .main-paragraph
     font-size: 1.25em
-
-$huge-radius: 9px
-.btn-huge
-  padding: 21px 29px
-  font-size: 27.5px
-  -webkit-border-radius: $huge-radius
-  -moz-border-radius: $huge-radius
-  border-radius: $huge-radius
+    
+@media (min-width: 767px)
+  $huge-radius: 9px
+  .btn-huge
+    padding: 21px 29px
+    font-size: 27.5px
+    -webkit-border-radius: $huge-radius
+    -moz-border-radius: $huge-radius
+    border-radius: $huge-radius

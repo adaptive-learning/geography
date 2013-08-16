@@ -173,6 +173,12 @@ angular.module('myApp.controllers', [])
             $("select.places").select2("open");
         },100);
     }
+    
+    $scope.isAllowedOpion = function(code) {
+        return !$scope.question.options || 1 == $scope.question.options.filter(function(place){
+            return place.code == code;
+        }).length
+    }
 
     places($scope.part, function(placesTypes) {
         $scope.places = placesTypes[0].places;
@@ -195,9 +201,9 @@ angular.module('myApp.controllers', [])
 
         var mapConfig = {
             name : $scope.part.toLowerCase(),
-            click : function  (data) {
-                if ($scope.isFindOnMapType() && !$scope.canNext) {
-                    $scope.check(data);
+            click : function  (code) {
+                if ($scope.isFindOnMapType() && !$scope.canNext && $scope.isAllowedOpion(code)) {
+                    $scope.check(code);
                     $scope.$apply();
                 }
             }

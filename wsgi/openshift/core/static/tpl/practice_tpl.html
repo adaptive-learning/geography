@@ -9,7 +9,7 @@
       <div class="progress-bar" style="width: {{progress}}%;"></div>
     </div>
   </center>
-  <div id="container" class="col-10 well" ui-keypress="{enter: 'next()'}">
+  <div id="container" class="col-sm-11 well" ui-keypress="{enter: 'next()'}">
       <div ng-show="!question && !showSummary" class="loading-indicator">
       </div>
       <div ng-show="question != undefined && !showSummary" class="practice">
@@ -19,7 +19,7 @@
               </span>
               <br class="clearfix">
           </h2>
-          <span class="col-7">
+          <span class="col-sm-7">
           <span ng-show="isPickNameOfType()">
               <button ng-repeat="place in question.options"
                 value="{{place.code}}"
@@ -32,7 +32,7 @@
               </button>
           </span>
           </span>
-          <span class="col-4" >
+          <span class="col-sm-5" >
               <button class="btn btn-large" ng-click="check()" ng-disabled="canNext" >Nevím</button>
               <button class="btn btn-large {{!canNext || 'btn-primary'}}" ng-click="next()" ng-disabled="!canNext" >Pokračovat</button>
           </span>
