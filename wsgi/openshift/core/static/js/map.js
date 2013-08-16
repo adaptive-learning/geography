@@ -11,6 +11,10 @@ function initMap(config, callback) {
             var c = $('#map-holder');
             var ratio =  map.viewAB.height / map.viewAB.width;
             c.width( c.height() / ratio );
+            if (c.width() > $(window).width()) {
+                c.width( $(window).width());
+                c.height(ratio * c.width());
+            }
             map.resize();
         };
 
