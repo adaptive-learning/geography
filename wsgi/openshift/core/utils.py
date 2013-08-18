@@ -73,7 +73,7 @@ class Question():
         self.place = place
         self.qtype = qtype
         if (qtype.noOfOptions != 0) :
-            self.options = self.getOptions()
+            self.options = self.getOptions(self.qtype.noOfOptions)
         
     def toSerializable(self):
         ret = self.qtype.toSerializable()
@@ -84,14 +84,27 @@ class Question():
             ret["options"] = self.options
         return ret
 
-    def getOptions(self):
-        options = []
-        ps = Place.objects.exclude(id=self.place.id).order_by('?')[:self.qtype.noOfOptions - 1]
-        for p in ps:
-            options.append(p.toSerializable())
-        options.append(self.place.toSerializable())
+    def getOptions(self, n):
+        ps = [self.place]
+        if self.qtype.level == 0 :
+            ps += self.getEasyOptions(n -1)
+        elif self.qtype.level == 2 :
+            ps += self.getHardOptions(n -1)
+        remains = n - len(ps) 
+        if (remains > 0):
+            ps += self.getRandomOptions(remains -1)
+        options = [p.toSerializable() for p in ps]
         options.sort(key=lambda tup: tup["name"])
         return options
+    
+    def getEasyOptions(self, n):
+        return Place.objects.filter(difficulty__lt=self.place.difficulty).order_by('?')[:n]
+        
+    def getRandomOptions(self, n):
+        return Place.objects.exclude(id=self.place.id).order_by('?')[:n]
+        
+    def getHardOptions(self, n):
+        return Place.objects.exclude(id=self.place.id).order_by('?')[:n]
 
 
 class QuestionService():
