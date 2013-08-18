@@ -2,23 +2,24 @@
 var GOOD = "#0d0";
 var BAD = "#ff0000";
 var NEUTRAL = "#bbb";
+var HOLDER = '#map-holder';
 
 function initMap(config, callback) {
-	
-    var map = $K.map('#map-holder'); 
 
-        var resize = function() {
-            var c = $('#map-holder');
-            var ratio =  map.viewAB.height / map.viewAB.width;
-            c.width( c.height() / ratio );
-            if (c.width() > $(window).width()) {
-                c.width( $(window).width());
-                c.height(ratio * c.width());
-            }
-            map.resize();
-        };
+    var map = $K.map(HOLDER); 
 
-        $(window).resize(resize);
+    var resize = function() {
+        var c = $(HOLDER);
+        var ratio =  map.viewAB.height / map.viewAB.width;
+        c.width( c.height() / ratio );
+        if (c.width() > $(window).width()) {
+            c.width( $(window).width());
+            c.height(ratio * c.width());
+        }
+        map.resize();
+    };
+
+    $(window).resize(resize);
 
     $.fn.qtip.defaults.style.classes = 'qtip-dark';
 
@@ -58,7 +59,18 @@ function initMap(config, callback) {
                     return [name + description, config.states[d.name] ? config.states[d.name].name : ""];
                 }
             }
-            map.addLayer('states', bgLayer)
+            
+            if (767 < $(window).width()) {
+                map.addLayer('states', bgLayer)
+                map.addFilter('outerglow', 'glow', {
+                    size: 4,
+                    color: '#333',
+                    strength: 2,
+                    inner: false
+                });
+                map.getLayer('bg').applyFilter('outerglow');
+            }
+            
             resize();
             map.addLayer('states', statesLayer )
 
@@ -72,14 +84,6 @@ function initMap(config, callback) {
 	            });
 	            map.getLayer('states').applyFilter('inner-state-glow');
             }
-            map.addFilter('outerglow', 'glow', {
-                size: 4,
-                color: '#333',
-                strength: 2,
-                inner: false
-            });
-            map.getLayer('bg').applyFilter('outerglow');
-
             resize();
             callback && callback();
 
@@ -119,4 +123,3 @@ function initMap(config, callback) {
     }
     return myMap; 
 }
-
