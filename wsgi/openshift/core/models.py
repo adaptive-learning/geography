@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import Min
 
+
 class Place(models.Model):
     DIFFICULTY_CONVERSION = 1000000.0
     code = models.CharField(max_length=10)
@@ -17,24 +18,17 @@ class Place(models.Model):
         difficulty = sum(skills) / len(skills) if len(skills) > 0 else 0.5
         self.difficulty = int((1 - difficulty) * Place.DIFFICULTY_CONVERSION)
         self.save()
-    def toSerializable(self):
+    def to_serializable(self):
         return {
           'code' : self.code,
           'name' : self.name
         }
 
-
-class Student(models.Model):
-    user = models.OneToOneField(User, primary_key=True)
-    points = models.IntegerField(default=0)
-    skill = models.IntegerField(default=0)
-    def __unicode__(self):
-        return self.user.username
-    @staticmethod
-    def fromUser(user):
+class StudentManager(models.Manager):
+    def fromUser(self, user):
         try:
             user = User.objects.get(username=user.username)
-            student = Student.objects.get(user=user)
+            student = self.get(user=user)
         except User.DoesNotExist:
             student = None
         except Student.DoesNotExist:
@@ -42,7 +36,17 @@ class Student(models.Model):
             student.save()
         return student
     
-    def toSerializable(self):
+
+class Student(models.Model):
+    user = models.OneToOneField(User, primary_key=True)
+    points = models.IntegerField(default=0)
+    skill = models.IntegerField(default=0)
+    objects = StudentManager()
+    
+    def __unicode__(self):
+        return self.user.username
+
+    def to_serializable(self):
         return {
             'username' : self.user.username,
             'points' :  self.points,
@@ -52,12 +56,29 @@ def yesterday():
     y = datetime.now() - timedelta(days=1)
     return y
 
+class UsersPlaceManager(models.Manager):
+    def fromStudentAndPlace(self, student, place):
+        try:
+            usersPlace = UsersPlace.objects.get(user=student, place=place)
+        except UsersPlace.DoesNotExist:
+            usersPlace = UsersPlace(
+                user=student,
+                place=place,
+            )
+        return usersPlace 
+
+    def addAnswer(self, a):
+        usersPlace = self.fromStudentAndPlace(a.user, a.place)
+        usersPlace._addAnswer(a)
+
 class UsersPlace(models.Model):
     user = models.ForeignKey(Student)
     place = models.ForeignKey(Place)
     askedCount = models.IntegerField(default=0)
     correctlyAnsweredCount = models.IntegerField(default=0)
     lastAsked = models.DateTimeField(default=yesterday)
+    objects = UsersPlaceManager()
+    
     def skill(self):
         skill = self.correctlyAnsweredCount / float(self.askedCount)
         skill = round(skill, 2)
@@ -77,25 +98,9 @@ class UsersPlace(models.Model):
     
     def firstAsked(self):
         return Answer.objects.filter(
-              user=self.user, 
+              user=self.user,
               place=self.place
           ).aggregate(Min('askedDate'))['askedDate__min']
-
-    @staticmethod
-    def fromStudentAndPlace(student, place):
-        try:
-            usersPlace = UsersPlace.objects.get(user=student, place=place)
-        except UsersPlace.DoesNotExist:
-            usersPlace = UsersPlace(
-                user=student,
-                place=place,
-            )
-        return usersPlace 
-
-    @staticmethod
-    def addAnswer(a):
-        usersPlace = UsersPlace.fromStudentAndPlace(a.user, a.place)
-        usersPlace._addAnswer(a)
 
     def _addAnswer(self, a):
         self.askedCount += 1
@@ -108,13 +113,14 @@ class UsersPlace(models.Model):
     def __unicode__(self):
         return u'user: {0}, place: [{1}]'.format(self.user, self.place)
     
-    def toSerializable(self):
-        ret = self.place.toSerializable()
+    def to_serializable(self):
+        ret = self.place.to_serializable()
         ret.update({
           'skill' : self.skill(),
           'certainty' : self.certainty(),
         })
         return ret
+    
 
 class Answer(models.Model):
     user = models.ForeignKey(Student)
@@ -123,6 +129,38 @@ class Answer(models.Model):
     type = models.IntegerField()
     askedDate = models.DateTimeField(default=datetime.now)
     msResposeTime = models.IntegerField(default=0)
+    
     def __unicode__(self):
         return u'user: {0}, requested: {1}, answered: {2}, correct: {3}'.format(self.user, self.place, self.answer, self.place == self.answer)
+    class Meta:
+        ordering = ["-askedDate"]
 
+
+class Map(models.Model):
+    name = models.CharField(max_length=100)
+    places = models.ManyToManyField(Place)
+
+class ConfusedPlacesManager(models.Manager):
+    def was_confused(self, askedPlace, answeredPlace):
+        if answeredPlace == None:
+            return
+        try:
+            confused = self.get(asked=askedPlace, confused_with=answeredPlace)
+        except ConfusedPlaces.DoesNotExist:
+            confused = ConfusedPlaces(
+                  asked=askedPlace,
+                  confused_with=answeredPlace,
+            )
+        confused.level_of_cofusion += 1
+        confused.save()
+
+    def get_similar_to(self, place):
+        return [c.confused_with for c in self.filter(asked=place)]
+
+class ConfusedPlaces(models.Model):
+    asked = models.ForeignKey(Place, related_name='asked_id')
+    confused_with = models.ForeignKey(Place, related_name='confused_with_id')
+    level_of_cofusion = models.IntegerField(default=0)
+    objects = ConfusedPlacesManager()
+    class Meta:
+        ordering = ["-level_of_cofusion"]

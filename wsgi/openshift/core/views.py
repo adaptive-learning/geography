@@ -27,11 +27,10 @@ def places(request):
     ps = Place.objects.all().order_by('name')
     response = [{
         'name': u'Státy',
-        'places': [p.toSerializable() for p in ps]
+        'places': [p.to_serializable() for p in ps]
     }]
     return JsonResponse(response)
 
-@allow_lazy_user
 def users_places(request, part, user=''):
     if (user == ''):
         user = request.user
@@ -40,14 +39,18 @@ def users_places(request, part, user=''):
             user = User.objects.get(username=user)
         except User.DoesNotExist:
             raise HttpResponseBadRequest("Invalid username: {0}" % user)
-    student = Student.fromUser(user)
-    ps = UsersPlace.objects.filter(user=student)
+        
+    if request.user.is_authenticated():
+        student = Student.objects.fromUser(user)
+        ps = UsersPlace.objects.filter(user=student)
+    else:
+        ps =[]
     response = [{
         'name': u'Státy',
         'places': []
     }]
     for p in ps:
-        response[0]['places'].append(p.toSerializable())
+        response[0]['places'].append(p.to_serializable())
     return JsonResponse(response)
 
 @allow_lazy_user
@@ -58,9 +61,9 @@ def question(request):
         answer = simplejson.loads(request.raw_post_data)
         questionIndex = answer['index'] + 1
         qs.answer(answer);
-    noOfQuestions = 5 if Student.fromUser(request.user).points < 10 else 10
+    noOfQuestions = 5 if Student.objects.fromUser(request.user).points < 10 else 10
     noOfQuestions -= questionIndex
-    response = qs.getQuestions(noOfQuestions)
+    response = qs.get_questions(noOfQuestions)
     return JsonResponse(response)
 
 def updateStates_view(request):

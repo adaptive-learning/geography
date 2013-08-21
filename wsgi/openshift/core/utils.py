@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from core.models import Answer, Place, Student, UsersPlace
+from core.models import Answer, Place, Student, UsersPlace, ConfusedPlaces
 from datetime import datetime, timedelta
 from django.http import HttpResponse
 from django.utils import simplejson
@@ -26,7 +26,7 @@ class QuestionType(object):
     level = 2
     
     @classmethod
-    def toSerializable(self):
+    def to_serializable(self):
         return {
             'type' : self.id,
             'text' : self.text,
@@ -73,38 +73,38 @@ class Question():
         self.place = place
         self.qtype = qtype
         if (qtype.noOfOptions != 0) :
-            self.options = self.getOptions(self.qtype.noOfOptions)
+            self.options = self.get_options(self.qtype.noOfOptions)
         
-    def toSerializable(self):
-        ret = self.qtype.toSerializable()
-        ret.update(self.place.toSerializable())
+    def to_serializable(self):
+        ret = self.qtype.to_serializable()
+        ret.update(self.place.to_serializable())
         ret["place"] = ret["name"]
         ret.pop("name")
         if (self.options != []):
             ret["options"] = self.options
         return ret
 
-    def getOptions(self, n):
+    def get_options(self, n):
         ps = [self.place]
         if self.qtype.level == 0 :
-            ps += self.getEasyOptions(n -1)
+            ps += self.get_easy_options(n -1)
         elif self.qtype.level == 2 :
-            ps += self.getHardOptions(n -1)
+            ps += self.get_hard_options(n -1)
         remains = n - len(ps) 
         if (remains > 0):
-            ps += self.getRandomOptions(remains -1)
-        options = [p.toSerializable() for p in ps]
+            ps += self.get_random_options(remains, ps)
+        options = [p.to_serializable() for p in ps]
         options.sort(key=lambda tup: tup["name"])
         return options
     
-    def getEasyOptions(self, n):
+    def get_easy_options(self, n):
         return Place.objects.filter(difficulty__lt=self.place.difficulty).order_by('?')[:n]
         
-    def getRandomOptions(self, n):
-        return Place.objects.exclude(id=self.place.id).order_by('?')[:n]
+    def get_random_options(self, n, excluded):
+        return Place.objects.exclude(id__in = [p.id for p in excluded]).order_by('?')[:n]
         
-    def getHardOptions(self, n):
-        return Place.objects.exclude(id=self.place.id).order_by('?')[:n]
+    def get_hard_options(self, n):
+        return ConfusedPlaces.objects.get_similar_to(self.place)[:n]
 
 
 class QuestionService():
@@ -114,22 +114,26 @@ class QuestionService():
         self.mediumQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 1]
         self.hardQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 2]
 
-    def getQuestions(self, n):
-        places = self.getWeakPlaces(n)
+    def get_questions(self, n):
+        places = self.get_uncertain_places(n)
 
         remains = n - len(places) 
         if (remains > 0):
-            places += self.getNewPlaces(remains)
+            places += self.get_new_places(remains)
 
         remains = n - len(places) 
         if (remains > 0):
-            places += self.getRandomPlaces(remains)
+            places += self.get_weak_places(remains)
 
-        questions = self.placesToQuestions(places)
+        remains = n - len(places) 
+        if (remains > 0):
+            places += self.get_random_places(remains)
+
+        questions = self.places_to_questions(places)
         return questions
 
-    def placesToQuestions(self, places):
-        successRate = self.successRate()
+    def places_to_questions(self, places):
+        successRate = self.success_rate()
         if (successRate > 0.66):
             qTypeLevel = self.hardQuestionTypes
         elif (successRate < 0.33):
@@ -140,10 +144,10 @@ class QuestionService():
         for place in places:
             qtype = choice(qTypeLevel)
             question = Question(place, qtype)
-            questions.append(question.toSerializable())
+            questions.append(question.to_serializable())
         return questions
 
-    def successRate(self):
+    def success_rate(self):
         PRIORITY_RATIO = 1.2
         lastAnswers = Answer.objects.filter(
                 user=self.user,
@@ -154,25 +158,27 @@ class QuestionService():
             thisSuccess = 1 if a.place == a.answer else 0
             successRate = (successRate * i + thisSuccess * PRIORITY_RATIO) / (i + PRIORITY_RATIO)
         return successRate
-                
 
-    def getNewPlaces(self, n):
+    def get_uncertain_places(self, n):
+        return [up.place for up in self.get_ready_users_places() if up.certainty() < 1 ][:n]
+
+    def get_new_places(self, n):
         return Place.objects.exclude(
                 id__in=[up.place_id for up in UsersPlace.objects.filter(user=self.user)]
             ).order_by('difficulty')[:n]
 
-    def getWeakPlaces(self, n):
-        return [up.place for up in self.getReadyUsersPlaces() if up.certainty() < 1 ][:n]
+    def get_weak_places(self, n):
+        return [up.place for up in self.get_ready_users_places(10) if up.skill() < 0.8 ][:n]
 
-    def getRandomPlaces(self, n):
-        return [up.place for up in self.getReadyUsersPlaces()[:n]]
+    def get_random_places(self, n):
+        return [up.place for up in self.get_ready_users_places(60) if up.skill() < 1][:n]
 
-    def getReadyUsersPlaces(self):
+    def get_ready_users_places(self, correctAnswerDelayMinutes=2):
         minuteAgo = datetime.now() - timedelta(seconds=60)
-        twoMinutesAgo = datetime.now() - timedelta(seconds=120)
+        correctMinutesAgo = datetime.now() - timedelta(seconds=correctAnswerDelayMinutes*60)
         return UsersPlace.objects.filter(
                 user=self.user,
-                lastAsked__lt=twoMinutesAgo,
+                lastAsked__lt=correctMinutesAgo,
             ).exclude(
                 place_id__in=[a.place_id for a in Answer.objects.filter(
                     user=self.user,
@@ -181,7 +187,7 @@ class QuestionService():
             ).order_by('?')
 
     def answer(self, a):
-        student = Student.fromUser(self.user)
+        student = Student.objects.fromUser(self.user)
         place = Place.objects.get(code=a["code"])
         answerPlace = Place.objects.get(code=a["answer"]) if "answer" in a and a["answer"] != "" else None
         
@@ -197,4 +203,4 @@ class QuestionService():
         student.points += 1;
         student.save();
 
-        UsersPlace.addAnswer(answer)
+        UsersPlace.objects.addAnswer(answer)

@@ -1,15 +1,31 @@
+from core.models import Answer, Place, Student, UsersPlace, ConfusedPlaces, Map
 from django.contrib import admin
-from core.models import Place
-from core.models import UsersPlace
-from core.models import Answer 
-from core.models import Student 
 
-admin.site.register(Place)
-admin.site.register(UsersPlace)
-admin.site.register(Answer)
-admin.site.register(Student)
-
+class UsersPlaceAdmin(admin.ModelAdmin):
+    list_display = ('user', 'place')
     
+class PlaceAdmin(admin.ModelAdmin):
+    list_display = ('name', 'code', 'difficulty')
+    
+class AnswerAdmin(admin.ModelAdmin):
+    def is_correcttype(self, a):
+        return a.place == a.answer
+    is_correcttype.short_description = 'Is Correct'
+    list_display = ( 'user', 'place', 'answer', 'is_correct' 'type', 'askedDate')
+    
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'points', 'skill')
+    
+class ConfusedPlacesAdmin(admin.ModelAdmin):
+    list_display = ('asked', 'confused_with', 'level_of_cofusion')
+    
+admin.site.register(Place, PlaceAdmin)
+admin.site.register(UsersPlace, UsersPlaceAdmin)
+admin.site.register(Answer, AnswerAdmin)
+admin.site.register(Student, StudentAdmin)
+admin.site.register(ConfusedPlaces, ConfusedPlacesAdmin)
+admin.site.register(Map)
+
 def updateMap():
     Place.objects.all().delete()
     file = open('usa.txt')

@@ -11,11 +11,11 @@ from django.contrib.auth.models import User
 
 def user_list_view(request):
     students = Student.objects.all()
-    response = [s.toSerializable() for s in students if not is_lazy_user(s.user)]
+    response = [s.to_serializable() for s in students if not is_lazy_user(s.user)]
     return JsonResponse(response)
     
 def user_view(request):
-    student = Student.fromUser(request.user)
+    student = Student.objects.fromUser(request.user)
     if(is_lazy_user(request.user) and request.user.first_name != '' and request.user.last_name != ''):
         convert_lazy_user(request.user)
     username = student.user.username if student != None and not is_lazy_user(request.user) else ''

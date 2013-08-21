@@ -96,6 +96,6 @@ class QuestionServiceTest(TestCase):
         self.qs = QuestionService(user)
 
     def testQuestion(self):
-        questions = self.qs.getQuestions(2)
+        questions = self.qs.get_questions(2)
         self.assertEqual(len(questions), 2)
         self.assertEqual(questions[0]['code'], 'ca')

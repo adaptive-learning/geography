@@ -50,7 +50,6 @@ angular.module('myApp.controllers', [])
   .controller('AppView', function($scope, $routeParams, $filter, usersplaces, question) {
     $scope.part = $routeParams.part;
     $scope.user = $routeParams.user || "";
-    $scope.placesTypes = undefined;
 
     var mapConfig = {
         name : $scope.part.toLowerCase(),
@@ -58,18 +57,18 @@ angular.module('myApp.controllers', [])
         states : []
     }
     
-    var places = usersplaces($scope.part, $scope.user, function(data) {
+    $scope.placesTypes = usersplaces($scope.part, $scope.user, function(data) {
         $scope.placesTypes = data;
         $scope.$parent.placesTypes = data;
         var states = $filter("StatesFromPlaces")(data);
         $scope.map.updateStates(states);
     });
-    mapConfig.states = $filter("StatesFromPlaces")(places);
+    mapConfig.states = $filter("StatesFromPlaces")($scope.placesTypes);
     $scope.map = initMap(mapConfig);
 
-    question.availableCount($scope.part, function(count) {
-        $scope.practiceCount = count;
-    })
+//    question.availableCount($scope.part, function(count) {
+//        $scope.practiceCount = count;
+//    })
     $(".btn-practice").focus()
 
   })
@@ -88,12 +87,12 @@ angular.module('myApp.controllers', [])
         $scope.question = active;
         $scope.map.clearHighlights();
         if ($scope.isPickNameOfType()) {
-            $scope.map.blink(active.code);
+            $scope.map.highlightState(active.code, NEUTRAL);
         }
         if (active.type == $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE || active.type == $scope.FIND_ON_MAP_OF_2_OPTIONS_QUESTION_TYPE) {
-        	active.options.map(function(option) {
-        		$scope.map.blink(option.code);
-			})
+        	$scope.map.highlightStates(active.options.map(function(option) {
+        		return option.code;
+			}), NEUTRAL)
         }
         $("select.select2").select2("enable", true)
         $scope.canNext = false;
@@ -139,7 +138,7 @@ angular.module('myApp.controllers', [])
             $scope.map.clearHighlights();
             angular.forEach($scope.summary.questions, function(q){
                 var correct = q.code == q.answer;
-                $scope.map.highlightState(q.code, correct ? GOOD : BAD);
+                $scope.map.highlightState(q.code, correct ? GOOD : BAD, 1);
             })
         }
     }

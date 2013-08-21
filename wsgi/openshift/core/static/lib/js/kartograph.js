@@ -1793,7 +1793,7 @@
     	loads a path from a SVG path string
     */
 
-    var closed, cmd, contour, contours, cx, cy, path_data, path_str, r, res, sep, type, _i, _len;
+    var closed, cmd, contour, contours, cx, cy, last_cmd, path_data, path_str, r, res, sep, type, _i, _len;
 
     contours = [];
     type = path.nodeName;
@@ -1801,7 +1801,8 @@
     if (type === "path") {
       path_str = path.getAttribute('d').trim();
       path_data = Raphael.parsePathString(path_str);
-      closed = path_data[path_data.length - 1] === "Z";
+      last_cmd = path_data[path_data.length - 1][0] || path_data[path_data.length - 1]
+      closed = last_cmd == "Z";
       sep = closed ? "Z M" : "M";
       contour = [];
       for (_i = 0, _len = path_data.length; _i < _len; _i++) {

@@ -26,7 +26,7 @@ angular.module('myApp.services', []).
         	cache[url] = data;
             fn(data);
         });
-        return cache[url] || [];
+        return cache[url] || undefined;
     }
   })
 
@@ -35,6 +35,7 @@ angular.module('myApp.services', []).
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded'
       var qIndex = 0;
+      var lastAnswerIndex = -1;
       var worldPart;
       function returnQuestion (fn){
             var q = questions[qIndex++];
@@ -47,6 +48,7 @@ angular.module('myApp.services', []).
               worldPart = part
                 $http.get('question/' + part).success(function(data) {
                     qIndex = 0;
+                    lastAnswerIndex = -1
                     questions = data;
                     returnQuestion(fn);
                 });
@@ -65,7 +67,12 @@ angular.module('myApp.services', []).
                 question.index = qIndex-1;
                 questions[qIndex-1] = question;
                 $http.post('question/' + worldPart, question).success(function(data) {
-                    questions = questions.slice(0, questions.length - data.length).concat(data);
+                    var newLastAnswerIndex = questions.length - data.length -1;
+                    // if it is not a delayed response
+                    if (lastAnswerIndex < newLastAnswerIndex) {
+                        lastAnswerIndex = newLastAnswerIndex;
+                        questions = questions.slice(0, lastAnswerIndex +1).concat(data);
+                    }
                 });
 
                 return  100 * qIndex / questions.length;
