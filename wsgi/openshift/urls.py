@@ -19,10 +19,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     
-    url(r'^places/', views.places, name='places'),
-    url(r'^usersplaces/(?P<part>\w+)/(?P<user>\w*)', views.users_places, name='usersplaces'),
-    url(r'^question/', views.question, name='question'),
-    url(r'^updateStates/', views.updateStates_view, name='updateStates_view'),
+    url(r'^usersplaces/(?P<map_code>\w+)/(?P<user>\w*)', views.users_places, name='usersplaces'),
+    url(r'^question/(?P<map_code>\w+)', views.question, name='question'),
 
     url(r'^user/', include('accounts.urls')),
     

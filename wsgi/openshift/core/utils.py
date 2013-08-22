@@ -69,9 +69,10 @@ def all_subclasses(cls):
 
 class Question():
     options = []
-    def __init__(self, place, qtype=QuestionType()):
+    def __init__(self, place, qtype, map):
         self.place = place
         self.qtype = qtype
+        self.map = map
         if (qtype.noOfOptions != 0) :
             self.options = self.get_options(self.qtype.noOfOptions)
         
@@ -87,7 +88,7 @@ class Question():
     def get_options(self, n):
         ps = [self.place]
         if self.qtype.level == 0 :
-            ps += self.get_easy_options(n -1)
+            pass#ps += self.get_easy_options(n -1)
         elif self.qtype.level == 2 :
             ps += self.get_hard_options(n -1)
         remains = n - len(ps) 
@@ -97,56 +98,68 @@ class Question():
         options.sort(key=lambda tup: tup["name"])
         return options
     
+    def get_options_base(self):
+        return Place.objects.filter(id__in=self.map.places.all())
+    
     def get_easy_options(self, n):
-        return Place.objects.filter(difficulty__lt=self.place.difficulty).order_by('?')[:n]
+        return self.get_options_base().filter(difficulty__lt=self.place.difficulty).order_by('?')[:n]
         
     def get_random_options(self, n, excluded):
-        return Place.objects.exclude(id__in = [p.id for p in excluded]).order_by('?')[:n]
+        return self.get_options_base().exclude(id__in = [p.id for p in excluded]).order_by('?')[:n]
         
     def get_hard_options(self, n):
         return ConfusedPlaces.objects.get_similar_to(self.place)[:n]
 
 
-class QuestionService():
-    def __init__(self, user):
+class QuestionChooser(object):
+    easyQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 0]
+    mediumQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 1]
+    hardQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 2]
+    def __init__(self, user, map):
         self.user = user
-        self.easyQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 0]
-        self.mediumQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 1]
-        self.hardQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 2]
+        self.map = map
 
-    def get_questions(self, n):
-        places = self.get_uncertain_places(n)
-
-        remains = n - len(places) 
-        if (remains > 0):
-            places += self.get_new_places(remains)
-
-        remains = n - len(places) 
-        if (remains > 0):
-            places += self.get_weak_places(remains)
-
-        remains = n - len(places) 
-        if (remains > 0):
-            places += self.get_random_places(remains)
-
-        questions = self.places_to_questions(places)
-        return questions
-
-    def places_to_questions(self, places):
-        successRate = self.success_rate()
-        if (successRate > 0.66):
+    @classmethod
+    def get_ready_users_places(self, correctAnswerDelayMinutes=2):
+        minuteAgo = datetime.now() - timedelta(seconds=60)
+        correctMinutesAgo = datetime.now() - timedelta(seconds=correctAnswerDelayMinutes*60)
+        return UsersPlace.objects.filter(
+                user=self.user,
+                lastAsked__lt=correctMinutesAgo,
+                place_id__in=self.map.places.all(),
+            ).exclude(
+                place_id__in=[a.place_id for a in Answer.objects.filter(
+                    user=self.user,
+                    askedDate__gt=minuteAgo
+                )]
+            ).order_by('?')
+            
+    @classmethod
+    def get_question_level(self, place):
+        up = UsersPlace.objects.fromStudentAndPlace(self.user,place)
+        successRate = up.skill() * up.certainty()
+        if (successRate > 0.8):
             qTypeLevel = self.hardQuestionTypes
-        elif (successRate < 0.33):
+        elif (successRate <= 0.5):
             qTypeLevel = self.easyQuestionTypes
         else:
             qTypeLevel = self.mediumQuestionTypes
+        return qTypeLevel
+            
+    @classmethod
+    def get_questions(self, n, user, map):
+        self.user = user
+        self.map = map
+        places = self.get_places(n)
         questions = []
         for place in places:
+            qTypeLevel = self.get_question_level(place)
             qtype = choice(qTypeLevel)
-            question = Question(place, qtype)
+            question = Question(place, qtype, self.map)
             questions.append(question.to_serializable())
         return questions
 
+    @classmethod
     def success_rate(self):
         PRIORITY_RATIO = 1.2
         lastAnswers = Answer.objects.filter(
@@ -159,48 +172,63 @@ class QuestionService():
             successRate = (successRate * i + thisSuccess * PRIORITY_RATIO) / (i + PRIORITY_RATIO)
         return successRate
 
-    def get_uncertain_places(self, n):
+class UncertainPlacesQuestionChooser(QuestionChooser):
+    @classmethod
+    def get_places(self, n):
         return [up.place for up in self.get_ready_users_places() if up.certainty() < 1 ][:n]
 
-    def get_new_places(self, n):
-        return Place.objects.exclude(
+class NewPlacesQuestionChooser(QuestionChooser):
+    @classmethod
+    def get_places(self, n):
+        return Place.objects.filter(
+                id__in=self.map.places.all()
+            ).exclude(
                 id__in=[up.place_id for up in UsersPlace.objects.filter(user=self.user)]
-            ).order_by('difficulty')[:n]
+            ).order_by('?', 'difficulty')[:n]
 
-    def get_weak_places(self, n):
+class WeakPlacesQuestionChooser(QuestionChooser):
+    @classmethod
+    def get_places(self, n):
         return [up.place for up in self.get_ready_users_places(10) if up.skill() < 0.8 ][:n]
 
-    def get_random_places(self, n):
+class RandomPlacesQuestionChooser(QuestionChooser):
+    @classmethod
+    def get_places(self, n):
         return [up.place for up in self.get_ready_users_places(60) if up.skill() < 1][:n]
 
-    def get_ready_users_places(self, correctAnswerDelayMinutes=2):
-        minuteAgo = datetime.now() - timedelta(seconds=60)
-        correctMinutesAgo = datetime.now() - timedelta(seconds=correctAnswerDelayMinutes*60)
-        return UsersPlace.objects.filter(
-                user=self.user,
-                lastAsked__lt=correctMinutesAgo,
-            ).exclude(
-                place_id__in=[a.place_id for a in Answer.objects.filter(
-                    user=self.user,
-                    askedDate__gt=minuteAgo
-                )]
-            ).order_by('?')
+
+class QuestionService():
+    def __init__(self, user, map):
+        self.user = Student.objects.fromUser(user)
+        self.map = map
+        self.easyQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 0]
+        self.mediumQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 1]
+        self.hardQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 2]
+
+    def get_questions(self, n):
+        question_choosers = all_subclasses(QuestionChooser)
+        questions = []
+        for QC in question_choosers:
+            qc = QC(self.user, self.map)
+            remains = n - len(questions) 
+            questions += qc.get_questions(remains, self.user, self.map)
+        return questions
 
     def answer(self, a):
-        student = Student.objects.fromUser(self.user)
         place = Place.objects.get(code=a["code"])
         answerPlace = Place.objects.get(code=a["answer"]) if "answer" in a and a["answer"] != "" else None
         
         answer = Answer(
-            user=student,
+            user=self.user,
             place=place,
             answer=answerPlace,
             type=a["type"],
             msResposeTime=a["msResponseTime"] 
         )
         answer.save()
-
-        student.points += 1;
-        student.save();
+        
+        if place == answerPlace:
+            self.user.points += 1;
+            self.user.save();
 
         UsersPlace.objects.addAnswer(answer)

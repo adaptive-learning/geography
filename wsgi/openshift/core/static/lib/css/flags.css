@@ -266,8 +266,8 @@
 .flag-zm {background-position: -160px -165px}
 .flag-zw {background-position: -176px -165px}
 
-[class^="flag-us"],
-[class*=" flag-us"]  {
+[class^="flag-us-"],
+[class*=" flag-us-"]  {
     background: url(../img/us-flags.png) no-repeat top left;
     width: 18px; height: 12px;
 }
@@ -322,8 +322,8 @@
 .flag-us-wv{ background-position: 0 -624px;  } 
 .flag-us-wy{ background-position: 0 -637px;  } 
 
-h2 [class^="flag-us"],
-h2 [class*=" flag-us"]  {
+h2 [class^="flag-us-"],
+h2 [class*=" flag-us-"]  {
     background: url(../img/big-us-flags.png) no-repeat top left;
     width: 25px; height: 15px;
 }

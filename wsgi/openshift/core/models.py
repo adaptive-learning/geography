@@ -80,14 +80,14 @@ class UsersPlace(models.Model):
     objects = UsersPlaceManager()
     
     def skill(self):
-        skill = self.correctlyAnsweredCount / float(self.askedCount)
+        skill = self.correctlyAnsweredCount / float(self.askedCount) if self.askedCount > 0 else 0
         skill = round(skill, 2)
         return skill
     
     def certainty(self):
         newCertainty = self.askedCount / 3.0
         notSeenFor = datetime.now() - max(self.lastAsked, datetime.now()) 
-        knownFor = self.lastAsked - self.firstAsked()
+        knownFor = self.lastAsked - self.firstAsked() if self.firstAsked() != None else timedelta()
         if (float(notSeenFor.days) > 0):
             notSeenForRatio = min(1, 0.9 * knownFor.days / float(notSeenFor.days))
         else:
@@ -139,6 +139,8 @@ class Answer(models.Model):
 class Map(models.Model):
     name = models.CharField(max_length=100)
     places = models.ManyToManyField(Place)
+    def __unicode__(self):
+        return u'Map: {0}'.format(self.name)
 
 class ConfusedPlacesManager(models.Manager):
     def was_confused(self, askedPlace, answeredPlace):

@@ -8,15 +8,6 @@
 angular.module('myApp.services', []).
   value('version', '0.1')
 
-  .factory('places', function($rootScope, $http) {
-
-    return function(part, fn) {
-        $http.get('places/' + part, { cache: true }).success(function(data) {
-            fn(data);
-        });
-    }
-  })
-
   .factory('usersplaces', function($rootScope, $http) {
 	var cache = {};
 	

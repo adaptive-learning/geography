@@ -73,7 +73,7 @@ angular.module('myApp.controllers', [])
 
   })
 
-  .controller('AppPractice', function($scope, $routeParams, $timeout, $location, places, question) {
+  .controller('AppPractice', function($scope, $routeParams, $timeout, $location, question) {
 	$scope.FIND_ON_MAP_QUESTION_TYPE = 0;
 	$scope.PICK_NAME_OF_6_OPTIONS_QUESTION_TYPE = 1;
     $scope.PICK_NAME_OF_4_OPTIONS_QUESTION_TYPE = 2;
@@ -91,18 +91,13 @@ angular.module('myApp.controllers', [])
         }
         if (active.type == $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE || active.type == $scope.FIND_ON_MAP_OF_2_OPTIONS_QUESTION_TYPE) {
         	$scope.map.highlightStates(active.options.map(function(option) {
+        	    console.log(option.code)
         		return option.code;
 			}), NEUTRAL)
         }
-        $("select.select2").select2("enable", true)
         $scope.canNext = false;
         $scope.select = undefined;
         $scope.starterLetters = undefined;
-        $("select.places").select2("val", $scope.select);
-        $("select.starters").select2("val", $scope.starterLetters);
-        setTimeout(function() {
-            $("select.places").select2('focus');
-        },100)
     }
 
     $scope.check = function(selected) {
@@ -115,8 +110,6 @@ angular.module('myApp.controllers', [])
            $scope.highlightOptions(selected);
        }
        $scope.canNext = true;
-       $("select.places").select2("val", $scope.question.code);
-       $("select.select2").select2("enable", false)
        if (correct) {
            $scope.$parent.addPoint();
        }
@@ -167,54 +160,28 @@ angular.module('myApp.controllers', [])
              || $scope.question.type == $scope.PICK_NAME_OF_2_OPTIONS_QUESTION_TYPE)
     }
     
-    $scope.openPlacesSelect = function() {
-        $timeout(function() {
-            $("select.places").select2("open");
-        },100);
-    }
-    
     $scope.isAllowedOpion = function(code) {
         return !$scope.question.options || 1 == $scope.question.options.filter(function(place){
             return place.code == code;
         }).length
     }
 
-    places($scope.part, function(placesTypes) {
-        $scope.places = placesTypes[0].places;
-        $timeout(function() {
-            var format = function(state) {
-            	if (!state) return "";
-                if (!state.id) return state.text; // optgroup
-                    return '<i class="flag-'+state.id+'"></i> ' + state.text;
-            }
-            $("select.places").select2({
-                formatResult: format,
-                formatSelection: format,
-                escapeMarkup: function(m) { return m; },
-                width : '200px'
-            });
-            $("select.starters").select2({
-                width : '100px'
-            });
-        },100);
-
-        var mapConfig = {
-            name : $scope.part.toLowerCase(),
-            click : function  (code) {
-                if ($scope.isFindOnMapType() && !$scope.canNext && $scope.isAllowedOpion(code)) {
-                    $scope.check(code);
-                    $scope.$apply();
-                }
+    var mapConfig = {
+        name : $scope.part.toLowerCase(),
+        click : function  (code) {
+            if ($scope.isFindOnMapType() && !$scope.canNext && $scope.isAllowedOpion(code)) {
+                $scope.check(code);
+                $scope.$apply();
             }
         }
-        $scope.map = initMap(mapConfig, function() {
-            question.first($scope.part, function(q) {
-                if(q) $scope.setQuestion(q);
-                else {
-                    $scope.showSummary = true;
-                    $scope.errorMessage = 'Žádný stát není potřeba procvičovat.';
-                }
-            })
+    }
+    $scope.map = initMap(mapConfig, function() {
+        question.first($scope.part, function(q) {
+            if(q) $scope.setQuestion(q);
+            else {
+                $scope.showSummary = true;
+                $scope.errorMessage = 'Žádný stát není potřeba procvičovat.';
+            }
         })
     })
     

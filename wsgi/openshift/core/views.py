@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from core.models import Place, Student, UsersPlace
+from core.models import Place, Student, UsersPlace, Map
 from core.utils import QuestionService, JsonResponse
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.context_processors import csrf
-from django.http import HttpResponse, HttpResponseBadRequest
+from django.http import Http404, HttpResponse, HttpResponseBadRequest
 from django.shortcuts import render_to_response
 from django.utils import simplejson
 from lazysignup.decorators import allow_lazy_user
-from django.conf import settings
 
 
 
@@ -23,15 +23,11 @@ def home(request):
     c.update(csrf(request))
     return render_to_response('home/home.html', c)
 
-def places(request):
-    ps = Place.objects.all().order_by('name')
-    response = [{
-        'name': u'Státy',
-        'places': [p.to_serializable() for p in ps]
-    }]
-    return JsonResponse(response)
-
-def users_places(request, part, user=''):
+def users_places(request, map_code, user=''):
+    try:
+        map = Map.objects.get(name=map_code)
+    except Map.DoesNotExist:
+        raise Http404("Unknown map name: {0}".format(map_code))
     if (user == ''):
         user = request.user
     else:
@@ -42,7 +38,10 @@ def users_places(request, part, user=''):
         
     if request.user.is_authenticated():
         student = Student.objects.fromUser(user)
-        ps = UsersPlace.objects.filter(user=student)
+        ps = UsersPlace.objects.filter(
+           user=student,
+           place_id__in=map.places.all()
+       )
     else:
         ps =[]
     response = [{
@@ -54,8 +53,12 @@ def users_places(request, part, user=''):
     return JsonResponse(response)
 
 @allow_lazy_user
-def question(request):
-    qs = QuestionService(user=request.user)
+def question(request, map_code):
+    try:
+        map = Map.objects.get(name=map_code)
+    except Map.DoesNotExist:
+        raise Http404
+    qs = QuestionService(user=request.user, map=map)
     questionIndex = 0
     if (request.raw_post_data != ""):
         answer = simplejson.loads(request.raw_post_data)
@@ -66,22 +69,3 @@ def question(request):
     response = qs.get_questions(noOfQuestions)
     return JsonResponse(response)
 
-def updateStates_view(request):
-    if (Place.objects.count() == 0):
-        updateStates();
-    else:
-        states = Place.objects.all()
-        [ s.updateDifficulty() for s in states ]
-    return HttpResponse("states Updated")
-
-def updateStates():
-    Place.objects.all().delete()
-    statesFile = open('app-root/runtime/repo/usa.txt')
-    states = statesFile.read()
-    ss = states.split("\n")
-    for s in ss:
-        state = s.split("\t")
-        if(len(state) > 3):
-            name = state[2]
-            code = 'us-' + state[0].lower()
-            Place(code=code, name=name).save()
