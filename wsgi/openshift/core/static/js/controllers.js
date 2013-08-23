@@ -83,6 +83,7 @@ angular.module('myApp.controllers', [])
     $scope.FIND_ON_MAP_OF_2_OPTIONS_QUESTION_TYPE = 5
 	
     $scope.part = $routeParams.part;
+    $scope.name = $scope.part == "World" ? "Svět" : $scope.part;
 
     $scope.setQuestion = function(active) {
         $scope.question = active;
