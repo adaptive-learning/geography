@@ -18,11 +18,18 @@ class JsonResponse(HttpResponse):
             content_type=content_type,
         )
 
+# def get_question_type_by_id(id):
+#     question_types = all_subclasses(QuestionType)
+#     for QT in question_types:
+#         qt = QT()
+#         if qt.id == id:
+#             return qt
+#     return None
 
 class QuestionType(object):
     id = 0
     text = ""
-    noOfOptions = 0
+    no_of_options = 0
     level = 2
     
     @classmethod
@@ -39,27 +46,27 @@ class FindOnMapQuestionType(QuestionType):
 class PickNameOfQuestionType(QuestionType):
     id = 1
     text = u"Jak se jmenuje stát zvýrazněný na mapě?"
-    noOfOptions = 6
+    no_of_options = 6
     
 class PickNameOf4OptionsQuestionType(PickNameOfQuestionType):
     id = 2
-    noOfOptions = 4
+    no_of_options = 4
     level = 1
 
 class FindOnMapOf4OptionsQuestionType(QuestionType):
     id = 3
-    noOfOptions = 4
+    no_of_options = 4
     text = u"Ze čtyř zvýrazněných států na mapě vyber"
     level = 1
     
 class PickNameOf2OptionsQuestionType(PickNameOfQuestionType):
     id = 4
-    noOfOptions = 2
+    no_of_options = 2
     level = 0
 
 class FindOnMapOf2OptionsQuestionType(QuestionType):
     id = 5
-    noOfOptions = 2
+    no_of_options = 2
     text = u"Ze dvou zvýrazněných států na mapě vyber"
     level = 0
 
@@ -73,8 +80,8 @@ class Question():
         self.place = place
         self.qtype = qtype
         self.map = map
-        if (qtype.noOfOptions != 0) :
-            self.options = self.get_options(self.qtype.noOfOptions)
+        if (qtype.no_of_options != 0) :
+            self.options = self.get_options(self.qtype.no_of_options)
         
     def to_serializable(self):
         ret = self.qtype.to_serializable()
@@ -110,7 +117,6 @@ class Question():
     def get_hard_options(self, n):
         return ConfusedPlaces.objects.get_similar_to(self.place)[:n]
 
-
 class QuestionChooser(object):
     easyQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 0]
     mediumQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 1]
@@ -137,7 +143,11 @@ class QuestionChooser(object):
     @classmethod
     def get_question_level(self, place):
         up = UsersPlace.objects.fromStudentAndPlace(self.user,place)
-        successRate = up.skill() * up.certainty()
+        if up.askedCount < 2:
+            successRate = up.similar_places_knowladge()
+        else:
+            successRate = up.skill() * up.certainty()
+#         raise Exception(u"here {0} {1}".format(successRate, place.name))
         if (successRate > 0.8):
             qTypeLevel = self.hardQuestionTypes
         elif (successRate <= 0.5):
