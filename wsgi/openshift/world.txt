@@ -1,0 +1,171 @@
+af	Afghánistán
+al	Albánie
+dz	Alžírsko
+ao	Angola
+ar	Argentina
+am	Arménie
+au	Austrálie
+az	Ázerbájdžán
+bs	Bahamy
+bd	Bangladéš
+be	Belgie
+bz	Belize
+by	Bělorusko
+bj	Benin
+bt	Bhútán
+bo	Bolívie
+ba	Bosna a Hercegovina
+bw	Botswana
+br	Brazílie
+bn	Brunej
+bg	Bulharsko
+bf	Burkina Faso
+bi	Burundi
+td	Čad
+me	Černá Hora
+cz	Česká republika
+cn	Čína
+dk	Dánsko
+cd	Demokratická republika Kongo
+do	Dominikánská republika
+dj	Džibutsko
+eg	Egypt
+ec	Ekvádor
+er	Eritrea
+ee	Estonsko
+et	Etiopie
+fk	Falklandy (Malvíny)
+fj	Fidži
+ph	Filipíny
+fi	Finsko
+fr	Francie
+tf	Francouzská jižní a antarktická území
+ga	Gabon
+gm	Gambie
+gh	Ghana
+gl	Grónsko
+ge	Gruzie
+gt	Guatemala
+gn	Guinea
+gw	Guinea-Bissau
+gy	Guyana
+ht	Haiti
+hn	Honduras
+cl	Chile
+hr	Chorvatsko
+in	Indie
+id	Indonésie
+iq	Irák
+ir	Írán
+ie	Irsko
+is	Island
+it	Itálie
+il	Izrael
+jm	Jamajka
+jp	Japonsko
+ye	Jemen
+za	Jihoafrická republika
+kr	Jižní Korea
+ss	Jižní Súdán
+jo	Jordánsko
+kh	Kambodža
+cm	Kamerun
+ca	Kanada
+qa	Katar
+kz	Kazachstán
+ke	Keňa
+co	Kolumbie
+cg	Kongo
+cr	Kostarika
+cu	Kuba
+kw	Kuvajt
+cy	Kypr
+kg	Kyrgyzstán
+la	Laos
+ls	Lesotho
+lb	Libanon
+lr	Libérie
+ly	Libye
+lt	Litva
+lv	Lotyšsko
+lu	Lucembursko
+mg	Madagaskar
+hu	Maďarsko
+mk	Makedonie
+my	Malajsie
+mw	Malawi
+ml	Mali
+ma	Maroko
+mr	Mauritánie
+mx	Mexiko
+md	Moldavsko
+mn	Mongolsko
+mz	Mosambik
+mm	Myanmar
+na	Namibie
+de	Německo
+np	Nepál
+ne	Niger
+ng	Nigérie
+ni	Nikaragua
+nl	Nizozemsko
+no	Norsko
+nc	Nová Kaledonie
+nz	Nový Zéland
+om	Omán
+pk	Pákistán
+ps	Palestinská autonomie
+pa	Panama
+pg	Papua-Nová Guinea
+py	Paraguay
+pe	Peru
+ci	Pobřeží slonoviny
+pl	Polsko
+pr	Portoriko
+pt	Portugalsko
+at	Rakousko
+gq	Rovníková Guinea
+ro	Rumunsko
+ru	Rusko
+rw	Rwanda
+gr	Řecko
+sv	Salvador
+sa	Saúdská Arábie
+sn	Senegal
+kp	Severní Korea
+sl	Sierra Leone
+sk	Slovensko
+si	Slovinsko
+so	Somálsko
+ae	Spojené arabské emiráty
+gb	Spojené království
+us	Spojené státy americké
+rs	Srbsko
+cf	Středoafrická republika
+sd	Súdán
+sr	Surinam
+sz	Svazijsko
+sy	Sýrie
+sb	Šalamounovy ostrovy
+es	Španělsko
+lk	Šrí Lanka
+se	Švédsko
+ch	Švýcarsko
+tj	Tádžikistán
+tz	Tanzanie
+th	Thajsko
+tw	Tchaj-wan
+tg	Togo
+tn	Tunisko
+tr	Turecko
+tm	Turkmenistán
+ug	Uganda
+ua	Ukrajina
+uy	Uruguay
+uz	Uzbekistán
+ve	Venezuela
+vn	Vietnam
+tl	Východní Timor
+zm	Zambie
+eh	Západní Sahara
+zw	Zimbabwe
