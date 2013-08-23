@@ -184,7 +184,7 @@ class NewPlacesQuestionChooser(QuestionChooser):
                 id__in=self.map.places.all()
             ).exclude(
                 id__in=[up.place_id for up in UsersPlace.objects.filter(user=self.user)]
-            ).order_by('?', 'difficulty')[:n]
+            ).order_by('difficulty')[:n]
 
 class WeakPlacesQuestionChooser(QuestionChooser):
     @classmethod

@@ -8,12 +8,12 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
     $routeProvider.when('/', {
       templateUrl : './static/tpl/welcome_page_tpl.html'
     }).when('/view/', {
-        redirectTo: '/view/USA/'
+        redirectTo: '/view/World/'
     }).when('/view/:part/:user', {
       controller : 'AppView',
       templateUrl : './static/tpl/view_tpl.html'
     }).when('/practice/', {
-        redirectTo: '/practice/USA'
+        redirectTo: '/practice/World'
     }).when('/practice/:part', {
       controller : 'AppPractice',
       templateUrl : './static/tpl/practice_tpl.html'

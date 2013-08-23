@@ -105,8 +105,11 @@ function initMap(config, callback) {
                 if (color) {
                     aminAttrs['fill'] = color;
                 }
+                var bbox = statePath.svgPath.getBBox()
                 statePath.svgPath.animate(aminAttrs, animation_ms/2, ">", function(){
-                    statePath.svgPath.animate({transform: "", 'stroke-width': 1}, animation_ms/2, "<");
+                    if (bbox.width > 10 && bbox.height > 10) {
+                        statePath.svgPath.animate({transform: "", 'stroke-width': 1}, animation_ms/2, "<");
+                    }
                     myMap.highlightStates(states, color);
                 });
             }
@@ -116,7 +119,7 @@ function initMap(config, callback) {
         },
         clearHighlights : function() {
             var layer = map.getLayer('states');
-            layer.style('fill', "#fff");
+            layer.style({'fill': "#fff", transform: "", 'stroke-width': 1});
         },
         updateStates : function(states) {
             if (!jQuery.isEmptyObject(config.states)) {

@@ -50,6 +50,7 @@ angular.module('myApp.controllers', [])
   .controller('AppView', function($scope, $routeParams, $filter, usersplaces, question) {
     $scope.part = $routeParams.part;
     $scope.user = $routeParams.user || "";
+    $scope.name = $scope.part == "World" ? "Svět" : $scope.part;
 
     var mapConfig = {
         name : $scope.part.toLowerCase(),
@@ -91,7 +92,6 @@ angular.module('myApp.controllers', [])
         }
         if (active.type == $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE || active.type == $scope.FIND_ON_MAP_OF_2_OPTIONS_QUESTION_TYPE) {
         	$scope.map.highlightStates(active.options.map(function(option) {
-        	    console.log(option.code)
         		return option.code;
 			}), NEUTRAL)
         }
