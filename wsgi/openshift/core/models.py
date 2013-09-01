@@ -6,12 +6,17 @@ from django.db.models import Min
 
 
 class Place(models.Model):
+    PLACE_TYPES = (
+        (1, 'State'),
+        (2, 'City'),
+    )
     DIFFICULTY_CONVERSION = 1000000.0
     code = models.CharField(max_length=10)
     name = models.CharField(max_length=100)
     difficulty = models.IntegerField(default=0)
+#     type = models.IntegerField(choices=PLACE_TYPES, default=1)
     def __unicode__(self):
-        return u'{0} ({1}) difficulty: {2}'.format(self.name, self.code, self.difficulty / Place.DIFFICULTY_CONVERSION)
+        return u'{0} ({1})'.format(self.name, self.code)
     
     def updateDifficulty(self):
         usersPlaces = UsersPlace.objects.filter(place=self)
@@ -24,6 +29,17 @@ class Place(models.Model):
           'code' : self.code,
           'name' : self.name
         }
+
+class PlaceRelation(models.Model):
+    IS_ON_MAP = 1
+    IS_SUBMAP = 2
+    PLACE_RELATION_TYPES = (
+        (IS_ON_MAP, 'isOnMap'),
+        (IS_SUBMAP, 'isSubmap'),
+    )
+    place = models.ForeignKey(Place, related_name='relation_place')
+    related_places = models.ManyToManyField(Place)
+    type = models.IntegerField(choices=PLACE_RELATION_TYPES, default=1)
 
 class StudentManager(models.Manager):
     def fromUser(self, user):
@@ -86,10 +102,10 @@ class UsersPlace(models.Model):
     objects = UsersPlaceManager()
     
     def similar_places_knowladge(self):
-        map = Map.objects.get(places=self.place)
+        map = PlaceRelation.objects.get(related_places=self.place, type=PlaceRelation.IS_ON_MAP)
         last_users_places = UsersPlace.objects.filter(
                  user=self.user,
-                 place_id__in=map.places.all(), 
+                 place_id__in=map.related_places.all(), 
 #                  lastAsked__lt=min(self.lastAsked, datetime.now())
         ).order_by("-lastAsked")[:10]
         correct =  [up for up in last_users_places if up.skill() == 1]
@@ -166,12 +182,6 @@ class Answer(models.Model):
     class Meta:
         ordering = ["-askedDate"]
 
-
-class Map(models.Model):
-    name = models.CharField(max_length=100)
-    places = models.ManyToManyField(Place)
-    def __unicode__(self):
-        return u'Map: {0}'.format(self.name)
 
 class ConfusedPlacesManager(models.Manager):
     def was_confused(self, askedPlace, answeredPlace):

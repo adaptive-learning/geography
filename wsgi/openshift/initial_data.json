@@ -1,1 +1,1779 @@
-[{"pk": 1, "model": "core.place", "fields": {"difficulty": 300000, "code": "us-al", "name": "Alabama"}}, {"pk": 2, "model": "core.place", "fields": {"difficulty": 0, "code": "us-az", "name": "Arizona"}}, {"pk": 3, "model": "core.place", "fields": {"difficulty": 0, "code": "us-ar", "name": "Arkansas"}}, {"pk": 4, "model": "core.place", "fields": {"difficulty": 99999, "code": "us-ca", "name": "Kalifornie"}}, {"pk": 5, "model": "core.place", "fields": {"difficulty": 0, "code": "us-co", "name": "Colorado"}}, {"pk": 6, "model": "core.place", "fields": {"difficulty": 300000, "code": "us-ct", "name": "Connecticut"}}, {"pk": 7, "model": "core.place", "fields": {"difficulty": 285714, "code": "us-de", "name": "Delaware"}}, {"pk": 8, "model": "core.place", "fields": {"difficulty": 0, "code": "us-fl", "name": "Florida"}}, {"pk": 9, "model": "core.place", "fields": {"difficulty": 192307, "code": "us-ga", "name": "Georgie"}}, {"pk": 10, "model": "core.place", "fields": {"difficulty": 596153, "code": "us-id", "name": "Idaho"}}, {"pk": 11, "model": "core.place", "fields": {"difficulty": 0, "code": "us-il", "name": "Illinois"}}, {"pk": 12, "model": "core.place", "fields": {"difficulty": 0, "code": "us-in", "name": "Indiana"}}, {"pk": 13, "model": "core.place", "fields": {"difficulty": 333333, "code": "us-ia", "name": "Iowa"}}, {"pk": 14, "model": "core.place", "fields": {"difficulty": 250000, "code": "us-ks", "name": "Kansas"}}, {"pk": 15, "model": "core.place", "fields": {"difficulty": 99999, "code": "us-ky", "name": "Kentucky"}}, {"pk": 16, "model": "core.place", "fields": {"difficulty": 62500, "code": "us-la", "name": "Louisiana"}}, {"pk": 17, "model": "core.place", "fields": {"difficulty": 0, "code": "us-me", "name": "Maine"}}, {"pk": 18, "model": "core.place", "fields": {"difficulty": 0, "code": "us-md", "name": "Maryland"}}, {"pk": 19, "model": "core.place", "fields": {"difficulty": 0, "code": "us-ma", "name": "Massachusetts"}}, {"pk": 20, "model": "core.place", "fields": {"difficulty": 99999, "code": "us-mi", "name": "Michigan"}}, {"pk": 21, "model": "core.place", "fields": {"difficulty": 0, "code": "us-mn", "name": "Minnesota"}}, {"pk": 22, "model": "core.place", "fields": {"difficulty": 0, "code": "us-ms", "name": "Mississippi"}}, {"pk": 23, "model": "core.place", "fields": {"difficulty": 0, "code": "us-mo", "name": "Missouri"}}, {"pk": 24, "model": "core.place", "fields": {"difficulty": 0, "code": "us-mt", "name": "Montana"}}, {"pk": 25, "model": "core.place", "fields": {"difficulty": 99999, "code": "us-ne", "name": "Nebraska"}}, {"pk": 26, "model": "core.place", "fields": {"difficulty": 0, "code": "us-nv", "name": "Nevada"}}, {"pk": 27, "model": "core.place", "fields": {"difficulty": 99999, "code": "us-nh", "name": "New Hampshire"}}, {"pk": 28, "model": "core.place", "fields": {"difficulty": 0, "code": "us-nj", "name": "New Jersey"}}, {"pk": 29, "model": "core.place", "fields": {"difficulty": 0, "code": "us-nm", "name": "Nov\u00e9 Mexiko"}}, {"pk": 30, "model": "core.place", "fields": {"difficulty": 0, "code": "us-ny", "name": "New York"}}, {"pk": 31, "model": "core.place", "fields": {"difficulty": 0, "code": "us-nc", "name": "Severn\u00ed Karol\u00edna"}}, {"pk": 32, "model": "core.place", "fields": {"difficulty": 0, "code": "us-nd", "name": "Severn\u00ed Dakota"}}, {"pk": 33, "model": "core.place", "fields": {"difficulty": 0, "code": "us-oh", "name": "Ohio"}}, {"pk": 34, "model": "core.place", "fields": {"difficulty": 0, "code": "us-ok", "name": "Oklahoma"}}, {"pk": 35, "model": "core.place", "fields": {"difficulty": 0, "code": "us-or", "name": "Oregon"}}, {"pk": 36, "model": "core.place", "fields": {"difficulty": 0, "code": "us-pa", "name": "Pensylv\u00e1nie"}}, {"pk": 37, "model": "core.place", "fields": {"difficulty": 0, "code": "us-ri", "name": "Rhode Island"}}, {"pk": 38, "model": "core.place", "fields": {"difficulty": 0, "code": "us-sc", "name": "Ji\u017en\u00ed Karol\u00edna"}}, {"pk": 39, "model": "core.place", "fields": {"difficulty": 0, "code": "us-sd", "name": "Ji\u017en\u00ed Dakota"}}, {"pk": 40, "model": "core.place", "fields": {"difficulty": 0, "code": "us-tn", "name": "Tennessee"}}, {"pk": 41, "model": "core.place", "fields": {"difficulty": 199999, "code": "us-tx", "name": "Texas"}}, {"pk": 42, "model": "core.place", "fields": {"difficulty": 0, "code": "us-ut", "name": "Utah"}}, {"pk": 43, "model": "core.place", "fields": {"difficulty": 0, "code": "us-vt", "name": "Vermont"}}, {"pk": 44, "model": "core.place", "fields": {"difficulty": 199999, "code": "us-va", "name": "Virginie"}}, {"pk": 45, "model": "core.place", "fields": {"difficulty": 0, "code": "us-wa", "name": "Washington"}}, {"pk": 46, "model": "core.place", "fields": {"difficulty": 0, "code": "us-wv", "name": "Z\u00e1padn\u00ed Virginie"}}, {"pk": 47, "model": "core.place", "fields": {"difficulty": 166666, "code": "us-wi", "name": "Wisconsin"}}, {"pk": 48, "model": "core.place", "fields": {"difficulty": 0, "code": "us-wy", "name": "Wyoming"}}]
+[
+    {
+        "pk": 1,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 405555,
+            "code": "us-al",
+            "name": "Alabama"
+        }
+    }, {
+        "pk": 2,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 490476,
+            "code": "us-az",
+            "name": "Arizona"
+        }
+    }, {
+        "pk": 3,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 285714,
+            "code": "us-ar",
+            "name": "Arkansas"
+        }
+    }, {
+        "pk": 4,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 46666,
+            "code": "us-ca",
+            "name": "Kalifornie"
+        }
+    }, {
+        "pk": 5,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 238095,
+            "code": "us-co",
+            "name": "Colorado"
+        }
+    }, {
+        "pk": 6,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 569696,
+            "code": "us-ct",
+            "name": "Connecticut"
+        }
+    }, {
+        "pk": 7,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 343749,
+            "code": "us-de",
+            "name": "Delaware"
+        }
+    }, {
+        "pk": 8,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 153846,
+            "code": "us-fl",
+            "name": "Florida"
+        }
+    }, {
+        "pk": 9,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 304040,
+            "code": "us-ga",
+            "name": "Georgie"
+        }
+    }, {
+        "pk": 10,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 466666,
+            "code": "us-id",
+            "name": "Idaho"
+        }
+    }, {
+        "pk": 11,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 379870,
+            "code": "us-il",
+            "name": "Illinois"
+        }
+    }, {
+        "pk": 12,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 375000,
+            "code": "us-in",
+            "name": "Indiana"
+        }
+    }, {
+        "pk": 13,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 355238,
+            "code": "us-ia",
+            "name": "Iowa"
+        }
+    }, {
+        "pk": 14,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 386363,
+            "code": "us-ks",
+            "name": "Kansas"
+        }
+    }, {
+        "pk": 15,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 297619,
+            "code": "us-ky",
+            "name": "Kentucky"
+        }
+    }, {
+        "pk": 16,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 314814,
+            "code": "us-la",
+            "name": "Louisiana"
+        }
+    }, {
+        "pk": 17,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 270833,
+            "code": "us-me",
+            "name": "Maine"
+        }
+    }, {
+        "pk": 18,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 222222,
+            "code": "us-md",
+            "name": "Maryland"
+        }
+    }, {
+        "pk": 19,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "us-ma",
+            "name": "Massachusetts"
+        }
+    }, {
+        "pk": 20,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 272727,
+            "code": "us-mi",
+            "name": "Michigan"
+        }
+    }, {
+        "pk": 21,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 415238,
+            "code": "us-mn",
+            "name": "Minnesota"
+        }
+    }, {
+        "pk": 22,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 268181,
+            "code": "us-ms",
+            "name": "Mississippi"
+        }
+    }, {
+        "pk": 23,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 411666,
+            "code": "us-mo",
+            "name": "Missouri"
+        }
+    }, {
+        "pk": 24,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 251082,
+            "code": "us-mt",
+            "name": "Montana"
+        }
+    }, {
+        "pk": 25,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 562500,
+            "code": "us-ne",
+            "name": "Nebraska"
+        }
+    }, {
+        "pk": 26,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 267272,
+            "code": "us-nv",
+            "name": "Nevada"
+        }
+    }, {
+        "pk": 27,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 362222,
+            "code": "us-nh",
+            "name": "New Hampshire"
+        }
+    }, {
+        "pk": 28,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 212962,
+            "code": "us-nj",
+            "name": "New Jersey"
+        }
+    }, {
+        "pk": 29,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 171875,
+            "code": "us-nm",
+            "name": "Nov\u00e9 Mexiko"
+        }
+    }, {
+        "pk": 30,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 238095,
+            "code": "us-ny",
+            "name": "New York"
+        }
+    }, {
+        "pk": 31,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 228571,
+            "code": "us-nc",
+            "name": "Severn\u00ed Karol\u00edna"
+        }
+    }, {
+        "pk": 32,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 219999,
+            "code": "us-nd",
+            "name": "Severn\u00ed Dakota"
+        }
+    }, {
+        "pk": 33,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 449999,
+            "code": "us-oh",
+            "name": "Ohio"
+        }
+    }, {
+        "pk": 34,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 378787,
+            "code": "us-ok",
+            "name": "Oklahoma"
+        }
+    }, {
+        "pk": 35,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 277777,
+            "code": "us-or",
+            "name": "Oregon"
+        }
+    }, {
+        "pk": 36,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 326388,
+            "code": "us-pa",
+            "name": "Pensylv\u00e1nie"
+        }
+    }, {
+        "pk": 37,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 416666,
+            "code": "us-ri",
+            "name": "Rhode Island"
+        }
+    }, {
+        "pk": 38,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 354166,
+            "code": "us-sc",
+            "name": "Ji\u017en\u00ed Karol\u00edna"
+        }
+    }, {
+        "pk": 39,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 466666,
+            "code": "us-sd",
+            "name": "Ji\u017en\u00ed Dakota"
+        }
+    }, {
+        "pk": 40,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 260606,
+            "code": "us-tn",
+            "name": "Tennessee"
+        }
+    }, {
+        "pk": 41,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "us-tx",
+            "name": "Texas"
+        }
+    }, {
+        "pk": 42,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 516666,
+            "code": "us-ut",
+            "name": "Utah"
+        }
+    }, {
+        "pk": 43,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 166666,
+            "code": "us-vt",
+            "name": "Vermont"
+        }
+    }, {
+        "pk": 44,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 238095,
+            "code": "us-va",
+            "name": "Virginie"
+        }
+    }, {
+        "pk": 45,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 261904,
+            "code": "us-wa",
+            "name": "Washington"
+        }
+    }, {
+        "pk": 46,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 259259,
+            "code": "us-wv",
+            "name": "Z\u00e1padn\u00ed Virginie"
+        }
+    }, {
+        "pk": 47,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 321212,
+            "code": "us-wi",
+            "name": "Wisconsin"
+        }
+    }, {
+        "pk": 48,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 458008,
+            "code": "us-wy",
+            "name": "Wyoming"
+        }
+    }, {
+        "pk": 56,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "dz",
+            "name": "Al\u017e\u00edrsko"
+        }
+    }, {
+        "pk": 55,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "al",
+            "name": "Alb\u00e1nie"
+        }
+    }, {
+        "pk": 54,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "af",
+            "name": "Afgh\u00e1nist\u00e1n"
+        }
+    }, {
+        "pk": 57,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ao",
+            "name": "Angola"
+        }
+    }, {
+        "pk": 58,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ar",
+            "name": "Argentina"
+        }
+    }, {
+        "pk": 59,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "am",
+            "name": "Arm\u00e9nie"
+        }
+    }, {
+        "pk": 60,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "au",
+            "name": "Austr\u00e1lie"
+        }
+    }, {
+        "pk": 61,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "az",
+            "name": "\u00c1zerb\u00e1jd\u017e\u00e1n"
+        }
+    }, {
+        "pk": 62,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bs",
+            "name": "Bahamy"
+        }
+    }, {
+        "pk": 63,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bd",
+            "name": "Banglad\u00e9\u0161"
+        }
+    }, {
+        "pk": 64,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "be",
+            "name": "Belgie"
+        }
+    }, {
+        "pk": 65,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bz",
+            "name": "Belize"
+        }
+    }, {
+        "pk": 66,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "by",
+            "name": "B\u011blorusko"
+        }
+    }, {
+        "pk": 67,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bj",
+            "name": "Benin"
+        }
+    }, {
+        "pk": 68,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bt",
+            "name": "Bh\u00fat\u00e1n"
+        }
+    }, {
+        "pk": 69,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bo",
+            "name": "Bol\u00edvie"
+        }
+    }, {
+        "pk": 70,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ba",
+            "name": "Bosna a Hercegovina"
+        }
+    }, {
+        "pk": 71,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bw",
+            "name": "Botswana"
+        }
+    }, {
+        "pk": 72,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "br",
+            "name": "Braz\u00edlie"
+        }
+    }, {
+        "pk": 73,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bn",
+            "name": "Brunej"
+        }
+    }, {
+        "pk": 74,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bg",
+            "name": "Bulharsko"
+        }
+    }, {
+        "pk": 75,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bf",
+            "name": "Burkina Faso"
+        }
+    }, {
+        "pk": 76,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bi",
+            "name": "Burundi"
+        }
+    }, {
+        "pk": 77,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "td",
+            "name": "\u010cad"
+        }
+    }, {
+        "pk": 78,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "me",
+            "name": "\u010cern\u00e1 Hora"
+        }
+    }, {
+        "pk": 79,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "cz",
+            "name": "\u010cesk\u00e1 republika"
+        }
+    }, {
+        "pk": 80,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "cn",
+            "name": "\u010c\u00edna"
+        }
+    }, {
+        "pk": 81,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "dk",
+            "name": "D\u00e1nsko"
+        }
+    }, {
+        "pk": 82,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "cd",
+            "name": "Demokratick\u00e1 republika Kongo"
+        }
+    }, {
+        "pk": 83,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "do",
+            "name": "Dominik\u00e1nsk\u00e1 republika"
+        }
+    }, {
+        "pk": 84,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "dj",
+            "name": "D\u017eibutsko"
+        }
+    }, {
+        "pk": 85,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "eg",
+            "name": "Egypt"
+        }
+    }, {
+        "pk": 86,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ec",
+            "name": "Ekv\u00e1dor"
+        }
+    }, {
+        "pk": 87,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "er",
+            "name": "Eritrea"
+        }
+    }, {
+        "pk": 88,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ee",
+            "name": "Estonsko"
+        }
+    }, {
+        "pk": 89,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "et",
+            "name": "Etiopie"
+        }
+    }, {
+        "pk": 90,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "fk",
+            "name": "Falklandy (Malv\u00edny)"
+        }
+    }, {
+        "pk": 91,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "fj",
+            "name": "Fid\u017ei"
+        }
+    }, {
+        "pk": 92,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ph",
+            "name": "Filip\u00edny"
+        }
+    }, {
+        "pk": 93,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "fi",
+            "name": "Finsko"
+        }
+    }, {
+        "pk": 94,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "fr",
+            "name": "Francie"
+        }
+    }, {
+        "pk": 95,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tf",
+            "name": "Francouzsk\u00e1 ji\u017en\u00ed a antarktick\u00e1 \u00fazem\u00ed"
+        }
+    }, {
+        "pk": 96,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ga",
+            "name": "Gabon"
+        }
+    }, {
+        "pk": 97,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "gm",
+            "name": "Gambie"
+        }
+    }, {
+        "pk": 98,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "gh",
+            "name": "Ghana"
+        }
+    }, {
+        "pk": 99,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "gl",
+            "name": "Gr\u00f3nsko"
+        }
+    }, {
+        "pk": 100,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ge",
+            "name": "Gruzie"
+        }
+    }, {
+        "pk": 101,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "gt",
+            "name": "Guatemala"
+        }
+    }, {
+        "pk": 102,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "gn",
+            "name": "Guinea"
+        }
+    }, {
+        "pk": 103,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "gw",
+            "name": "Guinea-Bissau"
+        }
+    }, {
+        "pk": 104,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "gy",
+            "name": "Guyana"
+        }
+    }, {
+        "pk": 105,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ht",
+            "name": "Haiti"
+        }
+    }, {
+        "pk": 106,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "hn",
+            "name": "Honduras"
+        }
+    }, {
+        "pk": 107,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "cl",
+            "name": "Chile"
+        }
+    }, {
+        "pk": 108,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "hr",
+            "name": "Chorvatsko"
+        }
+    }, {
+        "pk": 109,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "in",
+            "name": "Indie"
+        }
+    }, {
+        "pk": 110,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "id",
+            "name": "Indon\u00e9sie"
+        }
+    }, {
+        "pk": 111,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "iq",
+            "name": "Ir\u00e1k"
+        }
+    }, {
+        "pk": 112,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ir",
+            "name": "\u00cdr\u00e1n"
+        }
+    }, {
+        "pk": 113,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ie",
+            "name": "Irsko"
+        }
+    }, {
+        "pk": 114,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "is",
+            "name": "Island"
+        }
+    }, {
+        "pk": 115,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "it",
+            "name": "It\u00e1lie"
+        }
+    }, {
+        "pk": 116,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "il",
+            "name": "Izrael"
+        }
+    }, {
+        "pk": 117,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "jm",
+            "name": "Jamajka"
+        }
+    }, {
+        "pk": 118,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "jp",
+            "name": "Japonsko"
+        }
+    }, {
+        "pk": 119,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ye",
+            "name": "Jemen"
+        }
+    }, {
+        "pk": 120,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "za",
+            "name": "Jihoafrick\u00e1 republika"
+        }
+    }, {
+        "pk": 121,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "kr",
+            "name": "Ji\u017en\u00ed Korea"
+        }
+    }, {
+        "pk": 122,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ss",
+            "name": "Ji\u017en\u00ed S\u00fad\u00e1n"
+        }
+    }, {
+        "pk": 123,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "jo",
+            "name": "Jord\u00e1nsko"
+        }
+    }, {
+        "pk": 124,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "kh",
+            "name": "Kambod\u017ea"
+        }
+    }, {
+        "pk": 125,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "cm",
+            "name": "Kamerun"
+        }
+    }, {
+        "pk": 126,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "ca",
+            "name": "Kanada"
+        }
+    }, {
+        "pk": 127,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "qa",
+            "name": "Katar"
+        }
+    }, {
+        "pk": 128,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 111111,
+            "code": "kz",
+            "name": "Kazachst\u00e1n"
+        }
+    }, {
+        "pk": 129,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 166666,
+            "code": "ke",
+            "name": "Ke\u0148a"
+        }
+    }, {
+        "pk": 130,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 166666,
+            "code": "co",
+            "name": "Kolumbie"
+        }
+    }, {
+        "pk": 131,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "cg",
+            "name": "Kongo"
+        }
+    }, {
+        "pk": 132,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "cr",
+            "name": "Kostarika"
+        }
+    }, {
+        "pk": 133,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "cu",
+            "name": "Kuba"
+        }
+    }, {
+        "pk": 134,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "kw",
+            "name": "Kuvajt"
+        }
+    }, {
+        "pk": 135,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "cy",
+            "name": "Kypr"
+        }
+    }, {
+        "pk": 136,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "kg",
+            "name": "Kyrgyzst\u00e1n"
+        }
+    }, {
+        "pk": 137,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "la",
+            "name": "Laos"
+        }
+    }, {
+        "pk": 138,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 1000000,
+            "code": "ls",
+            "name": "Lesotho"
+        }
+    }, {
+        "pk": 139,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 250000,
+            "code": "lb",
+            "name": "Libanon"
+        }
+    }, {
+        "pk": 140,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 166666,
+            "code": "lr",
+            "name": "Lib\u00e9rie"
+        }
+    }, {
+        "pk": 141,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 166666,
+            "code": "ly",
+            "name": "Libye"
+        }
+    }, {
+        "pk": 142,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 1000000,
+            "code": "lt",
+            "name": "Litva"
+        }
+    }, {
+        "pk": 143,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 1000000,
+            "code": "lv",
+            "name": "Loty\u0161sko"
+        }
+    }, {
+        "pk": 144,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "lu",
+            "name": "Lucembursko"
+        }
+    }, {
+        "pk": 145,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "mg",
+            "name": "Madagaskar"
+        }
+    }, {
+        "pk": 146,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "hu",
+            "name": "Ma\u010farsko"
+        }
+    }, {
+        "pk": 147,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "mk",
+            "name": "Makedonie"
+        }
+    }, {
+        "pk": 148,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 1000000,
+            "code": "my",
+            "name": "Malajsie"
+        }
+    }, {
+        "pk": 149,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 1000000,
+            "code": "mw",
+            "name": "Malawi"
+        }
+    }, {
+        "pk": 150,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 1000000,
+            "code": "ml",
+            "name": "Mali"
+        }
+    }, {
+        "pk": 151,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "ma",
+            "name": "Maroko"
+        }
+    }, {
+        "pk": 152,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 1000000,
+            "code": "mr",
+            "name": "Maurit\u00e1nie"
+        }
+    }, {
+        "pk": 153,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "mx",
+            "name": "Mexiko"
+        }
+    }, {
+        "pk": 154,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 1000000,
+            "code": "md",
+            "name": "Moldavsko"
+        }
+    }, {
+        "pk": 155,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "mn",
+            "name": "Mongolsko"
+        }
+    }, {
+        "pk": 156,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 666666,
+            "code": "mz",
+            "name": "Mosambik"
+        }
+    }, {
+        "pk": 157,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "mm",
+            "name": "Myanmar"
+        }
+    }, {
+        "pk": 158,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "na",
+            "name": "Namibie"
+        }
+    }, {
+        "pk": 159,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "de",
+            "name": "N\u011bmecko"
+        }
+    }, {
+        "pk": 160,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "np",
+            "name": "Nep\u00e1l"
+        }
+    }, {
+        "pk": 161,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 222222,
+            "code": "ne",
+            "name": "Niger"
+        }
+    }, {
+        "pk": 162,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 388888,
+            "code": "ng",
+            "name": "Nig\u00e9rie"
+        }
+    }, {
+        "pk": 163,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 166666,
+            "code": "ni",
+            "name": "Nikaragua"
+        }
+    }, {
+        "pk": 164,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "nl",
+            "name": "Nizozemsko"
+        }
+    }, {
+        "pk": 165,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "no",
+            "name": "Norsko"
+        }
+    }, {
+        "pk": 166,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "nc",
+            "name": "Nov\u00e1 Kaledonie"
+        }
+    }, {
+        "pk": 167,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "nz",
+            "name": "Nov\u00fd Z\u00e9land"
+        }
+    }, {
+        "pk": 168,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "om",
+            "name": "Om\u00e1n"
+        }
+    }, {
+        "pk": 169,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "pk",
+            "name": "P\u00e1kist\u00e1n"
+        }
+    }, {
+        "pk": 170,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "ps",
+            "name": "Palestinsk\u00e1 autonomie"
+        }
+    }, {
+        "pk": 171,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "pa",
+            "name": "Panama"
+        }
+    }, {
+        "pk": 172,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "pg",
+            "name": "Papua-Nov\u00e1 Guinea"
+        }
+    }, {
+        "pk": 173,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "py",
+            "name": "Paraguay"
+        }
+    }, {
+        "pk": 174,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "pe",
+            "name": "Peru"
+        }
+    }, {
+        "pk": 175,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ci",
+            "name": "Pob\u0159e\u017e\u00ed slonoviny"
+        }
+    }, {
+        "pk": 176,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "pl",
+            "name": "Polsko"
+        }
+    }, {
+        "pk": 177,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "pr",
+            "name": "Portoriko"
+        }
+    }, {
+        "pk": 178,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "pt",
+            "name": "Portugalsko"
+        }
+    }, {
+        "pk": 179,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "at",
+            "name": "Rakousko"
+        }
+    }, {
+        "pk": 180,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "gq",
+            "name": "Rovn\u00edkov\u00e1 Guinea"
+        }
+    }, {
+        "pk": 181,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "ro",
+            "name": "Rumunsko"
+        }
+    }, {
+        "pk": 182,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "ru",
+            "name": "Rusko"
+        }
+    }, {
+        "pk": 183,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "rw",
+            "name": "Rwanda"
+        }
+    }, {
+        "pk": 184,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "gr",
+            "name": "\u0158ecko"
+        }
+    }, {
+        "pk": 185,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "sv",
+            "name": "Salvador"
+        }
+    }, {
+        "pk": 186,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "sa",
+            "name": "Sa\u00fadsk\u00e1 Ar\u00e1bie"
+        }
+    }, {
+        "pk": 187,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "sn",
+            "name": "Senegal"
+        }
+    }, {
+        "pk": 188,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "kp",
+            "name": "Severn\u00ed Korea"
+        }
+    }, {
+        "pk": 189,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "sl",
+            "name": "Sierra Leone"
+        }
+    }, {
+        "pk": 190,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "sk",
+            "name": "Slovensko"
+        }
+    }, {
+        "pk": 191,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "si",
+            "name": "Slovinsko"
+        }
+    }, {
+        "pk": 192,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "so",
+            "name": "Som\u00e1lsko"
+        }
+    }, {
+        "pk": 193,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ae",
+            "name": "Spojen\u00e9 arabsk\u00e9 emir\u00e1ty"
+        }
+    }, {
+        "pk": 194,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "gb",
+            "name": "Spojen\u00e9 kr\u00e1lovstv\u00ed"
+        }
+    }, {
+        "pk": 195,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "us",
+            "name": "Spojen\u00e9 st\u00e1ty americk\u00e9"
+        }
+    }, {
+        "pk": 196,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "rs",
+            "name": "Srbsko"
+        }
+    }, {
+        "pk": 197,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "cf",
+            "name": "St\u0159edoafrick\u00e1 republika"
+        }
+    }, {
+        "pk": 198,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "sd",
+            "name": "S\u00fad\u00e1n"
+        }
+    }, {
+        "pk": 199,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "sr",
+            "name": "Surinam"
+        }
+    }, {
+        "pk": 200,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "sz",
+            "name": "Svazijsko"
+        }
+    }, {
+        "pk": 201,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "sy",
+            "name": "S\u00fdrie"
+        }
+    }, {
+        "pk": 202,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "sb",
+            "name": "\u0160alamounovy ostrovy"
+        }
+    }, {
+        "pk": 203,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "es",
+            "name": "\u0160pan\u011blsko"
+        }
+    }, {
+        "pk": 204,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "lk",
+            "name": "\u0160r\u00ed Lanka"
+        }
+    }, {
+        "pk": 205,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "se",
+            "name": "\u0160v\u00e9dsko"
+        }
+    }, {
+        "pk": 206,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ch",
+            "name": "\u0160v\u00fdcarsko"
+        }
+    }, {
+        "pk": 207,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tj",
+            "name": "T\u00e1d\u017eikist\u00e1n"
+        }
+    }, {
+        "pk": 208,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tz",
+            "name": "Tanzanie"
+        }
+    }, {
+        "pk": 209,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "th",
+            "name": "Thajsko"
+        }
+    }, {
+        "pk": 210,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tw",
+            "name": "Tchaj-wan"
+        }
+    }, {
+        "pk": 211,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tg",
+            "name": "Togo"
+        }
+    }, {
+        "pk": 212,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tn",
+            "name": "Tunisko"
+        }
+    }, {
+        "pk": 213,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tr",
+            "name": "Turecko"
+        }
+    }, {
+        "pk": 214,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tm",
+            "name": "Turkmenist\u00e1n"
+        }
+    }, {
+        "pk": 215,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ug",
+            "name": "Uganda"
+        }
+    }, {
+        "pk": 216,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ua",
+            "name": "Ukrajina"
+        }
+    }, {
+        "pk": 217,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "uy",
+            "name": "Uruguay"
+        }
+    }, {
+        "pk": 218,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 1000000,
+            "code": "uz",
+            "name": "Uzbekist\u00e1n"
+        }
+    }, {
+        "pk": 219,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "ve",
+            "name": "Venezuela"
+        }
+    }, {
+        "pk": 220,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "vn",
+            "name": "Vietnam"
+        }
+    }, {
+        "pk": 221,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "tl",
+            "name": "V\u00fdchodn\u00ed Timor"
+        }
+    }, {
+        "pk": 222,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "zm",
+            "name": "Zambie"
+        }
+    }, {
+        "pk": 223,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 1000000,
+            "code": "eh",
+            "name": "Z\u00e1padn\u00ed Sahara"
+        }
+    }, {
+        "pk": 224,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "zw",
+            "name": "Zimbabwe"
+        }
+    }, {
+        "pk": 225,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "world",
+            "name": "Svět"
+        }
+    }, {
+        "pk": 1,
+        "model": "core.placerelation",
+        "fields": {
+            "place": 195,
+            "related_places": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48],
+            "type": 1
+        }
+    }, {
+        "pk": 2,
+        "model": "core.placerelation",
+        "fields": {
+            "place": 225,
+            "related_places": [224, 223, 222, 221, 220, 219, 218, 217, 216, 215, 214, 213, 212, 211, 209, 208, 96, 94, 93, 92, 89, 87, 86, 85, 84, 82, 80, 77, 76, 75, 74, 72, 71, 69, 67, 66, 63, 60, 58, 57, 56, 54, 207, 205, 203, 202, 201, 199, 198, 197, 195, 194, 193, 192, 189, 188, 187, 186, 185, 184, 183, 182, 181, 180, 178, 177, 176, 175, 174, 173, 172, 171, 169, 168, 167, 165, 163, 162, 161, 160, 159, 158, 157, 156, 155, 153, 152, 151, 150, 149, 148, 145, 141, 140, 137, 136, 134, 131, 130, 129, 128, 126, 125, 124, 123, 122, 121, 120, 119, 118, 115, 114, 112, 111, 110, 109, 108, 107, 106, 104, 102, 101, 99, 98, 97],
+            "type": 1
+        }
+    }
+]

@@ -18,13 +18,13 @@ class JsonResponse(HttpResponse):
             content_type=content_type,
         )
 
-# def get_question_type_by_id(id):
-#     question_types = all_subclasses(QuestionType)
-#     for QT in question_types:
-#         qt = QT()
-#         if qt.id == id:
-#             return qt
-#     return None
+def get_question_type_by_id(id):
+    question_types = all_subclasses(QuestionType)
+    for QT in question_types:
+        qt = QT()
+        if qt.id == id:
+            return qt
+    return None
 
 class QuestionType(object):
     id = 0
@@ -106,7 +106,7 @@ class Question():
         return options
     
     def get_options_base(self):
-        return Place.objects.filter(id__in=self.map.places.all())
+        return Place.objects.filter(id__in=self.map.related_places.all())
     
     def get_easy_options(self, n):
         return self.get_options_base().filter(difficulty__lt=self.place.difficulty).order_by('?')[:n]
@@ -132,7 +132,7 @@ class QuestionChooser(object):
         return UsersPlace.objects.filter(
                 user=self.user,
                 lastAsked__lt=correctMinutesAgo,
-                place_id__in=self.map.places.all(),
+                place_id__in=self.map.related_places.all(),
             ).exclude(
                 place_id__in=[a.place_id for a in Answer.objects.filter(
                     user=self.user,
@@ -191,7 +191,7 @@ class NewPlacesQuestionChooser(QuestionChooser):
     @classmethod
     def get_places(self, n):
         return Place.objects.filter(
-                id__in=self.map.places.all()
+                id__in=self.map.related_places.all()
             ).exclude(
                 id__in=[up.place_id for up in UsersPlace.objects.filter(user=self.user)]
             ).order_by('difficulty')[:n]

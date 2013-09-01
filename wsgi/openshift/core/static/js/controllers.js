@@ -50,7 +50,7 @@ angular.module('myApp.controllers', [])
   .controller('AppView', function($scope, $routeParams, $filter, usersplaces, question) {
     $scope.part = $routeParams.part;
     $scope.user = $routeParams.user || "";
-    $scope.name = $scope.part == "World" ? "Svět" : $scope.part;
+    $scope.name = $scope.part == "world" ? "Svět" : "USA";
 
     var mapConfig = {
         name : $scope.part.toLowerCase(),
@@ -83,7 +83,7 @@ angular.module('myApp.controllers', [])
     $scope.FIND_ON_MAP_OF_2_OPTIONS_QUESTION_TYPE = 5
 	
     $scope.part = $routeParams.part;
-    $scope.name = $scope.part == "World" ? "Svět" : $scope.part;
+    $scope.name = $scope.part == "world" ? "Svět" : "USA";
 
     $scope.setQuestion = function(active) {
         $scope.question = active;

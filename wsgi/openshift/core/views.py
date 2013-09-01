@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from core.models import Place, Student, UsersPlace, Map
+from core.models import Place, Student, UsersPlace, PlaceRelation
 from core.utils import QuestionService, JsonResponse
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -25,8 +25,8 @@ def home(request):
 
 def users_places(request, map_code, user=''):
     try:
-        map = Map.objects.get(name=map_code)
-    except Map.DoesNotExist:
+        map = PlaceRelation.objects.get(place__code=map_code, type=PlaceRelation.IS_ON_MAP)
+    except PlaceRelation.DoesNotExist:
         raise Http404("Unknown map name: {0}".format(map_code))
     if (user == ''):
         user = request.user
@@ -40,7 +40,7 @@ def users_places(request, map_code, user=''):
         student = Student.objects.fromUser(user)
         ps = UsersPlace.objects.filter(
            user=student,
-           place_id__in=map.places.all()
+           place_id__in=map.related_places.all()
        )
     else:
         ps =[]
@@ -55,8 +55,8 @@ def users_places(request, map_code, user=''):
 @allow_lazy_user
 def question(request, map_code):
     try:
-        map = Map.objects.get(name=map_code)
-    except Map.DoesNotExist:
+        map = PlaceRelation.objects.get(place__code=map_code, type=PlaceRelation.IS_ON_MAP)
+    except PlaceRelation.DoesNotExist:
         raise Http404
     qs = QuestionService(user=request.user, map=map)
     questionIndex = 0
