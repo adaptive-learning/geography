@@ -44,12 +44,18 @@ def users_places(request, map_code, user=''):
        )
     else:
         ps =[]
+    try:
+        cs = PlaceRelation.objects.get(place__code=map_code, type=PlaceRelation.IS_SUBMAP).related_places.all()
+    except PlaceRelation.DoesNotExist:
+        cs = []
     response = [{
         'name': u'Státy',
-        'places': []
+        'places': [p.to_serializable() for p in ps]
+    },{
+        'name': u'Kontinenty',
+        'haveMaps': True,
+        'places': [p.to_serializable() for p in cs]
     }]
-    for p in ps:
-        response[0]['places'].append(p.to_serializable())
     return JsonResponse(response)
 
 @allow_lazy_user

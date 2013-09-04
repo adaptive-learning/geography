@@ -56,7 +56,7 @@ function initMap(config, callback) {
     }
 
     map.loadCSS('static/css/map.css', function() {
-        map.loadMap('static/img/' + config.name + '.svg', function() {
+        map.loadMap('static/map/' + config.name + '.svg', function() {
 
             if (767 < $(window).width()) {
                 map.addLayer('states', {
@@ -73,6 +73,7 @@ function initMap(config, callback) {
 
             resize();
             map.addLayer('states', statesLayer);
+            map.addLayer('cities', statesLayer);
 
             if (!isPracticeView) {
                 map.addFilter('inner-state-glow', 'glow', {

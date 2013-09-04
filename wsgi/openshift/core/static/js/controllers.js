@@ -47,10 +47,10 @@ angular.module('myApp.controllers', [])
     
   })
 
-  .controller('AppView', function($scope, $routeParams, $filter, usersplaces, question) {
+  .controller('AppView', function($scope, $routeParams, $filter, usersplaces, question, placeName) {
     $scope.part = $routeParams.part;
     $scope.user = $routeParams.user || "";
-    $scope.name = $scope.part == "world" ? "Svět" : "USA";
+    $scope.name = placeName($scope.part);
 
     var mapConfig = {
         name : $scope.part.toLowerCase(),
@@ -74,7 +74,7 @@ angular.module('myApp.controllers', [])
 
   })
 
-  .controller('AppPractice', function($scope, $routeParams, $timeout, $location, question) {
+  .controller('AppPractice', function($scope, $routeParams, $timeout, $location, question, placeName) {
 	$scope.FIND_ON_MAP_QUESTION_TYPE = 0;
 	$scope.PICK_NAME_OF_6_OPTIONS_QUESTION_TYPE = 1;
     $scope.PICK_NAME_OF_4_OPTIONS_QUESTION_TYPE = 2;
@@ -83,7 +83,7 @@ angular.module('myApp.controllers', [])
     $scope.FIND_ON_MAP_OF_2_OPTIONS_QUESTION_TYPE = 5
 	
     $scope.part = $routeParams.part;
-    $scope.name = $scope.part == "world" ? "Svět" : "USA";
+    $scope.name = placeName($scope.part);
 
     $scope.setQuestion = function(active) {
         $scope.question = active;

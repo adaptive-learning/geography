@@ -6,15 +6,21 @@ from django.db.models import Min
 
 
 class Place(models.Model):
+    STATE = 1
+    CITY = 2
+    WORLD = 3
+    CONTINENT = 4
     PLACE_TYPES = (
-        (1, 'State'),
-        (2, 'City'),
+        (STATE, 'State'),
+        (CITY, 'City'),
+        (WORLD, 'World'),
+        (CONTINENT, 'Continent'),
     )
     DIFFICULTY_CONVERSION = 1000000.0
     code = models.CharField(max_length=10)
     name = models.CharField(max_length=100)
     difficulty = models.IntegerField(default=0)
-#     type = models.IntegerField(choices=PLACE_TYPES, default=1)
+#     type = models.IntegerField(choices=PLACE_TYPES)
     def __unicode__(self):
         return u'{0} ({1})'.format(self.name, self.code)
     
@@ -102,7 +108,7 @@ class UsersPlace(models.Model):
     objects = UsersPlaceManager()
     
     def similar_places_knowladge(self):
-        map = PlaceRelation.objects.get(related_places=self.place, type=PlaceRelation.IS_ON_MAP)
+        map = PlaceRelation.objects.filter(related_places=self.place, type=PlaceRelation.IS_ON_MAP)[0]
         last_users_places = UsersPlace.objects.filter(
                  user=self.user,
                  place_id__in=map.related_places.all(), 

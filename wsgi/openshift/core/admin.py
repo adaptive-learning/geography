@@ -1,11 +1,12 @@
 from core.models import Answer, Place, Student, UsersPlace, ConfusedPlaces, PlaceRelation
 from django.contrib import admin
-from core.utils import get_question_type_by_id
+from core.utils import get_question_type_by_id, pretty_date
 
 class UsersPlaceAdmin(admin.ModelAdmin):
     list_display = ('user', 'place')
     
 class PlaceAdmin(admin.ModelAdmin):
+#     list_display = ('name', 'code', 'type', 'difficulty')
     list_display = ('name', 'code', 'difficulty')
     
 class AnswerAdmin(admin.ModelAdmin):
@@ -17,7 +18,11 @@ class AnswerAdmin(admin.ModelAdmin):
         return get_question_type_by_id(a.type).text
     question.short_description = 'Question'
     
-    list_display = ( 'user','question', 'place', 'answer', 'is_correct', 'askedDate')
+    def asked_ago(self, a):
+        return pretty_date(a.askedDate)
+    asked_ago.short_description = 'When Asked'
+    
+    list_display = ( 'user','question', 'place', 'answer', 'is_correct', 'asked_ago')
     
 class StudentAdmin(admin.ModelAdmin):
     list_display = ('user', 'points', 'skill')

@@ -9,15 +9,33 @@ angular.module('myApp.services', []).
   value('version', '0.1')
 
   .factory('usersplaces', function($rootScope, $http) {
-	var cache = {};
-	
+    var cache = {};
+    
     return function(part, user, fn) {
-    	var url = 'usersplaces/' + part + '/' + user;
+        var url = 'usersplaces/' + part + '/' + user;
         $http.get(url).success(function(data) {
-        	cache[url] = data;
+            data = data.filter(function(d){
+                return d.places && d.places.length > 0;
+            })
+            cache[url] = data;
             fn(data);
         });
         return cache[url] || undefined;
+    }
+  })
+
+  .factory('placeName', function($rootScope, $http) {
+    var cache = {};
+    
+    return function(part, fn) {
+        var names = {
+            'us' : 'USA',
+            'world' : 'Svět',
+            'africa' : 'Afrika',
+            'samerica' : 'Jižní Amerika',
+            'namerica' : 'Severní Amerika'
+        }
+        return names[part];
     }
   })
 
