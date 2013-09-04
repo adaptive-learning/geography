@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from core.models import Answer, Place, Student, UsersPlace, ConfusedPlaces
+from core.models import Answer, Place, Student, UsersPlace, ConfusedPlaces,\
+    PlaceRelation
 from datetime import datetime, timedelta
 from django.http import HttpResponse
 from django.utils import simplejson
@@ -95,9 +96,14 @@ class Question():
     def get_options(self, n):
         ps = [self.place]
         if self.qtype.level == 0 :
-            pass#ps += self.get_easy_options(n -1)
-        elif self.qtype.level == 2 :
+            ps += self.get_random_options(n -1,ps)
+        else:
             ps += self.get_hard_options(n -1)
+        
+        remains = n - len(ps) 
+        if (remains > 0):
+            ps += self.get_neighbouring_options(remains, ps)
+            
         remains = n - len(ps) 
         if (remains > 0):
             ps += self.get_random_options(remains, ps)
@@ -116,6 +122,9 @@ class Question():
         
     def get_hard_options(self, n):
         return ConfusedPlaces.objects.get_similar_to(self.place)[:n]
+    
+    def get_neighbouring_options(self, n, excluded):
+        return PlaceRelation.objects.get_bordering_places(self.place).filter(id__in=self.map.related_places.all()).exclude(id__in = [p.id for p in excluded]).order_by('?')[:n]
 
 class QuestionChooser(object):
     easyQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 0]
