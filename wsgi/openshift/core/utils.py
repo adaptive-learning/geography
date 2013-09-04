@@ -187,6 +187,11 @@ class UncertainPlacesQuestionChooser(QuestionChooser):
     def get_places(self, n):
         return [up.place for up in self.get_ready_users_places() if up.certainty() < 1 ][:n]
 
+class WeakPlacesQuestionChooser(QuestionChooser):
+    @classmethod
+    def get_places(self, n):
+        return [up.place for up in self.get_ready_users_places(10) if up.skill() < 0.8 ][:n]
+
 class NewPlacesQuestionChooser(QuestionChooser):
     @classmethod
     def get_places(self, n):
@@ -195,11 +200,6 @@ class NewPlacesQuestionChooser(QuestionChooser):
             ).exclude(
                 id__in=[up.place_id for up in UsersPlace.objects.filter(user=self.user)]
             ).order_by('difficulty')[:n]
-
-class WeakPlacesQuestionChooser(QuestionChooser):
-    @classmethod
-    def get_places(self, n):
-        return [up.place for up in self.get_ready_users_places(10) if up.skill() < 0.8 ][:n]
 
 class RandomPlacesQuestionChooser(QuestionChooser):
     @classmethod
