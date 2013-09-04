@@ -108,9 +108,7 @@ function initMap(config, callback) {
                 }
                 var bbox = statePath.svgPath.getBBox()
                 statePath.svgPath.animate(aminAttrs, animation_ms/2, ">", function(){
-                    if ((bbox.width > 10 && bbox.height > 10) || color != NEUTRAL) {
-                        statePath.svgPath.animate({transform: "", 'stroke-width': 1}, animation_ms/2, "<");
-                    }
+                    statePath.svgPath.animate({transform: "", 'stroke-width': 1}, animation_ms/2, "<");
                     myMap.highlightStates(states, color);
                 });
             }
