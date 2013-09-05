@@ -108,9 +108,13 @@ function initMap(config, callback) {
                 }
                 var bbox = statePath.svgPath.getBBox()
                 statePath.svgPath.animate(aminAttrs, animation_ms/2, ">", function(){
-                    statePath.svgPath.animate({transform: "", 'stroke-width': 1}, animation_ms/2, "<");
+                    if ((bbox.width > 10 && bbox.height > 10) || color != NEUTRAL) {
+                        statePath.svgPath.animate({transform: "", 'stroke-width': 1}, animation_ms/2, "<");
+                    }
                     myMap.highlightStates(states, color);
                 });
+            } else if (states.length > 0) {
+                myMap.highlightStates(states, color);
             }
         },
         highlightState : function(state, color, zoomRatio) {
