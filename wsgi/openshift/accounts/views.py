@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from core.models import Student
+from accounts.models import Student
 from core.utils import JsonResponse
 from lazysignup.models import LazyUser
 from django.contrib.auth import logout

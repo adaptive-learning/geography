@@ -4,11 +4,12 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-from core import views
+from core.views import home
+from questions.views import users_places
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', views.home, name='home'),
+    url(r'^$', home, name='home'),
     
     url(r'', include('social_auth.urls')),
     # url(r'^openshift/', include('openshift.foo.urls')),
@@ -19,10 +20,9 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     
-    url(r'^usersplaces/(?P<map_code>\w+)/(?P<user>\w*)', views.users_places, name='usersplaces'),
-    url(r'^question/(?P<map_code>\w+)', views.question, name='question'),
-
+    url(r'^usersplaces/(?P<map_code>\w+)/(?P<user>\w*)', users_places, name='usersplaces'),
     url(r'^user/', include('accounts.urls')),
+    url(r'^question/', include('questions.urls')),
     
     url(r'^convert/', include('lazysignup.urls')),
 )

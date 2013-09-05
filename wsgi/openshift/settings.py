@@ -173,6 +173,8 @@ INSTALLED_APPS = (
     'social_auth',
     'lazysignup',
     'core',
+    'accounts',
+    'questions',
 )
 
 # A sample logging configuration. The only tangible logging
