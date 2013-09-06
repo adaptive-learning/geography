@@ -1,9 +1,8 @@
 try:
-    from django.conf.urls import patterns, url
+    from django.conf.urls import patterns
 except ImportError:
-    from django.conf.urls.defaults import patterns, url
+    from django.conf.urls.defaults import patterns
 
-from core import views
 
 # URL patterns for lazysignup
 

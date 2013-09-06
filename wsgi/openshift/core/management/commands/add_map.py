@@ -14,17 +14,17 @@ class Command(BaseCommand):
             raise CommandError('Not enought arguments')
         file_name = args[0]
         mapFile = open(file_name)
-        map = mapFile.read()
+        map_data = mapFile.read()
         mapFile.close()
         
         mapFile = open(file_name, 'w')
         def dashrepl(matchobj):
             return  matchobj.group(0).lower() 
-        map = re.sub(r'"[A-Z]{2}"', dashrepl, map)
+        map_data = re.sub(r'"[A-Z]{2}"', dashrepl, map_data)
         mapFile.write(map)
         mapFile.close()
         
-        codes = re.findall(r'"[a-z]{2}"', map)
+        codes = re.findall(r'"[a-z]{2}"', map_data)
         codes = [c[1:3] for c in codes]
         places = Place.objects.all()
         new_place = Place(code=args[1], name=args[2])#, type=Place.CONTINENT)

@@ -1,7 +1,6 @@
 
 from core.models import Place, PlaceRelation
 from django.core.management.base import BaseCommand, CommandError
-import re
 import csv
 
 

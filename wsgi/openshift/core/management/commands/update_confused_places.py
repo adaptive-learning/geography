@@ -2,7 +2,7 @@
 from django.core.management.base import NoArgsCommand
 from django.db.models import F
 
-from core.models import Answer, ConfusedPlaces
+from questions.models import Answer, ConfusedPlaces
 
 
 class Command(NoArgsCommand):
