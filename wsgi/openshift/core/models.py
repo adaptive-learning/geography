@@ -17,8 +17,7 @@ class Place(models.Model):
     code = models.CharField(max_length=10)
     name = models.CharField(max_length=100)
     difficulty = models.IntegerField(default=0)
-# TODO: uncomment this to allow PLACE_TYPES listed above
-#     type = models.IntegerField(choices=PLACE_TYPES)
+    type = models.IntegerField(choices=PLACE_TYPES)
     def __unicode__(self):
         return u'{0} ({1})'.format(self.name, self.code)
     
