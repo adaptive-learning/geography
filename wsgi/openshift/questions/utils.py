@@ -117,9 +117,10 @@ class QuestionChooser(object):
     easyQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 0]
     mediumQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 1]
     hardQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 2]
-    def __init__(self, user, map):
+    def __init__(self, user, map, pre_questions):
         self.user = user
         self.map = map
+        self.pre_questions = pre_questions
 
     @classmethod
     def get_ready_users_places(self, correctAnswerDelayMinutes=2):
@@ -134,6 +135,8 @@ class QuestionChooser(object):
                     user=self.user,
                     askedDate__gt=minuteAgo
                 )]
+            ).exclude(
+                place__code__in=[q['code'] for q in self.pre_questions]
             ).order_by('?')
             
     @classmethod
@@ -153,9 +156,10 @@ class QuestionChooser(object):
         return qTypeLevel
             
     @classmethod
-    def get_questions(self, n, user, map):
+    def get_questions(self, n, user, map, pre_questions):
         self.user = user
         self.map = map
+        self.pre_questions = pre_questions
         places = self.get_places(n)
         questions = []
         for place in places:
@@ -186,7 +190,7 @@ class UncertainPlacesQuestionChooser(QuestionChooser):
 class WeakPlacesQuestionChooser(QuestionChooser):
     @classmethod
     def get_places(self, n):
-        return [up.place for up in self.get_ready_users_places(10).filter(skill__lt=0.8)[:n]]
+        return [up.place for up in self.get_ready_users_places(5).filter(skill__lt=0.8)[:n]]
 
 class NewPlacesQuestionChooser(QuestionChooser):
     @classmethod
@@ -200,7 +204,7 @@ class NewPlacesQuestionChooser(QuestionChooser):
 class RandomPlacesQuestionChooser(QuestionChooser):
     @classmethod
     def get_places(self, n):
-        return [up.place for up in self.get_ready_users_places(60) if up.skill < 1][:n]
+        return [up.place for up in self.get_ready_users_places(30) if up.skill < 1][:n]
 
 
 class QuestionService():
@@ -215,9 +219,9 @@ class QuestionService():
         question_choosers = all_subclasses(QuestionChooser)
         questions = []
         for QC in question_choosers:
-            qc = QC(self.user, self.map)
+            qc = QC(self.user, self.map, questions)
             remains = n - len(questions) 
-            questions += qc.get_questions(remains, self.user, self.map)
+            questions += qc.get_questions(remains, self.user, self.map, questions)
         return questions
 
     def answer(self, a):
