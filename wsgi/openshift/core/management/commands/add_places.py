@@ -1,7 +1,7 @@
 
 from django.core.management.base import BaseCommand, CommandError
 
-from core.models import Place, Map
+from core.models import Place
 
 
 class Command(BaseCommand):
@@ -12,8 +12,6 @@ class Command(BaseCommand):
             raise CommandError('Not enought arguments')
         map_name = args[0]
         statesFile = open(map_name.lower()+".txt")
-        m = Map(name=map_name)
-        m.save()
         states = statesFile.read()
         #self.stdout.write(states)
         ss = states.split("\n")
@@ -24,9 +22,7 @@ class Command(BaseCommand):
                 code = state[0]
                 p=Place(code=code, name=name, difficulty=500000)
                 p.save()
-                m.places.add(p)
                 self.stdout.write(name + " added")
-        m.save()
                 
 #     def handle(self, *args, **options):
 #         if(len(args) < 1):

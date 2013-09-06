@@ -58,11 +58,13 @@ class UsersPlace(models.Model):
         return knowladge
     
     def skill(self):
+        # TODO: create a field instead of this method
         skill = self.correctlyAnsweredCount / float(self.askedCount) if self.askedCount > 0 else 0
         skill = round(skill, 2)
         return skill
     
     def certainty(self):
+        # TODO: create a field instead of this method
         newCertainty = self.askedCount / 3.0
 #         raise Exception(u"here {0}".format(similar_places_knowladge(self.place)))
         if self.askedCount <= 2 and self.correctlyAnsweredCount == self.askedCount:
@@ -79,6 +81,7 @@ class UsersPlace(models.Model):
         return certainty
     
     def firstAsked(self):
+        # TODO: create a field instead of this method
         return Answer.objects.filter(
               user=self.user,
               place=self.place

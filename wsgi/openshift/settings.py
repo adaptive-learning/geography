@@ -210,6 +210,10 @@ AUTHENTICATION_BACKENDS = (
   'social_auth.backends.google.GoogleBackend',
 )
 
+ALLOWED_HOSTS = [
+    '.rhcloud.com',
+]
+
 LOGIN_REDIRECT_URL = '/#/view/'
 
 SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
