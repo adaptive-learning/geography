@@ -3,7 +3,15 @@ from django.contrib import admin
 from questions.utils import get_question_type_by_id, pretty_date
 
 class UsersPlaceAdmin(admin.ModelAdmin):
-    list_display = ('user', 'place')
+    def first_asked_ago(self, a):
+        return pretty_date(a.first_asked)
+    first_asked_ago.short_description = 'First Asked'
+    
+    def last_asked_ago(self, a):
+        return pretty_date(a.lastAsked)
+    last_asked_ago.short_description = 'Last Asked'
+    
+    list_display = ('user', 'place', 'skill', 'first_asked_ago', 'last_asked_ago')
     
 class AnswerAdmin(admin.ModelAdmin):
     def is_correct(self, a):

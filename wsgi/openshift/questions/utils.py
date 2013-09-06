@@ -142,7 +142,7 @@ class QuestionChooser(object):
         if up.askedCount < 2:
             successRate = self.success_rate()
         else:
-            successRate = up.skill() * up.certainty()
+            successRate = up.skill * up.certainty()
 #         raise Exception(u"here {0} {1}".format(successRate, place.name))
         if (successRate > 0.8):
             qTypeLevel = self.hardQuestionTypes
@@ -186,7 +186,7 @@ class UncertainPlacesQuestionChooser(QuestionChooser):
 class WeakPlacesQuestionChooser(QuestionChooser):
     @classmethod
     def get_places(self, n):
-        return [up.place for up in self.get_ready_users_places(10) if up.skill() < 0.8 ][:n]
+        return [up.place for up in self.get_ready_users_places(10).filter(skill__lt=0.8)[:n]]
 
 class NewPlacesQuestionChooser(QuestionChooser):
     @classmethod
@@ -200,7 +200,7 @@ class NewPlacesQuestionChooser(QuestionChooser):
 class RandomPlacesQuestionChooser(QuestionChooser):
     @classmethod
     def get_places(self, n):
-        return [up.place for up in self.get_ready_users_places(60) if up.skill() < 1][:n]
+        return [up.place for up in self.get_ready_users_places(60) if up.skill < 1][:n]
 
 
 class QuestionService():

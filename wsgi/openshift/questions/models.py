@@ -1,6 +1,5 @@
 from django.db import models
 from datetime import datetime, timedelta
-from django.db.models import Min
 from core.models import Place, PlaceRelation
 from accounts.models import Student
 
@@ -26,7 +25,7 @@ class UsersPlaceManager(models.Manager):
         usersPlace._addAnswer(a)
 
 def all_correct(users_places):
-    incorrect =  [up for up in users_places if up.skill() < 1]
+    incorrect =  [up for up in users_places if up.skill < 1]
     return len(incorrect) == 0
 
 def updatePlaceDifficulty(place):
@@ -39,8 +38,10 @@ class UsersPlace(models.Model):
     user = models.ForeignKey(Student)
     place = models.ForeignKey(Place)
     askedCount = models.IntegerField(default=0)
+    skill = models.FloatField(default=0)
     correctlyAnsweredCount = models.IntegerField(default=0)
     lastAsked = models.DateTimeField(default=yesterday)
+    first_asked = models.DateTimeField(default=datetime.now)
     objects = UsersPlaceManager()
     
     def similar_places_knowladge(self):
@@ -50,15 +51,14 @@ class UsersPlace(models.Model):
                  place_id__in=map.related_places.all(), 
 #                  lastAsked__lt=min(self.lastAsked, datetime.now())
         ).order_by("-lastAsked")[:10]
-        correct =  [up for up in last_users_places if up.skill() == 1]
+        correct =  [up for up in last_users_places if up.skill == 1]
         if len(last_users_places) < 5:
             return 0
         knowladge = 1.0*len(correct) / len(last_users_places)
 #         raise Exception(u"similar {0} {1}".format(knowladge, self.place.name))
         return knowladge
     
-    def skill(self):
-        # TODO: create a field instead of this method
+    def get_skill(self):
         skill = self.correctlyAnsweredCount / float(self.askedCount) if self.askedCount > 0 else 0
         skill = round(skill, 2)
         return skill
@@ -71,7 +71,7 @@ class UsersPlace(models.Model):
             if self.similar_places_knowladge() >= 0.9:
                 newCertainty = 1
         notSeenFor = datetime.now() - max(self.lastAsked, datetime.now()) 
-        knownFor = self.lastAsked - self.firstAsked() if self.firstAsked() != None else timedelta()
+        knownFor = self.lastAsked - self.first_asked
         if float(notSeenFor.days) > 0:
             notSeenForRatio = min(1, 0.9 * knownFor.days / float(notSeenFor.days))
         else:
@@ -79,19 +79,13 @@ class UsersPlace(models.Model):
         certainty = min(newCertainty, notSeenForRatio)
         certainty = round(certainty, 2)
         return certainty
-    
-    def firstAsked(self):
-        # TODO: create a field instead of this method
-        return Answer.objects.filter(
-              user=self.user,
-              place=self.place
-          ).aggregate(Min('askedDate'))['askedDate__min']
 
     def _addAnswer(self, a):
         self.askedCount += 1
         if (a.place == a.answer):
             self.correctlyAnsweredCount += 1
             self.lastAsked = datetime.now()
+        self.skill = self.get_skill()
         self.save()
         updatePlaceDifficulty(self.place)
 
@@ -101,7 +95,7 @@ class UsersPlace(models.Model):
     def to_serializable(self):
         ret = self.place.to_serializable()
         ret.update({
-          'skill' : self.skill(),
+          'skill' : self.skill,
           'certainty' : self.certainty(),
         })
         return ret
