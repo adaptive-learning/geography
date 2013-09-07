@@ -107,9 +107,10 @@ class Answer(models.Model):
     user = models.ForeignKey(Student)
     place = models.ForeignKey(Place, related_name='place_id')
     answer = models.ForeignKey(Place, related_name='answer_id', null=True, blank=True, default=None)
-    type = models.IntegerField()
+    type = models.IntegerField() # TODO: change to PositiveSmallIntegerField
     askedDate = models.DateTimeField(default=datetime.now)
     msResposeTime = models.IntegerField(default=0)
+    # TODO: options = models.ManyToManyField(Place)
     
 #     def get_no_of_options(self):
 #         qt = get_question_type_by_id(self.type)

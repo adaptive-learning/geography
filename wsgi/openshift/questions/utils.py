@@ -118,6 +118,7 @@ class QuestionChooser(object):
     mediumQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 1]
     hardQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 2]
     def __init__(self, user, map, pre_questions):
+        # TODO: figure out how to make these 3 params work without setting them again in get_questions method
         self.user = user
         self.map = map
         self.pre_questions = pre_questions

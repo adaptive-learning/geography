@@ -14,10 +14,10 @@ class Place(models.Model):
         (CONTINENT, 'Continent'),
     )
     DIFFICULTY_CONVERSION = 1000000.0
-    code = models.CharField(max_length=10)
+    code = models.CharField(max_length=10) # TODO: change to SlugField
     name = models.CharField(max_length=100)
     difficulty = models.IntegerField(default=0)
-    type = models.IntegerField(choices=PLACE_TYPES)
+    type = models.IntegerField(choices=PLACE_TYPES) # TODO: change to PositiveSmallIntegerField
     def __unicode__(self):
         return u'{0} ({1})'.format(self.name, self.code)
     
