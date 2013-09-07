@@ -27,6 +27,8 @@ class Place(models.Model):
           'code' : self.code,
           'name' : self.name
         }
+    class Meta:
+        ordering = ['type','name']
 
 
 class PlaceRelationManager(models.Manager):

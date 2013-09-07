@@ -45,7 +45,7 @@ def users_places(request, map_code, user=''):
         ps = UsersPlace.objects.filter(
            user=student,
            place_id__in=map.related_places.all()
-       )
+       ).order_by("place__name")
     else:
         ps =[]
     try:
