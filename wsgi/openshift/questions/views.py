@@ -53,11 +53,11 @@ def users_places(request, map_code, user=''):
     except PlaceRelation.DoesNotExist:
         cs = []
     response = [{
-        'name': u'Státy',
-        'places': [p.to_serializable() for p in ps]
-    },{
         'name': u'Kontinenty',
         'haveMaps': True,
         'places': [p.to_serializable() for p in cs]
+    },{
+        'name': u'Státy',
+        'places': [p.to_serializable() for p in ps]
     }]
     return JsonResponse(response)
