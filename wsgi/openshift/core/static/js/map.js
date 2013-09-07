@@ -29,8 +29,8 @@ function initMap(config, callback) {
 
     var isPracticeView = config.click != undefined;
 
-    var statesLayer = {};
-    statesLayer.styles = {
+    var statesLayerConfig = {};
+    statesLayerConfig.styles = {
         'fill' : function(d) {
             var state = config.states && config.states[d.name];
             return state ? (scale(state.skill).brighten((1 - state.certainty) * 80).hex()) : '#fff';
@@ -41,11 +41,11 @@ function initMap(config, callback) {
         clickFn = function(data, path, event) {
             config.click(data.name);
         }
-        statesLayer.click = clickFn
-        statesLayer.styles['stroke-width'] = 1.5;
+        statesLayerConfig.click = clickFn
+        statesLayerConfig.styles['stroke-width'] = 1.5;
     }
     if (config.showTooltips) {
-        statesLayer.tooltips = function(d) {
+        statesLayerConfig.tooltips = function(d) {
             var state = config.states && config.states[d.name];
             var name = ( state ? '<span class="label">' + '<i class="flag-' + d.name + '"></i> ' + state.name + '</span>' : '<br>Neprozkoumané území<br><br>');
             var description = state ? '<div> <i class="color-indicator" style="background-color:' + scale(state.skill).hex() + '"></i> Znalost: ' + Math.round(100 * state.skill) + '%</div>' : "";
@@ -72,8 +72,7 @@ function initMap(config, callback) {
             }
 
             resize();
-            map.addLayer('states', statesLayer);
-            map.addLayer('cities', statesLayer);
+            map.addLayer('states', statesLayerConfig);
 
             if (!isPracticeView) {
                 map.addFilter('inner-state-glow', 'glow', {
@@ -137,10 +136,13 @@ function initMap(config, callback) {
                 myMap.highlightStates(highlights)
             }
             config.states = states;
-            map.getLayer('states').style('stroke', statesLayer.styles.stroke);
-            map.getLayer('states').style('stroke-width', statesLayer.styles['stroke-width'], 0.1);
-            map.getLayer('states').style('fill', statesLayer.styles.fill, 2);
-            map.getLayer('states').tooltips(statesLayer.tooltips);
+            var statesLayer = map.getLayer('states')
+            if (statesLayer) {
+                statesLayer.style('stroke', statesLayerConfig.styles.stroke);
+                statesLayer.style('stroke-width', statesLayerConfig.styles['stroke-width'], 0.1);
+                statesLayer.style('fill', statesLayerConfig.styles.fill, 2);
+                statesLayer.tooltips(statesLayerConfig.tooltips);
+            }
         }
     }
     return myMap;

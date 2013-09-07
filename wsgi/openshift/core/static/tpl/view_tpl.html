@@ -15,7 +15,7 @@
     <div ng-show="!placesTypes" class="loading-indicator">
     </div>
     <ul class="thumbnails">
-      <li class="" ng-repeat="type in placesTypes">
+      <li class="col-sm-{{12/placesTypes.length}}" ng-repeat="type in placesTypes">
         <div class="thumbnail">
           <h3>{{type.name}}</h3>
           <div class="view-places">
@@ -33,4 +33,5 @@
         </div>
       </li>
     </ul>
+    <div class="clearfix"></div>
   </div>
