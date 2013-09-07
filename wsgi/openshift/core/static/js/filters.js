@@ -61,9 +61,13 @@ angular.module('myApp.filters', []).
   .filter('StatesFromPlaces', function() {
     return function(data) {
         var places = {};
-        if (data && data[0] && data[0].places) {
-            angular.forEach(data[0].places, function(place) {
-                places[place.code] = place;
+        if (data && data[0]) {
+            angular.forEach(data, function(category) {
+                if (!category.haveMaps && category.places) {
+                    angular.forEach(category.places, function(place) {
+                        places[place.code] = place;
+                    });
+                }
             });
         }
         return places;
