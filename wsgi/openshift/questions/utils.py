@@ -138,7 +138,7 @@ class QuestionChooser(object):
                 )]
             ).exclude(
                 place__code__in=[q['code'] for q in self.pre_questions]
-            ).order_by('?')
+            ).select_related().order_by('?')
             
     @classmethod
     def get_question_level(self, place):
@@ -146,7 +146,7 @@ class QuestionChooser(object):
         if up.askedCount < 2:
             successRate = self.success_rate()
         else:
-            successRate = up.skill * up.certainty()
+            successRate = up.skill * up.get_certainty()
 #         raise Exception(u"here {0} {1}".format(successRate, place.name))
         if (successRate > 0.8):
             qTypeLevel = self.hardQuestionTypes
@@ -179,14 +179,14 @@ class QuestionChooser(object):
         successRate = 0
         for i in range(len(lastAnswers)):
             a = lastAnswers[i]
-            thisSuccess = 1 if a.place == a.answer else 0
+            thisSuccess = 1 if a.place_id == a.answer_id else 0
             successRate = (successRate * i + thisSuccess * PRIORITY_RATIO) / (i + PRIORITY_RATIO)
         return successRate
 
 class UncertainPlacesQuestionChooser(QuestionChooser):
     @classmethod
     def get_places(self, n):
-        return [up.place for up in self.get_ready_users_places() if up.certainty() < 1 ][:n]
+        return [up.place for up in self.get_ready_users_places() if up.get_certainty() < 1 ][:n]
 
 class WeakPlacesQuestionChooser(QuestionChooser):
     @classmethod

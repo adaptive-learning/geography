@@ -45,11 +45,14 @@ def users_places(request, map_code, user=''):
         ps = UsersPlace.objects.filter(
            user=student,
            place_id__in=map.related_places.all()
-       ).order_by("place__name")
+       ).select_related().order_by("place__name")
     else:
         ps =[]
     try:
-        cs = PlaceRelation.objects.get(place__code=map_code, type=PlaceRelation.IS_SUBMAP).related_places.all()
+        cs = PlaceRelation.objects.get(
+           place__code=map_code,
+           type=PlaceRelation.IS_SUBMAP,
+        ).related_places.all()
     except PlaceRelation.DoesNotExist:
         cs = []
     response = [{

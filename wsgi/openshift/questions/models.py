@@ -39,6 +39,7 @@ class UsersPlace(models.Model):
     place = models.ForeignKey(Place)
     askedCount = models.IntegerField(default=0)
     skill = models.FloatField(default=0)
+#     certainty = models.FloatField(default=0)
     correctlyAnsweredCount = models.IntegerField(default=0)
     lastAsked = models.DateTimeField(default=yesterday)
     first_asked = models.DateTimeField(default=datetime.now)
@@ -63,10 +64,9 @@ class UsersPlace(models.Model):
         skill = round(skill, 2)
         return skill
     
-    def certainty(self):
+    def get_certainty(self):
         # TODO: create a field instead of this method
         newCertainty = self.askedCount / 3.0
-#         raise Exception(u"here {0}".format(similar_places_knowladge(self.place)))
         if self.askedCount <= 2 and self.correctlyAnsweredCount == self.askedCount:
             if self.similar_places_knowladge() >= 0.9:
                 newCertainty = 1
@@ -96,7 +96,7 @@ class UsersPlace(models.Model):
         ret = self.place.to_serializable()
         ret.update({
           'skill' : self.skill,
-          'certainty' : self.certainty(),
+          'certainty' : self.get_certainty(),
         })
         return ret
     class Meta:
