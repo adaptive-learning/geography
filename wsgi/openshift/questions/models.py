@@ -35,8 +35,8 @@ def updatePlaceDifficulty(place):
     place.difficulty = int((1 - difficulty) * Place.DIFFICULTY_CONVERSION)
 
 class UsersPlace(models.Model):
-    user = models.ForeignKey(Student)
-    place = models.ForeignKey(Place)
+    user = models.ForeignKey(Student, db_index=True)
+    place = models.ForeignKey(Place, db_index=True)
     askedCount = models.IntegerField(default=0)
     skill = models.FloatField(default=0)
 #     certainty = models.FloatField(default=0)
@@ -67,7 +67,7 @@ class UsersPlace(models.Model):
     def get_certainty(self):
         # TODO: create a field instead of this method
         newCertainty = self.askedCount / 3.0
-        if self.askedCount <= 2 and self.correctlyAnsweredCount == self.askedCount:
+        if self.askedCount < 1 and self.correctlyAnsweredCount == self.askedCount:
             if self.similar_places_knowladge() >= 0.9:
                 newCertainty = 1
         notSeenFor = datetime.now() - max(self.lastAsked, datetime.now()) 
@@ -101,16 +101,25 @@ class UsersPlace(models.Model):
         return ret
     class Meta:
         db_table = 'core_usersplace' #TODO migrate lagacy db_table
-    
+
+class AnswerManager(models.Manager):
+    last_10_answers = None
+    def get_last_10_answers(self, user):
+        if self.last_10_answers == None:
+            self.last_10_answers = self.filter(
+                user=user,
+            ).order_by("-askedDate")[:10]
+        return self.last_10_answers
 
 class Answer(models.Model):
-    user = models.ForeignKey(Student)
+    user = models.ForeignKey(Student, db_index=True)
     place = models.ForeignKey(Place, related_name='place_id')
     answer = models.ForeignKey(Place, related_name='answer_id', null=True, blank=True, default=None)
     type = models.IntegerField() # TODO: change to PositiveSmallIntegerField
     askedDate = models.DateTimeField(default=datetime.now)
     msResposeTime = models.IntegerField(default=0)
     # TODO: options = models.ManyToManyField(Place)
+    objects = AnswerManager()
     
 #     def get_no_of_options(self):
 #         qt = get_question_type_by_id(self.type)
@@ -127,6 +136,7 @@ class Answer(models.Model):
 
 
 class ConfusedPlacesManager(models.Manager):
+    map_cache={}
     def was_confused(self, askedPlace, answeredPlace):
         if answeredPlace == None:
             return
@@ -140,8 +150,11 @@ class ConfusedPlacesManager(models.Manager):
         confused.level_of_cofusion += 1
         confused.save()
 
-    def get_similar_to(self, place):
-        return [c.confused_with for c in self.filter(asked=place)]
+    def get_similar_to(self, place, map):
+        if not map in self.map_cache:
+            self.map_cache[map] = self.filter(asked__in=map.related_places.all()).select_related()
+        confused = [c for c in self.map_cache[map] if c.asked == place]
+        return [c.confused_with for c in confused]
 
 class ConfusedPlaces(models.Model):
     asked = models.ForeignKey(Place, related_name='asked_id')

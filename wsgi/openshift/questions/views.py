@@ -16,13 +16,14 @@ def question(request, map_code):
         map = PlaceRelation.objects.get(place__code=map_code, type=PlaceRelation.IS_ON_MAP)
     except PlaceRelation.DoesNotExist:
         raise Http404
-    qs = QuestionService(user=request.user, map=map)
+    student = Student.objects.fromUser(request.user)
+    qs = QuestionService(user=student, map=map)
     questionIndex = 0
     if (request.raw_post_data != ""):
         answer = simplejson.loads(request.raw_post_data)
         questionIndex = answer['index'] + 1
         qs.answer(answer);
-    noOfQuestions = 5 if Student.objects.fromUser(request.user).points < 10 else 10
+    noOfQuestions = 5 if student.points < 10 else 10
     noOfQuestions -= questionIndex
     response = qs.get_questions(noOfQuestions)
     return JsonResponse(response)
