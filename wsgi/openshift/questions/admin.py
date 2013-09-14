@@ -19,11 +19,13 @@ class UsersPlaceAdmin(admin.ModelAdmin):
     last_asked_ago.short_description = 'Last Asked'
     
     list_display = ('user', 'place', 'skill', 'first_asked_ago', 'last_asked_ago')
+    search_fields = ('user__user__username','place__code','place__name', )
     
 class AnswerAdmin(admin.ModelAdmin):
     def is_correct(self, a):
         return a.place == a.answer
-    is_correct.short_description = 'Is Correct'
+    is_correct.short_description = 'Correct'
+    is_correct.boolean = True
     
     def question(self, a):
         return get_question_type_by_id(a.type).text
@@ -34,6 +36,7 @@ class AnswerAdmin(admin.ModelAdmin):
     asked_ago.short_description = 'When Asked'
     
     list_display = ( 'user','question', 'place', 'answer', 'is_correct', 'asked_ago')
+    search_fields = ('user__user__username','place__code','place__name', )
     actions = [export_selected_objects]
     
 class ConfusedPlacesAdmin(admin.ModelAdmin):
