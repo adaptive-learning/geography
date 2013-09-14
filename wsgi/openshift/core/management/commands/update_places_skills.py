@@ -9,4 +9,6 @@ class Command(NoArgsCommand):
 
     def handle_noargs(self, **options):
         places = Place.objects.all()
-        [ updatePlaceDifficulty(p) for p in places ]
+        for p in places:
+            updatePlaceDifficulty(p)
+            p.save()
