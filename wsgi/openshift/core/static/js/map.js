@@ -7,6 +7,11 @@ function initMap(config, callback) {
 
     var map = $K.map(HOLDER);
     var HOLDER_INIT_HEIGHT = $(HOLDER).height();
+    
+    // There is a bug in Firefox - svg filters are very slow
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=672413
+    var isFirefox = navigator.userAgent.indexOf("Firefox")!=-1;
+    var allowSvgFilters = ! isFirefox;
 
     var resize = function() {
         var c = $(HOLDER);
@@ -49,7 +54,8 @@ function initMap(config, callback) {
             var state = config.states && config.states[d.name];
             var name = ( state ? '<span class="label">' + '<i class="flag-' + d.name + '"></i> ' + state.name + '</span>' : '<br>Neprozkoumané území<br><br>');
             var description = state ? '<div> <i class="color-indicator" style="background-color:' + scale(state.skill).hex() + '"></i> Znalost: ' + Math.round(100 * state.skill) + '%</div>' : "";
-            description += ( state ? '<div> <i class="color-indicator" style="background-color:' + chroma.color("#000").brighten((1 - state.certainty) * 130).hex() + '"></i>  Jistota: ' + Math.round(100 * state.certainty) + '%</div> ' : "");
+//             TODO: find a better word than "Jistota"
+//            description += ( state ? '<div> <i class="color-indicator" style="background-color:' + chroma.color("#000").brighten((1 - state.certainty) * 130).hex() + '"></i>  Jistota: ' + Math.round(100 * state.certainty) + '%</div> ' : "");
 
             return [name + description, config.states[d.name] ? config.states[d.name].name : ""];
         }
@@ -58,7 +64,7 @@ function initMap(config, callback) {
     map.loadCSS('static/css/map.css', function() {
         map.loadMap('static/map/' + config.name + '.svg', function() {
 
-            if (767 < $(window).width()) {
+            if (767 < $(window).width() && allowSvgFilters) {
                 map.addLayer('states', {
                     name : 'bg'
                 });
@@ -73,8 +79,8 @@ function initMap(config, callback) {
 
             resize();
             map.addLayer('states', statesLayerConfig);
-
-            if (!isPracticeView) {
+            
+            if (!isPracticeView && allowSvgFilters) {
                 map.addFilter('inner-state-glow', 'glow', {
                     size : 1,
                     strength : 1,
@@ -90,24 +96,33 @@ function initMap(config, callback) {
             $('#map-holder').find(".loading-indicator").hide();
         })
     });
+    function getZoomRatio(bboxArea) {
+        if (bboxArea > 10000) {
+            return 1.2;
+        } else if (bboxArea > 1000) {
+            return 2.5;
+        }
+        return 4;
+    }
 
     var myMap = {
         map : map,
         highlightStates : function(states, color, zoomRatio) {
             var animation_ms = 500;
-            var zoomRatio = zoomRatio || 4;
             var layer = map.getLayer('states');
             var state = states.pop();
             var statePath = layer.getPaths({ name: state })[0];
             if (statePath) {
                 statePath.svgPath.toFront();
+                var bbox = statePath.svgPath.getBBox()
+                var bboxArea = bbox.width * bbox.height;
+                var zoomRatio = zoomRatio || getZoomRatio(bboxArea);
                 var aminAttrs = {transform: "s"+zoomRatio, 'stroke-width': zoomRatio};
                 if (color) {
                     aminAttrs['fill'] = color;
                 }
-                var bbox = statePath.svgPath.getBBox()
                 statePath.svgPath.animate(aminAttrs, animation_ms/2, ">", function(){
-                    if ((bbox.width > 10 && bbox.height > 10) || color != NEUTRAL) {
+                    if (bboxArea > 100 || color != NEUTRAL) {
                         statePath.svgPath.animate({transform: "", 'stroke-width': 1}, animation_ms/2, "<");
                     }
                     myMap.highlightStates(states, color);
@@ -124,17 +139,6 @@ function initMap(config, callback) {
             layer.style({'fill': "#fff", transform: "", 'stroke-width': 1});
         },
         updateStates : function(states) {
-            if (!jQuery.isEmptyObject(config.states)) {
-                var highlights = [];
-                for (var code in states) {
-                    var oldState = config.states[code]
-                    states[code].diff = states[code].skill - (oldState && oldState.skill) || 0;
-                    if (states[code].diff != 0) {
-                        highlights.push(code);
-                    }
-                }
-                myMap.highlightStates(highlights)
-            }
             config.states = states;
             var statesLayer = map.getLayer('states')
             if (statesLayer) {
