@@ -182,7 +182,7 @@ angular.module('myApp.controllers', [])
             if(q) $scope.setQuestion(q);
             else {
                 $scope.showSummary = true;
-                $scope.errorMessage = 'Žádný stát není potřeba procvičovat.';
+                $scope.errorMessage = 'Žádný stát ještě není potřeba znovu procvičovat.';
             }
         })
     })

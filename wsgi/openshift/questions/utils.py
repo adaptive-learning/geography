@@ -122,7 +122,8 @@ class QuestionChooser(object):
 
     @classmethod
     def get_ready_users_places(self, correctAnswerDelayMinutes=2):
-        minuteAgo = datetime.now() - timedelta(seconds=60)
+        delay_miuntes = 1 if correctAnswerDelayMinutes > 1 else correctAnswerDelayMinutes
+        minuteAgo = datetime.now() - timedelta(seconds=60 * delay_miuntes)
         correctMinutesAgo = datetime.now() - timedelta(seconds=correctAnswerDelayMinutes*60)
         return UsersPlace.objects.filter(
                 user=self.user,
@@ -142,7 +143,7 @@ class QuestionChooser(object):
         if usersplace.askedCount < 2:
             successRate = self.success_rate
         else:
-            successRate = usersplace.skill * usersplace.get_certainty()
+            successRate = usersplace.skill
 #         raise Exception(u"here {0} {1}".format(successRate, place.name))
         if (successRate > 0.8):
             qTypeLevel = self.hardQuestionTypes
@@ -171,11 +172,9 @@ class QuestionChooser(object):
     def get_success_rate(self):
         PRIORITY_RATIO = 1.2
         lastAnswers = Answer.objects.get_last_10_answers(self.user)
-        successRate = 0
-        for i in range(len(lastAnswers)):
-            a = lastAnswers[i]
-            thisSuccess = 1 if a.place_id == a.answer_id else 0
-            successRate = (successRate * i + thisSuccess * PRIORITY_RATIO) / (i + PRIORITY_RATIO)
+        correct_answers = [a for a in lastAnswers if a.place_id == a.answer_id]
+        last_answers_len = len(lastAnswers) if len(lastAnswers) > 0 else 1
+        successRate = 1.0 * len(correct_answers) / last_answers_len
         return successRate
 
 class UncertainPlacesQuestionChooser(QuestionChooser):
@@ -202,6 +201,11 @@ class RandomPlacesQuestionChooser(QuestionChooser):
     @classmethod
     def get_usersplaces(self, n):
         return [up for up in self.get_ready_users_places(30) if up.skill < 1][:n]
+
+class ShortRepeatIntervalPlacesQuestionChooser(QuestionChooser):
+    @classmethod
+    def get_usersplaces(self, n):
+        return [up for up in self.get_ready_users_places(0.5) if up.skill < 1 or up.get_certainty() < 1][:n]
 
 
 class QuestionService():

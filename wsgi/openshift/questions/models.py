@@ -66,10 +66,10 @@ class UsersPlace(models.Model):
     
     def get_certainty(self):
         # TODO: create a field instead of this method
-        newCertainty = self.askedCount / 3.0
-        if self.askedCount < 1 and self.correctlyAnsweredCount == self.askedCount:
-            if self.similar_places_knowladge() >= 0.9:
-                newCertainty = 1
+        if self.askedCount >=2 and self.correctlyAnsweredCount == self.askedCount:
+            newCertainty = 1
+        else:
+            newCertainty = self.askedCount / 3.0
         notSeenFor = datetime.now() - max(self.lastAsked, datetime.now()) 
         knownFor = self.lastAsked - self.first_asked
         if float(notSeenFor.days) > 0:
