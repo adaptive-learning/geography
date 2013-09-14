@@ -327,7 +327,7 @@ ul.dropdown-menu.login {
 
 .version {
   border: 0px none currentColor;
-  left: 0px;
+  right: 0px;
   position: absolute;
   top: 40px;
   z-index: 10; }
