@@ -14,6 +14,10 @@
   <div id="container" class="col-sm-11 well">
     <div ng-show="!placesTypes" class="loading-indicator">
     </div>
+    <div ng-show="placesTypes.length == 0" style="text-align: center;" >
+        <h2>Zatím na této mapě nebylo nic procvičováno.</h2>
+        <a href="#/practice/{{part}}" class="btn btn-primary btn-large" >Začít procvičovat</a>
+    </div>
     <ul class="thumbnails">
       <li class="col-sm-{{12/placesTypes.length}}" ng-repeat="type in placesTypes">
         <div class="thumbnail">
