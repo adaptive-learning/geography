@@ -3,7 +3,7 @@
 from accounts.models import Student
 from core.utils import JsonResponse
 from django.contrib.auth.models import User
-from django.http import Http404, HttpResponseBadRequest
+from django.http import Http404, HttpResponseBadRequest, HttpResponse
 from django.utils import simplejson
 from lazysignup.decorators import allow_lazy_user
 from questions.models import PlaceRelation, UsersPlace
@@ -65,3 +65,4 @@ def users_places(request, map_code, user=''):
         'places': [p.to_serializable() for p in ps]
     }]
     return JsonResponse(response)
+    
