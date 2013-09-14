@@ -152,7 +152,10 @@ class ConfusedPlacesManager(models.Manager):
 
     def get_similar_to(self, place, map):
         if not map in self.map_cache:
-            self.map_cache[map] = self.filter(asked__in=map.related_places.all()).select_related()
+            self.map_cache[map] = self.filter(
+                asked__in=map.related_places.all(),
+                confused_with__in=map.related_places.all(),
+            ).select_related()
         confused = [c for c in self.map_cache[map] if c.asked == place]
         return [c.confused_with for c in confused]
 
