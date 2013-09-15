@@ -23,7 +23,7 @@
         <div class="thumbnail">
           <h3>{{type.name}}</h3>
           <div class="view-places">
-          <span ng-repeat="place in type.places" ng-switch="type.haveMaps || place.code == 'us'" class="" ng-mouseenter="hover(place.code, true)" ng-mouseleave="hover(place.code, false)">
+          <span ng-repeat="place in type.places" ng-switch="type.haveMaps || place.code == 'us'" ng-mouseenter="hover(place, true)" ng-mouseleave="hover(place, false)">
               <a href="#/view/{{place.code}}/{{user}}" ng-switch-when="true" class="btn btn-small">
                 <i class="flag-{{place.code}}"></i> {{place.name || place}}
               </a>

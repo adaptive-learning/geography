@@ -35,6 +35,7 @@
           <span class="col-sm-5" >
               <button class="btn btn-large" ng-click="check()" ng-disabled="canNext" >Nevím</button>
               <button class="btn btn-large {{!canNext || 'btn-primary'}}" ng-click="next()" ng-disabled="!canNext" >Pokračovat</button>
+              <button class="btn btn-large" ng-click="highlight()" ng-disabled="canNext"  ng-show="question.type != FIND_ON_MAP_QUESTION_TYPE" >Znovu zvýraznit</button>
           </span>
       </div>
       <div ng-show="showSummary">

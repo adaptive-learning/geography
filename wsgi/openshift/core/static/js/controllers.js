@@ -48,7 +48,7 @@ angular.module('myApp.controllers', [])
     
   })
 
-  .controller('AppView', function($scope, $routeParams, $filter, usersplaces, question, placeName) {
+  .controller('AppView', function($scope, $routeParams, $filter, $timeout, usersplaces, question, placeName) {
     $scope.part = $routeParams.part;
     $scope.user = $routeParams.user || "";
     $scope.name = placeName($scope.part);
@@ -67,6 +67,17 @@ angular.module('myApp.controllers', [])
     });
     mapConfig.states = $filter("StatesFromPlaces")($scope.placesTypes);
     $scope.map = initMap(mapConfig);
+    
+    $scope.hover = function(place, isHovered) {
+        place.isHovered = isHovered;
+        if (isHovered) {
+            $timeout(function(){
+                if (place.isHovered){
+                    $scope.map.highlightState(place.code);
+                }
+            }, 200)
+        }
+    }
 
 //    question.availableCount($scope.part, function(count) {
 //        $scope.practiceCount = count;
@@ -86,9 +97,8 @@ angular.module('myApp.controllers', [])
     $scope.part = $routeParams.part;
     $scope.name = placeName($scope.part);
 
-    $scope.setQuestion = function(active) {
-        $scope.question = active;
-        $scope.map.clearHighlights();
+    $scope.highlight = function() {
+        var active = $scope.question;
         if ($scope.isPickNameOfType()) {
             $scope.map.highlightState(active.code, NEUTRAL);
         }
@@ -97,6 +107,12 @@ angular.module('myApp.controllers', [])
         		return option.code;
 			}), NEUTRAL)
         }
+    }
+
+    $scope.setQuestion = function(active) {
+        $scope.question = active;
+        $scope.map.clearHighlights();
+        $scope.highlight();
         $scope.canNext = false;
         $scope.select = undefined;
         $scope.starterLetters = undefined;
