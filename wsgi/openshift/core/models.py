@@ -1,5 +1,4 @@
 from django.db import models
-# from core.utils import get_question_type_by_id
 
 
 class Place(models.Model):

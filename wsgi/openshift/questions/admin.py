@@ -1,8 +1,7 @@
-from questions.models import Answer, UsersPlace, ConfusedPlaces
 from django.contrib import admin
-from questions.utils import get_question_type_by_id
 from django.contrib.contenttypes.models import ContentType
 from django.http import HttpResponseRedirect
+from questions.models import Answer, UsersPlace, ConfusedPlaces
 
 def export_selected_objects(modeladmin, request, queryset):
     selected = request.POST.getlist(admin.ACTION_CHECKBOX_NAME)
@@ -27,15 +26,11 @@ class AnswerAdmin(admin.ModelAdmin):
     is_correct.short_description = 'Correct'
     is_correct.boolean = True
     
-    def question(self, a):
-        return get_question_type_by_id(a.type).text
-    question.short_description = 'Question'
-    
     def asked_ago(self, a):
         return pretty_date(a.askedDate)
     asked_ago.short_description = 'When Asked'
     
-    list_display = ( 'user','question', 'place', 'answer', 'is_correct', 'asked_ago')
+    list_display = ( 'user','type', 'place', 'answer', 'is_correct', 'asked_ago')
     search_fields = ('user__user__username','place__code','place__name', )
     actions = [export_selected_objects]
     

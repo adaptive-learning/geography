@@ -1,74 +1,10 @@
 # -*- coding: utf-8 -*-
-from core.models import Place, PlaceRelation
-from accounts.models import Student
-from questions.models import Answer, UsersPlace, ConfusedPlaces
+from core.models import Place
 from datetime import datetime, timedelta
-from random import  choice
+from questions.models import Answer, UsersPlace, ConfusedPlaces, \
+    QuestionTypeFactory, all_subclasses, QuestionType
 
 
-def get_question_type_by_id(id):
-    question_types = all_subclasses(QuestionType)
-    for QT in question_types:
-        qt = QT()
-        if qt.id == id:
-            return qt
-    return None
-
-class Singleton(object):
-    _instance = None
-    def __new__(cls, *args, **kwargs):
-        if not cls._instance:
-            cls._instance = super(Singleton, cls).__new__(
-                                cls, *args, **kwargs)
-        return cls._instance
-
-class QuestionType(object):
-    id = 0
-    text = ""
-    no_of_options = 0
-    level = 2
-    
-    @classmethod
-    def to_serializable(self):
-        return {
-            'type' : self.id,
-            'text' : self.text,
-        }
-
-class FindOnMapQuestionType(QuestionType):
-    id = 0
-    text = u"Vyber na mapě stát"
-    
-class PickNameOfQuestionType(QuestionType):
-    id = 1
-    text = u"Jak se jmenuje stát zvýrazněný na mapě?"
-    no_of_options = 6
-    
-class PickNameOf4OptionsQuestionType(PickNameOfQuestionType):
-    id = 2
-    no_of_options = 4
-    level = 1
-
-class FindOnMapOf4OptionsQuestionType(QuestionType):
-    id = 3
-    no_of_options = 4
-    text = u"Ze čtyř zvýrazněných států na mapě vyber"
-    level = 1
-    
-class PickNameOf2OptionsQuestionType(PickNameOfQuestionType):
-    id = 4
-    no_of_options = 2
-    level = 0
-
-class FindOnMapOf2OptionsQuestionType(QuestionType):
-    id = 5
-    no_of_options = 2
-    text = u"Ze dvou zvýrazněných států na mapě vyber"
-    level = 0
-
-def all_subclasses(cls):
-    return cls.__subclasses__() + [g for s in cls.__subclasses__()
-                                   for g in all_subclasses(s)]
 
 class Question():
     options = []
@@ -111,9 +47,6 @@ class Question():
         return ConfusedPlaces.objects.get_similar_to(self.place, self.map)[:n]
     
 class QuestionChooser(object):
-    easyQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 0]
-    mediumQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 1]
-    hardQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 2]
     def __init__(self, user, map, pre_questions):
         # TODO: figure out how to make these 3 params work without setting them again in get_questions method
         self.user = user
@@ -139,19 +72,19 @@ class QuestionChooser(object):
             ).select_related('place').order_by('?')
             
     @classmethod
-    def get_question_level(self, usersplace):
+    def get_question_type(self, usersplace):
         if usersplace.askedCount < 2:
             successRate = self.success_rate
         else:
             successRate = usersplace.skill
-#         raise Exception(u"here {0} {1}".format(successRate, place.name))
         if (successRate > 0.8):
-            qTypeLevel = self.hardQuestionTypes
+            qTypeLevel = QuestionType.HARD_QUESITON_LEVEL
         elif (successRate <= 0.5):
-            qTypeLevel = self.easyQuestionTypes
+            qTypeLevel = QuestionType.EASY_QUESITON_LEVEL
         else:
-            qTypeLevel = self.mediumQuestionTypes
-        return qTypeLevel
+            qTypeLevel = QuestionType.MEDIUM_QUESITON_LEVEL
+        qtype = QuestionTypeFactory.get_instance_by_level(qTypeLevel)
+        return qtype
             
     @classmethod
     def get_questions(self, n, user, map, pre_questions):
@@ -162,8 +95,7 @@ class QuestionChooser(object):
         usersplaces = self.get_usersplaces(n)
         questions = []
         for up in usersplaces:
-            qTypeLevel = self.get_question_level(up)
-            qtype = choice(qTypeLevel)
+            qtype = self.get_question_type(up)
             question = Question(up.place, qtype, self.map)
             questions.append(question.to_serializable())
         return questions
@@ -212,9 +144,6 @@ class QuestionService():
     def __init__(self, user, map):
         self.user = user
         self.map = map
-        self.easyQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 0]
-        self.mediumQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 1]
-        self.hardQuestionTypes = [qType for qType in all_subclasses(QuestionType) if qType.level == 2]
 
     def get_questions(self, n):
         question_choosers = all_subclasses(QuestionChooser)

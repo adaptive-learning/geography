@@ -1,13 +1,88 @@
-from django.db import models
-from datetime import datetime, timedelta
-from core.models import Place, PlaceRelation
+# -*- coding: utf-8 -*-
 from accounts.models import Student
+from core.models import Place, PlaceRelation
+from datetime import datetime, timedelta
+from django.db import models
+from random import choice
 
-# Create your models here.
+class QuestionType(object):
+    EASY_QUESITON_LEVEL = 0
+    MEDIUM_QUESITON_LEVEL = 1
+    HARD_QUESITON_LEVEL = 2
+    id = 0
+    text = ""
+    no_of_options = 0
+    level = HARD_QUESITON_LEVEL
+    
+    @classmethod
+    def to_serializable(self):
+        return {
+            'type' : self.id,
+            'text' : self.text,
+        }
 
+class FindOnMapQuestionType(QuestionType):
+    id = 0
+    text = u"Vyber na mapě stát"
+    
+class PickNameOfQuestionType(QuestionType):
+    id = 1
+    text = u"Jak se jmenuje stát zvýrazněný na mapě?"
+    no_of_options = 6
+    
+class PickNameOf4OptionsQuestionType(PickNameOfQuestionType):
+    id = 2
+    no_of_options = 4
+    level = QuestionType.MEDIUM_QUESITON_LEVEL
+
+class FindOnMapOf4OptionsQuestionType(QuestionType):
+    id = 3
+    no_of_options = 4
+    text = u"Ze čtyř zvýrazněných států na mapě vyber"
+    level = QuestionType.MEDIUM_QUESITON_LEVEL
+    
+class PickNameOf2OptionsQuestionType(PickNameOfQuestionType):
+    id = 4
+    no_of_options = 2
+    level = QuestionType.EASY_QUESITON_LEVEL
+
+class FindOnMapOf2OptionsQuestionType(QuestionType):
+    id = 5
+    no_of_options = 2
+    text = u"Ze dvou zvýrazněných států na mapě vyber"
+    level = QuestionType.EASY_QUESITON_LEVEL
+
+def all_subclasses(cls):
+    return cls.__subclasses__() + [g for s in cls.__subclasses__()
+                                   for g in all_subclasses(s)]
+
+class QuestionTypeFactory():
+    @staticmethod
+    def get_instance_by_id(id):
+        possible_question_types = [qType for qType in all_subclasses(QuestionType) if qType.id == id]
+        if len(possible_question_types) == 1:
+            return possible_question_types[0]
+#         else:
+#             TODO: raise some error
+        
+    @staticmethod
+    def get_instance_by_level(level):
+        possible_question_types = [qType for qType in all_subclasses(QuestionType)if qType.level == level]
+        qtype = choice(possible_question_types)
+        return qtype
+    
+    @staticmethod
+    def get_model_choices():
+        question_type_choices = ((qType.id, qType.text) for qType in all_subclasses(QuestionType))
+        return question_type_choices
+
+        
 def yesterday():
     y = datetime.now() - timedelta(days=1)
     return y
+    
+# Create your models here.
+
 
 class UsersPlaceManager(models.Manager):
     def fromStudentAndPlace(self, student, place):
@@ -115,7 +190,7 @@ class Answer(models.Model):
     user = models.ForeignKey(Student, db_index=True)
     place = models.ForeignKey(Place, related_name='place_id')
     answer = models.ForeignKey(Place, related_name='answer_id', null=True, blank=True, default=None)
-    type = models.IntegerField() # TODO: change to PositiveSmallIntegerField
+    type = models.IntegerField(choices=QuestionTypeFactory.get_model_choices()) # TODO: change to PositiveSmallIntegerField
     askedDate = models.DateTimeField(default=datetime.now)
     msResposeTime = models.IntegerField(default=0)
     # TODO: options = models.ManyToManyField(Place)
@@ -167,6 +242,4 @@ class ConfusedPlaces(models.Model):
     class Meta:
         ordering = ["-level_of_cofusion"]
         db_table = 'core_confusedplaces' #TODO migrate lagacy db_table
-
-
 
