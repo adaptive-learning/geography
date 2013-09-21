@@ -193,7 +193,7 @@ class Answer(models.Model):
     type = models.IntegerField(choices=QuestionTypeFactory.get_model_choices()) # TODO: change to PositiveSmallIntegerField
     askedDate = models.DateTimeField(default=datetime.now)
     msResposeTime = models.IntegerField(default=0)
-    # TODO: options = models.ManyToManyField(Place)
+    options = models.ManyToManyField(Place)
     objects = AnswerManager()
     
 #     def get_no_of_options(self):

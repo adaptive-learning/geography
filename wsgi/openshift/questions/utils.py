@@ -163,9 +163,13 @@ class QuestionService():
             place=place,
             answer=answerPlace,
             type=a["type"],
-            msResposeTime=a["msResponseTime"] 
+            msResposeTime=a["msResponseTime"],
         )
         answer.save()
+        if "options" in a:
+            answer.options = Place.objects.filter(
+                    code__in=[o["code"] for o in a["options"]],
+                )
         
         if place == answerPlace:
             self.user.points += 1;
