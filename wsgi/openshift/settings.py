@@ -148,6 +148,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'core.middleware.SqldumpMiddleware',
+    'core.middleware.AuthAlreadyAssociatedMiddleware',
 )
 
 ROOT_URLCONF = 'openshift.urls'
