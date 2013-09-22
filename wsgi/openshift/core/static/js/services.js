@@ -8,32 +8,32 @@
 angular.module('myApp.services', []).
   value('version', '0.1')
 
-  .factory('usersplaces', function($rootScope, $http) {
+  .factory('usersplaces', function($rootScope, $http, placeName) {
     var cache = {};
     
     return function(part, user, fn) {
         var url = 'usersplaces/' + part + '/' + user;
         $http.get(url).success(function(data) {
-            data = data.filter(function(d){
+            placeName(part, data.name);
+            var placesTypes = data.placesTypes.filter(function(d){
                 return d.places && d.places.length > 0;
             })
-            cache[url] = data;
-            fn(data);
+            cache[url] = placesTypes;
+            fn(placesTypes);
         });
         return cache[url] || undefined;
     }
   })
 
   .factory('placeName', function($rootScope, $http) {
-    var cache = {};
+    var names = {
+        'us' : 'USA',
+        'world' : 'Svět',
+    }
     
-    return function(part, fn) {
-        var names = {
-            'us' : 'USA',
-            'world' : 'Svět',
-            'africa' : 'Afrika',
-            'samerica' : 'Jižní Amerika',
-            'namerica' : 'Severní Amerika'
+    return function(part, name) {
+        if (name && !names[part]) {
+            names[part] = name;
         }
         return names[part];
     }

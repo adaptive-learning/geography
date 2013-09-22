@@ -56,13 +56,16 @@ def users_places(request, map_code, user=''):
         ).related_places.all()
     except PlaceRelation.DoesNotExist:
         cs = []
-    response = [{
-        'name': u'Kontinenty',
-        'haveMaps': True,
-        'places': [p.to_serializable() for p in cs]
-    },{
-        'name': u'Státy',
-        'places': [p.to_serializable() for p in ps]
-    }]
+    response = {
+        'name' : map.place.name,
+        'placesTypes' : [{
+            'name': u'Kontinenty',
+            'haveMaps': True,
+            'places': [p.to_serializable() for p in cs]
+        },{
+            'name': u'Státy',
+            'places': [p.to_serializable() for p in ps]
+        }]
+        }
     return JsonResponse(response)
     

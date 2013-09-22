@@ -64,6 +64,7 @@ angular.module('myApp.controllers', [])
         $scope.$parent.placesTypes = data;
         var states = $filter("StatesFromPlaces")(data);
         $scope.map.updateStates(states);
+        $scope.name = placeName($scope.part);
     });
     mapConfig.states = $filter("StatesFromPlaces")($scope.placesTypes);
     $scope.map = initMap(mapConfig);
