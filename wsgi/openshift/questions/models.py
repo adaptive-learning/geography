@@ -93,7 +93,7 @@ class UsersPlaceManager(models.Manager):
                 user=student,
                 place=place,
             )
-        return usersPlace 
+        return usersPlace
 
     def addAnswer(self, a):
         usersPlace = self.fromStudentAndPlace(a.user, a.place)
@@ -119,12 +119,12 @@ class UsersPlace(models.Model):
     lastAsked = models.DateTimeField(default=yesterday)
     first_asked = models.DateTimeField(default=datetime.now)
     objects = UsersPlaceManager()
-    
+
     def similar_places_knowladge(self):
         map = PlaceRelation.objects.filter(related_places=self.place, type=PlaceRelation.IS_ON_MAP)[0]
         last_users_places = UsersPlace.objects.filter(
                  user=self.user,
-                 place_id__in=map.related_places.all(), 
+                 place_id__in=map.related_places.all(),
 #                  lastAsked__lt=min(self.lastAsked, datetime.now())
         ).order_by("-lastAsked")[:10]
         correct =  [up for up in last_users_places if up.skill == 1]
@@ -133,19 +133,19 @@ class UsersPlace(models.Model):
         knowladge = 1.0*len(correct) / len(last_users_places)
 #         raise Exception(u"similar {0} {1}".format(knowladge, self.place.name))
         return knowladge
-    
+
     def get_skill(self):
         skill = self.correctlyAnsweredCount / float(self.askedCount) if self.askedCount > 0 else 0
         skill = round(skill, 2)
         return skill
-    
+
     def get_certainty(self):
         # TODO: create a field instead of this method
         if self.askedCount >=2 and self.correctlyAnsweredCount == self.askedCount:
             newCertainty = 1
         else:
             newCertainty = self.askedCount / 3.0
-        notSeenFor = datetime.now() - max(self.lastAsked, datetime.now()) 
+        notSeenFor = datetime.now() - max(self.lastAsked, datetime.now())
         knownFor = self.lastAsked - self.first_asked
         if float(notSeenFor.days) > 0:
             notSeenForRatio = min(1, 0.9 * knownFor.days / float(notSeenFor.days))
@@ -166,7 +166,7 @@ class UsersPlace(models.Model):
 
     def __unicode__(self):
         return u'user: {0}, place: [{1}]'.format(self.user, self.place)
-    
+
     def to_serializable(self):
         ret = self.place.to_serializable()
         ret.update({
@@ -195,14 +195,14 @@ class Answer(models.Model):
     msResposeTime = models.IntegerField(default=0)
     options = models.ManyToManyField(Place)
     objects = AnswerManager()
-    
+
 #     def get_no_of_options(self):
 #         qt = get_question_type_by_id(self.type)
 #         no_of_options =  qt.no_of_options
 #         if no_of_options == 0:
 #             no_of_options = Map.objects.get(places=self.place).places.all().count()
 #         return no_of_options
-#     
+#
     def __unicode__(self):
         return u'user: {0}, requested: {1}, answered: {2}, correct: {3}'.format(self.user, self.place, self.answer, self.place == self.answer)
     class Meta:

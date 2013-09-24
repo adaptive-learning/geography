@@ -19,7 +19,7 @@ class Place(models.Model):
     type = models.IntegerField(choices=PLACE_TYPES) # TODO: change to PositiveSmallIntegerField
     def __unicode__(self):
         return u'{0} ({1})'.format(self.name, self.code)
-    
+
         self.save()
     def to_serializable(self):
         return {
@@ -38,7 +38,7 @@ class PlaceRelationManager(models.Manager):
             return Place.objects.exclude(id=place.id).filter(id__in=[p.place_id for p in prs])
         except PlaceRelation.DoesNotExist:
             return Place.objects.filter(code="###")
-                
+
 class PlaceRelation(models.Model):
     IS_ON_MAP = 1
     IS_SUBMAP = 2

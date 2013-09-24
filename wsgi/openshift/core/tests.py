@@ -5,8 +5,10 @@ when you run "manage.py test".
 Replace this with more appropriate tests for your application.
 """
 
-from core.models import Answer, Place, Student, UsersPlace
-from core.utils import QuestionService
+from core.models import PlaceRelation
+from accounts.models import StudentManager
+from questions.models import Answer, Place, Student, UsersPlace
+from questions.utils import QuestionService
 from datetime import datetime, timedelta
 from django.contrib.auth.models import User
 from django.test import TestCase
@@ -24,15 +26,16 @@ class UsersPlaceTest(TestCase):
             'lennon@thebeatles.com',
             'johnpassword'
         )
-        student = Student.fromUser(user)
+        student = Student.objects.fromUser(user)
         place = Place(
-            code='ca', 
-            name = 'Canada'
+            code = 'ca',
+            name = 'Canada',
+            type = Place.STATE
         )
         place.save()
 
         self.usersPlace = UsersPlace(
-            user = student, 
+            user = student,
             place = place,
         )
         self.usersPlace.save()
@@ -42,50 +45,48 @@ class UsersPlaceTest(TestCase):
         Tests that skill is 0 if all answers were wrong
         and 1 if all were correct
         """
-        usersPlace = self.usersPlace 
+        usersPlace = self.usersPlace
         usersPlace.askedCount += 1
-        self.assertEqual(usersPlace.skill(), 0)
+        self.assertEqual(usersPlace.get_skill(), 0)
 
         usersPlace.correctlyAnsweredCount += 1
-        self.assertEqual(usersPlace.skill(), 1)
-    
-    def testFirstAsked(self):
-        up = self.usersPlace 
-        
-        weekAgo = datetime.now() - timedelta(days=7)
-        
-        answer = Answer(
-            user=up.user,
-            place=up.place,
-            answer=None,
-            type=0,
-            msResposeTime=1000,
-            askedDate=weekAgo,
-        )
-        answer.save()
-        
-        firstAskedDate = up.firstAsked()
-        
-        self.assertEqual(firstAskedDate, weekAgo)
-        
-        
+        self.assertEqual(usersPlace.get_skill(), 1)
+
 class QuestionServiceTest(TestCase):
 
     def setUp(self):
 
-        place = Place(
-            code='ca', 
-            name = 'Canada',
-            difficulty = int(0.2 * Place.DIFFICULTY_CONVERSION)
+        map = Place(
+            code = 'w',
+            name = 'World',
+            type = Place.WORLD
         )
-        place.save()
+        map.save()
 
-        place = Place(
-            code='bz', 
-            name = 'Belize',
-            difficulty = int(0.9 * Place.DIFFICULTY_CONVERSION)
+        canada = Place(
+            code='ca',
+            name = 'Canada',
+            difficulty = int(0.2 * Place.DIFFICULTY_CONVERSION),
+            type = Place.STATE
         )
-        place.save()
+        canada.save()
+
+        belize = Place(
+            code='bz',
+            name = 'Belize',
+            difficulty = int(0.9 * Place.DIFFICULTY_CONVERSION),
+            type = Place.STATE
+        )
+        belize.save()
+
+        on_map = PlaceRelation(
+            place = map,
+            type = PlaceRelation.IS_ON_MAP
+        )
+        on_map.save()
+        on_map.related_places.add(canada)
+        on_map.related_places.add(belize)
+        on_map.save()
 
         user = User.objects.create_user(
             'john',
@@ -93,7 +94,8 @@ class QuestionServiceTest(TestCase):
             'johnpassword'
         )
         user.save()
-        self.qs = QuestionService(user)
+        student = Student.objects.fromUser(user)
+        self.qs = QuestionService(student, on_map)
 
     def testQuestion(self):
         questions = self.qs.get_questions(2)
