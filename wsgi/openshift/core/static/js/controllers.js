@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('AppCtrl', function($scope, $rootScope, $http, $cookies, $route, $location) {
+  .controller('AppCtrl', function($scope, $rootScope, $http, $cookies, $route, $location, $timeout) {
     $rootScope.topScope = $rootScope;
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded';
@@ -32,6 +32,12 @@ angular.module('myApp.controllers', [])
 
     $rootScope.addPoint = function(){
         $rootScope.user.points++;
+        if ($rootScope.user.points == 1) {
+            $timeout(function(){
+                $('#points').tooltip("show")
+            },0)
+            
+        }
     }
     
     $scope.vip = function() {
@@ -88,13 +94,6 @@ angular.module('myApp.controllers', [])
   })
 
   .controller('AppPractice', function($scope, $routeParams, $timeout, $location, question, placeName) {
-	$scope.FIND_ON_MAP_QUESTION_TYPE = 0;
-	$scope.PICK_NAME_OF_6_OPTIONS_QUESTION_TYPE = 1;
-    $scope.PICK_NAME_OF_4_OPTIONS_QUESTION_TYPE = 2;
-    $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE = 3
-    $scope.PICK_NAME_OF_2_OPTIONS_QUESTION_TYPE = 4;
-    $scope.FIND_ON_MAP_OF_2_OPTIONS_QUESTION_TYPE = 5
-	
     $scope.part = $routeParams.part;
     $scope.name = placeName($scope.part);
 
@@ -103,7 +102,7 @@ angular.module('myApp.controllers', [])
         if ($scope.isPickNameOfType()) {
             $scope.map.highlightState(active.code, NEUTRAL);
         }
-        if (active.type == $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE || active.type == $scope.FIND_ON_MAP_OF_2_OPTIONS_QUESTION_TYPE) {
+        if ($scope.isFindOnMapType() && active.options) {
         	$scope.map.highlightStates(active.options.map(function(option) {
         		return option.code;
 			}), NEUTRAL)
@@ -166,17 +165,11 @@ angular.module('myApp.controllers', [])
     }
     
     $scope.isFindOnMapType = function() {
-        return $scope.question &&
-               ($scope.question.type == $scope.FIND_ON_MAP_QUESTION_TYPE 
-             || $scope.question.type == $scope.FIND_ON_MAP_OF_OPTIONS_QUESTION_TYPE
-             || $scope.question.type == $scope.FIND_ON_MAP_OF_2_OPTIONS_QUESTION_TYPE)
+        return $scope.question && $scope.question.type < 20
     }
     
     $scope.isPickNameOfType = function() {
-        return $scope.question &&
-               ($scope.question.type == $scope.PICK_NAME_OF_6_OPTIONS_QUESTION_TYPE 
-             || $scope.question.type == $scope.PICK_NAME_OF_4_OPTIONS_QUESTION_TYPE
-             || $scope.question.type == $scope.PICK_NAME_OF_2_OPTIONS_QUESTION_TYPE)
+        return $scope.question && $scope.question.type >= 20
     }
     
     $scope.isAllowedOpion = function(code) {
