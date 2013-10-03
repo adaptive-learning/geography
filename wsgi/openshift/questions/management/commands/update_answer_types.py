@@ -3,6 +3,7 @@ from django.core.management.base import NoArgsCommand
 
 from questions.models import Answer, QuestionTypeFactory
 
+
 class Command(NoArgsCommand):
     help = u"""Update confused states from answers"""
 

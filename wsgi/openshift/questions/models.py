@@ -13,6 +13,7 @@ def yesterday():
 
 
 class UsersPlaceManager(models.Manager):
+
     def fromStudentAndPlace(self, student, place):
         try:
             usersPlace = UsersPlace.objects.get(user=student, place=place)
@@ -35,7 +36,8 @@ def all_correct(users_places):
 
 def updatePlaceDifficulty(place):
     usersPlaces = UsersPlace.objects.filter(place=place)
-    skills = [up.correctlyAnsweredCount / float(up.askedCount) for up in usersPlaces]
+    skills = [up.correctlyAnsweredCount / float(up.askedCount)
+              for up in usersPlaces]
     difficulty = sum(skills) / len(skills) if len(skills) > 0 else 0.5
     place.difficulty = int((1 - difficulty) * Place.DIFFICULTY_CONVERSION)
 
@@ -52,11 +54,13 @@ class UsersPlace(models.Model):
     objects = UsersPlaceManager()
 
     def similar_places_knowladge(self):
-        map = PlaceRelation.objects.filter(related_places=self.place, type=PlaceRelation.IS_ON_MAP)[0]
+        map = PlaceRelation.objects.filter(
+            related_places=self.place,
+            type=PlaceRelation.IS_ON_MAP)[0]
         last_users_places = UsersPlace.objects.filter(
-                 user=self.user,
-                 place_id__in=map.related_places.all(),
-#                  lastAsked__lt=min(self.lastAsked, datetime.now())
+            user=self.user,
+            place_id__in=map.related_places.all(),
+            #                  lastAsked__lt=min(self.lastAsked, datetime.now())
         ).order_by("-lastAsked")[:10]
         correct = [up for up in last_users_places if up.skill == 1]
         if len(last_users_places) < 5:
@@ -65,7 +69,8 @@ class UsersPlace(models.Model):
         return knowladge
 
     def get_skill(self):
-        skill = self.correctlyAnsweredCount / float(self.askedCount) if self.askedCount > 0 else 0
+        skill = self.correctlyAnsweredCount / \
+            float(self.askedCount) if self.askedCount > 0 else 0
         skill = round(skill, 2)
         return skill
 
@@ -78,7 +83,12 @@ class UsersPlace(models.Model):
         notSeenFor = datetime.now() - max(self.lastAsked, datetime.now())
         knownFor = self.lastAsked - self.first_asked
         if float(notSeenFor.days) > 0:
-            notSeenForRatio = min(1, 0.9 * knownFor.days / float(notSeenFor.days))
+            notSeenForRatio = min(
+                1,
+                0.9 *
+                knownFor.days /
+                float(
+                    notSeenFor.days))
         else:
             notSeenForRatio = 1
         certainty = min(newCertainty, notSeenForRatio)
@@ -100,8 +110,8 @@ class UsersPlace(models.Model):
     def to_serializable(self):
         ret = self.place.to_serializable()
         ret.update({
-          'skill': self.skill,
-          'certainty': self.get_certainty(),
+            'skill': self.skill,
+            'certainty': self.get_certainty(),
         })
         return ret
 
@@ -114,7 +124,7 @@ class AnswerManager(models.Manager):
     last_10_answers = None
 
     def get_last_10_answers(self, user):
-        if self.last_10_answers == None:
+        if self.last_10_answers is None:
             self.last_10_answers = self.filter(
                 user=user,
             ).order_by("-askedDate")[:10]
@@ -140,15 +150,24 @@ class Answer(models.Model):
     )
     user = models.ForeignKey(Student, db_index=True)
     place = models.ForeignKey(Place, related_name='place_id')
-    answer = models.ForeignKey(Place, related_name='answer_id', null=True, blank=True, default=None)
-    type = models.IntegerField(choices=QUESTION_TYPES)  # TODO: change to PositiveSmallIntegerField
+    answer = models.ForeignKey(
+        Place,
+        related_name='answer_id',
+        null=True,
+        blank=True,
+        default=None)
+    # TODO: change to PositiveSmallIntegerField
+    type = models.IntegerField(choices=QUESTION_TYPES)
     askedDate = models.DateTimeField(default=datetime.now)
     msResposeTime = models.IntegerField(default=0)
     options = models.ManyToManyField(Place)
     objects = AnswerManager()
 
     def __unicode__(self):
-        return u'user: {0}, requested: {1}, answered: {2}, correct: {3}'.format(self.user, self.place, self.answer, self.place == self.answer)
+        return (
+            u'user: {0}, requested: {1}, answered: {2}, correct: {3}'.format(
+                self.user, self.place, self.answer, self.place == self.answer)
+        )
 
     class Meta:
         ordering = ["-askedDate"]
@@ -159,14 +178,14 @@ class ConfusedPlacesManager(models.Manager):
     map_cache = {}
 
     def was_confused(self, askedPlace, answeredPlace):
-        if answeredPlace == None:
+        if answeredPlace is None:
             return
         try:
             confused = self.get(asked=askedPlace, confused_with=answeredPlace)
         except ConfusedPlaces.DoesNotExist:
             confused = ConfusedPlaces(
-                  asked=askedPlace,
-                  confused_with=answeredPlace,
+                asked=askedPlace,
+                confused_with=answeredPlace,
             )
         confused.level_of_cofusion += 1
         confused.save()

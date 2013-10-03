@@ -16,8 +16,6 @@ from django.test.client import Client
 from django.utils import simplejson
 
 
-
-
 class UsersPlaceTest(TestCase):
 
     def setUp(self):
@@ -28,15 +26,15 @@ class UsersPlaceTest(TestCase):
         )
         student = Student.objects.fromUser(user)
         place = Place(
-            code = 'ca',
-            name = 'Canada',
-            type = Place.STATE
+            code='ca',
+            name='Canada',
+            type=Place.STATE
         )
         place.save()
 
         self.usersPlace = UsersPlace(
-            user = student,
-            place = place,
+            user=student,
+            place=place,
         )
         self.usersPlace.save()
 
@@ -52,36 +50,37 @@ class UsersPlaceTest(TestCase):
         usersPlace.correctlyAnsweredCount += 1
         self.assertEqual(usersPlace.get_skill(), 1)
 
+
 class QuestionServiceTest(TestCase):
 
     def setUp(self):
 
         map = Place(
-            code = 'w',
-            name = 'World',
-            type = Place.WORLD
+            code='w',
+            name='World',
+            type=Place.WORLD
         )
         map.save()
 
         canada = Place(
             code='ca',
-            name = 'Canada',
-            difficulty = int(0.2 * Place.DIFFICULTY_CONVERSION),
-            type = Place.STATE
+            name='Canada',
+            difficulty=int(0.2 * Place.DIFFICULTY_CONVERSION),
+            type=Place.STATE
         )
         canada.save()
 
         belize = Place(
             code='bz',
-            name = 'Belize',
-            difficulty = int(0.9 * Place.DIFFICULTY_CONVERSION),
-            type = Place.STATE
+            name='Belize',
+            difficulty=int(0.9 * Place.DIFFICULTY_CONVERSION),
+            type=Place.STATE
         )
         belize.save()
 
         on_map = PlaceRelation(
-            place = map,
-            type = PlaceRelation.IS_ON_MAP
+            place=map,
+            type=PlaceRelation.IS_ON_MAP
         )
         on_map.save()
         on_map.related_places.add(canada)

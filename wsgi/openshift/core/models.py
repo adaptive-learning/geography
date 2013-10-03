@@ -13,31 +13,45 @@ class Place(models.Model):
         (CONTINENT, 'Continent'),
     )
     DIFFICULTY_CONVERSION = 1000000.0
-    code = models.CharField(max_length=10, db_index=True, unique=True) # TODO: change to SlugField
+    code = models.CharField(
+        max_length=10,
+        db_index=True,
+        unique=True)  # TODO: change to SlugField
     name = models.CharField(max_length=100)
     difficulty = models.IntegerField(default=0)
-    type = models.IntegerField(choices=PLACE_TYPES) # TODO: change to PositiveSmallIntegerField
+    # TODO: change to PositiveSmallIntegerField
+    type = models.IntegerField(choices=PLACE_TYPES)
+
     def __unicode__(self):
         return u'{0} ({1})'.format(self.name, self.code)
 
         self.save()
+
     def to_serializable(self):
         return {
-          'code' : self.code,
-          'name' : self.name
+            'code': self.code,
+            'name': self.name
         }
+
     class Meta:
-        ordering = ['type','name']
+        ordering = ['type', 'name']
 
 
 class PlaceRelationManager(models.Manager):
+
     def get_bordering_places(self, place):
         try:
-            pr = self.get(place=place,type=PlaceRelation.HAVE_LAND_BORDER)
-            prs = self.filter(related_places__in=pr.related_places.all(),type=PlaceRelation.HAVE_LAND_BORDER)
-            return Place.objects.exclude(id=place.id).filter(id__in=[p.place_id for p in prs])
+            pr = self.get(place=place, type=PlaceRelation.HAVE_LAND_BORDER)
+            prs = self.filter(
+                related_places__in=pr.related_places.all(),
+                type=PlaceRelation.HAVE_LAND_BORDER)
+            return (
+                Place.objects.exclude(id=place.id).filter(
+                    id__in=[p.place_id for p in prs])
+            )
         except PlaceRelation.DoesNotExist:
             return Place.objects.filter(code="###")
+
 
 class PlaceRelation(models.Model):
     IS_ON_MAP = 1
@@ -48,8 +62,10 @@ class PlaceRelation(models.Model):
         (IS_SUBMAP, 'Is Submap'),
         (HAVE_LAND_BORDER, 'Have Land Border'),
     )
-    place = models.ForeignKey(Place, db_index=True, related_name='relation_place')
+    place = models.ForeignKey(
+        Place,
+        db_index=True,
+        related_name='relation_place')
     related_places = models.ManyToManyField(Place)
     type = models.IntegerField(choices=PLACE_RELATION_TYPES, default=1)
     objects = PlaceRelationManager()
-

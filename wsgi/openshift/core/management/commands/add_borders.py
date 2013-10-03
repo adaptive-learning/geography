@@ -6,7 +6,7 @@ import csv
 
 class Command(BaseCommand):
     help = u"""Add new places"""
-                
+
     def handle(self, *args, **options):
         if(len(args) < 1):
             raise CommandError('Not enought arguments')
@@ -16,7 +16,7 @@ class Command(BaseCommand):
             codereader = csv.reader(csvfile, delimiter='\t', quotechar='|')
             for row in codereader:
                 codes[row[1].strip()] = row[0].lower().strip()
-        
+
         borders_file = open(file_name)
         borders_data = borders_file.read()
         borders_lines = borders_data.split("\n")
@@ -31,7 +31,7 @@ class Command(BaseCommand):
                 if state1 in codes and state2 in codes and state2 != '':
                     self.addBorder(codes[state1], codes[state2])
                     self.stdout.write(codes[state1] + " -> " + codes[state2])
-    
+
     def addBorder(self, from_code, to_code):
         from_places = self.places.filter(code=from_code)
         to_places = self.places.filter(code=to_code)
@@ -39,9 +39,13 @@ class Command(BaseCommand):
             from_place = from_places[0]
             to_place = to_places[0]
             try:
-                pr = PlaceRelation.objects.get(place=from_place,type=PlaceRelation.HAVE_LAND_BORDER)
+                pr = PlaceRelation.objects.get(
+                    place=from_place,
+                    type=PlaceRelation.HAVE_LAND_BORDER)
             except PlaceRelation.DoesNotExist:
-                pr = PlaceRelation(place=from_place,type=PlaceRelation.HAVE_LAND_BORDER)
+                pr = PlaceRelation(
+                    place=from_place,
+                    type=PlaceRelation.HAVE_LAND_BORDER)
                 pr.save()
             pr.related_places.add(to_place)
             pr.save()

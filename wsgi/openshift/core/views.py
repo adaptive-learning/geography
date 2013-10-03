@@ -14,22 +14,25 @@ def home(request):
     request.META["CSRF_COOKIE_USED"] = True
     title = 'Loc - ' if not settings.ON_OPENSHIFT else ''
     c = {
-         'title' : title,
-         'isProduction' : settings.ON_OPENSHIFT,
+        'title': title,
+        'isProduction': settings.ON_OPENSHIFT,
     }
     c.update(csrf(request))
     return render_to_response('home/home.html', c)
 
+
 def export_view(request):
     if not request.user.is_staff:
-        response = {"error": "Permission denied: you need to be staff member. If you think you should be able to access logs, contact admins."}
+        response = {
+            "error": "Permission denied: you need to be staff member. If you think you should be able to access logs, contact admins."}
         return JsonResponse(response)
-    type_key = request.GET['model'] if 'model' in request.GET else 'questions.answer'
+    type_key = request.GET[
+        'model'] if 'model' in request.GET else 'questions.answer'
     [app_label, model] = type_key.split(".")
     try:
         ct = ContentType.objects.get_by_natural_key(app_label, model)
     except ContentType.DoesNotExist:
-        return JsonResponse({"error": "Invalid model name: '%s'" %(type_key)})
+        return JsonResponse({"error": "Invalid model name: '%s'" % (type_key)})
     objects = ct.model_class().objects
     if 'ids' in request.GET:
         ids = request.GET['ids'].split(",")

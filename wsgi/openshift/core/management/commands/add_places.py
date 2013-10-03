@@ -11,19 +11,19 @@ class Command(BaseCommand):
         if(len(args) < 1):
             raise CommandError('Not enought arguments')
         map_name = args[0]
-        statesFile = open(map_name.lower()+".txt")
+        statesFile = open(map_name.lower() + ".txt")
         states = statesFile.read()
-        #self.stdout.write(states)
+        # self.stdout.write(states)
         ss = states.split("\n")
         for s in ss:
             state = s.split("\t")
             if(len(state) == 2):
                 name = state[1]
                 code = state[0]
-                p=Place(code=code, name=name, difficulty=500000)
+                p = Place(code=code, name=name, difficulty=500000)
                 p.save()
                 self.stdout.write(name + " added")
-                
+
 #     def handle(self, *args, **options):
 #         if(len(args) < 1):
 #             raise CommandError('Not enought arguments')

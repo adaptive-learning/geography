@@ -18,9 +18,11 @@ class QuestionType(object):
 
 
 class QuestionTypeFactory():
+
     @staticmethod
     def get_instance_by_id(id):
-        possible_question_types = [qType for qType in QuestionTypeFactory.get_possible_question_types() if qType.id == id]
+        possible_question_types = [
+            qType for qType in QuestionTypeFactory.get_possible_question_types() if qType.id == id]
         if len(possible_question_types) == 1:
             return possible_question_types[0]
 #         else:
@@ -28,13 +30,17 @@ class QuestionTypeFactory():
 
     @staticmethod
     def get_instance_by_no_of_options(no_of_options):
-        possible_question_types = [qType for qType in QuestionTypeFactory.get_possible_question_types() if qType.no_of_options == no_of_options]
+        possible_question_types = [
+            qType for qType in QuestionTypeFactory.get_possible_question_types(
+            ) if qType.no_of_options == no_of_options]
         qtype = choice(possible_question_types)
         return qtype
 
     @staticmethod
     def get_possible_question_types():
-        possible_question_types = [QuestionTypeFactory.get_question_type_object(qType) for qType in Answer.QUESTION_TYPES]
+        possible_question_types = [
+            QuestionTypeFactory.get_question_type_object(
+                qType) for qType in Answer.QUESTION_TYPES]
         return possible_question_types
 
     @staticmethod
@@ -53,11 +59,12 @@ def all_subclasses(cls):
 
 class Question():
     options = []
+
     def __init__(self, place, qtype, map):
         self.place = place
         self.qtype = qtype
         self.map = map
-        if (qtype.no_of_options != 0) :
+        if (qtype.no_of_options != 0):
             self.options = self.get_options(self.qtype.no_of_options)
 
     def to_serializable(self):
@@ -83,17 +90,26 @@ class Question():
         return Place.objects.filter(id__in=self.map.related_places.all())
 
     def get_easy_options(self, n):
-        return self.get_options_base().filter(difficulty__lt=self.place.difficulty).order_by('?')[:n]
+        return (
+            self.get_options_base().filter(
+                difficulty__lt=self.place.difficulty).order_by('?')[:n]
+        )
 
     def get_random_options(self, n, excluded):
-        return self.get_options_base().exclude(id__in=[p.id for p in excluded]).order_by('?')[:n]
+        return (
+            self.get_options_base().exclude(
+                id__in=[p.id for p in excluded]).order_by('?')[:n]
+        )
 
     def get_confused_options(self, n):
         return ConfusedPlaces.objects.get_similar_to(self.place, self.map)[:n]
 
+
 class QuestionChooser(object):
+
     def __init__(self, user, map, pre_questions):
-        # TODO: figure out how to make these 3 params work without setting them again in get_questions method
+        # TODO: figure out how to make these 3 params work without setting them
+        # again in get_questions method
         self.user = user
         self.map = map
         self.pre_questions = pre_questions
@@ -102,19 +118,20 @@ class QuestionChooser(object):
     def get_ready_users_places(self, correctAnswerDelayMinutes=2):
         delay_miuntes = 1 if correctAnswerDelayMinutes > 1 else correctAnswerDelayMinutes
         minuteAgo = datetime.now() - timedelta(seconds=60 * delay_miuntes)
-        correctMinutesAgo = datetime.now() - timedelta(seconds=correctAnswerDelayMinutes * 60)
+        correctMinutesAgo = datetime.now() - timedelta(
+            seconds=correctAnswerDelayMinutes * 60)
         return UsersPlace.objects.filter(
+            user=self.user,
+            lastAsked__lt=correctMinutesAgo,
+            place_id__in=self.map.related_places.all(),
+        ).exclude(
+            place_id__in=[a.place_id for a in Answer.objects.filter(
                 user=self.user,
-                lastAsked__lt=correctMinutesAgo,
-                place_id__in=self.map.related_places.all(),
-            ).exclude(
-                place_id__in=[a.place_id for a in Answer.objects.filter(
-                    user=self.user,
-                    askedDate__gt=minuteAgo
-                )]
-            ).exclude(
-                place__code__in=[q['code'] for q in self.pre_questions]
-            ).select_related('place').order_by('?')
+                askedDate__gt=minuteAgo
+            )]
+        ).exclude(
+            place__code__in=[q['code'] for q in self.pre_questions]
+        ).select_related('place').order_by('?')
 
     @classmethod
     def get_question_type(self, usersplace):
@@ -130,7 +147,8 @@ class QuestionChooser(object):
             no_of_options = 4
         else:
             no_of_options = 2
-        qtype = QuestionTypeFactory.get_instance_by_no_of_options(no_of_options)
+        qtype = QuestionTypeFactory.get_instance_by_no_of_options(
+            no_of_options)
         return qtype
 
     @classmethod
@@ -156,38 +174,61 @@ class QuestionChooser(object):
         successRate = 1.0 * len(correct_answers) / last_answers_len
         return successRate
 
+
 class UncertainPlacesQuestionChooser(QuestionChooser):
+
     @classmethod
     def get_usersplaces(self, n):
-        return [up for up in self.get_ready_users_places() if up.get_certainty() < 1 ][:n]
+        return (
+            [up for up in self.get_ready_users_places() if up.get_certainty() < 1][
+                :n]
+        )
+
 
 class WeakPlacesQuestionChooser(QuestionChooser):
+
     @classmethod
     def get_usersplaces(self, n):
-        return [up for up in self.get_ready_users_places(5).filter(skill__lt=0.8)[:n]]
+        return (
+            [up for up in self.get_ready_users_places(
+                5).filter(skill__lt=0.8)[:n]]
+        )
+
 
 class NewPlacesQuestionChooser(QuestionChooser):
+
     @classmethod
     def get_usersplaces(self, n):
         places = Place.objects.filter(
-                id__in=self.map.related_places.all()
-            ).exclude(
-                id__in=[up.place_id for up in UsersPlace.objects.filter(user=self.user)]
-            ).order_by('difficulty')[:n]
+            id__in=self.map.related_places.all()
+        ).exclude(
+            id__in=[
+                up.place_id for up in UsersPlace.objects.filter(user=self.user)]
+        ).order_by('difficulty')[:n]
         return [UsersPlace(place=p, user=self.user) for p in places]
 
+
 class RandomPlacesQuestionChooser(QuestionChooser):
+
     @classmethod
     def get_usersplaces(self, n):
-        return [up for up in self.get_ready_users_places(30) if up.skill < 1][:n]
+        return (
+            [up for up in self.get_ready_users_places(30) if up.skill < 1][:n]
+        )
+
 
 class ShortRepeatIntervalPlacesQuestionChooser(QuestionChooser):
+
     @classmethod
     def get_usersplaces(self, n):
-        return [up for up in self.get_ready_users_places(0.5) if up.skill < 1 or up.get_certainty() < 1][:n]
+        return (
+            [up for up in self.get_ready_users_places(
+                0.5) if up.skill < 1 or up.get_certainty() < 1][:n]
+        )
 
 
 class QuestionService():
+
     def __init__(self, user, map):
         self.user = user
         self.map = map
@@ -198,12 +239,19 @@ class QuestionService():
         for QC in question_choosers:
             qc = QC(self.user, self.map, questions)
             remains = n - len(questions)
-            questions += qc.get_questions(remains, self.user, self.map, questions)
+            questions += qc.get_questions(
+                remains,
+                self.user,
+                self.map,
+                questions)
         return questions
 
     def answer(self, a):
         place = Place.objects.get(code=a["code"])
-        answerPlace = Place.objects.get(code=a["answer"]) if "answer" in a and a["answer"] != "" else None
+        answerPlace = Place.objects.get(
+            code=a[
+                "answer"]) if "answer" in a and a[
+            "answer"] != "" else None
 
         answer = Answer(
             user=self.user,
@@ -215,12 +263,11 @@ class QuestionService():
         answer.save()
         if "options" in a:
             answer.options = Place.objects.filter(
-                    code__in=[o["code"] for o in a["options"]],
-                )
+                code__in=[o["code"] for o in a["options"]],
+            )
 
         if place == answerPlace:
-            self.user.points += 1;
-            self.user.save();
+            self.user.points += 1
+            self.user.save()
 
         UsersPlace.objects.addAnswer(answer)
-

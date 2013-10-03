@@ -1,0 +1,12 @@
+language: python
+python: 2.6
+install:
+- ./setup.py install
+- pip install pep8 --use-mirrors
+- pip install https://github.com/dcramer/pyflakes/tarball/master
+before_script:
+  - cd wsgi/openshift
+  - pep8 --exclude=migrations --ignore=E501,E225 .
+  - pyflakes -x W .
+script:
+- ./manage.py test core questions accounts

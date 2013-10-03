@@ -7,4 +7,4 @@ except ImportError:
 # URL patterns for lazysignup
 
 urlpatterns = patterns('lazysignup.views',
-)
+                       )

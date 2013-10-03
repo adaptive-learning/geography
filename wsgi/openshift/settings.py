@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Django settings for openshift project.
-import imp, os
+import imp
+import os
 
 try:
     from local_settings import *
@@ -9,9 +10,9 @@ except ImportError:
 
 # a setting to determine whether we are running on OpenShift
 ON_OPENSHIFT = False
-if os.environ.has_key('OPENSHIFT_REPO_DIR'):
+if 'OPENSHIFT_REPO_DIR' in os.environ:
     ON_OPENSHIFT = True
- 
+
 # https://www.openshift.com/kb/kb-e1064-python-app-still-throws-importerror-no-module-named-xyz-even-though-ive-configured
 """
 if ON_OPENSHIFT:
@@ -35,7 +36,7 @@ TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
-     ('Vít Stanislav', 'slaweet@seznam.cz'),
+    ('Vít Stanislav', 'slaweet@seznam.cz'),
 )
 MANAGERS = ADMINS
 
@@ -44,7 +45,9 @@ if ON_OPENSHIFT:
     # with rhc cartridge add (see /README in this git repo)
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',  # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+            'ENGINE': 'django.db.backends.mysql',
+            # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3'
+            # or 'oracle'.
             'NAME': os.environ['OPENSHIFT_APP_NAME'],
             'USER': os.environ['OPENSHIFT_MYSQL_DB_USERNAME'],
             'PASSWORD': os.environ['OPENSHIFT_MYSQL_DB_PASSWORD'],
@@ -55,12 +58,16 @@ if ON_OPENSHIFT:
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': os.path.join(PROJECT_DIR, 'sqlite3.db'),  # Or path to database file if using sqlite3.
+            'ENGINE': 'django.db.backends.sqlite3',
+            # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+            # Or path to database file if using sqlite3.
+            'NAME': os.path.join(PROJECT_DIR, 'sqlite3.db'),
             'USER': '',                      # Not used with sqlite3.
             'PASSWORD': '',                  # Not used with sqlite3.
-            'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-            'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+            'HOST': '',
+            # Set to empty string for localhost. Not used with sqlite3.
+            'PORT': '',
+            # Set to empty string for default. Not used with sqlite3.
         }
     }
 
@@ -122,7 +129,8 @@ STATICFILES_FINDERS = (
 )
 
 # Make a dictionary of default keys
-default_keys = { 'SECRET_KEY': 'vm4rl5*ymb@2&d_(gc$gb-^twq9w(u69hi--%$5xrh!xk(t%hw' }
+default_keys = {
+    'SECRET_KEY': 'vm4rl5*ymb@2&d_(gc$gb-^twq9w(u69hi--%$5xrh!xk(t%hw'}
 
 # Replace default keys with dynamic values if we are in OpenShift
 use_keys = default_keys
@@ -209,13 +217,13 @@ LOGGING = {
 }
 
 AUTHENTICATION_BACKENDS = (
-  'django.contrib.auth.backends.ModelBackend',
-  'lazysignup.backends.LazySignupBackend',
-  'social_auth.backends.twitter.TwitterBackend',
-  'social_auth.backends.facebook.FacebookBackend',
-  'social_auth.backends.google.GoogleOAuthBackend',
-  'social_auth.backends.google.GoogleOAuth2Backend',
-  'social_auth.backends.google.GoogleBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    'lazysignup.backends.LazySignupBackend',
+    'social_auth.backends.twitter.TwitterBackend',
+    'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.google.GoogleOAuthBackend',
+    'social_auth.backends.google.GoogleOAuth2Backend',
+    'social_auth.backends.google.GoogleBackend',
 )
 
 ALLOWED_HOSTS = [

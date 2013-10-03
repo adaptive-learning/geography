@@ -11,10 +11,10 @@ class Command(NoArgsCommand):
 
     def handle_noargs(self, **options):
         ConfusedPlaces.objects.all().delete()
-        
+
         for pr in PlaceRelation.objects.filter(type=PlaceRelation.HAVE_LAND_BORDER):
             for place2 in PlaceRelation.objects.get_bordering_places(pr.place):
                 ConfusedPlaces.objects.was_confused(pr.place, place2)
-                
+
         for a in Answer.objects.exclude(place=F("answer")).filter(type=FindOnMapQuestionType().id):
             ConfusedPlaces.objects.was_confused(a.place, a.answer)

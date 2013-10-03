@@ -10,10 +10,14 @@ from questions.models import PlaceRelation, UsersPlace
 from questions.utils import QuestionService
 
 # Create your views here.
+
+
 @allow_lazy_user
 def question(request, map_code):
     try:
-        map = PlaceRelation.objects.get(place__code=map_code, type=PlaceRelation.IS_ON_MAP)
+        map = PlaceRelation.objects.get(
+            place__code=map_code,
+            type=PlaceRelation.IS_ON_MAP)
     except PlaceRelation.DoesNotExist:
         raise Http404
     student = Student.objects.fromUser(request.user)
@@ -22,15 +26,18 @@ def question(request, map_code):
     if (request.raw_post_data != ""):
         answer = simplejson.loads(request.raw_post_data)
         questionIndex = answer['index'] + 1
-        qs.answer(answer);
+        qs.answer(answer)
     noOfQuestions = 5 if student.points < 10 else 10
     noOfQuestions -= questionIndex
     response = qs.get_questions(noOfQuestions)
     return JsonResponse(response)
 
+
 def users_places(request, map_code, user=''):
     try:
-        map = PlaceRelation.objects.get(place__code=map_code, type=PlaceRelation.IS_ON_MAP)
+        map = PlaceRelation.objects.get(
+            place__code=map_code,
+            type=PlaceRelation.IS_ON_MAP)
     except PlaceRelation.DoesNotExist:
         raise Http404("Unknown map name: {0}".format(map_code))
     if (user == ''):
@@ -40,32 +47,31 @@ def users_places(request, map_code, user=''):
             user = User.objects.get(username=user)
         except User.DoesNotExist:
             raise HttpResponseBadRequest("Invalid username: {0}" % user)
-        
+
     if request.user.is_authenticated():
         student = Student.objects.fromUser(user)
         ps = UsersPlace.objects.filter(
-           user=student,
-           place_id__in=map.related_places.all()
-       ).select_related().order_by("place__name")
+            user=student,
+            place_id__in=map.related_places.all()
+        ).select_related().order_by("place__name")
     else:
-        ps =[]
+        ps = []
     try:
         cs = PlaceRelation.objects.get(
-           place__code=map_code,
-           type=PlaceRelation.IS_SUBMAP,
+            place__code=map_code,
+            type=PlaceRelation.IS_SUBMAP,
         ).related_places.all()
     except PlaceRelation.DoesNotExist:
         cs = []
     response = {
-        'name' : map.place.name,
-        'placesTypes' : [{
+        'name': map.place.name,
+        'placesTypes': [{
             'name': u'Kontinenty',
             'haveMaps': True,
             'places': [p.to_serializable() for p in cs]
-        },{
+        }, {
             'name': u'Státy',
             'places': [p.to_serializable() for p in ps]
         }]
-        }
+    }
     return JsonResponse(response)
-    
