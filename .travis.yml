@@ -3,6 +3,7 @@ python:
   - "2.7"
 # command to install dependencies
 install: "./setup.py install"
+
 # command to run tests
-script: "cd wsgi/openshift && ./manage.py test core"
+script: "cd wsgi/openshift && ./manage.py test core questions accounts"
 
