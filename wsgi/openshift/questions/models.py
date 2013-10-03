@@ -3,84 +3,12 @@ from accounts.models import Student
 from core.models import Place, PlaceRelation
 from datetime import datetime, timedelta
 from django.db import models
-from random import choice
 
-class QuestionType(object):
-    EASY_QUESITON_LEVEL = 0
-    MEDIUM_QUESITON_LEVEL = 1
-    HARD_QUESITON_LEVEL = 2
-    id = 0
-    text = ""
-    no_of_options = 0
-    level = HARD_QUESITON_LEVEL
-    
-    @classmethod
-    def to_serializable(self):
-        return {
-            'type' : self.id,
-            'text' : self.text,
-        }
 
-class FindOnMapQuestionType(QuestionType):
-    id = 0
-    text = u"Vyber na mapě stát"
-    
-class PickNameOfQuestionType(QuestionType):
-    id = 1
-    text = u"Jak se jmenuje stát zvýrazněný na mapě?"
-    no_of_options = 6
-    
-class PickNameOf4OptionsQuestionType(PickNameOfQuestionType):
-    id = 2
-    no_of_options = 4
-    level = QuestionType.MEDIUM_QUESITON_LEVEL
-
-class FindOnMapOf4OptionsQuestionType(QuestionType):
-    id = 3
-    no_of_options = 4
-    text = u"Ze čtyř zvýrazněných států na mapě vyber"
-    level = QuestionType.MEDIUM_QUESITON_LEVEL
-    
-class PickNameOf2OptionsQuestionType(PickNameOfQuestionType):
-    id = 4
-    no_of_options = 2
-    level = QuestionType.EASY_QUESITON_LEVEL
-
-class FindOnMapOf2OptionsQuestionType(QuestionType):
-    id = 5
-    no_of_options = 2
-    text = u"Ze dvou zvýrazněných států na mapě vyber"
-    level = QuestionType.EASY_QUESITON_LEVEL
-
-def all_subclasses(cls):
-    return cls.__subclasses__() + [g for s in cls.__subclasses__()
-                                   for g in all_subclasses(s)]
-
-class QuestionTypeFactory():
-    @staticmethod
-    def get_instance_by_id(id):
-        possible_question_types = [qType for qType in all_subclasses(QuestionType) if qType.id == id]
-        if len(possible_question_types) == 1:
-            return possible_question_types[0]
-#         else:
-#             TODO: raise some error
-        
-    @staticmethod
-    def get_instance_by_level(level):
-        possible_question_types = [qType for qType in all_subclasses(QuestionType)if qType.level == level]
-        qtype = choice(possible_question_types)
-        return qtype
-    
-    @staticmethod
-    def get_model_choices():
-        question_type_choices = ((qType.id, qType.text) for qType in all_subclasses(QuestionType))
-        return question_type_choices
-
-        
 def yesterday():
     y = datetime.now() - timedelta(days=1)
     return y
-    
+
 # Create your models here.
 
 
@@ -99,15 +27,18 @@ class UsersPlaceManager(models.Manager):
         usersPlace = self.fromStudentAndPlace(a.user, a.place)
         usersPlace._addAnswer(a)
 
+
 def all_correct(users_places):
-    incorrect =  [up for up in users_places if up.skill < 1]
+    incorrect = [up for up in users_places if up.skill < 1]
     return len(incorrect) == 0
+
 
 def updatePlaceDifficulty(place):
     usersPlaces = UsersPlace.objects.filter(place=place)
-    skills = [ up.correctlyAnsweredCount / float(up.askedCount) for up in usersPlaces]
+    skills = [up.correctlyAnsweredCount / float(up.askedCount) for up in usersPlaces]
     difficulty = sum(skills) / len(skills) if len(skills) > 0 else 0.5
     place.difficulty = int((1 - difficulty) * Place.DIFFICULTY_CONVERSION)
+
 
 class UsersPlace(models.Model):
     user = models.ForeignKey(Student, db_index=True)
@@ -127,11 +58,10 @@ class UsersPlace(models.Model):
                  place_id__in=map.related_places.all(),
 #                  lastAsked__lt=min(self.lastAsked, datetime.now())
         ).order_by("-lastAsked")[:10]
-        correct =  [up for up in last_users_places if up.skill == 1]
+        correct = [up for up in last_users_places if up.skill == 1]
         if len(last_users_places) < 5:
             return 0
-        knowladge = 1.0*len(correct) / len(last_users_places)
-#         raise Exception(u"similar {0} {1}".format(knowladge, self.place.name))
+        knowladge = 1.0 * len(correct) / len(last_users_places)
         return knowladge
 
     def get_skill(self):
@@ -141,7 +71,7 @@ class UsersPlace(models.Model):
 
     def get_certainty(self):
         # TODO: create a field instead of this method
-        if self.askedCount >=2 and self.correctlyAnsweredCount == self.askedCount:
+        if self.askedCount >= 2 and self.correctlyAnsweredCount == self.askedCount:
             newCertainty = 1
         else:
             newCertainty = self.askedCount / 3.0
@@ -170,15 +100,19 @@ class UsersPlace(models.Model):
     def to_serializable(self):
         ret = self.place.to_serializable()
         ret.update({
-          'skill' : self.skill,
-          'certainty' : self.get_certainty(),
+          'skill': self.skill,
+          'certainty': self.get_certainty(),
         })
         return ret
+
     class Meta:
-        db_table = 'core_usersplace' #TODO migrate lagacy db_table
+        db_table = 'core_usersplace'  # TODO migrate lagacy db_table
+        unique_together = ("user", "place")
+
 
 class AnswerManager(models.Manager):
     last_10_answers = None
+
     def get_last_10_answers(self, user):
         if self.last_10_answers == None:
             self.last_10_answers = self.filter(
@@ -186,32 +120,44 @@ class AnswerManager(models.Manager):
             ).order_by("-askedDate")[:10]
         return self.last_10_answers
 
+
 class Answer(models.Model):
+    FIND_ON_MAP = 10
+    PICK_NAME_OF_6 = 26
+    FIND_ON_MAP_OF_6 = 16
+    PICK_NAME_OF_4 = 24
+    FIND_ON_MAP_OF_4 = 14
+    PICK_NAME_OF_2 = 22
+    FIND_ON_MAP_OF_2 = 12
+    QUESTION_TYPES = (
+        (FIND_ON_MAP, u"Vyber na mapě stát"),
+        (PICK_NAME_OF_6, u"Jak se jmenuje stát zvýrazněný na mapě?"),
+        (FIND_ON_MAP_OF_6, u"Ze šesti zvýrazněných států na mapě vyber"),
+        (PICK_NAME_OF_4, u"Jak se jmenuje stát zvýrazněný na mapě?"),
+        (FIND_ON_MAP_OF_4, u"Ze čtyř zvýrazněných států na mapě vyber"),
+        (PICK_NAME_OF_2, u"Jak se jmenuje stát zvýrazněný na mapě?"),
+        (FIND_ON_MAP_OF_2, u"Ze dvou zvýrazněných států na mapě vyber"),
+    )
     user = models.ForeignKey(Student, db_index=True)
     place = models.ForeignKey(Place, related_name='place_id')
     answer = models.ForeignKey(Place, related_name='answer_id', null=True, blank=True, default=None)
-    type = models.IntegerField(choices=QuestionTypeFactory.get_model_choices()) # TODO: change to PositiveSmallIntegerField
+    type = models.IntegerField(choices=QUESTION_TYPES)  # TODO: change to PositiveSmallIntegerField
     askedDate = models.DateTimeField(default=datetime.now)
     msResposeTime = models.IntegerField(default=0)
     options = models.ManyToManyField(Place)
     objects = AnswerManager()
 
-#     def get_no_of_options(self):
-#         qt = get_question_type_by_id(self.type)
-#         no_of_options =  qt.no_of_options
-#         if no_of_options == 0:
-#             no_of_options = Map.objects.get(places=self.place).places.all().count()
-#         return no_of_options
-#
     def __unicode__(self):
         return u'user: {0}, requested: {1}, answered: {2}, correct: {3}'.format(self.user, self.place, self.answer, self.place == self.answer)
+
     class Meta:
         ordering = ["-askedDate"]
-        db_table = 'core_answer' #TODO migrate lagacy db_table
+        db_table = 'core_answer'  # TODO migrate lagacy db_table
 
 
 class ConfusedPlacesManager(models.Manager):
-    map_cache={}
+    map_cache = {}
+
     def was_confused(self, askedPlace, answeredPlace):
         if answeredPlace == None:
             return
@@ -234,12 +180,13 @@ class ConfusedPlacesManager(models.Manager):
         confused = [c for c in self.map_cache[map] if c.asked == place]
         return [c.confused_with for c in confused]
 
+
 class ConfusedPlaces(models.Model):
     asked = models.ForeignKey(Place, related_name='asked_id')
     confused_with = models.ForeignKey(Place, related_name='confused_with_id')
     level_of_cofusion = models.IntegerField(default=0)
     objects = ConfusedPlacesManager()
+
     class Meta:
         ordering = ["-level_of_cofusion"]
-        db_table = 'core_confusedplaces' #TODO migrate lagacy db_table
-
+        db_table = 'core_confusedplaces'  # TODO migrate lagacy db_table
