@@ -82,7 +82,14 @@ TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'cz'
+
+_ = lambda s: s
+
+LANGUAGES = (
+  ('cz', _('Czech')),
+  ('en', _('English')),
+)
 
 SITE_ID = 1
 
@@ -125,7 +132,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make a dictionary of default keys
@@ -146,12 +153,13 @@ SECRET_KEY = use_keys['SECRET_KEY']
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    #'django.template.loaders.eggs.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -183,6 +191,7 @@ INSTALLED_APPS = (
     'social_auth',
     'lazysignup',
     'core',
+#     'django_extensions',
     'accounts',
     'questions',
 )
@@ -228,6 +237,7 @@ AUTHENTICATION_BACKENDS = (
 
 ALLOWED_HOSTS = [
     '.rhcloud.com',
+    '.slepemapy.cz',
 ]
 
 LOGIN_REDIRECT_URL = '/#/view/'
