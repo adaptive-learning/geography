@@ -2,7 +2,7 @@
 <html data-ng-app="myApp" data-ng-controller="AppCtrl">
   <head>
     <meta charset="utf-8">
-    <title>{{ title }}Inteligentní Zeměpis</title>
+    <title>{{ title }}Slepé Mapy</title>
     {% if isProduction  %}
         <script type='text/javascript'>
         window.Muscula = { settings:{
@@ -55,7 +55,7 @@
       <span class="icon-bar"></span>
     </button>
 
-      <a class="navbar-brand" href="#">Inteligentní Zeměpis</a>
+      <a class="navbar-brand" href="#">Slepé Mapy</a>
       <div class="nav-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav  pull-left">
                 <li ng-class="getActiveClass('/view/world/')">
@@ -77,11 +77,20 @@
                     <li class="forgot-pwd"><a href="#" ng-click="logout()">Odhlásit se</a></li>
                   </ul>
                 </li>
-              <li id="points" class="atooltip" title="Body" ng-show="user.points">
+              <li id="points" class="atooltip" title="Body - přibývají za každou správnou odpověď" ng-show="user.points">
                 <a><span class="badge" ng-bind="user.points"></span></a>
               </li>
-              <!--<li>
-                <a href="#/">Nastavení</a>
+              <!--<li class="dropdown">
+                  <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="flag-{{ LANGUAGE_CODE}}"></i> <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    {% for lang in LANGUAGES %}
+                    <li>
+                    <form action="/i18n/setlang/" method="post">{% csrf_token %}
+                        <input name="language" type="hidden" value="{{ lang.0 }}" />
+                        <button class="menu-link"><i class="flag-{{ lang.0 }}"></i> {{ lang.1 }}</button>
+                    </li>
+                    {% endfor %}
+                </ul>
               </li>-->
             </ul>
         </div><!-- /.nav-collapse -->
