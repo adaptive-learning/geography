@@ -18,3 +18,10 @@ fi
 
 echo "Executing 'python $OPENSHIFT_REPO_DIR/wsgi/openshift/manage.py collectstatic --noinput'"
 python "$OPENSHIFT_REPO_DIR"wsgi/openshift/manage.py collectstatic --noinput
+
+
+echo "copying local_settings.py from data storage"
+echo "${OPENSHIFT_DATA_DIR}local_settings.py ${OPENSHIFT_REPO_DIR}wsgi/openshift/"
+cp  ${OPENSHIFT_DATA_DIR}local_settings.py ${OPENSHIFT_REPO_DIR}wsgi/openshift/
+ 
+
