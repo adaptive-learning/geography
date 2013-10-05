@@ -29,7 +29,10 @@ if ON_OPENSHIFT:
 
 PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
 if ON_OPENSHIFT:
-    DEBUG = False
+    if os.environ['OPENSHIFT_APP_DNS'] == "geography-geography.rhcloud.com":
+        DEBUG = True
+    else:
+        DEBUG = False
 else:
     DEBUG = True
 TEMPLATE_DEBUG = DEBUG
