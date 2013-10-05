@@ -121,14 +121,11 @@ class UsersPlace(models.Model):
 
 
 class AnswerManager(models.Manager):
-    last_10_answers = None
 
     def get_last_10_answers(self, user):
-        if self.last_10_answers is None:
-            self.last_10_answers = self.filter(
-                user=user,
-            ).order_by("-askedDate")[:10]
-        return self.last_10_answers
+        return self.filter(
+            user=user,
+        ).order_by("-askedDate")[:10]
 
 
 class Answer(models.Model):
