@@ -167,7 +167,6 @@ class QuestionChooser(object):
 
     @classmethod
     def get_success_rate(self):
-        PRIORITY_RATIO = 1.2
         lastAnswers = Answer.objects.get_last_10_answers(self.user)
         correct_answers = [a for a in lastAnswers if a.place_id == a.answer_id]
         last_answers_len = len(lastAnswers) if len(lastAnswers) > 0 else 1
@@ -208,13 +207,15 @@ class NewPlacesQuestionChooser(QuestionChooser):
         return [UsersPlace(place=p, user=self.user) for p in places]
 
 
-class RandomPlacesQuestionChooser(QuestionChooser):
-
+class LongestUnpracticedPlacesQuestionChooser(QuestionChooser):
     @classmethod
     def get_usersplaces(self, n):
-        return (
-            [up for up in self.get_ready_users_places(30) if up.skill < 1][:n]
-        )
+        return UsersPlace.objects.filter(
+                user=self.user,
+                place_id__in=self.map.related_places.all(),
+            ).exclude(
+                place__code__in=[q['code'] for q in self.pre_questions]
+            ).select_related('place').order_by('lastAsked')[:n]
 
 
 class ShortRepeatIntervalPlacesQuestionChooser(QuestionChooser):
