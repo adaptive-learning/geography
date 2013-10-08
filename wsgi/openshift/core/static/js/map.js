@@ -53,7 +53,7 @@ function initMap(config, callback) {
         statesLayerConfig.tooltips = function(d) {
             var state = config.states && config.states[d.name];
             var name = ( state ? '<span class="label">' + '<i class="flag-' + d.name + '"></i> ' + state.name + '</span>' : '<br>Neprozkoumané území<br><br>');
-            var description = state ? '<div> <i class="color-indicator" style="background-color:' + scale(state.skill).hex() + '"></i> Znalost: ' + Math.round(100 * state.skill) + '%</div>' : "";
+            var description = state ? '<div> <i class="color-indicator" style="background-color:' + scale(state.skill).hex() + '"></i> Úspěšnost: ' + Math.round(100 * state.skill) + '%</div>' : "";
 //             TODO: find a better word than "Jistota"
 //            description += ( state ? '<div> <i class="color-indicator" style="background-color:' + chroma.color("#000").brighten((1 - state.certainty) * 130).hex() + '"></i>  Jistota: ' + Math.round(100 * state.certainty) + '%</div> ' : "");
 
