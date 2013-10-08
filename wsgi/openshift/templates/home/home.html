@@ -2,7 +2,7 @@
 <html data-ng-app="myApp" data-ng-controller="AppCtrl">
   <head>
     <meta charset="utf-8">
-    <title>{{ title }}Slepé Mapy</title>
+    <title>{{ title }}Slepé Mapy - interaktivní aplikace na procvičování polohy států</title>
     {% if isProduction  %}
         <script type='text/javascript'>
         window.Muscula = { settings:{
@@ -40,7 +40,7 @@
   </head>
 
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
-
+  <div id="wrap">
     <!-- Navbar
     ================================================== -->
 
@@ -99,10 +99,13 @@
     <!-- Main content
     ================================================== -->
     <!--<a href="feedbackyform.html" id="fdbk_tab" class="fdbk_tab_left ">FEEDBACK</a>-->
-  <img class="version" src="static/img/alpha.png" alt="Alfa verze"/>
+    <img class="version" src="static/img/beta.png" alt="Beta verze"/>
     <div data-ng-view id="ng-view" ng-animate="{enter: 'view-enter'}" ng-class="vip() && 'vip'"></div>
+  </div>
 
-
+    <div id="footer">
+        Aplikace Slepé mapy je vyvíjena na <a href="http://www.fi.muni.cz/">FI MU</a>, všechny připomínky velmi vítány. Kontaktní e-mail: slepemapy{zavinac}googlegroups.com
+    </div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -132,7 +135,7 @@
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
         
-          ga('create', 'UA-43054672-1', 'geography-conqueror.rhcloud.com');
+          ga('create', 'UA-43054672-1', 'slepemapy.cz');
           ga('send', 'pageview');
         
         </script>

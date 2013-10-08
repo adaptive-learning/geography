@@ -52,6 +52,8 @@ angular.module('myApp.controllers', [])
         }
     }
     
+    $("#footer").html($("#footer").html().replace("{zavinac}", "@"));
+    
   })
 
   .controller('AppView', function($scope, $routeParams, $filter, $timeout, usersplaces, question, placeName) {

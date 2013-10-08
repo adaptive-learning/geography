@@ -1,3 +1,6 @@
+$gray-top: #fff
+$gray-bottom: #eee
+
 body
   padding-top: 50px
   overflow-y: scroll
@@ -108,9 +111,32 @@ a#fdbk_tab
   &:hover
     margin-left: -4px
 
+html, body
+  height: 100%
+
+#wrap 
+  min-height: 100%
+  padding-bottom: 30px
+
+#footer
+  background: -webkit-linear-gradient(top, $gray-top, $gray-bottom)
+  background: -moz-linear-gradient(top, $gray-top, $gray-bottom)
+  background: -o-linear-gradient(top, $gray-top, $gray-bottom)
+  background: -ms-linear-gradient(top, $gray-top, $gray-bottom)
+  color: #666
+  text-align: center
+  clear: both
+  position: relative
+  z-index: 10
+  height: 30px
+  margin-top: -30px
+
+
 #ng-view
   position: relative
   min-height: 500px
+  height: auto
+  min-height: 100%
 
 .view-enter-setup, .view-leave-setup, .slide-enter-setup, .slide-leave-setup, .wave-enter-setup, .wave-leave-setup
   -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s
