@@ -4,7 +4,7 @@
       <div id="map-holder">
         <div class="loading-indicator"></div>
       </div>
-      <h1 ng-show="user == ''" ng-bind="name"></h1>
+      <h1 ng-show="user == ''" ng-bind="name" style="{{h1Style}}"></h1>
       <h1 ng-show="user != ''" ng-bind="user"></h1>
       <a  ng-show="user == ''" href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" >Procvičovat</a>
       <!--<a href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" ng-disabled="practiceCount == 0" >Procvičovat ({{practiceCount}})</a>-->

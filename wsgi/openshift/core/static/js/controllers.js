@@ -58,6 +58,7 @@ angular.module('myApp.controllers', [])
     $scope.part = $routeParams.part;
     $scope.user = $routeParams.user || "";
     $scope.name = placeName($scope.part);
+    $scope.h1Style = $scope.part == 'samerica' ? 'left: -240px;' : '';
 
     var mapConfig = {
         name : $scope.part.toLowerCase(),
@@ -96,6 +97,7 @@ angular.module('myApp.controllers', [])
   .controller('AppPractice', function($scope, $routeParams, $timeout, $location, question, placeName) {
     $scope.part = $routeParams.part;
     $scope.name = placeName($scope.part);
+    $scope.h1Style = $scope.part == 'samerica'? 'left: -240px;' : '';
 
     $scope.highlight = function() {
         var active = $scope.question;
