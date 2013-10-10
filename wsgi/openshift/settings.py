@@ -90,8 +90,8 @@ LANGUAGE_CODE = 'cz'
 _ = lambda s: s
 
 LANGUAGES = (
-  ('cz', _('Czech')),
-  ('en', _('English')),
+    ('cz', _('Czech')),
+    ('en', _('English')),
 )
 
 SITE_ID = 1
@@ -194,7 +194,6 @@ INSTALLED_APPS = (
     'social_auth',
     'lazysignup',
     'core',
-#     'django_extensions',
     'accounts',
     'questions',
 )

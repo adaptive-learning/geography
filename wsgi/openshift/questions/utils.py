@@ -211,11 +211,11 @@ class LongestUnpracticedPlacesQuestionChooser(QuestionChooser):
     @classmethod
     def get_usersplaces(self, n):
         return UsersPlace.objects.filter(
-                user=self.user,
-                place_id__in=self.map.related_places.all(),
-            ).exclude(
-                place__code__in=[q['code'] for q in self.pre_questions]
-            ).select_related('place').order_by('lastAsked')[:n]
+            user=self.user,
+            place_id__in=self.map.related_places.all(),
+        ).exclude(
+            place__code__in=[q['code'] for q in self.pre_questions]
+        ).select_related('place').order_by('lastAsked')[:n]
 
 
 class ShortRepeatIntervalPlacesQuestionChooser(QuestionChooser):
