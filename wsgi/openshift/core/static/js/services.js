@@ -52,12 +52,14 @@ angular.module('myApp.services', []).
             fn(q);
       }
       var questions = []
+      var summary = []
       return {
           first: function(part, fn){
-              worldPart = part
+              worldPart = part;
+              summary = [];
                 $http.get('question/' + part).success(function(data) {
                     qIndex = 0;
-                    lastAnswerIndex = -1
+                    lastAnswerIndex = -1;
                     questions = data;
                     returnQuestion(fn);
                 });
@@ -74,7 +76,7 @@ angular.module('myApp.services', []).
           answer: function(question) {
                 question.msResponseTime += (new Date()).valueOf();
                 question.index = qIndex-1;
-                questions[qIndex-1] = question;
+                summary.push(question);
                 $http.post('question/' + worldPart, question).success(function(data) {
                     var newLastAnswerIndex = questions.length - data.length -1;
                     // if it is not a delayed response
@@ -87,13 +89,13 @@ angular.module('myApp.services', []).
                 return  100 * qIndex / questions.length;
           },
           summary: function() {
-              var correctlyAnswered = questions.filter(function(q){
+              var correctlyAnswered = summary.filter(function(q){
                       return q.code == q.answer;
                   })
 
               return {
-                  correctlyAnsweredRatio : correctlyAnswered.length / questions.length,
-                  questions : questions
+                  correctlyAnsweredRatio : correctlyAnswered.length / summary.length,
+                  questions : summary
               }
           }
       }
