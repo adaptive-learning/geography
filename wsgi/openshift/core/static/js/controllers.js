@@ -131,15 +131,16 @@ angular.module('myApp.controllers', [])
        if ($scope.isPickNameOfType()) {
            $scope.highlightOptions(selected);
        }
-       $scope.canNext = true;
-       if (correct) {
-           $scope.$parent.addPoint();
-       }
        $scope.question.answer = selected;
        $scope.progress = question.answer($scope.question);
-       $timeout(function(){
-        $(".btn-continue").focus()
-       },100)
+       if (correct) {
+           $scope.$parent.addPoint();
+           $timeout(function(){
+            $scope.next();
+           },700)
+       } else {
+           $scope.canNext = true;
+       }
     }
 
     $scope.next = function() {
