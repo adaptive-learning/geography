@@ -6,35 +6,33 @@
       </div>
       <h1 ng-show="user == ''" ng-bind="name" style="{{h1Style}}"></h1>
       <h1 ng-show="user != ''" ng-bind="user"></h1>
-      <a  ng-show="user == ''" href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" >Procvičovat</a>
-      <!--<a href="#/practice/{{part}}" class="btn btn-primary btn-large btn-practice" ng-disabled="practiceCount == 0" >Procvičovat ({{practiceCount}})</a>-->
+      <a  ng-show="user == ''" href="#/practice/{{part}}" class="btn btn-primary btn-lg btn-practice" >Procvičovat</a>
+      <!--<a href="#/practice/{{part}}" class="btn btn-primary btn-lg btn-practice" ng-disabled="practiceCount == 0" >Procvičovat ({{practiceCount}})</a>-->
     </div>
     </div>
   </center>
-  <div id="container" class="col-sm-11 well">
+  <div id="container">
     <div ng-show="!placesTypes" class="loading-indicator">
     </div>
     <div ng-show="placesTypes.length == 0" style="text-align: center;" >
         <h2>Zatím na této mapě nebylo nic procvičováno.</h2>
-        <a href="#/practice/{{part}}" class="btn btn-primary btn-large" >Začít procvičovat</a>
+        <a href="#/practice/{{part}}" class="btn btn-primary btn-lg" >Začít procvičovat</a>
     </div>
     <ul class="thumbnails">
       <li class="col-sm-{{12/placesTypes.length}}" ng-repeat="type in placesTypes">
-        <div class="thumbnail">
           <h3>{{type.name}}</h3>
           <div class="view-places">
           <span ng-repeat="place in type.places" ng-switch="type.haveMaps || place.code == 'us'" ng-mouseenter="hover(place, true)" ng-mouseleave="hover(place, false)">
-              <a href="#/view/{{place.code}}/{{user}}" ng-switch-when="true" class="btn btn-small">
+              <a href="#/view/{{place.code}}/{{user}}" ng-switch-when="true" class="btn btn-default btn-sm">
                 <i class="flag-{{place.code}}"></i> {{place.name || place}}
               </a>
-              <span ng-switch-default class="label">
+              <span ng-switch-default class="label label-default">
                 <i class="flag-{{place.code}}"></i> {{place.name || place}}
               </span>
           </span>
           <div class="clearfix"></div>
           <!--<a href="#/practice/{{part}}/{{type.name}}" class="btn btn-primary" >Procvičovat</a>-->
           </div>
-        </div>
       </li>
     </ul>
     <div class="clearfix"></div>

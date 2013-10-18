@@ -2,7 +2,6 @@ $gray-top: #fff
 $gray-bottom: #eee
 
 body
-  padding-top: 50px
   overflow-y: scroll
   font-size: 1.5em
   li
@@ -37,12 +36,16 @@ ul.dropdown-menu.login
     opacity: 0.5
   a:hover i.icon-user, a:focus i.icon-user, &.open i.icon-user
     opacity: 1
+    
+.navbar 
+  margin-bottom: 0px
+  border-radius: 0px
 
 .version
   border: 0px none currentColor
   right: 0px
   position: absolute
-  top: 40px
+  top: 50px
   z-index: 10
 
 .vip
@@ -54,32 +57,33 @@ ul.dropdown-menu.login
   min-height: 128px
   width: 100%
   height: 100%
+  margin-top: 30px
 
 .view-places
   margin: 10px
 
 #container
-  margin-top: 20px
   margin-left: auto
   margin-right: auto
   float: none
   position: relative
+  h2
+    padding-left: 30px
 
-.thumbnail
-  background: white
-  margin-bottom: 20px
+
+.thumbnails
+  overflow: hidden
+  li
+    background: #eee
+    margin-bottom: -99999px
+    padding-bottom: 99999px
+  li:nth-child(even)
+    background: #e7e7e7
   h3
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075)
-    &:first-child
-      text-align: center
-      background: #eee
-      margin: -3px -3px 3px -3px
-      border-radius: 3px 3px 0 0
-      border-bottom: 1px solid #ddd
-      padding: 10px
-  a.btn
-    font-weight: bold
-    margin: 5px 10px 5px 0px
+    background: rgba(0,0,0,0.05)
+    margin: 0px -15px 0px -15px
+    padding: 10px
+    padding-left: 30px
 
 .label
   margin-right: 10px
@@ -89,27 +93,6 @@ ul.dropdown-menu.login
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
   display: none
-
-
-a#fdbk_tab
-  background-color: #222
-  top: 25%
-  left: 0
-  width: 42px
-  height: 102px
-  color: white
-  cursor: pointer
-  text-indent: -100000px
-  overflow: hidden
-  position: fixed
-  z-index: 100000
-  margin-left: -7px
-  background-image: url(../img/feedback_trans_tab.png)
-  _position: absolute
-  _background-image: url(../img/feedback_tab_ie6.png)
-  background-color: #222
-  &:hover
-    margin-left: -4px
 
 html, body
   height: 100%
@@ -128,8 +111,9 @@ html, body
   clear: both
   position: relative
   z-index: 10
-  height: 30px
   margin-top: -30px
+  padding-top: 5px
+  min-height: 30px
 
 
 #ng-view

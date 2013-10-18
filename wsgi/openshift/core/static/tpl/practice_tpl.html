@@ -5,16 +5,16 @@
       </div>
       <h1 style="{{h1Style}}"> {{name}}</h1>
     </div>
-    <div class="progress">
-      <div class="progress-bar" style="width: {{progress}}%;"></div>
-    </div>
   </center>
-  <div id="container" class="col-sm-11 well" ui-keypress="{enter: 'next()'}">
+  <div class="progress quesions-progress">
+    <div class="progress-bar" style="width: {{progress}}%;"></div>
+  </div>
+  <div id="container" ui-keypress="{enter: 'next()'}">
       <div ng-show="!question && !showSummary" class="loading-indicator">
       </div>
       <div ng-show="question != undefined && !showSummary" class="practice">
           <h2><span>{{question.text}} </span>
-              <span class="label" ng-show="isFindOnMapType()">
+              <span class="label label-default" ng-show="isFindOnMapType()">
                 <i class="flag-{{question.code}}"></i> {{question.place}}
               </span>
               <br class="clearfix">
@@ -23,7 +23,7 @@
           <span ng-show="isPickNameOfType()">
               <button ng-repeat="place in question.options"
                 value="{{place.code}}"
-                class="btn btn-large"
+                class="btn btn-lg btn-default"
                 ng-click="check(place.code)"
                 ng-class="{'btn-success': place.correct, 'btn-danger': place.selected && !place.correct }"
                 ng-disabled="place.disabled"
@@ -33,12 +33,12 @@
           </span>
           </span>
           <span class="col-sm-5" >
-              <button class="btn btn-large" ng-click="check()" ng-disabled="canNext" >Nevím</button>
-              <button class="btn btn-large {{!canNext || 'btn-primary'}}" ng-click="next()" ng-disabled="!canNext" >Pokračovat</button>
-              <button class="btn btn-large" ng-click="highlight()" ng-disabled="canNext"  ng-show="question.options != undefined" >Znovu zvýraznit</button>
+              <button class="btn btn-lg btn-default" ng-click="check()" ng-disabled="canNext" >Nevím</button>
+              <button class="btn btn-lg btn-default {{!canNext || 'btn-primary'}}" ng-click="next()" ng-disabled="!canNext" >Pokračovat</button>
+              <button class="btn btn-lg btn-default" ng-click="highlight()" ng-disabled="canNext"  ng-show="question.options != undefined" >Znovu zvýraznit</button>
           </span>
       </div>
-      <div ng-show="showSummary">
+      <div ng-show="showSummary" class="summary col-lg-12">
         <div>
         <div class="progress" ng-show="summary != undefined">
           <div class="progress-bar progress-bar-success" style="width: {{summary.correctlyAnsweredRatio | percent }};">Úspěšnost: {{summary.correctlyAnsweredRatio | percent }}</div>
@@ -52,7 +52,7 @@
         </div>
         </div>
           <span class="pull-right" >
-              <a class="btn-continue btn btn-large {{!showSummary || 'btn-primary'}}" href="#/view/{{part}}/" >Pokračovat</a>
+              <a class="btn-continue btn btn-lg btn-default {{!showSummary || 'btn-primary'}}" href="#/view/{{part}}/" >Pokračovat</a>
           </span>
       </div>
       <div class="clearfix"></div>

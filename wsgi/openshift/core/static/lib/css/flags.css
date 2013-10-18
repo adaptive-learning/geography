@@ -266,6 +266,15 @@
 .flag-zm {background-position: -160px -165px}
 .flag-zw {background-position: -176px -165px}
 
+.flag-africa,
+.flag-samerica,
+.flag-namerica,
+.flag-asia,
+.flag-europe,
+.flag-oceania {
+    width:0px;
+}
+
 [class^="flag-us-"],
 [class*=" flag-us-"]  {
     background: url(../img/us-flags.png) no-repeat top left;

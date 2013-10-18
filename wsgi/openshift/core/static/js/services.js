@@ -28,7 +28,7 @@ angular.module('myApp.services', []).
   .factory('placeName', function($rootScope, $http) {
     var names = {
         'us' : 'USA',
-        'world' : 'Svět',
+        'world' : 'Svět'
     }
     
     return function(part, name) {

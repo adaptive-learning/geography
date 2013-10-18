@@ -8,11 +8,6 @@ function initMap(config, callback) {
     var map = $K.map(HOLDER);
     var HOLDER_INIT_HEIGHT = $(HOLDER).height();
     
-    // There is a bug in Firefox - svg filters are very slow
-    // https://bugzilla.mozilla.org/show_bug.cgi?id=672413
-    var isFirefox = navigator.userAgent.indexOf("Firefox")!=-1;
-    var allowSvgFilters = ! isFirefox;
-
     var resize = function() {
         var c = $(HOLDER);
         var ratio = map.viewAB.height / map.viewAB.width;
@@ -63,37 +58,16 @@ function initMap(config, callback) {
 
     map.loadCSS('static/css/map.css', function() {
         map.loadMap('static/map/' + config.name + '.svg', function() {
+            var time = new Date().getTime();
 
-            if (767 < $(window).width() && allowSvgFilters) {
-                map.addLayer('states', {
-                    name : 'bg'
-                });
-                map.addFilter('outerglow', 'glow', {
-                    size : 4,
-                    color : '#333',
-                    strength : 2,
-                    inner : false
-                });
-                map.getLayer('bg').applyFilter('outerglow');
-            }
-
-            resize();
             map.addLayer('states', statesLayerConfig);
-            
-            if (!isPracticeView && allowSvgFilters) {
-                map.addFilter('inner-state-glow', 'glow', {
-                    size : 1,
-                    strength : 1,
-                    color : '#000',
-                    opacity : 0.2,
-                    inner : true
-                });
-                map.getLayer('states').applyFilter('inner-state-glow');
-            }
             resize();
             callback && callback();
 
             $('#map-holder').find(".loading-indicator").hide();
+            
+            time = new Date().getTime() - time;
+            console.log("Map loading takes:", time, "ms");
         })
     });
     function getZoomRatio(bboxArea) {
@@ -139,6 +113,7 @@ function initMap(config, callback) {
             layer.style({'fill': "#fff", transform: "", 'stroke-width': 1});
         },
         updateStates : function(states) {
+            var time = new Date().getTime();
             config.states = states;
             var statesLayer = map.getLayer('states')
             if (statesLayer) {
@@ -147,6 +122,8 @@ function initMap(config, callback) {
                 statesLayer.style('fill', statesLayerConfig.styles.fill, 2);
                 statesLayer.tooltips(statesLayerConfig.tooltips);
             }
+            time = new Date().getTime() - time;
+            console.log("updateStates takes:", time, "ms");
         }
     }
     return myMap;
