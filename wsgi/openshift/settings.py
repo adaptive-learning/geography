@@ -13,20 +13,6 @@ ON_OPENSHIFT = False
 if 'OPENSHIFT_REPO_DIR' in os.environ:
     ON_OPENSHIFT = True
 
-# https://www.openshift.com/kb/kb-e1064-python-app-still-throws-importerror-no-module-named-xyz-even-though-ive-configured
-"""
-if ON_OPENSHIFT:
-    os.environ['DJANGO_SETTINGS_MODULE'] = 'openshift.settings'
-    sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'openshift'))
-    virtenv = os.environ['OPENSHIFT_HOMEDIR']  + '/virtenv/'
-    os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib/python2.6/site-packages')
-    virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
-    try:
-        execfile(virtualenv, dict(__file__=virtualenv))
-    except:
-        pass
-"""
-
 PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
 if ON_OPENSHIFT:
     if os.environ['OPENSHIFT_APP_DNS'] == "geography-geography.rhcloud.com":
@@ -65,8 +51,8 @@ else:
             # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
             # Or path to database file if using sqlite3.
             'NAME': os.path.join(PROJECT_DIR, 'sqlite3.db'),
-            'USER': '',                      # Not used with sqlite3.
-            'PASSWORD': '',                  # Not used with sqlite3.
+            'USER': '',  # Not used with sqlite3.
+            'PASSWORD': '',  # Not used with sqlite3.
             'HOST': '',
             # Set to empty string for localhost. Not used with sqlite3.
             'PORT': '',
@@ -206,17 +192,42 @@ INSTALLED_APPS = (
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+        'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d "%(message)s"'
+        },
+        'simple': {
+            'format': '[%(asctime)s] %(levelname)s "%(message)s"'
+        },
+    },
     'filters': {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse'
         }
     },
     'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+            },
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
-        }
+        },
+        'quesitons_file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(MEDIA_ROOT, 'questions.log'),
+            'formatter': 'simple'
+        },
+        'core_file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(MEDIA_ROOT, 'core.log'),
+            'formatter': 'simple'
+        },
     },
     'loggers': {
         'django.request': {
@@ -224,8 +235,22 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+        'core': {
+            'handlers': ['core_file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'questions': {
+            'handlers': ['quesitons_file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
     }
 }
+if DEBUG:
+    # make all loggers use the console.
+    for logger in LOGGING['loggers']:
+        LOGGING['loggers'][logger]['handlers'] = ['console']
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',

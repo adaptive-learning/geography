@@ -3,7 +3,9 @@ from core.models import Place
 from datetime import datetime, timedelta
 from questions.models import Answer, UsersPlace, ConfusedPlaces
 from random import choice
+from logging import getLogger
 
+logger = getLogger(__name__)
 
 class QuestionType(object):
     id = 0
@@ -74,6 +76,8 @@ class Question():
         ret.pop("name")
         if (self.options != []):
             ret["options"] = self.options
+        logger.debug(u"Question: type: {0} place: {1}".format(
+            self.qtype.id, ret["place"]))
         return ret
 
     def get_options(self, n):
@@ -163,6 +167,8 @@ class QuestionChooser(object):
             qtype = self.get_question_type(up)
             question = Question(up.place, qtype, self.map)
             questions.append(question.to_serializable())
+        logger.info(u"{0}: generated '{1}' questions".format(
+            self.__name__, len(questions)))
         return questions
 
     @classmethod
@@ -237,9 +243,14 @@ class QuestionService():
     def get_questions(self, n):
         question_choosers = all_subclasses(QuestionChooser)
         questions = []
+        logger.info(
+            u"QuestionService: '{0}' questions for user '{1}' on map '{2}'".format(
+            n, self.user, self.map.place.name))
         for QC in question_choosers:
-            qc = QC(self.user, self.map, questions)
             remains = n - len(questions)
+            if remains <= 0:
+                break
+            qc = QC(self.user, self.map, questions)
             questions += qc.get_questions(
                 remains,
                 self.user,
