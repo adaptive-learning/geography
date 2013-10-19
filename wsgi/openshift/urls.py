@@ -10,7 +10,8 @@ urlpatterns = patterns('',
                        url(r'^$', 'core.views.home', name='home'),
 
                        url(r'^tpl/welcome_page.html$', TemplateView.as_view(
-                            template_name="home/welcome_page.html")),
+                           template_name="home/welcome_page.html")
+                           ),
 
                        url(r'', include('social_auth.urls')),
                        # url(r'^openshift/', include('openshift.foo.urls')),

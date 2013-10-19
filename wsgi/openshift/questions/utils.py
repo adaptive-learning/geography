@@ -5,7 +5,9 @@ from questions.models import Answer, UsersPlace, ConfusedPlaces
 from random import choice
 from logging import getLogger
 
+
 logger = getLogger(__name__)
+
 
 class QuestionType(object):
     id = 0
@@ -244,8 +246,8 @@ class QuestionService():
         question_choosers = all_subclasses(QuestionChooser)
         questions = []
         logger.info(
-            u"QuestionService: '{0}' questions for user '{1}' on map '{2}'".format(
-            n, self.user, self.map.place.name))
+            u"QuestionService: '{0}' questions for user '{1}' on map '{2}'".
+            format(n, self.user, self.map.place.name))
         for QC in question_choosers:
             remains = n - len(questions)
             if remains <= 0:
