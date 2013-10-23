@@ -180,7 +180,6 @@ INSTALLED_APPS = (
     'south',
     'social_auth',
     'lazysignup',
-    'flatblocks',
     'core',
     'accounts',
     'questions',
@@ -297,7 +296,7 @@ JS_FILES = (
     "static/js/services.js",
     "static/js/filters.js",
     "static/js/directives.js"
-    )
+)
 CSS_FILES = (
     "static/lib/css/bootstrap.css",
     "static/lib/css/flags.css",
@@ -305,7 +304,7 @@ CSS_FILES = (
     "static/lib/css/tips.css",
     "static/css/app.css",
     "static/css/map.css"
-    )
+)
 try:
     from hashes import HASHES
 except ImportError:
