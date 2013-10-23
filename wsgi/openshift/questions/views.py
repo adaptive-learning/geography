@@ -8,8 +8,10 @@ from django.utils import simplejson
 from lazysignup.decorators import allow_lazy_user
 from questions.models import PlaceRelation, UsersPlace
 from questions.utils import QuestionService
+from logging import getLogger
 
-# Create your views here.
+
+logger = getLogger(__name__)
 
 
 @allow_lazy_user
@@ -74,4 +76,7 @@ def users_places(request, map_code, user=''):
             'places': [p.to_serializable() for p in ps]
         }]
     }
+    logger.info(
+        u"users_places: previewed map '{0}' of user '{1}' with '{2}' places".
+        format(map.place.name, user, len(cs)))
     return JsonResponse(response)
