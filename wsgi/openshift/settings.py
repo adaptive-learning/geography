@@ -51,6 +51,7 @@ else:
             # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
             # Or path to database file if using sqlite3.
             'NAME': os.path.join(PROJECT_DIR, 'sqlite3.db'),
+            'TEST_NAME': os.path.join(PROJECT_DIR, 'test.db'),
             'USER': '',  # Not used with sqlite3.
             'PASSWORD': '',  # Not used with sqlite3.
             'HOST': '',
@@ -179,6 +180,7 @@ INSTALLED_APPS = (
     'south',
     'social_auth',
     'lazysignup',
+    'flatblocks',
     'core',
     'accounts',
     'questions',
@@ -275,3 +277,36 @@ SOCIAL_AUTH_UID_LENGTH = 222
 SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 200
 SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 135
 SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 125
+
+# http://stackoverflow.com/questions/4882377/django-manage-py-test-fails-table-already-exists
+SOUTH_TESTS_MIGRATE = False
+
+JS_FILES = (
+    "static/lib/js/jquery-2.0.2.min.js",
+    "static/lib/js/jquery.colorbox-min.js",
+    "static/lib/js/bootstrap.js",
+    "static/lib/angular/angular.min.js",
+    "static/lib/angular/angular-cookies.js",
+    "static/lib/js/raphael.js",
+    "static/lib/js/kartograph.js",
+    "static/lib/js/chroma.min.js",
+    "static/lib/js/jquery.qtip.min.js",
+    "static/js/map.js",
+    "static/js/app.js",
+    "static/js/controllers.js",
+    "static/js/services.js",
+    "static/js/filters.js",
+    "static/js/directives.js"
+    )
+CSS_FILES = (
+    "static/lib/css/bootstrap.css",
+    "static/lib/css/flags.css",
+    "static/lib/css/colorbox.css",
+    "static/lib/css/tips.css",
+    "static/css/app.css",
+    "static/css/map.css"
+    )
+try:
+    from hashes import HASHES
+except ImportError:
+    HASHES = {}

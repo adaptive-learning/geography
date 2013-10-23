@@ -24,18 +24,9 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="static/lib/css/bootstrap.css" rel="stylesheet">
-    <link href="static/lib/css/flags.css" rel="stylesheet">
-    <link href="static/lib/css/colorbox.css" rel="stylesheet">
-    <link href="static/lib/css/tips.css" rel="stylesheet">
-
-    <link href="static/css/app.css" rel="stylesheet">
-    <link href="static/css/map.css" rel="stylesheet">
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
-    <![endif]-->
+    {% for file in css_files %}
+    <link href="{{ file }}" rel="stylesheet">
+    {% endfor %}
 
   </head>
 
@@ -111,22 +102,9 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="static/lib/js/jquery-2.0.2.min.js"></script>
-    <script src="static/lib/js/jquery.colorbox-min.js"></script>
-    <script src="static/lib/js/bootstrap.js"></script>
-    <script src="static/lib/angular/angular.min.js"></script>
-    <script src="static/lib/angular/angular-cookies.js"></script>
-    <script src="static/lib/js/raphael.js"></script>
-    <script src="static/lib/js/kartograph.js"></script>
-    <script src="static/lib/js/chroma.min.js"></script>
-    <script src="static/lib/js/jquery.qtip.min.js"></script>
-
-    <script src="static/js/map.js"></script>
-    <script src="static/js/app.js"></script>
-    <script src="static/js/controllers.js"></script>
-    <script src="static/js/services.js"></script>
-    <script src="static/js/filters.js"></script>
-    <script src="static/js/directives.js"></script>
+    {% for file in js_files %}
+    <script src="{{ file }}"></script>
+    {% endfor %}
     
     {% if isProduction  %}
         <script>

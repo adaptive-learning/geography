@@ -24,4 +24,5 @@ echo "copying local_settings.py from data storage"
 echo "${OPENSHIFT_DATA_DIR}local_settings.py ${OPENSHIFT_REPO_DIR}wsgi/openshift/"
 cp  ${OPENSHIFT_DATA_DIR}local_settings.py ${OPENSHIFT_REPO_DIR}wsgi/openshift/
  
-
+echo "computing hashes for *.js and *.css files"
+echo "HASHES = $( python $OPENSHIFT_REPO_DIR/wsgi/openshift/manage.py static_hashes )" > $OPENSHIFT_REPO_DIR/hashes.py

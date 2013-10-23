@@ -3,7 +3,7 @@
 from django.conf import settings
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
-from core.utils import JsonResponse
+from core.utils import JsonResponse, StaticFiles
 from django.contrib.contenttypes.models import ContentType
 from django.core import serializers
 from django.http import HttpResponse
@@ -16,6 +16,8 @@ def home(request):
     c = {
         'title': title,
         'isProduction': settings.ON_OPENSHIFT,
+        'css_files': StaticFiles.add_hash(settings.CSS_FILES),
+        'js_files': StaticFiles.add_hash(settings.JS_FILES),
     }
     c.update(csrf(request))
     return render_to_response('home/home.html', c)
