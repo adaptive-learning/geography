@@ -1,1 +1,3229 @@
-[{"pk": 1, "model": "core.place", "fields": {"difficulty": 405555, "code": "us-al", "type": 1, "name": "Alabama"}}, {"pk": 2, "model": "core.place", "fields": {"difficulty": 490476, "code": "us-az", "type": 1, "name": "Arizona"}}, {"pk": 3, "model": "core.place", "fields": {"difficulty": 285714, "code": "us-ar", "type": 1, "name": "Arkansas"}}, {"pk": 4, "model": "core.place", "fields": {"difficulty": 46666, "code": "us-ca", "type": 1, "name": "Kalifornie"}}, {"pk": 5, "model": "core.place", "fields": {"difficulty": 238095, "code": "us-co", "type": 1, "name": "Colorado"}}, {"pk": 6, "model": "core.place", "fields": {"difficulty": 569696, "code": "us-ct", "type": 1, "name": "Connecticut"}}, {"pk": 7, "model": "core.place", "fields": {"difficulty": 343749, "code": "us-de", "type": 1, "name": "Delaware"}}, {"pk": 8, "model": "core.place", "fields": {"difficulty": 153846, "code": "us-fl", "type": 1, "name": "Florida"}}, {"pk": 9, "model": "core.place", "fields": {"difficulty": 304040, "code": "us-ga", "type": 1, "name": "Georgie"}}, {"pk": 10, "model": "core.place", "fields": {"difficulty": 466666, "code": "us-id", "type": 1, "name": "Idaho"}}, {"pk": 11, "model": "core.place", "fields": {"difficulty": 379870, "code": "us-il", "type": 1, "name": "Illinois"}}, {"pk": 12, "model": "core.place", "fields": {"difficulty": 375000, "code": "us-in", "type": 1, "name": "Indiana"}}, {"pk": 13, "model": "core.place", "fields": {"difficulty": 355238, "code": "us-ia", "type": 1, "name": "Iowa"}}, {"pk": 14, "model": "core.place", "fields": {"difficulty": 386363, "code": "us-ks", "type": 1, "name": "Kansas"}}, {"pk": 15, "model": "core.place", "fields": {"difficulty": 297619, "code": "us-ky", "type": 1, "name": "Kentucky"}}, {"pk": 16, "model": "core.place", "fields": {"difficulty": 314814, "code": "us-la", "type": 1, "name": "Louisiana"}}, {"pk": 17, "model": "core.place", "fields": {"difficulty": 270833, "code": "us-me", "type": 1, "name": "Maine"}}, {"pk": 18, "model": "core.place", "fields": {"difficulty": 222222, "code": "us-md", "type": 1, "name": "Maryland"}}, {"pk": 19, "model": "core.place", "fields": {"difficulty": 333333, "code": "us-ma", "type": 1, "name": "Massachusetts"}}, {"pk": 20, "model": "core.place", "fields": {"difficulty": 272727, "code": "us-mi", "type": 1, "name": "Michigan"}}, {"pk": 21, "model": "core.place", "fields": {"difficulty": 415238, "code": "us-mn", "type": 1, "name": "Minnesota"}}, {"pk": 22, "model": "core.place", "fields": {"difficulty": 268181, "code": "us-ms", "type": 1, "name": "Mississippi"}}, {"pk": 23, "model": "core.place", "fields": {"difficulty": 411666, "code": "us-mo", "type": 1, "name": "Missouri"}}, {"pk": 24, "model": "core.place", "fields": {"difficulty": 251082, "code": "us-mt", "type": 1, "name": "Montana"}}, {"pk": 25, "model": "core.place", "fields": {"difficulty": 562500, "code": "us-ne", "type": 1, "name": "Nebraska"}}, {"pk": 26, "model": "core.place", "fields": {"difficulty": 267272, "code": "us-nv", "type": 1, "name": "Nevada"}}, {"pk": 27, "model": "core.place", "fields": {"difficulty": 362222, "code": "us-nh", "type": 1, "name": "New Hampshire"}}, {"pk": 28, "model": "core.place", "fields": {"difficulty": 212962, "code": "us-nj", "type": 1, "name": "New Jersey"}}, {"pk": 29, "model": "core.place", "fields": {"difficulty": 171875, "code": "us-nm", "type": 1, "name": "Nov\u00e9 Mexiko"}}, {"pk": 30, "model": "core.place", "fields": {"difficulty": 238095, "code": "us-ny", "type": 1, "name": "New York"}}, {"pk": 31, "model": "core.place", "fields": {"difficulty": 228571, "code": "us-nc", "type": 1, "name": "Severn\u00ed Karol\u00edna"}}, {"pk": 32, "model": "core.place", "fields": {"difficulty": 219999, "code": "us-nd", "type": 1, "name": "Severn\u00ed Dakota"}}, {"pk": 33, "model": "core.place", "fields": {"difficulty": 449999, "code": "us-oh", "type": 1, "name": "Ohio"}}, {"pk": 34, "model": "core.place", "fields": {"difficulty": 378787, "code": "us-ok", "type": 1, "name": "Oklahoma"}}, {"pk": 35, "model": "core.place", "fields": {"difficulty": 277777, "code": "us-or", "type": 1, "name": "Oregon"}}, {"pk": 36, "model": "core.place", "fields": {"difficulty": 326388, "code": "us-pa", "type": 1, "name": "Pensylv\u00e1nie"}}, {"pk": 37, "model": "core.place", "fields": {"difficulty": 416666, "code": "us-ri", "type": 1, "name": "Rhode Island"}}, {"pk": 38, "model": "core.place", "fields": {"difficulty": 354166, "code": "us-sc", "type": 1, "name": "Ji\u017en\u00ed Karol\u00edna"}}, {"pk": 39, "model": "core.place", "fields": {"difficulty": 466666, "code": "us-sd", "type": 1, "name": "Ji\u017en\u00ed Dakota"}}, {"pk": 40, "model": "core.place", "fields": {"difficulty": 260606, "code": "us-tn", "type": 1, "name": "Tennessee"}}, {"pk": 41, "model": "core.place", "fields": {"difficulty": 333333, "code": "us-tx", "type": 1, "name": "Texas"}}, {"pk": 42, "model": "core.place", "fields": {"difficulty": 516666, "code": "us-ut", "type": 1, "name": "Utah"}}, {"pk": 43, "model": "core.place", "fields": {"difficulty": 166666, "code": "us-vt", "type": 1, "name": "Vermont"}}, {"pk": 44, "model": "core.place", "fields": {"difficulty": 238095, "code": "us-va", "type": 1, "name": "Virginie"}}, {"pk": 45, "model": "core.place", "fields": {"difficulty": 261904, "code": "us-wa", "type": 1, "name": "Washington"}}, {"pk": 46, "model": "core.place", "fields": {"difficulty": 259259, "code": "us-wv", "type": 1, "name": "Z\u00e1padn\u00ed Virginie"}}, {"pk": 47, "model": "core.place", "fields": {"difficulty": 321212, "code": "us-wi", "type": 1, "name": "Wisconsin"}}, {"pk": 48, "model": "core.place", "fields": {"difficulty": 458008, "code": "us-wy", "type": 1, "name": "Wyoming"}}, {"pk": 51, "model": "core.place", "fields": {"difficulty": 0, "code": "al", "type": 1, "name": "Alb\u00e1nie"}}, {"pk": 54, "model": "core.place", "fields": {"difficulty": 0, "code": "af", "type": 1, "name": "Afgh\u00e1nist\u00e1n"}}, {"pk": 56, "model": "core.place", "fields": {"difficulty": 500000, "code": "dz", "type": 1, "name": "Al\u017e\u00edrsko"}}, {"pk": 57, "model": "core.place", "fields": {"difficulty": 0, "code": "ao", "type": 1, "name": "Angola"}}, {"pk": 58, "model": "core.place", "fields": {"difficulty": 500000, "code": "ar", "type": 1, "name": "Argentina"}}, {"pk": 59, "model": "core.place", "fields": {"difficulty": 500000, "code": "am", "type": 1, "name": "Arm\u00e9nie"}}, {"pk": 60, "model": "core.place", "fields": {"difficulty": 0, "code": "au", "type": 1, "name": "Austr\u00e1lie"}}, {"pk": 61, "model": "core.place", "fields": {"difficulty": 500000, "code": "az", "type": 1, "name": "\u00c1zerb\u00e1jd\u017e\u00e1n"}}, {"pk": 62, "model": "core.place", "fields": {"difficulty": 500000, "code": "bs", "type": 1, "name": "Bahamy"}}, {"pk": 63, "model": "core.place", "fields": {"difficulty": 500000, "code": "bd", "type": 1, "name": "Banglad\u00e9\u0161"}}, {"pk": 64, "model": "core.place", "fields": {"difficulty": 500000, "code": "be", "type": 1, "name": "Belgie"}}, {"pk": 65, "model": "core.place", "fields": {"difficulty": 500000, "code": "bz", "type": 1, "name": "Belize"}}, {"pk": 66, "model": "core.place", "fields": {"difficulty": 500000, "code": "by", "type": 1, "name": "B\u011blorusko"}}, {"pk": 67, "model": "core.place", "fields": {"difficulty": 500000, "code": "bj", "type": 1, "name": "Benin"}}, {"pk": 68, "model": "core.place", "fields": {"difficulty": 500000, "code": "bt", "type": 1, "name": "Bh\u00fat\u00e1n"}}, {"pk": 69, "model": "core.place", "fields": {"difficulty": 500000, "code": "bo", "type": 1, "name": "Bol\u00edvie"}}, {"pk": 70, "model": "core.place", "fields": {"difficulty": 500000, "code": "ba", "type": 1, "name": "Bosna a Hercegovina"}}, {"pk": 71, "model": "core.place", "fields": {"difficulty": 0, "code": "bw", "type": 1, "name": "Botswana"}}, {"pk": 72, "model": "core.place", "fields": {"difficulty": 166666, "code": "br", "type": 1, "name": "Braz\u00edlie"}}, {"pk": 73, "model": "core.place", "fields": {"difficulty": 500000, "code": "bn", "type": 1, "name": "Brunej"}}, {"pk": 74, "model": "core.place", "fields": {"difficulty": 500000, "code": "bg", "type": 1, "name": "Bulharsko"}}, {"pk": 75, "model": "core.place", "fields": {"difficulty": 66666, "code": "bf", "type": 1, "name": "Burkina Faso"}}, {"pk": 76, "model": "core.place", "fields": {"difficulty": 1000000, "code": "bi", "type": 1, "name": "Burundi"}}, {"pk": 77, "model": "core.place", "fields": {"difficulty": 83333, "code": "td", "type": 1, "name": "\u010cad"}}, {"pk": 78, "model": "core.place", "fields": {"difficulty": 500000, "code": "me", "type": 1, "name": "\u010cern\u00e1 Hora"}}, {"pk": 79, "model": "core.place", "fields": {"difficulty": 500000, "code": "cz", "type": 1, "name": "\u010cesk\u00e1 republika"}}, {"pk": 80, "model": "core.place", "fields": {"difficulty": 0, "code": "cn", "type": 1, "name": "\u010c\u00edna"}}, {"pk": 81, "model": "core.place", "fields": {"difficulty": 500000, "code": "dk", "type": 1, "name": "D\u00e1nsko"}}, {"pk": 82, "model": "core.place", "fields": {"difficulty": 0, "code": "cd", "type": 1, "name": "Demokratick\u00e1 republika Kongo"}}, {"pk": 83, "model": "core.place", "fields": {"difficulty": 500000, "code": "do", "type": 1, "name": "Dominik\u00e1nsk\u00e1 republika"}}, {"pk": 84, "model": "core.place", "fields": {"difficulty": 166666, "code": "dj", "type": 1, "name": "D\u017eibutsko"}}, {"pk": 85, "model": "core.place", "fields": {"difficulty": 0, "code": "eg", "type": 1, "name": "Egypt"}}, {"pk": 86, "model": "core.place", "fields": {"difficulty": 500000, "code": "ec", "type": 1, "name": "Ekv\u00e1dor"}}, {"pk": 87, "model": "core.place", "fields": {"difficulty": 0, "code": "er", "type": 1, "name": "Eritrea"}}, {"pk": 88, "model": "core.place", "fields": {"difficulty": 500000, "code": "ee", "type": 1, "name": "Estonsko"}}, {"pk": 89, "model": "core.place", "fields": {"difficulty": 333333, "code": "et", "type": 1, "name": "Etiopie"}}, {"pk": 90, "model": "core.place", "fields": {"difficulty": 500000, "code": "fk", "type": 1, "name": "Falklandy (Malv\u00edny)"}}, {"pk": 91, "model": "core.place", "fields": {"difficulty": 500000, "code": "fj", "type": 1, "name": "Fid\u017ei"}}, {"pk": 92, "model": "core.place", "fields": {"difficulty": 0, "code": "ph", "type": 1, "name": "Filip\u00edny"}}, {"pk": 93, "model": "core.place", "fields": {"difficulty": 500000, "code": "fi", "type": 1, "name": "Finsko"}}, {"pk": 94, "model": "core.place", "fields": {"difficulty": 500000, "code": "fr", "type": 1, "name": "Francie"}}, {"pk": 95, "model": "core.place", "fields": {"difficulty": 500000, "code": "tf", "type": 1, "name": "Francouzsk\u00e1 ji\u017en\u00ed a antarktick\u00e1 \u00fazem\u00ed"}}, {"pk": 96, "model": "core.place", "fields": {"difficulty": 0, "code": "ga", "type": 1, "name": "Gabon"}}, {"pk": 97, "model": "core.place", "fields": {"difficulty": 166666, "code": "gm", "type": 1, "name": "Gambie"}}, {"pk": 98, "model": "core.place", "fields": {"difficulty": 500000, "code": "gh", "type": 1, "name": "Ghana"}}, {"pk": 99, "model": "core.place", "fields": {"difficulty": 0, "code": "gl", "type": 1, "name": "Gr\u00f3nsko"}}, {"pk": 100, "model": "core.place", "fields": {"difficulty": 500000, "code": "ge", "type": 1, "name": "Gruzie"}}, {"pk": 101, "model": "core.place", "fields": {"difficulty": 0, "code": "gt", "type": 1, "name": "Guatemala"}}, {"pk": 102, "model": "core.place", "fields": {"difficulty": 125000, "code": "gn", "type": 1, "name": "Guinea"}}, {"pk": 103, "model": "core.place", "fields": {"difficulty": 500000, "code": "gw", "type": 1, "name": "Guinea-Bissau"}}, {"pk": 104, "model": "core.place", "fields": {"difficulty": 500000, "code": "gy", "type": 1, "name": "Guyana"}}, {"pk": 105, "model": "core.place", "fields": {"difficulty": 500000, "code": "ht", "type": 1, "name": "Haiti"}}, {"pk": 106, "model": "core.place", "fields": {"difficulty": 500000, "code": "hn", "type": 1, "name": "Honduras"}}, {"pk": 107, "model": "core.place", "fields": {"difficulty": 500000, "code": "cl", "type": 1, "name": "Chile"}}, {"pk": 108, "model": "core.place", "fields": {"difficulty": 500000, "code": "hr", "type": 1, "name": "Chorvatsko"}}, {"pk": 109, "model": "core.place", "fields": {"difficulty": 500000, "code": "in", "type": 1, "name": "Indie"}}, {"pk": 110, "model": "core.place", "fields": {"difficulty": 500000, "code": "id", "type": 1, "name": "Indon\u00e9sie"}}, {"pk": 111, "model": "core.place", "fields": {"difficulty": 500000, "code": "iq", "type": 1, "name": "Ir\u00e1k"}}, {"pk": 112, "model": "core.place", "fields": {"difficulty": 500000, "code": "ir", "type": 1, "name": "\u00cdr\u00e1n"}}, {"pk": 113, "model": "core.place", "fields": {"difficulty": 500000, "code": "ie", "type": 1, "name": "Irsko"}}, {"pk": 114, "model": "core.place", "fields": {"difficulty": 125000, "code": "is", "type": 1, "name": "Island"}}, {"pk": 115, "model": "core.place", "fields": {"difficulty": 500000, "code": "it", "type": 1, "name": "It\u00e1lie"}}, {"pk": 116, "model": "core.place", "fields": {"difficulty": 500000, "code": "il", "type": 1, "name": "Izrael"}}, {"pk": 117, "model": "core.place", "fields": {"difficulty": 500000, "code": "jm", "type": 1, "name": "Jamajka"}}, {"pk": 118, "model": "core.place", "fields": {"difficulty": 500000, "code": "jp", "type": 1, "name": "Japonsko"}}, {"pk": 119, "model": "core.place", "fields": {"difficulty": 500000, "code": "ye", "type": 1, "name": "Jemen"}}, {"pk": 120, "model": "core.place", "fields": {"difficulty": 500000, "code": "za", "type": 1, "name": "Jihoafrick\u00e1 republika"}}, {"pk": 121, "model": "core.place", "fields": {"difficulty": 500000, "code": "kr", "type": 1, "name": "Ji\u017en\u00ed Korea"}}, {"pk": 122, "model": "core.place", "fields": {"difficulty": 500000, "code": "ss", "type": 1, "name": "Ji\u017en\u00ed S\u00fad\u00e1n"}}, {"pk": 123, "model": "core.place", "fields": {"difficulty": 0, "code": "jo", "type": 1, "name": "Jord\u00e1nsko"}}, {"pk": 124, "model": "core.place", "fields": {"difficulty": 0, "code": "kh", "type": 1, "name": "Kambod\u017ea"}}, {"pk": 125, "model": "core.place", "fields": {"difficulty": 375000, "code": "cm", "type": 1, "name": "Kamerun"}}, {"pk": 126, "model": "core.place", "fields": {"difficulty": 0, "code": "ca", "type": 1, "name": "Kanada"}}, {"pk": 127, "model": "core.place", "fields": {"difficulty": 500000, "code": "qa", "type": 1, "name": "Katar"}}, {"pk": 128, "model": "core.place", "fields": {"difficulty": 166666, "code": "kz", "type": 1, "name": "Kazachst\u00e1n"}}, {"pk": 129, "model": "core.place", "fields": {"difficulty": 333333, "code": "ke", "type": 1, "name": "Ke\u0148a"}}, {"pk": 130, "model": "core.place", "fields": {"difficulty": 0, "code": "co", "type": 1, "name": "Kolumbie"}}, {"pk": 131, "model": "core.place", "fields": {"difficulty": 0, "code": "cg", "type": 1, "name": "Kongo"}}, {"pk": 132, "model": "core.place", "fields": {"difficulty": 0, "code": "cr", "type": 1, "name": "Kostarika"}}, {"pk": 133, "model": "core.place", "fields": {"difficulty": 0, "code": "cu", "type": 1, "name": "Kuba"}}, {"pk": 134, "model": "core.place", "fields": {"difficulty": 333333, "code": "kw", "type": 1, "name": "Kuvajt"}}, {"pk": 135, "model": "core.place", "fields": {"difficulty": 333333, "code": "cy", "type": 1, "name": "Kypr"}}, {"pk": 136, "model": "core.place", "fields": {"difficulty": 0, "code": "kg", "type": 1, "name": "Kyrgyzst\u00e1n"}}, {"pk": 137, "model": "core.place", "fields": {"difficulty": 333333, "code": "la", "type": 1, "name": "Laos"}}, {"pk": 138, "model": "core.place", "fields": {"difficulty": 1000000, "code": "ls", "type": 1, "name": "Lesotho"}}, {"pk": 139, "model": "core.place", "fields": {"difficulty": 250000, "code": "lb", "type": 1, "name": "Libanon"}}, {"pk": 140, "model": "core.place", "fields": {"difficulty": 166666, "code": "lr", "type": 1, "name": "Lib\u00e9rie"}}, {"pk": 141, "model": "core.place", "fields": {"difficulty": 0, "code": "ly", "type": 1, "name": "Libye"}}, {"pk": 142, "model": "core.place", "fields": {"difficulty": 1000000, "code": "lt", "type": 1, "name": "Litva"}}, {"pk": 143, "model": "core.place", "fields": {"difficulty": 1000000, "code": "lv", "type": 1, "name": "Loty\u0161sko"}}, {"pk": 144, "model": "core.place", "fields": {"difficulty": 0, "code": "lu", "type": 1, "name": "Lucembursko"}}, {"pk": 145, "model": "core.place", "fields": {"difficulty": 0, "code": "mg", "type": 1, "name": "Madagaskar"}}, {"pk": 146, "model": "core.place", "fields": {"difficulty": 0, "code": "hu", "type": 1, "name": "Ma\u010farsko"}}, {"pk": 147, "model": "core.place", "fields": {"difficulty": 500000, "code": "mk", "type": 1, "name": "Makedonie"}}, {"pk": 148, "model": "core.place", "fields": {"difficulty": 1000000, "code": "my", "type": 1, "name": "Malajsie"}}, {"pk": 149, "model": "core.place", "fields": {"difficulty": 1000000, "code": "mw", "type": 1, "name": "Malawi"}}, {"pk": 150, "model": "core.place", "fields": {"difficulty": 1000000, "code": "ml", "type": 1, "name": "Mali"}}, {"pk": 151, "model": "core.place", "fields": {"difficulty": 500000, "code": "ma", "type": 1, "name": "Maroko"}}, {"pk": 152, "model": "core.place", "fields": {"difficulty": 1000000, "code": "mr", "type": 1, "name": "Maurit\u00e1nie"}}, {"pk": 153, "model": "core.place", "fields": {"difficulty": 0, "code": "mx", "type": 1, "name": "Mexiko"}}, {"pk": 154, "model": "core.place", "fields": {"difficulty": 1000000, "code": "md", "type": 1, "name": "Moldavsko"}}, {"pk": 155, "model": "core.place", "fields": {"difficulty": 0, "code": "mn", "type": 1, "name": "Mongolsko"}}, {"pk": 156, "model": "core.place", "fields": {"difficulty": 666666, "code": "mz", "type": 1, "name": "Mosambik"}}, {"pk": 157, "model": "core.place", "fields": {"difficulty": 500000, "code": "mm", "type": 1, "name": "Myanmar"}}, {"pk": 158, "model": "core.place", "fields": {"difficulty": 500000, "code": "na", "type": 1, "name": "Namibie"}}, {"pk": 159, "model": "core.place", "fields": {"difficulty": 0, "code": "de", "type": 1, "name": "N\u011bmecko"}}, {"pk": 160, "model": "core.place", "fields": {"difficulty": 0, "code": "np", "type": 1, "name": "Nep\u00e1l"}}, {"pk": 161, "model": "core.place", "fields": {"difficulty": 400000, "code": "ne", "type": 1, "name": "Niger"}}, {"pk": 162, "model": "core.place", "fields": {"difficulty": 388888, "code": "ng", "type": 1, "name": "Nig\u00e9rie"}}, {"pk": 163, "model": "core.place", "fields": {"difficulty": 0, "code": "ni", "type": 1, "name": "Nikaragua"}}, {"pk": 164, "model": "core.place", "fields": {"difficulty": 0, "code": "nl", "type": 1, "name": "Nizozemsko"}}, {"pk": 165, "model": "core.place", "fields": {"difficulty": 0, "code": "no", "type": 1, "name": "Norsko"}}, {"pk": 166, "model": "core.place", "fields": {"difficulty": 0, "code": "nc", "type": 1, "name": "Nov\u00e1 Kaledonie"}}, {"pk": 167, "model": "core.place", "fields": {"difficulty": 0, "code": "nz", "type": 1, "name": "Nov\u00fd Z\u00e9land"}}, {"pk": 168, "model": "core.place", "fields": {"difficulty": 0, "code": "om", "type": 1, "name": "Om\u00e1n"}}, {"pk": 169, "model": "core.place", "fields": {"difficulty": 99999, "code": "pk", "type": 1, "name": "P\u00e1kist\u00e1n"}}, {"pk": 170, "model": "core.place", "fields": {"difficulty": 0, "code": "ps", "type": 1, "name": "Palestinsk\u00e1 autonomie"}}, {"pk": 171, "model": "core.place", "fields": {"difficulty": 500000, "code": "pa", "type": 1, "name": "Panama"}}, {"pk": 172, "model": "core.place", "fields": {"difficulty": 500000, "code": "pg", "type": 1, "name": "Papua-Nov\u00e1 Guinea"}}, {"pk": 173, "model": "core.place", "fields": {"difficulty": 500000, "code": "py", "type": 1, "name": "Paraguay"}}, {"pk": 174, "model": "core.place", "fields": {"difficulty": 500000, "code": "pe", "type": 1, "name": "Peru"}}, {"pk": 175, "model": "core.place", "fields": {"difficulty": 500000, "code": "ci", "type": 1, "name": "Pob\u0159e\u017e\u00ed slonoviny"}}, {"pk": 176, "model": "core.place", "fields": {"difficulty": 500000, "code": "pl", "type": 1, "name": "Polsko"}}, {"pk": 177, "model": "core.place", "fields": {"difficulty": 0, "code": "pr", "type": 1, "name": "Portoriko"}}, {"pk": 178, "model": "core.place", "fields": {"difficulty": 250000, "code": "pt", "type": 1, "name": "Portugalsko"}}, {"pk": 179, "model": "core.place", "fields": {"difficulty": 500000, "code": "at", "type": 1, "name": "Rakousko"}}, {"pk": 180, "model": "core.place", "fields": {"difficulty": 500000, "code": "gq", "type": 1, "name": "Rovn\u00edkov\u00e1 Guinea"}}, {"pk": 181, "model": "core.place", "fields": {"difficulty": 0, "code": "ro", "type": 1, "name": "Rumunsko"}}, {"pk": 182, "model": "core.place", "fields": {"difficulty": 0, "code": "ru", "type": 1, "name": "Rusko"}}, {"pk": 183, "model": "core.place", "fields": {"difficulty": 500000, "code": "rw", "type": 1, "name": "Rwanda"}}, {"pk": 184, "model": "core.place", "fields": {"difficulty": 0, "code": "gr", "type": 1, "name": "\u0158ecko"}}, {"pk": 185, "model": "core.place", "fields": {"difficulty": 500000, "code": "sv", "type": 1, "name": "Salvador"}}, {"pk": 186, "model": "core.place", "fields": {"difficulty": 500000, "code": "sa", "type": 1, "name": "Sa\u00fadsk\u00e1 Ar\u00e1bie"}}, {"pk": 187, "model": "core.place", "fields": {"difficulty": 500000, "code": "sn", "type": 1, "name": "Senegal"}}, {"pk": 188, "model": "core.place", "fields": {"difficulty": 500000, "code": "kp", "type": 1, "name": "Severn\u00ed Korea"}}, {"pk": 189, "model": "core.place", "fields": {"difficulty": 500000, "code": "sl", "type": 1, "name": "Sierra Leone"}}, {"pk": 190, "model": "core.place", "fields": {"difficulty": 500000, "code": "sk", "type": 1, "name": "Slovensko"}}, {"pk": 191, "model": "core.place", "fields": {"difficulty": 500000, "code": "si", "type": 1, "name": "Slovinsko"}}, {"pk": 192, "model": "core.place", "fields": {"difficulty": 500000, "code": "so", "type": 1, "name": "Som\u00e1lsko"}}, {"pk": 193, "model": "core.place", "fields": {"difficulty": 500000, "code": "ae", "type": 1, "name": "Spojen\u00e9 arabsk\u00e9 emir\u00e1ty"}}, {"pk": 194, "model": "core.place", "fields": {"difficulty": 500000, "code": "gb", "type": 1, "name": "Spojen\u00e9 kr\u00e1lovstv\u00ed"}}, {"pk": 195, "model": "core.place", "fields": {"difficulty": 0, "code": "us", "type": 1, "name": "Spojen\u00e9 st\u00e1ty americk\u00e9"}}, {"pk": 196, "model": "core.place", "fields": {"difficulty": 500000, "code": "rs", "type": 1, "name": "Srbsko"}}, {"pk": 197, "model": "core.place", "fields": {"difficulty": 500000, "code": "cf", "type": 1, "name": "St\u0159edoafrick\u00e1 republika"}}, {"pk": 198, "model": "core.place", "fields": {"difficulty": 500000, "code": "sd", "type": 1, "name": "S\u00fad\u00e1n"}}, {"pk": 199, "model": "core.place", "fields": {"difficulty": 500000, "code": "sr", "type": 1, "name": "Surinam"}}, {"pk": 200, "model": "core.place", "fields": {"difficulty": 500000, "code": "sz", "type": 1, "name": "Svazijsko"}}, {"pk": 201, "model": "core.place", "fields": {"difficulty": 500000, "code": "sy", "type": 1, "name": "S\u00fdrie"}}, {"pk": 202, "model": "core.place", "fields": {"difficulty": 500000, "code": "sb", "type": 1, "name": "\u0160alamounovy ostrovy"}}, {"pk": 203, "model": "core.place", "fields": {"difficulty": 500000, "code": "es", "type": 1, "name": "\u0160pan\u011blsko"}}, {"pk": 204, "model": "core.place", "fields": {"difficulty": 500000, "code": "lk", "type": 1, "name": "\u0160r\u00ed Lanka"}}, {"pk": 205, "model": "core.place", "fields": {"difficulty": 500000, "code": "se", "type": 1, "name": "\u0160v\u00e9dsko"}}, {"pk": 206, "model": "core.place", "fields": {"difficulty": 500000, "code": "ch", "type": 1, "name": "\u0160v\u00fdcarsko"}}, {"pk": 207, "model": "core.place", "fields": {"difficulty": 500000, "code": "tj", "type": 1, "name": "T\u00e1d\u017eikist\u00e1n"}}, {"pk": 208, "model": "core.place", "fields": {"difficulty": 500000, "code": "tz", "type": 1, "name": "Tanzanie"}}, {"pk": 209, "model": "core.place", "fields": {"difficulty": 500000, "code": "th", "type": 1, "name": "Thajsko"}}, {"pk": 210, "model": "core.place", "fields": {"difficulty": 500000, "code": "tw", "type": 1, "name": "Tchaj-wan"}}, {"pk": 211, "model": "core.place", "fields": {"difficulty": 500000, "code": "tg", "type": 1, "name": "Togo"}}, {"pk": 212, "model": "core.place", "fields": {"difficulty": 500000, "code": "tn", "type": 1, "name": "Tunisko"}}, {"pk": 213, "model": "core.place", "fields": {"difficulty": 500000, "code": "tr", "type": 1, "name": "Turecko"}}, {"pk": 214, "model": "core.place", "fields": {"difficulty": 500000, "code": "tm", "type": 1, "name": "Turkmenist\u00e1n"}}, {"pk": 215, "model": "core.place", "fields": {"difficulty": 500000, "code": "ug", "type": 1, "name": "Uganda"}}, {"pk": 216, "model": "core.place", "fields": {"difficulty": 500000, "code": "ua", "type": 1, "name": "Ukrajina"}}, {"pk": 217, "model": "core.place", "fields": {"difficulty": 500000, "code": "uy", "type": 1, "name": "Uruguay"}}, {"pk": 218, "model": "core.place", "fields": {"difficulty": 1000000, "code": "uz", "type": 1, "name": "Uzbekist\u00e1n"}}, {"pk": 219, "model": "core.place", "fields": {"difficulty": 0, "code": "ve", "type": 1, "name": "Venezuela"}}, {"pk": 220, "model": "core.place", "fields": {"difficulty": 0, "code": "vn", "type": 1, "name": "Vietnam"}}, {"pk": 221, "model": "core.place", "fields": {"difficulty": 0, "code": "tl", "type": 1, "name": "V\u00fdchodn\u00ed Timor"}}, {"pk": 222, "model": "core.place", "fields": {"difficulty": 199999, "code": "zm", "type": 1, "name": "Zambie"}}, {"pk": 223, "model": "core.place", "fields": {"difficulty": 1000000, "code": "eh", "type": 1, "name": "Z\u00e1padn\u00ed Sahara"}}, {"pk": 224, "model": "core.place", "fields": {"difficulty": 199999, "code": "zw", "type": 1, "name": "Zimbabwe"}}, {"pk": 225, "model": "core.place", "fields": {"difficulty": 0, "code": "world", "type": 3, "name": "Sv\u011bt"}}, {"pk": 227, "model": "core.place", "fields": {"difficulty": 0, "code": "africa", "type": 4, "name": "Afrika"}}, {"pk": 228, "model": "core.place", "fields": {"difficulty": 0, "code": "samerica", "type": 4, "name": "Ji\u017en\u00ed Amerika"}}, {"pk": 229, "model": "core.place", "fields": {"difficulty": 0, "code": "namerica", "type": 4, "name": "Severn\u00ed Amerika"}}, {"pk": 230, "model": "core.place", "fields": {"difficulty": 0, "code": "europe", "type": 4, "name": "Evropa"}}, {"pk": 231, "model": "core.place", "fields": {"difficulty": 0, "code": "asia", "type": 4, "name": "Asie"}}, {"pk": 232, "model": "core.place", "fields": {"difficulty": 0, "code": "oceania", "type": 4, "name": "Austr\u00e1lie a Oce\u00e1nie"}}, {"pk": 1, "model": "core.placerelation", "fields": {"type": 1, "related_places": [54, 56, 57, 58, 60, 63, 66, 67, 69, 71, 72, 74, 75, 77, 80, 82, 85, 86, 87, 89, 92, 93, 94, 96, 98, 99, 101, 102, 104, 106, 107, 109, 110, 111, 112, 114, 115, 118, 119, 120, 121, 122, 123, 124, 125, 126, 128, 129, 130, 131, 136, 137, 140, 141, 145, 148, 149, 150, 151, 152, 153, 155, 156, 157, 158, 159, 160, 161, 162, 163, 165, 167, 168, 169, 171, 172, 173, 174, 175, 176, 177, 178, 180, 181, 182, 184, 186, 187, 188, 192, 193, 194, 195, 197, 198, 199, 201, 202, 203, 205, 207, 208, 209, 212, 213, 214, 215, 216, 217, 218, 219, 220, 222, 223, 224], "place": 225}}, {"pk": 2, "model": "core.placerelation", "fields": {"type": 1, "related_places": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48], "place": 195}}, {"pk": 3, "model": "core.placerelation", "fields": {"type": 1, "related_places": [56, 57, 67, 71, 75, 76, 77, 82, 84, 85, 87, 89, 96, 97, 98, 102, 103, 120, 122, 125, 129, 131, 138, 140, 141, 145, 149, 150, 151, 152, 156, 158, 161, 162, 175, 180, 183, 187, 189, 192, 197, 198, 200, 208, 211, 212, 215, 222, 223, 224], "place": 227}}, {"pk": 4, "model": "core.placerelation", "fields": {"type": 2, "related_places": [227, 228, 229, 230, 231, 232], "place": 225}}, {"pk": 5, "model": "core.placerelation", "fields": {"type": 1, "related_places": [58, 69, 72, 86, 90, 104, 107, 130, 173, 174, 199, 217, 219], "place": 228}}, {"pk": 6, "model": "core.placerelation", "fields": {"type": 1, "related_places": [62, 65, 83, 99, 101, 105, 106, 117, 126, 132, 133, 153, 163, 171, 177, 185, 195], "place": 229}}, {"pk": 7, "model": "core.placerelation", "fields": {"type": 3, "related_places": [80, 112, 169, 207, 214, 218], "place": 54}}, {"pk": 8, "model": "core.placerelation", "fields": {"type": 3, "related_places": [78, 147, 184], "place": 51}}, {"pk": 9, "model": "core.placerelation", "fields": {"type": 3, "related_places": [141, 150, 151, 152, 161, 212, 223], "place": 56}}, {"pk": 10, "model": "core.placerelation", "fields": {"type": 3, "related_places": [82, 131, 158, 222], "place": 57}}, {"pk": 11, "model": "core.placerelation", "fields": {"type": 3, "related_places": [69, 72, 107, 173, 217], "place": 58}}, {"pk": 12, "model": "core.placerelation", "fields": {"type": 3, "related_places": [61, 100, 112, 213], "place": 59}}, {"pk": 13, "model": "core.placerelation", "fields": {"type": 3, "related_places": [79, 115, 146, 159, 190, 191, 206], "place": 179}}, {"pk": 14, "model": "core.placerelation", "fields": {"type": 3, "related_places": [59, 100, 112, 182, 213], "place": 61}}, {"pk": 15, "model": "core.placerelation", "fields": {"type": 3, "related_places": [109, 157], "place": 63}}, {"pk": 16, "model": "core.placerelation", "fields": {"type": 3, "related_places": [142, 143, 176, 182, 216], "place": 66}}, {"pk": 17, "model": "core.placerelation", "fields": {"type": 3, "related_places": [94, 144, 159, 164], "place": 64}}, {"pk": 18, "model": "core.placerelation", "fields": {"type": 3, "related_places": [101, 153], "place": 65}}, {"pk": 19, "model": "core.placerelation", "fields": {"type": 3, "related_places": [75, 161, 162, 211], "place": 67}}, {"pk": 20, "model": "core.placerelation", "fields": {"type": 3, "related_places": [80, 109], "place": 68}}, {"pk": 21, "model": "core.placerelation", "fields": {"type": 3, "related_places": [58, 72, 107, 173, 174], "place": 69}}, {"pk": 22, "model": "core.placerelation", "fields": {"type": 3, "related_places": [78, 108, 196], "place": 70}}, {"pk": 23, "model": "core.placerelation", "fields": {"type": 3, "related_places": [120, 158, 222, 224], "place": 71}}, {"pk": 24, "model": "core.placerelation", "fields": {"type": 3, "related_places": [58, 69, 104, 130, 173, 174, 199, 217], "place": 72}}, {"pk": 25, "model": "core.placerelation", "fields": {"type": 3, "related_places": [147, 181, 184, 196, 213], "place": 74}}, {"pk": 26, "model": "core.placerelation", "fields": {"type": 3, "related_places": [67, 98, 150, 161, 211], "place": 75}}, {"pk": 27, "model": "core.placerelation", "fields": {"type": 3, "related_places": [63, 80, 109, 209], "place": 157}}, {"pk": 28, "model": "core.placerelation", "fields": {"type": 3, "related_places": [82, 183], "place": 76}}, {"pk": 29, "model": "core.placerelation", "fields": {"type": 3, "related_places": [209], "place": 124}}, {"pk": 30, "model": "core.placerelation", "fields": {"type": 3, "related_places": [77, 96, 131, 162, 180, 197], "place": 125}}, {"pk": 31, "model": "core.placerelation", "fields": {"type": 3, "related_places": [195], "place": 126}}, {"pk": 32, "model": "core.placerelation", "fields": {"type": 3, "related_places": [77, 82, 122, 125, 131, 198], "place": 197}}, {"pk": 33, "model": "core.placerelation", "fields": {"type": 3, "related_places": [125, 141, 161, 162, 197, 198], "place": 77}}, {"pk": 34, "model": "core.placerelation", "fields": {"type": 3, "related_places": [58, 69, 174], "place": 107}}, {"pk": 35, "model": "core.placerelation", "fields": {"type": 3, "related_places": [72, 86, 171, 174], "place": 130}}, {"pk": 36, "model": "core.placerelation", "fields": {"type": 3, "related_places": [57, 76, 122, 131, 183, 197, 215, 222], "place": 82}}, {"pk": 37, "model": "core.placerelation", "fields": {"type": 3, "related_places": [57, 82, 96, 125, 197], "place": 131}}, {"pk": 38, "model": "core.placerelation", "fields": {"type": 3, "related_places": [163, 171], "place": 132}}, {"pk": 39, "model": "core.placerelation", "fields": {"type": 3, "related_places": [70, 78, 146, 191, 196], "place": 108}}, {"pk": 40, "model": "core.placerelation", "fields": {"type": 3, "related_places": [159, 176, 179, 190], "place": 79}}, {"pk": 41, "model": "core.placerelation", "fields": {"type": 3, "related_places": [159], "place": 81}}, {"pk": 42, "model": "core.placerelation", "fields": {"type": 3, "related_places": [87, 89, 192], "place": 84}}, {"pk": 43, "model": "core.placerelation", "fields": {"type": 3, "related_places": [105], "place": 83}}, {"pk": 44, "model": "core.placerelation", "fields": {"type": 3, "related_places": [130, 174], "place": 86}}, {"pk": 45, "model": "core.placerelation", "fields": {"type": 3, "related_places": [116, 141, 198], "place": 85}}, {"pk": 46, "model": "core.placerelation", "fields": {"type": 3, "related_places": [101, 106], "place": 185}}, {"pk": 47, "model": "core.placerelation", "fields": {"type": 3, "related_places": [96, 125], "place": 180}}, {"pk": 48, "model": "core.placerelation", "fields": {"type": 3, "related_places": [84, 89, 198], "place": 87}}, {"pk": 49, "model": "core.placerelation", "fields": {"type": 3, "related_places": [143, 182], "place": 88}}, {"pk": 50, "model": "core.placerelation", "fields": {"type": 3, "related_places": [84, 87, 122, 129, 192, 198], "place": 89}}, {"pk": 51, "model": "core.placerelation", "fields": {"type": 3, "related_places": [165, 182, 205], "place": 93}}, {"pk": 52, "model": "core.placerelation", "fields": {"type": 3, "related_places": [125, 131, 180], "place": 96}}, {"pk": 53, "model": "core.placerelation", "fields": {"type": 3, "related_places": [59, 61, 182, 213], "place": 100}}, {"pk": 54, "model": "core.placerelation", "fields": {"type": 3, "related_places": [64, 79, 81, 94, 144, 164, 176, 179, 206], "place": 159}}, {"pk": 55, "model": "core.placerelation", "fields": {"type": 3, "related_places": [75, 211], "place": 98}}, {"pk": 56, "model": "core.placerelation", "fields": {"type": 3, "related_places": [51, 74, 147, 213], "place": 184}}, {"pk": 57, "model": "core.placerelation", "fields": {"type": 3, "related_places": [65, 106, 153, 185], "place": 101}}, {"pk": 58, "model": "core.placerelation", "fields": {"type": 3, "related_places": [103, 140, 150, 187, 189], "place": 102}}, {"pk": 59, "model": "core.placerelation", "fields": {"type": 3, "related_places": [102, 187], "place": 103}}, {"pk": 60, "model": "core.placerelation", "fields": {"type": 3, "related_places": [72, 199], "place": 104}}, {"pk": 61, "model": "core.placerelation", "fields": {"type": 3, "related_places": [83], "place": 105}}, {"pk": 62, "model": "core.placerelation", "fields": {"type": 3, "related_places": [101, 163, 185], "place": 106}}, {"pk": 63, "model": "core.placerelation", "fields": {"type": 3, "related_places": [108, 179, 181, 190, 191, 196, 216], "place": 146}}, {"pk": 64, "model": "core.placerelation", "fields": {"type": 3, "related_places": [54, 63, 68, 80, 157, 160, 204], "place": 109}}, {"pk": 65, "model": "core.placerelation", "fields": {"type": 3, "related_places": [148, 172], "place": 110}}, {"pk": 66, "model": "core.placerelation", "fields": {"type": 3, "related_places": [54, 59, 61, 111, 169, 213, 214], "place": 112}}, {"pk": 67, "model": "core.placerelation", "fields": {"type": 3, "related_places": [112, 123, 134, 186, 213], "place": 111}}, {"pk": 68, "model": "core.placerelation", "fields": {"type": 3, "related_places": [194], "place": 113}}, {"pk": 69, "model": "core.placerelation", "fields": {"type": 3, "related_places": [85, 123, 139], "place": 116}}, {"pk": 70, "model": "core.placerelation", "fields": {"type": 3, "related_places": [94, 179, 191, 206], "place": 115}}, {"pk": 71, "model": "core.placerelation", "fields": {"type": 3, "related_places": [111, 116, 186], "place": 123}}, {"pk": 72, "model": "core.placerelation", "fields": {"type": 3, "related_places": [80, 136, 182, 214, 218], "place": 128}}, {"pk": 73, "model": "core.placerelation", "fields": {"type": 3, "related_places": [89, 122, 192, 215], "place": 129}}, {"pk": 74, "model": "core.placerelation", "fields": {"type": 3, "related_places": [111, 186], "place": 134}}, {"pk": 75, "model": "core.placerelation", "fields": {"type": 3, "related_places": [80, 128, 207, 218], "place": 136}}, {"pk": 76, "model": "core.placerelation", "fields": {"type": 3, "related_places": [66, 88, 142, 182], "place": 143}}, {"pk": 77, "model": "core.placerelation", "fields": {"type": 3, "related_places": [116], "place": 139}}, {"pk": 78, "model": "core.placerelation", "fields": {"type": 3, "related_places": [120], "place": 138}}, {"pk": 79, "model": "core.placerelation", "fields": {"type": 3, "related_places": [102, 189], "place": 140}}, {"pk": 80, "model": "core.placerelation", "fields": {"type": 3, "related_places": [56, 77, 85, 161, 198, 212], "place": 141}}, {"pk": 81, "model": "core.placerelation", "fields": {"type": 3, "related_places": [66, 143, 176, 182], "place": 142}}, {"pk": 82, "model": "core.placerelation", "fields": {"type": 3, "related_places": [64, 94, 159], "place": 144}}, {"pk": 83, "model": "core.placerelation", "fields": {"type": 3, "related_places": [51, 74, 184, 196], "place": 147}}, {"pk": 84, "model": "core.placerelation", "fields": {"type": 3, "related_places": [156, 222], "place": 149}}, {"pk": 85, "model": "core.placerelation", "fields": {"type": 3, "related_places": [110, 209], "place": 148}}, {"pk": 86, "model": "core.placerelation", "fields": {"type": 3, "related_places": [56, 75, 102, 152, 161, 187], "place": 150}}, {"pk": 87, "model": "core.placerelation", "fields": {"type": 3, "related_places": [56, 150, 187, 223], "place": 152}}, {"pk": 88, "model": "core.placerelation", "fields": {"type": 3, "related_places": [65, 101, 195], "place": 153}}, {"pk": 89, "model": "core.placerelation", "fields": {"type": 3, "related_places": [80, 182], "place": 155}}, {"pk": 90, "model": "core.placerelation", "fields": {"type": 3, "related_places": [51, 70, 108, 196], "place": 78}}, {"pk": 91, "model": "core.placerelation", "fields": {"type": 3, "related_places": [56, 203, 223], "place": 151}}, {"pk": 92, "model": "core.placerelation", "fields": {"type": 3, "related_places": [120, 149, 200, 222, 224], "place": 156}}, {"pk": 93, "model": "core.placerelation", "fields": {"type": 3, "related_places": [57, 71, 120, 222], "place": 158}}, {"pk": 94, "model": "core.placerelation", "fields": {"type": 3, "related_places": [80, 109], "place": 160}}, {"pk": 95, "model": "core.placerelation", "fields": {"type": 3, "related_places": [106, 132], "place": 163}}, {"pk": 96, "model": "core.placerelation", "fields": {"type": 3, "related_places": [56, 67, 75, 77, 141, 150, 162], "place": 161}}, {"pk": 97, "model": "core.placerelation", "fields": {"type": 3, "related_places": [67, 77, 125, 161], "place": 162}}, {"pk": 98, "model": "core.placerelation", "fields": {"type": 3, "related_places": [93, 182, 205], "place": 165}}, {"pk": 99, "model": "core.placerelation", "fields": {"type": 3, "related_places": [119, 186, 193], "place": 168}}, {"pk": 100, "model": "core.placerelation", "fields": {"type": 3, "related_places": [54, 80, 109, 112], "place": 169}}, {"pk": 101, "model": "core.placerelation", "fields": {"type": 3, "related_places": [130, 132], "place": 171}}, {"pk": 102, "model": "core.placerelation", "fields": {"type": 3, "related_places": [110], "place": 172}}, {"pk": 103, "model": "core.placerelation", "fields": {"type": 3, "related_places": [58, 69, 72], "place": 173}}, {"pk": 104, "model": "core.placerelation", "fields": {"type": 3, "related_places": [69, 72, 86, 107, 130], "place": 174}}, {"pk": 105, "model": "core.placerelation", "fields": {"type": 3, "related_places": [66, 79, 142, 159, 182, 190, 216], "place": 176}}, {"pk": 106, "model": "core.placerelation", "fields": {"type": 3, "related_places": [203], "place": 178}}, {"pk": 107, "model": "core.placerelation", "fields": {"type": 3, "related_places": [186], "place": 127}}, {"pk": 108, "model": "core.placerelation", "fields": {"type": 3, "related_places": [74, 146, 196, 216], "place": 181}}, {"pk": 109, "model": "core.placerelation", "fields": {"type": 3, "related_places": [61, 66, 80, 88, 93, 100, 128, 142, 143, 155, 165, 176, 216], "place": 182}}, {"pk": 110, "model": "core.placerelation", "fields": {"type": 3, "related_places": [76, 82, 215], "place": 183}}, {"pk": 111, "model": "core.placerelation", "fields": {"type": 3, "related_places": [111, 119, 123, 127, 134, 168, 193], "place": 186}}, {"pk": 112, "model": "core.placerelation", "fields": {"type": 3, "related_places": [102, 103, 150, 152], "place": 187}}, {"pk": 113, "model": "core.placerelation", "fields": {"type": 3, "related_places": [70, 74, 78, 108, 146, 147, 181], "place": 196}}, {"pk": 114, "model": "core.placerelation", "fields": {"type": 3, "related_places": [102, 140], "place": 189}}, {"pk": 115, "model": "core.placerelation", "fields": {"type": 3, "related_places": [79, 146, 176, 179, 216], "place": 190}}, {"pk": 116, "model": "core.placerelation", "fields": {"type": 3, "related_places": [108, 115, 146, 179], "place": 191}}, {"pk": 117, "model": "core.placerelation", "fields": {"type": 3, "related_places": [84, 89, 129], "place": 192}}, {"pk": 118, "model": "core.placerelation", "fields": {"type": 3, "related_places": [71, 138, 156, 158, 200, 224], "place": 120}}, {"pk": 119, "model": "core.placerelation", "fields": {"type": 3, "related_places": [82, 89, 129, 197, 198, 215], "place": 122}}, {"pk": 120, "model": "core.placerelation", "fields": {"type": 3, "related_places": [94, 151, 178], "place": 203}}, {"pk": 121, "model": "core.placerelation", "fields": {"type": 3, "related_places": [109], "place": 204}}, {"pk": 122, "model": "core.placerelation", "fields": {"type": 3, "related_places": [77, 85, 87, 89, 122, 141, 197], "place": 198}}, {"pk": 123, "model": "core.placerelation", "fields": {"type": 3, "related_places": [72, 104], "place": 199}}, {"pk": 124, "model": "core.placerelation", "fields": {"type": 3, "related_places": [120, 156], "place": 200}}, {"pk": 125, "model": "core.placerelation", "fields": {"type": 3, "related_places": [93, 165], "place": 205}}, {"pk": 126, "model": "core.placerelation", "fields": {"type": 3, "related_places": [94, 115, 159, 179], "place": 206}}, {"pk": 127, "model": "core.placerelation", "fields": {"type": 3, "related_places": [54, 80, 136, 218], "place": 207}}, {"pk": 128, "model": "core.placerelation", "fields": {"type": 3, "related_places": [124, 148, 157], "place": 209}}, {"pk": 129, "model": "core.placerelation", "fields": {"type": 3, "related_places": [67, 75, 98], "place": 211}}, {"pk": 130, "model": "core.placerelation", "fields": {"type": 3, "related_places": [56, 141], "place": 212}}, {"pk": 131, "model": "core.placerelation", "fields": {"type": 3, "related_places": [59, 61, 74, 100, 111, 112, 184], "place": 213}}, {"pk": 132, "model": "core.placerelation", "fields": {"type": 3, "related_places": [54, 112, 128, 218], "place": 214}}, {"pk": 133, "model": "core.placerelation", "fields": {"type": 3, "related_places": [82, 122, 129, 183], "place": 215}}, {"pk": 134, "model": "core.placerelation", "fields": {"type": 3, "related_places": [66, 146, 176, 181, 182, 190], "place": 216}}, {"pk": 135, "model": "core.placerelation", "fields": {"type": 3, "related_places": [168, 186], "place": 193}}, {"pk": 136, "model": "core.placerelation", "fields": {"type": 3, "related_places": [126, 153], "place": 195}}, {"pk": 137, "model": "core.placerelation", "fields": {"type": 3, "related_places": [58, 72], "place": 217}}, {"pk": 138, "model": "core.placerelation", "fields": {"type": 3, "related_places": [54, 128, 136, 207, 214], "place": 218}}, {"pk": 139, "model": "core.placerelation", "fields": {"type": 3, "related_places": [168, 186], "place": 119}}, {"pk": 140, "model": "core.placerelation", "fields": {"type": 3, "related_places": [57, 71, 82, 149, 156, 158, 224], "place": 222}}, {"pk": 141, "model": "core.placerelation", "fields": {"type": 3, "related_places": [71, 120, 156, 222], "place": 224}}, {"pk": 142, "model": "core.placerelation", "fields": {"type": 1, "related_places": [51, 64, 66, 70, 74, 78, 79, 81, 88, 93, 94, 108, 113, 114, 115, 142, 143, 144, 146, 147, 154, 159, 164, 165, 176, 178, 179, 181, 184, 190, 191, 194, 196, 203, 205, 206, 216], "place": 230}}, {"pk": 143, "model": "core.placerelation", "fields": {"type": 1, "related_places": [54, 59, 61, 63, 68, 73, 80, 92, 100, 109, 110, 111, 112, 116, 118, 119, 121, 123, 124, 127, 128, 134, 135, 136, 137, 139, 148, 155, 157, 160, 168, 169, 170, 182, 186, 188, 193, 201, 204, 207, 209, 210, 213, 214, 218, 220, 221], "place": 231}}, {"pk": 144, "model": "core.placerelation", "fields": {"type": 1, "related_places": [60, 91, 166, 167, 172, 202], "place": 232}}]
+[
+    {
+        "pk": 1,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 134920,
+            "code": "us-al",
+            "type": 1,
+            "name": "Alabama"
+        }
+    }, {
+        "pk": 2,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 384615,
+            "code": "us-az",
+            "type": 1,
+            "name": "Arizona"
+        }
+    }, {
+        "pk": 3,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 416666,
+            "code": "us-ar",
+            "type": 1,
+            "name": "Arkansas"
+        }
+    }, {
+        "pk": 4,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "us-ca",
+            "type": 1,
+            "name": "Kalifornie"
+        }
+    }, {
+        "pk": 5,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 166666,
+            "code": "us-co",
+            "type": 1,
+            "name": "Colorado"
+        }
+    }, {
+        "pk": 6,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 273504,
+            "code": "us-ct",
+            "type": 1,
+            "name": "Connecticut"
+        }
+    }, {
+        "pk": 7,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 224999,
+            "code": "us-de",
+            "type": 1,
+            "name": "Delaware"
+        }
+    }, {
+        "pk": 8,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "us-fl",
+            "type": 1,
+            "name": "Florida"
+        }
+    }, {
+        "pk": 9,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 119230,
+            "code": "us-ga",
+            "type": 1,
+            "name": "Georgie"
+        }
+    }, {
+        "pk": 10,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 178571,
+            "code": "us-id",
+            "type": 1,
+            "name": "Idaho"
+        }
+    }, {
+        "pk": 11,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 188888,
+            "code": "us-il",
+            "type": 1,
+            "name": "Illinois"
+        }
+    }, {
+        "pk": 12,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 393939,
+            "code": "us-in",
+            "type": 1,
+            "name": "Indiana"
+        }
+    }, {
+        "pk": 13,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 306547,
+            "code": "us-ia",
+            "type": 1,
+            "name": "Iowa"
+        }
+    }, {
+        "pk": 14,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 253968,
+            "code": "us-ks",
+            "type": 1,
+            "name": "Kansas"
+        }
+    }, {
+        "pk": 15,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 262499,
+            "code": "us-ky",
+            "type": 1,
+            "name": "Kentucky"
+        }
+    }, {
+        "pk": 16,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 83333,
+            "code": "us-la",
+            "type": 1,
+            "name": "Louisiana"
+        }
+    }, {
+        "pk": 17,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 145833,
+            "code": "us-me",
+            "type": 1,
+            "name": "Maine"
+        }
+    }, {
+        "pk": 18,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 199999,
+            "code": "us-md",
+            "type": 1,
+            "name": "Maryland"
+        }
+    }, {
+        "pk": 19,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 416666,
+            "code": "us-ma",
+            "type": 1,
+            "name": "Massachusetts"
+        }
+    }, {
+        "pk": 20,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 199999,
+            "code": "us-mi",
+            "type": 1,
+            "name": "Michigan"
+        }
+    }, {
+        "pk": 21,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 244537,
+            "code": "us-mn",
+            "type": 1,
+            "name": "Minnesota"
+        }
+    }, {
+        "pk": 22,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 215384,
+            "code": "us-ms",
+            "type": 1,
+            "name": "Mississippi"
+        }
+    }, {
+        "pk": 23,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "us-mo",
+            "type": 1,
+            "name": "Missouri"
+        }
+    }, {
+        "pk": 24,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 184523,
+            "code": "us-mt",
+            "type": 1,
+            "name": "Montana"
+        }
+    }, {
+        "pk": 25,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 235294,
+            "code": "us-ne",
+            "type": 1,
+            "name": "Nebraska"
+        }
+    }, {
+        "pk": 26,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 370833,
+            "code": "us-nv",
+            "type": 1,
+            "name": "Nevada"
+        }
+    }, {
+        "pk": 27,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 216666,
+            "code": "us-nh",
+            "type": 1,
+            "name": "New Hampshire"
+        }
+    }, {
+        "pk": 28,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 168560,
+            "code": "us-nj",
+            "type": 1,
+            "name": "New Jersey"
+        }
+    }, {
+        "pk": 29,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 234848,
+            "code": "us-nm",
+            "type": 1,
+            "name": "Nov\u00e9 Mexiko"
+        }
+    }, {
+        "pk": 30,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 166666,
+            "code": "us-ny",
+            "type": 1,
+            "name": "New York"
+        }
+    }, {
+        "pk": 31,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 214285,
+            "code": "us-nc",
+            "type": 1,
+            "name": "Severn\u00ed Karol\u00edna"
+        }
+    }, {
+        "pk": 32,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 104166,
+            "code": "us-nd",
+            "type": 1,
+            "name": "Severn\u00ed Dakota"
+        }
+    }, {
+        "pk": 33,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "us-oh",
+            "type": 1,
+            "name": "Ohio"
+        }
+    }, {
+        "pk": 34,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 53571,
+            "code": "us-ok",
+            "type": 1,
+            "name": "Oklahoma"
+        }
+    }, {
+        "pk": 35,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 266666,
+            "code": "us-or",
+            "type": 1,
+            "name": "Oregon"
+        }
+    }, {
+        "pk": 36,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 106060,
+            "code": "us-pa",
+            "type": 1,
+            "name": "Pensylv\u00e1nie"
+        }
+    }, {
+        "pk": 37,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 222222,
+            "code": "us-ri",
+            "type": 1,
+            "name": "Rhode Island"
+        }
+    }, {
+        "pk": 38,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 222222,
+            "code": "us-sc",
+            "type": 1,
+            "name": "Ji\u017en\u00ed Karol\u00edna"
+        }
+    }, {
+        "pk": 39,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 393939,
+            "code": "us-sd",
+            "type": 1,
+            "name": "Ji\u017en\u00ed Dakota"
+        }
+    }, {
+        "pk": 40,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 166666,
+            "code": "us-tn",
+            "type": 1,
+            "name": "Tennessee"
+        }
+    }, {
+        "pk": 41,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 166666,
+            "code": "us-tx",
+            "type": 1,
+            "name": "Texas"
+        }
+    }, {
+        "pk": 42,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 284722,
+            "code": "us-ut",
+            "type": 1,
+            "name": "Utah"
+        }
+    }, {
+        "pk": 43,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 199999,
+            "code": "us-vt",
+            "type": 1,
+            "name": "Vermont"
+        }
+    }, {
+        "pk": 44,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 222222,
+            "code": "us-va",
+            "type": 1,
+            "name": "Virginie"
+        }
+    }, {
+        "pk": 45,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 83333,
+            "code": "us-wa",
+            "type": 1,
+            "name": "Washington"
+        }
+    }, {
+        "pk": 46,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 199999,
+            "code": "us-wv",
+            "type": 1,
+            "name": "Z\u00e1padn\u00ed Virginie"
+        }
+    }, {
+        "pk": 47,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 240000,
+            "code": "us-wi",
+            "type": 1,
+            "name": "Wisconsin"
+        }
+    }, {
+        "pk": 48,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 271428,
+            "code": "us-wy",
+            "type": 1,
+            "name": "Wyoming"
+        }
+    }, {
+        "pk": 51,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 41666,
+            "code": "al",
+            "type": 1,
+            "name": "Alb\u00e1nie"
+        }
+    }, {
+        "pk": 54,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 152777,
+            "code": "af",
+            "type": 1,
+            "name": "Afgh\u00e1nist\u00e1n"
+        }
+    }, {
+        "pk": 56,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 99999,
+            "code": "dz",
+            "type": 1,
+            "name": "Al\u017e\u00edrsko"
+        }
+    }, {
+        "pk": 57,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 208333,
+            "code": "ao",
+            "type": 1,
+            "name": "Angola"
+        }
+    }, {
+        "pk": 58,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 33333,
+            "code": "ar",
+            "type": 1,
+            "name": "Argentina"
+        }
+    }, {
+        "pk": 59,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "am",
+            "type": 1,
+            "name": "Arm\u00e9nie"
+        }
+    }, {
+        "pk": 60,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "au",
+            "type": 1,
+            "name": "Austr\u00e1lie"
+        }
+    }, {
+        "pk": 61,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "az",
+            "type": 1,
+            "name": "\u00c1zerb\u00e1jd\u017e\u00e1n"
+        }
+    }, {
+        "pk": 62,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "bs",
+            "type": 1,
+            "name": "Bahamy"
+        }
+    }, {
+        "pk": 63,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bd",
+            "type": 1,
+            "name": "Banglad\u00e9\u0161"
+        }
+    }, {
+        "pk": 64,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "be",
+            "type": 1,
+            "name": "Belgie"
+        }
+    }, {
+        "pk": 65,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bz",
+            "type": 1,
+            "name": "Belize"
+        }
+    }, {
+        "pk": 66,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 33333,
+            "code": "by",
+            "type": 1,
+            "name": "B\u011blorusko"
+        }
+    }, {
+        "pk": 67,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "bj",
+            "type": 1,
+            "name": "Benin"
+        }
+    }, {
+        "pk": 68,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bt",
+            "type": 1,
+            "name": "Bh\u00fat\u00e1n"
+        }
+    }, {
+        "pk": 69,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 370370,
+            "code": "bo",
+            "type": 1,
+            "name": "Bol\u00edvie"
+        }
+    }, {
+        "pk": 70,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 33333,
+            "code": "ba",
+            "type": 1,
+            "name": "Bosna a Hercegovina"
+        }
+    }, {
+        "pk": 71,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 423809,
+            "code": "bw",
+            "type": 1,
+            "name": "Botswana"
+        }
+    }, {
+        "pk": 72,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "br",
+            "type": 1,
+            "name": "Braz\u00edlie"
+        }
+    }, {
+        "pk": 73,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "bn",
+            "type": 1,
+            "name": "Brunej"
+        }
+    }, {
+        "pk": 74,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 99999,
+            "code": "bg",
+            "type": 1,
+            "name": "Bulharsko"
+        }
+    }, {
+        "pk": 75,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 196428,
+            "code": "bf",
+            "type": 1,
+            "name": "Burkina Faso"
+        }
+    }, {
+        "pk": 76,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 250000,
+            "code": "bi",
+            "type": 1,
+            "name": "Burundi"
+        }
+    }, {
+        "pk": 77,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "td",
+            "type": 1,
+            "name": "\u010cad"
+        }
+    }, {
+        "pk": 78,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "me",
+            "type": 1,
+            "name": "\u010cern\u00e1 Hora"
+        }
+    }, {
+        "pk": 79,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 40000,
+            "code": "cz",
+            "type": 1,
+            "name": "\u010cesk\u00e1 republika"
+        }
+    }, {
+        "pk": 80,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 27777,
+            "code": "cn",
+            "type": 1,
+            "name": "\u010c\u00edna"
+        }
+    }, {
+        "pk": 81,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "dk",
+            "type": 1,
+            "name": "D\u00e1nsko"
+        }
+    }, {
+        "pk": 82,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 250000,
+            "code": "cd",
+            "type": 1,
+            "name": "Demokratick\u00e1 republika Kongo"
+        }
+    }, {
+        "pk": 83,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "do",
+            "type": 1,
+            "name": "Dominik\u00e1nsk\u00e1 republika"
+        }
+    }, {
+        "pk": 84,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 66666,
+            "code": "dj",
+            "type": 1,
+            "name": "D\u017eibutsko"
+        }
+    }, {
+        "pk": 85,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "eg",
+            "type": 1,
+            "name": "Egypt"
+        }
+    }, {
+        "pk": 86,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 116666,
+            "code": "ec",
+            "type": 1,
+            "name": "Ekv\u00e1dor"
+        }
+    }, {
+        "pk": 87,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 314814,
+            "code": "er",
+            "type": 1,
+            "name": "Eritrea"
+        }
+    }, {
+        "pk": 88,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 83333,
+            "code": "ee",
+            "type": 1,
+            "name": "Estonsko"
+        }
+    }, {
+        "pk": 89,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 50000,
+            "code": "et",
+            "type": 1,
+            "name": "Etiopie"
+        }
+    }, {
+        "pk": 90,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "fk",
+            "type": 1,
+            "name": "Falklandy (Malv\u00edny)"
+        }
+    }, {
+        "pk": 91,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "fj",
+            "type": 1,
+            "name": "Fid\u017ei"
+        }
+    }, {
+        "pk": 92,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 266666,
+            "code": "ph",
+            "type": 1,
+            "name": "Filip\u00edny"
+        }
+    }, {
+        "pk": 93,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 83333,
+            "code": "fi",
+            "type": 1,
+            "name": "Finsko"
+        }
+    }, {
+        "pk": 94,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 83333,
+            "code": "fr",
+            "type": 1,
+            "name": "Francie"
+        }
+    }, {
+        "pk": 95,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tf",
+            "type": 1,
+            "name": "Francouzsk\u00e1 ji\u017en\u00ed a antarktick\u00e1 \u00fazem\u00ed"
+        }
+    }, {
+        "pk": 96,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 177777,
+            "code": "ga",
+            "type": 1,
+            "name": "Gabon"
+        }
+    }, {
+        "pk": 97,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "gm",
+            "type": 1,
+            "name": "Gambie"
+        }
+    }, {
+        "pk": 98,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 375000,
+            "code": "gh",
+            "type": 1,
+            "name": "Ghana"
+        }
+    }, {
+        "pk": 99,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "gl",
+            "type": 1,
+            "name": "Gr\u00f3nsko"
+        }
+    }, {
+        "pk": 100,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ge",
+            "type": 1,
+            "name": "Gruzie"
+        }
+    }, {
+        "pk": 101,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 570833,
+            "code": "gt",
+            "type": 1,
+            "name": "Guatemala"
+        }
+    }, {
+        "pk": 102,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 583333,
+            "code": "gn",
+            "type": 1,
+            "name": "Guinea"
+        }
+    }, {
+        "pk": 103,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "gw",
+            "type": 1,
+            "name": "Guinea-Bissau"
+        }
+    }, {
+        "pk": 104,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 164285,
+            "code": "gy",
+            "type": 1,
+            "name": "Guyana"
+        }
+    }, {
+        "pk": 105,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "ht",
+            "type": 1,
+            "name": "Haiti"
+        }
+    }, {
+        "pk": 106,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "hn",
+            "type": 1,
+            "name": "Honduras"
+        }
+    }, {
+        "pk": 107,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 59523,
+            "code": "cl",
+            "type": 1,
+            "name": "Chile"
+        }
+    }, {
+        "pk": 108,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "hr",
+            "type": 1,
+            "name": "Chorvatsko"
+        }
+    }, {
+        "pk": 109,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "in",
+            "type": 1,
+            "name": "Indie"
+        }
+    }, {
+        "pk": 110,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "id",
+            "type": 1,
+            "name": "Indon\u00e9sie"
+        }
+    }, {
+        "pk": 111,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "iq",
+            "type": 1,
+            "name": "Ir\u00e1k"
+        }
+    }, {
+        "pk": 112,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ir",
+            "type": 1,
+            "name": "\u00cdr\u00e1n"
+        }
+    }, {
+        "pk": 113,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "ie",
+            "type": 1,
+            "name": "Irsko"
+        }
+    }, {
+        "pk": 114,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "is",
+            "type": 1,
+            "name": "Island"
+        }
+    }, {
+        "pk": 115,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "it",
+            "type": 1,
+            "name": "It\u00e1lie"
+        }
+    }, {
+        "pk": 116,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "il",
+            "type": 1,
+            "name": "Izrael"
+        }
+    }, {
+        "pk": 117,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "jm",
+            "type": 1,
+            "name": "Jamajka"
+        }
+    }, {
+        "pk": 118,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "jp",
+            "type": 1,
+            "name": "Japonsko"
+        }
+    }, {
+        "pk": 119,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ye",
+            "type": 1,
+            "name": "Jemen"
+        }
+    }, {
+        "pk": 120,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "za",
+            "type": 1,
+            "name": "Jihoafrick\u00e1 republika"
+        }
+    }, {
+        "pk": 121,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "kr",
+            "type": 1,
+            "name": "Ji\u017en\u00ed Korea"
+        }
+    }, {
+        "pk": 122,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "ss",
+            "type": 1,
+            "name": "Ji\u017en\u00ed S\u00fad\u00e1n"
+        }
+    }, {
+        "pk": 123,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 88888,
+            "code": "jo",
+            "type": 1,
+            "name": "Jord\u00e1nsko"
+        }
+    }, {
+        "pk": 124,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 388888,
+            "code": "kh",
+            "type": 1,
+            "name": "Kambod\u017ea"
+        }
+    }, {
+        "pk": 125,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 111111,
+            "code": "cm",
+            "type": 1,
+            "name": "Kamerun"
+        }
+    }, {
+        "pk": 126,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 22222,
+            "code": "ca",
+            "type": 1,
+            "name": "Kanada"
+        }
+    }, {
+        "pk": 127,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "qa",
+            "type": 1,
+            "name": "Katar"
+        }
+    }, {
+        "pk": 128,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 83333,
+            "code": "kz",
+            "type": 1,
+            "name": "Kazachst\u00e1n"
+        }
+    }, {
+        "pk": 129,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 300000,
+            "code": "ke",
+            "type": 1,
+            "name": "Ke\u0148a"
+        }
+    }, {
+        "pk": 130,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 372023,
+            "code": "co",
+            "type": 1,
+            "name": "Kolumbie"
+        }
+    }, {
+        "pk": 131,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 210256,
+            "code": "cg",
+            "type": 1,
+            "name": "Kongo"
+        }
+    }, {
+        "pk": 132,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 404761,
+            "code": "cr",
+            "type": 1,
+            "name": "Kostarika"
+        }
+    }, {
+        "pk": 133,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "cu",
+            "type": 1,
+            "name": "Kuba"
+        }
+    }, {
+        "pk": 134,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "kw",
+            "type": 1,
+            "name": "Kuvajt"
+        }
+    }, {
+        "pk": 135,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "cy",
+            "type": 1,
+            "name": "Kypr"
+        }
+    }, {
+        "pk": 136,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 354978,
+            "code": "kg",
+            "type": 1,
+            "name": "Kyrgyzst\u00e1n"
+        }
+    }, {
+        "pk": 137,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 99999,
+            "code": "la",
+            "type": 1,
+            "name": "Laos"
+        }
+    }, {
+        "pk": 138,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ls",
+            "type": 1,
+            "name": "Lesotho"
+        }
+    }, {
+        "pk": 139,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 388888,
+            "code": "lb",
+            "type": 1,
+            "name": "Libanon"
+        }
+    }, {
+        "pk": 140,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 287500,
+            "code": "lr",
+            "type": 1,
+            "name": "Lib\u00e9rie"
+        }
+    }, {
+        "pk": 141,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 77777,
+            "code": "ly",
+            "type": 1,
+            "name": "Libye"
+        }
+    }, {
+        "pk": 142,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 95238,
+            "code": "lt",
+            "type": 1,
+            "name": "Litva"
+        }
+    }, {
+        "pk": 143,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 95238,
+            "code": "lv",
+            "type": 1,
+            "name": "Loty\u0161sko"
+        }
+    }, {
+        "pk": 144,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 41666,
+            "code": "lu",
+            "type": 1,
+            "name": "Lucembursko"
+        }
+    }, {
+        "pk": 145,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "mg",
+            "type": 1,
+            "name": "Madagaskar"
+        }
+    }, {
+        "pk": 146,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "hu",
+            "type": 1,
+            "name": "Ma\u010farsko"
+        }
+    }, {
+        "pk": 147,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 83333,
+            "code": "mk",
+            "type": 1,
+            "name": "Makedonie"
+        }
+    }, {
+        "pk": 148,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 375000,
+            "code": "my",
+            "type": 1,
+            "name": "Malajsie"
+        }
+    }, {
+        "pk": 149,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 99999,
+            "code": "mw",
+            "type": 1,
+            "name": "Malawi"
+        }
+    }, {
+        "pk": 150,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 416666,
+            "code": "ml",
+            "type": 1,
+            "name": "Mali"
+        }
+    }, {
+        "pk": 151,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 50000,
+            "code": "ma",
+            "type": 1,
+            "name": "Maroko"
+        }
+    }, {
+        "pk": 152,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 400000,
+            "code": "mr",
+            "type": 1,
+            "name": "Maurit\u00e1nie"
+        }
+    }, {
+        "pk": 153,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "mx",
+            "type": 1,
+            "name": "Mexiko"
+        }
+    }, {
+        "pk": 154,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 95238,
+            "code": "md",
+            "type": 1,
+            "name": "Moldavsko"
+        }
+    }, {
+        "pk": 155,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "mn",
+            "type": 1,
+            "name": "Mongolsko"
+        }
+    }, {
+        "pk": 156,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 250000,
+            "code": "mz",
+            "type": 1,
+            "name": "Mosambik"
+        }
+    }, {
+        "pk": 157,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 99999,
+            "code": "mm",
+            "type": 1,
+            "name": "Myanmar"
+        }
+    }, {
+        "pk": 158,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 133333,
+            "code": "na",
+            "type": 1,
+            "name": "Namibie"
+        }
+    }, {
+        "pk": 159,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 99999,
+            "code": "de",
+            "type": 1,
+            "name": "N\u011bmecko"
+        }
+    }, {
+        "pk": 160,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 99999,
+            "code": "np",
+            "type": 1,
+            "name": "Nep\u00e1l"
+        }
+    }, {
+        "pk": 161,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 62500,
+            "code": "ne",
+            "type": 1,
+            "name": "Niger"
+        }
+    }, {
+        "pk": 162,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 208333,
+            "code": "ng",
+            "type": 1,
+            "name": "Nig\u00e9rie"
+        }
+    }, {
+        "pk": 163,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 311111,
+            "code": "ni",
+            "type": 1,
+            "name": "Nikaragua"
+        }
+    }, {
+        "pk": 164,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "nl",
+            "type": 1,
+            "name": "Nizozemsko"
+        }
+    }, {
+        "pk": 165,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 83333,
+            "code": "no",
+            "type": 1,
+            "name": "Norsko"
+        }
+    }, {
+        "pk": 166,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "nc",
+            "type": 1,
+            "name": "Nov\u00e1 Kaledonie"
+        }
+    }, {
+        "pk": 167,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 83333,
+            "code": "nz",
+            "type": 1,
+            "name": "Nov\u00fd Z\u00e9land"
+        }
+    }, {
+        "pk": 168,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 366666,
+            "code": "om",
+            "type": 1,
+            "name": "Om\u00e1n"
+        }
+    }, {
+        "pk": 169,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "pk",
+            "type": 1,
+            "name": "P\u00e1kist\u00e1n"
+        }
+    }, {
+        "pk": 170,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 111111,
+            "code": "ps",
+            "type": 1,
+            "name": "Palestinsk\u00e1 autonomie"
+        }
+    }, {
+        "pk": 171,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "pa",
+            "type": 1,
+            "name": "Panama"
+        }
+    }, {
+        "pk": 172,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "pg",
+            "type": 1,
+            "name": "Papua-Nov\u00e1 Guinea"
+        }
+    }, {
+        "pk": 173,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 185714,
+            "code": "py",
+            "type": 1,
+            "name": "Paraguay"
+        }
+    }, {
+        "pk": 174,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 55555,
+            "code": "pe",
+            "type": 1,
+            "name": "Peru"
+        }
+    }, {
+        "pk": 175,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 625000,
+            "code": "ci",
+            "type": 1,
+            "name": "Pob\u0159e\u017e\u00ed slonoviny"
+        }
+    }, {
+        "pk": 176,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "pl",
+            "type": 1,
+            "name": "Polsko"
+        }
+    }, {
+        "pk": 177,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 566666,
+            "code": "pr",
+            "type": 1,
+            "name": "Portoriko"
+        }
+    }, {
+        "pk": 178,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "pt",
+            "type": 1,
+            "name": "Portugalsko"
+        }
+    }, {
+        "pk": 179,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 66666,
+            "code": "at",
+            "type": 1,
+            "name": "Rakousko"
+        }
+    }, {
+        "pk": 180,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 350000,
+            "code": "gq",
+            "type": 1,
+            "name": "Rovn\u00edkov\u00e1 Guinea"
+        }
+    }, {
+        "pk": 181,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 28571,
+            "code": "ro",
+            "type": 1,
+            "name": "Rumunsko"
+        }
+    }, {
+        "pk": 182,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "ru",
+            "type": 1,
+            "name": "Rusko"
+        }
+    }, {
+        "pk": 183,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 83333,
+            "code": "rw",
+            "type": 1,
+            "name": "Rwanda"
+        }
+    }, {
+        "pk": 184,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "gr",
+            "type": 1,
+            "name": "\u0158ecko"
+        }
+    }, {
+        "pk": 185,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 833333,
+            "code": "sv",
+            "type": 1,
+            "name": "Salvador"
+        }
+    }, {
+        "pk": 186,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "sa",
+            "type": 1,
+            "name": "Sa\u00fadsk\u00e1 Ar\u00e1bie"
+        }
+    }, {
+        "pk": 187,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 714285,
+            "code": "sn",
+            "type": 1,
+            "name": "Senegal"
+        }
+    }, {
+        "pk": 188,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "kp",
+            "type": 1,
+            "name": "Severn\u00ed Korea"
+        }
+    }, {
+        "pk": 189,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 333333,
+            "code": "sl",
+            "type": 1,
+            "name": "Sierra Leone"
+        }
+    }, {
+        "pk": 190,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "sk",
+            "type": 1,
+            "name": "Slovensko"
+        }
+    }, {
+        "pk": 191,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "si",
+            "type": 1,
+            "name": "Slovinsko"
+        }
+    }, {
+        "pk": 192,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 99999,
+            "code": "so",
+            "type": 1,
+            "name": "Som\u00e1lsko"
+        }
+    }, {
+        "pk": 193,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "ae",
+            "type": 1,
+            "name": "Spojen\u00e9 arabsk\u00e9 emir\u00e1ty"
+        }
+    }, {
+        "pk": 194,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "gb",
+            "type": 1,
+            "name": "Spojen\u00e9 kr\u00e1lovstv\u00ed"
+        }
+    }, {
+        "pk": 195,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "us",
+            "type": 1,
+            "name": "Spojen\u00e9 st\u00e1ty americk\u00e9"
+        }
+    }, {
+        "pk": 196,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "rs",
+            "type": 1,
+            "name": "Srbsko"
+        }
+    }, {
+        "pk": 197,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "cf",
+            "type": 1,
+            "name": "St\u0159edoafrick\u00e1 republika"
+        }
+    }, {
+        "pk": 198,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "sd",
+            "type": 1,
+            "name": "S\u00fad\u00e1n"
+        }
+    }, {
+        "pk": 199,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 223809,
+            "code": "sr",
+            "type": 1,
+            "name": "Surinam"
+        }
+    }, {
+        "pk": 200,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 99999,
+            "code": "sz",
+            "type": 1,
+            "name": "Svazijsko"
+        }
+    }, {
+        "pk": 201,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "sy",
+            "type": 1,
+            "name": "S\u00fdrie"
+        }
+    }, {
+        "pk": 202,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "sb",
+            "type": 1,
+            "name": "\u0160alamounovy ostrovy"
+        }
+    }, {
+        "pk": 203,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "es",
+            "type": 1,
+            "name": "\u0160pan\u011blsko"
+        }
+    }, {
+        "pk": 204,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "lk",
+            "type": 1,
+            "name": "\u0160r\u00ed Lanka"
+        }
+    }, {
+        "pk": 205,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "se",
+            "type": 1,
+            "name": "\u0160v\u00e9dsko"
+        }
+    }, {
+        "pk": 206,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "ch",
+            "type": 1,
+            "name": "\u0160v\u00fdcarsko"
+        }
+    }, {
+        "pk": 207,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tj",
+            "type": 1,
+            "name": "T\u00e1d\u017eikist\u00e1n"
+        }
+    }, {
+        "pk": 208,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "tz",
+            "type": 1,
+            "name": "Tanzanie"
+        }
+    }, {
+        "pk": 209,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "th",
+            "type": 1,
+            "name": "Thajsko"
+        }
+    }, {
+        "pk": 210,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tw",
+            "type": 1,
+            "name": "Tchaj-wan"
+        }
+    }, {
+        "pk": 211,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "tg",
+            "type": 1,
+            "name": "Togo"
+        }
+    }, {
+        "pk": 212,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "tn",
+            "type": 1,
+            "name": "Tunisko"
+        }
+    }, {
+        "pk": 213,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tr",
+            "type": 1,
+            "name": "Turecko"
+        }
+    }, {
+        "pk": 214,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "tm",
+            "type": 1,
+            "name": "Turkmenist\u00e1n"
+        }
+    }, {
+        "pk": 215,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "ug",
+            "type": 1,
+            "name": "Uganda"
+        }
+    }, {
+        "pk": 216,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "ua",
+            "type": 1,
+            "name": "Ukrajina"
+        }
+    }, {
+        "pk": 217,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 99999,
+            "code": "uy",
+            "type": 1,
+            "name": "Uruguay"
+        }
+    }, {
+        "pk": 218,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 750000,
+            "code": "uz",
+            "type": 1,
+            "name": "Uzbekist\u00e1n"
+        }
+    }, {
+        "pk": 219,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 215277,
+            "code": "ve",
+            "type": 1,
+            "name": "Venezuela"
+        }
+    }, {
+        "pk": 220,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 152777,
+            "code": "vn",
+            "type": 1,
+            "name": "Vietnam"
+        }
+    }, {
+        "pk": 221,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 0,
+            "code": "tl",
+            "type": 1,
+            "name": "V\u00fdchodn\u00ed Timor"
+        }
+    }, {
+        "pk": 222,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 126984,
+            "code": "zm",
+            "type": 1,
+            "name": "Zambie"
+        }
+    }, {
+        "pk": 223,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 199999,
+            "code": "eh",
+            "type": 1,
+            "name": "Z\u00e1padn\u00ed Sahara"
+        }
+    }, {
+        "pk": 224,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 306666,
+            "code": "zw",
+            "type": 1,
+            "name": "Zimbabwe"
+        }
+    }, {
+        "pk": 225,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "world",
+            "type": 3,
+            "name": "Sv\u011bt"
+        }
+    }, {
+        "pk": 227,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "africa",
+            "type": 4,
+            "name": "Afrika"
+        }
+    }, {
+        "pk": 228,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "samerica",
+            "type": 4,
+            "name": "Ji\u017en\u00ed Amerika"
+        }
+    }, {
+        "pk": 229,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "namerica",
+            "type": 4,
+            "name": "Severn\u00ed Amerika"
+        }
+    }, {
+        "pk": 230,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "europe",
+            "type": 4,
+            "name": "Evropa"
+        }
+    }, {
+        "pk": 231,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "asia",
+            "type": 4,
+            "name": "Asie"
+        }
+    }, {
+        "pk": 232,
+        "model": "core.place",
+        "fields": {
+            "difficulty": 500000,
+            "code": "oceania",
+            "type": 4,
+            "name": "Austr\u00e1lie a Oce\u00e1nie"
+        }
+    }, {
+        "pk": 1,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 1,
+            "related_places": [54, 56, 57, 58, 60, 63, 66, 69, 71, 72, 75, 77, 107, 80, 82, 85, 86, 87, 89, 92, 93, 94, 96, 98, 99, 102, 104, 106, 109, 110, 111, 112, 114, 115, 118, 119, 120, 121, 122, 124, 125, 126, 128, 129, 130, 131, 136, 137, 141, 145, 148, 149, 150, 151, 152, 153, 155, 156, 157, 158, 159, 160, 161, 162, 163, 165, 167, 168, 169, 172, 173, 174, 175, 176, 184, 181, 182, 202, 186, 187, 188, 192, 203, 194, 195, 197, 198, 199, 205, 201, 207, 208, 209, 212, 213, 214, 215, 216, 217, 218, 219, 220, 222, 223, 224],
+            "place": 225
+        }
+    }, {
+        "pk": 2,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 1,
+            "related_places": [1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 39, 38, 4, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 29, 33, 34, 35, 36, 37, 32, 31, 40, 41, 42, 43, 44, 45, 47, 48, 46],
+            "place": 195
+        }
+    }, {
+        "pk": 3,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 1,
+            "related_places": [56, 57, 67, 71, 75, 76, 77, 82, 84, 85, 87, 89, 96, 97, 98, 102, 103, 120, 122, 125, 129, 131, 138, 140, 141, 145, 149, 150, 151, 152, 156, 158, 161, 162, 175, 180, 183, 187, 189, 192, 197, 198, 200, 208, 211, 212, 215, 222, 223, 224],
+            "place": 227
+        }
+    }, {
+        "pk": 4,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 2,
+            "related_places": [227, 231, 232, 230, 228, 229],
+            "place": 225
+        }
+    }, {
+        "pk": 5,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 1,
+            "related_places": [58, 69, 72, 107, 86, 90, 104, 130, 173, 174, 199, 217, 219],
+            "place": 228
+        }
+    }, {
+        "pk": 6,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 1,
+            "related_places": [62, 65, 83, 99, 101, 105, 106, 117, 126, 132, 133, 153, 163, 171, 177, 185, 195],
+            "place": 229
+        }
+    }, {
+        "pk": 7,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [80, 112, 169, 207, 214, 218],
+            "place": 54
+        }
+    }, {
+        "pk": 8,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [78, 147, 184],
+            "place": 51
+        }
+    }, {
+        "pk": 9,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [141, 150, 151, 152, 161, 212, 223],
+            "place": 56
+        }
+    }, {
+        "pk": 10,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [82, 131, 158, 222],
+            "place": 57
+        }
+    }, {
+        "pk": 11,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [69, 72, 107, 173, 217],
+            "place": 58
+        }
+    }, {
+        "pk": 12,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [61, 100, 112, 213],
+            "place": 59
+        }
+    }, {
+        "pk": 13,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [79, 115, 146, 159, 190, 191, 206],
+            "place": 179
+        }
+    }, {
+        "pk": 14,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [59, 100, 112, 182, 213],
+            "place": 61
+        }
+    }, {
+        "pk": 15,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [109, 157],
+            "place": 63
+        }
+    }, {
+        "pk": 16,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [142, 143, 176, 182, 216],
+            "place": 66
+        }
+    }, {
+        "pk": 17,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [94, 144, 159, 164],
+            "place": 64
+        }
+    }, {
+        "pk": 18,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [101, 153],
+            "place": 65
+        }
+    }, {
+        "pk": 19,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [75, 161, 162, 211],
+            "place": 67
+        }
+    }, {
+        "pk": 20,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [80, 109],
+            "place": 68
+        }
+    }, {
+        "pk": 21,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [58, 72, 107, 173, 174],
+            "place": 69
+        }
+    }, {
+        "pk": 22,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [78, 108, 196],
+            "place": 70
+        }
+    }, {
+        "pk": 23,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [120, 158, 222, 224],
+            "place": 71
+        }
+    }, {
+        "pk": 24,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [58, 69, 104, 130, 173, 174, 199, 217],
+            "place": 72
+        }
+    }, {
+        "pk": 25,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [147, 184, 181, 196, 213],
+            "place": 74
+        }
+    }, {
+        "pk": 26,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [67, 98, 150, 161, 211],
+            "place": 75
+        }
+    }, {
+        "pk": 27,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [63, 80, 109, 209],
+            "place": 157
+        }
+    }, {
+        "pk": 28,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [82, 183],
+            "place": 76
+        }
+    }, {
+        "pk": 29,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [209],
+            "place": 124
+        }
+    }, {
+        "pk": 30,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [77, 96, 131, 162, 180, 197],
+            "place": 125
+        }
+    }, {
+        "pk": 31,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [195],
+            "place": 126
+        }
+    }, {
+        "pk": 32,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [77, 82, 122, 125, 131, 198],
+            "place": 197
+        }
+    }, {
+        "pk": 33,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [125, 141, 161, 162, 197, 198],
+            "place": 77
+        }
+    }, {
+        "pk": 34,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [58, 69, 174],
+            "place": 107
+        }
+    }, {
+        "pk": 35,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [72, 86, 171, 174],
+            "place": 130
+        }
+    }, {
+        "pk": 36,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [57, 76, 122, 131, 183, 197, 215, 222],
+            "place": 82
+        }
+    }, {
+        "pk": 37,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [57, 82, 96, 125, 197],
+            "place": 131
+        }
+    }, {
+        "pk": 38,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [163, 171],
+            "place": 132
+        }
+    }, {
+        "pk": 39,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [70, 78, 146, 191, 196],
+            "place": 108
+        }
+    }, {
+        "pk": 40,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [159, 176, 179, 190],
+            "place": 79
+        }
+    }, {
+        "pk": 41,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [159],
+            "place": 81
+        }
+    }, {
+        "pk": 42,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [87, 89, 192],
+            "place": 84
+        }
+    }, {
+        "pk": 43,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [105],
+            "place": 83
+        }
+    }, {
+        "pk": 44,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [130, 174],
+            "place": 86
+        }
+    }, {
+        "pk": 45,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [116, 141, 198],
+            "place": 85
+        }
+    }, {
+        "pk": 46,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [101, 106],
+            "place": 185
+        }
+    }, {
+        "pk": 47,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [96, 125],
+            "place": 180
+        }
+    }, {
+        "pk": 48,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [84, 89, 198],
+            "place": 87
+        }
+    }, {
+        "pk": 49,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [143, 182],
+            "place": 88
+        }
+    }, {
+        "pk": 50,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [84, 87, 122, 129, 192, 198],
+            "place": 89
+        }
+    }, {
+        "pk": 51,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [165, 182, 205],
+            "place": 93
+        }
+    }, {
+        "pk": 52,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [125, 131, 180],
+            "place": 96
+        }
+    }, {
+        "pk": 53,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [59, 61, 182, 213],
+            "place": 100
+        }
+    }, {
+        "pk": 54,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [64, 79, 81, 94, 144, 164, 176, 179, 206],
+            "place": 159
+        }
+    }, {
+        "pk": 55,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [75, 211],
+            "place": 98
+        }
+    }, {
+        "pk": 56,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [51, 74, 147, 213],
+            "place": 184
+        }
+    }, {
+        "pk": 57,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [65, 106, 153, 185],
+            "place": 101
+        }
+    }, {
+        "pk": 58,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [103, 140, 150, 187, 189],
+            "place": 102
+        }
+    }, {
+        "pk": 59,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [102, 187],
+            "place": 103
+        }
+    }, {
+        "pk": 60,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [72, 199],
+            "place": 104
+        }
+    }, {
+        "pk": 61,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [83],
+            "place": 105
+        }
+    }, {
+        "pk": 62,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [101, 163, 185],
+            "place": 106
+        }
+    }, {
+        "pk": 63,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [108, 179, 181, 190, 191, 196, 216],
+            "place": 146
+        }
+    }, {
+        "pk": 64,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [54, 63, 68, 80, 157, 160, 204],
+            "place": 109
+        }
+    }, {
+        "pk": 65,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [148, 172],
+            "place": 110
+        }
+    }, {
+        "pk": 66,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [54, 59, 61, 111, 169, 213, 214],
+            "place": 112
+        }
+    }, {
+        "pk": 67,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [112, 123, 134, 186, 213],
+            "place": 111
+        }
+    }, {
+        "pk": 68,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [194],
+            "place": 113
+        }
+    }, {
+        "pk": 69,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [85, 123, 139],
+            "place": 116
+        }
+    }, {
+        "pk": 70,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [94, 179, 191, 206],
+            "place": 115
+        }
+    }, {
+        "pk": 71,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [111, 116, 186],
+            "place": 123
+        }
+    }, {
+        "pk": 72,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [80, 136, 182, 214, 218],
+            "place": 128
+        }
+    }, {
+        "pk": 73,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [89, 122, 192, 215],
+            "place": 129
+        }
+    }, {
+        "pk": 74,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [111, 186],
+            "place": 134
+        }
+    }, {
+        "pk": 75,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [80, 128, 207, 218],
+            "place": 136
+        }
+    }, {
+        "pk": 76,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [66, 88, 142, 182],
+            "place": 143
+        }
+    }, {
+        "pk": 77,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [116],
+            "place": 139
+        }
+    }, {
+        "pk": 78,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [120],
+            "place": 138
+        }
+    }, {
+        "pk": 79,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [102, 189],
+            "place": 140
+        }
+    }, {
+        "pk": 80,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [56, 77, 85, 161, 198, 212],
+            "place": 141
+        }
+    }, {
+        "pk": 81,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [66, 143, 176, 182],
+            "place": 142
+        }
+    }, {
+        "pk": 82,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [64, 94, 159],
+            "place": 144
+        }
+    }, {
+        "pk": 83,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [51, 74, 184, 196],
+            "place": 147
+        }
+    }, {
+        "pk": 84,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [156, 222],
+            "place": 149
+        }
+    }, {
+        "pk": 85,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [110, 209],
+            "place": 148
+        }
+    }, {
+        "pk": 86,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [56, 75, 102, 152, 161, 187],
+            "place": 150
+        }
+    }, {
+        "pk": 87,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [56, 150, 187, 223],
+            "place": 152
+        }
+    }, {
+        "pk": 88,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [65, 101, 195],
+            "place": 153
+        }
+    }, {
+        "pk": 89,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [80, 182],
+            "place": 155
+        }
+    }, {
+        "pk": 90,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [51, 70, 108, 196],
+            "place": 78
+        }
+    }, {
+        "pk": 91,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [56, 203, 223],
+            "place": 151
+        }
+    }, {
+        "pk": 92,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [120, 149, 200, 222, 224],
+            "place": 156
+        }
+    }, {
+        "pk": 93,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [57, 71, 120, 222],
+            "place": 158
+        }
+    }, {
+        "pk": 94,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [80, 109],
+            "place": 160
+        }
+    }, {
+        "pk": 95,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [106, 132],
+            "place": 163
+        }
+    }, {
+        "pk": 96,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [56, 67, 75, 77, 141, 150, 162],
+            "place": 161
+        }
+    }, {
+        "pk": 97,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [67, 77, 125, 161],
+            "place": 162
+        }
+    }, {
+        "pk": 98,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [93, 182, 205],
+            "place": 165
+        }
+    }, {
+        "pk": 99,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [119, 186, 193],
+            "place": 168
+        }
+    }, {
+        "pk": 100,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [54, 80, 109, 112],
+            "place": 169
+        }
+    }, {
+        "pk": 101,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [130, 132],
+            "place": 171
+        }
+    }, {
+        "pk": 102,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [110],
+            "place": 172
+        }
+    }, {
+        "pk": 103,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [58, 69, 72],
+            "place": 173
+        }
+    }, {
+        "pk": 104,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [69, 72, 107, 86, 130],
+            "place": 174
+        }
+    }, {
+        "pk": 105,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [66, 79, 142, 159, 182, 190, 216],
+            "place": 176
+        }
+    }, {
+        "pk": 106,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [203],
+            "place": 178
+        }
+    }, {
+        "pk": 107,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [186],
+            "place": 127
+        }
+    }, {
+        "pk": 108,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [74, 146, 196, 216],
+            "place": 181
+        }
+    }, {
+        "pk": 109,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [61, 66, 80, 88, 93, 100, 128, 142, 143, 155, 165, 176, 216],
+            "place": 182
+        }
+    }, {
+        "pk": 110,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [76, 82, 215],
+            "place": 183
+        }
+    }, {
+        "pk": 111,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [111, 119, 123, 127, 134, 168, 193],
+            "place": 186
+        }
+    }, {
+        "pk": 112,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [102, 103, 150, 152],
+            "place": 187
+        }
+    }, {
+        "pk": 113,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [70, 74, 78, 108, 146, 147, 181],
+            "place": 196
+        }
+    }, {
+        "pk": 114,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [102, 140],
+            "place": 189
+        }
+    }, {
+        "pk": 115,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [79, 146, 176, 179, 216],
+            "place": 190
+        }
+    }, {
+        "pk": 116,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [108, 115, 146, 179],
+            "place": 191
+        }
+    }, {
+        "pk": 117,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [84, 89, 129],
+            "place": 192
+        }
+    }, {
+        "pk": 118,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [71, 138, 156, 158, 200, 224],
+            "place": 120
+        }
+    }, {
+        "pk": 119,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [82, 89, 129, 197, 198, 215],
+            "place": 122
+        }
+    }, {
+        "pk": 120,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [94, 151, 178],
+            "place": 203
+        }
+    }, {
+        "pk": 121,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [109],
+            "place": 204
+        }
+    }, {
+        "pk": 122,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [77, 85, 87, 89, 122, 141, 197],
+            "place": 198
+        }
+    }, {
+        "pk": 123,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [72, 104],
+            "place": 199
+        }
+    }, {
+        "pk": 124,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [120, 156],
+            "place": 200
+        }
+    }, {
+        "pk": 125,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [93, 165],
+            "place": 205
+        }
+    }, {
+        "pk": 126,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [94, 115, 159, 179],
+            "place": 206
+        }
+    }, {
+        "pk": 127,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [54, 80, 136, 218],
+            "place": 207
+        }
+    }, {
+        "pk": 128,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [124, 148, 157],
+            "place": 209
+        }
+    }, {
+        "pk": 129,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [67, 75, 98],
+            "place": 211
+        }
+    }, {
+        "pk": 130,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [56, 141],
+            "place": 212
+        }
+    }, {
+        "pk": 131,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [59, 61, 74, 100, 111, 112, 184],
+            "place": 213
+        }
+    }, {
+        "pk": 132,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [54, 112, 128, 218],
+            "place": 214
+        }
+    }, {
+        "pk": 133,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [82, 122, 129, 183],
+            "place": 215
+        }
+    }, {
+        "pk": 134,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [66, 146, 176, 181, 182, 190],
+            "place": 216
+        }
+    }, {
+        "pk": 135,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [168, 186],
+            "place": 193
+        }
+    }, {
+        "pk": 136,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [126, 153],
+            "place": 195
+        }
+    }, {
+        "pk": 137,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [58, 72],
+            "place": 217
+        }
+    }, {
+        "pk": 138,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [54, 128, 136, 207, 214],
+            "place": 218
+        }
+    }, {
+        "pk": 139,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [168, 186],
+            "place": 119
+        }
+    }, {
+        "pk": 140,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [57, 71, 82, 149, 156, 158, 224],
+            "place": 222
+        }
+    }, {
+        "pk": 141,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 3,
+            "related_places": [71, 120, 156, 222],
+            "place": 224
+        }
+    }, {
+        "pk": 142,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 1,
+            "related_places": [51, 64, 66, 70, 74, 78, 79, 108, 81, 88, 93, 94, 113, 114, 115, 142, 143, 146, 147, 154, 159, 164, 165, 176, 178, 179, 184, 181, 190, 191, 203, 194, 196, 205, 206, 216],
+            "place": 230
+        }
+    }, {
+        "pk": 143,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 1,
+            "related_places": [54, 59, 61, 63, 68, 80, 92, 100, 109, 110, 111, 112, 116, 118, 119, 121, 123, 124, 128, 136, 137, 148, 155, 157, 160, 168, 169, 182, 186, 188, 193, 204, 201, 207, 210, 209, 213, 214, 218, 220],
+            "place": 231
+        }
+    }, {
+        "pk": 144,
+        "model": "core.placerelation",
+        "fields": {
+            "type": 1,
+            "related_places": [60, 91, 166, 167, 172, 202],
+            "place": 232
+        }
+    }, {
+        "pk": 1,
+        "model": "flatblocks.flatblock",
+        "fields": {
+            "content": "je aplikace na procvi\u010dov\u00e1n\u00ed znalosti slep\u00fdch map.\r\nAplikace p\u0159izp\u016fsobuje obt\u00ed\u017enost ot\u00e1zek znalostem studenta.",
+            "header": "Slep\u00e9 Mapy",
+            "slug": "welcome_page"
+        }
+    }, {
+        "pk": 2,
+        "model": "flatblocks.flatblock",
+        "fields": {
+            "content": "Syst\u00e9m v\u00e1s zkou\u0161\u00ed ze znalosti st\u00e1t\u016f, p\u0159i\u010dem\u017e chov\u00e1n\u00ed syst\u00e9mu je adaptabiln\u00ed - podle toho, jak\u00e9 m\u00e1te znalosti, syst\u00e9m vol\u00ed podobu ot\u00e1zek (otev\u0159en\u00e1, v\u00fdb\u011br z mo\u017enost\u00ed) a frekvenci opakov\u00e1n\u00ed.\r\nSyst\u00e9m v\u00e1m tak p\u0159edkl\u00e1d\u00e1 st\u00e1ty, jejich\u017e procvi\u010den\u00ed je pro v\u00e1s neju\u017eite\u010dn\u011bj\u0161\u00ed.",
+            "header": "Adaptabiln\u00ed procvi\u010dov\u00e1n\u00ed",
+            "slug": "how_it_works-addaptive"
+        }
+    }, {
+        "pk": 3,
+        "model": "flatblocks.flatblock",
+        "fields": {
+            "content": "Na z\u00e1klad\u011b odpov\u011bd\u00ed syst\u00e9m odhadne va\u0161e znalosti jednotliv\u00fdch st\u00e1t\u016f a zn\u00e1zorn\u00ed v\u00e1m mapu va\u0161ich znalost\u00ed, co\u017e v\u00e1m pom\u016f\u017ee ujasnit si, co vlastn\u011b um\u00edte.",
+            "header": "Vizualizace znalost\u00ed",
+            "slug": "how_it_works-vizualization"
+        }
+    }, {
+        "pk": 4,
+        "model": "flatblocks.flatblock",
+        "fields": {
+            "content": "Procvi\u010dov\u00e1n\u00ed slep\u00fdch map nab\u00edz\u00ed i \u0159ada jin\u00fdch v\u00fdukov\u00fdch syst\u00e9m\u016f, ty v\u0161ak v\u011bt\u0161inou pokr\u00fdvaj\u00ed mnoho d\u00edl\u010d\u00edch oblast\u00ed. N\u00e1\u0161 syst\u00e9m se soust\u0159ed\u00ed pouze na slep\u00e9 mapy, d\u00edky \u010demu\u017e je pro u\u010den\u00ed v t\u00e9to oblasti optimalizovan\u00fd.",
+            "header": "Specializovan\u00fd syst\u00e9m",
+            "slug": "how_it_works-system"
+        }
+    }, {
+        "pk": 5,
+        "model": "flatblocks.flatblock",
+        "fields": {
+            "content": "Syst\u00e9m se u\u010d\u00ed z dat od v\u0161ech u\u017eivatel\u016f. V\u00fdb\u011br ot\u00e1zek je zalo\u017een na t\u011bchto datech, nikoliv na znalostech experta na zem\u011bpis, kter\u00fd \"v\u00ed\", jestli je t\u011b\u017e\u0161\u00ed poznat Ke\u0148u nebo Nig\u00e9rii.",
+            "header": "U\u010den\u00ed z dat",
+            "slug": "how_it_works-learning"
+        }
+    }
+]

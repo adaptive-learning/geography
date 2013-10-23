@@ -195,8 +195,10 @@ html, body {
   line-height: 150%; }
 .welcome-page [class*="col-"] {
   float: none; }
-.welcome-page .main-paragraph {
-  font-size: 1.25em; }
+.welcome-page .block-welcome_page {
+  font-size: 1.25em;
+  padding: 30px;
+  line-height: 150%; }
 
 @media (min-width: 767px) {
   .btn-huge {

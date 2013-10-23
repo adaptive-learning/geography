@@ -1,10 +1,8 @@
+{% load flatblock_tags %}
   <center class="map-container welcome-page jumbotron">
       <h1 >Slepé Mapy</h1>
       <div class="col-lg-8 col-sm-11 col-12">
-      <p class="main-paragraph">
-        je aplikace na procvičování znalosti slepých map.
-        Aplikace přizpůsobuje obtížnost otázek znalostem studenta.
-      </p>
+          {% flatblock "welcome_page" %}
       <a href="#/practice/" class="btn btn-primary btn-large btn-huge" >Začít procvičovat</a>
       <p>
         Poznámka: Zatím jsou k dispozici pouze státy. V budoucnu přibudou města, řeky a podrobnější mapy.
