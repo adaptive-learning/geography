@@ -12,7 +12,7 @@ class Command(NoArgsCommand):
     def handle_noargs(self, **options):
         self.stdout.write(json.dumps(self.get_hashes()))
 
-    def get_hashes(self, static_files):
+    def get_hashes(self):
         hashes = {}
         module = "core"
         static_files = self.get_static_files(module)
