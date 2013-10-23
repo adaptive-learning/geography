@@ -27,7 +27,7 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
   
   .run( function($rootScope, $location) {
     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
-      if ( next.templateUrl == "./static/tpl/welcome_page_tpl.html" ) {
+      if ( next.templateUrl == "./tpl/welcome_page.html" ) {
         $rootScope.getUser(function(user){
           if ( user && user.username && user.username != "" ) {
             $location.path( "/view" );
