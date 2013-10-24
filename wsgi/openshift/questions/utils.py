@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 from questions.models import Answer, UsersPlace, ConfusedPlaces
 from random import choice
 from logging import getLogger
+from django.db.models import F
 
 
 logger = getLogger(__name__)
@@ -29,8 +30,8 @@ class QuestionTypeFactory():
             qType for qType in QuestionTypeFactory.get_possible_question_types() if qType.id == id]
         if len(possible_question_types) == 1:
             return possible_question_types[0]
-#         else:
-#             TODO: raise some error
+        else:
+            logger.error("Requested question type with id '{0}'".format(id))
 
     @staticmethod
     def get_instance_by_no_of_options(no_of_options):
@@ -123,17 +124,18 @@ class QuestionChooser(object):
     @classmethod
     def get_ready_users_places(self, correctAnswerDelayMinutes=2):
         delay_miuntes = 1 if correctAnswerDelayMinutes > 1 else correctAnswerDelayMinutes
-        minuteAgo = datetime.now() - timedelta(seconds=60 * delay_miuntes)
-        correctMinutesAgo = datetime.now() - timedelta(
+        minute_ago = datetime.now() - timedelta(seconds=60 * delay_miuntes)
+        correct_minutes_ago = datetime.now() - timedelta(
             seconds=correctAnswerDelayMinutes * 60)
         return UsersPlace.objects.filter(
             user=self.user,
-            lastAsked__lt=correctMinutesAgo,
+            lastAsked__lt=minute_ago,
             place_id__in=self.map.related_places.all(),
         ).exclude(
             place_id__in=[a.place_id for a in Answer.objects.filter(
                 user=self.user,
-                askedDate__gt=minuteAgo
+                askedDate__gt=correct_minutes_ago,
+                place=F("answer")
             )]
         ).exclude(
             place__code__in=[q['code'] for q in self.pre_questions]
@@ -270,7 +272,7 @@ class QuestionService():
         except Place.DoesNotExist:
             answerPlace = None
             code = a["answer"] if "answer" in a else None
-            logger.error("Place with code {0} does not exist.".format(code))
+            logger.error("Place with code '{0}' does not exist.".format(code))
 
         answer = Answer(
             user=self.user,

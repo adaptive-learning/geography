@@ -1,15 +1,8 @@
 # -*- coding: utf-8 -*-
 from accounts.models import Student
 from core.models import Place, PlaceRelation
-from datetime import datetime, timedelta
+from datetime import datetime
 from django.db import models
-
-
-def yesterday():
-    y = datetime.now() - timedelta(days=1)
-    return y
-
-# Create your models here.
 
 
 class UsersPlaceManager(models.Manager):
@@ -49,7 +42,7 @@ class UsersPlace(models.Model):
     skill = models.FloatField(default=0)
 #     certainty = models.FloatField(default=0)
     correctlyAnsweredCount = models.IntegerField(default=0)
-    lastAsked = models.DateTimeField(default=yesterday)
+    lastAsked = models.DateTimeField(default=datetime.now)
     first_asked = models.DateTimeField(default=datetime.now)
     objects = UsersPlaceManager()
 
@@ -99,7 +92,7 @@ class UsersPlace(models.Model):
         self.askedCount += 1
         if (a.place == a.answer):
             self.correctlyAnsweredCount += 1
-            self.lastAsked = datetime.now()
+        self.lastAsked = datetime.now()
         self.skill = self.get_skill()
         self.save()
         updatePlaceDifficulty(self.place)
