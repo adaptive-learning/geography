@@ -3185,45 +3185,5 @@
             "related_places": [60, 91, 166, 167, 172, 202],
             "place": 232
         }
-    }, {
-        "pk": 1,
-        "model": "flatblocks.flatblock",
-        "fields": {
-            "content": "je aplikace na procvi\u010dov\u00e1n\u00ed znalosti slep\u00fdch map.\r\nAplikace p\u0159izp\u016fsobuje obt\u00ed\u017enost ot\u00e1zek znalostem studenta.",
-            "header": "Slep\u00e9 Mapy",
-            "slug": "welcome_page"
-        }
-    }, {
-        "pk": 2,
-        "model": "flatblocks.flatblock",
-        "fields": {
-            "content": "Syst\u00e9m v\u00e1s zkou\u0161\u00ed ze znalosti st\u00e1t\u016f, p\u0159i\u010dem\u017e chov\u00e1n\u00ed syst\u00e9mu je adaptabiln\u00ed - podle toho, jak\u00e9 m\u00e1te znalosti, syst\u00e9m vol\u00ed podobu ot\u00e1zek (otev\u0159en\u00e1, v\u00fdb\u011br z mo\u017enost\u00ed) a frekvenci opakov\u00e1n\u00ed.\r\nSyst\u00e9m v\u00e1m tak p\u0159edkl\u00e1d\u00e1 st\u00e1ty, jejich\u017e procvi\u010den\u00ed je pro v\u00e1s neju\u017eite\u010dn\u011bj\u0161\u00ed.",
-            "header": "Adaptabiln\u00ed procvi\u010dov\u00e1n\u00ed",
-            "slug": "how_it_works-addaptive"
-        }
-    }, {
-        "pk": 3,
-        "model": "flatblocks.flatblock",
-        "fields": {
-            "content": "Na z\u00e1klad\u011b odpov\u011bd\u00ed syst\u00e9m odhadne va\u0161e znalosti jednotliv\u00fdch st\u00e1t\u016f a zn\u00e1zorn\u00ed v\u00e1m mapu va\u0161ich znalost\u00ed, co\u017e v\u00e1m pom\u016f\u017ee ujasnit si, co vlastn\u011b um\u00edte.",
-            "header": "Vizualizace znalost\u00ed",
-            "slug": "how_it_works-vizualization"
-        }
-    }, {
-        "pk": 4,
-        "model": "flatblocks.flatblock",
-        "fields": {
-            "content": "Procvi\u010dov\u00e1n\u00ed slep\u00fdch map nab\u00edz\u00ed i \u0159ada jin\u00fdch v\u00fdukov\u00fdch syst\u00e9m\u016f, ty v\u0161ak v\u011bt\u0161inou pokr\u00fdvaj\u00ed mnoho d\u00edl\u010d\u00edch oblast\u00ed. N\u00e1\u0161 syst\u00e9m se soust\u0159ed\u00ed pouze na slep\u00e9 mapy, d\u00edky \u010demu\u017e je pro u\u010den\u00ed v t\u00e9to oblasti optimalizovan\u00fd.",
-            "header": "Specializovan\u00fd syst\u00e9m",
-            "slug": "how_it_works-system"
-        }
-    }, {
-        "pk": 5,
-        "model": "flatblocks.flatblock",
-        "fields": {
-            "content": "Syst\u00e9m se u\u010d\u00ed z dat od v\u0161ech u\u017eivatel\u016f. V\u00fdb\u011br ot\u00e1zek je zalo\u017een na t\u011bchto datech, nikoliv na znalostech experta na zem\u011bpis, kter\u00fd \"v\u00ed\", jestli je t\u011b\u017e\u0161\u00ed poznat Ke\u0148u nebo Nig\u00e9rii.",
-            "header": "U\u010den\u00ed z dat",
-            "slug": "how_it_works-learning"
-        }
     }
 ]
