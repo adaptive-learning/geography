@@ -262,10 +262,15 @@ class QuestionService():
 
     def answer(self, a):
         place = Place.objects.get(code=a["code"])
-        answerPlace = Place.objects.get(
-            code=a[
-                "answer"]) if "answer" in a and a[
-            "answer"] != "" else None
+        try:
+            answerPlace = Place.objects.get(
+                code=a[
+                    "answer"]) if "answer" in a and a[
+                "answer"] != "" else None
+        except Place.DoesNotExist:
+            answerPlace = None
+            code = a["answer"] if "answer" in a else None
+            logger.error("Place with code {0} does not exist.".format(code))
 
         answer = Answer(
             user=self.user,
