@@ -12,6 +12,9 @@ urlpatterns = patterns('',
                        url(r'^tpl/welcome_page.html$', TemplateView.as_view(
                            template_name="home/welcome_page.html")
                            ),
+                       url(r'^tpl/how_it_works.html$', TemplateView.as_view(
+                           template_name="home/how_it_works.html")
+                           ),
 
                        url(r'', include('social_auth.urls')),
                        # url(r'^openshift/', include('openshift.foo.urls')),

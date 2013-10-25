@@ -200,6 +200,16 @@ html, body {
   padding: 30px;
   line-height: 150%; }
 
+.how-it-works {
+  align: center;
+  background: #eeeeee;
+  margin-top: -30px;
+  padding: 20px; }
+  .how-it-works h2 {
+    text-align: center; }
+  .how-it-works .works-div {
+    text-align: justify; }
+
 @media (min-width: 767px) {
   .btn-huge {
     padding: 21px 29px;

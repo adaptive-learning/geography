@@ -7,6 +7,8 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
   .config(function($routeProvider) {
     $routeProvider.when('/', {
       templateUrl : './tpl/welcome_page.html'
+    }).when('/how_it_works', {
+      templateUrl : './tpl/how_it_works.html'
     }).when('/view/', {
         redirectTo: '/view/world/'
     }).when('/view/:part/:user', {
