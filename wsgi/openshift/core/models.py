@@ -1,6 +1,11 @@
 from django.db import models
 
 
+class PlaceManager(models.Manager):
+    def get_continents(self):
+        return self.filter(type=Place.CONTINENT)
+
+
 class Place(models.Model):
     STATE = 1
     CITY = 2
@@ -21,6 +26,7 @@ class Place(models.Model):
     difficulty = models.IntegerField(default=0)
     # TODO: change to PositiveSmallIntegerField
     type = models.IntegerField(choices=PLACE_TYPES)
+    objects = PlaceManager()
 
     def __unicode__(self):
         return u'{0} ({1})'.format(self.name, self.code)

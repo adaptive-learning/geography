@@ -7,6 +7,7 @@ from core.utils import JsonResponse, StaticFiles
 from django.contrib.contenttypes.models import ContentType
 from django.core import serializers
 from django.http import HttpResponse
+from core.models import Place
 
 
 # Create your views here.
@@ -18,6 +19,7 @@ def home(request):
         'isProduction': settings.ON_OPENSHIFT,
         'css_files': StaticFiles.add_hash(settings.CSS_FILES),
         'js_files': StaticFiles.add_hash(settings.JS_FILES),
+        'continents': Place.objects.get_continents(),
     }
     c.update(csrf(request))
     return render_to_response('home/home.html', c)

@@ -52,12 +52,20 @@
                 <li ng-class="getActiveClass('/view/world/')">
                   <a href="#/view/world/">Mapa světa</a>
                 </li>
+                <li class="dropdown">
+                  <a id="drop-continents" href="#"  class="dropdown-toggle" data-toggle="dropdown">Mapy kontinentů <b class="caret"></b></a>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="drop-continents">
+                    {% for continent in continents %}
+                    <li><a href="#/view/{{ continent.code }}/">{{ continent.name }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </li>
         </ul>
           ...
             <ul class="nav ng-cloak navbar-nav pull-right">
                 <li class="dropdown" ng-show="user.username == ''">
-                  <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Přihlásit se <b class="caret"></b></a>
-                  <ul class="dropdown-menu login" role="menu" aria-labelledby="drop1">
+                  <a id="drop-login" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Přihlásit se <b class="caret"></b></a>
+                  <ul class="dropdown-menu login" role="menu" aria-labelledby="drop-login">
                     <li><a class="btn btn-danger btn-lg" href="/login/google/"><i class="social-google"></i> přes Google</a></li>
                     <li><a class="btn btn-primary btn-lg" href="/login/facebook/"><i class="social-facebook"></i> přes Facebook</a></li>
                   </ul>
