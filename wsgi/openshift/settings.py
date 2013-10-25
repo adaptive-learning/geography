@@ -300,7 +300,6 @@ JS_FILES = (
 CSS_FILES = (
     "static/lib/css/bootstrap.css",
     "static/lib/css/flags.css",
-    "static/lib/css/colorbox.css",
     "static/lib/css/tips.css",
     "static/css/app.css",
     "static/css/map.css"
