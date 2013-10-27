@@ -8,6 +8,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.core import serializers
 from django.http import HttpResponse
 from core.models import Place
+import json
 
 
 # Create your views here.
@@ -23,6 +24,13 @@ def home(request):
     }
     c.update(csrf(request))
     return render_to_response('home/home.html', c)
+
+
+def hashes_view(request):
+    c = {
+        'hashes': json.dumps(settings.HASHES),
+    }
+    return render_to_response('home/hash.js', c, mimetype='application/javascript')
 
 
 def export_view(request):

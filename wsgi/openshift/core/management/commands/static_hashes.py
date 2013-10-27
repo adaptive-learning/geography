@@ -21,7 +21,13 @@ class Command(NoArgsCommand):
         return hashes
 
     def get_static_files(self, module):
-        files = settings.JS_FILES + settings.CSS_FILES
+        files = []
+        root = str(os.path.join(settings.PROJECT_DIR, module, 'static'))
+        for path, subdirs, filenames in os.walk(root):
+            for filename in filenames:
+                f = os.path.join(path, filename)
+                f = f.replace(root, 'static')
+                files.append(str(f))
         return [(p, self.get_static_file_content(p, module)) for p in files]
 
     def get_static_file_content(self, filename, module):
