@@ -27,9 +27,9 @@ class SimpleTest(TestCase):
         places_of_world = PlaceRelation.objects.get(
             type=PlaceRelation.IS_ON_MAP,
             place__code="world"
-            ).related_places.all()
+        ).related_places.all()
         five_esiest_places = Place.objects.filter(
             id__in=places_of_world
-            ).order_by("difficulty")[:5]
+        ).order_by("difficulty")[:5]
 
         self.assertEqual(response_object[0]["code"], five_esiest_places[0].code)
