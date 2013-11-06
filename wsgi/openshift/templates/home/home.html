@@ -24,7 +24,7 @@
     <meta name="keywords" content="slepé mapy, zeměpis, státy, adaptivní procvičování" />
 
     <!-- Le styles -->
-    {% for file in css_files %}
+    {% for file in top_css_files %}
     <link href="{{ file }}" rel="stylesheet">
     {% endfor %}
 
@@ -113,9 +113,14 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/hash.js"></script>
+    <script type="text/javascript">
+        {% include "home/hash.js" %}
+    </script>
     {% for file in js_files %}
     <script src="{{ file }}"></script>
+    {% endfor %}
+    {% for file in bottom_css_files %}
+    <link href="{{ file }}" rel="stylesheet">
     {% endfor %}
     
     {% if isProduction  %}

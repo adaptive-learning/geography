@@ -256,10 +256,7 @@ if DEBUG:
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'lazysignup.backends.LazySignupBackend',
-    'social_auth.backends.twitter.TwitterBackend',
     'social_auth.backends.facebook.FacebookBackend',
-    'social_auth.backends.google.GoogleOAuthBackend',
-    'social_auth.backends.google.GoogleOAuth2Backend',
     'social_auth.backends.google.GoogleBackend',
 )
 
@@ -277,33 +274,10 @@ SOCIAL_AUTH_NONCE_SERVER_URL_LENGTH = 200
 SOCIAL_AUTH_ASSOCIATION_SERVER_URL_LENGTH = 135
 SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 125
 
+
 # http://stackoverflow.com/questions/4882377/django-manage-py-test-fails-table-already-exists
 SOUTH_TESTS_MIGRATE = False
 
-JS_FILES = (
-    "static/lib/js/jquery-2.0.2.min.js",
-    "static/lib/js/jquery.colorbox-min.js",
-    "static/lib/js/bootstrap.js",
-    "static/lib/angular/angular.min.js",
-    "static/lib/angular/angular-cookies.js",
-    "static/lib/js/raphael.js",
-    "static/lib/js/kartograph.js",
-    "static/lib/js/chroma.min.js",
-    "static/lib/js/jquery.qtip.min.js",
-    "static/js/map.js",
-    "static/js/app.js",
-    "static/js/controllers.js",
-    "static/js/services.js",
-    "static/js/filters.js",
-    "static/js/directives.js"
-)
-CSS_FILES = (
-    "static/lib/css/bootstrap.css",
-    "static/lib/css/flags.css",
-    "static/lib/css/tips.css",
-    "static/css/app.css",
-    "static/css/map.css"
-)
 try:
     from hashes import HASHES
 except ImportError:
