@@ -9,5 +9,5 @@ setup(
     author='Vit Stanislav',
     author_email='slaweet@seznam.cz',
     url='https://github.com/slaweet/geography',
-    install_requires=['Django>=1.5','south', 'django-lazysignup', 'django-social-auth'],
+    install_requires=['Django<=1.5','south', 'django-lazysignup', 'django-social-auth'],
 )
