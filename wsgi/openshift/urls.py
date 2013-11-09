@@ -29,6 +29,8 @@ urlpatterns = patterns('',
                            'questions.views.users_places', name='usersplaces'),
                        url(r'^export/', 'core.views.export_view',
                            name='export_view'),
+                       url(r'^cachedlog/', 'core.views.cachedlog_view',
+                           name='cachedlog_view'),
                        url(r'^user/', include('accounts.urls')),
                        url(r'^question/', include('questions.urls')),
 

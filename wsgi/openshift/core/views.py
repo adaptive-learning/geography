@@ -9,6 +9,8 @@ from django.core import serializers
 from django.http import HttpResponse
 from core.models import Place
 import json
+import os
+from django.core.servers.basehttp import FileWrapper
 
 
 # Create your views here.
@@ -52,6 +54,14 @@ def home(request):
     }
     c.update(csrf(request))
     return render_to_response('home/home.html', c)
+
+
+def cachedlog_view(request):
+    logname = "export.json"
+    logpath = os.path.join(settings.MEDIA_ROOT, logname)
+    response = HttpResponse(FileWrapper(open(logpath)), content_type='application/json')
+    response['Content-Disposition'] = 'attachment; filename=answers.json'
+    return response
 
 
 def export_view(request):
