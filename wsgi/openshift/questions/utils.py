@@ -291,4 +291,4 @@ class QuestionService():
             self.user.points += 1
             self.user.save()
 
-        UsersPlace.objects.addAnswer(answer)
+        UsersPlace.objects.add_answer(answer)

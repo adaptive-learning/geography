@@ -7,7 +7,7 @@ from django.db import models
 
 class UsersPlaceManager(models.Manager):
 
-    def fromStudentAndPlace(self, student, place):
+    def from_student_and_place(self, student, place):
         try:
             usersPlace = UsersPlace.objects.get(user=student, place=place)
         except UsersPlace.DoesNotExist:
@@ -17,9 +17,9 @@ class UsersPlaceManager(models.Manager):
             )
         return usersPlace
 
-    def addAnswer(self, a):
-        usersPlace = self.fromStudentAndPlace(a.user, a.place)
-        usersPlace._addAnswer(a)
+    def add_answer(self, a):
+        usersPlace = self.from_student_and_place(a.user, a.place)
+        usersPlace._add_answer(a)
 
 
 def all_correct(users_places):
@@ -27,7 +27,7 @@ def all_correct(users_places):
     return len(incorrect) == 0
 
 
-def updatePlaceDifficulty(place):
+def update_place_difficulty(place):
     usersPlaces = UsersPlace.objects.filter(place=place)
     skills = [up.correctlyAnsweredCount / float(up.askedCount)
               for up in usersPlaces]
@@ -40,7 +40,6 @@ class UsersPlace(models.Model):
     place = models.ForeignKey(Place, db_index=True)
     askedCount = models.IntegerField(default=0)
     skill = models.FloatField(default=0)
-#     certainty = models.FloatField(default=0)
     correctlyAnsweredCount = models.IntegerField(default=0)
     lastAsked = models.DateTimeField(default=datetime.now)
     first_asked = models.DateTimeField(default=datetime.now)
@@ -53,7 +52,6 @@ class UsersPlace(models.Model):
         last_users_places = UsersPlace.objects.filter(
             user=self.user,
             place_id__in=map.related_places.all(),
-            #                  lastAsked__lt=min(self.lastAsked, datetime.now())
         ).order_by("-lastAsked")[:10]
         correct = [up for up in last_users_places if up.skill == 1]
         if len(last_users_places) < 5:
@@ -88,14 +86,14 @@ class UsersPlace(models.Model):
         certainty = round(certainty, 2)
         return certainty
 
-    def _addAnswer(self, a):
+    def _add_answer(self, a):
         self.askedCount += 1
         if (a.place == a.answer):
             self.correctlyAnsweredCount += 1
         self.lastAsked = datetime.now()
         self.skill = self.get_skill()
         self.save()
-        updatePlaceDifficulty(self.place)
+        update_place_difficulty(self.place)
 
     def __unicode__(self):
         return u'user: {0}, place: [{1}]'.format(self.user, self.place)

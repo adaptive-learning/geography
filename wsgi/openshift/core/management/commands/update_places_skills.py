@@ -2,7 +2,7 @@
 from django.core.management.base import NoArgsCommand
 
 from core.models import Place
-from questions.models import updatePlaceDifficulty
+from questions.models import update_place_difficulty
 
 
 class Command(NoArgsCommand):
@@ -11,5 +11,5 @@ class Command(NoArgsCommand):
     def handle_noargs(self, **options):
         places = Place.objects.all()
         for p in places:
-            updatePlaceDifficulty(p)
+            update_place_difficulty(p)
             p.save()
