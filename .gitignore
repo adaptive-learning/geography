@@ -8,3 +8,6 @@
 sqlite3.db
 .sass-cache
 .settings
+*.log
+dist
+Geography.egg-info
