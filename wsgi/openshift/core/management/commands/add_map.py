@@ -17,19 +17,10 @@ class Command(BaseCommand):
         map_data = mapFile.read()
         mapFile.close()
 
-        mapFile = open(file_name, 'w')
-
-        def dashrepl(matchobj):
-            return matchobj.group(0).lower()
-        map_data = re.sub(r'"[A-Z]{2}"', dashrepl, map_data)
-        mapFile.write(map_data)
-        mapFile.close()
-
-        codes = re.findall(r'"[a-z]{2}"', map_data)
-        codes = [c[1:3] for c in codes]
+        codes = re.findall(r'name="[a-zA-Z ]*"', map_data)
+        codes = [c[6:-1] for c in codes]
         places = Place.objects.all()
-        new_place = Place(code=args[0], name=args[1], type=Place.CONTINENT)
-        new_place.save()
+        new_place = self.find_place_or_create_new(args[0], args[1])
         relation = PlaceRelation(place=new_place, type=PlaceRelation.IS_ON_MAP)
         relation.save()
         for p in places:
@@ -37,3 +28,11 @@ class Command(BaseCommand):
 #                 self.stdout.write(p.name)
                 relation.related_places.add(p)
         relation.save()
+
+    def find_place_or_create_new(self, code, name):
+        try:
+            place = Place.objects.get(code=code)
+        except Place.DoesNotExist:
+            place = Place(code=code, name=name, type=Place.CONTINENT)
+            place.save()
+        return place
