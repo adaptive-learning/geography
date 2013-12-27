@@ -1,7 +1,10 @@
 svg .bg {
   stroke-width: 1.5; }
-svg .states {
-  cursor: pointer;
+svg .states, svg .cities, svg .rivers, svg .lakes {
+  cursor: pointer; }
+svg .states, svg .cities, svg .lakes {
   fill-opacity: 1; }
-  svg .states:hover {
-    fill-opacity: 0.8; }
+svg .states:hover, svg .lakes:hover {
+  fill-opacity: 0.8; }
+svg .lakes {
+  stroke: #53a5df; }

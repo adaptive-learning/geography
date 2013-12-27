@@ -133,6 +133,8 @@ ul.dropdown-menu.login {
     margin: 0px -15px 0px -15px;
     padding: 10px;
     padding-left: 30px; }
+    .thumbnails h3 .btn {
+      margin-top: -5px; }
 
 .label {
   margin-right: 10px;
@@ -163,6 +165,8 @@ html, body {
   margin-top: -30px;
   padding-top: 5px;
   min-height: 30px; }
+  #footer .contact {
+    margin: 0 5px 0 5px; }
 
 #ng-view {
   position: relative;
@@ -187,15 +191,18 @@ html, body {
   .view-leave-setup.view-leave-start {
     opacity: 0; }
 
-.welcome-page h1 {
-  font-size: 3em; }
-.welcome-page p {
+.welcome-page.jumbotron h1 {
+  font-size: 3em;
+  position: relative;
+  text-align: center;
+  left: 0; }
+.welcome-page.jumbotron p {
   font-size: 0.75em;
   padding: 30px;
   line-height: 150%; }
-.welcome-page [class*="col-"] {
+.welcome-page.jumbotron [class*="col-"] {
   float: none; }
-.welcome-page .block-welcome_page {
+.welcome-page.jumbotron .block-welcome_page {
   font-size: 1.25em;
   padding: 30px;
   line-height: 150%; }
@@ -218,30 +225,32 @@ html, body {
     -moz-border-radius: 9px;
     border-radius: 9px; } }
 .map-container {
-  height: 500px;
   background-color: #73c5ef;
   background: -#34dddd;
   color: white;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8), 0 0 0px rgba(0, 0, 0, 0.075); }
-  .map-container .map-positioner {
-    position: relative;
-    display: inline-block;
-    height: 500px; }
-    .map-container .map-positioner h1 {
-      position: absolute;
-      left: -70px;
-      top: 0px;
-      z-index: 6; }
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8), 0 0 0px rgba(0, 0, 0, 0.075);
+  position: relative; }
+  .map-container h1 {
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    z-index: 6; }
+  .map-container .zoom-btn {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 7; }
   .map-container #map-holder {
     height: 500px;
     position: relative;
-    width: 700px; }
+    width: 100%; }
   .map-container .loading-indicator {
-    background-image: url(../img/map-ajax-loader.gif); }
+    background-image: url(../img/map-ajax-loader.gif);
+    margin-top: 0px; }
   .map-container .btn-practice {
     position: absolute;
-    bottom: 20px;
-    right: -10px;
+    bottom: 10px;
+    right: 10px;
     z-index: 6; }
   .map-container .map-label {
     position: absolute;
@@ -259,13 +268,13 @@ html, body {
 
 .color-indicator {
   display: inline-block;
-  width: 16px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   margin-top: 5px;
   margin-bottom: -5x;
   margin-left: 3px;
-  border: 1px solid white;
-  border-radius: 3px; }
+  border: 0;
+  border-radius: 7px; }
 
 .practice .btn {
   margin-left: 10px;
@@ -408,13 +417,6 @@ html, body {
   height: 32px; }
 
 @media (max-width: 979px) {
-  .map-container {
-    margin-top: 0px; }
-    .map-container .map-positioner h1 {
-      left: 10px;
-      bottom: -10px;
-      z-index: 20; }
-
   .version {
     display: none; } }
 @media (max-width: 767px) {
@@ -423,17 +425,11 @@ html, body {
 
   .map-container {
     height: auto; }
-    .map-container .map-positioner {
-      height: auto;
-      width: 100%; }
-      .map-container .map-positioner h1 {
-        position: relative;
-        text-align: left;
-        margin-top: -30px;
-        margin-bottom: 10px;
-        margin-right: 150px; }
-      .map-container .map-positioner #map-holder {
-        margin-bottom: 20px; }
+    .map-container h1 {
+      text-align: left;
+      bottom: -3px;
+      left: 90px;
+      top: auto; }
 
   .welcome-page p {
     padding: 10px; }
@@ -441,15 +437,19 @@ html, body {
   .navbar {
     margin-bottom: 0px; }
 
-  .welcome-page h1 {
-    font-size: 2em;
-    margin-top: 0px;
-    padding-top: 10px; }
-  .welcome-page p {
-    font-size: 0.65em;
-    padding: 5px; }
-  .welcome-page .main-paragraph {
+  .welcome-page.jumbotron {
     font-size: 1em; }
+    .welcome-page.jumbotron h1 {
+      font-size: 2em;
+      margin-top: 0px;
+      padding-top: 10px; }
+    .welcome-page.jumbotron p {
+      font-size: 0.65em;
+      padding: 5px; }
+    .welcome-page.jumbotron .main-paragraph {
+      font-size: 1em; }
+    .welcome-page.jumbotron .flatblock {
+      padding: 10px 0px; }
 
   .jumbotron {
     padding: 0px; }

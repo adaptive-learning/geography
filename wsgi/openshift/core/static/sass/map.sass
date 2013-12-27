@@ -1,8 +1,12 @@
 svg
   .bg
     stroke-width: 1.5
-  .states
+  .states, .cities, .rivers, .lakes
     cursor: pointer
+  .states, .cities, .lakes
     fill-opacity: 1
+  .states, .lakes
     &:hover
       fill-opacity: 0.8
+  .lakes
+    stroke: #53a5df

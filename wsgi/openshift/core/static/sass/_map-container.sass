@@ -1,35 +1,38 @@
 $map-height:500px
 
 .map-container
-  height: $map-height
   background-color: #73c5ef
   background: -  #34DDDD
   color: white
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8), 0 0 0px rgba(0, 0, 0, 0.075)
 
-  .map-positioner
-    position: relative
-    display: inline-block
-    height: $map-height
+  position: relative
 
-    h1
-      position: absolute
-      left: -70px
-      top: 0px
-      z-index: 6
+  h1
+    position: absolute
+    left: 10px
+    top: 0px
+    z-index: 6
+  
+  .zoom-btn
+    position: absolute
+    left: 10px
+    bottom: 10px
+    z-index: 7
 
   #map-holder
     height: $map-height
     position: relative
-    width: 700px
+    width: 100%
 
   .loading-indicator
     background-image: url(../img/map-ajax-loader.gif)
+    margin-top: 0px
 
   .btn-practice
     position: absolute
-    bottom: 20px
-    right: -10px
+    bottom: 10px
+    right: 10px
     z-index: 6
 
   .map-label
@@ -48,10 +51,10 @@ $map-height:500px
 
 .color-indicator
   display: inline-block
-  width: 16px
-  height: 15px
+  width: 14px
+  height: 14px
   margin-top: 5px
   margin-bottom: -5x
   margin-left: 3px
-  border: 1px solid white
-  border-radius: 3px
+  border: 0
+  border-radius: 7px
