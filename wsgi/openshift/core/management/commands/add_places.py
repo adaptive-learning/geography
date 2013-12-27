@@ -1,41 +1,33 @@
-
 from django.core.management.base import BaseCommand, CommandError
-
 from core.models import Place
 
 
 class Command(BaseCommand):
     help = u"""Add new places"""
+    usage_str = 'USAGE: ./manage.py add_places map_name STATE|CITY|RIVER|LAKE [difficulty]'
+    place_types = {
+        "STATE": Place.STATE,
+        "CITY": Place.CITY,
+        "RIVER": Place.RIVER,
+        "LAKE": Place.LAKE,
+    }
 
     def handle(self, *args, **options):
-        if(len(args) < 1):
-            raise CommandError('Not enought arguments')
+        if len(args) < 2:
+            raise CommandError(self.usage_str)
+        if not args[1] in self.place_types:
+            raise CommandError(self.usage_str)
+        place_type = self.place_types[args[1]]
         map_name = args[0]
         statesFile = open(map_name.lower() + ".txt")
         states = statesFile.read()
         # self.stdout.write(states)
         ss = states.split("\n")
         for s in ss:
-            state = s.split("\t")
-            if(len(state) == 2):
-                name = state[1]
-                code = state[0]
-                p = Place(code=code, name=name, difficulty=500000)
+            place = s.split("\t")
+            if(len(place) == 2):
+                name = place[1]
+                code = place[0]
+                p = Place(code=code, name=name, difficulty=500, type=place_type)
                 p.save()
                 self.stdout.write(name + " added")
-
-#     def handle(self, *args, **options):
-#         if(len(args) < 1):
-#             raise CommandError('Not enought arguments')
-#         file_name = args[0]
-#         mapFile = open(file_name)
-#         map = mapFile.read()
-#         mapFile.close()
-#         import re
-#         codes = re.findall(r'"[a-z]{2}"', map)
-#         codes = [c[1:3] for c in codes]
-#         places = Map.objects.get(name="World").places.all()
-#         for p in places:
-#             if not p.code in codes:
-#                 self.stdout.write(p.code)
-#                 p.delete()
