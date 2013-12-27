@@ -1,15 +1,10 @@
   <center class="map-container">
-    <div>
-    <div class="map-positioner">
       <div id="map-holder">
         <div class="loading-indicator"></div>
       </div>
-      <h1 ng-show="user == ''" ng-bind="name" style="{{h1Style}}"></h1>
+      <h1 ng-show="user == ''" ng-bind="name"></h1>
       <h1 ng-show="user != ''" ng-bind="user"></h1>
       <a  ng-show="user == ''" href="#/practice/{{part}}" class="btn btn-primary btn-lg btn-practice" >Procvičovat</a>
-      <!--<a href="#/practice/{{part}}" class="btn btn-primary btn-lg btn-practice" ng-disabled="practiceCount == 0" >Procvičovat ({{practiceCount}})</a>-->
-    </div>
-    </div>
   </center>
   <div id="container">
     <div ng-show="!placesTypes" class="loading-indicator">
@@ -19,8 +14,10 @@
         <a href="#/practice/{{part}}" class="btn btn-primary btn-lg" >Začít procvičovat</a>
     </div>
     <ul class="thumbnails">
-      <li class="col-sm-{{12/placesTypes.length}}" ng-repeat="type in placesTypes">
-          <h3>{{type.name}}</h3>
+      <li class="col-sm-{{colNum(placesTypes.length)}}" ng-repeat="type in placesTypes">
+          <h3>{{type.name}}
+            <!--<a href="#/practice/{{part}}/{{type.slug}}" class="btn btn-primary pull-right" ng-show="!type.haveMaps" >Procvičovat</a>-->
+          </h3>
           <div class="view-places">
           <span ng-repeat="place in type.places" ng-switch="type.haveMaps || place.code == 'us'" ng-mouseenter="hover(place, true)" ng-mouseleave="hover(place, false)">
               <a href="#/view/{{place.code}}/{{user}}" ng-switch-when="true" class="btn btn-default btn-sm">
