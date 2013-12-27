@@ -5,21 +5,31 @@ class PlaceManager(models.Manager):
     def get_continents(self):
         return self.filter(type=Place.CONTINENT)
 
+    def get_states_with_map(self):
+        return [pr.place for pr in PlaceRelation.objects.filter(
+            place__type=Place.STATE,
+            type=PlaceRelation.IS_ON_MAP,
+        ).select_related('place').order_by("place__name")]
+
 
 class Place(models.Model):
     STATE = 1
     CITY = 2
     WORLD = 3
     CONTINENT = 4
+    RIVER = 5
+    LAKE = 6
     PLACE_TYPES = (
         (STATE, 'State'),
         (CITY, 'City'),
         (WORLD, 'World'),
         (CONTINENT, 'Continent'),
+        (RIVER, 'River'),
+        (LAKE, 'Lake'),
     )
     DIFFICULTY_CONVERSION = 1000000.0
     code = models.CharField(
-        max_length=10,
+        max_length=100,
         db_index=True,
         unique=True)  # TODO: change to SlugField
     name = models.CharField(max_length=100)
