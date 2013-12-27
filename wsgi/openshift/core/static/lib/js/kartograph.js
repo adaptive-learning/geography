@@ -411,6 +411,7 @@
       vp = me.viewport;
       cnt = me.container;
       paper = Raphael(cnt[0], vp.width, vp.height);
+      
       svg = $(paper.canvas);
       svg.css({
         position: 'absolute',
@@ -1233,26 +1234,14 @@
       me = this;
       setTooltip = function(path, tt) {
         var cfg;
-        var bbox = path.svgPath.getBBox()
-        var idecko = path.data.fips;
-        var offset = $('#map-holder').offset()
-        $('#map-holder').prepend("<div id='"+idecko+"' class='map-label'></div>")
-        var target = $("#" + idecko);
-        //target.html("<span>" + tt[1] + "</span>")
-        target.css({
-        	width: bbox.width+"px",
-        	height: bbox.height+"px",
-        	top: (bbox.y) + "px",
-        	left: bbox.x+"px",
-        	border: "0px solid black",
-        })
+
         cfg = {
           position: {
-            target: target,
-            viewport: $(document),
+            target: "mouse",
+            viewport: $(window),
             adjust: {
-              x: -(bbox.width/3),
-              y: -1
+              x: 7,
+              y: 7
             }
           },
           show: {
