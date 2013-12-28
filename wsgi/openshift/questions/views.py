@@ -2,8 +2,9 @@
 
 from accounts.models import Student
 from core.utils import JsonResponse
+from core.models import Place
 from django.contrib.auth.models import User
-from django.http import Http404, HttpResponseBadRequest, HttpResponse
+from django.http import Http404, HttpResponseBadRequest
 from django.utils import simplejson
 from lazysignup.decorators import allow_lazy_user
 from questions.models import PlaceRelation, UsersPlace
@@ -67,14 +68,29 @@ def users_places(request, map_code, user=''):
         cs = []
     response = {
         'name': map.place.name,
-        'placesTypes': [{
-            'name': u'Kontinenty',
-            'haveMaps': True,
-            'places': [p.to_serializable() for p in cs]
-        }, {
-            'name': u'Státy',
-            'places': [p.to_serializable() for p in ps]
-        }]
+        'placesTypes': [
+            {
+#                 'name': u'Kontinenty',
+#                 'haveMaps': True,
+#                 'places': [p.to_serializable() for p in cs]
+#             }, {
+                'name': u'Jezera',
+                'slug': 'lakes',
+                'places': [p.to_serializable() for p in ps if p.place.type == Place.LAKE]
+            }, {
+                'name': u'Města',
+                'slug': 'cities',
+                'places': [p.to_serializable() for p in ps if p.place.type == Place.CITY]
+            }, {
+                'name': u'Státy',
+                'slug': 'states',
+                'places': [p.to_serializable() for p in ps if p.place.type == Place.STATE]
+            }, {
+                'name': u'Řeky',
+                'slug': 'rivers',
+                'places': [p.to_serializable() for p in ps if p.place.type == Place.RIVER]
+            }
+        ]
     }
     logger.info(
         u"users_places: previewed map '{0}' of user '{1}' with '{2}' places".

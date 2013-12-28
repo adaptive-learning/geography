@@ -1,9 +1,18 @@
+'use strict';
+
 var GOOD = "#0d0";
 var BAD = "#ff0000";
 var NEUTRAL = "#bbb";
 var HOLDER = '#map-holder';
+var STROKE_WIDTH = 1.5;
+var RIVER_WIDTH = STROKE_WIDTH * 2;
+var WATER_COLOR = "#73c5ef";
+var ANIMATION_TIME_MS = 500;
+
+(function(window, $K, undefined){
 
 var times = {};
+var time;
 function profile(message) {
     if (!times[message]) {
         times[message] = new Date().getTime();
@@ -14,111 +23,161 @@ function profile(message) {
     }
 }
 
-function initMap(config, callback) {
+window.initMap = function(config, callback) {
 
     var map = $K.map(HOLDER);
-    var HOLDER_INIT_HEIGHT = $(HOLDER).height();
+    var panZoom;
+    var layers;
+      
+    var holderInitHeight = $(HOLDER).height();
+    var mapAspectRatio;
     
-    var resize = function() {
-        var c = $(HOLDER);
-        var ratio = map.viewAB.height / map.viewAB.width;
-        if (c.height() / ratio >= $(window).width()) {
-            c.width($(window).width());
-            c.height(ratio * c.width());
-        } else {
-            c.height(HOLDER_INIT_HEIGHT);
-            c.width(c.height() / ratio);
-        }
-        map.resize();
-    };
-
-    $(window).resize(resize);
-
     $.fn.qtip.defaults.style.classes = 'qtip-dark';
 
     var scale = chroma.scale([BAD, "#ff4500", "#ffa500", "#ffff00", GOOD]);
 
-    var isPracticeView = config.click != undefined;
+    var layerConfig = {};
+    layerConfig.bg = {
+        'styles' : {
+            'fill' : NEUTRAL,
+            'stroke-width' : STROKE_WIDTH,
+            'transform' : ""
+        }
+    };
 
-    var statesLayerConfig = {};
-    statesLayerConfig.styles = {
-        'fill' : function(d) {
-            var state = config.states && config.states[d.name];
-            return state ? (scale(state.skill).brighten((1 - state.certainty) * 80).hex()) : '#fff';
+    layerConfig.states = {
+        'styles' : {
+            'fill' : function(d) {
+                var state = config.states && config.states[d.name];
+                return (state 
+                    ? (scale(state.skill).brighten((1 - state.certainty) * 80).hex()) 
+                    : '#fff');
+            },
+            'stroke-width' : STROKE_WIDTH,
+            'transform' : ""
         },
-        'stroke-width' : 1
-    }
-    if (config.click) {
-        clickFn = function(data, path, event) {
-            config.click(data.name);
+        'click' : function(data, path, event) {
+            console.log(data["name"]);
+            if (config.click != undefined) {
+                config.click(data.name);
+            }
         }
-        statesLayerConfig.click = clickFn
-        statesLayerConfig.styles['stroke-width'] = 1.5;
-    }
-    if (config.showTooltips) {
-        statesLayerConfig.tooltips = function(d) {
-            var state = config.states && config.states[d.name];
-            var name = ( state ? '<span class="label">' + '<i class="flag-' + d.name + '"></i> ' + state.name + '</span>' : '<br>Neprozkoumané území<br><br>');
-            var description = state ? '<div> <i class="color-indicator" style="background-color:' + scale(state.skill).hex() + '"></i> Úspěšnost: ' + Math.round(100 * state.skill) + '%</div>' : "";
-//             TODO: find a better word than "Jistota"
-//            description += ( state ? '<div> <i class="color-indicator" style="background-color:' + chroma.color("#000").brighten((1 - state.certainty) * 130).hex() + '"></i>  Jistota: ' + Math.round(100 * state.certainty) + '%</div> ' : "");
+    };
 
-            return [name + description, config.states[d.name] ? config.states[d.name].name : ""];
-        }
+    if (config.showTooltips) {
+        layerConfig.states.tooltips = function(d) {
+            var state = config.states && config.states[d.name];
+            var name = ( state 
+                ? '<span class="label">' 
+                    + '<i class="flag-' + d.name + '"></i> ' 
+                    + state.name 
+                    + '</span>' 
+                : '<br>Zatím neprocvičováno<br><br>');
+            var description = (state 
+                ? '<div>'
+                    + '<i class="color-indicator" style="background-color:' 
+                    + scale(state.skill).hex() + '"></i>'
+                    + ' Úspěšnost: ' + Math.round(100 * state.skill) + '%</div>' 
+                : "");
+            return [
+                name + description, 
+                config.states[d.name] ? config.states[d.name].name : ""
+            ];
+        };
     }
+
+    layerConfig.provinces = jQuery.extend({}, layerConfig.states);
+    layerConfig.cities = jQuery.extend(jQuery.extend({}, layerConfig.states), {
+        'mouseenter' : function(data, path, event) {
+            path.toFront();
+            var zoomRatio = 2;
+            var aminAttrs = {
+                'transform' : "s"+zoomRatio, 
+                'stroke-width' : zoomRatio * STROKE_WIDTH
+            };
+            path.animate(aminAttrs, ANIMATION_TIME_MS/2, ">");
+        },
+        'mouseleave' : function(data, path, event) {
+            var aminAttrs = {
+                'transform': "",
+                'stroke-width': STROKE_WIDTH
+            };
+            path.animate(aminAttrs, ANIMATION_TIME_MS/2, ">");
+        }
+    });
+
+    layerConfig.rivers = jQuery.extend(jQuery.extend({}, layerConfig.states), {
+        'styles' : {
+            'stroke-width' : RIVER_WIDTH,
+            'stroke' : WATER_COLOR,
+            'transform' : ""
+        },
+        'mouseenter' : function(data, path, event) {
+            var zoomRatio = 4;
+            var aminAttrs = {
+                'stroke-width' : zoomRatio * RIVER_WIDTH
+            };
+            path.animate(aminAttrs, ANIMATION_TIME_MS/2, ">");
+        },
+        'mouseleave' : function(data, path, event) {
+            var aminAttrs = {
+                'stroke-width': RIVER_WIDTH
+            };
+            path.animate(aminAttrs, ANIMATION_TIME_MS/2, ">");
+        }
+    });
+
+    layerConfig.lakes = jQuery.extend(true, {}, layerConfig.cities);
+    layerConfig.lakes["styles"]["fill"] = function(d) {
+        var state = config.states && config.states[d.name];
+        return (state 
+            ? (scale(state.skill).brighten((1 - state.certainty) * 80).hex()) 
+            : WATER_COLOR);
+    };
 
     map.loadCSS(Hash('static/css/map.css'), function() {
         map.loadMap(Hash('static/map/' + config.name + '.svg'), function() {
             profile("Map loading takes:");
 
-            profile("Add layer takes:");
-            map.addLayer('states', statesLayerConfig);
-            profile("Add layer takes:");
+            layers = initLayers(map, layerConfig);
+
+            $(window).resize(resize);
             profile("resize takes:");
             resize();
             profile("resize takes:");
             
-            /*
-            var layer = map.getLayer('states');
-            var statePaths = layer.getPaths({});
-            var animation_ms = 500;
-            for (var i = statePaths.length - 1; i >= 0; i--){
-              var state = statePaths[i];
-              var bbox = state.svgPath.getBBox()
-              if (bbox.width < 10 || bbox.height < 10) {
-                  var c = layer.paper.circle( bbox.x + bbox.width/2, bbox.y + bbox.height/2, 10);
-                  c.attr({"stroke-width": 3, stroke: "red", fill: "transparent"})
-                  c.click(function(event){
-                      var name = state.data.name
-                      var transform = "S2"//, 2, "+ event.x-bbox.x + ", -" + event.y-bbox.y;
-                      state.svgPath.animate({transform: transform}, animation_ms/2, "<");
-                      console.log(name)
-                      console.log(event)
-                  })
-                  c.hover(function(){
-                      this.attr({stroke: "red"});
-                  }, function(){
-                      this.attr({stroke: "red"});
-                  })
-              }
-            };*/
-           
-            initMapZoom(map.paper);
+            panZoom = initMapZoom(map.paper);
             
             callback && callback();
 
-            $('#map-holder').find(".loading-indicator").hide();
+            $(HOLDER).find(".loading-indicator").hide();
             
             profile("Map loading takes:");
-        })
+        });
     });
-    function getZoomRatio(bboxArea) {
-        if (bboxArea > 10000) {
-            return 1.2;
-        } else if (bboxArea > 1000) {
-            return 2.5;
+
+    function resize() {
+        if (!mapAspectRatio) {
+            mapAspectRatio = map.viewAB.height / map.viewAB.width;
         }
-        return 4;
+        
+        var c = $(HOLDER);
+        if (holderInitHeight/ mapAspectRatio >= $(window).width()) {
+            var newHeight = Math.max(holderInitHeight/2, mapAspectRatio * $(window).width());
+        } else {
+            var newHeight = holderInitHeight;
+        }
+        c.height(newHeight);
+        map.resize();
+        if (panZoom) {
+            panZoom.zoomIn(1);
+            panZoom.zoomOut(1);
+        }
+    }
+
+    function getZoomRatio(bboxArea) {
+        var zoomRatio = Math.max(1.2, 70 / Math.sqrt(bboxArea));
+        return zoomRatio;
     }
 
     function initMapZoom(paper) {
@@ -147,23 +206,31 @@ function initMap(config, callback) {
     var myMap = {
         map : map,
         highlightStates : function(states, color, zoomRatio) {
-            var animation_ms = 500;
-            var layer = map.getLayer('states');
             var state = states.pop();
-            var statePath = layer.getPaths({ name: state })[0];
-            if (statePath) {
-                statePath.svgPath.toFront();
-                var bbox = statePath.svgPath.getBBox()
+            var layer = this.getLayerContaining(state);
+            if (layer) {
+                var placePath = layer.getPaths({ name: state })[0];
+            }
+            
+            if (placePath) {
+                placePath.svgPath.toFront();
+                var origStroke = layerConfig[layer.id].styles['stroke-width'];
+                var bbox = placePath.svgPath.getBBox();
                 var bboxArea = bbox.width * bbox.height;
                 var zoomRatio = zoomRatio || getZoomRatio(bboxArea);
-                var aminAttrs = {transform: "s"+zoomRatio, 'stroke-width': zoomRatio};
+                var aminAttrs = {
+                    transform: "s"+zoomRatio, 
+                    'stroke-width': Math.min(6, zoomRatio) * origStroke
+                };
                 if (color) {
-                    aminAttrs['fill'] = color;
-                }
-                statePath.svgPath.animate(aminAttrs, animation_ms/2, ">", function(){
-                    if (bboxArea > 100 || color != NEUTRAL) {
-                        statePath.svgPath.animate({transform: "", 'stroke-width': 1}, animation_ms/2, "<");
+                    if (layer.id == 'rivers') {
+                        aminAttrs['stroke'] = color;
+                    } else {
+                        aminAttrs['fill'] = color;
                     }
+                }
+                placePath.svgPath.animate(aminAttrs, ANIMATION_TIME_MS/2, ">", function(){
+                        placePath.svgPath.animate({transform: "", 'stroke-width': origStroke}, ANIMATION_TIME_MS/2, "<");
                     myMap.highlightStates(states, color);
                 });
             } else if (states.length > 0) {
@@ -174,22 +241,101 @@ function initMap(config, callback) {
             myMap.highlightStates([state], color, zoomRatio);
         },
         clearHighlights : function() {
-            var layer = map.getLayer('states');
-            layer.style({'fill': "#fff", transform: "", 'stroke-width': 1});
+            var layers = this.getAllLayers();
+            angular.forEach(layers, function(layer){
+                layer.style(layerConfig[layer.id].styles);
+                myMap.showLayer(layer);
+            });
+            myMap.zoomOut();
         },
-        updateStates : function(states) {
-            var time = new Date().getTime();
-            config.states = states;
-            var statesLayer = map.getLayer('states')
-            if (statesLayer) {
-                statesLayer.style('stroke', statesLayerConfig.styles.stroke);
-                statesLayer.style('stroke-width', statesLayerConfig.styles['stroke-width'], 0.1);
-                statesLayer.style('fill', statesLayerConfig.styles.fill, 2);
-                statesLayer.tooltips(statesLayerConfig.tooltips);
+        zoomOut : function(i){
+            var i = i || 10;
+            if (panZoom) {
+                panZoom.zoomOut(1);
             }
-            time = new Date().getTime() - time;
-            console.log("updateStates takes:", time, "ms");
+            i--;
+            if (i > 0) {
+                setTimeout(function(){
+                    myMap.zoomOut(i);
+                }, 25);
+            }
+        },
+        updatePlaces : function(places) {
+            config.states = places;
+            var layers = myMap.getAllLayers();
+            angular.forEach(layers, function(layer){
+                var config = layerConfig[layer.id];
+                layer.style('fill', config.styles.fill);
+                layer.tooltips(config.tooltips);
+            });
+        },
+        getAllLayers : function() {
+            var layers = [];
+            for (var l in layerConfig) {
+                try {
+                    var layer = map.getLayer(l);
+                    if (layer) {
+                        layers.push(layer);
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+            return layers;
+        },
+        getLayerContaining : function(placeCode) {
+            var layers = myMap.getAllLayers();
+            var ret;
+            angular.forEach(layers, function(layer){
+                if (layer.getPaths({ name: placeCode }).length >= 1) {
+                    ret = layer;
+                }
+            });
+            return ret;
+        },
+        highLightLayer : function(layer) {
+            var layers = myMap.getAllLayers();
+            angular.forEach(layers, function(l){
+                if (l.id == "cities" && layer.id == "states") {
+                    myMap.hideLayer(l);
+                }
+            });
+        },
+        hideLayer : function(layer) {
+            var paths = layer ? layer.getPaths({}) : [];
+            angular.forEach(paths, function(path){
+                path.svgPath.hide();
+            });
+        },
+        showLayer : function(layer) {
+            var paths = layer ? layer.getPaths({}) : [];
+            angular.forEach(paths, function(path){
+                path.svgPath.show();
+            });
         }
-    }
+    };
     return myMap;
+};
+
+function initLayers(map, layerConfig) {
+    var layersArray = [];
+    
+    for (var i in layerConfig) {
+        profile("Add layer "+ i +" takes:");
+        map.addLayer(i, layerConfig[i]);
+        var l = map.getLayer(i);
+        if (l) {
+            layersArray.push(l);
+        }
+        profile("Add layer "+ i +" takes:");
+    }
+    
+    var that = {
+        
+        getAll : function(){
+            return layersArray;
+        }
+    };
+    return that;
 }
+})(window, $K);

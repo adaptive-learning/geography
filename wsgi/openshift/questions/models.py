@@ -128,13 +128,13 @@ class Answer(models.Model):
     PICK_NAME_OF_2 = 22
     FIND_ON_MAP_OF_2 = 12
     QUESTION_TYPES = (
-        (FIND_ON_MAP, u"Vyber na mapě stát"),
-        (PICK_NAME_OF_6, u"Jak se jmenuje stát zvýrazněný na mapě?"),
-        (FIND_ON_MAP_OF_6, u"Ze šesti zvýrazněných států na mapě vyber"),
-        (PICK_NAME_OF_4, u"Jak se jmenuje stát zvýrazněný na mapě?"),
-        (FIND_ON_MAP_OF_4, u"Ze čtyř zvýrazněných států na mapě vyber"),
-        (PICK_NAME_OF_2, u"Jak se jmenuje stát zvýrazněný na mapě?"),
-        (FIND_ON_MAP_OF_2, u"Ze dvou zvýrazněných států na mapě vyber"),
+        (FIND_ON_MAP, u"Vyber na mapě objekt"),
+        (PICK_NAME_OF_6, u"Jak se jmenuje objekt zvýrazněný na mapě?"),
+        (FIND_ON_MAP_OF_6, u"Ze šesti zvýrazněných objektů na mapě vyber"),
+        (PICK_NAME_OF_4, u"Jak se jmenuje objekt zvýrazněný na mapě?"),
+        (FIND_ON_MAP_OF_4, u"Ze čtyř zvýrazněných objektů na mapě vyber"),
+        (PICK_NAME_OF_2, u"Jak se jmenuje objekt zvýrazněný na mapě?"),
+        (FIND_ON_MAP_OF_2, u"Ze dvou zvýrazněných objektů na mapě vyber"),
     )
     user = models.ForeignKey(Student, db_index=True)
     place = models.ForeignKey(Place, related_name='place_id')

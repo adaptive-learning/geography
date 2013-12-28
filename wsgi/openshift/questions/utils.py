@@ -62,6 +62,55 @@ def all_subclasses(cls):
                                    for g in all_subclasses(s)]
 
 
+class QuestionTextService():
+    texts = {
+        Place.STATE: {
+            Answer.FIND_ON_MAP: u"Vyber na mapě stát",
+            Answer.PICK_NAME_OF_6: u"Jak se jmenuje stát zvýrazněný na mapě?",
+            Answer.FIND_ON_MAP_OF_6: u"Ze šesti zvýrazněných států na mapě vyber",
+            Answer.PICK_NAME_OF_4: u"Jak se jmenuje stát zvýrazněný na mapě?",
+            Answer.FIND_ON_MAP_OF_4: u"Ze čtyř zvýrazněných států na mapě vyber",
+            Answer.PICK_NAME_OF_2: u"Jak se jmenuje stát zvýrazněný na mapě?",
+            Answer.FIND_ON_MAP_OF_2: u"Ze dvou zvýrazněných států na mapě vyber",
+        },
+        Place.CITY: {
+            Answer.FIND_ON_MAP: u"Vyber na mapě město",
+            Answer.PICK_NAME_OF_6: u"Jak se jmenuje město zvýrazněné na mapě?",
+            Answer.FIND_ON_MAP_OF_6: u"Ze šesti zvýrazněných měst na mapě vyber",
+            Answer.PICK_NAME_OF_4: u"Jak se jmenuje město zvýrazněné na mapě?",
+            Answer.FIND_ON_MAP_OF_4: u"Ze čtyř zvýrazněných měst na mapě vyber",
+            Answer.PICK_NAME_OF_2: u"Jak se jmenuje město zvýrazněné na mapě?",
+            Answer.FIND_ON_MAP_OF_2: u"Ze dvou zvýrazněných měst na mapě vyber",
+        },
+        Place.RIVER: {
+            Answer.FIND_ON_MAP: u"Vyber na mapě řeku",
+            Answer.PICK_NAME_OF_6: u"Jak se jmenuje řeka zvýrazněná na mapě?",
+            Answer.FIND_ON_MAP_OF_6: u"Ze šesti zvýrazněných řek na mapě vyber",
+            Answer.PICK_NAME_OF_4: u"Jak se jmenuje řeka zvýrazněná na mapě?",
+            Answer.FIND_ON_MAP_OF_4: u"Ze čtyř zvýrazněných řek na mapě vyber",
+            Answer.PICK_NAME_OF_2: u"Jak se jmenuje řeka zvýrazněná na mapě?",
+            Answer.FIND_ON_MAP_OF_2: u"Ze dvou zvýrazněných řek na mapě vyber",
+        },
+        Place.LAKE: {
+            Answer.FIND_ON_MAP: u"Vyber na mapě jezero",
+            Answer.PICK_NAME_OF_6: u"Jak se jmenuje jezero zvýrazněné na mapě?",
+            Answer.FIND_ON_MAP_OF_6: u"Ze šesti zvýrazněných jezer na mapě vyber",
+            Answer.PICK_NAME_OF_4: u"Jak se jmenuje jezero zvýrazněné na mapě?",
+            Answer.FIND_ON_MAP_OF_4: u"Ze čtyř zvýrazněných jezer na mapě vyber",
+            Answer.PICK_NAME_OF_2: u"Jak se jmenuje jezero zvýrazněné na mapě?",
+            Answer.FIND_ON_MAP_OF_2: u"Ze dvou zvýrazněných jezer na mapě vyber",
+        },
+    }
+
+    @staticmethod
+    def get_text(qtype, place):
+        texts = QuestionTextService.texts
+        if place.type in texts:
+            if qtype.id in texts[place.type]:
+                return texts[place.type][qtype.id]
+        return qtype.text
+
+
 class Question():
     options = []
 
@@ -74,6 +123,7 @@ class Question():
 
     def to_serializable(self):
         ret = self.qtype.to_serializable()
+        ret["text"] = QuestionTextService.get_text(self.qtype, self.place)
         ret.update(self.place.to_serializable())
         ret["place"] = ret["name"]
         ret.pop("name")
@@ -94,7 +144,10 @@ class Question():
         return options
 
     def get_options_base(self):
-        return Place.objects.filter(id__in=self.map.related_places.all())
+        return Place.objects.filter(
+            id__in=self.map.related_places.all(),
+            type=self.place.type,
+        )
 
     def get_easy_options(self, n):
         return (
