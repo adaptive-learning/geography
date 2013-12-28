@@ -17,11 +17,11 @@ from django.core.servers.basehttp import FileWrapper
 def home(request):
     JS_FILES = (
         "static/lib/js/jquery-2.0.2.min.js",
-        "static/lib/js/jquery.colorbox-min.js",
         "static/lib/js/bootstrap.js",
         "static/lib/angular/angular.min.js",
         "static/lib/angular/angular-cookies.js",
         "static/lib/js/raphael.js",
+        "static/lib/raphael-pan-zoom/raphael.pan-zoom.min.js",
         "static/lib/js/kartograph.js",
         "static/lib/js/chroma.min.js",
         "static/lib/js/jquery.qtip.min.js",
@@ -50,6 +50,7 @@ def home(request):
         'bottom_css_files': StaticFiles.add_hash(BOTTOM_CSS_FILES),
         'js_files': StaticFiles.add_hash(JS_FILES),
         'continents': Place.objects.get_continents(),
+        'states': Place.objects.get_states_with_map(),
         'hashes': json.dumps(settings.HASHES),
     }
     c.update(csrf(request))

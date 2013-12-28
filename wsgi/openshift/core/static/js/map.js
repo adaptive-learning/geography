@@ -103,6 +103,7 @@ function initMap(config, callback) {
               }
             };*/
            
+            initMapZoom(map.paper);
             
             callback && callback();
 
@@ -118,6 +119,29 @@ function initMap(config, callback) {
             return 2.5;
         }
         return 4;
+    }
+
+    function initMapZoom(paper) {
+        var panZoom = paper.panzoom({ });
+        panZoom.enable();
+        
+        var zoomButtons = ''+
+        '<div class="btn-group zoom-btn">'+
+        '    <a class="btn btn-default" id="zoom-out"><i class="glyphicon glyphicon-minus"></i></a>'+
+        '    <a class="btn btn-default" id="zoom-in"><i class="glyphicon glyphicon-plus"></i></a>'+
+        '</div>';
+        $(HOLDER).after(zoomButtons);
+      
+        $("#zoom-in").click(function (e) {
+            panZoom.zoomIn(1);
+            e.preventDefault();
+        });
+    
+        $("#zoom-out").click(function (e) {
+            panZoom.zoomOut(1);
+            e.preventDefault();
+        });
+        return panZoom;
     }
 
     var myMap = {
