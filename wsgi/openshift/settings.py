@@ -274,3 +274,5 @@ try:
     from hashes import HASHES
 except ImportError:
     HASHES = {}
+except SyntaxError:
+    HASHES = {}
