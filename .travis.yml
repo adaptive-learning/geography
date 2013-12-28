@@ -9,7 +9,7 @@ before_script:
   - pep8 --exclude=migrations --ignore=E501,E225 .
   - pyflakes -x W .
 script:
-- ./manage.py test core questions accounts
+- ./manage.py test geography
 deploy:
   provider: openshift
   user:
