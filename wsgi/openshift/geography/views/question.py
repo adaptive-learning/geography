@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 from geography.utils import JsonResponse
-from geography.models import User, Place
+from geography.models import Place
 from django.http import Http404, HttpResponseBadRequest
 from django.utils import simplejson
 from lazysignup.decorators import allow_lazy_user
 from geography.models import PlaceRelation, UserPlace
 from geography.utils import QuestionService
 from logging import getLogger
+from django.contrib.auth.models import User
 
 
 logger = getLogger(__name__)

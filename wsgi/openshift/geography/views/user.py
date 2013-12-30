@@ -2,21 +2,22 @@
 from geography.utils import JsonResponse
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
+import geography.models.user
 
 
 def user_list_view(request):
     users = User.objects.all()
-    response = [s.to_serializable() for s in users
-                if not s.is_lazy()]
+    response = [geography.models.user.to_serializable(s) for s in users
+                if not geography.models.user.is_lazy(s)]
     return JsonResponse(response)
 
 
 def user_view(request):
     user = request.user
-    if user and User.objects.is_lazy(user) and User.objects.is_named(user):
-        User.objects.convert_lazy_user(request.user)
-    username = user.username if user and not User.objects.is_lazy(user) else ''
-    points = 0  # TODO
+    if user and geography.models.user.is_lazy(user) and geography.models.user.is_named(user):
+        geography.models.user.convert_lazy_user(request.user)
+    username = user.username if user and not geography.models.user.is_lazy(user) else ''
+    points = geography.models.user.get_points(user) if user and not geography.models.user.is_lazy(user) else 0
     response = {
         'username': username,
         'points': points,
