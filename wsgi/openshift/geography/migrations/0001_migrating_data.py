@@ -6,8 +6,11 @@ from django.db import connection
 class Migration(DataMigration):
 
     def forwards(self, orm):
-        # move places
         cursor = connection.cursor()
+        # move places
+        cursor.execute('DELETE FROM geography_place')
+        cursor.execute('DELETE FROM geography_placerelation')
+        cursor.execute('DELETE FROM geography_placerelation_related_places')
         cursor.execute(
             '''
             INSERT INTO geography_place (id, code, name, type)
@@ -26,6 +29,8 @@ class Migration(DataMigration):
             '''
         )
         # move answers
+        cursor.execute('DELETE FROM geography_answer')
+        cursor.execute('DELETE FROM geography_answer_options')
         cursor.execute(
             '''
             INSERT INTO geography_answer (
