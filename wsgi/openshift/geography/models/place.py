@@ -45,7 +45,10 @@ class PlaceManager(models.Manager):
                         geography_placerelation
                         INNER JOIN geography_placerelation_related_places
                             ON placerelation_id = geography_placerelation.id
-                    WHERE geography_placerelation.place_id = %s
+                    WHERE
+                        geography_placerelation.place_id = %s
+                        AND
+                        geography_placerelation.type = %s
                 )
                 AND geography_localskill_prepared.user_id = %s
             GROUP BY
@@ -58,6 +61,7 @@ class PlaceManager(models.Manager):
                 float(expected_skill),
                 float(expected_skill),
                 int(map_place.place.id),
+                int(PlaceRelation.IS_ON_MAP),
                 int(user.id),
                 int(10)
             ]
@@ -164,7 +168,11 @@ class Place(models.Model):
                         geography_placerelation
                         INNER JOIN geography_placerelation_related_places
                             ON placerelation_id = geography_placerelation.id
-                    WHERE geography_placerelation.place_id = %s
+                    WHERE
+                        geography_placerelation.place_id = %s
+                        AND
+                        geography_placerelation.type = %s
+
                 )
                 AND geography_place.id != %s
                 AND geography_place.type = %s
@@ -172,7 +180,15 @@ class Place(models.Model):
                 confusing_factor, RAND() ASC
             LIMIT %s
             ''',
-            [int(self.id), int(self.id), int(map_place.place.id), int(self.id), int(self.type), int(n)])
+            [
+                int(self.id),
+                int(self.id),
+                int(map_place.place.id),
+                int(PlaceRelation.IS_ON_MAP),
+                int(self.id),
+                int(self.type),
+                int(n)
+            ])
 
     def __unicode__(self):
         return u'{0} ({1})'.format(self.name, self.code)
