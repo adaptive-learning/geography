@@ -2,6 +2,7 @@
 from geography.models import Answer
 from geography.models import Place
 from random import choice
+from math import floor
 import logging
 
 
@@ -53,7 +54,7 @@ class QuestionService:
             str(self.map_place),
             str(candidates))
         candidates = map(
-            lambda (place, prediction): (place, self.number_of_options(prediction, 0.75)),
+            lambda (place, prediction, number_of_answers): (place, self.number_of_options(prediction, 0.75, number_of_answers)),
             candidates)
         LOGGER.debug(
             "question candidates with number of options for map %s are %s",
@@ -66,9 +67,10 @@ class QuestionService:
                 self.map_place).to_serializable()
             for (place, options) in candidates]
 
-    def number_of_options(self, prob_real, prob_expected):
+    def number_of_options(self, prob_real, prob_expected, number_of_answers):
+        round_fun = round if number_of_answers else floor
         g = min(0.5, max(0, prob_expected - prob_real) / (1 - prob_real))
-        k = round(1.0 / g) if g != 0 else 1
+        k = round_fun(1.0 / g) if g != 0 else 1
         return 1 if k > 6 else k
 
     def answer(self, a):

@@ -20,12 +20,13 @@ class PlaceManager(models.Manager):
                     /
                     ABS(%s + SIGN(geography_localskill_prepared.value - %s) * 5)
                 ) AS deviation,
+                COUNT(geography_answer.id) AS number_of_answers,
                 CASE
                     WHEN COALESCE(MIN(
                             UNIX_TIMESTAMP(\'''' + str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + '''\')
                             -
                             UNIX_TIMESTAMP(geography_answer.inserted)
-                        ) / 60, 3) > 1 THEN 0
+                        ) / 60, 10) > 3 THEN 0
                     ELSE 1
                 END AS invalidity
             FROM
@@ -64,7 +65,8 @@ class PlaceManager(models.Manager):
         return [
             (
                 Place(id=d['id'], code=d['code'], name=d['name'], type=d['type']),
-                1.0 / (1 + exp(-d['local_skill']))
+                1.0 / (1 + exp(-d['local_skill'])),
+                d['number_of_answers']
             )
             for d in dict_places
         ]
