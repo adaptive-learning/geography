@@ -2,7 +2,10 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers', 'ngCookies'])
+angular.module('myApp', [
+    'myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers',
+    'ngCookies', 'angulartics', 'angulartics.google.analytics'
+  ])
 
   .config(function($routeProvider) {
     $routeProvider.when('/', {
@@ -26,7 +29,7 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
       //redirectTo: '/'
     });
   })
-  
+
   .run( function($rootScope, $location) {
     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
       if (!current && next.templateUrl == './tpl/welcome_page.html' ) {
@@ -34,7 +37,7 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
           if ( user && user.username && user.username != "" ) {
             $location.path( "/view" );
           }
-        })
+        });
       }
     });
-  })
+  });
