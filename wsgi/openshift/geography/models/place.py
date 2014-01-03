@@ -125,7 +125,7 @@ class Place(models.Model):
         (BUNDESLAND, u'Spolkové Země'),
         (PROVINCE, u'Provincie'),
     )
-    PLACE_TYPE_SLUGS = {t[1].upper(): t[0] for t in PLACE_TYPES}
+    PLACE_TYPE_SLUGS = dict((t[1].upper(), t[0]) for t in PLACE_TYPES)
     code = models.SlugField(
         max_length=100,
         db_index=True,
