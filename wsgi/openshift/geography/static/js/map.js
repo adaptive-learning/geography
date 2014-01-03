@@ -77,7 +77,7 @@ window.initMap = function(config, callback) {
                 ? '<div>'
                     + '<i class="color-indicator" style="background-color:'
                     + scale(state.probability).hex() + '"></i>'
-                    + ' Úspěšnost: ' + Math.round(100 * state.probability) + '%</div>'
+                    + ' Odhad znalosti: ' + Math.round(100 * state.probability) + '%</div>'
                 : "");
             return [
                 name + description,
