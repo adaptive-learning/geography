@@ -101,7 +101,7 @@ class Place(models.Model):
         (CONTINENT, 'Continent'),
     )
     code = models.SlugField(
-        max_length=10,
+        max_length=100,
         db_index=True,
         unique=True)
     name = models.CharField(max_length=100)
