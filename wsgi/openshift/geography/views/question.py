@@ -59,24 +59,13 @@ def users_places(request, map_code, user=None):
         'name': map.place.name,
         'placesTypes': [
             {
-                'name': u'Jezera',
-                'slug': 'lakes',
-                'places': [p.to_serializable() for p in ps if p.place.type == Place.LAKE]
-            }, {
-                'name': u'Města',
-                'slug': 'cities',
-                'places': [p.to_serializable() for p in ps if p.place.type == Place.CITY]
-            }, {
-                'name': u'Státy',
-                'slug': 'states',
-                'places': [p.to_serializable() for p in ps if p.place.type == Place.STATE]
-            }, {
-                'name': u'Řeky',
-                'slug': 'rivers',
-                'places': [p.to_serializable() for p in ps if p.place.type == Place.RIVER]
-            }
+                'name': place_type[1],
+                'slug': place_type[0],
+                'places': [p.to_serializable() for p in ps if p.place.type == place_type[0]]
+            } for place_type in Place.PLACE_TYPE_PLURALS
         ]
     }
+
     logger.info(
         u"users_places: previewed map '{0}' of user '{1}' with '{2}' places".
         format(map.place.name, user, len(cs)))

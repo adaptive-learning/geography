@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.db import connection
 import math
@@ -90,24 +91,47 @@ class PlaceManager(models.Manager):
 
 
 class Place(models.Model):
+    UNKNOWN = 0
     STATE = 1
     CITY = 2
     WORLD = 3
     CONTINENT = 4
     RIVER = 5
     LAKE = 6
+    REGION = 7
+    BUNDESLAND = 8
+    PROVINCE = 9
     PLACE_TYPES = (
+        (UNKNOWN, 'Unknown'),
         (STATE, 'State'),
         (CITY, 'City'),
         (WORLD, 'World'),
         (CONTINENT, 'Continent'),
+        (RIVER, 'River'),
+        (LAKE, 'Lake'),
+        (REGION, 'Region'),
+        (BUNDESLAND, 'Bundesland'),
+        (PROVINCE, 'Province'),
     )
+    PLACE_TYPE_PLURALS = (
+        (UNKNOWN, u'Neznámé'),
+        (STATE, u'Státy'),
+        (CITY, u'Města'),
+        (WORLD, u'Svět'),
+        (CONTINENT, u'Kontinenty'),
+        (RIVER, u'Řeky'),
+        (LAKE, u'Jezera'),
+        (REGION, u'Kraje'),
+        (BUNDESLAND, u'Spolkové Země'),
+        (PROVINCE, u'Provincie'),
+    )
+    PLACE_TYPE_SLUGS = {t[1].upper(): t[0] for t in PLACE_TYPES}
     code = models.SlugField(
         max_length=100,
         db_index=True,
         unique=True)
     name = models.CharField(max_length=100)
-    type = models.IntegerField(choices=PLACE_TYPES)
+    type = models.IntegerField(choices=PLACE_TYPES, default=UNKNOWN)
 
     objects = PlaceManager()
 

@@ -23,6 +23,8 @@ def home(request):
         "static/lib/js/kartograph.js",
         "static/lib/js/chroma.min.js",
         "static/lib/js/jquery.qtip.min.js",
+        "static/lib/js/angulartics.min.js",
+        "static/lib/js/angulartics-google-analytics.min.js",
         "static/js/map.js",
         "static/js/app.js",
         "static/js/controllers.js",

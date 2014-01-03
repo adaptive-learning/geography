@@ -18,9 +18,10 @@ class Question():
         if number_of_options > 1:
             self.qtype = QuestionType(
                 choice([Answer.FIND_ON_MAP, Answer.PICK_NAME]),
+                self.place.type,
                 number_of_options)
         else:
-            self.qtype = QuestionType(Answer.FIND_ON_MAP, 0)
+            self.qtype = QuestionType(Answer.FIND_ON_MAP, self.place.type, 0)
         if number_of_options > 1:
             self.options = self.get_options(self.qtype.number_of_options)
 
@@ -103,19 +104,48 @@ class QuestionService:
 
 class QuestionType(object):
 
-    def __init__(self, type, number_of_options):
+    PLACE_TYPE_SINGULAR = {
+        Place.UNKNOWN: 'unknown',
+        Place.STATE: u'stát',
+        Place.CITY: u'město',
+        Place.WORLD: u'svět',
+        Place.CONTINENT: u'kontinent',
+        Place.RIVER: u'řeka',
+        Place.LAKE: u'jezero',
+        Place.REGION: u'region',
+        Place.BUNDESLAND: u'spolková země',
+        Place.PROVINCE: u'provincie',
+    }
+    PLACE_TYPE_CHOICE = {
+        Place.UNKNOWN: 'unknown',
+        Place.STATE: u'států',
+        Place.CITY: u'měst',
+        Place.WORLD: u'světů',
+        Place.CONTINENT: u'kontinentů',
+        Place.RIVER: u'řek',
+        Place.LAKE: u'jezer',
+        Place.REGION: u'regionů',
+        Place.BUNDESLAND: u'spolkových zemí',
+        Place.PROVINCE: u'provincií',
+    }
+
+    def __init__(self, type, place_type, number_of_options):
         self.type = type
+        self.place_type = place_type
         self.number_of_options = number_of_options
 
     @property
     def text(self):
+        place_singular = QuestionType.PLACE_TYPE_SINGULAR[self.place_type]
+        place_choice = QuestionType.PLACE_TYPE_CHOICE[self.place_type]
+
         if self.type == Answer.FIND_ON_MAP:
             if self.number_of_options > 0:
-                return u"Ze zvýrazněných států na mapě vyber"
+                return u"Ze zvýrazněných " + place_choice + u" na mapě vyber"
             else:
-                return u"Vyber na mapě stát"
+                return u"Vyber na mapě " + place_singular
         else:
-            return u"Jak se jmenuje stát zvýrazněný na mapě?"
+            return u"Jak se jmenuje " + place_singular + u"zvýrazněný na mapě?"
 
     def to_serializable(self):
         return {
