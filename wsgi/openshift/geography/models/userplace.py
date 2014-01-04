@@ -37,7 +37,7 @@ class UserPlace(models.Model):
         ret = self.place.to_serializable()
         ret.update({
             'skill': self.elo_skill,
-            'probability': 1.0 / (1 + exp(-self.skill)),
+            'probability': 1.0 / (1 + exp(-self.elo_skill)),
             'certainty': 1
         })
         return ret
