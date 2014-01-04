@@ -29,14 +29,14 @@ class UserPlace(models.Model):
     dummy_id = models.CharField(primary_key=True, max_length=40)
     user = models.ForeignKey(User)
     place = models.ForeignKey(Place)
-    skill = models.FloatField(default=0)
+    elo_skill = models.FloatField(default=0)
 
     objects = UserPlaceManager()
 
     def to_serializable(self):
         ret = self.place.to_serializable()
         ret.update({
-            'skill': self.skill,
+            'skill': self.elo_skill,
             'probability': 1.0 / (1 + exp(-self.skill)),
             'certainty': 1
         })
