@@ -2,7 +2,7 @@
 from django.core.management.base import BaseCommand, CommandError
 from django.db import connection
 from math import exp
-from geography.models import Answer
+from geography.models import Elo
 
 
 class Command(BaseCommand):
@@ -35,9 +35,9 @@ class Command(BaseCommand):
             prediction = self.predict(local_skill, guess)
             result = answer['place_asked_id'] == answer['place_answered_id']
             if local_skills.get((answer['user_id'], answer['place_asked_id']), None):
-                skills[answer['user_id']] = skill + Answer.objects.ALPHA_1 * (result - prediction)
-                difficulties[answer['place_asked_id']] = difficulty - Answer.objects.ALPHA_1 * (result - prediction)
-            local_skills[(answer['user_id'], answer['place_asked_id'])] = local_skill + Answer.objects.ALPHA_2 * (result - prediction)
+                skills[answer['user_id']] = skill + Elo.ALPHA_1 * (result - prediction)
+                difficulties[answer['place_asked_id']] = difficulty - Elo.ALPHA_1 * (result - prediction)
+            local_skills[(answer['user_id'], answer['place_asked_id'])] = local_skill + Elo.ALPHA_2 * (result - prediction)
             answer = self.fetchone(cursor)
         # save new precomputed datasets
         for user_id, skill in skills.iteritems():

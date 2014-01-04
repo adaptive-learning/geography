@@ -8,4 +8,4 @@ else
 	echo "--- skipping loading new database schema"
 fi
 ./manage.py migrate geography 0001
-./manage.py derived_data
+./manage.py derived_elo_data
