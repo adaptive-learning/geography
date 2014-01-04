@@ -1,13 +1,20 @@
 # -*- coding: utf-8 -*-
-from south.v2 import DataMigration
+from django.core.management.base import BaseCommand, CommandError
 from django.db import connection
 from math import exp
 from geography.models import Answer
 
 
-class Migration(DataMigration):
+class Command(BaseCommand):
+    help = u'''Recompute derived data'''
 
-    def forwards(self, orm):
+    def handle(self, *args, **options):
+        if len(args) > 0:
+            raise CommandError('The command doesn\'t need any option.')
+        self.load_derived_data()
+
+
+    def load_derived_data(self):
         cursor = connection.cursor()
         # empty precomputed datasets
         cursor.execute('DELETE FROM geography_difficulty')
@@ -50,14 +57,9 @@ class Migration(DataMigration):
     def predict(self, local_skill, guess):
         return guess + (1 - guess) * (1.0 / (1 + exp(-local_skill)))
 
-    def backwards(self, orm):
-        pass
-
     def fetchone(self, cursor):
         fetched = cursor.fetchone()
         if fetched:
             return dict(zip([col[0] for col in cursor.description], fetched))
         else:
             return None
-
-    complete_apps = ['geography']
