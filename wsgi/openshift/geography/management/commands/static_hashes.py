@@ -13,7 +13,7 @@ class Command(NoArgsCommand):
 
     def get_hashes(self):
         hashes = {}
-        module = "core"
+        module = "geography"
         static_files = self.get_static_files(module)
         for f in static_files:
             hashes[f[0]] = hashlib.md5(f[1]).hexdigest()
