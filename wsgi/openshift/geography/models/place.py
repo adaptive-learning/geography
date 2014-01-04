@@ -63,7 +63,7 @@ class PlaceManager(models.Manager):
                 int(map_place.place.id),
                 int(PlaceRelation.IS_ON_MAP),
                 int(user.id),
-                int(10)
+                int(n)
             ]
         )
         dict_places = self.fetchall(cursor)
