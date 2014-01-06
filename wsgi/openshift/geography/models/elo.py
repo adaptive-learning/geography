@@ -5,7 +5,6 @@ from django.db import connection
 from datetime import datetime
 from math import exp
 import math
-import answer
 import logging
 import place
 LOGGER = logging.getLogger(__name__)
@@ -30,7 +29,7 @@ class Elo:
 
     @staticmethod
     def update_model(user, place, prediction, result):
-        if not answer.Answer.objects.filter(user=user, place_asked=place).exists():
+        if not EloLocalSkill.objects.filter(user=user, place=place).exists():
             LOGGER.debug(
                 "new local skill for user %s and place %s",
                 str(user), str(place))
@@ -50,14 +49,14 @@ class Elo:
                 str(difficulty_new))
             difficulty.value = difficulty_new
             difficulty.save()
-        else:
-            local_skill = EloLocalSkill.objects.from_user_and_place(user, place)
-            local_skill_new = local_skill.value + Elo.ALPHA_2 * (result - prediction)
-            LOGGER.debug(
-                "updating local skill for user %s and place %s, from %s to %s",
-                str(user), str(place), str(local_skill.value), str(local_skill_new))
-            local_skill.value = local_skill_new
-            local_skill.save()
+        # update local skill
+        local_skill = EloLocalSkill.objects.from_user_and_place(user, place)
+        local_skill_new = local_skill.value + Elo.ALPHA_2 * (result - prediction)
+        LOGGER.debug(
+            "updating local skill for user %s and place %s, from %s to %s",
+            str(user), str(place), str(local_skill.value), str(local_skill_new))
+        local_skill.value = local_skill_new
+        local_skill.save()
 
     @staticmethod
     def get_places_to_ask(user, map_place, expected_probability, n):
