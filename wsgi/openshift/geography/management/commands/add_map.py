@@ -26,6 +26,8 @@ class Command(BaseCommand):
         relation = self.find_place_relation_or_create_new(new_place)
         relation.save()
         for name, code in zip(names, codes):
+            if code.strip() == '':
+                continue
             place = self.find_place_or_create_new(code, name, place_type)
             self.stdout.write(name + "\t" + code)
             relation.related_places.add(place)
