@@ -145,7 +145,7 @@ class QuestionType(object):
             else:
                 return u"Vyber na mapě " + place_singular
         else:
-            return u"Jak se jmenuje " + place_singular + u"zvýrazněný na mapě?"
+            return u"Jak se jmenuje " + place_singular + u" zvýrazněný na mapě?"
 
     def to_serializable(self):
         return {
