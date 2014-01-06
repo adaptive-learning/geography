@@ -79,7 +79,7 @@ class Elo:
                             UNIX_TIMESTAMP(\'''' + str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + '''\')
                             -
                             UNIX_TIMESTAMP(geography_answer.inserted)
-                        ) / 60, 10) > 3 THEN 0
+                        ) / 60, 10) > 1 THEN 0
                     ELSE 1
                 END AS invalidity
             FROM
