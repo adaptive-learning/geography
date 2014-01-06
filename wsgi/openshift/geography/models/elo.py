@@ -12,8 +12,8 @@ LOGGER = logging.getLogger(__name__)
 
 class Elo:
 
-    ALPHA_1 = 0.4
-    ALPHA_2 = 1.2
+    ALPHA_1 = 4
+    ALPHA_2 = 12
 
     @staticmethod
     def predict(user, place, guess=0):
@@ -34,27 +34,35 @@ class Elo:
                 "new local skill for user %s and place %s",
                 str(user), str(place))
             skill = EloSkill.objects.from_user(user)
-            skill_new = skill.value + Elo.ALPHA_1 * (result - prediction)
+            skill_alpha = Elo.alpha_fun(Elo.ALPHA_1, skill.get_num_of_answers())
+            skill_new = skill.value + skill_alpha * (result - prediction)
             LOGGER.debug(
-                "updating skill for user %s, from %s to %s",
-                str(user), str(skill.value), str(skill_new))
+                "updating skill for user %s with alpha %s, from %s to %s",
+                str(user), str(skill_alpha), str(skill.value), str(skill_new))
             skill.value = skill_new
             skill.save()
             difficulty = EloDifficulty.objects.from_place(place)
-            difficulty_new = difficulty.value - Elo.ALPHA_1 * (result - prediction)
+            difficulty_alpha = Elo.alpha_fun(Elo.ALPHA_1, difficulty.get_num_of_answers())
+            difficulty_new = difficulty.value - difficulty_alpha * (result - prediction)
             LOGGER.debug(
-                "updating difficulty for place %s, from %s to %s",
+                "updating difficulty for place %s with alpha %s, from %s to %s",
                 str(place),
+                str(difficulty_alpha),
                 str(difficulty.value),
                 str(difficulty_new))
             difficulty.value = difficulty_new
             difficulty.save()
         # update local skill
         local_skill = EloLocalSkill.objects.from_user_and_place(user, place)
-        local_skill_new = local_skill.value + Elo.ALPHA_2 * (result - prediction)
+        local_skill_alpha = Elo.alpha_fun(Elo.ALPHA_2, local_skill.get_num_of_answers())
+        local_skill_new = local_skill.value + local_skill_alpha * (result - prediction)
         LOGGER.debug(
-            "updating local skill for user %s and place %s, from %s to %s",
-            str(user), str(place), str(local_skill.value), str(local_skill_new))
+            "updating local skill for user %s and place %s with alpha %s, from %s to %s",
+            str(user),
+            str(place),
+            str(local_skill_alpha),
+            str(local_skill.value),
+            str(local_skill_new))
         local_skill.value = local_skill_new
         local_skill.save()
 
@@ -136,6 +144,10 @@ class Elo:
             for row in cursor.fetchall()
         ]
 
+    @staticmethod
+    def alpha_fun(alpha, n):
+        return float(alpha) / (1 + 0.5 * n)
+
 
 class EloLocalSkillManager(models.Manager):
 
@@ -165,6 +177,21 @@ class EloLocalSkill(models.Model):
     place = models.ForeignKey(place.Place)
     objects = EloLocalSkillManager()
 
+    def get_num_of_answers(self):
+        cursor = connection.cursor()
+        cursor.execute(
+            '''
+            SELECT COUNT(id)
+            FROM geography_answer
+            WHERE
+                place_asked_id = %s
+                AND
+                user_id = %s
+            ''',
+            [int(self.place_id), int(self.user_id)]
+        )
+        return cursor.fetchone()[0]
+
     class Meta:
         app_label = 'geography'
 
@@ -184,6 +211,18 @@ class EloDifficulty(models.Model):
     place = models.ForeignKey(place.Place)
     objects = EloDifficultyManager()
 
+    def get_num_of_answers(self):
+        cursor = connection.cursor()
+        cursor.execute(
+            '''
+            SELECT COUNT(id)
+            FROM geography_answer
+            WHERE place_asked_id = %s
+            ''',
+            [int(self.place_id)]
+        )
+        return cursor.fetchone()[0]
+
     class Meta:
         app_label = 'geography'
 
@@ -202,6 +241,18 @@ class EloSkill(models.Model):
     value = models.FloatField(default=0)
     user = models.ForeignKey(User)
     objects = EloSkillManager()
+
+    def get_num_of_answers(self):
+        cursor = connection.cursor()
+        cursor.execute(
+            '''
+            SELECT COUNT(id)
+            FROM geography_answer
+            WHERE user_id = %s
+            ''',
+            [int(self.user_id)]
+        )
+        return cursor.fetchone()[0]
 
     class Meta:
         app_label = 'geography'
