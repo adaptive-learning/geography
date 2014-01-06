@@ -5,7 +5,6 @@ from random import choice
 from math import floor
 import logging
 
-
 LOGGER = logging.getLogger(__name__)
 
 

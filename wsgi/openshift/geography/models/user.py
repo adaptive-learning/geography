@@ -6,7 +6,7 @@ from django.db import connection
 
 def convert_lazy_user(user):
     LazyUser.objects.filter(user=user).delete()
-    user.username = _get_unused_username(user)
+    user.username = get_unused_username(user)
     user.save()
 
 
@@ -26,7 +26,7 @@ def is_named(user):
     return user.first_name and user.last_name
 
 
-def _get_unused_username(user):
+def get_unused_username(user):
     condition = True
     append = ""
     i = 2

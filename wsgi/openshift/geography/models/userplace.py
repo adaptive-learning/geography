@@ -27,8 +27,8 @@ class UserPlaceManager(models.Manager):
 class UserPlace(models.Model):
 
     dummy_id = models.CharField(primary_key=True, max_length=40)
-    user = models.ForeignKey(User)
-    place = models.ForeignKey(Place)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    place = models.ForeignKey(Place, on_delete=models.DO_NOTHING)
     elo_skill = models.FloatField(default=0)
 
     objects = UserPlaceManager()

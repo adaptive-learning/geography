@@ -7,6 +7,7 @@ from math import exp
 import math
 import logging
 import place
+
 LOGGER = logging.getLogger(__name__)
 
 
