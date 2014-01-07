@@ -28,18 +28,18 @@ class Command(BaseCommand):
         real_skill = float(args[0])
         number_of_answers = int(args[1])
         map_code = args[2] if len(args) > 2 else 'world'
-        user = User(first_name='simulated', last_name='user')
-        user.username = geography.models.user.get_unused_username(user)
-        user.save()
         try:
-            self.simulate(user, real_skill, number_of_answers, map_code)
+            self.simulate(real_skill, number_of_answers, map_code)
         finally:
-            self.clean(user)
+            self.clean()
 
-    def simulate(self, user, real_skill, number_of_answers, map_code):
+    def simulate(self, real_skill, number_of_answers, map_code):
         map_place = PlaceRelation.objects.get(
             place__code=map_code,
             type=PlaceRelation.IS_ON_MAP)
+        user = User(first_name='simulated', last_name='user')
+        user.username = geography.models.user.get_unused_username(user)
+        user.save()
         qs = QuestionService(user=user, map_place=map_place)
         for i in range(number_of_answers):
             question = qs.get_questions(1)[0]
@@ -63,10 +63,14 @@ class Command(BaseCommand):
         estimated_skill = EloSkill.objects.get(user=user)
         LOGGER.debug('estimated skill for the user %s is %s', str(user), estimated_skill.value)
 
-    def clean(self, user):
+    def clean(self):
         LOGGER.debug('started cleaning after simulation')
         cursor = connection.cursor()
-        cursor.execute('DELETE FROM geography_answer WHERE user_id = %s', [user.id])
-        user.delete()
+        cursor.execute(
+            '''
+            DELETE FROM auth_user
+            WHERE username LIKE \'simulateduser%%\'
+            ''')
+        call_command('clean_model')
         call_command('derived_elo_data')
         LOGGER.debug('cleaning after simulation finished')
