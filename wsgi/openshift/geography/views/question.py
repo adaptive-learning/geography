@@ -22,10 +22,12 @@ def question(request, map_code):
     except PlaceRelation.DoesNotExist:
         raise Http404
     qs = QuestionService(user=request.user, map_place=map)
+    question_index = 0
     if request.raw_post_data:
         answer = simplejson.loads(request.raw_post_data)
         qs.answer(answer)
-    response = qs.get_questions(10)
+        question_index = answer['index'] + 1
+    response = qs.get_questions(10 - question_index)
     return JsonResponse(response)
 
 
