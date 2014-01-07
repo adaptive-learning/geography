@@ -51,8 +51,16 @@ angular.module('myApp.services', []).
             if(q) q.response_time = - (new Date()).valueOf();
             fn(q);
       }
-      var questions = []
-      var summary = []
+      function hasNoTwoSameInARow (array) {
+        for(var i=0,j=array.length; i+1<j; i++){
+          if (array[i].code == array[i+1].code) {
+              return false;
+          }
+        };
+        return true;
+      }
+      var questions = [];
+      var summary = [];
       return {
           first: function(part, fn){
               worldPart = part;
@@ -82,7 +90,10 @@ angular.module('myApp.services', []).
                     // if it is not a delayed response
                     if (lastAnswerIndex < newLastAnswerIndex) {
                         lastAnswerIndex = newLastAnswerIndex;
-                        questions = questions.slice(0, lastAnswerIndex +1).concat(data);
+                        var newQuestions = questions.slice(0, lastAnswerIndex +1).concat(data);
+                        if (hasNoTwoSameInARow(newQuestions)) {
+                            questions = newQuestions;
+                        }
                     }
                 });
 
