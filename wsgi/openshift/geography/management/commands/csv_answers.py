@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.core.management.base import BaseCommand, CommandError
-from django.forms.models import model_to_dict
-from geography.models import Place, PlaceRelation, Answer
+from geography.models import Answer
 import csv
 
 
