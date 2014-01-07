@@ -69,6 +69,10 @@ def cachedlog_view(request, file_type):
     return response
 
 
+def cachedlog_view_xml(request):
+    return cachedlog_view(request, 'xml')
+
+
 def cachedlog_view_json(request):
     return cachedlog_view(request, 'json')
 

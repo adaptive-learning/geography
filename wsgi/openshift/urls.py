@@ -15,7 +15,7 @@ urlpatterns = patterns(
     url(r'^usersplaces/(?P<map_code>\w+)/(?P<user>\w*)', 'geography.views.users_places', name='usersplaces'),
     url(r'^export/', 'geography.views.export_view', name='export_view'),
     url(r'^cachedlog/csv', 'geography.views.cachedlog_view_csv', name='cachedlog_view_csv'),
-    url(r'^cachedlog/json', 'geography.views.cachedlog_view_json', name='cachedlog_view_json'),
+    url(r'^cachedlog/xml', 'geography.views.cachedlog_view_xml', name='cachedlog_view_xml'),
     url(r'^convert/', include('lazysignup.urls')),
     url(r'^question/(?P<map_code>\w+)', 'geography.views.question', name='question'),
     url(r'^user/list/', 'geography.views.user_list_view', name='user_list_view'),
