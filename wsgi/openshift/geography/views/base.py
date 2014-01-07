@@ -57,12 +57,24 @@ def home(request):
     return render_to_response('home/home.html', c)
 
 
-def cachedlog_view(request):
-    logname = "export.json"
+def cachedlog_view(request, file_type):
+    if not request.user.is_staff:
+        response = {
+            "error": "Permission denied: you need to be staff member. If you think you should be able to access logs, contact admins."}
+        return JsonResponse(response)
+    logname = "export_" + file_type + ".zip"
     logpath = os.path.join(settings.MEDIA_ROOT, logname)
-    response = HttpResponse(FileWrapper(open(logpath)), content_type='application/json')
-    response['Content-Disposition'] = 'attachment; filename=answers.json'
+    response = HttpResponse(FileWrapper(open(logpath)), content_type='application/zip')
+    response['Content-Disposition'] = 'attachment; filename=answers_' + file_type + '.zip'
     return response
+
+
+def cachedlog_view_json(request):
+    return cachedlog_view(request, 'json')
+
+
+def cachedlog_view_csv(request):
+    return cachedlog_view(request, 'csv')
 
 
 def export_view(request):
