@@ -69,18 +69,6 @@ def cachedlog_view(request, file_type):
     return response
 
 
-def cachedlog_view_xml(request):
-    return cachedlog_view(request, 'xml')
-
-
-def cachedlog_view_json(request):
-    return cachedlog_view(request, 'json')
-
-
-def cachedlog_view_csv(request):
-    return cachedlog_view(request, 'csv')
-
-
 def export_view(request):
     if not request.user.is_staff:
         response = {
