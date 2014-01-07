@@ -14,7 +14,7 @@ LOGGER = logging.getLogger(__name__)
 class Elo:
 
     ALPHA_1 = 4
-    ALPHA_2 = 12
+    ALPHA_2 = 1.2
 
     @staticmethod
     def predict(user, place, guess=0):
@@ -55,7 +55,7 @@ class Elo:
             difficulty.save()
         # update local skill
         local_skill = EloLocalSkill.objects.from_user_and_place(user, place)
-        local_skill_alpha = Elo.alpha_fun(Elo.ALPHA_2, local_skill.get_num_of_answers())
+        local_skill_alpha = Elo.ALPHA_2
         local_skill_new = local_skill.value + local_skill_alpha * (result - prediction)
         LOGGER.debug(
             "updating local skill for user %s and place %s with alpha %s, from %s to %s",

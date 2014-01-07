@@ -44,7 +44,7 @@ class Command(BaseCommand):
                     difficulty[1] + 1
                 )
             local_skills[(answer['user_id'], answer['place_asked_id'])] = (
-                local_skill[0] + Elo.alpha_fun(Elo.ALPHA_2, local_skill[1]) * (result - prediction),
+                local_skill[0] + Elo.ALPHA_2 * (result - prediction),
                 local_skill[1] + 1
             )
             answer = self.fetchone(cursor)
