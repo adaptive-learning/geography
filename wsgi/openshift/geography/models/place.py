@@ -67,23 +67,13 @@ class Place(models.Model):
         return Place.objects.raw(
             '''
             SELECT
-                *,
-                (
-                    SELECT
-                        COUNT(geography_answer.id)
-                    FROM geography_answer
-                    WHERE
-                        geography_answer.place_asked_id != geography_answer.place_answered_id
-                        AND (
-                            ( geography_answer.place_asked_id = geography_place.id
-                                AND geography_answer.place_answered_id = %s )
-                            OR ( geography_answer.place_answered_id = geography_place.id
-                                AND geography_answer.place_asked_id = %s )
-                        )
-                        AND geography_answer.number_of_options < 2
-                ) AS confusing_factor
+                geography_place.*,
+                COUNT(geography_answer.id) AS confusing_factor
             FROM
                 geography_place
+                LEFT JOIN geography_answer ON (
+                    geography_answer.place_answered_id = geography_place.id
+                    AND geography_answer.place_asked_id = %s)
             WHERE
                 geography_place.id IN (
                     SELECT
@@ -100,12 +90,13 @@ class Place(models.Model):
                 )
                 AND geography_place.id != %s
                 AND geography_place.type = %s
+                AND (geography_answer.place_asked_id != geography_answer.place_answered_id OR ISNULL(geography_answer.place_asked_id))
+            GROUP BY geography_place.id
             ORDER BY
-                confusing_factor, RAND() ASC
+                confusing_factor DESC, RAND() DESC
             LIMIT %s
             ''',
             [
-                int(self.id),
                 int(self.id),
                 int(map_place.place.id),
                 int(PlaceRelation.IS_ON_MAP),
