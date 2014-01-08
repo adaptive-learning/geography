@@ -195,6 +195,7 @@ class EloLocalSkill(models.Model):
 
     class Meta:
         app_label = 'geography'
+        unique_together = ('user', 'place')
 
 
 class EloDifficultyManager(models.Manager):
@@ -209,7 +210,7 @@ class EloDifficultyManager(models.Manager):
 class EloDifficulty(models.Model):
 
     value = models.FloatField(default=0)
-    place = models.ForeignKey(place.Place)
+    place = models.ForeignKey(place.Place, unique=True)
     objects = EloDifficultyManager()
 
     def get_num_of_answers(self):
@@ -240,7 +241,7 @@ class EloSkillManager(models.Manager):
 class EloSkill(models.Model):
 
     value = models.FloatField(default=0)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, unique=True)
     objects = EloSkillManager()
 
     def get_num_of_answers(self):

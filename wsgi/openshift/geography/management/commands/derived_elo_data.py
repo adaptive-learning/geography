@@ -15,10 +15,6 @@ class Command(BaseCommand):
 
     def load_derived_data(self):
         cursor = connection.cursor()
-        # empty precomputed datasets
-        cursor.execute('DELETE FROM geography_elodifficulty')
-        cursor.execute('DELETE FROM geography_eloskill')
-        cursor.execute('DELETE FROM geography_elolocalskill')
         # foreach answer update new datasets
         skills = {}
         local_skills = {}
@@ -48,6 +44,10 @@ class Command(BaseCommand):
                 local_skill[1] + 1
             )
             answer = self.fetchone(cursor)
+        # empty precomputed datasets
+        cursor.execute('DELETE FROM geography_elodifficulty')
+        cursor.execute('DELETE FROM geography_eloskill')
+        cursor.execute('DELETE FROM geography_elolocalskill')
         # save new precomputed datasets
         for user_id, skill in skills.iteritems():
             cursor.execute(
