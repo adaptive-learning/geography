@@ -43,14 +43,22 @@ class Question():
 
 class QuestionService:
 
-    def __init__(self, user, map_place):
+    def __init__(self, user, map_place, target_probability=0.75, history_length=10):
         self.user = user
         self.map_place = map_place
+        self.target_probability = target_probability
+        self.history_length = history_length
 
     def get_questions(self, n):
-        candidates = Place.objects.get_places_to_ask(self.user, self.map_place, 0.75, n)
+        target_probability = self.get_target_probability()
+        candidates = Place.objects.get_places_to_ask(
+            self.user,
+            self.map_place,
+            target_probability,
+            n)
         LOGGER.debug(
-            "question candidates with predicted probability for map %s are %s",
+            "question candidates with predicted probability (target %s) for map %s are %s",
+            target_probability,
             str(self.map_place),
             str(candidates))
         candidates = map(
@@ -66,6 +74,12 @@ class QuestionService:
                 options,
                 self.map_place).to_serializable()
             for (place, options) in candidates]
+
+    def get_target_probability(self):
+        success_rate = Answer.objects.get_success_rate(self.user, self.history_length)
+        norm = 1 - self.target_probability if success_rate > self.target_probability else self.target_probability
+        correction = ((self.target_probability - success_rate) / norm) * (1 - norm)
+        return self.target_probability + correction
 
     def number_of_options(self, prob_real, prob_expected, number_of_answers):
         round_fun = round if number_of_answers else floor

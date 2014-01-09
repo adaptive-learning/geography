@@ -11,10 +11,11 @@ LOGGER = logging.getLogger(__name__)
 
 class AnswerManager(models.Manager):
 
-    def get_last_10_answers(self, user):
-        return self.filter(
+    def get_success_rate(self, user, n):
+        answers = self.filter(
             user=user,
-        ).order_by("-inserted")[:10]
+        ).order_by("-inserted")[:n]
+        return sum([a.place_asked_id == a.place_answered_id for a in answers]) / float(n)
 
 
 class Answer(models.Model):

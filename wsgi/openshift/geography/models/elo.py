@@ -69,7 +69,9 @@ class Elo:
 
     @staticmethod
     def get_places_to_ask(user, map_place, expected_probability, n):
-        expected_skill = - math.log((1 - expected_probability) / expected_probability)
+        if expected_probability < 0 or expected_probability > 1:
+            raise Exception('target probability has to be in range [0,1] and was ' + str(expected_probability))
+        expected_skill = - math.log((1 - max(0.01, min(0.99, expected_probability))) / max(0.01, expected_probability))
         cursor = connection.cursor()
         cursor.execute(
             '''
