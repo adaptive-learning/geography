@@ -116,7 +116,7 @@ class Elo:
                 )
                 AND geography_elolocalskill_prepared.user_id = %s
             GROUP BY
-                geography_elolocalskill_prepared.user_id, geography_elolocalskill_prepared.place_id
+                geography_elolocalskill_prepared.place_id
             ORDER BY invalidity, deviation, RAND() ASC
             LIMIT %s;
             ''',
