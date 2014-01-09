@@ -15,6 +15,8 @@ class Elo:
 
     ALPHA_1 = 4
     ALPHA_2 = 1.2
+    DYNAMIC_ALPHA_PARAM = 0.5
+    LOCAL_SKILL_EXTREM = 100
 
     @staticmethod
     def predict(user, place, guess=0):
@@ -81,7 +83,7 @@ class Elo:
                 (
                     ABS(geography_elolocalskill_prepared.value - %s)
                     /
-                    ABS(%s + SIGN(geography_elolocalskill_prepared.value - %s) * 5)
+                    ABS(%s + SIGN(geography_elolocalskill_prepared.value - %s) * %s)
                 ) AS deviation,
                 COUNT(geography_answer.id) AS number_of_answers,
                 CASE
@@ -122,6 +124,7 @@ class Elo:
                 float(expected_skill),
                 float(expected_skill),
                 float(expected_skill),
+                Elo.LOCAL_SKILL_EXTREM,
                 int(map_place.place.id),
                 int(place.PlaceRelation.IS_ON_MAP),
                 int(user.id),
@@ -149,7 +152,7 @@ class Elo:
 
     @staticmethod
     def alpha_fun(alpha, n):
-        return float(alpha) / (1 + 0.5 * n)
+        return float(alpha) / (1 + Elo.DYNAMIC_ALPHA_PARAM * n)
 
 
 class EloLocalSkillManager(models.Manager):
