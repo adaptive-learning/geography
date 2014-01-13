@@ -11,11 +11,9 @@ script:
 deploy:
   provider: openshift
   user:
-    release: slaweet@seznam.cz
     master: slaweet@gmail.com
   app: geography
   domain:
-    release: conqueror
     master: geography
   password:
     secure: "E3QlBD9nDyY9cEqu9WXfgh+f28j64P0inxIU5sIPJEBwAqgcKiGBFEr/k5WwuFtKwGoxDWRwrm3SVbXId8FskfU7jy7zjcKvJqWzCx5SkOZ16RYezXdtxkjUeRFxZNy7U413dE3qmzqBild6zTR2FFKG7UjICfvcHYW39uoZ28c="
