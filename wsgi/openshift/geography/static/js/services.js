@@ -72,12 +72,6 @@ angular.module('myApp.services', []).
                     returnQuestion(fn);
                 });
           },
-          availableCount: function(part, fn){
-              worldPart = part
-                $http.get('question/' + part).success(function(data) {
-                    fn(data.length);
-                });
-          },
           next: function(part, fn){
                 returnQuestion(fn);
           },

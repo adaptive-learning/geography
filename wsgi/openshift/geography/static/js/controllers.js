@@ -91,9 +91,6 @@ angular.module('myApp.controllers', [])
         }
     };
 
-//    question.availableCount($scope.part, function(count) {
-//        $scope.practiceCount = count;
-//    })
     $scope.colNum = function (colsCount) {
         return Math.floor(12/colsCount);
     };
