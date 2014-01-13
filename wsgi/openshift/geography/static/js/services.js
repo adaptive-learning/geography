@@ -2,7 +2,6 @@
 
 /* Services */
 
-
 // Demonstrate how to register services
 // In this case it is a simple value service.
 angular.module('myApp.services', []).
@@ -44,20 +43,11 @@ angular.module('myApp.services', []).
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded'
       var qIndex = 0;
-      var lastAnswerIndex = -1;
       var worldPart;
       function returnQuestion (fn){
             var q = questions[qIndex++];
             if(q) q.response_time = - (new Date()).valueOf();
             fn(q);
-      }
-      function hasNoTwoSameInARow (array) {
-        for(var i=0,j=array.length; i+1<j; i++){
-          if (array[i].code == array[i+1].code) {
-              return false;
-          }
-        };
-        return true;
       }
       var questions = [];
       var summary = [];
@@ -67,7 +57,6 @@ angular.module('myApp.services', []).
               summary = [];
                 $http.get('question/' + part).success(function(data) {
                     qIndex = 0;
-                    lastAnswerIndex = -1;
                     questions = data;
                     returnQuestion(fn);
                 });
@@ -80,14 +69,14 @@ angular.module('myApp.services', []).
                 question.index = qIndex-1;
                 summary.push(question);
                 $http.post('question/' + worldPart, question).success(function(data) {
-                    var newLastAnswerIndex = questions.length - data.length -1;
-                    // if it is not a delayed response
-                    if (lastAnswerIndex < newLastAnswerIndex) {
-                        lastAnswerIndex = newLastAnswerIndex;
-                        var newQuestions = questions.slice(0, lastAnswerIndex +1).concat(data);
-                        if (hasNoTwoSameInARow(newQuestions)) {
-                            questions = newQuestions;
-                        }
+                    var futureLength = qIndex + data.length;
+                    // questions array should be always the same size
+                    // if data sent by server is longer, it means the server is delayed
+                    if (questions.length == futureLength &&
+                        // try to handle interleaving
+                        (data.length < 2 || data[1].code != questions[qIndex].code)) {
+                        questions = questions.slice(0, qIndex).concat(data);
+                        console.log('questions updated, question index', qIndex)
                     }
                 });
 
