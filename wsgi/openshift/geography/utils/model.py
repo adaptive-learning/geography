@@ -57,7 +57,8 @@ class QuestionService:
             target_probability,
             n)
         LOGGER.debug(
-            "question candidates with predicted probability (target %s) for map %s are %s",
+            "user %s, question candidates with predicted probability (target %s) for map %s are %s",
+            str(self.user),
             target_probability,
             str(self.map_place),
             str(candidates))
@@ -65,7 +66,8 @@ class QuestionService:
             lambda (place, prediction, number_of_answers): (place, self.number_of_options(prediction, 0.75, number_of_answers)),
             candidates)
         LOGGER.debug(
-            "question candidates with number of options for map %s are %s",
+            "user %s, question candidates with number of options for map %s are %s",
+            str(self.user),
             str(self.map_place),
             str(candidates))
         return [
@@ -107,6 +109,7 @@ class QuestionService:
             response_time=a["response_time"],
             number_of_options=int(str(a["type"][1:]))
         )
+        LOGGER.debug("answered: %s", answer)
         answer.save()
         if "options" in a:
             answer.options = Place.objects.filter(

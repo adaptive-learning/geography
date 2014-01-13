@@ -9,8 +9,7 @@ from geography.utils import QuestionService
 from logging import getLogger
 from django.contrib.auth.models import User
 
-
-logger = getLogger(__name__)
+LOGGER = getLogger(__name__)
 
 
 @allow_lazy_user
@@ -24,6 +23,7 @@ def question(request, map_code):
     qs = QuestionService(user=request.user, map_place=map)
     question_index = 0
     if request.raw_post_data:
+        LOGGER.debug("processing raw answer %s", request.raw_post_data)
         answer = simplejson.loads(request.raw_post_data)
         qs.answer(answer)
         question_index = answer['index'] + 1
@@ -68,7 +68,7 @@ def users_places(request, map_code, user=None):
         ]
     }
 
-    logger.info(
+    LOGGER.info(
         u"users_places: previewed map '{0}' of user '{1}' with '{2}' places".
         format(map.place.name, user, len(cs)))
     return JsonResponse(response)
