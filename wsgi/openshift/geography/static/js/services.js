@@ -10,7 +10,7 @@ angular.module('myApp.services', []).
 
   .factory('usersplaces', function($rootScope, $http, placeName) {
     var cache = {};
-    
+
     return function(part, user, fn) {
         var url = 'usersplaces/' + part + '/' + user;
         $http.get(url).success(function(data) {
@@ -30,7 +30,7 @@ angular.module('myApp.services', []).
         'us' : 'USA',
         'world' : 'Svět'
     }
-    
+
     return function(part, name) {
         if (name && !names[part]) {
             names[part] = name;

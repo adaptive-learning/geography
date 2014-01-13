@@ -7,7 +7,7 @@ angular.module('myApp.controllers', [])
     $rootScope.topScope = $rootScope;
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded';
-        
+
     $rootScope.getUser = function(callback) {
         $http.get('user/').success(function(data) {
             $rootScope.user = data;
@@ -23,7 +23,7 @@ angular.module('myApp.controllers', [])
     $rootScope.logout = function(){
         $rootScope.user = {
             'username' : '',
-            'points' :  0 
+            'points' :  0
         };
         $http.get('user/logout/').success(function(data) {
             $rootScope.user = data;
@@ -36,14 +36,14 @@ angular.module('myApp.controllers', [])
             $timeout(function(){
                 $('#points').tooltip("show");
             },0);
-            
+
         }
     };
-    
+
     $scope.vip = function() {
         return $scope.user && ($scope.user.username == 'Verunka');
     };
-    
+
     $scope.getActiveClass = function(path) {
         if ($location.path().substr(0, path.length) == path) {
           return "active";
@@ -51,12 +51,12 @@ angular.module('myApp.controllers', [])
           return "";
         }
     };
-    
+
     var emailAddress = $("#footer .email").html();
     emailAddress = emailAddress.replace("{zavinac}", "@");
     emailAddress = '<a href="mailto:'+emailAddress+'">'+ emailAddress+ '</a>';
     $("#footer .email").html(emailAddress);
-    
+
   })
 
   .controller('AppView', function($scope, $routeParams, $filter, $timeout, usersplaces, question, placeName) {
@@ -69,7 +69,7 @@ angular.module('myApp.controllers', [])
         showTooltips : true,
         states : []
     };
-    
+
     $scope.placesTypes = usersplaces($scope.part, $scope.user, function(data) {
         $scope.placesTypes = data;
         $scope.$parent.placesTypes = data;
@@ -79,7 +79,7 @@ angular.module('myApp.controllers', [])
     });
     mapConfig.states = $filter("StatesFromPlaces")($scope.placesTypes);
     $scope.map = initMap(mapConfig);
-    
+
     $scope.hover = function(place, isHovered) {
         place.isHovered = isHovered;
         if (isHovered) {
@@ -173,15 +173,15 @@ angular.module('myApp.controllers', [])
         });
 
     };
-    
+
     $scope.isFindOnMapType = function() {
         return $scope.question && $scope.question.type < 20;
     };
-    
+
     $scope.isPickNameOfType = function() {
         return $scope.question && $scope.question.type >= 20;
     };
-    
+
     $scope.isAllowedOpion = function(code) {
         return !$scope.question.options || 1 == $scope.question.options.filter(function(place){
             return place.code == code;
@@ -194,9 +194,9 @@ angular.module('myApp.controllers', [])
     var mapConfig = {
         name : $scope.part.toLowerCase(),
         click : function  (code) {
-            if ($scope.isFindOnMapType() 
-                    && !$scope.canNext 
-                    && $scope.isAllowedOpion(code) 
+            if ($scope.isFindOnMapType()
+                    && !$scope.canNext
+                    && $scope.isAllowedOpion(code)
                     && $scope.isInActiveLayer(code)) {
                 $scope.check(code);
                 $scope.$apply();
@@ -212,6 +212,6 @@ angular.module('myApp.controllers', [])
             }
         });
     });
-    
+
   });
 

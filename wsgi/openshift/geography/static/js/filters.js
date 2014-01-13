@@ -57,7 +57,7 @@ angular.module('myApp.filters', []).
       return Math.round(100 * n) + '%';
     }
   })
-  
+
   .filter('StatesFromPlaces', function() {
     return function(data) {
         var places = {};

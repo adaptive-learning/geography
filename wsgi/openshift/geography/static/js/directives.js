@@ -9,7 +9,7 @@ angular.module('myApp.directives', []).
       elm.text(version);
     };
   }])
-  
+
   .directive('state', function() {
     // return the directive link function. (compile function not needed)
     return function(scope, element, attrs) {
