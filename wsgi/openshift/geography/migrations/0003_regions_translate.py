@@ -57,8 +57,8 @@ class Migration(DataMigration):
         u'cn-14': u'Šan-si',
         u'cn-51': u'S\'-čchuan',
         u'cn-12': u'Tchien-ťin',
-        u'cn-65': u'Hongkong',
-        u'cn-54': u'Sin-ťiang',
+        u'cn-65': u'Sin-ťiang',
+        u'cn-54': u'Tibetská autonomní oblast',
         u'cn-53': u'Jün-nan',
         u'cn-33': u'Če-ťiang',
         u'Andaman and Nicobar': u'Andamany a Nikobary',
@@ -99,14 +99,9 @@ class Migration(DataMigration):
         u'West Bengal': u'Západní Bengálsko'
     }
 
-    dependencies = [("migrations", "0001_migrating_data")]
+    dependencies = [("migrations", "0002_regions_load")]
 
     def forwards(self, orm):
-        call_command('add_map', 'cz', u'Česká republika', 'REGION')
-        call_command('add_map', 'de', u'Česká republika', 'BUNDESLAND')
-        call_command('add_map', 'at', u'Česká republika', 'BUNDESLAND')
-        call_command('add_map', 'in', u'Česká republika', 'STATE')
-        call_command('add_map', 'cn', u'Česká republika', 'PROVINCE')
         cursor = connection.cursor()
         for code, name in Migration.TRANSLATE.iteritems():
             cursor.execute(
