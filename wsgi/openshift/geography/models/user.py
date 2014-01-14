@@ -1,4 +1,3 @@
-from django.db import models
 from django.contrib.auth.models import User
 from lazysignup.models import LazyUser
 from django.db import connection
