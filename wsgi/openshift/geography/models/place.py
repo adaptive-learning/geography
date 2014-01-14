@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-import elo
+import recommendation
 
 
 class PlaceManager(models.Manager):
 
     def get_places_to_ask(self, user, map_place, expected_probability, n):
-        return elo.Elo.get_places_to_ask(user, map_place, expected_probability, n)
+        return recommendation.by_order(user, map_place, expected_probability, n)
 
     def get_states_with_map(self):
         return [pr.place for pr in PlaceRelation.objects.filter(
