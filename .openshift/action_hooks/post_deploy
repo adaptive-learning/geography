@@ -7,5 +7,5 @@ if [ $GEOGRAPHY_TABLES -eq 0 ]; then
 else
 	echo "--- skipping loading new database schema"
 fi
-./manage.py migrate geography 0003
+./manage.py migrate geography 0003 --delete-ghost-migrations
 ./manage.py derived_elo_data
