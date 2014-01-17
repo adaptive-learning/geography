@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from models import Place, PlaceRelation, Answer
+from models import Place, PlaceRelation, Answer, EloSkill, EloLocalSkill, EloDifficulty
 from django.contrib import admin
 from django.contrib.contenttypes.models import ContentType
 from django.http import HttpResponseRedirect
@@ -69,12 +69,12 @@ def pretty_date(time=False):
 
 class PlaceAdmin(admin.ModelAdmin):
     list_display = ('name', 'code', 'type')
-    list_filter = ('type', )
+    list_filter = ('type',)
 
 
 class PlaceRelationAdmin(admin.ModelAdmin):
     list_display = ('place', 'type')
-    list_filter = ('type', )
+    list_filter = ('type',)
 
 
 class AnswerAdmin(admin.ModelAdmin):
@@ -91,13 +91,25 @@ class AnswerAdmin(admin.ModelAdmin):
     list_display = (
         'user',
         'type',
+        'number_of_options',
         'place_asked',
         'place_answered',
         'is_correct',
         'asked_ago')
-    search_fields = ('user__user__username', 'place__code', 'place__name', )
+    search_fields = ('user__username', 'place_asked__code', 'place_asked__name',)
     actions = [export_selected_objects]
 
+
+class EloSkillAdmin(admin.ModelAdmin):
+    list_display = ('user', 'value')
+
+
+class EloLocalSkillAdmin(admin.ModelAdmin):
+    list_display = ('place', 'user', 'value')
+
+
+class EloDifficultyAdmin(admin.ModelAdmin):
+    list_display = ('place', 'value')
 
 ################################################################################
 # registers
@@ -105,3 +117,6 @@ class AnswerAdmin(admin.ModelAdmin):
 admin.site.register(Answer, AnswerAdmin)
 admin.site.register(Place, PlaceAdmin)
 admin.site.register(PlaceRelation, PlaceRelationAdmin)
+admin.site.register(EloSkill, EloSkillAdmin)
+admin.site.register(EloLocalSkill, EloLocalSkillAdmin)
+admin.site.register(EloDifficulty, EloDifficultyAdmin)
