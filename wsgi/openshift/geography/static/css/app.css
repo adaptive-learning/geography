@@ -70,18 +70,17 @@ ul {
 ul.dropdown-menu.login {
   padding-top: 10px; }
   ul.dropdown-menu.login li {
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
+    margin: 0 10px 10px 10px;
     width: 200px; }
   ul.dropdown-menu.login a.btn {
-    width: 100%;
     color: white; }
     ul.dropdown-menu.login a.btn i {
-      margin-left: -10px;
       float: left;
-      margin-bottom: -10px;
-      margin-top: -5px; }
+      margin: -5px 0 -10px -10px; }
+  ul.dropdown-menu.login a.btn.btn-danger:hover {
+    background: #d43f3a; }
+  ul.dropdown-menu.login a.btn.btn-primary:hover {
+    background-color: #3276b1; }
 
 .dropdown i.icon-user {
   opacity: 0.5; }
@@ -440,7 +439,7 @@ html, body {
   .welcome-page.jumbotron {
     font-size: 1em; }
     .welcome-page.jumbotron h1 {
-      font-size: 2em;
+      font-size: 3em;
       margin-top: 0px;
       padding-top: 10px; }
     .welcome-page.jumbotron p {
@@ -452,7 +451,7 @@ html, body {
       padding: 10px 0px; }
 
   .jumbotron {
-    padding: 0px; }
+    padding: 0 0 20px 0; }
 
   h2 {
     font-size: 16px; }
