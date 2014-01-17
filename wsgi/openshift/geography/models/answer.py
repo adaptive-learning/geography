@@ -55,4 +55,4 @@ class Answer(models.Model):
 
     class Meta:
         app_label = 'geography'
-        ordering = ["-inserted"]
+        ordering = ["-id"]
