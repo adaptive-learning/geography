@@ -32,53 +32,48 @@ angular.module('blindMaps.controllers', [])
   })
 
   .controller('AppView', function($scope, $routeParams, $filter, $timeout, 
-        usersplaces, question, placeName, initMap) {
+        usersplaces, question, placeName, mapControler) {
     $scope.part = $routeParams.part;
     $scope.user = $routeParams.user || "";
     $scope.name = placeName($scope.part);
 
-    var mapConfig = {
-        name : $scope.part.toLowerCase(),
-        showTooltips : true,
-        states : []
-    };
-
-    $scope.placesTypes = usersplaces($scope.part, $scope.user, function(data) {
+    usersplaces.get($scope.part, $scope.user, function(data) {
         $scope.placesTypes = data;
         $scope.$parent.placesTypes = data;
         var states = $filter("StatesFromPlaces")(data);
-        $scope.map.updatePlaces(states);
+        mapControler.updatePlaces(states);
         $scope.name = placeName($scope.part);
     });
-    mapConfig.states = $filter("StatesFromPlaces")($scope.placesTypes);
-    $scope.map = initMap(mapConfig);
 
     $scope.hover = function(place, isHovered) {
         place.isHovered = isHovered;
         if (isHovered) {
             $timeout(function(){
                 if (place.isHovered){
-                    $scope.map.highlightState(place.code);
+                    mapControler.highlightState(place.code);
                 }
             }, 200);
         }
     };
+    
+    mapControler.registerCallback(function() {
+    });
   })
 
   .controller('AppPractice', function($scope, $routeParams, $timeout, 
-          question, placeName, initMap) {
+          question, placeName, mapControler) {
     $scope.part = $routeParams.part;
     $scope.name = placeName($scope.part);
 
     $scope.highlight = function() {
         var active = $scope.question;
-        $scope.layer = $scope.map.getLayerContaining(active.code);
-        $scope.map.highLightLayer($scope.layer);
+        $scope.layer = mapControler.getLayerContaining(active.code);
+        mapControler.highLightLayer($scope.layer);
         if ($scope.isPickNameOfType()) {
-            $scope.map.highlightState(active.code, NEUTRAL);
+            mapControler.highlightState(active.code, NEUTRAL);
         }
         if ($scope.isFindOnMapType() && active.options) {
-            $scope.map.highlightStates(active.options.map(function(option) {
+            mapControler.highlightStates(active.options.map(function(option) {
                 return option.code;
             }), NEUTRAL);
         }
@@ -86,7 +81,7 @@ angular.module('blindMaps.controllers', [])
 
     $scope.setQuestion = function(active) {
         $scope.question = active;
-        $scope.map.clearHighlights();
+        mapControler.clearHighlights();
         $scope.highlight();
         $scope.canNext = false;
         $scope.select = undefined;
@@ -96,9 +91,9 @@ angular.module('blindMaps.controllers', [])
     $scope.check = function(selected) {
        var correct = (selected == $scope.question.code);
        if ($scope.isFindOnMapType()) {
-           $scope.map.highlightState($scope.question.code, GOOD);
+           mapControler.highlightState($scope.question.code, GOOD);
        }
-       $scope.map.highlightState(selected, correct ? GOOD : BAD);
+       mapControler.highlightState(selected, correct ? GOOD : BAD);
        if ($scope.isPickNameOfType()) {
            $scope.highlightOptions(selected);
        }
@@ -122,10 +117,10 @@ angular.module('blindMaps.controllers', [])
         } else {
             $scope.summary = question.summary();
             $scope.showSummary = true;
-            $scope.map.clearHighlights();
+            mapControler.clearHighlights();
             angular.forEach($scope.summary.questions, function(q){
                 var correct = q.code == q.answer;
-                $scope.map.highlightState(q.code, correct ? GOOD : BAD, 1);
+                mapControler.highlightState(q.code, correct ? GOOD : BAD, 1);
             });
         }
     };
@@ -154,28 +149,22 @@ angular.module('blindMaps.controllers', [])
         }).length;
     };
     $scope.isInActiveLayer = function(code) {
-        return $scope.layer == $scope.map.getLayerContaining(code);
+        return $scope.layer == mapControler.getLayerContaining(code);
     };
 
-    var mapConfig = {
-        name : $scope.part.toLowerCase(),
-        click : function  (code) {
-            if ($scope.isFindOnMapType()
-                    && !$scope.canNext
-                    && $scope.isAllowedOption(code)
-                    && $scope.isInActiveLayer(code)) {
-                $scope.check(code);
-                $scope.$apply();
-            }
+    mapControler.onClick(function  (code) {
+        if ($scope.isFindOnMapType()
+                && !$scope.canNext
+                && $scope.isAllowedOption(code)
+                && $scope.isInActiveLayer(code)) {
+            $scope.check(code);
+            $scope.$apply();
         }
-    };
-    $scope.map = initMap(mapConfig, function() {
+    });
+    
+    mapControler.registerCallback(function() {
         question.first($scope.part, function(q) {
-            if(q) $scope.setQuestion(q);
-            else {
-                $scope.showSummary = true;
-                $scope.errorMessage = 'Žádný stát ještě není potřeba znovu procvičovat.';
-            }
+            $scope.setQuestion(q);
         });
     });
 

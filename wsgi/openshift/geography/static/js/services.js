@@ -4,10 +4,11 @@
 
 angular.module('blindMaps.services', [])
 
-  .factory('usersplaces', function($rootScope, $http, placeName) {
+  .factory('usersplaces', function($http, placeName) {
     var cache = {};
 
-    return function(part, user, fn) {
+    return {
+      get : function(part, user, fn) {
         var url = 'usersplaces/' + part + '/' + user;
         $http.get(url).success(function(data) {
             placeName(part, data.name);
@@ -17,11 +18,15 @@ angular.module('blindMaps.services', [])
             cache[url] = placesTypes;
             fn(placesTypes);
         });
+      },
+      getCached : function(part, user) {
+        var url = 'usersplaces/' + part + '/' + user;
         return cache[url] || undefined;
+      }
     }
   })
 
-  .factory('placeName', function($rootScope, $http) {
+  .factory('placeName', function($http) {
     var names = {
         'us' : 'USA',
         'world' : 'Svět'
@@ -35,7 +40,7 @@ angular.module('blindMaps.services', [])
     }
   })
 
-  .service('question', function($rootScope, $http, $cookies) {
+  .service('question', function($http, $cookies) {
 
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded'
@@ -93,17 +98,17 @@ angular.module('blindMaps.services', [])
 
   })
 
-  .factory('user', function($rootScope, $http) {
+  .factory('user', function($http) {
     return {
       getUser : function(callback) {
           $http.get('user/').success(callback);
       },
       logout : function(callback){
-          $rootScope.user = {
+          $http.get('user/logout/').success(callback);
+          return  {
               'username' : '',
               'points' :  0
           };
-          $http.get('user/logout/').success(callback);
       }
     }
   })

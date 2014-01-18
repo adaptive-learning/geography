@@ -17,7 +17,7 @@ angular.module('blindMaps.directives', [])
     };
   })
   
-  .directive('blindMap', function () {
+  .directive('blindMap', function ($filter, mapControler, usersplaces) {
     return {
       restrict: 'E',
       template: '<center class="map-container">' +
@@ -32,9 +32,13 @@ angular.module('blindMaps.directives', [])
                   '</a>' +
                 '</center>',
       link: function ($scope, elem, attrs) {
-        $scope.name = attrs.name;
         $scope.practice = attrs.practice;
-        //TODO: call initMap service from here and not from controlers.
+        var showTooltips = attrs.practice !== undefined;
+        mapControler.init($scope.part, showTooltips);
+        if (showTooltips) {
+          var places = usersplaces.getCached($scope.part, "");
+          mapControler.updatePlaces($filter("StatesFromPlaces")(places));
+        }
       }
     };
   })

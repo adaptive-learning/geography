@@ -118,234 +118,231 @@ angular.module('blindMaps.map', [])
     };
   })
   
-  .factory('initMap', function(getLayerConfig) {
-    var times = {};
-    var time;
-    function profile(message) {
-        if (!times[message]) {
-            times[message] = new Date().getTime();
-        } else {
-            time = new Date().getTime() - times[message];
-            console.log(message, time, "ms");
-            times[message] = undefined;
-        }
-    }
+  .factory('mapControler', function(getLayerConfig) {
     
     function initLayers(map, layerConfig) {
         var layersArray = [];
     
         for (var i in layerConfig) {
-            profile("Add layer "+ i +" takes:");
             map.addLayer(i, layerConfig[i]);
             var l = map.getLayer(i);
             if (l) {
                 layersArray.push(l);
             }
-            profile("Add layer "+ i +" takes:");
         }
     
         var that = {
-    
             getAll : function(){
                 return layersArray;
             }
         };
         return that;
     }
-    
-    return function(config, callback) {
-
-    var map = $K.map(HOLDER);
-    var panZoom;
-    var layers;
-
-    var holderInitHeight = $(HOLDER).height();
-    var mapAspectRatio;
-
-    $.fn.qtip.defaults.style.classes = 'qtip-dark';
-    
-    var layerConfig = getLayerConfig(config);
-
-    map.loadCSS(Hash('static/css/map.css'), function() {
-        map.loadMap(Hash('static/map/' + config.name + '.svg'), function() {
-            profile("Map loading takes:");
-
-            layers = initLayers(map, layerConfig);
-
-            $(window).resize(resize);
-            profile("resize takes:");
-            resize();
-            profile("resize takes:");
-
-            panZoom = initMapZoom(map.paper);
-
-            callback && callback();
-
-            $(HOLDER).find(".loading-indicator").hide();
-
-            profile("Map loading takes:");
-        });
-    });
-
-    function resize() {
-        if (!mapAspectRatio) {
-            mapAspectRatio = map.viewAB.height / map.viewAB.width;
-        }
-
-        var c = $(HOLDER);
-        if (holderInitHeight/ mapAspectRatio >= $(window).width()) {
-            var newHeight = Math.max(holderInitHeight/2, mapAspectRatio * $(window).width());
-        } else {
-            var newHeight = holderInitHeight;
-        }
-        c.height(newHeight);
-        map.resize();
-        if (panZoom) {
-            panZoom.zoomIn(1);
-            panZoom.zoomOut(1);
-        }
-    }
-
+        
     function getZoomRatio(bboxArea) {
         var zoomRatio = Math.max(1.2, 70 / Math.sqrt(bboxArea));
         return zoomRatio;
     }
-
+    
     function initMapZoom(paper) {
-        var panZoom = paper.panzoom({ });
-        panZoom.enable();
+      var panZoom = paper.panzoom({ });
+      panZoom.enable();
 
-        var zoomButtons = ''+
-        '<div class="btn-group zoom-btn">'+
-        '    <a class="btn btn-default" id="zoom-out"><i class="glyphicon glyphicon-minus"></i></a>'+
-        '    <a class="btn btn-default" id="zoom-in"><i class="glyphicon glyphicon-plus"></i></a>'+
-        '</div>';
-        $(HOLDER).after(zoomButtons);
+      var zoomButtons = ''+
+      '<div class="btn-group zoom-btn">'+
+      '    <a class="btn btn-default" id="zoom-out"><i class="glyphicon glyphicon-minus"></i></a>'+
+      '    <a class="btn btn-default" id="zoom-in"><i class="glyphicon glyphicon-plus"></i></a>'+
+      '</div>';
+      $(HOLDER).after(zoomButtons);
 
-        $("#zoom-in").click(function (e) {
-            panZoom.zoomIn(1);
-            e.preventDefault();
-        });
+      $("#zoom-in").click(function (e) {
+          panZoom.zoomIn(1);
+          e.preventDefault();
+      });
 
-        $("#zoom-out").click(function (e) {
-            panZoom.zoomOut(1);
-            e.preventDefault();
-        });
-        return panZoom;
+      $("#zoom-out").click(function (e) {
+          panZoom.zoomOut(1);
+          e.preventDefault();
+      });
+      return panZoom;
     }
-
+        
+    var map;
+    var config = {
+      states: []
+    };
+    var layerConfig;
+    var panZoom;
+    var layers;
+    var initCallback;
+    
     var myMap = {
-        map : map,
-        highlightStates : function(states, color, zoomRatio) {
-            var state = states.pop();
-            var layer = this.getLayerContaining(state);
-            if (layer) {
-                var placePath = layer.getPaths({ name: state })[0];
-            }
-
-            if (placePath) {
-                placePath.svgPath.toFront();
-                var origStroke = layerConfig[layer.id].styles['stroke-width'];
-                var bbox = placePath.svgPath.getBBox();
-                var bboxArea = bbox.width * bbox.height;
-                var zoomRatio = zoomRatio || getZoomRatio(bboxArea);
-                var aminAttrs = {
-                    transform: "s"+zoomRatio,
-                    'stroke-width': Math.min(6, zoomRatio) * origStroke
-                };
-                if (color) {
-                    if (layer.id == 'rivers') {
-                        aminAttrs['stroke'] = color;
-                    } else {
-                        aminAttrs['fill'] = color;
-                    }
+      init: function(mapCode, showTooltips) {
+        config.showTooltips = showTooltips;
+        config.states = [];
+        map = $K.map(HOLDER);
+    
+        var holderInitHeight = $(HOLDER).height();
+        var mapAspectRatio;
+    
+        $.fn.qtip.defaults.style.classes = 'qtip-dark';
+        
+        layerConfig = getLayerConfig(config);
+    
+        map.loadCSS(Hash('static/css/map.css'), function() {
+            map.loadMap(Hash('static/map/' + mapCode + '.svg'), function() {
+                layers = initLayers(map, layerConfig);
+                $(window).resize(resize);
+                resize();
+                panZoom = initMapZoom(map.paper);
+                if (initCallback ) {
+                  initCallback();
+                } else {
+                  initCallback = true;
                 }
-                placePath.svgPath.animate(aminAttrs, ANIMATION_TIME_MS/2, ">", function(){
-                        placePath.svgPath.animate({transform: "", 'stroke-width': origStroke}, ANIMATION_TIME_MS/2, "<");
-                    myMap.highlightStates(states, color);
-                });
-            } else if (states.length > 0) {
-                myMap.highlightStates(states, color);
-            }
-        },
-        highlightState : function(state, color, zoomRatio) {
-            myMap.highlightStates([state], color, zoomRatio);
-        },
-        clearHighlights : function() {
-            var layers = this.getAllLayers();
-            angular.forEach(layers, function(layer){
-                layer.style(layerConfig[layer.id].styles);
-                myMap.showLayer(layer);
+                $(HOLDER).find(".loading-indicator").hide();
             });
-            myMap.zoomOut();
-        },
-        zoomOut : function(i){
-            var i = i || 10;
+        });
+    
+        function resize() {
+            if (!mapAspectRatio) {
+                mapAspectRatio = map.viewAB.height / map.viewAB.width;
+            }
+    
+            var c = $(HOLDER);
+            if (holderInitHeight/ mapAspectRatio >= $(window).width()) {
+                var newHeight = Math.max(holderInitHeight/2, mapAspectRatio * $(window).width());
+            } else {
+                var newHeight = holderInitHeight;
+            }
+            c.height(newHeight);
+            map.resize();
             if (panZoom) {
+                panZoom.zoomIn(1);
                 panZoom.zoomOut(1);
             }
-            i--;
-            if (i > 0) {
-                setTimeout(function(){
-                    myMap.zoomOut(i);
-                }, 25);
-            }
-        },
-        updatePlaces : function(places) {
-            config.states = places;
-            var layers = myMap.getAllLayers();
-            angular.forEach(layers, function(layer){
-                var config = layerConfig[layer.id];
-                layer.style('fill', config.styles.fill);
-                layer.tooltips(config.tooltips);
-            });
-        },
-        getAllLayers : function() {
-            var layers = [];
-            for (var l in layerConfig) {
-                try {
-                    var layer = map.getLayer(l);
-                    if (layer) {
-                        layers.push(layer);
-                    }
-                } catch (e) {
-                    console.log(e);
-                }
-            }
-            return layers;
-        },
-        getLayerContaining : function(placeCode) {
-            var layers = myMap.getAllLayers();
-            var ret;
-            angular.forEach(layers, function(layer){
-                if (layer.getPaths({ name: placeCode }).length >= 1) {
-                    ret = layer;
-                }
-            });
-            return ret;
-        },
-        highLightLayer : function(layer) {
-            var layers = myMap.getAllLayers();
-            angular.forEach(layers, function(l){
-                if (l.id == "cities" && layer.id == "states") {
-                    myMap.hideLayer(l);
-                }
-            });
-        },
-        hideLayer : function(layer) {
-            var paths = layer ? layer.getPaths({}) : [];
-            angular.forEach(paths, function(path){
-                path.svgPath.hide();
-            });
-        },
-        showLayer : function(layer) {
-            var paths = layer ? layer.getPaths({}) : [];
-            angular.forEach(paths, function(path){
-                path.svgPath.show();
-            });
         }
+      },
+      map : map,
+      onClick : function(clickFn) {
+        config.click = clickFn;
+      },
+      registerCallback : function(callback) {
+        if (initCallback === true) {
+          initCallback();
+        } else {
+          initCallback = callback;
+        }
+        
+      },
+      highlightStates : function(states, color, zoomRatio) {
+          var state = states.pop();
+          var layer = this.getLayerContaining(state);
+          if (layer) {
+              var placePath = layer.getPaths({ name: state })[0];
+          }
+
+          if (placePath) {
+              placePath.svgPath.toFront();
+              var origStroke = layerConfig[layer.id].styles['stroke-width'];
+              var bbox = placePath.svgPath.getBBox();
+              var bboxArea = bbox.width * bbox.height;
+              var zoomRatio = zoomRatio || getZoomRatio(bboxArea);
+              var aminAttrs = {
+                  transform: "s"+zoomRatio,
+                  'stroke-width': Math.min(6, zoomRatio) * origStroke
+              };
+              if (color) {
+                  if (layer.id == 'rivers') {
+                      aminAttrs['stroke'] = color;
+                  } else {
+                      aminAttrs['fill'] = color;
+                  }
+              }
+              placePath.svgPath.animate(aminAttrs, ANIMATION_TIME_MS/2, ">", function(){
+                      placePath.svgPath.animate({transform: "", 'stroke-width': origStroke}, ANIMATION_TIME_MS/2, "<");
+                  myMap.highlightStates(states, color);
+              });
+          } else if (states.length > 0) {
+              myMap.highlightStates(states, color);
+          }
+      },
+      highlightState : function(state, color, zoomRatio) {
+          myMap.highlightStates([state], color, zoomRatio);
+      },
+      clearHighlights : function() {
+          var layers = this.getAllLayers();
+          angular.forEach(layers, function(layer){
+              layer.style(layerConfig[layer.id].styles);
+              myMap.showLayer(layer);
+          });
+          myMap.zoomOut();
+      },
+      zoomOut : function(i){
+          var i = i || 10;
+          if (panZoom) {
+              panZoom.zoomOut(1);
+          }
+          i--;
+          if (i > 0) {
+              setTimeout(function(){
+                  myMap.zoomOut(i);
+              }, 25);
+          }
+      },
+      updatePlaces : function(places) {
+          config.states = places;
+          var layers = myMap.getAllLayers();
+          angular.forEach(layers, function(layer){
+              var config = layerConfig[layer.id];
+              layer.style('fill', config.styles.fill);
+              layer.tooltips(config.tooltips);
+          });
+      },
+      getAllLayers : function() {
+          var layers = [];
+          for (var l in layerConfig) {
+              try {
+                  var layer = map.getLayer(l);
+                  if (layer) {
+                      layers.push(layer);
+                  }
+              } catch (e) {
+                  console.log(e);
+              }
+          }
+          return layers;
+      },
+      getLayerContaining : function(placeCode) {
+          var layers = myMap.getAllLayers();
+          var ret;
+          angular.forEach(layers, function(layer){
+              if (layer.getPaths({ name: placeCode }).length >= 1) {
+                  ret = layer;
+              }
+          });
+          return ret;
+      },
+      highLightLayer : function(layer) {
+          var layers = myMap.getAllLayers();
+          angular.forEach(layers, function(l){
+              if (l.id == "cities" && layer.id == "states") {
+                  myMap.hideLayer(l);
+              }
+          });
+      },
+      hideLayer : function(layer) {
+          var paths = layer ? layer.getPaths({}) : [];
+          angular.forEach(paths, function(path){
+              path.svgPath.hide();
+          });
+      },
+      showLayer : function(layer) {
+          var paths = layer ? layer.getPaths({}) : [];
+          angular.forEach(paths, function(path){
+              path.svgPath.show();
+          });
+      }
     };
     return myMap;
-};
-
 });
