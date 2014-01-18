@@ -9,21 +9,151 @@ var RIVER_WIDTH = STROKE_WIDTH * 2;
 var WATER_COLOR = "#73c5ef";
 var ANIMATION_TIME_MS = 500;
 
-(function(window, $K, undefined){
 
-var times = {};
-var time;
-function profile(message) {
-    if (!times[message]) {
-        times[message] = new Date().getTime();
-    } else {
-        time = new Date().getTime() - times[message];
-        console.log(message, time, "ms");
-        times[message] = undefined;
+angular.module('blindMaps.map', [])
+
+  .factory('getLayerConfig', function() {
+
+    var scale = chroma.scale([BAD, "#ff4500", "#ffa500", "#ffff00", GOOD]);
+    
+    return function(config) {
+      var layerConfig = {};
+      layerConfig.bg = {
+          'styles' : {
+              'fill' : NEUTRAL,
+              'stroke-width' : STROKE_WIDTH,
+              'transform' : ""
+          }
+      };
+  
+      layerConfig.states = {
+          'styles' : {
+              'fill' : function(d) {
+                  var state = config.states && config.states[d.name];
+                  return (state
+                      ? (scale(state.probability).brighten((1 - state.certainty) * 80).hex())
+                      : '#fff');
+              },
+              'stroke-width' : STROKE_WIDTH,
+              'transform' : ""
+          },
+          'click' : function(data, path, event) {
+              console.log(data["name"]);
+              if (config.click != undefined) {
+                  config.click(data.name);
+              }
+          }
+      };
+  
+      if (config.showTooltips) {
+          layerConfig.states.tooltips = function(d) {
+              var state = config.states && config.states[d.name];
+              var name = ( state
+                  ? '<span class="label">'
+                      + '<i class="flag-' + d.name + '"></i> '
+                      + state.name
+                      + '</span>'
+                  : '<br>Zatím neprocvičováno<br><br>');
+              var description = (state
+                  ? '<div>'
+                      + '<i class="color-indicator" style="background-color:'
+                      + scale(state.probability).hex() + '"></i>'
+                      + ' Odhad znalosti: ' + Math.round(100 * state.probability) + '%</div>'
+                  : "");
+              return [
+                  name + description,
+                  config.states[d.name] ? config.states[d.name].name : ""
+              ];
+          };
+      }
+
+      layerConfig.cities = jQuery.extend(jQuery.extend({}, layerConfig.states), {
+          'mouseenter' : function(data, path, event) {
+              path.toFront();
+              var zoomRatio = 2;
+              var aminAttrs = {
+                  'transform' : "s"+zoomRatio,
+                  'stroke-width' : zoomRatio * STROKE_WIDTH
+              };
+              path.animate(aminAttrs, ANIMATION_TIME_MS/2, ">");
+          },
+          'mouseleave' : function(data, path, event) {
+              var aminAttrs = {
+                  'transform': "",
+                  'stroke-width': STROKE_WIDTH
+              };
+              path.animate(aminAttrs, ANIMATION_TIME_MS/2, ">");
+          }
+      });
+  
+      layerConfig.rivers = jQuery.extend(jQuery.extend({}, layerConfig.states), {
+          'styles' : {
+              'stroke-width' : RIVER_WIDTH,
+              'stroke' : WATER_COLOR,
+              'transform' : ""
+          },
+          'mouseenter' : function(data, path, event) {
+              var zoomRatio = 4;
+              var aminAttrs = {
+                  'stroke-width' : zoomRatio * RIVER_WIDTH
+              };
+              path.animate(aminAttrs, ANIMATION_TIME_MS/2, ">");
+          },
+          'mouseleave' : function(data, path, event) {
+              var aminAttrs = {
+                  'stroke-width': RIVER_WIDTH
+              };
+              path.animate(aminAttrs, ANIMATION_TIME_MS/2, ">");
+          }
+      });
+  
+      layerConfig.lakes = jQuery.extend(true, {}, layerConfig.cities);
+      layerConfig.lakes["styles"]["fill"] = function(d) {
+          var state = config.states && config.states[d.name];
+          return (state
+              ? (scale(state.probability).brighten((1 - state.certainty) * 80).hex())
+              : WATER_COLOR);
+      };
+      return layerConfig;
+    };
+  })
+  
+  .factory('initMap', function(getLayerConfig) {
+    var times = {};
+    var time;
+    function profile(message) {
+        if (!times[message]) {
+            times[message] = new Date().getTime();
+        } else {
+            time = new Date().getTime() - times[message];
+            console.log(message, time, "ms");
+            times[message] = undefined;
+        }
     }
-}
-
-window.initMap = function(config, callback) {
+    
+    function initLayers(map, layerConfig) {
+        var layersArray = [];
+    
+        for (var i in layerConfig) {
+            profile("Add layer "+ i +" takes:");
+            map.addLayer(i, layerConfig[i]);
+            var l = map.getLayer(i);
+            if (l) {
+                layersArray.push(l);
+            }
+            profile("Add layer "+ i +" takes:");
+        }
+    
+        var that = {
+    
+            getAll : function(){
+                return layersArray;
+            }
+        };
+        return that;
+    }
+    
+    return function(config, callback) {
 
     var map = $K.map(HOLDER);
     var panZoom;
@@ -33,107 +163,8 @@ window.initMap = function(config, callback) {
     var mapAspectRatio;
 
     $.fn.qtip.defaults.style.classes = 'qtip-dark';
-
-    var scale = chroma.scale([BAD, "#ff4500", "#ffa500", "#ffff00", GOOD]);
-
-    var layerConfig = {};
-    layerConfig.bg = {
-        'styles' : {
-            'fill' : NEUTRAL,
-            'stroke-width' : STROKE_WIDTH,
-            'transform' : ""
-        }
-    };
-
-    layerConfig.states = {
-        'styles' : {
-            'fill' : function(d) {
-                var state = config.states && config.states[d.name];
-                return (state
-                    ? (scale(state.probability).brighten((1 - state.certainty) * 80).hex())
-                    : '#fff');
-            },
-            'stroke-width' : STROKE_WIDTH,
-            'transform' : ""
-        },
-        'click' : function(data, path, event) {
-            console.log(data["name"]);
-            if (config.click != undefined) {
-                config.click(data.name);
-            }
-        }
-    };
-
-    if (config.showTooltips) {
-        layerConfig.states.tooltips = function(d) {
-            var state = config.states && config.states[d.name];
-            var name = ( state
-                ? '<span class="label">'
-                    + '<i class="flag-' + d.name + '"></i> '
-                    + state.name
-                    + '</span>'
-                : '<br>Zatím neprocvičováno<br><br>');
-            var description = (state
-                ? '<div>'
-                    + '<i class="color-indicator" style="background-color:'
-                    + scale(state.probability).hex() + '"></i>'
-                    + ' Odhad znalosti: ' + Math.round(100 * state.probability) + '%</div>'
-                : "");
-            return [
-                name + description,
-                config.states[d.name] ? config.states[d.name].name : ""
-            ];
-        };
-    }
-
-    layerConfig.provinces = jQuery.extend({}, layerConfig.states);
-    layerConfig.cities = jQuery.extend(jQuery.extend({}, layerConfig.states), {
-        'mouseenter' : function(data, path, event) {
-            path.toFront();
-            var zoomRatio = 2;
-            var aminAttrs = {
-                'transform' : "s"+zoomRatio,
-                'stroke-width' : zoomRatio * STROKE_WIDTH
-            };
-            path.animate(aminAttrs, ANIMATION_TIME_MS/2, ">");
-        },
-        'mouseleave' : function(data, path, event) {
-            var aminAttrs = {
-                'transform': "",
-                'stroke-width': STROKE_WIDTH
-            };
-            path.animate(aminAttrs, ANIMATION_TIME_MS/2, ">");
-        }
-    });
-
-    layerConfig.rivers = jQuery.extend(jQuery.extend({}, layerConfig.states), {
-        'styles' : {
-            'stroke-width' : RIVER_WIDTH,
-            'stroke' : WATER_COLOR,
-            'transform' : ""
-        },
-        'mouseenter' : function(data, path, event) {
-            var zoomRatio = 4;
-            var aminAttrs = {
-                'stroke-width' : zoomRatio * RIVER_WIDTH
-            };
-            path.animate(aminAttrs, ANIMATION_TIME_MS/2, ">");
-        },
-        'mouseleave' : function(data, path, event) {
-            var aminAttrs = {
-                'stroke-width': RIVER_WIDTH
-            };
-            path.animate(aminAttrs, ANIMATION_TIME_MS/2, ">");
-        }
-    });
-
-    layerConfig.lakes = jQuery.extend(true, {}, layerConfig.cities);
-    layerConfig.lakes["styles"]["fill"] = function(d) {
-        var state = config.states && config.states[d.name];
-        return (state
-            ? (scale(state.probability).brighten((1 - state.certainty) * 80).hex())
-            : WATER_COLOR);
-    };
+    
+    var layerConfig = getLayerConfig(config);
 
     map.loadCSS(Hash('static/css/map.css'), function() {
         map.loadMap(Hash('static/map/' + config.name + '.svg'), function() {
@@ -317,25 +348,4 @@ window.initMap = function(config, callback) {
     return myMap;
 };
 
-function initLayers(map, layerConfig) {
-    var layersArray = [];
-
-    for (var i in layerConfig) {
-        profile("Add layer "+ i +" takes:");
-        map.addLayer(i, layerConfig[i]);
-        var l = map.getLayer(i);
-        if (l) {
-            layersArray.push(l);
-        }
-        profile("Add layer "+ i +" takes:");
-    }
-
-    var that = {
-
-        getAll : function(){
-            return layersArray;
-        }
-    };
-    return that;
-}
-})(window, $K);
+});

@@ -1,36 +1,26 @@
-  <center class="map-container">
-      <div id="map-holder">
-        <div class="loading-indicator"></div>
-      </div>
-      <h1 ng-show="user == ''" ng-bind="name"></h1>
-      <h1 ng-show="user != ''" ng-bind="user"></h1>
-      <a  ng-show="user == ''" href="#/practice/{{part}}" class="btn btn-primary btn-lg btn-practice" >Procvičovat</a>
-  </center>
-  <div id="container">
-    <div ng-show="!placesTypes" class="loading-indicator">
-    </div>
-    <div ng-show="placesTypes.length == 0" style="text-align: center;" >
-        <h2>Zatím na této mapě nebylo nic procvičováno.</h2>
-        <a href="#/practice/{{part}}" class="btn btn-primary btn-lg" >Začít procvičovat</a>
-    </div>
-    <ul class="thumbnails">
-      <li class="col-sm-{{colNum(placesTypes.length)}}" ng-repeat="type in placesTypes">
-          <h3>{{type.name}}
-            <!--<a href="#/practice/{{part}}/{{type.slug}}" class="btn btn-primary pull-right" ng-show="!type.haveMaps" >Procvičovat</a>-->
-          </h3>
-          <div class="view-places">
-          <span ng-repeat="place in type.places" ng-switch="type.haveMaps" ng-mouseenter="hover(place, true)" ng-mouseleave="hover(place, false)">
-              <a href="#/view/{{place.code}}/{{user}}" ng-switch-when="true" class="btn btn-default btn-sm">
-                <i class="flag-{{place.code}}"></i> {{place.name || place}}
-              </a>
-              <span ng-switch-default class="label label-default">
-                <i class="flag-{{place.code}}"></i> {{place.name || place}}
-              </span>
-          </span>
-          <div class="clearfix"></div>
-          <!--<a href="#/practice/{{part}}/{{type.name}}" class="btn btn-primary" >Procvičovat</a>-->
-          </div>
-      </li>
-    </ul>
-    <div class="clearfix"></div>
+<blind-map name="{{name}}" code="{{part}}" practice="true" ></blind-map>
+<div id="container">
+  <div ng-show="!placesTypes" class="loading-indicator">
   </div>
+  <div ng-show="placesTypes.length == 0" style="text-align: center;" >
+    <h2>Zatím na této mapě nebylo nic procvičováno.</h2>
+    <a href="#/practice/{{part}}" class="btn btn-primary btn-lg" >
+        Začít procvičovat
+    </a>
+  </div>
+  <ul class="thumbnails">
+    <li class="col-sm-{{placesTypes.length|colNum}}" 
+        ng-repeat="type in placesTypes">
+      <h3>{{type.name}}</h3>
+      <div class="view-places">
+        <span ng-repeat="place in type.places"
+              ng-mouseenter="hover(place, true)"
+              ng-mouseleave="hover(place, false)">
+          <place-label place="{{place}}"></place-label>
+        </span>
+        <div class="clearfix"></div>
+      </div>
+    </li>
+  </ul>
+  <div class="clearfix"></div>
+</div>

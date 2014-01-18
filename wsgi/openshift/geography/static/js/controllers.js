@@ -2,32 +2,19 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
-  .controller('AppCtrl', function($scope, $rootScope, $http, $cookies, $route, $location, $timeout) {
+angular.module('blindMaps.controllers', [])
+  .controller('AppCtrl', function($scope, $rootScope, $timeout, user) {
     $rootScope.topScope = $rootScope;
-    $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
-    $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded';
 
-    $rootScope.getUser = function(callback) {
-        $http.get('user/').success(function(data) {
-            $rootScope.user = data;
-            callback && callback(data);
-        });
+    var updateUser = function(data) {
+        $rootScope.user = data;
     };
-
-    $rootScope.getUser();
+    user.getUser(updateUser);
 
     $('.atooltip').tooltip({"placement" : "bottom"});
-    //$('a#fdbk_tab').colorbox();
 
     $rootScope.logout = function(){
-        $rootScope.user = {
-            'username' : '',
-            'points' :  0
-        };
-        $http.get('user/logout/').success(function(data) {
-            $rootScope.user = data;
-        });
+        $rootScope.user = user.logout(updateUser);
     };
 
     $rootScope.addPoint = function(){
@@ -36,30 +23,16 @@ angular.module('myApp.controllers', [])
             $timeout(function(){
                 $('#points').tooltip("show");
             },0);
-
         }
     };
 
     $scope.vip = function() {
         return $scope.user && ($scope.user.username == 'Verunka');
     };
-
-    $scope.getActiveClass = function(path) {
-        if ($location.path().substr(0, path.length) == path) {
-          return "active";
-        } else {
-          return "";
-        }
-    };
-
-    var emailAddress = $("#footer .email").html();
-    emailAddress = emailAddress.replace("{zavinac}", "@");
-    emailAddress = '<a href="mailto:'+emailAddress+'">'+ emailAddress+ '</a>';
-    $("#footer .email").html(emailAddress);
-
   })
 
-  .controller('AppView', function($scope, $routeParams, $filter, $timeout, usersplaces, question, placeName) {
+  .controller('AppView', function($scope, $routeParams, $filter, $timeout, 
+        usersplaces, question, placeName, initMap) {
     $scope.part = $routeParams.part;
     $scope.user = $routeParams.user || "";
     $scope.name = placeName($scope.part);
@@ -90,14 +63,10 @@ angular.module('myApp.controllers', [])
             }, 200);
         }
     };
-
-    $scope.colNum = function (colsCount) {
-        return Math.floor(12/colsCount);
-    };
-
   })
 
-  .controller('AppPractice', function($scope, $routeParams, $timeout, $location, question, placeName) {
+  .controller('AppPractice', function($scope, $routeParams, $timeout, 
+          question, placeName, initMap) {
     $scope.part = $routeParams.part;
     $scope.name = placeName($scope.part);
 
@@ -179,7 +148,7 @@ angular.module('myApp.controllers', [])
         return $scope.question && $scope.question.type >= 20;
     };
 
-    $scope.isAllowedOpion = function(code) {
+    $scope.isAllowedOption = function(code) {
         return !$scope.question.options || 1 == $scope.question.options.filter(function(place){
             return place.code == code;
         }).length;
@@ -193,7 +162,7 @@ angular.module('myApp.controllers', [])
         click : function  (code) {
             if ($scope.isFindOnMapType()
                     && !$scope.canNext
-                    && $scope.isAllowedOpion(code)
+                    && $scope.isAllowedOption(code)
                     && $scope.isInActiveLayer(code)) {
                 $scope.check(code);
                 $scope.$apply();

@@ -2,9 +2,15 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
-    'myApp.filters', 'myApp.services', 'myApp.directives', 'myApp.controllers',
-    'ngCookies', 'angulartics', 'angulartics.google.analytics'
+angular.module('blindMaps', [
+    'blindMaps.filters',
+    'blindMaps.services',
+    'blindMaps.directives',
+    'blindMaps.controllers',
+    'blindMaps.map',
+    'ngCookies',
+    'angulartics',
+    'angulartics.google.analytics'
   ])
 
   .config(function($routeProvider) {
@@ -28,9 +34,13 @@ angular.module('myApp', [
     }).otherwise({
       //redirectTo: '/'
     });
+    
   })
 
-  .run( function($rootScope, $location) {
+  .run( function($rootScope, $location, $cookies, $http) {    
+    $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+    $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded';
+    
     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
       if (!current && next.templateUrl == './tpl/welcome_page.html' ) {
         $rootScope.getUser(function(user){

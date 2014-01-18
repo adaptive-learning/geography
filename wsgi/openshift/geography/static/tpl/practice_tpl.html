@@ -1,57 +1,74 @@
-  <center class="map-container">
-      <div id="map-holder">
-        <div class="loading-indicator"></div>
-      </div>
-      <h1> {{name}}</h1>
-  </center>
-  <div class="progress quesions-progress">
-    <div class="progress-bar" style="width: {{progress}}%;"></div>
+<blind-map name="{{name}}" code="{{part}}" ></blind-map>
+<div class="progress quesions-progress">
+  <div class="progress-bar" style="width: {{progress}}%;"></div>
+</div>
+<div id="container" ui-keypress="{enter: 'next()'}">
+  <div ng-show="!question && !showSummary" class="loading-indicator">
   </div>
-  <div id="container" ui-keypress="{enter: 'next()'}">
-      <div ng-show="!question && !showSummary" class="loading-indicator">
-      </div>
-      <div ng-show="question != undefined && !showSummary" class="practice">
-          <h2><span>{{question.text}} </span>
-              <span class="label label-default" ng-show="isFindOnMapType()">
-                <i class="flag-{{question.code}}"></i> {{question.place}}
-              </span>
-              <br class="clearfix">
-          </h2>
-          <span class="col-sm-7">
-          <span ng-show="isPickNameOfType()">
-              <button ng-repeat="place in question.options"
-                value="{{place.code}}"
-                class="btn btn-lg btn-default"
-                ng-click="check(place.code)"
-                ng-class="{'btn-success': place.correct, 'btn-danger': place.selected && !place.correct }"
-                ng-disabled="place.disabled"
-              >
-                 <i class="flag-{{place.code}}"></i> {{place.name}}
-              </button>
-          </span>
-          </span>
-          <span class="col-sm-5" >
-              <button class="btn btn-lg btn-default" ng-click="check()" ng-disabled="canNext" >Nevím</button>
-              <button class="btn btn-lg btn-default {{!canNext || 'btn-primary'}}" ng-click="next()" ng-disabled="!canNext" >Pokračovat</button>
-              <button class="btn btn-lg btn-default" ng-click="highlight()" ng-disabled="canNext"  ng-show="question.options != undefined" >Znovu zvýraznit</button>
-          </span>
-      </div>
-      <div ng-show="showSummary" class="summary col-lg-12">
-        <div>
-        <div class="progress" ng-show="summary != undefined">
-          <div class="progress-bar progress-bar-success" style="width: {{summary.correctlyAnsweredRatio | percent }};">Úspěšnost: {{summary.correctlyAnsweredRatio | percent }}</div>
-          <div class="progress-bar progress-bar-danger" style="width: {{(1 - summary.correctlyAnsweredRatio) | percent }};"></div>
-        </div>
-        <h2 ng-show="errorMessage != undefined" ng-bind="errorMessage"></h2>
-        <div>
-            <span ng-repeat="q in summary.questions" class="label {{q.code != q.answer && 'label-danger' || 'label-success' }} ">
-            <i class="flag-{{q.code}}"></i> {{q.place}}
-            </span>
-        </div>
-        </div>
-          <span class="pull-right" >
-              <a class="btn-continue btn btn-lg btn-default {{!showSummary || 'btn-primary'}}" href="#/view/{{part}}/" >Pokračovat</a>
-          </span>
-      </div>
-      <div class="clearfix"></div>
+  <div ng-show="question != undefined && !showSummary" class="practice">
+    <h2>
+      <span>{{question.text}} </span>
+        <span class="label label-default" ng-show="isFindOnMapType()">
+          <i class="flag-{{question.code}}"></i> {{question.place}}
+        </span>
+        <br class="clearfix">
+    </h2>
+    <span class="col-sm-7">
+      <span ng-show="isPickNameOfType()">
+        <button ng-repeat="place in question.options"
+          value="{{place.code}}"
+          class="btn btn-lg btn-default"
+          ng-click="check(place.code)"
+          ng-class="{'btn-success': place.correct, 'btn-danger': place.selected && !place.correct }"
+          ng-disabled="place.disabled">
+           <i class="flag-{{place.code}}"></i> {{place.name}}
+        </button>
+      </span>
+    </span>
+    <span class="col-sm-5" >
+      <button class="btn btn-lg btn-default" 
+              ng-click="check()" 
+              ng-disabled="canNext" >
+          Nevím
+      </button>
+      <button class="btn btn-lg btn-default {{!canNext || 'btn-primary'}}" 
+              ng-click="next()" 
+              ng-disabled="!canNext" >
+          Pokračovat
+      </button>
+      <button class="btn btn-lg btn-default" 
+              ng-click="highlight()" 
+              ng-disabled="canNext"  
+              ng-show="question.options != undefined" >
+          Znovu zvýraznit
+      </button>
+    </span>
   </div>
+  <div ng-show="showSummary" class="summary col-lg-12">
+    <div>
+      <div class="progress" ng-show="summary != undefined">
+        <div class="progress-bar progress-bar-success" 
+             style="width: {{summary.correctlyAnsweredRatio | percent }};">
+          Úspěšnost: {{summary.correctlyAnsweredRatio | percent }}
+        </div>
+        <div class="progress-bar progress-bar-danger" 
+             style="width: {{(1 - summary.correctlyAnsweredRatio) | percent }};">
+        </div>
+      </div>
+      <h2 ng-show="errorMessage != undefined" ng-bind="errorMessage"></h2>
+      <div>
+        <span ng-repeat="q in summary.questions" 
+              class="label {{q.code != q.answer && 'label-danger' || 'label-success' }} ">
+          <i class="flag-{{q.code}}"></i> {{q.place}}
+        </span>
+      </div>
+    </div>
+    <span class="pull-right" >
+      <a class="btn-continue btn btn-lg btn-default {{!showSummary || 'btn-primary'}}" 
+         href="#/view/{{part}}/" >
+        Pokračovat
+      </a>
+    </span>
+  </div>
+  <div class="clearfix"></div>
+</div>

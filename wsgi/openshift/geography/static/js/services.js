@@ -2,10 +2,7 @@
 
 /* Services */
 
-// Demonstrate how to register services
-// In this case it is a simple value service.
-angular.module('myApp.services', []).
-  value('version', '0.1')
+angular.module('blindMaps.services', [])
 
   .factory('usersplaces', function($rootScope, $http, placeName) {
     var cache = {};
@@ -94,4 +91,19 @@ angular.module('myApp.services', []).
           }
       }
 
+  })
+
+  .factory('user', function($rootScope, $http) {
+    return {
+      getUser : function(callback) {
+          $http.get('user/').success(callback);
+      },
+      logout : function(callback){
+          $rootScope.user = {
+              'username' : '',
+              'points' :  0
+          };
+          $http.get('user/logout/').success(callback);
+      }
+    }
   })

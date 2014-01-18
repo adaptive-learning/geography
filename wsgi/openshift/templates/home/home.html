@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="myApp" data-ng-controller="AppCtrl">
+<html data-ng-app="blindMaps" data-ng-controller="AppCtrl">
   <head>
     <meta charset="utf-8">
     <title>{{ title }}Slepé Mapy - adaptivní aplikace na procvičování polohy států</title>
@@ -49,7 +49,7 @@
       <a class="navbar-brand" href="#">Slepé Mapy</a>
       <div class="collapse navbar-collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav  pull-left">
-                <li ng-class="getActiveClass('/view/world/')">
+                <li ng-class="'/view/world/'|isActive">
                   <a href="#/view/world/">Svět</a>
                 </li>
                 <li class="dropdown">
@@ -68,7 +68,7 @@
                     {% endfor %}
                   </ul>
                 </li>
-                <li ng-class="getActiveClass('/how_it_works')">
+                <li ng-class="'/how_it_works'|isActive">
                   <a href="#/how_it_works">Jak to funguje?</a>
                 </li>
         </ul>
