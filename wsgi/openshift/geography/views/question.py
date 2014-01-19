@@ -8,6 +8,8 @@ from geography.models import PlaceRelation, UserPlace
 from geography.utils import QuestionService
 from logging import getLogger
 from django.contrib.auth.models import User
+import geography.models.user
+import math
 
 LOGGER = getLogger(__name__)
 
@@ -27,8 +29,18 @@ def question(request, map_code):
         answer = simplejson.loads(request.raw_post_data)
         qs.answer(answer)
         question_index = answer['index'] + 1
-    response = qs.get_questions(10 - question_index)
+    if should_get_questions(request, question_index):
+        response = qs.get_questions(10 - question_index)
+    else:
+        response = []
     return JsonResponse(response)
+
+
+def should_get_questions(request, question_index):
+    points = geography.models.user.get_points(request.user)
+    return ((points <= 10
+                or question_index % math.ceil(math.log(points, 10)) == 0)
+            and question_index != 9)
 
 
 def users_places(request, map_code, user=None):
