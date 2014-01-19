@@ -53,7 +53,7 @@
                   <a href="#/view/world/">Svět</a>
                 </li>
                 <li class="dropdown">
-                  <a id="drop-continents" href="#"  class="dropdown-toggle" data-toggle="dropdown">Kontinenty <b class="caret"></b></a>
+                  <a id="drop-continents" href=""  class="dropdown-toggle" data-toggle="dropdown">Kontinenty <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop-continents">
                     {% for continent in continents %}
                     <li><a href="#/view/{{ continent.code }}/">{{ continent.name }}</a></li>
@@ -61,7 +61,7 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a id="drop-continents" href="#"  class="dropdown-toggle" data-toggle="dropdown">Státy <b class="caret"></b></a>
+                  <a id="drop-continents" href=""  class="dropdown-toggle" data-toggle="dropdown">Státy <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop-continents">
                     {% for state in states %}
                     <li><a href="#/view/{{ state.code }}/">{{ state.name }}</a></li>
@@ -75,16 +75,16 @@
           ...
             <ul class="nav ng-cloak navbar-nav pull-right">
                 <li class="dropdown" ng-show="user.username == ''">
-                  <a id="drop-login" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Přihlásit se <b class="caret"></b></a>
+                  <a id="drop-login" href="" role="button" class="dropdown-toggle" data-toggle="dropdown">Přihlásit se <b class="caret"></b></a>
                   <ul class="dropdown-menu login" role="menu" aria-labelledby="drop-login">
                     <li><a class="btn btn-danger btn-lg btn-block" href="/login/google/"><i class="social-google"></i> přes Google</a></li>
                     <li><a class="btn btn-primary btn-lg btn-block" href="/login/facebook/"><i class="social-facebook"></i> přes Facebook</a></li>
                   </ul>
                 </li>
                 <li class="dropdown" ng-show="user.username != ''">
-                  <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> <span ng-bind="user.username"></span> <b class="caret"></b></a>
+                  <a id="drop1" href="" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> <span ng-bind="user.username"></span> <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                    <li class="forgot-pwd"><a href="#" ng-click="logout()">Odhlásit se</a></li>
+                    <li class="forgot-pwd"><a href="" ng-click="logout()">Odhlásit se</a></li>
                   </ul>
                 </li>
               <li id="points" class="atooltip" title="Body - přibývají za každou správnou odpověď" ng-show="user.points">

@@ -9,6 +9,7 @@ angular.module('blindMaps', [
     'blindMaps.controllers',
     'blindMaps.map',
     'ngCookies',
+    'ngRoute',
     'angulartics',
     'angulartics.google.analytics'
   ])
@@ -20,7 +21,7 @@ angular.module('blindMaps', [
       templateUrl : './tpl/how_it_works.html'
     }).when('/view/', {
         redirectTo: '/view/world/'
-    }).when('/view/:part/:user', {
+    }).when('/view/:part/', {
       controller : 'AppView',
       templateUrl : './'+Hash('static/tpl/view_tpl.html')
     }).when('/practice/', {

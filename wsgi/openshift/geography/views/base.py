@@ -16,8 +16,9 @@ def home(request):
     JS_FILES = (
         "static/lib/js/jquery-2.0.2.min.js",
         "static/lib/js/bootstrap.js",
-        "static/lib/angular/angular.min.js",
-        "static/lib/angular/angular-cookies.js",
+        "static/lib/angular-1.2.9/angular.min.js",
+        "static/lib/angular-1.2.9/angular-route.min.js",
+        "static/lib/angular-1.2.9/angular-cookies.min.js",
         "static/lib/js/raphael.js",
         "static/lib/raphael-pan-zoom/raphael.pan-zoom.min.js",
         "static/lib/js/kartograph.js",
