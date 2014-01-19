@@ -133,7 +133,8 @@ ul.dropdown-menu.login {
     padding: 10px;
     padding-left: 30px; }
     .thumbnails h3 .btn {
-      margin-top: -5px; }
+      margin-top: -5px;
+      font-weight: bold; }
 
 .label {
   margin-right: 10px;

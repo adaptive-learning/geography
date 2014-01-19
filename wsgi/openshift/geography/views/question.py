@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
-from geography.utils import JsonResponse
-from geography.models import Place
+from django.contrib.auth.models import User
 from django.http import Http404, HttpResponseBadRequest
 from django.utils import simplejson
+from geography.models import Place, PlaceRelation, UserPlace
+from geography.utils import JsonResponse, QuestionService
 from lazysignup.decorators import allow_lazy_user
-from geography.models import PlaceRelation, UserPlace
-from geography.utils import QuestionService
 from logging import getLogger
-from django.contrib.auth.models import User
 import geography.models.user
 import math
 
@@ -15,7 +13,7 @@ LOGGER = getLogger(__name__)
 
 
 @allow_lazy_user
-def question(request, map_code):
+def question(request, map_code, place_type_slug):
     try:
         map = PlaceRelation.objects.get(
             place__code=map_code,
@@ -30,7 +28,10 @@ def question(request, map_code):
         qs.answer(answer)
         question_index = answer['index'] + 1
     if should_get_questions(request, question_index):
-        response = qs.get_questions(10 - question_index)
+        place_type = (Place.PLACE_TYPE_SLUGS_LOWER_REVERSE[place_type_slug]
+                      if place_type_slug in Place.PLACE_TYPE_SLUGS_LOWER_REVERSE
+                      else -1)
+        response = qs.get_questions(10 - question_index, place_type)
     else:
         response = []
     return JsonResponse(response)
@@ -67,7 +68,7 @@ def users_places(request, map_code, user=None):
         'placesTypes': [
             {
                 'name': place_type[1],
-                'slug': place_type[0],
+                'slug': Place.PLACE_TYPE_SLUGS_LOWER[place_type[0]],
                 'places': [p.to_serializable() for p in ps
                            if p.place.type == place_type[0]]
             } for place_type in Place.PLACE_TYPE_PLURALS

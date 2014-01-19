@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 from django.db import models
+from django.template.defaultfilters import slugify
 import recommendation
 
 
 class PlaceManager(models.Manager):
 
-    def get_places_to_ask(self, user, map_place, expected_probability, n):
-        return recommendation.by_order(user, map_place, expected_probability, n)
+    def get_places_to_ask(self, user, map_place, expected_probability, n, place_type):
+        return recommendation.by_order(user, map_place, expected_probability, n, place_type)
 
     def get_states_with_map(self):
         return [pr.place for pr in PlaceRelation.objects.filter(
@@ -54,6 +55,8 @@ class Place(models.Model):
         (PROVINCE, u'Provincie'),
     )
     PLACE_TYPE_SLUGS = dict((t[1].upper(), t[0]) for t in PLACE_TYPES)
+    PLACE_TYPE_SLUGS_LOWER = dict((t[0], slugify(t[1].lower())) for t in PLACE_TYPES)
+    PLACE_TYPE_SLUGS_LOWER_REVERSE = dict((slugify(t[1].lower()), t[0]) for t in PLACE_TYPES)
     code = models.SlugField(
         max_length=100,
         db_index=True,

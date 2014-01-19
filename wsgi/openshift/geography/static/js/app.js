@@ -21,15 +21,12 @@ angular.module('blindMaps', [
       templateUrl : './tpl/how_it_works.html'
     }).when('/view/', {
         redirectTo: '/view/world/'
-    }).when('/view/:part/', {
+    }).when('/view/:part/:user?', {
       controller : 'AppView',
       templateUrl : './'+Hash('static/tpl/view_tpl.html')
     }).when('/practice/', {
-        redirectTo: '/practice/world'
-    }).when('/practice/:part', {
-      controller : 'AppPractice',
-      templateUrl : './'+Hash('static/tpl/practice_tpl.html')
-    }).when('/practice/:part/:type', {
+        redirectTo: '/practice/world/'
+    }).when('/practice/:part/:place_type?', {
       controller : 'AppPractice',
       templateUrl : './'+Hash('static/tpl/practice_tpl.html')
     }).otherwise({

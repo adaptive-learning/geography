@@ -7,10 +7,10 @@ from datetime import datetime
 from math import exp
 
 
-def by_order(user, map_place, expected_probability, n):
+def by_order(user, map_place, expected_probability, n, place_type):
     if expected_probability < 0 or expected_probability > 1:
         raise Exception('target probability has to be in range [0,1] and was ' + str(expected_probability))
-    expected_skill = - math.log((1 - max(0.01, min(0.99, expected_probability))) / max(0.01, expected_probability))
+    expected_skill = -math.log((1 - max(0.01, min(0.99, expected_probability))) / max(0.01, expected_probability))
     cursor = connection.cursor()
     cursor.execute(
         '''
@@ -51,6 +51,7 @@ def by_order(user, map_place, expected_probability, n):
                     AND
                     geography_placerelation.type = %s
             )
+            AND (geography_place.type = %s OR ''' + ("TRUE" if place_type == -1 else "FALSE") + ''')
             AND geography_elolocalskill_prepared.user_id = %s
         GROUP BY
             geography_elolocalskill_prepared.place_id
@@ -64,6 +65,7 @@ def by_order(user, map_place, expected_probability, n):
             elo.Elo.LOCAL_SKILL_EXTREM,
             int(map_place.place.id),
             int(place.PlaceRelation.IS_ON_MAP),
+            int(place_type),
             int(user.id),
             int(n)
         ]

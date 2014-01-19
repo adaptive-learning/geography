@@ -4,19 +4,26 @@
   </div>
   <div ng-show="placesTypes.length == 0" style="text-align: center;" >
     <h2>Zatím na této mapě nebylo nic procvičováno.</h2>
-    <a href="#/practice/{{part}}" class="btn btn-primary btn-lg" >
+    <a href="#/practice/{{part}}/" class="btn btn-primary btn-lg" >
         Začít procvičovat
     </a>
   </div>
   <ul class="thumbnails">
     <li class="col-sm-{{placesTypes.length|colNum}}" 
         ng-repeat="type in placesTypes">
-      <h3>{{type.name}}</h3>
+      <h3>
+        {{type.name}}
+        <a href="#/practice/{{part}}/{{type.slug}}" 
+           class="btn btn-primary pull-right" 
+           ng-show="placesTypes.length > 1" >
+          Procvičovat {{type.name|lowercase}}
+        </a>
+      </h3>
       <div class="view-places">
         <span ng-repeat="place in type.places"
               ng-mouseenter="hover(place, true)"
-              ng-mouseleave="hover(place, false)">
-          <place-label place="{{place}}"></place-label>
+              ng-mouseleave="hover(place, false)"
+              place-label>
         </span>
         <div class="clearfix"></div>
       </div>

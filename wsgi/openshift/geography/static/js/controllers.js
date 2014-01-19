@@ -3,11 +3,12 @@
 /* Controllers */
 
 angular.module('blindMaps.controllers', [])
-  .controller('AppCtrl', function($scope, $rootScope, $timeout, user) {
+  .controller('AppCtrl', function($scope, $rootScope, $timeout, $cookies, user) {
     $rootScope.topScope = $rootScope;
 
     var updateUser = function(data) {
         $rootScope.user = data;
+        $cookies.points = $rootScope.user;
     };
     user.getUser(updateUser);
 
@@ -19,6 +20,7 @@ angular.module('blindMaps.controllers', [])
 
     $rootScope.addPoint = function(){
         $rootScope.user.points++;
+        $cookies.points = $rootScope.user;
         if ($rootScope.user.points == 1) {
             $timeout(function(){
                 $('#points').tooltip("show");
@@ -111,7 +113,7 @@ angular.module('blindMaps.controllers', [])
 
     $scope.next = function() {
         if($scope.progress < 100) {
-            question.next($scope.part, function(q) {
+            question.next($scope.part, $routeParams.place_type, function(q) {
                 $scope.setQuestion(q);
             });
         } else {
@@ -163,7 +165,7 @@ angular.module('blindMaps.controllers', [])
     });
     
     mapControler.registerCallback(function() {
-        question.first($scope.part, function(q) {
+        question.first($scope.part, $routeParams.place_type, function(q) {
             $scope.setQuestion(q);
         });
     });

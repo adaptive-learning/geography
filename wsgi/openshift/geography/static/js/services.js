@@ -45,7 +45,7 @@ angular.module('blindMaps.services', [])
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded'
       var qIndex = 0;
-      var worldPart;
+      var url;
       function returnQuestion (fn){
             var q = questions[qIndex++];
             if(q) q.response_time = - (new Date()).valueOf();
@@ -54,23 +54,23 @@ angular.module('blindMaps.services', [])
       var questions = [];
       var summary = [];
       return {
-          first: function(part, fn){
-              worldPart = part;
+          first: function(part, placeType, fn){
+              url = 'question/' + part + '/' + (placeType ? placeType : "");
               summary = [];
-                $http.get('question/' + part).success(function(data) {
+                $http.get(url).success(function(data) {
                     qIndex = 0;
                     questions = data;
                     returnQuestion(fn);
                 });
           },
-          next: function(part, fn){
+          next: function(part, placeType, fn){
                 returnQuestion(fn);
           },
           answer: function(question) {
                 question.response_time += (new Date()).valueOf();
                 question.index = qIndex-1;
                 summary.push(question);
-                $http.post('question/' + worldPart, question).success(function(data) {
+                $http.post(url, question).success(function(data) {
                     var futureLength = qIndex + data.length;
                     // questions array should be always the same size
                     // if data sent by server is longer, it means the server is delayed

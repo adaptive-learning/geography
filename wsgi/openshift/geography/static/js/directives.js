@@ -7,12 +7,11 @@ angular.module('blindMaps.directives', [])
 
   .directive('placeLabel', function () {
     return {
-      restrict: 'E',
-      template: '<span class="label label-default">' +
-                  '<i class="flag-{{place.code}}"></i> {{place.name}}' +
-                '</span>' ,
-      link: function ($scope, elem, attrs) {
-        $scope.place = attrs.place;
+      restrict: 'A',
+      template: '<i class="flag-{{place.code}}"></i> {{place.name}}',
+      compile: function(element, attributes) {
+        element.addClass('label');
+        element.addClass('label-default');
       }
     };
   })
@@ -26,7 +25,7 @@ angular.module('blindMaps.directives', [])
                   '</div>' +
                   '<h1 ng-bind="name"></h1>' +
                   '<a  ng-show="practice"' +
-                      'href="#/practice/{{part}}"' +
+                      'href="#/practice/{{part}}/"' +
                       'class="btn btn-primary btn-lg btn-practice" >' +
                     'Procvičovat' +
                   '</a>' +
@@ -39,14 +38,15 @@ angular.module('blindMaps.directives', [])
           var places = usersplaces.getCached($scope.part, "");
           mapControler.updatePlaces($filter("StatesFromPlaces")(places));
         }
-      }
+      },
+      replace: true
     };
   })
   
   .directive('email', function () {
     return {
       restrict: 'C',
-      link: function ($scope, elem, attrs) {
+      compile: function (elem, attrs) {
         var emailAddress = elem.html();
         emailAddress = emailAddress.replace("{zavinac}", "@");
         emailAddress = '<a href="mailto:'+emailAddress+'">'+ emailAddress+ '</a>';
