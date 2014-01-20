@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from south.v2 import DataMigration
-from django.core.management import call_command
 from django.db import connection
 
 

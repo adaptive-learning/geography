@@ -14,7 +14,6 @@ class Migration(DataMigration):
         call_command('add_map', 'at', u'Česká republika', 'BUNDESLAND')
         call_command('add_map', 'in', u'Česká republika', 'STATE')
         call_command('add_map', 'cn', u'Česká republika', 'PROVINCE')
-        cursor = connection.cursor()
 
     def backwards(self, orm):
         pass
