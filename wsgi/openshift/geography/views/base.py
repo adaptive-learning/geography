@@ -3,7 +3,7 @@ from django.conf import settings
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 from geography.utils import JsonResponse, StaticFiles
-from django.contrib.contenttypes.models import ContentType
+from django.db.models.loading import get_model
 from django.core import serializers
 from django.http import HttpResponse
 from geography.models import Place
@@ -76,13 +76,12 @@ def export_view(request):
             "error": "Permission denied: you need to be staff member. If you think you should be able to access logs, contact admins."}
         return JsonResponse(response)
     type_key = request.GET[
-        'model'] if 'model' in request.GET else 'questions.answer'
-    [app_label, model] = type_key.split(".")
-    try:
-        ct = ContentType.objects.get_by_natural_key(app_label, model)
-    except ContentType.DoesNotExist:
+        'model'] if 'model' in request.GET else 'geography.answer'
+    [app_label, model_name] = type_key.split(".")
+    model = get_model(app_label, model_name)
+    if not model:
         return JsonResponse({"error": "Invalid model name: '%s'" % (type_key)})
-    objects = ct.model_class().objects
+    objects = model.objects
     if 'ids' in request.GET:
         ids = request.GET['ids'].split(",")
         queryset = objects.filter(pk__in=ids)
