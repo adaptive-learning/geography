@@ -51,7 +51,7 @@ def by_additive_function(user, map_place, expected_probability, n, place_type):
         ''',
         [
             int(map_place.place.id),
-            int(1),
+            int(place.PlaceRelation.IS_ON_MAP),
             int(place_type),
             int(user.id)
         ]
@@ -154,9 +154,9 @@ def by_order(user, map_place, expected_probability, n, place_type):
     )
     dict_places = fetchall(cursor)
     result = []
-    for place in dict_places:
-        place['predicted_probability'] = 1.0 / (1 + exp(-d['local_skill']))
-        result.append(place)
+    for p in dict_places:
+        p['predicted_probability'] = 1.0 / (1 + exp(-p['local_skill']))
+        result.append(p)
     return dicts_to_places(dict_places)
 
 
