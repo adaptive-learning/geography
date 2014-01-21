@@ -2,7 +2,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.core.cache import cache
-from django.core import serializers
 import recommendation
 import json
 
