@@ -257,6 +257,13 @@ ALLOWED_HOSTS = [
     '.slepemapy.cz',
 ]
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(MEDIA_ROOT, '.django_cache'),
+    }
+}
+
 LOGIN_REDIRECT_URL = '/#/view/'
 
 SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'

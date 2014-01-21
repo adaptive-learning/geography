@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.core.cache import cache
+from django.core import serializers
 import recommendation
+import json
 
 
 class PlaceManager(models.Manager):
@@ -67,46 +70,56 @@ class Place(models.Model):
     objects = PlaceManager()
 
     def confusing_places(self, map_place, n):
-        return Place.objects.raw(
-            '''
-            SELECT
-                geography_place.*,
-                COUNT(geography_answer.id) AS confusing_factor
-            FROM
-                geography_place
-                LEFT JOIN geography_answer ON (
-                    geography_answer.place_answered_id = geography_place.id
-                    AND geography_answer.place_asked_id = %s)
-            WHERE
-                geography_place.id IN (
-                    SELECT
-                        geography_placerelation_related_places.place_id
-                    FROM
-                        geography_placerelation
-                        INNER JOIN geography_placerelation_related_places
-                            ON placerelation_id = geography_placerelation.id
-                    WHERE
-                        geography_placerelation.place_id = %s
-                        AND
-                        geography_placerelation.type = %s
-
-                )
-                AND geography_place.id != %s
-                AND geography_place.type = %s
-                AND (geography_answer.place_asked_id != geography_answer.place_answered_id OR ISNULL(geography_answer.place_asked_id))
-            GROUP BY geography_place.id
-            ORDER BY
-                confusing_factor DESC, RAND() DESC
-            LIMIT %s
-            ''',
-            [
-                int(self.id),
-                int(map_place.place.id),
-                int(PlaceRelation.IS_ON_MAP),
-                int(self.id),
-                int(self.type),
-                int(n)
-            ])
+        cache_key = "map" + str(map_place.id) + "-place" + str(self.id)
+        places_json = cache.get(cache_key)
+        if places_json is not None:
+            places = [Place(code=p[0], name=p[1]) for p in json.loads(places_json)]
+        else:
+            places = Place.objects.raw(
+                '''
+                SELECT
+                    geography_place.*,
+                    COUNT(geography_answer.id) AS confusing_factor
+                FROM
+                    geography_place
+                    LEFT JOIN geography_answer ON (
+                        geography_answer.place_answered_id = geography_place.id
+                        AND geography_answer.place_asked_id = %s)
+                WHERE
+                    geography_place.id IN (
+                        SELECT
+                            geography_placerelation_related_places.place_id
+                        FROM
+                            geography_placerelation
+                            INNER JOIN geography_placerelation_related_places
+                                ON placerelation_id = geography_placerelation.id
+                        WHERE
+                            geography_placerelation.place_id = %s
+                            AND
+                            geography_placerelation.type = %s
+                    )
+                    AND geography_place.id != %s
+                    AND geography_place.type = %s
+                    AND (geography_answer.place_asked_id != geography_answer.place_answered_id OR ISNULL(geography_answer.place_asked_id))
+                GROUP BY geography_place.id
+                ORDER BY
+                    confusing_factor DESC, RAND() DESC
+                LIMIT 8
+                ''',
+                [
+                    int(self.id),
+                    int(map_place.place.id),
+                    int(PlaceRelation.IS_ON_MAP),
+                    int(self.id),
+                    int(self.type)
+                ])
+            json_places = json.dumps([[p.code, p.name] for p in places])
+            expire_days = 3
+            # TODO: change expire_days to something like:
+            # expire_days = places[0].confusing_factor / 2
+            expire_seconds = 60 * 60 * 24 * expire_days
+            cache.set(cache_key, json_places, expire_seconds)
+        return places[:int(n)]
 
     def __unicode__(self):
         return u'{0} ({1})'.format(self.name, self.code)
