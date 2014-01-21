@@ -11,3 +11,4 @@ sqlite3.db
 *.log
 dist
 Geography.egg-info
+.django_cache
