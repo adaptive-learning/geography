@@ -4,6 +4,7 @@ from geography.models import Place
 from random import choice
 from math import floor
 import logging
+import pprint
 
 LOGGER = logging.getLogger(__name__)
 
@@ -50,7 +51,7 @@ class QuestionService:
         self.history_length = history_length
 
     def get_questions(self, n, place_type):
-        target_probability = self.get_target_probability()
+        target_probability = self.target_probability
         candidates = Place.objects.get_places_to_ask(
             self.user,
             self.map_place,
@@ -58,13 +59,13 @@ class QuestionService:
             n,
             place_type)
         LOGGER.debug(
-            "user %s, question candidates with predicted probability (target %s) for map %s are %s",
+            "user %s, question candidates with predicted probability (target %s) for map %s are:\n %s",
             str(self.user),
             target_probability,
             str(self.map_place),
-            str(candidates))
+            pprint.pformat(map(lambda (place, raw): raw, candidates)))
         candidates = map(
-            lambda (place, prediction, number_of_answers): (place, self.number_of_options(prediction, 0.75, number_of_answers)),
+            lambda (place, raw): (place, self.number_of_options(raw['predicted_probability'], 0.75, raw['number_of_answers'])),
             candidates)
         LOGGER.debug(
             "user %s, question candidates with number of options for map %s are %s",

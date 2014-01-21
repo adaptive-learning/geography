@@ -10,7 +10,8 @@ import json
 class PlaceManager(models.Manager):
 
     def get_places_to_ask(self, user, map_place, expected_probability, n, place_type):
-        return recommendation.by_order(user, map_place, expected_probability, n, place_type)
+        return recommendation.by_additive_function(
+            user, map_place, expected_probability, n, place_type)
 
     def get_states_with_map(self):
         return [pr.place for pr in PlaceRelation.objects.filter(
