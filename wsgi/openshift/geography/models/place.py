@@ -2,8 +2,21 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.core.cache import cache
+from django.db import connection
 import recommendation
 import json
+import random
+import logging
+
+LOGGER = logging.getLogger(__name__)
+
+
+class WeghtedPlace:
+
+    def __init__(self, code, name, weight):
+        self.code = code
+        self.name = name
+        self.weight = weight
 
 
 class PlaceManager(models.Manager):
@@ -72,13 +85,13 @@ class Place(models.Model):
     def confusing_places(self, map_place, n):
         cache_key = "map" + str(map_place.id) + "-place" + str(self.id)
         places_json = cache.get(cache_key)
-        if places_json is not None:
-            places = [Place(code=p[0], name=p[1]) for p in json.loads(places_json)]
-        else:
-            places = Place.objects.raw(
+        if places_json is None:
+            cursor = connection.cursor()
+            cursor.execute(
                 '''
                 SELECT
-                    geography_place.*,
+                    geography_place.code,
+                    geography_place.name,
                     COUNT(geography_answer.id) AS confusing_factor
                 FROM
                     geography_place
@@ -113,13 +126,17 @@ class Place(models.Model):
                     int(self.id),
                     int(self.type)
                 ])
-            json_places = json.dumps([[p.code, p.name] for p in places])
+            json_places = json.dumps([(p[0], p[1], p[2]) for p in cursor.fetchall()])
             expire_days = 3
             # TODO: change expire_days to something like:
             # expire_days = places[0].confusing_factor / 2
             expire_seconds = 60 * 60 * 24 * expire_days
             cache.set(cache_key, json_places, expire_seconds)
-        return places[:int(n)]
+            places_json = cache.get(cache_key)
+        return [
+            Place(code=p[0], name=p[1])
+            for p in Place._weighted_choices(json.loads(places_json), n)
+        ]
 
     def __unicode__(self):
         return u'{0} ({1})'.format(self.name, self.code)
@@ -129,6 +146,34 @@ class Place(models.Model):
             'code': self.code,
             'name': self.name
         }
+
+    @staticmethod
+    def _weighted_choices(choices, n):
+        chosen = []
+        choices_set = set()
+        for i in choices:
+            choices_set.add(WeghtedPlace(i[0], i[1], i[2]))
+        for i in range(int(n)):
+            c = Place._weighted_choice(choices_set)
+            chosen.append((c.code, c.name))
+            choices_set.remove(c)
+        return list(chosen)
+
+    @staticmethod
+    def _weighted_choice(choices):
+        if not len(choices):
+            raise Exception("The list 'choices' can't be empty.")
+        total = sum(c.weight for c in choices)
+        if total == 0:
+            LOGGER.warn("choices don't have weights")
+            return random.choice(list(choices))
+        r = random.uniform(0, total)
+        upto = 0
+        for c in choices:
+            if upto + c.weight > r:
+                return c
+            upto += c.weight
+        assert False, "Shouldn't get here"
 
     class Meta:
         app_label = 'geography'
