@@ -9,4 +9,4 @@ else
 fi
 ./manage.py migrate geography 0003 --delete-ghost-migrations
 ./manage.py derived_elo_data
-rm -rf $OPENSHIFT_REPO_DIR/wsgi/openshift/.django_cache
+rm -rf $OPENSHIFT_DATA_DIR/.django_cache
