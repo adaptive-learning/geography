@@ -1,68 +1,52 @@
+
+# Geography
+
 [![Build Status](https://travis-ci.org/proso/geography.png)](https://travis-ci.org/proso/geography)
 
-Django on OpenShift
-===================
+## Deployment
 
-This git repository helps you get up and running quickly w/ a Django
-installation on OpenShift.  The Django project name used in this repo
-is 'openshift' but you can feel free to change it.  Right now the
-backend is sqlite3 and the database runtime is found in
-`$OPENSHIFT_DATA_DIR/sqlite3.db`.
+The content of this repository is continuously built by [https://travis-ci.org](https://travis-ci.org/proso/geography)
+which deploys the current code to the [staging server](https://travis-ci.org/proso/geography).
 
-Before you push this app for the first time, you will need to change
-the [Django admin password](#admin-user-name-and-password).
-Then, when you first push this
-application to the cloud instance, the sqlite database is copied from
-`wsgi/openshift/sqlite3.db` with your newly changed login
-credentials. Other than the password change, this is the stock
-database that is created when `python manage.py syncdb` is run with
-only the admin app installed.
+During the release the content of the repository has to be pushed to the Openshift GIT repository.
+You should add the Openshift GIT repository to your remotes:
 
-On subsequent pushes, a `python manage.py syncdb` is executed to make
-sure that any models you added are created in the DB.  If you do
-anything that requires an alter table, you could add the alter
-statements in `GIT_ROOT/.openshift/action_hooks/alter.sql` and then use
-`GIT_ROOT/.openshift/action_hooks/deploy` to execute that script (make
-sure to back up your database w/ `rhc app snapshot save` first :) )
+	git add remote openshift ssh://51bb5930500446923f000201@geography-conqueror.rhcloud.com/~/git/geography.git/
+
+To release `master` branch as a version `X.Y.Z` do the following:
+
+	git push openshift master
+	git tag tag release-X.Y.Z
+	git push origin release-X.Y.Z
+
+## Repository Layout
+
+* `wsgi/` - Externally exposed wsgi code goes
+* `wsgi/static/` - Public static content gets served here
+* `libs/` - Additional libraries
+* `data/` - For not-externally exposed wsgi code
+* `setup.py` - Standard setup.py, specify deps here
+* `../data` - For persistent data (also env var: OPENSHIFT_DATA_DIR)
+* `.openshift/action_hooks/pre_build` - Script that gets run every git push before the build
+* `.openshift/action_hooks/build` - Script that gets run every git push as part of the build process (on the CI system if available)
+* `.openshift/action_hooks/deploy` - Script that gets run every git push after build but before the app is restarted
+* `.openshift/action_hooks/post_deploy` - Script that gets run every git push after the app is restarted
 
 
-Running on OpenShift
---------------------
+## Openshift Environment Variables
 
-Create an account at http://openshift.redhat.com/
+OpenShift provides several environment variables to reference for ease
+of use.  The following list are some common variables but far from exhaustive:
 
-Install the RHC client tools if you have not already done so:
+	os.environ['OPENSHIFT_APP_NAME']  - Application name
+	os.environ['OPENSHIFT_DATA_DIR']  - For persistent storage (between pushes)
+	os.environ['OPENSHIFT_TMP_DIR']   - Temp storage (unmodified files deleted after 10 days)
+	os.environ['OPENSHIFT_MYSQL_DB_HOST']      - DB host
+	os.environ['OPENSHIFT_MYSQL_DB_PORT']      - DB Port
+	os.environ['OPENSHIFT_MYSQL_DB_USERNAME']  - DB Username
+	os.environ['OPENSHIFT_MYSQL_DB_PASSWORD']  - DB Password
 
-    sudo gem install rhc
+To get a full list of environment variables, simply add a line in your
+.openshift/action_hooks/build script that says "export" and push.
 
-Create a python-2.6 application
-
-    rhc app create -a django -t python-2.6
-
-Add this upstream repo
-
-    cd django
-    git remote add upstream -m master git://github.com/openshift/django-example.git
-    git pull -s recursive -X theirs upstream master
-
-Then push the repo upstream
-
-    git push
-
-Here, the [admin user name and password will be displayed](#admin-user-name-and-password), so pay
-special attention.
-
-That's it. You can now checkout your application at:
-
-    http://django-$yournamespace.rhcloud.com
-
-Admin user name and password
-----------------------------
-As the `git push` output scrolls by, keep an eye out for a
-line of output that starts with `Django application credentials: `. This line
-contains the generated admin password that you will need to begin
-administering your Django app. This is the only time the password
-will be displayed, so be sure to save it somewhere. You might want
-to pipe the output of the git push to a text file so you can grep for
-the password later.
 
