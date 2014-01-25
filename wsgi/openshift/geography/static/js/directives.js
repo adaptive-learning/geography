@@ -19,7 +19,7 @@ angular.module('blindMaps.directives', [])
   .directive('blindMap', function ($filter, mapControler, usersplaces) {
     return {
       restrict: 'E',
-      template: '<center class="map-container">' +
+      template: '<div class="map-container">' +
                   '<div id="map-holder">' +
                       '<div class="loading-indicator"></div>' +
                   '</div>' +
@@ -29,7 +29,7 @@ angular.module('blindMaps.directives', [])
                       'class="btn btn-primary btn-lg btn-practice" >' +
                     'Procvičovat' +
                   '</a>' +
-                '</center>',
+                '</div>',
       link: function ($scope, elem, attrs) {
         $scope.practice = attrs.practice;
         var showTooltips = attrs.practice !== undefined;

@@ -179,6 +179,7 @@ angular.module('blindMaps.map', [])
     var myMap = {
       init: function(mapCode, showTooltips) {
         config.showTooltips = showTooltips;
+        config.isPractise = !showTooltips;
         config.states = [];
         map = $K.map(HOLDER);
     
@@ -208,9 +209,19 @@ angular.module('blindMaps.map', [])
             if (!mapAspectRatio) {
                 mapAspectRatio = map.viewAB.height / map.viewAB.width;
             }
+            $("#ng-view").removeClass("horizontal");
     
             var c = $(HOLDER);
-            if (holderInitHeight/ mapAspectRatio >= $(window).width()) {
+            if (config.isPractise) {
+              var screenAspectRatio = $(window).height() / $(window).width();
+              if (screenAspectRatio - mapAspectRatio < -0.2) {
+                $("#ng-view").addClass("horizontal");
+                var newHeight = $(window).height() + 15;
+              } else {
+                var controlsHeight = $(window).width() > 767 ? 290 : 200;
+                var newHeight = $(window).height() - controlsHeight;
+              }
+            } else if (holderInitHeight/ mapAspectRatio >= $(window).width()) {
                 var newHeight = Math.max(holderInitHeight/2, mapAspectRatio * $(window).width());
             } else {
                 var newHeight = holderInitHeight;
@@ -220,6 +231,9 @@ angular.module('blindMaps.map', [])
             if (panZoom) {
                 panZoom.zoomIn(1);
                 panZoom.zoomOut(1);
+            }
+            if (config.isPractise) {
+              window.scrollTo(0,$(".navbar").height()+2);
             }
         }
       },

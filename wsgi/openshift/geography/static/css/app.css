@@ -111,13 +111,24 @@ ul.dropdown-menu.login {
 .view-places {
   margin: 10px; }
 
+.horizontal .map-container {
+  width: 70%;
+  float: right; }
+.horizontal #container {
+  width: 30%;
+  float: left; }
+  .horizontal #container .col-sm-7, .horizontal #container .col-sm-5 {
+    width: 100%;
+    padding: 0; }
+
 #container {
   margin-left: auto;
   margin-right: auto;
   float: none;
   position: relative; }
-  #container h2 {
-    padding-left: 30px; }
+
+.practice h2 {
+  padding-left: 30px; }
 
 .thumbnails {
   overflow: hidden; }
@@ -463,17 +474,26 @@ html, body {
   .map-container #map-holder {
     width: 100%; }
 
-  .practice .btn-large {
-    padding: 2px 10px;
-    font-size: 11.9px;
+  .practice .btn-lg {
+    padding: 3px 10px;
+    font-size: 13.9px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px; }
-    .practice .btn-large [class^="icon-"], .practice .btn-large [class*=" icon-"] {
+    .practice .btn-lg [class^="flag-"], .practice .btn-lg [class^="icon-"], .practice .btn-lg [class*=" icon-"] {
       margin-top: 0; }
-  .practice h2 .label {
-    font-size: 11.844px;
-    line-height: 14px; }
+  .practice h2 {
+    margin: 0;
+    padding: 0 0 0 5px; }
+    .practice h2 span {
+      float: none;
+      margin: 0; }
+    .practice h2 .label {
+      font-size: 11.844px;
+      line-height: 14px; }
+
+  .quesions-progress {
+    margin-bottom: 0; }
 
   #footer {
     font-size: 0.7em; } }
