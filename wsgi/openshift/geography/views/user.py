@@ -17,7 +17,7 @@ def user_view(request):
     if user and geography.models.user.is_lazy(user) and geography.models.user.is_named(user):
         geography.models.user.convert_lazy_user(request.user)
     username = user.username if user and not geography.models.user.is_lazy(user) else ''
-    points = geography.models.user.get_points(user) if user and not geography.models.user.is_lazy(user) else 0
+    points = geography.models.user.get_points(user) if user else 0
     response = {
         'username': username,
         'points': points,

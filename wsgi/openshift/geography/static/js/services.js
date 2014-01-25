@@ -108,17 +108,47 @@ angular.module('blindMaps.services', [])
 
   })
 
-  .factory('user', function($http) {
+  .factory('user', function($http, $cookies, events) {
+    var user;
     return {
       getUser : function(callback) {
-          $http.get('user/').success(callback);
+          if(!user) {
+            $http.get('user/').success(function(data){
+              user = data;
+              callback(user);
+            });
+          }
+          return user;
       },
       logout : function(callback){
           $http.get('user/logout/').success(callback);
-          return  {
+          user =  {
               'username' : '',
               'points' :  0
           };
+          return user;
+      },
+      addPoint : function(){
+        user.points++;
+        $cookies.points = user.points;
+        events.emit("pointAdded", user.points);
+      }
+    }
+  })
+
+  .factory('events', function($http) {
+    var handlers = {};
+    return {
+      on : function(eventName, handler) {
+        handlers[eventName] = handlers[eventName] || []
+        handlers[eventName].push(handler);
+      },
+      emit : function(eventName, args){
+        handlers[eventName] = handlers[eventName] || []
+        handlers[eventName].map(function(handler){
+          handler(args);
+        })
+        
       }
     }
   })

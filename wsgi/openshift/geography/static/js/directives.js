@@ -52,6 +52,27 @@ angular.module('blindMaps.directives', [])
         emailAddress = '<a href="mailto:'+emailAddress+'">'+ emailAddress+ '</a>';
         elem.html(emailAddress);
       }
+    }
+  })
+
+  .directive('atooltip', function () {
+    return {
+      restrict: 'C',
+      compile: function (elem, attrs) {      
+        elem.tooltip({"placement" : "bottom"});
+      }
+    };
+  })
+
+  .directive('dropLogin', function () {
+    return {
+      restrict: 'C',
+      compile: function (elem, attrs) { 
+        elem.bind('click', function(){
+          elem.tooltip('destroy');
+          elem.parent().find(".tooltip").remove();
+        })
+      }
     };
   });
   

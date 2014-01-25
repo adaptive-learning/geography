@@ -35,13 +35,13 @@ angular.module('blindMaps', [
     
   })
 
-  .run( function($rootScope, $location, $cookies, $http) {    
+  .run( function($rootScope, $location, $cookies, $http, user) {    
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded';
     
     $rootScope.$on( "$routeChangeStart", function(event, next, current) {
       if (!current && next.templateUrl == './tpl/welcome_page.html' ) {
-        $rootScope.getUser(function(user){
+        user.getUser(function(user){
           if ( user && user.username && user.username != "" ) {
             $location.path( "/view" );
           }

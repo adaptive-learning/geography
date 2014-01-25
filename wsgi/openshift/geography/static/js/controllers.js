@@ -3,30 +3,34 @@
 /* Controllers */
 
 angular.module('blindMaps.controllers', [])
-  .controller('AppCtrl', function($scope, $rootScope, $timeout, $cookies, user) {
+  .controller('AppCtrl', function($scope, $rootScope, $timeout, user, events) {
     $rootScope.topScope = $rootScope;
 
     var updateUser = function(data) {
         $rootScope.user = data;
-        $cookies.points = $rootScope.user;
     };
     user.getUser(updateUser);
-
-    $('.atooltip').tooltip({"placement" : "bottom"});
 
     $rootScope.logout = function(){
         $rootScope.user = user.logout(updateUser);
     };
 
-    $rootScope.addPoint = function(){
-        $rootScope.user.points++;
-        $cookies.points = $rootScope.user;
-        if ($rootScope.user.points == 1) {
+    events.on("pointAdded", function(points) {
+        $rootScope.user.points = points;
+        
+        if (points == 1) {
             $timeout(function(){
                 $('#points').tooltip("show");
             },0);
         }
-    };
+    });
+    events.on("questionSetFinished", function(points) {
+        if (10 < points && points <= 20) {
+            $timeout(function(){
+                $('#drop-login').tooltip("show");
+            },0);
+        }
+    });
 
     $scope.vip = function() {
         return $scope.user && ($scope.user.username == 'Verunka');
@@ -63,7 +67,7 @@ angular.module('blindMaps.controllers', [])
   })
 
   .controller('AppPractice', function($scope, $routeParams, $timeout, 
-          question, placeName, mapControler) {
+          question, placeName, mapControler, user, events) {
     $scope.part = $routeParams.part;
     $scope.name = placeName($scope.part);
 
@@ -102,7 +106,7 @@ angular.module('blindMaps.controllers', [])
        $scope.question.answer = selected;
        $scope.progress = question.answer($scope.question);
        if (correct) {
-           $scope.$parent.addPoint();
+           user.addPoint();
            $timeout(function(){
             $scope.next();
            },700);
@@ -124,6 +128,7 @@ angular.module('blindMaps.controllers', [])
                 var correct = q.code == q.answer;
                 mapControler.highlightState(q.code, correct ? GOOD : BAD, 1);
             });
+            events.emit("questionSetFinished", user.getUser().points);
         }
     };
 
