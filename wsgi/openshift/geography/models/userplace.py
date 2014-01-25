@@ -7,10 +7,10 @@ from math import exp
 
 class UserPlaceManager(models.Manager):
 
-    def for_user_and_map(self, user, map_place):
+    def for_user_and_map(self, user, map_places):
         return self.filter(
             user=user,
-            place__in=map_place.related_places.all()
+            place__in=map_places,
         ).select_related('place').order_by('place__name')
 
     def from_user_and_place(self, user, place):

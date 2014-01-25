@@ -49,8 +49,17 @@ def users_places(request, map_code, user=None):
         map = PlaceRelation.objects.get(
             place__code=map_code,
             type=PlaceRelation.IS_ON_MAP)
+        map_places = map.related_places.all()
     except PlaceRelation.DoesNotExist:
         raise Http404("Unknown map name: {0}".format(map_code))
+    try:
+        too_small_places = PlaceRelation.objects.get(
+            place__code=map_code,
+            type=PlaceRelation.IS_TOO_SMALL_ON_MAP)
+        map_places = map_places | too_small_places.related_places.all()
+    except PlaceRelation.DoesNotExist:
+        pass
+
     if not user:
         user = request.user
     else:
@@ -60,7 +69,7 @@ def users_places(request, map_code, user=None):
             raise HttpResponseBadRequest("Invalid username: {0}" % user)
 
     if request.user.is_authenticated():
-        ps = UserPlace.objects.for_user_and_map(user, map)
+        ps = UserPlace.objects.for_user_and_map(user, map_places)
     else:
         ps = []
     response = {
@@ -74,7 +83,8 @@ def users_places(request, map_code, user=None):
             } for place_type in Place.PLACE_TYPE_PLURALS
         ]
     }
-
+    response['placesTypes'] = [pt for pt in response['placesTypes']
+                               if len(pt['places']) > 0]
     LOGGER.info(
         u"users_places: previewed map '{0}' of user '{1}' with '{2}' places".
         format(map.place.name, user, len(ps)))

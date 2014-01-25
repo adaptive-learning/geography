@@ -200,10 +200,12 @@ class PlaceRelation(models.Model):
     IS_ON_MAP = 1
     IS_SUBMAP = 2
     HAVE_LAND_BORDER = 3
+    IS_TOO_SMALL_ON_MAP = 4
     PLACE_RELATION_TYPES = (
         (IS_ON_MAP, 'Is On Map'),
         (IS_SUBMAP, 'Is Submap'),
         (HAVE_LAND_BORDER, 'Have Land Border'),
+        (IS_TOO_SMALL_ON_MAP, 'Is Too Small On Map'),
     )
     place = models.ForeignKey(
         Place,
