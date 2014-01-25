@@ -122,6 +122,23 @@ class QuestionService:
 
 class QuestionType(object):
 
+    GENUS_MASCULINE = 0
+    GENUS_FEMININE = 1
+    GENUS_NEUTER = 2
+
+    PLACE_TYPE_GENUS = {
+        Place.UNKNOWN: None,
+        Place.STATE: GENUS_MASCULINE,
+        Place.CITY: GENUS_NEUTER,
+        Place.WORLD: GENUS_MASCULINE,
+        Place.CONTINENT: GENUS_MASCULINE,
+        Place.RIVER: GENUS_FEMININE,
+        Place.LAKE: GENUS_NEUTER,
+        Place.REGION: GENUS_MASCULINE,
+        Place.BUNDESLAND: GENUS_FEMININE,
+        Place.PROVINCE: GENUS_FEMININE,
+    }
+
     PLACE_TYPE_SINGULAR = {
         Place.UNKNOWN: 'unknown',
         Place.STATE: u'stát',
@@ -134,7 +151,11 @@ class QuestionType(object):
         Place.BUNDESLAND: u'spolková země',
         Place.PROVINCE: u'provincie',
     }
-    PLACE_TYPE_CHOICE = {
+    PLACE_TYPE_SINGULAR_CHOICE = {
+        Place.BUNDESLAND: u'spolkovou zemi',
+        Place.PROVINCE: u'provincii',
+    }
+    PLACE_TYPE_PLURAL_CHOICE = {
         Place.UNKNOWN: 'unknown',
         Place.STATE: u'států',
         Place.CITY: u'měst',
@@ -155,15 +176,27 @@ class QuestionType(object):
     @property
     def text(self):
         place_singular = QuestionType.PLACE_TYPE_SINGULAR[self.place_type]
-        place_choice = QuestionType.PLACE_TYPE_CHOICE[self.place_type]
+        place_plural_choice = QuestionType.PLACE_TYPE_PLURAL_CHOICE[self.place_type]
+        place_singular_choice = QuestionType.PLACE_TYPE_SINGULAR_CHOICE.get(
+            self.place_type, place_singular)
 
         if self.type == Answer.FIND_ON_MAP:
             if self.number_of_options > 0:
-                return u"Ze zvýrazněných " + place_choice + u" na mapě vyber"
+                return u"Ze zvýrazněných " + place_plural_choice + u" na mapě vyber"
             else:
-                return u"Vyber na mapě " + place_singular
+                return u"Vyber na mapě " + place_singular_choice
         else:
-            return u"Jak se jmenuje " + place_singular + u" zvýrazněný na mapě?"
+            return u"Jak se jmenuje " + place_singular + u" " + self.highlighted + u" na mapě?"
+
+    @property
+    def highlighted(self):
+        genus = QuestionType.PLACE_TYPE_GENUS[self.place_type]
+        if genus == QuestionType.GENUS_MASCULINE:
+            return u"zvýrazněný"
+        elif genus == QuestionType.GENUS_FEMININE:
+            return u"zvýrazněná"
+        else:
+            return u"zvýrazněné"
 
     def to_serializable(self):
         return {
