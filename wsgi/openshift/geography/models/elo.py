@@ -11,9 +11,9 @@ LOGGER = logging.getLogger(__name__)
 
 class Elo:
 
-    ALPHA_1 = 4
+    ALPHA_1 = 1
     ALPHA_2 = 1.2
-    DYNAMIC_ALPHA_PARAM = 0.5
+    DYNAMIC_ALPHA_PARAM = 0.05
     LOCAL_SKILL_EXTREM = 100
 
     @staticmethod
