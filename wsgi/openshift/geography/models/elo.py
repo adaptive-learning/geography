@@ -14,7 +14,6 @@ class Elo:
     ALPHA_1 = 1
     ALPHA_2 = 1.2
     DYNAMIC_ALPHA_PARAM = 0.05
-    LOCAL_SKILL_EXTREM = 100
 
     @staticmethod
     def predict(user, place, guess=0):
