@@ -1,23 +1,17 @@
-
 # Geography
 
 [![Build Status](https://travis-ci.org/proso/geography.png)](https://travis-ci.org/proso/geography)
+
 
 ## Deployment
 
 The content of this repository is continuously built by [https://travis-ci.org](https://travis-ci.org/proso/geography)
 which deploys the current code to the [staging server](https://travis-ci.org/proso/geography).
 
-During the release the content of the repository has to be pushed to the Openshift GIT repository.
-You should add the Openshift GIT repository to your remotes:
+To release `master` branch to production execute the release script and follow the instructions.
 
-	git add remote openshift ssh://51bb5930500446923f000201@geography-conqueror.rhcloud.com/~/git/geography.git/
+	./release.sh
 
-To release `master` branch as a version `X.Y.Z` do the following:
-
-	git push openshift master
-	git tag tag release-X.Y.Z
-	git push origin release-X.Y.Z
 
 ## Repository Layout
 
