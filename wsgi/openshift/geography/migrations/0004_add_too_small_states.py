@@ -26,6 +26,7 @@ class Migration(DataMigration):
             type=Place.STATE
         ).exclude(
             id__in=world_states | india_states | us_states,
+        ).exclude(
             code__in=["Andaman and Nicobar",
                       "Chandigarh",
                       "Dadra and Nagar Haveli",
@@ -42,6 +43,9 @@ class Migration(DataMigration):
         pr.save()
 
     def backwards(self, orm):
+        pr = PlaceRelation.objects.get(place=world,
+                                       type=PlaceRelation.IS_TOO_SMALL_ON_MAP)
+        pr.delete()
         pass
 
     complete_apps = ['geography']
