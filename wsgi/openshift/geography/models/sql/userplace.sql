@@ -41,3 +41,13 @@ CREATE VIEW geography_userplace AS
 		geography_elolocalskill
 	GROUP BY
 		geography_elolocalskill.user_id, geography_elolocalskill.place_id;
+
+CREATE VIEW geography_averageplace AS
+  SELECT
+    geography_elodifficulty.place_id AS dummy_id,
+    geography_elodifficulty.place_id AS place_id,
+    geography_elodifficulty.value AS elo_skill
+  FROM
+    geography_elodifficulty
+  GROUP BY
+    geography_elodifficulty.place_id;

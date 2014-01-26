@@ -2,7 +2,7 @@
 from django.contrib.auth.models import User
 from django.http import Http404, HttpResponseBadRequest
 from django.utils import simplejson
-from geography.models import Place, PlaceRelation, UserPlace
+from geography.models import Place, PlaceRelation, UserPlace, AveragePlace
 from geography.utils import JsonResponse, QuestionService
 from lazysignup.decorators import allow_lazy_user
 from logging import getLogger
@@ -44,7 +44,14 @@ def should_get_questions(request, question_index):
             and question_index != 9)
 
 
+def average_users_places(request, map_code):
+
+    response = {}
+    return JsonResponse(response)
+
+
 def users_places(request, map_code, user=None):
+
     try:
         map = PlaceRelation.objects.get(
             place__code=map_code,
@@ -60,15 +67,20 @@ def users_places(request, map_code, user=None):
     except PlaceRelation.DoesNotExist:
         pass
 
+
     if not user:
         user = request.user
+    elif user == "average":
+        pass
     else:
         try:
             user = User.objects.get(username=user)
         except User.DoesNotExist:
             raise HttpResponseBadRequest("Invalid username: {0}" % user)
 
-    if request.user.is_authenticated():
+    if user == "average":
+        ps = AveragePlace.objects.for_map(map_places)
+    elif request.user.is_authenticated():
         ps = UserPlace.objects.for_user_and_map(user, map_places)
     else:
         ps = []
