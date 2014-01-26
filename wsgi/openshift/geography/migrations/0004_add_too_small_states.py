@@ -43,6 +43,7 @@ class Migration(DataMigration):
         pr.save()
 
     def backwards(self, orm):
+        world = Place.objects.get(code="world")
         pr = PlaceRelation.objects.get(place=world,
                                        type=PlaceRelation.IS_TOO_SMALL_ON_MAP)
         pr.delete()
