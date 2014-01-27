@@ -1,24 +1,24 @@
-<blind-map name="{{name}}" code="{{part}}" ></blind-map>
+<blind-map code="{{part}}" ></blind-map>
 <div class="progress quesions-progress">
   <div class="progress-bar" style="width: {{progress}}%;"></div>
 </div>
-<div id="container" ui-keypress="{enter: 'next()'}">
+<div id="container">
   <div ng-show="!question && !showSummary" class="loading-indicator">
   </div>
   <div ng-show="question != undefined && !showSummary" class="practice">
     <h2>
       <span>{{question.text}} </span>
-        <span class="label label-default" ng-show="isFindOnMapType()">
+        <span class="label label-default" ng-show="question|isFindOnMapType">
           <i class="flag-{{question.code}}"></i> {{question.place}}
         </span>
         <br class="clearfix">
     </h2>
     <span class="col-sm-7">
-      <span ng-show="isPickNameOfType()">
+      <span ng-show="question|isPickNameOfType">
         <button ng-repeat="place in question.options"
           value="{{place.code}}"
           class="btn btn-lg btn-default"
-          ng-click="check(place.code)"
+          ng-click="checkAnswer(place.code)"
           ng-class="{'btn-success': place.correct, 'btn-danger': place.selected && !place.correct }"
           ng-disabled="place.disabled">
            <i class="flag-{{place.code}}"></i> {{place.name}}
@@ -27,7 +27,7 @@
     </span>
     <span class="col-sm-5" >
       <button class="btn btn-lg btn-default" 
-              ng-click="check()" 
+              ng-click="checkAnswer()" 
               ng-disabled="canNext" >
           Nevím
       </button>

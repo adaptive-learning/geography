@@ -1,4 +1,4 @@
-<blind-map name="{{name}}" code="{{part}}" practice="true" ></blind-map>
+<blind-map code="{{part}}" practice="true" ></blind-map>
 <div id="container">
   <div ng-show="!placesTypes" class="loading-indicator">
   </div>
@@ -21,8 +21,7 @@
       </h3>
       <div class="view-places">
         <span ng-repeat="place in type.places"
-              ng-mouseenter="hover(place, true)"
-              ng-mouseleave="hover(place, false)"
+              ng-click="placeClick(place)"
               place-label>
         </span>
         <div class="clearfix"></div>

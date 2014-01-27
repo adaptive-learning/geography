@@ -41,4 +41,24 @@ angular.module('blindMaps.filters', [])
           return "";
         }
     }
+  })
+
+  .filter('isFindOnMapType', function() {
+    return function(question) {
+        return question && question.type < 20;
+    };
+  })
+
+  .filter('isPickNameOfType', function() {
+    return function(question) {
+        return question && question.type >= 20;
+    };
+  })
+
+  .filter('isAllowedOption', function() {
+    return function(question, code) {
+        return !question.options || 1 == question.options.filter(function(place){
+            return place.code == code;
+        }).length;
+    };
   });

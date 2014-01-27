@@ -9,7 +9,7 @@ angular.module('blindMaps.controllers', [])
     var updateUser = function(data) {
         $rootScope.user = data;
     };
-    user.getUser(updateUser);
+    //user.getUser(updateUser);
 
     $rootScope.logout = function(){
         $rootScope.user = user.logout(updateUser);
@@ -37,71 +37,56 @@ angular.module('blindMaps.controllers', [])
     };
   })
 
-  .controller('AppView', function($scope, $routeParams, $filter, $timeout, 
-        usersplaces, question, placeName, mapControler) {
+  .controller('AppView', function($scope, $routeParams, $filter, 
+        places, mapTitle, mapControler) {
     $scope.part = $routeParams.part;
-    $scope.user = $routeParams.user || "";
-    $scope.name = placeName($scope.part);
-
-    usersplaces.get($scope.part, $scope.user, function(data) {
-        $scope.placesTypes = data;
-        $scope.$parent.placesTypes = data;
-        var states = $filter("StatesFromPlaces")(data);
-        mapControler.updatePlaces(states);
-        $scope.name = placeName($scope.part);
-    });
-
-    $scope.hover = function(place, isHovered) {
-        place.isHovered = isHovered;
-        if (isHovered) {
-            $timeout(function(){
-                if (place.isHovered){
-                    mapControler.highlightState(place.code);
-                }
-            }, 200);
-        }
-    };
+    var user = $routeParams.user || "";
     
     mapControler.registerCallback(function() {
+        var data = places.getCached($scope.part, user);
+        updatePlaces(data);
     });
+
+    places.get($scope.part, user, updatePlaces);
+
+    $scope.placeClick = function(place) {
+        mapControler.highlightState(place.code);
+    };
+    
+    function updatePlaces(data) {
+        $scope.placesTypes = data;
+        var states = $filter("StatesFromPlaces")($scope.placesTypes);
+        mapControler.updatePlaces(states);
+        $scope.name = mapTitle($scope.part, user);
+    }
   })
 
-  .controller('AppPractice', function($scope, $routeParams, $timeout, 
-          question, placeName, mapControler, user, events) {
+  .controller('AppPractice', function($scope, $routeParams, $timeout, $filter,
+          question, mapControler, user, events) {
     $scope.part = $routeParams.part;
-    $scope.name = placeName($scope.part);
 
     $scope.highlight = function() {
         var active = $scope.question;
         $scope.layer = mapControler.getLayerContaining(active.code);
         mapControler.highLightLayer($scope.layer);
-        if ($scope.isPickNameOfType()) {
+        if ($filter("isPickNameOfType")($scope.question)) {
             mapControler.highlightState(active.code, NEUTRAL);
         }
-        if ($scope.isFindOnMapType() && active.options) {
+        if ($filter("isFindOnMapType")($scope.question) && active.options) {
             mapControler.highlightStates(active.options.map(function(option) {
                 return option.code;
             }), NEUTRAL);
         }
     };
 
-    $scope.setQuestion = function(active) {
-        $scope.question = active;
-        mapControler.clearHighlights();
-        $scope.highlight();
-        $scope.canNext = false;
-        $scope.select = undefined;
-        $scope.starterLetters = undefined;
-    };
-
-    $scope.check = function(selected) {
+    $scope.checkAnswer = function(selected) {
        var correct = (selected == $scope.question.code);
-       if ($scope.isFindOnMapType()) {
+       if ($filter("isFindOnMapType")($scope.question)) {
            mapControler.highlightState($scope.question.code, GOOD);
        }
        mapControler.highlightState(selected, correct ? GOOD : BAD);
-       if ($scope.isPickNameOfType()) {
-           $scope.highlightOptions(selected);
+       if ($filter("isPickNameOfType")($scope.question)) {
+           highlightOptions(selected);
        }
        $scope.question.answer = selected;
        $scope.progress = question.answer($scope.question);
@@ -117,22 +102,31 @@ angular.module('blindMaps.controllers', [])
 
     $scope.next = function() {
         if($scope.progress < 100) {
-            question.next($scope.part, $routeParams.place_type, function(q) {
-                $scope.setQuestion(q);
-            });
+            question.next($scope.part, $routeParams.place_type, setQuestion);
         } else {
-            $scope.summary = question.summary();
-            $scope.showSummary = true;
-            mapControler.clearHighlights();
-            angular.forEach($scope.summary.questions, function(q){
-                var correct = q.code == q.answer;
-                mapControler.highlightState(q.code, correct ? GOOD : BAD, 1);
-            });
-            events.emit("questionSetFinished", user.getUser().points);
+            setupSummary();
         }
     };
+    
+    function setupSummary(){
+        $scope.summary = question.summary();
+        $scope.showSummary = true;
+        mapControler.clearHighlights();
+        angular.forEach($scope.summary.questions, function(q){
+            var correct = q.code == q.answer;
+            mapControler.highlightState(q.code, correct ? GOOD : BAD, 1);
+        });
+        events.emit("questionSetFinished", user.getUser().points);
+    }
 
-    $scope.highlightOptions = function(selected) {
+    function setQuestion(active) {
+        $scope.question = active;
+        mapControler.clearHighlights();
+        $scope.highlight();
+        $scope.canNext = false;
+    };
+
+    function highlightOptions(selected) {
         $scope.question.options.map(function(o) {
             o.correct = o.code == $scope.question.code;
             o.selected = o.code == selected;
@@ -142,36 +136,23 @@ angular.module('blindMaps.controllers', [])
 
     };
 
-    $scope.isFindOnMapType = function() {
-        return $scope.question && $scope.question.type < 20;
-    };
-
-    $scope.isPickNameOfType = function() {
-        return $scope.question && $scope.question.type >= 20;
-    };
-
-    $scope.isAllowedOption = function(code) {
-        return !$scope.question.options || 1 == $scope.question.options.filter(function(place){
-            return place.code == code;
-        }).length;
-    };
-    $scope.isInActiveLayer = function(code) {
+    function isInActiveLayer(code) {
         return $scope.layer == mapControler.getLayerContaining(code);
     };
 
     mapControler.onClick(function  (code) {
-        if ($scope.isFindOnMapType()
+        if ($filter("isFindOnMapType")($scope.question)
                 && !$scope.canNext
-                && $scope.isAllowedOption(code)
-                && $scope.isInActiveLayer(code)) {
-            $scope.check(code);
+                && $filter("isAllowedOption")($scope.question, code)
+                && isInActiveLayer(code)) {
+            $scope.checkAnswer(code);
             $scope.$apply();
         }
     });
     
     mapControler.registerCallback(function() {
         question.first($scope.part, $routeParams.place_type, function(q) {
-            $scope.setQuestion(q);
+            setQuestion(q);
         });
     });
 

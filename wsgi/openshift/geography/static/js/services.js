@@ -4,46 +4,55 @@
 
 angular.module('blindMaps.services', [])
 
-  .factory('usersplaces', function($http, placeName) {
+  .factory('places', function($http, events) {
     var cache = {};
-
+    var names = {
+        'us' : 'USA',
+        'world' : 'Svět',
+    }
+    
     return {
       get : function(part, user, fn) {
         var url = 'usersplaces/' + part + '/' + user;
         $http.get(url).success(function(data) {
-            placeName(part, data.name);
             var placesTypes = data.placesTypes.filter(function(d){
                 return d.places && d.places.length > 0;
             })
             cache[url] = placesTypes;
+            if (!names[part]) {
+                names[part] = data.name;
+            }
             fn(placesTypes);
         });
-      },
+      },  
       getCached : function(part, user) {
         var url = 'usersplaces/' + part + '/' + user;
         return cache[url] || undefined;
+      },
+      getName : function(part) {
+        return names[part];
       }
     }
   })
+  
+  .factory('mapTitle', function(places) {
 
-  .factory('placeName', function($http) {
-    var names = {
-        'us' : 'USA',
-        'world' : 'Svět'
-    }
-
-    return function(part, name) {
-        if (name && !names[part]) {
-            names[part] = name;
+    return function (part, user) {
+        var name = places.getName(part);
+        if (!name) {
+          return;
+        } else if (user == "") {
+          return name;
+        } else if (user == "average") {
+          return name + " - průměr";
+        } else {
+          return name + " - " + user;
         }
-        return names[part];
     }
   })
+      
 
-  .service('question', function($http, $cookies) {
-
-    $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
-    $http.defaults.headers.post['Content-Type'] =  'application/x-www-form-urlencoded'
+  .service('question', function($http) {
       var qIndex = 0;
       var url;
       function returnQuestion (fn){
@@ -136,7 +145,7 @@ angular.module('blindMaps.services', [])
     }
   })
 
-  .factory('events', function($http) {
+  .factory('events', function() {
     var handlers = {};
     return {
       on : function(eventName, handler) {
