@@ -67,7 +67,6 @@ def users_places(request, map_code, user=None):
     except PlaceRelation.DoesNotExist:
         pass
 
-
     if not user:
         user = request.user
     elif user == "average":
