@@ -109,6 +109,7 @@ angular.module('blindMaps.controllers', [])
     };
     
     function setupSummary(){
+        $scope.layer = undefined; // prevents additional points gain. issue #38
         $scope.summary = question.summary();
         $scope.showSummary = true;
         mapControler.clearHighlights();
