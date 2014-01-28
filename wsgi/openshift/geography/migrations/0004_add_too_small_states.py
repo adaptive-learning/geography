@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from south.v2 import DataMigration
-from geography.models import Place, PlaceRelation, UserPlace
+from geography.models import Place, PlaceRelation
 
 
 class Migration(DataMigration):
