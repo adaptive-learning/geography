@@ -75,8 +75,14 @@ def export_view(request):
         response = {
             "error": "Permission denied: you need to be staff member. If you think you should be able to access logs, contact admins."}
         return JsonResponse(response)
-    type_key = request.GET[
-        'model'] if 'model' in request.GET else 'geography.answer'
+    if 'model' in request.GET:
+        type_key = request.GET['model']
+    else:
+        response = {"error": "Model name has to be specified."}
+        return JsonResponse(response)
+    if type_key == 'geography.answer':
+        response = {"error": "Can't export geography.answer directly. Please, use /cachedlog/csv/."}
+        return JsonResponse(response)
     [app_label, model_name] = type_key.split(".")
     model = get_model(app_label, model_name)
     if not model:
