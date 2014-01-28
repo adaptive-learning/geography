@@ -1,12 +1,6 @@
 #!/bin/bash
 cd $OPENSHIFT_REPO_DIR/wsgi/openshift
-GEOGRAPHY_TABLES=`echo 'SHOW TABLES LIKE "geography_%";' | ./manage.py dbshell | wc -l`
-if [ $GEOGRAPHY_TABLES -eq 0 ]; then
-	echo "--- loading new database schema"
-	./manage.py sqlall geography | ./manage.py dbshell
-else
-	echo "--- skipping loading new database schema"
-fi
-./manage.py migrate geography 0004 --delete-ghost-migrations
+./manage.py sqlcustom geography | ./manage.py dbshell
+./manage.py migrate geography --delete-ghost-migrations
 ./manage.py derived_elo_data
 rm -rf $OPENSHIFT_DATA_DIR/.django_cache

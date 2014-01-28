@@ -1,4 +1,4 @@
-CREATE VIEW geography_elodifficulty_prepared AS
+CREATE OR REPLACE VIEW geography_elodifficulty_prepared AS
 	SELECT
 		geography_place.id AS place_id,
 		COALESCE(geography_elodifficulty.value, 0) AS value
@@ -7,7 +7,7 @@ CREATE VIEW geography_elodifficulty_prepared AS
 		LEFT JOIN geography_elodifficulty
 			ON geography_elodifficulty.place_id = geography_place.id;
 
-CREATE VIEW geography_eloskill_prepared AS
+CREATE OR REPLACE VIEW geography_eloskill_prepared AS
 	SELECT
 		auth_user.id AS user_id,
 		COALESCE(geography_eloskill.value, 0) AS value
@@ -16,7 +16,7 @@ CREATE VIEW geography_eloskill_prepared AS
 		LEFT JOIN geography_eloskill
 			ON geography_eloskill.user_id = auth_user.id;
 
-CREATE VIEW geography_elolocalskill_prepared AS
+CREATE OR REPLACE VIEW geography_elolocalskill_prepared AS
 	SELECT
 		geography_eloskill_prepared.user_id AS user_id,
 		geography_elodifficulty_prepared.place_id AS place_id,
@@ -31,7 +31,7 @@ CREATE VIEW geography_elolocalskill_prepared AS
 		LEFT JOIN geography_elodifficulty_prepared ON true
 		LEFT JOIN geography_elolocalskill USING(user_id, place_id);
 
-CREATE VIEW geography_userplace AS
+CREATE OR REPLACE VIEW geography_userplace AS
 	SELECT
 		geography_elolocalskill.user_id * 100000 + geography_elolocalskill.place_id AS dummy_id,
 		geography_elolocalskill.user_id AS user_id,
@@ -42,7 +42,7 @@ CREATE VIEW geography_userplace AS
 	GROUP BY
 		geography_elolocalskill.user_id, geography_elolocalskill.place_id;
 
-CREATE VIEW geography_averageplace AS
+CREATE OR REPLACE VIEW geography_averageplace AS
   SELECT
     geography_elodifficulty.place_id AS dummy_id,
     geography_elodifficulty.place_id AS place_id,
