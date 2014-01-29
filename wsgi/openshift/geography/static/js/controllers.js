@@ -15,23 +15,6 @@ angular.module('blindMaps.controllers', [])
         $rootScope.user = user.logout(updateUser);
     };
 
-    events.on("pointAdded", function(points) {
-        $rootScope.user.points = points;
-        
-        if (points == 1) {
-            $timeout(function(){
-                $('#points').tooltip("show");
-            },0);
-        }
-    });
-    events.on("questionSetFinished", function(points) {
-        if (10 < points && points <= 20) {
-            $timeout(function(){
-                $('#drop-login').tooltip("show");
-            },0);
-        }
-    });
-
     $scope.vip = function() {
         return $scope.user && ($scope.user.username == 'Verunka');
     };

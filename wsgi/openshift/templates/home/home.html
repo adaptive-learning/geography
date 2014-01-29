@@ -75,8 +75,7 @@
           ...
             <ul class="nav ng-cloak navbar-nav pull-right">
                 <li class="dropdown" ng-show="user.username == ''" >
-                  <a id="drop-login" 
-                     href="" 
+                  <a href="" 
                      role="button" 
                      class="dropdown-toggle atooltip drop-login"
                      title="Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše znalosti pamatoval i příště."
@@ -102,7 +101,7 @@
                     <li class="forgot-pwd"><a href="" ng-click="logout()">Odhlásit se</a></li>
                   </ul>
                 </li>
-              <li id="points" class="atooltip" title="Body - přibývají za každou správnou odpověď" ng-show="user.points">
+              <li class="atooltip points" title="Body - přibývají za každou správnou odpověď" ng-show="user.points">
                 <a><span class="badge" ng-bind="user.points"></span></a>
               </li>
               <!--<li class="dropdown">

@@ -71,6 +71,38 @@ angular.module('blindMaps.directives', [])
         })
       }
     };
+  })
+
+  .directive('points', function ($timeout, events) {
+    return {
+      restrict: 'C',
+      link: function ($scope, elem, attrs) {
+        events.on("pointAdded", function(points) {
+            $scope.user.points = points;
+            
+            if (points == 1) {
+                $timeout(function(){
+                    $(elem).tooltip("show");
+                },0);
+            }
+        });
+      }
+    };
+  })
+
+  .directive('dropLogin', function ($timeout, events) {
+    return {
+      restrict: 'C',
+      link: function ($scope, elem, attrs) {
+        events.on("questionSetFinished", function(points) {
+            if (10 < points && points <= 20) {
+                $timeout(function(){
+                    $(elem).tooltip("show");
+                },0);
+            }
+        });
+      }
+    };
   });
   
   
