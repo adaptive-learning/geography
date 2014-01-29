@@ -9,7 +9,7 @@ angular.module('blindMaps.controllers', [])
     var updateUser = function(data) {
         $rootScope.user = data;
     };
-    //user.getUser(updateUser);
+    user.getUser(updateUser);
 
     $rootScope.logout = function(){
         $rootScope.user = user.logout(updateUser);
