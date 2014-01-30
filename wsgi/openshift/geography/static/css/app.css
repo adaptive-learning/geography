@@ -214,6 +214,7 @@ html, body {
 .welcome-page.jumbotron [class*="col-"] {
   float: none; }
 .welcome-page.jumbotron .block-welcome_page {
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8), 0 0 0px rgba(0, 0, 0, 0.075);
   font-size: 1.25em;
   padding: 30px;
   line-height: 150%; }
@@ -239,9 +240,9 @@ html, body {
   background-color: #73c5ef;
   background: -#34dddd;
   color: white;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8), 0 0 0px rgba(0, 0, 0, 0.075);
   position: relative; }
   .map-container h1 {
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8), 0 0 0px rgba(0, 0, 0, 0.075);
     position: absolute;
     left: 10px;
     top: 0px;
@@ -276,6 +277,16 @@ html, body {
       display: table-cell;
       vertical-align: middle;
       line-height: 100%; }
+  .map-container .map-switch {
+    position: absolute;
+    top: 70px;
+    left: -110px;
+    z-index: 6;
+    padding-left: 10px;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out; }
+  .map-container .map-switch:hover {
+    left: 0px; }
 
 .color-indicator {
   display: inline-block;

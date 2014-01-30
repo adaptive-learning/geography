@@ -41,10 +41,8 @@ angular.module('blindMaps.services', [])
         var name = places.getName(part);
         if (!name) {
           return;
-        } else if (user == "") {
+        } else if (user == "" || user == "average") {
           return name;
-        } else if (user == "average") {
-          return name + " - průměr";
         } else {
           return name + " - " + user;
         }
@@ -125,6 +123,7 @@ angular.module('blindMaps.services', [])
             $http.get('user/').success(function(data){
               user = data;
               callback(user);
+              events.emit("userUpdated", user);
             });
           }
           return user;
@@ -135,12 +134,13 @@ angular.module('blindMaps.services', [])
               'username' : '',
               'points' :  0
           };
+          events.emit("userUpdated", user);
           return user;
       },
       addPoint : function(){
         user.points++;
         $cookies.points = user.points;
-        events.emit("pointAdded", user.points);
+        events.emit("userUpdated", user);
       }
     }
   })

@@ -35,7 +35,7 @@ angular.module('blindMaps.filters', [])
 
   .filter('isActive', function($location) {
     return function(path) {
-        if ($location.path().substr(0, path.length) == path) {
+        if ($location.path() == path) {
           return "active";
         } else {
           return "";

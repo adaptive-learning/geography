@@ -4,11 +4,11 @@ $map-height:500px
   background-color: #73c5ef
   background: -  #34DDDD
   color: white
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8), 0 0 0px rgba(0, 0, 0, 0.075)
 
   position: relative
 
   h1
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8), 0 0 0px rgba(0, 0, 0, 0.075)
     position: absolute
     left: 10px
     top: 0px
@@ -48,6 +48,16 @@ $map-height:500px
       display: table-cell
       vertical-align: middle
       line-height: 100%
+  .map-switch
+    position: absolute
+    top: 70px
+    left: -110px
+    z-index: 6
+    padding-left: 10px
+    -webkit-transition: all 500ms ease-in-out
+    transition: all 500ms ease-in-out
+  .map-switch:hover
+    left: 0px
 
 .color-indicator
   display: inline-block

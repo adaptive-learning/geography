@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular.module('blindMaps.controllers', [])
-  .controller('AppCtrl', function($scope, $rootScope, $timeout, user, events) {
+  .controller('AppCtrl', function($scope, $rootScope, user) {
     $rootScope.topScope = $rootScope;
 
     var updateUser = function(data) {
@@ -11,7 +11,7 @@ angular.module('blindMaps.controllers', [])
     };
     user.getUser(updateUser);
 
-    $rootScope.logout = function(){
+    $rootScope.logout = function() {
         $rootScope.user = user.logout(updateUser);
     };
 
@@ -23,8 +23,9 @@ angular.module('blindMaps.controllers', [])
   .controller('AppView', function($scope, $routeParams, $filter, 
         places, mapTitle, mapControler) {
     $scope.part = $routeParams.part;
-    var user = $routeParams.user || "";
-    
+    var user = $routeParams.user || '';
+    var mapControler;
+
     mapControler.registerCallback(function() {
         var data = places.getCached($scope.part, user);
         updatePlaces(data);
@@ -35,10 +36,10 @@ angular.module('blindMaps.controllers', [])
     $scope.placeClick = function(place) {
         mapControler.highlightState(place.code);
     };
-    
+
     function updatePlaces(data) {
         $scope.placesTypes = data;
-        var states = $filter("StatesFromPlaces")($scope.placesTypes);
+        var states = $filter('StatesFromPlaces')($scope.placesTypes);
         mapControler.updatePlaces(states);
         $scope.name = mapTitle($scope.part, user);
     }
@@ -47,15 +48,16 @@ angular.module('blindMaps.controllers', [])
   .controller('AppPractice', function($scope, $routeParams, $timeout, $filter,
           question, mapControler, user, events) {
     $scope.part = $routeParams.part;
+    var mapControler;
 
     $scope.highlight = function() {
         var active = $scope.question;
         $scope.layer = mapControler.getLayerContaining(active.code);
         mapControler.highLightLayer($scope.layer);
-        if ($filter("isPickNameOfType")($scope.question)) {
+        if ($filter('isPickNameOfType')($scope.question)) {
             mapControler.highlightState(active.code, NEUTRAL);
         }
-        if ($filter("isFindOnMapType")($scope.question) && active.options) {
+        if ($filter('isFindOnMapType')($scope.question) && active.options) {
             mapControler.highlightStates(active.options.map(function(option) {
                 return option.code;
             }), NEUTRAL);
@@ -64,18 +66,18 @@ angular.module('blindMaps.controllers', [])
 
     $scope.checkAnswer = function(selected) {
        var correct = (selected == $scope.question.code);
-       if ($filter("isFindOnMapType")($scope.question)) {
+       if ($filter('isFindOnMapType')($scope.question)) {
            mapControler.highlightState($scope.question.code, GOOD);
        }
        mapControler.highlightState(selected, correct ? GOOD : BAD);
-       if ($filter("isPickNameOfType")($scope.question)) {
+       if ($filter('isPickNameOfType')($scope.question)) {
            highlightOptions(selected);
        }
        $scope.question.answer = selected;
        $scope.progress = question.answer($scope.question);
        if (correct) {
            user.addPoint();
-           $timeout(function(){
+           $timeout(function() {
             $scope.next();
            },700);
        } else {
@@ -84,23 +86,23 @@ angular.module('blindMaps.controllers', [])
     };
 
     $scope.next = function() {
-        if($scope.progress < 100) {
+        if ($scope.progress < 100) {
             question.next($scope.part, $routeParams.place_type, setQuestion);
         } else {
             setupSummary();
         }
     };
-    
-    function setupSummary(){
+
+    function setupSummary() {
         $scope.layer = undefined; // prevents additional points gain. issue #38
         $scope.summary = question.summary();
         $scope.showSummary = true;
         mapControler.clearHighlights();
-        angular.forEach($scope.summary.questions, function(q){
+        angular.forEach($scope.summary.questions, function(q) {
             var correct = q.code == q.answer;
             mapControler.highlightState(q.code, correct ? GOOD : BAD, 1);
         });
-        events.emit("questionSetFinished", user.getUser().points);
+        events.emit('questionSetFinished', user.getUser().points);
     }
 
     function setQuestion(active) {
@@ -133,7 +135,7 @@ angular.module('blindMaps.controllers', [])
             $scope.$apply();
         }
     });
-    
+
     mapControler.registerCallback(function() {
         question.first($scope.part, $routeParams.place_type, function(q) {
             setQuestion(q);
@@ -141,4 +143,3 @@ angular.module('blindMaps.controllers', [])
     });
 
   });
-
