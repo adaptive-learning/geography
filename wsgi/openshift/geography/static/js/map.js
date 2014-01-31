@@ -128,12 +128,7 @@
           layersArray.push(l);
         }
       }
-      var that = {
-          getAll : function() {
-            return layersArray;
-          }
-        };
-      return that;
+      return layersArray;
     }
 
     function getZoomRatio(bboxArea) {
@@ -197,13 +192,12 @@
               $(HOLDER).find('.loading-indicator').hide();
             });
           });
-
-          function resize() {
+          
+          function getNewHeight() {
             if (!mapAspectRatio) {
               mapAspectRatio = map.viewAB.height / map.viewAB.width;
             }
             $('#ng-view').removeClass('horizontal');
-            var c = $(HOLDER);
             var newHeight;
             if (config.isPractise) {
               var screenAspectRatio = $(window).height() / $(window).width();
@@ -219,7 +213,12 @@
             } else {
               newHeight = holderInitHeight;
             }
-            c.height(newHeight);
+            return newHeight;
+          }
+
+          function resize() {
+            var newHeight = getNewHeight();
+            $(HOLDER).height(newHeight);
             map.resize();
             if (panZoom) {
               panZoom.zoomIn(1);
@@ -306,17 +305,6 @@
           });
         },
         getAllLayers : function() {
-          var layers = [];
-          for (var l in layerConfig) {
-            try {
-              var layer = map.getLayer(l);
-              if (layer) {
-                layers.push(layer);
-              }
-            } catch (e) {
-              $console.log(e);
-            }
-          }
           return layers;
         },
         getLayerContaining : function(placeCode) {
