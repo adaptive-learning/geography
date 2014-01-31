@@ -1,31 +1,29 @@
-'use strict';
+(function() {
+  'use strict';
+  /* Directives */
+  angular.module('blindMaps.directives', [])
 
-/* Directives */
-
-
-angular.module('blindMaps.directives', [])
-
-  .directive('placeLabel', function () {
+  .directive('placeLabel', function() {
     return {
-      restrict: 'A',
-      template: '<i class="flag-{{place.code}}"></i> {{place.name}}',
-      compile: function(element, attributes) {
+      restrict : 'A',
+      template : '<i class="flag-{{place.code}}"></i> {{place.name}}',
+      compile : function(element) {
         element.addClass('label');
         element.addClass('label-default');
       }
     };
   })
 
-  .directive('blindMap', function (mapControler, places) {
+  .directive('blindMap', function(mapControler, places) {
     return {
-      restrict: 'E',
-      template: '<div class="map-container">' +
+      restrict : 'E',
+      template : '<div class="map-container">' +
                   '<div id="map-holder">' +
                       '<div class="loading-indicator" ng-show="loading"></div>' +
                   '</div>' +
                   '<h1 ng-bind="name"></h1>' +
                   '<div class="btn-group-vertical map-switch" data-toggle="buttons" ng-show="practice" >' +
-                    '<a class="btn btn-default" href="#/view/{{part}}/"' + 
+                    '<a class="btn btn-default" href="#/view/{{part}}/"' +
                         'ng-class="\'/view/\'+part+\'/\'|isActive">' +
                       'Moje znalosti' +
                     '</a>' +
@@ -41,80 +39,80 @@ angular.module('blindMaps.directives', [])
                   '</a>' +
                   '<div class="zoom-buttons"></div>'+
                 '</div>',
-      link: function ($scope, elem, attrs) {
+      link : function($scope, elem, attrs) {
         $scope.name = places.getName($scope.part);
         $scope.practice = attrs.practice;
         var showTooltips = attrs.practice !== undefined;
         mapControler.init($scope.part, showTooltips);
       },
-      replace: true
+      replace : true
     };
   })
 
-  .directive('email', function () {
+  .directive('email', function() {
     return {
-      restrict: 'C',
-      compile: function (elem, attrs) {
+      restrict : 'C',
+      compile : function(elem) {
         var emailAddress = elem.html();
-        emailAddress = emailAddress.replace("{zavinac}", "@");
-        emailAddress = '<a href="mailto:'+emailAddress+'">'+ emailAddress+ '</a>';
+        emailAddress = emailAddress.replace('{zavinac}', '@');
+        emailAddress = '<a href="mailto :' + emailAddress + 
+  '">' + emailAddress + 
+  '</a>';
         elem.html(emailAddress);
       }
-    }
+    };
   })
 
-  .directive('atooltip', function () {
+  .directive('atooltip', function() {
     return {
-      restrict: 'C',
-      compile: function (elem, attrs) {      
-        elem.tooltip({"placement" : "bottom"});
+      restrict : 'C',
+      compile : function(elem) {
+        elem.tooltip({ 'placement' : 'bottom' });
       }
     };
   })
 
-  .directive('dropLogin', function () {
+  .directive('dropLogin', function() {
     return {
-      restrict: 'C',
-      compile: function (elem, attrs) { 
-        elem.bind('click', function(){
+      restrict : 'C',
+      compile : function(elem) {
+        elem.bind('click', function() {
           elem.tooltip('destroy');
-          elem.parent().find(".tooltip").remove();
-        })
-      }
-    };
-  })
-
-  .directive('points', function ($timeout, events) {
-    return {
-      scope: true,
-      restrict: 'C',
-      link: function ($scope, elem, attrs) {
-        events.on("userUpdated", function(user) {
-            $scope.user = user;
-            
-            if (user.points == 1) {
-                $timeout(function(){
-                    elem.tooltip("show");
-                },0);
-            }
+          elem.parent().find('.tooltip').remove();
         });
       }
     };
   })
 
-  .directive('dropLogin', function ($timeout, events) {
+  .directive('points', function($timeout, events) {
     return {
-      restrict: 'C',
-      link: function ($scope, elem, attrs) {
-        events.on("questionSetFinished", function(points) {
-            if (10 < points && points <= 20) {
-                $timeout(function(){
-                    elem.tooltip("show");
-                },0);
-            }
+      scope : true,
+      restrict : 'C',
+      link : function($scope, elem) {
+        events.on('userUpdated', function(user) {
+          $scope.user = user;
+          if (user.points == 1) {
+            $timeout(function() {
+              elem.tooltip('show');
+            }, 0);
+          }
+        });
+      }
+    };
+  })
+
+  .directive('dropLogin', function($timeout, events) {
+    return {
+      restrict : 'C',
+      link : function($scope, elem) {
+        events.on('questionSetFinished', function(points) {
+          if (10 < points && points <= 20) {
+            $timeout(function() {
+              elem.tooltip('show');
+            }, 0);
+          }
         });
       }
     };
   });
-  
-  
+}());

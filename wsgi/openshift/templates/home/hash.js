@@ -3,7 +3,7 @@
     function get_hash(filename) {
         return hashes[filename] ? hashes[filename] : "";
     }
-    window.Hash = function(filename) {
+    window.hash = function(filename) {
         return filename + "?hash=" + get_hash(filename);
     }
 })(window);
