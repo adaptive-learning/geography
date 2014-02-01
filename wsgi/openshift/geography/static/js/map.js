@@ -1,7 +1,6 @@
 (function() {
   'use strict';
   /* global hash  */
-  var HOLDER = '#map-holder';
   var STROKE_WIDTH = 1.5;
   var RIVER_WIDTH = STROKE_WIDTH * 2;
   var WATER_COLOR = '#73c5ef';
@@ -78,18 +77,18 @@
         'mouseenter' : function(data, path) {
           path.toFront();
           var zoomRatio = 2;
-          var aminAttrs = {
+          var animAttrs = {
               'transform' : 's' + zoomRatio,
               'stroke-width' : zoomRatio * STROKE_WIDTH
             };
-          path.animate(aminAttrs, ANIMATION_TIME_MS / 2, '>');
+          path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
         },
         'mouseleave' : function(data, path) {
-          var aminAttrs = {
+          var animAttrs = {
               'transform' : '',
               'stroke-width' : STROKE_WIDTH
             };
-          path.animate(aminAttrs, ANIMATION_TIME_MS / 2, '>');
+          path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
         }
       });
 
@@ -101,12 +100,12 @@
         },
         'mouseenter' : function(data, path) {
           var zoomRatio = 4;
-          var aminAttrs = { 'stroke-width' : zoomRatio * RIVER_WIDTH };
-          path.animate(aminAttrs, ANIMATION_TIME_MS / 2, '>');
+          var animAttrs = { 'stroke-width' : zoomRatio * RIVER_WIDTH };
+          path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
         },
         'mouseleave' : function(data, path) {
-          var aminAttrs = { 'stroke-width' : RIVER_WIDTH };
-          path.animate(aminAttrs, ANIMATION_TIME_MS / 2, '>');
+          var animAttrs = { 'stroke-width' : RIVER_WIDTH };
+          path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
         }
       });
       layerConfig.lakes = $.extend(true, {}, layerConfig.cities);
@@ -117,128 +116,148 @@
       return layerConfig;
     };
   })
-
-  .factory('mapControler', function(getLayerConfig, $console, $timeout, $, $K) {
-    function initLayers(map, layerConfig) {
+  
+  .factory('initLayers', function(getLayerConfig) {
+    return function(map, config) {
+      var layersConfig = getLayerConfig(config);
       var layersArray = [];
-      for (var i in layerConfig) {
-        map.addLayer(i, layerConfig[i]);
+      for (var i in layersConfig) {
+        map.addLayer(i, layersConfig[i]);
         var l = map.getLayer(i);
         if (l) {
           layersArray.push(l);
         }
       }
-      return layersArray;
-    }
+      var that = {
+        hideLayer : function(layer) {
+          var paths = layer ? layer.getPaths({}) : [];
+          angular.forEach(paths, function(path) {
+            path.svgPath.hide();
+          });
+        },
+        showLayer : function(layer) {
+          var paths = layer ? layer.getPaths({}) : [];
+          angular.forEach(paths, function(path) {
+            path.svgPath.show();
+          });
+        },
+        getAll : function(){
+          return layersArray;
+        },
+        getConfig : function(layer){
+          return layersConfig[layer.id];
+        }
+      };
+      return that;
+    };
+  })
+  
+  .factory('mapFunctions', function($timeout, $){
+    var that = {
+      getZoomRatio : function(bboxArea) {
+        var zoomRatio = Math.max(1.2, 70 / Math.sqrt(bboxArea));
+        return zoomRatio;
+      },
+      zoomOut : function(panZoom, i) {
+        i = i || 10;
+        if (panZoom) {
+          panZoom.zoomOut(1);
+        }
+        i--;
+        if (i > 0) {
+          $timeout(function() {
+            that.zoomOut(panZoom, i);
+          }, 25);
+        }
+      },
+      initMapZoom : function(paper) {
+        var panZoom = paper.panzoom({});
+        panZoom.enable();
+  
+        $('#zoom-in').click(function(e) {
+          panZoom.zoomIn(1);
+          e.preventDefault();
+        });
+  
+        $('#zoom-out').click(function(e) {
+          panZoom.zoomOut(1);
+          e.preventDefault();
+        });
+        return panZoom;
+      },
+      getHighlightAnimationAttributes : function(placePath, layer, origStroke, color, zoomRatio) {
+        var bbox = placePath.svgPath.getBBox();
+        var bboxArea = bbox.width * bbox.height;
+        zoomRatio = zoomRatio || that.getZoomRatio(bboxArea);
+        var animAttrs = {
+            transform : 's' + zoomRatio,
+            'stroke-width' : Math.min(6, zoomRatio) * origStroke
+          };
+        if (color) {
+          if (layer.id == 'rivers') {
+            animAttrs.stroke = color;
+          } else {
+            animAttrs.fill = color;
+          }
+        }
+        return animAttrs;
+      }
+    };
+    return that;
+  })
 
-    function getZoomRatio(bboxArea) {
-      var zoomRatio = Math.max(1.2, 70 / Math.sqrt(bboxArea));
-      return zoomRatio;
-    }
+  .factory('getNewHeight', function($){
+    return function(mapAspectRatio, isPractise, holderInitHeight) {
+      $('#ng-view').removeClass('horizontal');
+      var newHeight;
+      if (isPractise) {
+        var screenAspectRatio = $(window).height() / $(window).width();
+        if (screenAspectRatio - mapAspectRatio < -0.2) {
+          $('#ng-view').addClass('horizontal');
+          newHeight = $(window).height() + 15;
+        } else {
+          var controlsHeight = $(window).width() > 767 ? 290 : 200;
+          newHeight = $(window).height() - controlsHeight;
+        }
+      } else if (holderInitHeight / mapAspectRatio >= $(window).width()) {
+        newHeight = Math.max(holderInitHeight / 2, mapAspectRatio * $(window).width());
+      } else {
+        newHeight = holderInitHeight;
+      }
+      return newHeight;
+    };
+  })
 
-    function initMapZoom(paper) {
-      var panZoom = paper.panzoom({});
-      panZoom.enable();
+  .factory('mapControler', function($, $K, mapFunctions, initLayers) {
 
-      var zoomButtons = '<div class="btn-group zoom-btn" ng-show="!loading">' +
-                          '<a class="btn btn-default" id="zoom-out">' +
-                            '<i class="glyphicon glyphicon-minus"></i></a>' +
-                          '<a class="btn btn-default" id="zoom-in">' +
-                            '<i class="glyphicon glyphicon-plus"></i></a>' +
-                        '</div>';
-      $(HOLDER).after(zoomButtons);
-
-      $('#zoom-in').click(function(e) {
-        panZoom.zoomIn(1);
-        e.preventDefault();
-      });
-
-      $('#zoom-out').click(function(e) {
-        panZoom.zoomOut(1);
-        e.preventDefault();
-      });
-      return panZoom;
-    }
-
-    var map;
     var config = { states : [] };
-    var layerConfig;
-    var panZoom;
     var layers;
     var initCallback;
+    $.fn.qtip.defaults.style.classes = 'qtip-dark';
 
     var myMap = {
-        init : function(mapCode, showTooltips) {
+        map : undefined,
+        panZoom : undefined,
+        init : function(mapCode, showTooltips, holder, callback) {
           config.showTooltips = showTooltips;
           config.isPractise = !showTooltips;
           config.states = [];
-          map = $K.map(HOLDER);
-          var holderInitHeight = $(HOLDER).height();
-          var mapAspectRatio;
-          $.fn.qtip.defaults.style.classes = 'qtip-dark';
-          layerConfig = getLayerConfig(config);
+          myMap.map = $K.map(holder);
 
-          map.loadCSS(hash('static/css/map.css'), function() {
-            map.loadMap(hash('static/map/' + mapCode + '.svg'), function() {
-              layers = initLayers(map, layerConfig);
-              $(window).resize(resize);
-              resize();
-              panZoom = initMapZoom(map.paper);
-              if (initCallback) {
-                initCallback();
-              } else {
-                initCallback = true;
-              }
-              $(HOLDER).find('.loading-indicator').hide();
+          myMap.map.loadCSS(hash('static/css/map.css'), function() {
+            myMap.map.loadMap(hash('static/map/' + mapCode + '.svg'), function() {
+              layers = initLayers(myMap.map, config);
+              myMap.panZoom = mapFunctions.initMapZoom(myMap.map.paper);
+              initCallback();
+              callback(myMap);
             });
           });
-          
-          function getNewHeight() {
-            if (!mapAspectRatio) {
-              mapAspectRatio = map.viewAB.height / map.viewAB.width;
-            }
-            $('#ng-view').removeClass('horizontal');
-            var newHeight;
-            if (config.isPractise) {
-              var screenAspectRatio = $(window).height() / $(window).width();
-              if (screenAspectRatio - mapAspectRatio < -0.2) {
-                $('#ng-view').addClass('horizontal');
-                newHeight = $(window).height() + 15;
-              } else {
-                var controlsHeight = $(window).width() > 767 ? 290 : 200;
-                newHeight = $(window).height() - controlsHeight;
-              }
-            } else if (holderInitHeight / mapAspectRatio >= $(window).width()) {
-              newHeight = Math.max(holderInitHeight / 2, mapAspectRatio * $(window).width());
-            } else {
-              newHeight = holderInitHeight;
-            }
-            return newHeight;
-          }
-
-          function resize() {
-            var newHeight = getNewHeight();
-            $(HOLDER).height(newHeight);
-            map.resize();
-            if (panZoom) {
-              panZoom.zoomIn(1);
-              panZoom.zoomOut(1);
-            }
-            if (config.isPractise) {
-              window.scrollTo(0, $('.navbar').height() + 2);
-            }
-          }
         },
-        map : map,
         onClick : function(clickFn) {
           config.click = clickFn;
         },
         registerCallback : function(callback) {
-          if (initCallback === true) {
-            initCallback();
-          } else {
-            initCallback = callback;
-          }
+          initCallback = callback;
         },
         highlightStates : function(states, color, zoomRatio) {
           var state = states.pop();
@@ -246,22 +265,10 @@
           var placePath = layer ? layer.getPaths({ name : state })[0] : undefined;
           if (placePath) {
             placePath.svgPath.toFront();
-            var origStroke = layerConfig[layer.id].styles['stroke-width'];
-            var bbox = placePath.svgPath.getBBox();
-            var bboxArea = bbox.width * bbox.height;
-            zoomRatio = zoomRatio || getZoomRatio(bboxArea);
-            var aminAttrs = {
-                transform : 's' + zoomRatio,
-                'stroke-width' : Math.min(6, zoomRatio) * origStroke
-              };
-            if (color) {
-              if (layer.id == 'rivers') {
-                aminAttrs.stroke = color;
-              } else {
-                aminAttrs.fill = color;
-              }
-            }
-            placePath.svgPath.animate(aminAttrs, ANIMATION_TIME_MS / 2, '>', function() {
+            var origStroke = layers.getConfig(layer).styles['stroke-width'];
+            var animAttrs = mapFunctions.getHighlightAnimationAttributes(placePath, layer,
+                origStroke, color, zoomRatio);
+            placePath.svgPath.animate(animAttrs, ANIMATION_TIME_MS / 2, '>', function() {
               placePath.svgPath.animate({
                 transform : '',
                 'stroke-width' : origStroke
@@ -276,41 +283,23 @@
           myMap.highlightStates([state], color, zoomRatio);
         },
         clearHighlights : function() {
-          var layers = this.getAllLayers();
-          angular.forEach(layers, function(layer) {
-            layer.style(layerConfig[layer.id].styles);
-            myMap.showLayer(layer);
+          angular.forEach(layers.getAll(), function(layer) {
+            layer.style(layers.getConfig(layer).styles);
+            layers.showLayer(layer);
           });
-          myMap.zoomOut();
-        },
-        zoomOut : function(i) {
-          i = i || 10;
-          if (panZoom) {
-            panZoom.zoomOut(1);
-          }
-          i--;
-          if (i > 0) {
-            $timeout(function() {
-              myMap.zoomOut(i);
-            }, 25);
-          }
+          mapFunctions.zoomOut(myMap.panZoom);
         },
         updatePlaces : function(places) {
           config.states = places;
-          var layers = myMap.getAllLayers();
-          angular.forEach(layers, function(layer) {
-            var config = layerConfig[layer.id];
+          angular.forEach(layers.getAll(), function(layer) {
+            var config = layers.getConfig(layer);
             layer.style('fill', config.styles.fill);
             layer.tooltips(config.tooltips);
           });
         },
-        getAllLayers : function() {
-          return layers;
-        },
         getLayerContaining : function(placeCode) {
-          var layers = myMap.getAllLayers();
           var ret;
-          angular.forEach(layers, function(layer) {
+          angular.forEach(layers.getAll(), function(layer) {
             if (layer.getPaths({ name : placeCode }).length >= 1) {
               ret = layer;
             }
@@ -318,23 +307,10 @@
           return ret;
         },
         highLightLayer : function(layer) {
-          var layers = myMap.getAllLayers();
-          angular.forEach(layers, function(l) {
+          angular.forEach(layers.getAll(), function(l) {
             if (l.id == 'cities' && layer.id == 'states') {
-              myMap.hideLayer(l);
+              layers.hideLayer(l);
             }
-          });
-        },
-        hideLayer : function(layer) {
-          var paths = layer ? layer.getPaths({}) : [];
-          angular.forEach(paths, function(path) {
-            path.svgPath.hide();
-          });
-        },
-        showLayer : function(layer) {
-          var paths = layer ? layer.getPaths({}) : [];
-          angular.forEach(paths, function(path) {
-            path.svgPath.show();
           });
         }
       };

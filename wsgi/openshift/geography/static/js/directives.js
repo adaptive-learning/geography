@@ -14,7 +14,7 @@
     };
   })
 
-  .directive('blindMap', function(mapControler, places) {
+  .directive('blindMap', function(mapControler, places, getNewHeight, $) {
     return {
       restrict : 'E',
       template : '<div class="map-container">' +
@@ -22,7 +22,7 @@
                       '<div class="loading-indicator" ng-show="loading"></div>' +
                   '</div>' +
                   '<h1 ng-bind="name"></h1>' +
-                  '<div class="btn-group-vertical map-switch" data-toggle="buttons" ng-show="practice" >' +
+                  '<div class="btn-group-vertical map-switch" data-toggle="buttons" ng-show="!practice" >' +
                     '<a class="btn btn-default" href="#/view/{{part}}/"' +
                         'ng-class="\'/view/\'+part+\'/\'|isActive">' +
                       'Moje znalosti' +
@@ -32,7 +32,7 @@
                       'Průměrný uživatel' +
                     '</a>' +
                   '</div>' +
-                  '<a ng-show="practice"' +
+                  '<a ng-show="!practice"' +
                       'href="#/practice/{{part}}/"' +
                       'class="btn btn-primary btn-lg btn-practice" >' +
                     'Procvičovat' +
@@ -40,12 +40,51 @@
                   '<div class="zoom-buttons"></div>'+
                 '</div>',
       link : function($scope, elem, attrs) {
+        $scope.loading = true;
         $scope.name = places.getName($scope.part);
-        $scope.practice = attrs.practice;
+        $scope.practice = !attrs.practice;
         var showTooltips = attrs.practice !== undefined;
-        mapControler.init($scope.part, showTooltips);
+        var panZoom;
+        var map;
+        var mapAspectRatio;
+        var holderInitHeight = elem.height();
+
+        mapControler.init($scope.part, showTooltips, elem, function(m) {
+          $scope.loading = false;
+          panZoom = m.panZoom;
+          map = m.map;
+          mapAspectRatio = map.viewAB.height / map.viewAB.width;
+          $(window).resize(resize);
+          resize();
+          
+        });
+
+        function resize() {
+          var newHeight = getNewHeight(mapAspectRatio, $scope.practice, holderInitHeight);
+          elem.height(newHeight);
+          map.resize();
+          if (panZoom) {
+            panZoom.zoomIn(1);
+            panZoom.zoomOut(1);
+          }
+          if ($scope.practice) {
+            window.scrollTo(0, $('.navbar').height() + 2);
+          }
+        }
       },
       replace : true
+    };
+  })
+
+  .directive('zoomButtons', function() {
+    return {
+      restrict : 'C',
+      template : '<div class="btn-group zoom-btn" ng-show="!loading">' +
+                    '<a class="btn btn-default" id="zoom-out">' +
+                      '<i class="glyphicon glyphicon-minus"></i></a>' +
+                    '<a class="btn btn-default" id="zoom-in">' +
+                      '<i class="glyphicon glyphicon-plus"></i></a>' +
+                  '</div>'
     };
   })
 
