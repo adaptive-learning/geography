@@ -14,7 +14,7 @@
     };
   })
 
-  .directive('blindMap', function(mapControler, places, getNewHeight, $) {
+  .directive('blindMap', function(mapControler, places, singleWindowResizeFn, getMapResizeFunction) {
     return {
       restrict : 'E',
       template : '<div class="map-container">' +
@@ -44,33 +44,13 @@
         $scope.name = places.getName($scope.part);
         $scope.practice = !attrs.practice;
         var showTooltips = attrs.practice !== undefined;
-        var panZoom;
-        var map;
-        var mapAspectRatio;
-        var holderInitHeight = elem.height();
 
         mapControler.init($scope.part, showTooltips, elem, function(m) {
           $scope.loading = false;
-          panZoom = m.panZoom;
-          map = m.map;
-          mapAspectRatio = map.viewAB.height / map.viewAB.width;
-          $(window).resize(resize);
+          var resize = getMapResizeFunction(m, elem, $scope.practice);
+          singleWindowResizeFn(resize);
           resize();
-          
         });
-
-        function resize() {
-          var newHeight = getNewHeight(mapAspectRatio, $scope.practice, holderInitHeight);
-          elem.height(newHeight);
-          map.resize();
-          if (panZoom) {
-            panZoom.zoomIn(1);
-            panZoom.zoomOut(1);
-          }
-          if ($scope.practice) {
-            window.scrollTo(0, $('.navbar').height() + 2);
-          }
-        }
       },
       replace : true
     };

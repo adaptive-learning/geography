@@ -63,17 +63,11 @@
     };
 
     $scope.checkAnswer = function(selected) {
-      var correct = selected == $scope.question.code;
-      if ($filter('isFindOnMapType')($scope.question)) {
-        mapControler.highlightState($scope.question.code, GOOD_COLOR);
-      }
-      mapControler.highlightState(selected, correct ? GOOD_COLOR : BAD_COLOR);
-      if ($filter('isPickNameOfType')($scope.question)) {
-        highlightOptions(selected);
-      }
+      var asked = $scope.question.code;
+      highlightAnswer(asked, selected);
       $scope.question.answer = selected;
       $scope.progress = question.answer($scope.question);
-      if (correct) {
+      if (asked == selected) {
         user.addPoint();
         $timeout(function() {
           $scope.next();
@@ -90,6 +84,16 @@
         setupSummary();
       }
     };
+    
+    function highlightAnswer (asked, selected) {
+      if ($filter('isFindOnMapType')($scope.question)) {
+        mapControler.highlightState(asked, GOOD_COLOR);
+      }
+      mapControler.highlightState(selected, asked == selected ? GOOD_COLOR : BAD_COLOR);
+      if ($filter('isPickNameOfType')($scope.question)) {
+        highlightOptions(selected);
+      }
+    }
 
     function setupSummary() {
       $scope.layer = undefined;

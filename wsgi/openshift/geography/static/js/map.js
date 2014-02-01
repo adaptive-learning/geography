@@ -205,9 +205,10 @@
     };
     return that;
   })
+  
+  .service('getMapResizeFunction', function($){
 
-  .factory('getNewHeight', function($){
-    return function(mapAspectRatio, isPractise, holderInitHeight) {
+    function getNewHeight(mapAspectRatio, isPractise, holderInitHeight) {
       $('#ng-view').removeClass('horizontal');
       var newHeight;
       if (isPractise) {
@@ -225,6 +226,36 @@
         newHeight = holderInitHeight;
       }
       return newHeight;
+    }
+
+    return function(m, holder, practice) {
+      var holderInitHeight = holder.height();
+      var panZoom = m.panZoom;
+      var map = m.map;
+      var mapAspectRatio = map.viewAB.height / map.viewAB.width;
+      
+      return function () {
+        var newHeight = getNewHeight(mapAspectRatio, practice, holderInitHeight);
+        holder.height(newHeight);
+        map.resize();
+        if (panZoom) {
+          panZoom.zoomIn(1);
+          panZoom.zoomOut(1);
+        }
+        if (practice) {
+          window.scrollTo(0, $('.navbar').height() + 2);
+        }
+      };
+    };
+  })
+  
+  .service('singleWindowResizeFn', function($){
+    var fn = function(){};
+    $(window).resize(function() {
+      fn();
+    });
+    return function(newFn) {
+      fn = newFn;
     };
   })
 
