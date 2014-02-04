@@ -2,13 +2,11 @@
 import place
 from django.db import connection
 from datetime import datetime
-from math import exp
+from math import exp, sqrt
 
 WEIGHT_PROBABILITY = 10
 WEIGHT_NUMBER_OF_ANSWERS = 5
-MAX_NUMBER_OF_ANSWERS = 10
-DECREASE_NUMBER_OF_ANSWERS = 0.5
-TIME_AGO_SHIFT = 120
+WEIGHT_TIME_AGO = 120
 
 
 def by_additive_function(user, map_place, expected_probability, n, place_type):
@@ -79,11 +77,11 @@ def by_additive_function(user, map_place, expected_probability, n, place_type):
 
 
 def from_time_ago(seconds_ago):
-    return - float(TIME_AGO_SHIFT) / max(seconds_ago, 1)
+    return - float(WEIGHT_TIME_AGO) / max(seconds_ago, 1)
 
 
 def from_previous_answers(previous_answers_num):
-    return WEIGHT_NUMBER_OF_ANSWERS - DECREASE_NUMBER_OF_ANSWERS * min(previous_answers_num, MAX_NUMBER_OF_ANSWERS)
+    return WEIGHT_NUMBER_OF_ANSWERS / sqrt(previous_answers_num + 1)
 
 
 def from_normed_prob_diff(expected, given):
