@@ -11,9 +11,9 @@ OPENSHIFT_REMOTE_REPOSITORY=ssh://$OPENSHIFT_SSH/~/git/geography.git/;
 ################################################################################
 
 LAST_VERSION=`git tag -l | grep release | sort | tail -n 1 | awk -F "-" '{print $2}'`;
-LAST_MAJOR=`echo $LAST_VERSION | awk -F "." '{print $1}'`;
-LAST_MINOR=`echo $LAST_VERSION | awk -F "." '{print $2}'`;
-LAST_MICRO=`echo $LAST_VERSION | awk -F "." '{print $3}'`;
+LAST_MAJOR=`echo $LAST_VERSION | awk -F "." '{print $1}' | tr -d '[A-Za-z]'`;
+LAST_MINOR=`echo $LAST_VERSION | awk -F "." '{print $2}' | tr -d '[A-Za-z]'`;
+LAST_MICRO=`echo $LAST_VERSION | awk -F "." '{print $3}' | tr -d '[A-Za-z]'`;
 
 if [ ! "$NEXT_VERSION" ]; then
 	read -p "Do you want to release (1) major (2) minor or (*3) micro version? " RELEASE_TYPE;
