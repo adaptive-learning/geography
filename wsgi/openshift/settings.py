@@ -217,7 +217,7 @@ LOGGING = {
             'formatter': 'simple'
         },
         'queries_file': {
-            'level': ('DEBUG' if not ON_OPENSHIFT else 'INFO'),
+            'level': ('DEBUG' if DEBUG else 'INFO'),
             'class': 'logging.FileHandler',
             'filename': os.path.join(MEDIA_ROOT, 'geography_sql.log')
         }
