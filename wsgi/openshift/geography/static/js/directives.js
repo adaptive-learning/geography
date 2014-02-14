@@ -18,6 +18,7 @@
     return {
       restrict : 'E',
       template : '<div class="map-container">' +
+                 '<img class="version" src="static/img/beta.png" alt="Beta verze"/>' +
                   '<div id="map-holder">' +
                       '<div class="loading-indicator" ng-show="loading"></div>' +
                   '</div>' +
