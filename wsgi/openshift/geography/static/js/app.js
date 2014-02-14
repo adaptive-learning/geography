@@ -1,9 +1,5 @@
 (function() {
-  /* global console */
-  /* global jQuery  */
   /* global hash  */
-  /* global chroma  */
-  /* global Kartograph */
   'use strict';
   // Declare app level module which depends on filters, and services
   angular.module('blindMaps', [
@@ -17,14 +13,6 @@
     'angulartics',
     'angulartics.google.analytics'
   ])
-
-  .value('$console', console)
-
-  .value('chroma', chroma)
-
-  .value('$', jQuery)
-
-  .value('$K', Kartograph)
 
   .config(function($routeProvider) {
     $routeProvider.when('/', {

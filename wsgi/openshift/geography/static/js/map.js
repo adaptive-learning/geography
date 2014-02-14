@@ -1,6 +1,9 @@
 (function() {
   'use strict';
   /* global hash  */
+  /* global jQuery  */
+  /* global chroma  */
+  /* global Kartograph */
   var STROKE_WIDTH = 1.5;
   var RIVER_WIDTH = STROKE_WIDTH * 2;
   var WATER_COLOR = '#73c5ef';
@@ -8,27 +11,32 @@
 
   angular.module('blindMaps.map', [])
 
-  .constant('GOOD_COLOR', '#0d0')
+  .value('chroma', chroma)
 
-  .constant('BAD_COLOR', '#ff0000')
+  .value('$', jQuery)
 
-  .constant('NEUTRAL_COLOR', '#bbb')
+  .value('$K', Kartograph)
 
-  .factory('getLayerConfig', function($console, $, chroma, GOOD_COLOR,
-      BAD_COLOR, NEUTRAL_COLOR) {
+  .value('colors', {
+    'GOOD': '#0d0',
+    'BAD': '#ff0000',
+    'NEUTRAL': '#bbb'
+  })
+
+  .factory('getLayerConfig', function($log, $, chroma, colors) {
     var scale = chroma.scale([
-        BAD_COLOR,
+        colors.BAD,
         '#ff4500',
         '#ffa500',
         '#ffff00',
-        GOOD_COLOR
+        colors.GOOD
       ]);
 
     return function(config) {
       var layerConfig = {};
       layerConfig.bg = {
         'styles' : {
-          'fill' : NEUTRAL_COLOR,
+          'fill' : colors.NEUTRAL,
           'stroke-width' : STROKE_WIDTH,
           'transform' : ''
         }
@@ -44,7 +52,7 @@
           'transform' : ''
         },
         'click' : function(data) {
-          $console.log(data.name);
+          $log.log(data.name);
           if (config.click !== undefined) {
             config.click(data.name);
           }

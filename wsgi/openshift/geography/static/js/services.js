@@ -13,7 +13,7 @@
     return {
       get : function(part, user, fn) {
         var url = 'usersplaces/' + part + '/' + user;
-        $http.get(url).success(function(data) {
+        $http.get(url, {cache: user == 'average'}).success(function(data) {
           var placesTypes = data.placesTypes.filter(function(d) {
               return d.places && d.places.length > 0;
             });
@@ -47,7 +47,7 @@
     };
   })
 
-  .service('question', function($http, $console) {
+  .service('question', function($http, $log) {
     var qIndex = 0;
     var url;
     function returnQuestion(fn) {
@@ -92,7 +92,7 @@
             var questionsCandidate = questions.slice(0, qIndex).concat(data);
             if (hasNoTwoSameInARow(questionsCandidate)) {
               questions = questionsCandidate;
-              $console.log('questions updated, question index', qIndex);
+              $log.log('questions updated, question index', qIndex);
             }
           }
         });

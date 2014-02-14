@@ -45,7 +45,7 @@
   })
 
   .controller('AppPractice', function($scope, $routeParams, $timeout, $filter,
-      question, mapControler, user, events, GOOD_COLOR, BAD_COLOR, NEUTRAL_COLOR) {
+      question, mapControler, user, events, colors) {
     $scope.part = $routeParams.part;
 
     $scope.highlight = function() {
@@ -53,12 +53,12 @@
       $scope.layer = mapControler.getLayerContaining(active.code);
       mapControler.highLightLayer($scope.layer);
       if ($filter('isPickNameOfType')($scope.question)) {
-        mapControler.highlightState(active.code, NEUTRAL_COLOR);
+        mapControler.highlightState(active.code, colors.NEUTRAL);
       }
       if ($filter('isFindOnMapType')($scope.question) && active.options) {
         mapControler.highlightStates(active.options.map(function(option) {
           return option.code;
-        }), NEUTRAL_COLOR);
+        }), colors.NEUTRAL);
       }
     };
 
@@ -87,9 +87,9 @@
     
     function highlightAnswer (asked, selected) {
       if ($filter('isFindOnMapType')($scope.question)) {
-        mapControler.highlightState(asked, GOOD_COLOR);
+        mapControler.highlightState(asked, colors.GOOD);
       }
-      mapControler.highlightState(selected, asked == selected ? GOOD_COLOR : BAD_COLOR);
+      mapControler.highlightState(selected, asked == selected ? colors.GOOD : colors.BAD);
       if ($filter('isPickNameOfType')($scope.question)) {
         highlightOptions(selected);
       }
@@ -103,7 +103,7 @@
       mapControler.clearHighlights();
       angular.forEach($scope.summary.questions, function(q) {
         var correct = q.code == q.answer;
-        mapControler.highlightState(q.code, correct ? GOOD_COLOR : BAD_COLOR, 1);
+        mapControler.highlightState(q.code, correct ? colors.GOOD : colors.BAD, 1);
       });
       events.emit('questionSetFinished', user.getUser().points);
     }
