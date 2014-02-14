@@ -2181,7 +2181,7 @@
   "pk": 250, 
   "model": "geography.place", 
   "fields": {
-    "code": "Nordrhein-Westfalen", 
+    "code": "de-nw", 
     "type": 8, 
     "name": "Severn\u00ed Por\u00fdn\u00ed-Vestf\u00e1lsko"
   }
@@ -2190,7 +2190,7 @@
   "pk": 251, 
   "model": "geography.place", 
   "fields": {
-    "code": "Baden-W\u00fcrttemberg", 
+    "code": "de-bw", 
     "type": 8, 
     "name": "B\u00e1densko-W\u00fcrttembersko"
   }
@@ -2199,7 +2199,7 @@
   "pk": 252, 
   "model": "geography.place", 
   "fields": {
-    "code": "Hessen", 
+    "code": "de-he", 
     "type": 8, 
     "name": "Hesensko"
   }
@@ -2208,7 +2208,7 @@
   "pk": 253, 
   "model": "geography.place", 
   "fields": {
-    "code": "Bremen", 
+    "code": "de-hb", 
     "type": 8, 
     "name": "Br\u00e9my"
   }
@@ -2217,7 +2217,7 @@
   "pk": 254, 
   "model": "geography.place", 
   "fields": {
-    "code": "Niedersachsen", 
+    "code": "de-ni", 
     "type": 8, 
     "name": "Doln\u00ed Sasko"
   }
@@ -2226,7 +2226,7 @@
   "pk": 255, 
   "model": "geography.place", 
   "fields": {
-    "code": "Th\u00fcringen", 
+    "code": "de-th", 
     "type": 8, 
     "name": "Durynsko"
   }
@@ -2235,7 +2235,7 @@
   "pk": 256, 
   "model": "geography.place", 
   "fields": {
-    "code": "Hamburg", 
+    "code": "de-hh", 
     "type": 8, 
     "name": "Hamburk"
   }
@@ -2244,7 +2244,7 @@
   "pk": 257, 
   "model": "geography.place", 
   "fields": {
-    "code": "Schleswig-Holstein", 
+    "code": "de-sh", 
     "type": 8, 
     "name": "\u0160lesvicko-Hol\u0161t\u00fdnsko"
   }
@@ -2253,7 +2253,7 @@
   "pk": 258, 
   "model": "geography.place", 
   "fields": {
-    "code": "Rheinland-Pfalz", 
+    "code": "de-rp", 
     "type": 8, 
     "name": "Por\u00fdn\u00ed-Falc"
   }
@@ -2262,7 +2262,7 @@
   "pk": 259, 
   "model": "geography.place", 
   "fields": {
-    "code": "Saarland", 
+    "code": "de-sl", 
     "type": 8, 
     "name": "S\u00e1rsko"
   }
@@ -2271,7 +2271,7 @@
   "pk": 260, 
   "model": "geography.place", 
   "fields": {
-    "code": "Bayern", 
+    "code": "de-by", 
     "type": 8, 
     "name": "Bavorsko"
   }
