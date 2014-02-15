@@ -404,7 +404,7 @@ h2 .flag-us-wy{ background-position: 0 -784px;  }
 [class*=" flag-fr-"],
 [class^="flag-it-"],
 [class*=" flag-it-"] {
-    background: url(../img/regions-flags.png) no-repeat top left;
+    background: url(../img/regions-flags.png) no-repeat 0 60px;
 }
 
 .flag-at-bu{ background-position: 0 0; width: 22px; height: 15px; } 
@@ -478,13 +478,13 @@ h2 .flag-us-wy{ background-position: 0 -784px;  }
 .flag-es-ct{ background-position: -146px -387px; width: 23px; height: 15px; } 
 .flag-es-ex{ background-position: -146px -452px; width: 23px; height: 15px; } 
 .flag-es-ga{ background-position: -146px -517px; width: 23px; height: 15px; } 
-.flag-es-ib{ background-position: -146px -582px; width: 23px; height: 15px; } 
-.flag-es-mc{ background-position: -146px -647px; width: 23px; height: 15px; } 
+.flag-es-pm{ background-position: -146px -582px; width: 23px; height: 15px; } 
+.flag-es-mu{ background-position: -146px -647px; width: 23px; height: 15px; } 
 .flag-es-md{ background-position: -146px -712px; width: 23px; height: 15px; } 
 .flag-es-ml{ background-position: -146px -777px; width: 23px; height: 15px; } 
-.flag-es-nc{ background-position: -146px -842px; width: 23px; height: 15px; } 
+.flag-es-na{ background-position: -146px -842px; width: 23px; height: 15px; } 
 .flag-es-pv{ background-position: -146px -907px; width: 23px; height: 13px; } 
-.flag-es-ri{ background-position: -146px -970px; width: 23px; height: 15px; } 
+.flag-es-lo{ background-position: -146px -970px; width: 23px; height: 15px; } 
 .flag-es-vc{ background-position: -146px -1035px; width: 23px; height: 15px; } 
 .flag-fr-a{ background-position: -146px -1100px; width: 23px; height: 15px; } 
 .flag-fr-b{ background-position: -146px -1165px; width: 23px; height: 14px; } 
