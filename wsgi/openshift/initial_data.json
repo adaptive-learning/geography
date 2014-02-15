@@ -2406,7 +2406,7 @@
   "pk": 275, 
   "model": "geography.place", 
   "fields": {
-    "code": "Chandigarh", 
+    "code": "in-ch", 
     "type": 1, 
     "name": "\u010chatt\u00edsgarh"
   }
@@ -2415,7 +2415,7 @@
   "pk": 276, 
   "model": "geography.place", 
   "fields": {
-    "code": "Delhi", 
+    "code": "in-dl", 
     "type": 1, 
     "name": "Dill\u00ed"
   }
@@ -2424,7 +2424,7 @@
   "pk": 277, 
   "model": "geography.place", 
   "fields": {
-    "code": "Himachal Pradesh", 
+    "code": "in-hp", 
     "type": 1, 
     "name": "Him\u00e1\u010dalprad\u00e9\u0161"
   }
@@ -2433,7 +2433,7 @@
   "pk": 278, 
   "model": "geography.place", 
   "fields": {
-    "code": "Haryana", 
+    "code": "in-hr", 
     "type": 1, 
     "name": "Harij\u00e1na"
   }
@@ -2442,7 +2442,7 @@
   "pk": 279, 
   "model": "geography.place", 
   "fields": {
-    "code": "Jammu and Kashmir", 
+    "code": "in-jk", 
     "type": 1, 
     "name": "D\u017eamm\u00fa a Ka\u0161m\u00edr"
   }
@@ -2451,7 +2451,7 @@
   "pk": 280, 
   "model": "geography.place", 
   "fields": {
-    "code": "Andhra Pradesh", 
+    "code": "in-ap", 
     "type": 1, 
     "name": "\u00c1ndhraprad\u00e9\u0161"
   }
@@ -2460,7 +2460,7 @@
   "pk": 281, 
   "model": "geography.place", 
   "fields": {
-    "code": "Kerala", 
+    "code": "in-kl", 
     "type": 1, 
     "name": "K\u00e9rala"
   }
@@ -2469,7 +2469,7 @@
   "pk": 282, 
   "model": "geography.place", 
   "fields": {
-    "code": "Lakshadweep", 
+    "code": "in-ld", 
     "type": 1, 
     "name": "Lakadivy / Lak\u0161adv\u00edp"
   }
@@ -2478,7 +2478,7 @@
   "pk": 283, 
   "model": "geography.place", 
   "fields": {
-    "code": "Orissa", 
+    "code": "in-or", 
     "type": 1, 
     "name": "Ur\u00edsa"
   }
@@ -2487,7 +2487,7 @@
   "pk": 284, 
   "model": "geography.place", 
   "fields": {
-    "code": "Dadra and Nagar Haveli", 
+    "code": "in-dn", 
     "type": 1, 
     "name": "D\u00e1dra a Nagar-hav\u00e9li"
   }
@@ -2496,7 +2496,7 @@
   "pk": 285, 
   "model": "geography.place", 
   "fields": {
-    "code": "Karnataka", 
+    "code": "in-ka", 
     "type": 1, 
     "name": "Karn\u00e1taka"
   }
@@ -2505,7 +2505,7 @@
   "pk": 286, 
   "model": "geography.place", 
   "fields": {
-    "code": "Maharashtra", 
+    "code": "in-mh", 
     "type": 1, 
     "name": "Mah\u00e1r\u00e1\u0161tra"
   }
@@ -2514,7 +2514,7 @@
   "pk": 287, 
   "model": "geography.place", 
   "fields": {
-    "code": "Andaman and Nicobar", 
+    "code": "in-an", 
     "type": 1, 
     "name": "Andamany a Nikobary"
   }
@@ -2523,7 +2523,7 @@
   "pk": 288, 
   "model": "geography.place", 
   "fields": {
-    "code": "Assam", 
+    "code": "in-as", 
     "type": 1, 
     "name": "\u00c1s\u00e1m"
   }
@@ -2532,7 +2532,7 @@
   "pk": 289, 
   "model": "geography.place", 
   "fields": {
-    "code": "Manipur", 
+    "code": "in-mn", 
     "type": 1, 
     "name": "Man\u00edpur"
   }
@@ -2541,7 +2541,7 @@
   "pk": 290, 
   "model": "geography.place", 
   "fields": {
-    "code": "Nagaland", 
+    "code": "in-nl", 
     "type": 1, 
     "name": "N\u00e1g\u00e1land"
   }
@@ -2550,7 +2550,7 @@
   "pk": 291, 
   "model": "geography.place", 
   "fields": {
-    "code": "Meghalaya", 
+    "code": "in-ml", 
     "type": 1, 
     "name": "M\u00e9gh\u00e1laj"
   }
@@ -2559,7 +2559,7 @@
   "pk": 292, 
   "model": "geography.place", 
   "fields": {
-    "code": "Punjab", 
+    "code": "in-pb", 
     "type": 1, 
     "name": "Pa\u0148d\u017e\u00e1b"
   }
@@ -2568,7 +2568,7 @@
   "pk": 293, 
   "model": "geography.place", 
   "fields": {
-    "code": "Rajasthan", 
+    "code": "in-rj", 
     "type": 1, 
     "name": "R\u00e1d\u017easth\u00e1n"
   }
@@ -2577,7 +2577,7 @@
   "pk": 294, 
   "model": "geography.place", 
   "fields": {
-    "code": "Uttar Pradesh", 
+    "code": "in-up", 
     "type": 1, 
     "name": "Uttar\u00e1khand"
   }
@@ -2586,7 +2586,7 @@
   "pk": 295, 
   "model": "geography.place", 
   "fields": {
-    "code": "Uttaranchal", 
+    "code": "in-ut", 
     "type": 1, 
     "name": "Uttarprad\u00e9\u0161"
   }
@@ -2595,7 +2595,7 @@
   "pk": 296, 
   "model": "geography.place", 
   "fields": {
-    "code": "Jharkhand", 
+    "code": "in-jh", 
     "type": 1, 
     "name": "D\u017eh\u00e1rkhand"
   }
@@ -2604,7 +2604,7 @@
   "pk": 297, 
   "model": "geography.place", 
   "fields": {
-    "code": "West Bengal", 
+    "code": "in-wb", 
     "type": 1, 
     "name": "Z\u00e1padn\u00ed Beng\u00e1lsko"
   }
@@ -2613,7 +2613,7 @@
   "pk": 298, 
   "model": "geography.place", 
   "fields": {
-    "code": "Bihar", 
+    "code": "in-br", 
     "type": 1, 
     "name": "Bih\u00e1r"
   }
@@ -2622,7 +2622,7 @@
   "pk": 299, 
   "model": "geography.place", 
   "fields": {
-    "code": "Sikkim", 
+    "code": "in-sk", 
     "type": 1, 
     "name": "Sikkim"
   }
@@ -2631,7 +2631,7 @@
   "pk": 300, 
   "model": "geography.place", 
   "fields": {
-    "code": "Chhattisgarh", 
+    "code": "in-ct", 
     "type": 1, 
     "name": "\u010cand\u00edgarh"
   }
@@ -2640,7 +2640,7 @@
   "pk": 301, 
   "model": "geography.place", 
   "fields": {
-    "code": "Madhya Pradesh", 
+    "code": "in-mp", 
     "type": 1, 
     "name": "Madhjaprad\u00e9\u0161"
   }
@@ -2649,7 +2649,7 @@
   "pk": 302, 
   "model": "geography.place", 
   "fields": {
-    "code": "Puducherry", 
+    "code": "in-py", 
     "type": 1, 
     "name": "Puttu\u010d\u010d\u00e9ri"
   }
@@ -2658,7 +2658,7 @@
   "pk": 303, 
   "model": "geography.place", 
   "fields": {
-    "code": "Tamil Nadu", 
+    "code": "in-ta", 
     "type": 1, 
     "name": "Tamiln\u00e1du"
   }
@@ -2667,7 +2667,7 @@
   "pk": 304, 
   "model": "geography.place", 
   "fields": {
-    "code": "Gujarat", 
+    "code": "in-gu", 
     "type": 1, 
     "name": "Gud\u017ear\u00e1t"
   }
@@ -2676,7 +2676,7 @@
   "pk": 305, 
   "model": "geography.place", 
   "fields": {
-    "code": "Goa", 
+    "code": "in-ga", 
     "type": 1, 
     "name": "Goa"
   }
@@ -2685,7 +2685,7 @@
   "pk": 306, 
   "model": "geography.place", 
   "fields": {
-    "code": "Arunachal Pradesh", 
+    "code": "in-ar", 
     "type": 1, 
     "name": "Arun\u00e1\u010dalprad\u00e9\u0161"
   }
@@ -2694,7 +2694,7 @@
   "pk": 307, 
   "model": "geography.place", 
   "fields": {
-    "code": "Mizoram", 
+    "code": "in-mz", 
     "type": 1, 
     "name": "Miz\u00f3ram"
   }
@@ -2703,7 +2703,7 @@
   "pk": 308, 
   "model": "geography.place", 
   "fields": {
-    "code": "Tripura", 
+    "code": "in-tr", 
     "type": 1, 
     "name": "Tripura"
   }
