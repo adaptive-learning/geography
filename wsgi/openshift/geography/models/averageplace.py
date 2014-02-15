@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from place import Place
-from django.contrib.auth.models import User
 from math import exp
 
 
