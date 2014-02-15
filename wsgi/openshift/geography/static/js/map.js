@@ -330,7 +330,8 @@
         },
         updatePlaces : function(places) {
           config.states = places;
-          angular.forEach(layers.getAll(), function(layer) {
+          var allLayers = layers ? layers.getAll() : [];
+          angular.forEach(allLayers, function(layer) {
             var config = layers.getConfig(layer);
             layer.style('fill', config.styles.fill);
             layer.tooltips(config.tooltips);
