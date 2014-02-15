@@ -8,7 +8,7 @@ class Migration(DataMigration):
     dependencies = [("migrations", "0001_migrating_data")]
 
     def forwards(self, orm):
-        call_command('add_map', 'cz', u'Česká republika', 'REGION')
+        call_command('add_map', 'cz', u'Česká republika', 'REGION_CZ')
         call_command('add_map', 'de', u'Česká republika', 'BUNDESLAND')
         call_command('add_map', 'at', u'Česká republika', 'BUNDESLAND')
         call_command('add_map', 'in', u'Česká republika', 'STATE')

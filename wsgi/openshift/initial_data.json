@@ -3393,6 +3393,717 @@
   }
 },
 {
+  "pk": 535, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-mb", 
+    "type": 9, 
+    "name": "Manitoba"
+  }
+},
+{
+  "pk": 536, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-sk", 
+    "type": 9, 
+    "name": "Saskatchewan"
+  }
+},
+{
+  "pk": 537, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-ab", 
+    "type": 9, 
+    "name": "Alberta"
+  }
+},
+{
+  "pk": 538, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-bc", 
+    "type": 9, 
+    "name": "Britsk\u00e1 Kolumbie"
+  }
+},
+{
+  "pk": 539, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-nu", 
+    "type": 9, 
+    "name": "Nunavut"
+  }
+},
+{
+  "pk": 540, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-nt", 
+    "type": 9, 
+    "name": "Severoz\u00e1padn\u00ed teritoria"
+  }
+},
+{
+  "pk": 541, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-yt", 
+    "type": 9, 
+    "name": "Yukon"
+  }
+},
+{
+  "pk": 542, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-on", 
+    "type": 9, 
+    "name": "Ontario"
+  }
+},
+{
+  "pk": 543, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-qc", 
+    "type": 9, 
+    "name": "Qu\u00e9bec"
+  }
+},
+{
+  "pk": 544, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-nb", 
+    "type": 9, 
+    "name": "Nov\u00fd Brun\u0161vik"
+  }
+},
+{
+  "pk": 545, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-ns", 
+    "type": 9, 
+    "name": "Nov\u00e9 Skotsko"
+  }
+},
+{
+  "pk": 546, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-nl", 
+    "type": 9, 
+    "name": "Newfoundland a Labrador"
+  }
+},
+{
+  "pk": 547, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ca-pe", 
+    "type": 9, 
+    "name": "Ostrov prince"
+  }
+},
+{
+  "pk": 549, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "au-nt", 
+    "type": 1, 
+    "name": "Severn\u00ed Teritorium"
+  }
+},
+{
+  "pk": 550, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "au-wa", 
+    "type": 1, 
+    "name": "Z\u00e1padn\u00ed Austr\u00e1lie"
+  }
+},
+{
+  "pk": 551, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "au-ct", 
+    "type": 1, 
+    "name": "Teritorium hlavn\u00edho m\u011bsta"
+  }
+},
+{
+  "pk": 552, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "au-ns", 
+    "type": 1, 
+    "name": "Nov\u00fd Ji\u017en\u00ed Wales"
+  }
+},
+{
+  "pk": 553, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "au-sa", 
+    "type": 1, 
+    "name": "Ji\u017en\u00ed Austr\u00e1lie"
+  }
+},
+{
+  "pk": 554, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "au-vi", 
+    "type": 1, 
+    "name": "Victoria"
+  }
+},
+{
+  "pk": 555, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "au-ql", 
+    "type": 1, 
+    "name": "Queensland"
+  }
+},
+{
+  "pk": 556, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "au-ts", 
+    "type": 1, 
+    "name": "Tasm\u00e1nie"
+  }
+},
+{
+  "pk": 557, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-65", 
+    "type": 10, 
+    "name": "Abruzzo"
+  }
+},
+{
+  "pk": 558, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-75", 
+    "type": 10, 
+    "name": "Apulie"
+  }
+},
+{
+  "pk": 559, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-77", 
+    "type": 10, 
+    "name": "Basilicata"
+  }
+},
+{
+  "pk": 560, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-78", 
+    "type": 10, 
+    "name": "Kal\u00e1brie"
+  }
+},
+{
+  "pk": 561, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-72", 
+    "type": 10, 
+    "name": "Kamp\u00e1nie"
+  }
+},
+{
+  "pk": 562, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-45", 
+    "type": 10, 
+    "name": "Emilia-Romagna"
+  }
+},
+{
+  "pk": 563, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-36", 
+    "type": 10, 
+    "name": "Furlandsko-Julsk\u00e9 Ben\u00e1tsko"
+  }
+},
+{
+  "pk": 564, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-62", 
+    "type": 10, 
+    "name": "Lazio"
+  }
+},
+{
+  "pk": 565, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-42", 
+    "type": 10, 
+    "name": "Ligurie"
+  }
+},
+{
+  "pk": 566, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-25", 
+    "type": 10, 
+    "name": "Lombardie"
+  }
+},
+{
+  "pk": 567, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-57", 
+    "type": 10, 
+    "name": "Marche"
+  }
+},
+{
+  "pk": 568, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-67", 
+    "type": 10, 
+    "name": "Molise"
+  }
+},
+{
+  "pk": 569, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-21", 
+    "type": 10, 
+    "name": "Piemont"
+  }
+},
+{
+  "pk": 570, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-88", 
+    "type": 10, 
+    "name": "Sardinie"
+  }
+},
+{
+  "pk": 571, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-82", 
+    "type": 10, 
+    "name": "Sicilie"
+  }
+},
+{
+  "pk": 572, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-52", 
+    "type": 10, 
+    "name": "Tosk\u00e1nsko"
+  }
+},
+{
+  "pk": 573, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-32", 
+    "type": 10, 
+    "name": "Tridentsko-Ji\u017en\u00ed Tyrolsko"
+  }
+},
+{
+  "pk": 574, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-55", 
+    "type": 10, 
+    "name": "Umbrie"
+  }
+},
+{
+  "pk": 575, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-23", 
+    "type": 10, 
+    "name": "\u00dadol\u00ed Aosty"
+  }
+},
+{
+  "pk": 576, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "it-34", 
+    "type": 10, 
+    "name": "Ben\u00e1tsko"
+  }
+},
+{
+  "pk": 577, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-a", 
+    "type": 11, 
+    "name": "Alsasko"
+  }
+},
+{
+  "pk": 578, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-b", 
+    "type": 11, 
+    "name": "Akvit\u00e1nie"
+  }
+},
+{
+  "pk": 579, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-c", 
+    "type": 11, 
+    "name": "Auvergne"
+  }
+},
+{
+  "pk": 580, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-p", 
+    "type": 11, 
+    "name": "Doln\u00ed Normandie"
+  }
+},
+{
+  "pk": 581, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-d", 
+    "type": 11, 
+    "name": "Burgundsko"
+  }
+},
+{
+  "pk": 582, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-e", 
+    "type": 11, 
+    "name": "Breta\u0148"
+  }
+},
+{
+  "pk": 583, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-f", 
+    "type": 11, 
+    "name": "Centre"
+  }
+},
+{
+  "pk": 584, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-g", 
+    "type": 11, 
+    "name": "Champagne-Ardenne"
+  }
+},
+{
+  "pk": 585, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-h", 
+    "type": 11, 
+    "name": "Korsika"
+  }
+},
+{
+  "pk": 586, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-i", 
+    "type": 11, 
+    "name": "Franche-Comt\u00e9"
+  }
+},
+{
+  "pk": 587, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-q", 
+    "type": 11, 
+    "name": "Horn\u00ed Normandie"
+  }
+},
+{
+  "pk": 588, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-j", 
+    "type": 11, 
+    "name": "\u00cele-de-France"
+  }
+},
+{
+  "pk": 589, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-k", 
+    "type": 11, 
+    "name": "Languedoc-Roussillon"
+  }
+},
+{
+  "pk": 590, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-l", 
+    "type": 11, 
+    "name": "Limousin"
+  }
+},
+{
+  "pk": 591, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-m", 
+    "type": 11, 
+    "name": "Lotrinsko"
+  }
+},
+{
+  "pk": 592, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-n", 
+    "type": 11, 
+    "name": "Midi-Pyr\u00e9n\u00e9es"
+  }
+},
+{
+  "pk": 593, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-o", 
+    "type": 11, 
+    "name": "Nord-Pas-de-Calais"
+  }
+},
+{
+  "pk": 594, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-r", 
+    "type": 11, 
+    "name": "Pays de la Loire"
+  }
+},
+{
+  "pk": 595, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-s", 
+    "type": 11, 
+    "name": "Pikardie"
+  }
+},
+{
+  "pk": 596, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-t", 
+    "type": 11, 
+    "name": "Poitou-Charentes"
+  }
+},
+{
+  "pk": 597, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-u", 
+    "type": 11, 
+    "name": "Provens\u00e1lsko-Alpy-Azurov\u00e9 pob\u0159e\u017e\u00ed"
+  }
+},
+{
+  "pk": 598, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "fr-v", 
+    "type": 11, 
+    "name": "Rh\u00f4ne-Alpes"
+  }
+},
+{
+  "pk": 599, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-an", 
+    "type": 12, 
+    "name": "Andalusie"
+  }
+},
+{
+  "pk": 600, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-ar", 
+    "type": 12, 
+    "name": "Aragonie"
+  }
+},
+{
+  "pk": 601, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-cb", 
+    "type": 12, 
+    "name": "Kant\u00e1brie"
+  }
+},
+{
+  "pk": 602, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-cl", 
+    "type": 12, 
+    "name": "Kastilie a Le\u00f3n"
+  }
+},
+{
+  "pk": 603, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-cm", 
+    "type": 12, 
+    "name": "Kastilie-La Mancha"
+  }
+},
+{
+  "pk": 604, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-ct", 
+    "type": 12, 
+    "name": "Katal\u00e1nsko"
+  }
+},
+{
+  "pk": 605, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-md", 
+    "type": 12, 
+    "name": "Madrid"
+  }
+},
+{
+  "pk": 606, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-na", 
+    "type": 12, 
+    "name": "Navarra"
+  }
+},
+{
+  "pk": 607, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-vc", 
+    "type": 12, 
+    "name": "Valencie"
+  }
+},
+{
+  "pk": 608, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-ex", 
+    "type": 12, 
+    "name": "Extremadura"
+  }
+},
+{
+  "pk": 609, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-ga", 
+    "type": 12, 
+    "name": "Galicie"
+  }
+},
+{
+  "pk": 610, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-pm", 
+    "type": 12, 
+    "name": "Bale\u00e1rsk\u00e9 ostrovy"
+  }
+},
+{
+  "pk": 611, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-lo", 
+    "type": 12, 
+    "name": "La Rioja"
+  }
+},
+{
+  "pk": 612, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-pv", 
+    "type": 12, 
+    "name": "Baskicko"
+  }
+},
+{
+  "pk": 613, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-as", 
+    "type": 12, 
+    "name": "Asturie"
+  }
+},
+{
+  "pk": 614, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "es-mu", 
+    "type": 12, 
+    "name": "Murcie"
+  }
+},
+{
   "pk": 1, 
   "model": "geography.placerelation", 
   "fields": {
@@ -5948,6 +6659,135 @@
       221
     ], 
     "place": 225
+  }
+},
+{
+  "pk": 152, 
+  "model": "geography.placerelation", 
+  "fields": {
+    "type": 1, 
+    "related_places": [
+      557, 
+      558, 
+      559, 
+      576, 
+      562, 
+      563, 
+      560, 
+      561, 
+      564, 
+      565, 
+      566, 
+      567, 
+      568, 
+      569, 
+      570, 
+      571, 
+      572, 
+      573, 
+      575, 
+      574
+    ], 
+    "place": 115
+  }
+},
+{
+  "pk": 153, 
+  "model": "geography.placerelation", 
+  "fields": {
+    "type": 1, 
+    "related_places": [
+      578, 
+      577, 
+      579, 
+      582, 
+      581, 
+      583, 
+      584, 
+      580, 
+      586, 
+      587, 
+      588, 
+      585, 
+      589, 
+      590, 
+      591, 
+      592, 
+      593, 
+      594, 
+      595, 
+      596, 
+      597, 
+      598
+    ], 
+    "place": 94
+  }
+},
+{
+  "pk": 154, 
+  "model": "geography.placerelation", 
+  "fields": {
+    "type": 1, 
+    "related_places": [
+      599, 
+      600, 
+      613, 
+      610, 
+      612, 
+      608, 
+      609, 
+      601, 
+      602, 
+      603, 
+      604, 
+      611, 
+      605, 
+      614, 
+      606, 
+      607
+    ], 
+    "place": 203
+  }
+},
+{
+  "pk": 155, 
+  "model": "geography.placerelation", 
+  "fields": {
+    "type": 1, 
+    "related_places": [
+      537, 
+      538, 
+      535, 
+      546, 
+      545, 
+      544, 
+      539, 
+      542, 
+      547, 
+      543, 
+      536, 
+      540, 
+      541
+    ], 
+    "place": 126
+  }
+},
+{
+  "pk": 156, 
+  "model": "geography.placerelation", 
+  "fields": {
+    "type": 1, 
+    "related_places": [
+      553, 
+      552, 
+      555, 
+      549, 
+      556, 
+      551, 
+      554, 
+      550
+    ], 
+    "place": 60
   }
 }
 ]

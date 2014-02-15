@@ -134,9 +134,12 @@ class QuestionType(object):
         Place.CONTINENT: GENUS_MASCULINE,
         Place.RIVER: GENUS_FEMININE,
         Place.LAKE: GENUS_NEUTER,
-        Place.REGION: GENUS_MASCULINE,
+        Place.REGION_CZ: GENUS_MASCULINE,
         Place.BUNDESLAND: GENUS_FEMININE,
         Place.PROVINCE: GENUS_FEMININE,
+        Place.REGION_IT: GENUS_FEMININE,
+        Place.REGION: GENUS_MASCULINE,
+        Place.AUTONOMOUS_COMUNITY: GENUS_NEUTER,
     }
 
     PLACE_TYPE_SINGULAR = {
@@ -147,9 +150,12 @@ class QuestionType(object):
         Place.CONTINENT: u'kontinent',
         Place.RIVER: u'řeka',
         Place.LAKE: u'jezero',
-        Place.REGION: u'region',
+        Place.REGION_CZ: u'kraj',
         Place.BUNDESLAND: u'spolková země',
         Place.PROVINCE: u'provincie',
+        Place.REGION_IT: u'oblast',
+        Place.REGION: u'region',
+        Place.AUTONOMOUS_COMUNITY: u'autonomní společenství',
     }
     PLACE_TYPE_SINGULAR_CHOICE = {
         Place.BUNDESLAND: u'spolkovou zemi',
@@ -163,9 +169,12 @@ class QuestionType(object):
         Place.CONTINENT: u'kontinentů',
         Place.RIVER: u'řek',
         Place.LAKE: u'jezer',
-        Place.REGION: u'regionů',
+        Place.REGION_CZ: u'regionů',
         Place.BUNDESLAND: u'spolkových zemí',
         Place.PROVINCE: u'provincií',
+        Place.REGION_IT: u'oblastí',
+        Place.REGION: u'regionů',
+        Place.AUTONOMOUS_COMUNITY: u'autonomních společenství',
     }
 
     def __init__(self, type, place_type, number_of_options):

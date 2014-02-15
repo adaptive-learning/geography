@@ -43,9 +43,12 @@ class Place(models.Model):
     CONTINENT = 4
     RIVER = 5
     LAKE = 6
-    REGION = 7
+    REGION_CZ = 7
     BUNDESLAND = 8
     PROVINCE = 9
+    REGION_IT = 10
+    REGION = 11
+    AUTONOMOUS_COMUNITY = 12
     PLACE_TYPES = (
         (UNKNOWN, 'Unknown'),
         (STATE, 'State'),
@@ -54,9 +57,12 @@ class Place(models.Model):
         (CONTINENT, 'Continent'),
         (RIVER, 'River'),
         (LAKE, 'Lake'),
-        (REGION, 'Region'),
+        (REGION_CZ, 'Region_cz'),
         (BUNDESLAND, 'Bundesland'),
         (PROVINCE, 'Province'),
+        (REGION_IT, 'Region_it'),
+        (REGION, 'Region'),
+        (AUTONOMOUS_COMUNITY, 'Autonomous_Comunity'),
     )
     PLACE_TYPE_PLURALS = (
         (UNKNOWN, u'Neznámé'),
@@ -66,9 +72,12 @@ class Place(models.Model):
         (CONTINENT, u'Kontinenty'),
         (RIVER, u'Řeky'),
         (LAKE, u'Jezera'),
-        (REGION, u'Kraje'),
+        (REGION_CZ, u'Kraje'),
         (BUNDESLAND, u'Spolkové Země'),
         (PROVINCE, u'Provincie'),
+        (REGION_IT, u'Oblasti'),
+        (REGION, u'Regiony'),
+        (AUTONOMOUS_COMUNITY, u'Autonomní společenství'),
     )
     PLACE_TYPE_SLUGS = dict((t[1].upper(), t[0]) for t in PLACE_TYPES)
     PLACE_TYPE_SLUGS_LOWER = dict((t[0], slugify(t[1].lower())) for t in PLACE_TYPES)
