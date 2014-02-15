@@ -3000,7 +3000,7 @@
   "pk": 433, 
   "model": "geography.place", 
   "fields": {
-    "code": "San Marino", 
+    "code": "San_Marino", 
     "type": 2, 
     "name": "San Marino"
   }
@@ -3099,7 +3099,7 @@
   "pk": 444, 
   "model": "geography.place", 
   "fields": {
-    "code": "Reykjav\u00edk", 
+    "code": "Reykjavik", 
     "type": 2, 
     "name": "Reykjav\u00edk"
   }
@@ -3270,7 +3270,7 @@
   "pk": 463, 
   "model": "geography.place", 
   "fields": {
-    "code": "K\u00f8benhavn", 
+    "code": "Kobenhavn", 
     "type": 2, 
     "name": "Koda\u0148"
   }
