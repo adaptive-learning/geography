@@ -2307,7 +2307,7 @@
   "pk": 264, 
   "model": "geography.place", 
   "fields": {
-    "code": "de-br", 
+    "code": "de-bb", 
     "type": 8, 
     "name": "Braniborsko"
   }
@@ -2658,7 +2658,7 @@
   "pk": 303, 
   "model": "geography.place", 
   "fields": {
-    "code": "in-ta", 
+    "code": "in-tn", 
     "type": 1, 
     "name": "Tamiln\u00e1du"
   }
@@ -2667,7 +2667,7 @@
   "pk": 304, 
   "model": "geography.place", 
   "fields": {
-    "code": "in-gu", 
+    "code": "in-gj", 
     "type": 1, 
     "name": "Gud\u017ear\u00e1t"
   }
