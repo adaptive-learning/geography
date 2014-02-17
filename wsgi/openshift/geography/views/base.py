@@ -14,7 +14,7 @@ from django.core.servers.basehttp import FileWrapper
 
 def home(request):
     JS_FILES = (
-        "static/lib/js/jquery-2.0.2.min.js",
+        "static/lib/js/jquery-1.11.0.min.js",
         "static/lib/js/bootstrap.js",
         "static/lib/angular-1.2.9/angular.min.js",
         "static/lib/angular-1.2.9/angular-route.min.js",
