@@ -20,7 +20,9 @@
   .value('colors', {
     'GOOD': '#0d0',
     'BAD': '#ff0000',
-    'NEUTRAL': '#bbb'
+    'NEUTRAL': '#bbb',
+    'BRIGHT_GRAY' : '#ddd'
+
   })
 
   .factory('getLayerConfig', function($log, $, chroma, colors) {
@@ -36,7 +38,7 @@
       var layerConfig = {};
       layerConfig.bg = {
         'styles' : {
-          'fill' : colors.NEUTRAL,
+          'fill' : colors.BRIGHT_GRAY,
           'stroke-width' : STROKE_WIDTH,
           'transform' : ''
         }
@@ -302,7 +304,7 @@
           var state = states.pop();
           var layer = this.getLayerContaining(state);
           var placePath = layer ? layer.getPaths({ name : state })[0] : undefined;
-          if (placePath) {
+          if (placePath && layer.id != "bg") {
             placePath.svgPath.toFront();
             var origStroke = layers.getConfig(layer).styles['stroke-width'];
             var animAttrs = mapFunctions.getHighlightAnimationAttributes(placePath, layer,
@@ -334,7 +336,10 @@
           angular.forEach(allLayers, function(layer) {
             var config = layers.getConfig(layer);
             layer.style('fill', config.styles.fill);
-            layer.tooltips(config.tooltips);
+            if (config.tooltips) {
+              layer.tooltips(config.tooltips);
+            }
+
           });
         },
         getLayerContaining : function(placeCode) {
