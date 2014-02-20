@@ -30,7 +30,7 @@ class Command(BaseCommand):
             guess = 1.0 / answer['number_of_options'] if answer['number_of_options'] != 0 else 0
             prediction = self.predict(local_skill[0], guess)
             result = answer['place_asked_id'] == answer['place_answered_id']
-            if local_skills.get((answer['user_id'], answer['place_asked_id']), None):
+            if not local_skills.get((answer['user_id'], answer['place_asked_id']), None):
                 skills[answer['user_id']] = (
                     skill[0] + Elo.alpha_fun(Elo.ALPHA_1, skill[1]) * (result - prediction),
                     skill[1] + 1
@@ -39,6 +39,9 @@ class Command(BaseCommand):
                     difficulty[0] - Elo.alpha_fun(Elo.ALPHA_1, difficulty[1]) * (result - prediction),
                     difficulty[1] + 1
                 )
+            else:
+                skills[answer['user_id']] = (skill[0], skill[1] + 1)
+                difficulties[answer['place_asked_id']] = (difficulty[0], difficulty[1] + 1)
             local_skills[(answer['user_id'], answer['place_asked_id'])] = (
                 local_skill[0] + Elo.ALPHA_2 * (result - prediction),
                 local_skill[1] + 1
