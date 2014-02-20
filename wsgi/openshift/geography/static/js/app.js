@@ -26,6 +26,8 @@
       templateUrl : './'+hash('static/tpl/view_tpl.html')
     }).when('/practice/', {
       redirectTo : '/practice/world/'
+    }).when('/refreshpractice/:part/:place_type?', {
+      redirectTo : '/practice/:part/:place_type'
     }).when('/practice/:part/:place_type?', {
       controller : 'AppPractice',
       templateUrl : './'+hash('static/tpl/practice_tpl.html')

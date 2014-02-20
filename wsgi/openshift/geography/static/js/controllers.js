@@ -47,6 +47,7 @@
   .controller('AppPractice', function($scope, $routeParams, $timeout, $filter,
       question, mapControler, user, events, colors) {
     $scope.part = $routeParams.part;
+    $scope.placeType = $routeParams.place_type;
 
     $scope.highlight = function() {
       var active = $scope.question;
