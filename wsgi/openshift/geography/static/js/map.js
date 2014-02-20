@@ -168,18 +168,6 @@
         var zoomRatio = Math.max(1.2, 70 / Math.sqrt(bboxArea));
         return zoomRatio;
       },
-      zoomOut : function(panZoom, i) {
-        i = i || 10;
-        if (panZoom) {
-          panZoom.zoomOut(1);
-        }
-        i--;
-        if (i > 0) {
-          $timeout(function() {
-            that.zoomOut(panZoom, i);
-          }, 25);
-        }
-      },
       initMapZoom : function(paper) {
         var panZoom = paper.panzoom({});
         panZoom.enable();
@@ -328,7 +316,6 @@
             layer.style(layers.getConfig(layer).styles);
             layers.showLayer(layer);
           });
-          mapFunctions.zoomOut(myMap.panZoom);
         },
         updatePlaces : function(places) {
           config.states = places;
