@@ -2775,7 +2775,7 @@
   "pk": 316, 
   "model": "geography.place", 
   "fields": {
-    "code": "CN-", 
+    "code": "cn-35", 
     "type": 9, 
     "name": "Fu-\u0165ien"
   }
