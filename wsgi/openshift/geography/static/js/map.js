@@ -283,7 +283,11 @@
           });
         },
         onClick : function(clickFn) {
-          config.click = clickFn;
+          config.click = function(code) {
+            if (!myMap.panZoom.isDragging()) {
+              clickFn(code);
+            }
+          }
         },
         registerCallback : function(callback) {
           initCallback = callback;
