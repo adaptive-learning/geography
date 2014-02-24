@@ -243,6 +243,10 @@
         if (practice) {
           window.scrollTo(0, $('.navbar').height() - 8);
         }
+        var l = map.getLayer("cities")
+        if(l) {
+          setCitiesSize(l)
+        };
       };
     };
   })
