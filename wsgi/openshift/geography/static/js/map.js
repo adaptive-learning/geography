@@ -25,7 +25,7 @@
 
   })
 
-  .factory('getLayerConfig', function($log, $, chroma, colors) {
+  .factory('getLayerConfig', function($log, $, chroma, colors, citySizeRatio) {
     var scale = chroma.scale([
         colors.BAD,
         '#ff4500',
@@ -86,7 +86,7 @@
       layerConfig.cities = $.extend($.extend({}, layerConfig.states), {
         'mouseenter' : function(data, path) {
           path.toFront();
-          var zoomRatio = 2;
+          var zoomRatio = 2.5 / citySizeRatio(data.population);
           var animAttrs = {
               'transform' : 's' + zoomRatio,
               'stroke-width' : zoomRatio * STROKE_WIDTH
@@ -204,7 +204,23 @@
     return that;
   })
   
-  .service('getMapResizeFunction', function($){
+  .service('citySizeRatio', function(){
+    return function (population) {
+      if (population > 5000000) {
+        return 1.8;
+      } else if (population > 1000000) {
+        return 1.4;
+      } else if (population > 500000) {
+        return 1.2;
+      } else if (population > 100000) {
+        return 1;
+      } else {
+        return 0.8;
+      }
+    };
+  })
+  
+  .service('getMapResizeFunction', function($, citySizeRatio){
 
     function getNewHeight(mapAspectRatio, isPractise, holderInitHeight) {
       $('#ng-view').removeClass('horizontal');
@@ -224,6 +240,14 @@
         newHeight = holderInitHeight;
       }
       return newHeight;
+    }
+    
+    function setCitiesSize(layer) {
+      var paths = layer.paths;
+      angular.forEach(paths, function(path) {
+        var newRadius = path.svgPath.attr("r") * citySizeRatio(path.data.population);
+        path.svgPath.attr({r: newRadius});
+      });
     }
 
     return function(m, holder, practice) {
