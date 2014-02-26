@@ -25,7 +25,7 @@
 
   })
 
-  .factory('getLayerConfig', function($log, $, chroma, colors, citySizeRatio) {
+  .factory('getLayerConfig', function($log, chroma, colors, citySizeRatio) {
     var scale = chroma.scale([
         colors.BAD,
         '#ff4500',
@@ -83,7 +83,7 @@
         };
       }
 
-      layerConfig.cities = $.extend($.extend({}, layerConfig.states), {
+      layerConfig.cities = angular.copy(layerConfig.states, {
         'mouseenter' : function(data, path) {
           path.toFront();
           var zoomRatio = 2.5 / citySizeRatio(data.population);
@@ -102,7 +102,7 @@
         }
       });
 
-      layerConfig.rivers = $.extend($.extend({}, layerConfig.states), {
+      layerConfig.rivers = angular.copy(layerConfig.states, {
         'styles' : {
           'stroke-width' : RIVER_WIDTH,
           'stroke' : WATER_COLOR,
@@ -118,7 +118,7 @@
           path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
         }
       });
-      layerConfig.lakes = $.extend(true, {}, layerConfig.cities);
+      layerConfig.lakes = angular.copy(layerConfig.cities, {});
       layerConfig.lakes.styles.fill = function(d) {
         var state = config.states && config.states[d.name];
         return state ? scale(state.probability).brighten((1 - state.certainty) * 80).hex() : WATER_COLOR;
@@ -155,7 +155,6 @@
           var ret;
           angular.forEach(layersArray, function(l) {
             var singularId = l.id.replace(/s$/, '').replace(/ie$/, 'y');
-            console.log(singularId, slug, singularId == slug)
             if (singularId == slug) {
               ret = l;
             }
@@ -297,39 +296,26 @@
   })
 
   .factory('mapControler', function($, $K, mapFunctions, initLayers, $filter) {
-
-    var config = { states : [] };
-    var layers;
-    var initCallback;
+    
     $.fn.qtip.defaults.style.classes = 'qtip-dark';
 
-    var myMap = {
-        map : undefined,
+    return function(mapCode, showTooltips, holder, callback) {
+      var config = { states : [] };
+      var layers;
+      
+      config.showTooltips = showTooltips;
+      config.isPractise = !showTooltips;
+      config.states = [];
+  
+      var myMap = {
+        map :  $K.map(holder),
         panZoom : undefined,
-        init : function(mapCode, showTooltips, holder, callback) {
-          config.showTooltips = showTooltips;
-          config.isPractise = !showTooltips;
-          config.states = [];
-          myMap.map = $K.map(holder);
-
-          myMap.map.loadCSS(hash('static/css/map.css'), function() {
-            myMap.map.loadMap(hash('static/map/' + mapCode + '.svg'), function() {
-              layers = initLayers(myMap.map, config);
-              myMap.panZoom = mapFunctions.initMapZoom(myMap.map.paper);
-              initCallback();
-              callback(myMap);
-            });
-          });
-        },
         onClick : function(clickFn) {
           config.click = function(code) {
             if (!myMap.panZoom.isDragging()) {
               clickFn(code);
             }
           }
-        },
-        registerCallback : function(callback) {
-          initCallback = callback;
         },
         highlightStates : function(states, color, zoomRatio) {
           var state = states.pop();
@@ -399,6 +385,15 @@
           });
         }
       };
-    return myMap;
+
+      myMap.map.loadCSS(hash('static/css/map.css'), function() {
+        myMap.map.loadMap(hash('static/map/' + mapCode + '.svg'), function() {
+          layers = initLayers(myMap.map, config);
+          myMap.panZoom = mapFunctions.initMapZoom(myMap.map.paper);
+          callback(myMap);
+        });
+      });
+      return myMap;
+    };
   });
 }());

@@ -14,7 +14,7 @@
     };
   })
 
-  .directive('blindMap', function(mapControler, places, singleWindowResizeFn, getMapResizeFunction) {
+  .directive('blindMap', function(mapControler, places, singleWindowResizeFn, getMapResizeFunction, $parse) {
     return {
       restrict : 'E',
       template : '<div class="map-container">' +
@@ -43,15 +43,19 @@
       link : function($scope, elem, attrs) {
         $scope.loading = true;
         $scope.name = places.getName($scope.part);
-        $scope.practice = !attrs.practice;
-        var showTooltips = attrs.practice !== undefined;
+        $scope.practice = !attrs.showTooltips;
+        var showTooltips = attrs.showTooltips !== undefined;
 
-        mapControler.init($scope.part, showTooltips, elem, function(m) {
+        var map = mapControler($scope.part, showTooltips, elem, function(m) {
           $scope.loading = false;
           var resize = getMapResizeFunction(m, elem, $scope.practice);
           singleWindowResizeFn(resize);
           resize();
+          $scope.$eval(attrs.callback);
         });
+        var model = $parse(attrs.map);
+        //Set scope variable for the map
+        model.assign($scope, map);
       },
       replace : true
     };
