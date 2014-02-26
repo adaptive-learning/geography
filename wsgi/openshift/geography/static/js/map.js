@@ -152,10 +152,20 @@
           });
         },
         getLayerBySlug: function(slug) {
+          var slugToLayerId = {
+            "city" : "cities",
+            "river" : "rivers",
+            "lake" : "lakes",
+            "state" : "states",
+            "region" : "states",
+            "province" : "states",
+            "region_cz" : "states",
+            "region_it" : "states",
+            "autonomous_comunity" : "states",
+          }
           var ret;
           angular.forEach(layersArray, function(l) {
-            var singularId = l.id.replace(/s$/, '').replace(/ie$/, 'y');
-            if (singularId == slug) {
+            if (l.id == slugToLayerId[slug]) {
               ret = l;
             }
           });
