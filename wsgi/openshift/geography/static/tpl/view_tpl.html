@@ -11,7 +11,10 @@
   <ul class="thumbnails">
     <li class="col-sm-{{placesTypes.length|colNum}}" 
         ng-repeat="type in placesTypes">
-      <h3>
+      <h3 data-toggle="collapse" 
+          data-target="#collapse-{{type.slug}}"
+          ng-click="updateMap(type)">
+        <i class="glyphicon {{type.hidden && 'glyphicon-plus-sign' || 'glyphicon-minus-sign'}}"></i>
         {{type.name}}
         <a href="#/practice/{{part}}/{{type.slug}}" 
            class="btn btn-primary pull-right" 
@@ -19,7 +22,7 @@
           Procvičovat {{type.name|lowercase}}
         </a>
       </h3>
-      <div class="view-places">
+      <div class="view-places collapse in" id="collapse-{{type.slug}}">
         <span ng-repeat="place in type.places"
               ng-click="placeClick(place)"
               place-label>

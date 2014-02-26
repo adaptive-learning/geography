@@ -20,10 +20,11 @@
     };
   })
 
-  .controller('AppView', function($scope, $routeParams, $filter, 
+  .controller('AppView', function($scope, $routeParams, 
         places, mapTitle, mapControler) {
     $scope.part = $routeParams.part;
     var user = $routeParams.user || '';
+    $scope.placesTypes = {};
 
     mapControler.registerCallback(function() {
       var data = places.getCached($scope.part, user);
@@ -36,10 +37,18 @@
       mapControler.highlightState(place.code);
     };
 
+    $scope.$watch('placesTypes', function() {
+      console.log("placesTypes")
+      mapControler.updatePlaces($scope.placesTypes);
+    });
+    
+    $scope.updateMap = function(type) {
+      type.hidden = !type.hidden; 
+      mapControler.updatePlaces($scope.placesTypes);
+    };
+
     function updatePlaces(data) {
       $scope.placesTypes = data;
-      var states = $filter('StatesFromPlaces')($scope.placesTypes);
-      mapControler.updatePlaces(states);
       $scope.name = mapTitle($scope.part, user);
     }
   })

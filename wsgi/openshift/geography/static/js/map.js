@@ -151,6 +151,17 @@
             path.svgPath.show();
           });
         },
+        getLayerBySlug: function(slug) {
+          var ret;
+          angular.forEach(layersArray, function(l) {
+            var singularId = l.id.replace(/s$/, '').replace(/ie$/, 'y');
+            console.log(singularId, slug, singularId == slug)
+            if (singularId == slug) {
+              ret = l;
+            }
+          });
+          return ret
+        },
         getAll : function(){
           return layersArray;
         },
@@ -285,7 +296,7 @@
     };
   })
 
-  .factory('mapControler', function($, $K, mapFunctions, initLayers) {
+  .factory('mapControler', function($, $K, mapFunctions, initLayers, $filter) {
 
     var config = { states : [] };
     var layers;
@@ -349,7 +360,17 @@
             layers.showLayer(layer);
           });
         },
-        updatePlaces : function(places) {
+        updatePlaces : function(placesByTypes) {
+          angular.forEach(placesByTypes, function(type) {
+            var l = layers.getLayerBySlug(type.slug);
+            if (type.hidden) {
+              layers.hideLayer(l);
+            } else {
+              layers.showLayer(l);
+            }
+          });
+          
+          var places = $filter('StatesFromPlaces')(placesByTypes);
           config.states = places;
           var allLayers = layers ? layers.getAll() : [];
           angular.forEach(allLayers, function(layer) {
