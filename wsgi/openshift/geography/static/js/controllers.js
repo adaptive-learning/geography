@@ -2,7 +2,7 @@
   'use strict';
   /* Controllers */
   angular.module('blindMaps.controllers', [])
-  
+
   .controller('AppCtrl', function($scope, $rootScope, user) {
     $rootScope.topScope = $rootScope;
 
@@ -20,7 +20,7 @@
     };
   })
 
-  .controller('AppView', function($scope, $routeParams, $filter, 
+  .controller('AppView', function($scope, $routeParams, $filter,
         places, mapTitle, mapControler) {
     $scope.part = $routeParams.part;
     var user = $routeParams.user || '';
@@ -85,7 +85,7 @@
         setupSummary();
       }
     };
-    
+
     function highlightAnswer (asked, selected) {
       if ($filter('isFindOnMapType')($scope.question)) {
         mapControler.highlightState(asked, colors.GOOD);
@@ -129,8 +129,8 @@
       return $scope.layer == mapControler.getLayerContaining(code);
     }
     mapControler.onClick(function(code) {
-      if ($filter('isFindOnMapType')($scope.question) && 
-          !$scope.canNext && 
+      if ($filter('isFindOnMapType')($scope.question) &&
+          !$scope.canNext &&
           $filter('isAllowedOption')($scope.question, code) &&
           isInActiveLayer(code)) {
         $scope.checkAnswer(code);
