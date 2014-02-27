@@ -4104,6 +4104,240 @@
   }
 },
 {
+  "pk": 755, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Pyh\u00e4j\u00e4rvi", 
+    "type": 6, 
+    "name": "Pyh\u00e4j\u00e4rvi"
+  }
+},
+{
+  "pk": 756, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Hardanger-vidda", 
+    "type": 13, 
+    "name": "Hardangervidda"
+  }
+},
+{
+  "pk": 757, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "B\u00f6hmerwald", 
+    "type": 13, 
+    "name": "\u0160umava"
+  }
+},
+{
+  "pk": 758, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Transylvanian Alps", 
+    "type": 13, 
+    "name": "Ji\u017en\u00ed Karpaty"
+  }
+},
+{
+  "pk": 759, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Tatra Mts.", 
+    "type": 13, 
+    "name": "Tatry"
+  }
+},
+{
+  "pk": 760, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Pindus Mts.", 
+    "type": 13, 
+    "name": "Pindos"
+  }
+},
+{
+  "pk": 761, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Calabria", 
+    "type": 13, 
+    "name": "Kal\u00e1brie"
+  }
+},
+{
+  "pk": 762, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Harz", 
+    "type": 13, 
+    "name": "Harz"
+  }
+},
+{
+  "pk": 763, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Vosges", 
+    "type": 13, 
+    "name": "Vog\u00e9zy"
+  }
+},
+{
+  "pk": 764, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Sudetes Mts.", 
+    "type": 13, 
+    "name": "Sudetsk\u00e1 poho\u0159\u00ed"
+  }
+},
+{
+  "pk": 765, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Erzgebirge", 
+    "type": 13, 
+    "name": "Kru\u0161n\u00e9 hory"
+  }
+},
+{
+  "pk": 766, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Ardennes", 
+    "type": 13, 
+    "name": "Ardeny"
+  }
+},
+{
+  "pk": 767, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Jura", 
+    "type": 13, 
+    "name": "Jura"
+  }
+},
+{
+  "pk": 768, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Grampian Mts.", 
+    "type": 13, 
+    "name": "Grampiany"
+  }
+},
+{
+  "pk": 769, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Cambrian Mts.", 
+    "type": 13, 
+    "name": " Kumbrick\u00e9 hory"
+  }
+},
+{
+  "pk": 770, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Balkan Mts.", 
+    "type": 13, 
+    "name": "Star\u00e1 planina"
+  }
+},
+{
+  "pk": 771, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Dinaric Alps", 
+    "type": 13, 
+    "name": "Din\u00e1rsk\u00e9 hory"
+  }
+},
+{
+  "pk": 772, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Cord. Cant\u00e1brica", 
+    "type": 13, 
+    "name": "Kantabersk\u00e9 poho\u0159\u00ed"
+  }
+},
+{
+  "pk": 773, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "S. Nevada", 
+    "type": 13, 
+    "name": "Sierra Nevada"
+  }
+},
+{
+  "pk": 774, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Sierra Morena", 
+    "type": 13, 
+    "name": "Sierra Morena"
+  }
+},
+{
+  "pk": 775, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "KJ\u00d8LEN MOUNTAINS", 
+    "type": 13, 
+    "name": "Skandin\u00e1vsk\u00e9 poho\u0159\u00ed"
+  }
+},
+{
+  "pk": 776, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "CARPATHIAN MOUNTAINS", 
+    "type": 13, 
+    "name": "Karpaty"
+  }
+},
+{
+  "pk": 777, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "APPENNINI", 
+    "type": 13, 
+    "name": "Apeniny"
+  }
+},
+{
+  "pk": 778, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "PYRENEES", 
+    "type": 13, 
+    "name": "Pyreneje"
+  }
+},
+{
+  "pk": 779, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "ALPS", 
+    "type": 13, 
+    "name": "Alpy"
+  }
+},
+{
+  "pk": 780, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "CAUCASUS MTS.", 
+    "type": 13, 
+    "name": "Kavkaz"
+  }
+},
+{
   "pk": 1, 
   "model": "geography.placerelation", 
   "fields": {
@@ -4271,7 +4505,7 @@
       45, 
       47, 
       48, 
-      46
+      46  
     ], 
     "place": 195
   }
@@ -6355,7 +6589,32 @@
       459, 
       471, 
       446, 
-      448
+      448, 
+      769, 
+      779, 
+      777, 
+      766, 
+      771, 
+      768, 
+      756, 
+      762, 
+      758, 
+      767, 
+      761, 
+      772, 
+      776, 
+      780, 
+      765, 
+      760, 
+      778, 
+      774, 
+      773, 
+      775, 
+      770, 
+      764, 
+      757, 
+      759, 
+      763
     ], 
     "place": 230
   }
