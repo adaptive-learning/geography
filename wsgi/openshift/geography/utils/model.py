@@ -140,6 +140,7 @@ class QuestionType(object):
         Place.REGION_IT: GENUS_FEMININE,
         Place.REGION: GENUS_MASCULINE,
         Place.AUTONOMOUS_COMUNITY: GENUS_NEUTER,
+        Place.MOUNTAINS: GENUS_NEUTER,
     }
 
     PLACE_TYPE_SINGULAR = {
@@ -156,10 +157,12 @@ class QuestionType(object):
         Place.REGION_IT: u'oblast',
         Place.REGION: u'region',
         Place.AUTONOMOUS_COMUNITY: u'autonomní společenství',
+        Place.MOUNTAINS: u'pohoří',
     }
     PLACE_TYPE_SINGULAR_CHOICE = {
         Place.BUNDESLAND: u'spolkovou zemi',
         Place.PROVINCE: u'provincii',
+        Place.RIVER: u'řeku',
     }
     PLACE_TYPE_PLURAL_CHOICE = {
         Place.UNKNOWN: 'unknown',
@@ -175,6 +178,7 @@ class QuestionType(object):
         Place.REGION_IT: u'oblastí',
         Place.REGION: u'regionů',
         Place.AUTONOMOUS_COMUNITY: u'autonomních společenství',
+        Place.MOUNTAINS: u'pohoří',
     }
 
     def __init__(self, type, place_type, number_of_options):

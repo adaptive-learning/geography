@@ -76,6 +76,7 @@
       var active = $scope.question;
       $scope.layer = $scope.map.getLayerContaining(active.code);
       $scope.map.highLightLayer($scope.layer);
+      $scope.map.placeToFront(active.code)
       if ($filter('isPickNameOfType')($scope.question)) {
         $scope.map.highlightState(active.code, colors.NEUTRAL);
       }
@@ -125,8 +126,10 @@
       $scope.summary = question.summary();
       $scope.showSummary = true;
       $scope.map.clearHighlights();
+      $scope.map.hideLayers();
       angular.forEach($scope.summary.questions, function(q) {
         var correct = q.code == q.answer;
+        $scope.map.showLayerContaining(q.code);
         $scope.map.highlightState(q.code, correct ? colors.GOOD : colors.BAD, 1);
       });
       events.emit('questionSetFinished', user.getUser().points);

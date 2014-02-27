@@ -82,6 +82,25 @@
           ];
         };
       }
+      
+      layerConfig.mountains = angular.copy(layerConfig.states, {});
+
+      layerConfig.rivers = angular.extend(angular.extend({}, layerConfig.states), {
+        'styles' : {
+          'stroke-width' : RIVER_WIDTH,
+          'stroke' : WATER_COLOR,
+          'transform' : ''
+        },
+        'mouseenter' : function(data, path) {
+          var zoomRatio = 4;
+          var animAttrs = { 'stroke-width' : zoomRatio * RIVER_WIDTH };
+          path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
+        },
+        'mouseleave' : function(data, path) {
+          var animAttrs = { 'stroke-width' : RIVER_WIDTH };
+          path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
+        }
+      });
 
       layerConfig.cities = angular.copy(layerConfig.states, {
         'mouseenter' : function(data, path) {
@@ -101,23 +120,7 @@
           path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
         }
       });
-      
-      layerConfig.rivers = angular.extend(angular.extend({}, layerConfig.states), {
-        'styles' : {
-          'stroke-width' : RIVER_WIDTH,
-          'stroke' : WATER_COLOR,
-          'transform' : ''
-        },
-        'mouseenter' : function(data, path) {
-          var zoomRatio = 4;
-          var animAttrs = { 'stroke-width' : zoomRatio * RIVER_WIDTH };
-          path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
-        },
-        'mouseleave' : function(data, path) {
-          var animAttrs = { 'stroke-width' : RIVER_WIDTH };
-          path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
-        }
-      });
+
       layerConfig.lakes = angular.copy(layerConfig.cities, {});
       layerConfig.lakes.styles.fill = function(d) {
         var state = config.states && config.states[d.name];
@@ -162,6 +165,7 @@
             "region_cz" : "states",
             "region_it" : "states",
             "autonomous_comunity" : "states",
+            "mountains" : "mountains",
           }
           var ret;
           angular.forEach(layersArray, function(l) {
@@ -387,11 +391,29 @@
           });
           return ret;
         },
+        showLayerContaining : function(placeCode) {
+          var l = myMap.getLayerContaining(placeCode);
+          layers.showLayer(l);
+        },
         highLightLayer : function(layer) {
-          console.log(layer)
           angular.forEach(layers.getAll(), function(l) {
             if (l.id != 'bg' && l != layer) {
               layers.hideLayer(l);
+            }
+          });
+        },
+        hideLayers : function() {
+          angular.forEach(layers.getAll(), function(l) {
+            if (l.id != 'bg') {
+              layers.hideLayer(l);
+            }
+          });
+        },
+        placeToFront : function(placeCode) {
+          angular.forEach(layers.getAll(), function(layer) {
+            var place = layer.getPaths({ name : placeCode })[0];
+            if (place) {
+              place.svgPath.toFront();
             }
           });
         }
