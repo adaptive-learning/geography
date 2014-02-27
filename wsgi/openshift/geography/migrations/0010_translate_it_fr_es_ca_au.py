@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 from south.v2 import DataMigration
 from django.db import connection

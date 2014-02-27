@@ -112,12 +112,12 @@ class QuestionService:
             number_of_options=int(str(a["type"][1:]))
         )
         LOGGER.debug("answered: %s", answer)
-        answer.save()
+        answer.save(True)
         if "options" in a:
             answer.options = Place.objects.filter(
                 code__in=[o["code"] for o in a["options"]],
             )
-        answer.save(True)
+        answer.save()
 
 
 class QuestionType(object):

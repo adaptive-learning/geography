@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from models import Place, PlaceRelation, Answer, EloSkill, EloLocalSkill, EloDifficulty
+from models import Place, PlaceRelation, Answer, PriorSkill, CurrentSkill, Difficulty
 from django.contrib import admin
 from django.contrib.contenttypes.models import ContentType
 from django.http import HttpResponseRedirect
@@ -100,15 +100,15 @@ class AnswerAdmin(admin.ModelAdmin):
     actions = [export_selected_objects]
 
 
-class EloSkillAdmin(admin.ModelAdmin):
+class PriorSkillAdmin(admin.ModelAdmin):
     list_display = ('user', 'value')
 
 
-class EloLocalSkillAdmin(admin.ModelAdmin):
+class CurrentSkillAdmin(admin.ModelAdmin):
     list_display = ('place', 'user', 'value')
 
 
-class EloDifficultyAdmin(admin.ModelAdmin):
+class DifficultyAdmin(admin.ModelAdmin):
     list_display = ('place', 'value')
 
 ################################################################################
@@ -117,6 +117,6 @@ class EloDifficultyAdmin(admin.ModelAdmin):
 admin.site.register(Answer, AnswerAdmin)
 admin.site.register(Place, PlaceAdmin)
 admin.site.register(PlaceRelation, PlaceRelationAdmin)
-admin.site.register(EloSkill, EloSkillAdmin)
-admin.site.register(EloLocalSkill, EloLocalSkillAdmin)
-admin.site.register(EloDifficulty, EloDifficultyAdmin)
+admin.site.register(PriorSkill, PriorSkillAdmin)
+admin.site.register(CurrentSkill, CurrentSkillAdmin)
+admin.site.register(Difficulty, DifficultyAdmin)

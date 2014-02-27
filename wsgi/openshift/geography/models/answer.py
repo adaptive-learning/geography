@@ -3,7 +3,7 @@
 from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import User
-import elo
+import knowledge
 import logging
 import place
 LOGGER = logging.getLogger(__name__)
@@ -19,7 +19,7 @@ class AnswerManager(models.Manager):
 
 
 class Answer(models.Model):
-    ON_SAVE_LISTENERS = [elo.Elo.on_answer_save]
+    ON_SAVE_LISTENERS = [knowledge.KnowledgeUpdater.on_answer_save]
     FIND_ON_MAP = 1
     PICK_NAME = 2
     QUESTION_TYPES = (
