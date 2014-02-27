@@ -101,8 +101,8 @@
           path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
         }
       });
-
-      layerConfig.rivers = angular.copy(layerConfig.states, {
+      
+      layerConfig.rivers = angular.extend(angular.extend({}, layerConfig.states), {
         'styles' : {
           'stroke-width' : RIVER_WIDTH,
           'stroke' : WATER_COLOR,
@@ -388,8 +388,9 @@
           return ret;
         },
         highLightLayer : function(layer) {
+          console.log(layer)
           angular.forEach(layers.getAll(), function(l) {
-            if (l.id == 'cities' && layer.id == 'states') {
+            if (l.id != 'bg' && l != layer) {
               layers.hideLayer(l);
             }
           });

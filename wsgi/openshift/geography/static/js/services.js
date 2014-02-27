@@ -10,6 +10,24 @@
         'us' : 'USA',
         'world' : 'Svět'
       };
+    var categories = [
+      {
+        slug :'political',
+        name :'Politická mapa',
+        types : ['state', 'city', 'region', 'province', 'region_cz', 'region_it', 'autonomous_comunity']
+      },{
+        slug : 'water',
+        name : 'Vodstvo',
+        types : ['river', 'lake'],
+        hidden:true
+      },{
+        slug : 'surface',
+        name : 'Povrch',
+        types : [],
+        hidden:true
+      }
+    ];
+    
     return {
       get : function(part, user, fn) {
         var url = 'usersplaces/' + part + '/' + user;
@@ -30,6 +48,9 @@
       },
       getName : function(part) {
         return names[part];
+      },
+      getCategories : function() {
+        return categories;
       }
     };
   })

@@ -21,9 +21,10 @@
   })
 
   .controller('AppView', function($scope, $routeParams, 
-        places, mapTitle) {
+        places, mapTitle, $filter) {
     $scope.part = $routeParams.part;
     var user = $routeParams.user || '';
+    $scope.typeCategories = places.getCategories();
 
     places.get($scope.part, user, updatePlaces);
 
@@ -35,9 +36,27 @@
       type.hidden = !type.hidden; 
       $scope.map.updatePlaces($scope.placesTypes);
     };
+    
+    $scope.updateCat = function(category) {
+      var newHidden = !category.hidden;
+      angular.forEach($scope.typeCategories, function(type) {
+        type.hidden = true;
+      });
+      angular.forEach($scope.placesTypes, function(type) {
+        type.hidden = true;
+      });
+      category.hidden = newHidden;
+      updatePlaces($scope.placesTypes)
+    };
 
     function updatePlaces(data) {
       $scope.placesTypes = data;
+      angular.forEach($scope.typeCategories, function(category) {
+        var filteredTypes = $filter('isTypeCategory')($scope.placesTypes, category);
+        angular.forEach(filteredTypes, function(type) {
+          type.hidden = category.hidden;
+        });
+      });
       $scope.map.updatePlaces($scope.placesTypes);
       $scope.name = mapTitle($scope.part, user);
     }

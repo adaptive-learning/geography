@@ -60,5 +60,16 @@
         return place.code == code;
       }).length;
     };
+  })
+
+  .filter('isTypeCategory', function() {
+    return function(types, category) {
+      types = types && types.filter(function(t){
+        return category.types.filter(function(slug){
+          return slug == t.slug;
+        }).length == 1;
+      });
+      return types;
+    };
   });
 }());

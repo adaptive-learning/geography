@@ -1,6 +1,6 @@
 <blind-map code="{{part}}" show-tooltips="true" map="map" callback="mapCallback" ></blind-map>
 <div id="container">
-  <div ng-show="!placesTypes" class="loading-indicator">
+  <div ng-hide="placesTypes" class="loading-indicator">
   </div>
   <div ng-show="placesTypes.length == 0" style="text-align: center;" >
     <h2>Zatím na této mapě nebylo nic procvičováno.</h2>
@@ -8,28 +8,38 @@
         Začít procvičovat
     </a>
   </div>
-  <ul class="thumbnails">
-    <li class="col-sm-{{placesTypes.length|colNum}}" 
-        ng-repeat="type in placesTypes">
-      <h3 data-toggle="collapse" 
-          data-target="#collapse-{{type.slug}}"
-          ng-click="updateMap(type)">
-        <i class="glyphicon {{type.hidden && 'glyphicon-plus-sign' || 'glyphicon-minus-sign'}}"></i>
-        {{type.name}}
-        <a href="#/practice/{{part}}/{{type.slug}}" 
-           class="btn btn-primary pull-right" 
-           ng-show="placesTypes.length > 1" >
-          Procvičovat {{type.name|lowercase}}
-        </a>
-      </h3>
-      <div class="view-places collapse in" id="collapse-{{type.slug}}">
-        <span ng-repeat="place in type.places"
-              ng-click="placeClick(place)"
-              place-label>
-        </span>
-        <div class="clearfix"></div>
-      </div>
-    </li>
+  <ul ng-show="placesTypes.length && (filteredTypes = (placesTypes|isTypeCategory:typeCat)).length" 
+      class="thumbnails" 
+      ng-repeat="typeCat in typeCategories">
+    <h2 ng-click="updateCat(typeCat)"
+        ng-show="filteredTypes.length > 0 && filteredTypes.length < placesTypes.length">
+      <i class="glyphicon {{typeCat.hidden && 'glyphicon-plus-sign' || 'glyphicon-minus-sign'}}"></i>
+      {{typeCat.name}}
+    </h2>
+    <div ng-hide="typeCat.hidden">
+      <li class="col-sm-{{filteredTypes.length|colNum}}" 
+          ng-repeat="type in filteredTypes"
+          ng-class="{'collapsed': type.hidden}">
+        <h3 data-toggle="collapse" 
+            data-target="#collapse-{{type.slug}}"
+            ng-click="updateMap(type)">
+          <i class="glyphicon {{type.hidden && 'glyphicon-plus-sign' || 'glyphicon-minus-sign'}}"></i>
+          {{type.name}}
+          <a href="#/practice/{{part}}/{{type.slug}}" 
+             class="btn btn-primary pull-right" 
+             ng-show="placesTypes.length > 1" >
+            Procvičovat {{type.name|lowercase}}
+          </a>
+        </h3>
+        <div class="view-places collapse in" id="collapse-{{type.slug}}">
+          <span ng-repeat="place in type.places"
+                ng-click="placeClick(place)"
+                place-label>
+          </span>
+          <div class="clearfix"></div>
+        </div>
+      </li>
+    </div>
   </ul>
   <div class="clearfix"></div>
 </div>
