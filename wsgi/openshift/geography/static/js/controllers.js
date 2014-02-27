@@ -51,10 +51,10 @@
 
     $scope.highlight = function() {
       var active = $scope.question;
-      $scope.layer = mapControler.getLayerContaining(active.code);
+      $scope.layer = mapControler.getLayerContaining(active.asked_code);
       mapControler.highLightLayer($scope.layer);
       if ($filter('isPickNameOfType')($scope.question)) {
-        mapControler.highlightState(active.code, colors.NEUTRAL);
+        mapControler.highlightState(active.asked_code, colors.NEUTRAL);
       }
       if ($filter('isFindOnMapType')($scope.question) && active.options) {
         mapControler.highlightStates(active.options.map(function(option) {
@@ -64,9 +64,9 @@
     };
 
     $scope.checkAnswer = function(selected) {
-      var asked = $scope.question.code;
+      var asked = $scope.question.asked_code;
       highlightAnswer(asked, selected);
-      $scope.question.answer = selected;
+      $scope.question.answered_code = selected;
       $scope.progress = question.answer($scope.question);
       if (asked == selected) {
         user.addPoint();
@@ -103,8 +103,8 @@
       $scope.showSummary = true;
       mapControler.clearHighlights();
       angular.forEach($scope.summary.questions, function(q) {
-        var correct = q.code == q.answer;
-        mapControler.highlightState(q.code, correct ? colors.GOOD : colors.BAD, 1);
+        var correct = q.asked_code == q.answered_code;
+        mapControler.highlightState(q.asked_code, correct ? colors.GOOD : colors.BAD, 1);
       });
       events.emit('questionSetFinished', user.getUser().points);
     }
@@ -118,7 +118,7 @@
 
     function highlightOptions(selected) {
       $scope.question.options.map(function(o) {
-        o.correct = o.code == $scope.question.code;
+        o.correct = o.code == $scope.question.asked_code;
         o.selected = o.code == selected;
         o.disabled = true;
         return o;

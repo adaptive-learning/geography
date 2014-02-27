@@ -39,6 +39,15 @@ class Answer(models.Model):
     response_time = models.IntegerField(default=0)
     options = models.ManyToManyField(place.Place)
     number_of_options = models.IntegerField(default=0)
+    place_map = models.ForeignKey(
+        place.Place,
+        related_name='place_map_id',
+        # because of the backward compatibility
+        null=True,
+        # required for new answers
+        blank=False,
+        default=None
+    )
     objects = AnswerManager()
 
     def save(self, update_model=False):

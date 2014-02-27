@@ -27,9 +27,9 @@ class Question():
 
     def to_serializable(self):
         ret = self.qtype.to_serializable()
-        ret.update(self.place.to_serializable())
-        ret["place"] = ret["name"]
-        ret.pop("name")
+        ret['asked_code'] = self.place.code
+        ret['map_code'] = self.map_place.place.code
+        ret["place"] = self.place.name
         if (self.options != []):
             ret["options"] = self.options
         return ret
@@ -92,24 +92,26 @@ class QuestionService:
         return 1 if k > 6 else k
 
     def answer(self, a):
-        place = Place.objects.get(code=a["code"])
+        place_asked = Place.objects.get(code=a["asked_code"])
+        place_map = Place.objects.get(code=a["map_code"])
         try:
-            place_answered = Place.objects.get(
-                code=a[
-                    "answer"]) if "answer" in a and a[
-                "answer"] != "" else None
+            if "answered_code" in a and a["answered_code"] != "":
+                place_answered = Place.objects.get(code=a["answered_code"])
+            else:
+                place_answered = None
         except Place.DoesNotExist:
             place_answered = None
-            code = a["answer"] if "answer" in a else None
+            code = a["answer_code"] if "answer_code" in a else None
             LOGGER.error("Place with code '{0}' does not exist.".format(code))
 
         answer = Answer(
             user=self.user,
-            place_asked=place,
+            place_asked=place_asked,
             place_answered=place_answered,
+            place_map=place_map,
             type=int(str(a["type"])[0]),
             response_time=a["response_time"],
-            number_of_options=int(str(a["type"][1:]))
+            number_of_options=int(str(a["type"][1:])),
         )
         LOGGER.debug("answered: %s", answer)
         answer.save(True)
