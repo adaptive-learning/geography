@@ -21,6 +21,7 @@ class KnowledgeUpdater:
             knowledge_retriever = knowledge_retriever.clone_with(a)
         if isinstance(a, answer.Answer):
             a = a.__dict__
+        # if this is the first answer, update the prior knowledge
         if knowledge_retriever.is_first_answer_for_user_place():
             prior_model = KnowledgeUpdater.get_prior_model()
             prior_skill = knowledge_retriever.prior_skill()
@@ -32,14 +33,15 @@ class KnowledgeUpdater:
                 knowledge_retriever)
             knowledge_retriever.prior_skill(prior_skill)
             knowledge_retriever.difficulty(difficulty)
-        else:
-            current_model = KnowledgeUpdater.get_current_model()
-            current_skill = knowledge_retriever.current_skill()
-            current_skill = current_model(
-                a,
-                current_skill,
-                knowledge_retriever)
-            knowledge_retriever.current_skill(current_skill)
+        # update the current knowledge
+        current_model = KnowledgeUpdater.get_current_model()
+        current_skill = knowledge_retriever.current_skill()
+        current_skill = current_model(
+            a,
+            current_skill,
+            knowledge_retriever)
+        knowledge_retriever.current_skill(current_skill)
+        # further update
         knowledge_retriever.update_numbers()
         return knowledge_retriever
 
