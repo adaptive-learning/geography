@@ -8,10 +8,16 @@
   <div ng-show="question != undefined && !showSummary" class="practice">
     <h2>
       <span>{{question.text}} </span>
-        <span class="label label-default" ng-show="question|isFindOnMapType">
-          <i class="flag-{{question.asked_code}}"></i> {{question.place}}
+      <span class="label label-default" ng-show="question|isFindOnMapType">
+        <i class="flag-{{question.asked_code}}"></i> {{question.place}}
+      </span>
+      <span ng-show="question.answered_code && (question|isFindOnMapType) && question.answered_code != question.asked_code">
+        <span>Vybráno </span>
+        <span class="label label-default">
+          <i class="flag-{{question.answered_code}}"></i> {{question.answered_code|codeToName}}
         </span>
-        <br class="clearfix">
+      </span>
+      <br class="clearfix">
     </h2>
     <span class="col-sm-7">
       <span ng-show="question|isPickNameOfType">

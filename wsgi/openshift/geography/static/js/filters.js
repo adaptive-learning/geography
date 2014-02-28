@@ -71,5 +71,11 @@
       });
       return types;
     };
+  })
+
+  .filter('codeToName', function(places) {
+    return function(code) {
+      return places.getName(code) || "Neznámý";
+    };
   });
 }());

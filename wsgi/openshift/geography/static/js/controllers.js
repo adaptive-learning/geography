@@ -68,9 +68,12 @@
   })
 
   .controller('AppPractice', function($scope, $routeParams, $timeout, $filter,
-      question, user, events, colors) {
+      question, user, events, colors, places) {
     $scope.part = $routeParams.part;
     $scope.placeType = $routeParams.place_type;
+    
+    // To fetch names of all places on map and be able to show name of wrongly answered place
+    places.getPlaces($scope.part);
 
     $scope.highlight = function() {
       var active = $scope.question;
