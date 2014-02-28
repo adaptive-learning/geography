@@ -14,7 +14,16 @@
       {
         slug :'political',
         name :'Politická mapa',
-        types : ['state', 'city', 'region', 'province', 'region_cz', 'region_it', 'autonomous_comunity']
+        types : [
+          'state',
+          'city',
+          'region',
+          'province',
+          'region_cz',
+          'region_it',
+          'autonomous_comunity',
+          'bundesland'
+        ]
       },{
         slug : 'water',
         name : 'Vodstvo',

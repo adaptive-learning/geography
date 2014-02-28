@@ -52,6 +52,7 @@
           singleWindowResizeFn(resize);
           resize();
           $scope.$eval(attrs.callback);
+          $scope.$digest();
         });
         var model = $parse(attrs.map);
         //Set scope variable for the map

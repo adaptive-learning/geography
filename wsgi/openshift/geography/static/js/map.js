@@ -172,6 +172,7 @@
             "province" : "states",
             "region_cz" : "states",
             "region_it" : "states",
+            "bundesland" : "states",
             "autonomous_comunity" : "states",
             "mountains" : "mountains",
           };
@@ -369,6 +370,9 @@
           });
         },
         updatePlaces : function(placesByTypes) {
+          if (layers === undefined) {
+            return;
+          }
           angular.forEach(placesByTypes, function(type) {
             var l = layers.getLayerBySlug(type.slug);
             if (type.hidden) {
@@ -380,8 +384,7 @@
           
           var places = $filter('StatesFromPlaces')(placesByTypes);
           config.states = places;
-          var allLayers = layers ? layers.getAll() : [];
-          angular.forEach(allLayers, function(layer) {
+          angular.forEach(layers.getAll(), function(layer) {
             var config = layers.getConfig(layer);
             layer.style('fill', config.styles.fill);
             if (config.tooltips) {
