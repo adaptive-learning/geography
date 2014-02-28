@@ -9,14 +9,13 @@
     <h2>
       <span>{{question.text}} </span>
         <span class="label label-default" ng-show="question|isFindOnMapType">
-          <i class="flag-{{question.code}}"></i> {{question.place}}
+          <i class="flag-{{question.asked_code}}"></i> {{question.place}}
         </span>
         <br class="clearfix">
     </h2>
     <span class="col-sm-7">
       <span ng-show="question|isPickNameOfType">
         <button ng-repeat="place in question.options"
-          value="{{place.code}}"
           class="btn btn-lg btn-default"
           ng-click="checkAnswer(place.code)"
           ng-class="{'btn-success': place.correct, 'btn-danger': place.selected && !place.correct }"
@@ -58,8 +57,8 @@
       <h2 ng-show="errorMessage != undefined" ng-bind="errorMessage"></h2>
       <div>
         <span ng-repeat="q in summary.questions" 
-              class="label {{q.code != q.answer && 'label-danger' || 'label-success' }} ">
-          <i class="flag-{{q.code}}"></i> {{q.place}}
+              class="label {{q.asked_code != q.answered_code && 'label-danger' || 'label-success' }} ">
+          <i class="flag-{{q.asked_code}}"></i> {{q.place}}
         </span>
       </div>
     </div>
