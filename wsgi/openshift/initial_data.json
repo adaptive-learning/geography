@@ -4104,12 +4104,516 @@
   }
 },
 {
-  "pk": 755, 
+  "pk": 616, 
   "model": "geography.place", 
   "fields": {
-    "code": "Pyh\u00e4j\u00e4rvi", 
-    "type": 6, 
-    "name": "Pyh\u00e4j\u00e4rvi"
+    "code": "San Bernardino", 
+    "type": 2, 
+    "name": "San Bernardino"
+  }
+},
+{
+  "pk": 617, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Bridgeport", 
+    "type": 2, 
+    "name": "Bridgeport"
+  }
+},
+{
+  "pk": 618, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Rochester", 
+    "type": 2, 
+    "name": "Rochester"
+  }
+},
+{
+  "pk": 619, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "St. Paul", 
+    "type": 2, 
+    "name": "St. Paul"
+  }
+},
+{
+  "pk": 620, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Vancouver", 
+    "type": 2, 
+    "name": "Vancouver"
+  }
+},
+{
+  "pk": 621, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Tucson", 
+    "type": 2, 
+    "name": "Tucson"
+  }
+},
+{
+  "pk": 622, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Fresno", 
+    "type": 2, 
+    "name": "Fresno"
+  }
+},
+{
+  "pk": 623, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Albuquerque", 
+    "type": 2, 
+    "name": "Albuquerque"
+  }
+},
+{
+  "pk": 624, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Kansas City", 
+    "type": 2, 
+    "name": "Kansas City"
+  }
+},
+{
+  "pk": 625, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Tulsa", 
+    "type": 2, 
+    "name": "Tulsa"
+  }
+},
+{
+  "pk": 626, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Ft. Worth", 
+    "type": 2, 
+    "name": "Ft. Worth"
+  }
+},
+{
+  "pk": 627, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Austin", 
+    "type": 2, 
+    "name": "Austin"
+  }
+},
+{
+  "pk": 628, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "El Paso", 
+    "type": 2, 
+    "name": "El Paso"
+  }
+},
+{
+  "pk": 629, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Orlando", 
+    "type": 2, 
+    "name": "Orlando"
+  }
+},
+{
+  "pk": 630, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Jacksonville", 
+    "type": 2, 
+    "name": "Jacksonville"
+  }
+},
+{
+  "pk": 631, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Indianapolis", 
+    "type": 2, 
+    "name": "Indianapolis"
+  }
+},
+{
+  "pk": 632, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Knoxville", 
+    "type": 2, 
+    "name": "Knoxville"
+  }
+},
+{
+  "pk": 633, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Richmond", 
+    "type": 2, 
+    "name": "Richmond"
+  }
+},
+{
+  "pk": 634, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Baltimore", 
+    "type": 2, 
+    "name": "Baltimore"
+  }
+},
+{
+  "pk": 635, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Syracuse", 
+    "type": 2, 
+    "name": "Syracuse"
+  }
+},
+{
+  "pk": 636, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "San Jose", 
+    "type": 2, 
+    "name": "San Jose"
+  }
+},
+{
+  "pk": 637, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Sacramento", 
+    "type": 2, 
+    "name": "Sacramento"
+  }
+},
+{
+  "pk": 638, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Las Vegas", 
+    "type": 2, 
+    "name": "Las Vegas"
+  }
+},
+{
+  "pk": 639, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Portland", 
+    "type": 2, 
+    "name": "Portland"
+  }
+},
+{
+  "pk": 640, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Salt Lake City", 
+    "type": 2, 
+    "name": "Salt Lake City"
+  }
+},
+{
+  "pk": 641, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Omaha", 
+    "type": 2, 
+    "name": "Omaha"
+  }
+},
+{
+  "pk": 642, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Oklahoma City", 
+    "type": 2, 
+    "name": "Oklahoma City"
+  }
+},
+{
+  "pk": 643, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "San Antonio", 
+    "type": 2, 
+    "name": "San Antonio"
+  }
+},
+{
+  "pk": 644, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Raleigh", 
+    "type": 2, 
+    "name": "Raleigh"
+  }
+},
+{
+  "pk": 645, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Cleveland", 
+    "type": 2, 
+    "name": "Cleveland"
+  }
+},
+{
+  "pk": 646, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Cincinnati", 
+    "type": 2, 
+    "name": "Cincinnati"
+  }
+},
+{
+  "pk": 647, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Nashville", 
+    "type": 2, 
+    "name": "Nashville"
+  }
+},
+{
+  "pk": 648, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Memphis", 
+    "type": 2, 
+    "name": "Memphis"
+  }
+},
+{
+  "pk": 649, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Norfolk", 
+    "type": 2, 
+    "name": "Norfolk"
+  }
+},
+{
+  "pk": 650, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Milwaukee", 
+    "type": 2, 
+    "name": "Milwaukee"
+  }
+},
+{
+  "pk": 651, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Buffalo", 
+    "type": 2, 
+    "name": "Buffalo"
+  }
+},
+{
+  "pk": 652, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Pittsburgh", 
+    "type": 2, 
+    "name": "Pittsburgh"
+  }
+},
+{
+  "pk": 653, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Minneapolis", 
+    "type": 2, 
+    "name": "Minneapolis"
+  }
+},
+{
+  "pk": 654, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Seattle", 
+    "type": 2, 
+    "name": "Seattle"
+  }
+},
+{
+  "pk": 655, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Phoenix", 
+    "type": 2, 
+    "name": "Phoenix"
+  }
+},
+{
+  "pk": 656, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "San Diego", 
+    "type": 2, 
+    "name": "San Diego"
+  }
+},
+{
+  "pk": 657, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "St. Louis", 
+    "type": 2, 
+    "name": "St. Louis"
+  }
+},
+{
+  "pk": 658, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "New Orleans", 
+    "type": 2, 
+    "name": "New Orleans"
+  }
+},
+{
+  "pk": 659, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Dallas", 
+    "type": 2, 
+    "name": "Dallas"
+  }
+},
+{
+  "pk": 660, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Boston", 
+    "type": 2, 
+    "name": "Boston"
+  }
+},
+{
+  "pk": 661, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Tampa", 
+    "type": 2, 
+    "name": "Tampa"
+  }
+},
+{
+  "pk": 662, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Philadelphia", 
+    "type": 2, 
+    "name": "Philadelphia"
+  }
+},
+{
+  "pk": 663, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Detroit", 
+    "type": 2, 
+    "name": "Detroit"
+  }
+},
+{
+  "pk": 664, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "San Francisco", 
+    "type": 2, 
+    "name": "San Francisco"
+  }
+},
+{
+  "pk": 665, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Denver", 
+    "type": 2, 
+    "name": "Denver"
+  }
+},
+{
+  "pk": 666, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Houston", 
+    "type": 2, 
+    "name": "Houston"
+  }
+},
+{
+  "pk": 667, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Miami", 
+    "type": 2, 
+    "name": "Miami"
+  }
+},
+{
+  "pk": 668, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Atlanta", 
+    "type": 2, 
+    "name": "Atlanta"
+  }
+},
+{
+  "pk": 669, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Chicago", 
+    "type": 2, 
+    "name": "Chicago"
+  }
+},
+{
+  "pk": 670, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Los Angeles", 
+    "type": 2, 
+    "name": "Los Angeles"
+  }
+},
+{
+  "pk": 671, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "Washington, D.C.", 
+    "type": 2, 
+    "name": "Washington, D.C."
+  }
+},
+{
+  "pk": 672, 
+  "model": "geography.place", 
+  "fields": {
+    "code": "New York", 
+    "type": 2, 
+    "name": "New York"
   }
 },
 {
@@ -4505,7 +5009,62 @@
       45, 
       47, 
       48, 
-      46  
+      46, 
+      623, 
+      668, 
+      627, 
+      634, 
+      660, 
+      617, 
+      651, 
+      669, 
+      646, 
+      645, 
+      659, 
+      665, 
+      663, 
+      628, 
+      622, 
+      626, 
+      666, 
+      631, 
+      630, 
+      624, 
+      632, 
+      638, 
+      670, 
+      648, 
+      667, 
+      650, 
+      653, 
+      647, 
+      658, 
+      672, 
+      649, 
+      642, 
+      641, 
+      629, 
+      662, 
+      655, 
+      652, 
+      639, 
+      644, 
+      633, 
+      618, 
+      637, 
+      640, 
+      643, 
+      616, 
+      656, 
+      664, 
+      636, 
+      654, 
+      657, 
+      635, 
+      661, 
+      621, 
+      625, 
+      671
     ], 
     "place": 195
   }
