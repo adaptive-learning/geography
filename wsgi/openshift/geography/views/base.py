@@ -59,41 +59,22 @@ def home(request):
     return render_to_response('home/home.html', c)
 
 
-def cachedlog_view(request, file_type):
+def csv_view(request, model):
     if not request.user.is_staff:
         response = {
             "error": "Permission denied: you need to be staff member. If you think you should be able to access logs, contact admins."}
         return JsonResponse(response)
-    logname = "export_" + file_type + ".zip"
-    logpath = os.path.join(settings.MEDIA_ROOT, logname)
+    allowed_models = [
+        'place',
+        'placerelation',
+        'answer',
+        'answer_options']
+    if model not in allowed_models:
+        response = {"error": "the requested model '" + model + "' is not valid"}
+        return JsonResponse(response)
+    csv_file = "geography." + model + ".zip"
+    logpath = os.path.join(settings.MEDIA_ROOT, csv_file)
     response = HttpResponse(FileWrapper(open(logpath)), content_type='application/zip')
-    response['Content-Disposition'] = 'attachment; filename=answers_' + file_type + '.zip'
+    response['Content-Disposition'] = 'attachment; filename=' + csv_file
     return response
 
-
-def export_view(request):
-    if not request.user.is_staff:
-        response = {
-            "error": "Permission denied: you need to be staff member. If you think you should be able to access logs, contact admins."}
-        return JsonResponse(response)
-    if 'model' in request.GET:
-        type_key = request.GET['model']
-    else:
-        response = {"error": "Model name has to be specified."}
-        return JsonResponse(response)
-    if type_key == 'geography.answer':
-        response = {"error": "Can't export geography.answer directly. Please, use /cachedlog/csv/."}
-        return JsonResponse(response)
-    [app_label, model_name] = type_key.split(".")
-    model = get_model(app_label, model_name)
-    if not model:
-        return JsonResponse({"error": "Invalid model name: '%s'" % (type_key)})
-    objects = model.objects
-    if 'ids' in request.GET:
-        ids = request.GET['ids'].split(",")
-        queryset = objects.filter(pk__in=ids)
-    else:
-        queryset = objects.all()
-    response = HttpResponse(content_type="application/json")
-    serializers.serialize("json", queryset, stream=response)
-    return response
