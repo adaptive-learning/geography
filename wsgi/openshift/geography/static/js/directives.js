@@ -30,13 +30,13 @@
                     '</a>' +
                     '<a class="btn btn-default" href="#/view/{{part}}/average"' +
                         'ng-class="\'/view/\'+part+\'/average\'|isActive">' +
-                      'Průměrný uživatel' +
+                      'Průměrný nový uživatel' +
                     '</a>' +
                   '</div>' +
                   '<a ng-show="!practice"' +
                       'href="#/practice/{{part}}/"' +
                       'class="btn btn-primary btn-lg btn-practice" >' +
-                    'Procvičovat' +
+                    'Procvičovat vše' +
                   '</a>' +
                   '<div class="zoom-buttons"></div>'+
                 '</div>',
