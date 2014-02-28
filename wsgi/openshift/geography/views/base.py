@@ -3,8 +3,6 @@ from django.conf import settings
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 from geography.utils import JsonResponse, StaticFiles
-from django.db.models.loading import get_model
-from django.core import serializers
 from django.http import HttpResponse
 from geography.models import Place
 import json
@@ -77,4 +75,3 @@ def csv_view(request, model):
     response = HttpResponse(FileWrapper(open(logpath)), content_type='application/zip')
     response['Content-Disposition'] = 'attachment; filename=' + csv_file
     return response
-
