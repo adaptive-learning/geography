@@ -60,11 +60,6 @@
       $scope.map.updatePlaces($scope.placesTypes);
       $scope.name = mapTitle($scope.part, user);
     }
-
-    $scope.mapCallback = function() {
-      var data = places.getCached($scope.part, user);
-      updatePlaces(data);
-    };
   })
 
   .controller('AppPractice', function($scope, $routeParams, $timeout, $filter,

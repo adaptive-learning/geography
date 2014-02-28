@@ -325,6 +325,7 @@
     return function(mapCode, showTooltips, holder, callback) {
       var config = { states : [] };
       var layers;
+      var _placesByTypes;
       
       config.showTooltips = showTooltips;
       config.isPractise = !showTooltips;
@@ -371,6 +372,7 @@
         },
         updatePlaces : function(placesByTypes) {
           if (layers === undefined) {
+            _placesByTypes = placesByTypes;
             return;
           }
           angular.forEach(placesByTypes, function(type) {
@@ -436,6 +438,9 @@
       myMap.map.loadCSS(hash('static/css/map.css'), function() {
         myMap.map.loadMap(hash('static/map/' + mapCode + '.svg'), function() {
           layers = initLayers(myMap.map, config);
+          if (_placesByTypes !== undefined) {
+            myMap.updatePlaces(_placesByTypes);
+          }
           myMap.panZoom = mapFunctions.initMapZoom(myMap.map.paper);
           callback(myMap);
         });
