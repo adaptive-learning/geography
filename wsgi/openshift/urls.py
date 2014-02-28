@@ -13,6 +13,7 @@ urlpatterns = patterns(
     url(r'', include('social_auth.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^usersplaces/(?P<map_code>\w+)/(?P<user>\w*)', 'geography.views.users_places', name='usersplaces'),
+    url(r'^places/(?P<map_code>\w+)', 'geography.views.places', name='places'),
     url(r'^export/', 'geography.views.export_view', name='export_view'),
     url(r'^cachedlog/(?P<file_type>csv)', 'geography.views.cachedlog_view', name='cachedlog_view'),
     url(r'^convert/', include('lazysignup.urls')),

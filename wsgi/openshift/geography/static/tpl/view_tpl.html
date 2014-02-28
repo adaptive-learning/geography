@@ -2,12 +2,6 @@
 <div id="container">
   <div ng-hide="placesTypes" class="loading-indicator">
   </div>
-  <div ng-show="placesTypes.length == 0" style="text-align: center;" >
-    <h2>Zatím na této mapě nebylo nic procvičováno.</h2>
-    <a href="#/practice/{{part}}/" class="btn btn-primary btn-lg" >
-        Začít procvičovat
-    </a>
-  </div>
   <ul ng-show="placesTypes.length && (filteredTypes = (placesTypes|isTypeCategory:typeCat)).length" 
       class="thumbnails" 
       ng-repeat="typeCat in typeCategories">
@@ -32,6 +26,9 @@
           </a>
         </h3>
         <div class="view-places collapse in" id="collapse-{{type.slug}}">
+          <div ng-hide="type.places.length" class="alert alert-info">
+            Zde zatím nebylo nic procvičováno.
+          </div>
           <span ng-repeat="place in type.places"
                 ng-click="placeClick(place)"
                 place-label>

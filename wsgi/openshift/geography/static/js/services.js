@@ -27,32 +27,64 @@
         hidden:true
       }
     ];
+
+    function addOneToNames(code, name) {
+      if (!names[code]) {
+        names[code] = name;
+      }
+    }
+
+    function addToNames(code, data) {
+      angular.forEach(data.placesTypes, function(type) {
+        angular.forEach(type.places, function(place) {
+          addOneToNames(place.code, place.name)
+        });
+      });
+      addOneToNames(code, data.name);
+    }
     
-    return {
+    function filterPlaceTypes(practicedPlacesTypes, availablePlacesTypes) {
+      return practicedPlacesTypes.filter(function(practicedType) {
+        var isAvailable = false;
+        angular.forEach(availablePlacesTypes, function(availableType) {
+          if (practicedType.slug == availableType.slug) {
+            isAvailable = true;
+          }
+        });
+        return isAvailable;
+      });
+    }
+    
+    var that = {
       get : function(part, user, fn) {
         var url = 'usersplaces/' + part + '/' + user;
         $http.get(url, {cache: user == 'average'}).success(function(data) {
-          var placesTypes = data.placesTypes.filter(function(d) {
-              return d.places && d.places.length > 0;
-            });
-          cache[url] = placesTypes;
-          if (!names[part]) {
-            names[part] = data.name;
-          }
-          fn(placesTypes);
+          that.getPlaces(part, function(availablePlacesTypes) {
+            var placesTypes = filterPlaceTypes(data.placesTypes, availablePlacesTypes);
+            cache[url] = placesTypes;
+            fn(placesTypes);
+          });
+        });
+      },
+      getPlaces : function(part, fn) {
+        var url = 'places/' + part
+        $http.get(url, {cache: true}).success(function(data) {
+          addToNames(part, data);
+          fn && fn(data.placesTypes);
         });
       },
       getCached : function(part, user) {
         var url = 'usersplaces/' + part + '/' + user;
         return cache[url] || undefined;
       },
-      getName : function(part) {
-        return names[part];
+      getName : function(code) {
+        return names[code];
       },
       getCategories : function() {
         return categories;
       }
     };
+    return that;
   })
 
   .factory('mapTitle', function(places) {
