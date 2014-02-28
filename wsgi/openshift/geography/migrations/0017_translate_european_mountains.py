@@ -32,7 +32,7 @@ class Migration(DataMigration):
         u'CAUCASUS MTS.': u'Kavkaz',
     }
 
-    dependencies = [("migrations", "0014_add_fujian_to_cina")]
+    dependencies = [("migrations", "0016_answers_on_map")]
 
     def forwards(self, orm):
         cursor = connection.cursor()

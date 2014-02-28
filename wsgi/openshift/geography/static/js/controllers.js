@@ -2,7 +2,7 @@
   'use strict';
   /* Controllers */
   angular.module('blindMaps.controllers', [])
-  
+
   .controller('AppCtrl', function($scope, $rootScope, user) {
     $rootScope.topScope = $rootScope;
 
@@ -20,8 +20,8 @@
     };
   })
 
-  .controller('AppView', function($scope, $routeParams, 
-        places, mapTitle, $filter) {
+  .controller('AppView', function($scope, $routeParams, $filter,
+        places, mapTitle) {
     $scope.part = $routeParams.part;
     var user = $routeParams.user || '';
     $scope.typeCategories = places.getCategories();
@@ -46,7 +46,7 @@
         type.hidden = true;
       });
       category.hidden = newHidden;
-      updatePlaces($scope.placesTypes)
+      updatePlaces($scope.placesTypes);
     };
 
     function updatePlaces(data) {
@@ -74,11 +74,11 @@
 
     $scope.highlight = function() {
       var active = $scope.question;
-      $scope.layer = $scope.map.getLayerContaining(active.code);
+      $scope.layer = $scope.map.getLayerContaining(active.asked_code);
       $scope.map.highLightLayer($scope.layer);
-      $scope.map.placeToFront(active.code)
+      $scope.map.placeToFront(active.asked_code);
       if ($filter('isPickNameOfType')($scope.question)) {
-        $scope.map.highlightState(active.code, colors.NEUTRAL);
+        $scope.map.highlightState(active.asked_code, colors.NEUTRAL);
       }
       if ($filter('isFindOnMapType')($scope.question) && active.options) {
         $scope.map.highlightStates(active.options.map(function(option) {
@@ -88,9 +88,9 @@
     };
 
     $scope.checkAnswer = function(selected) {
-      var asked = $scope.question.code;
+      var asked = $scope.question.asked_code;
       highlightAnswer(asked, selected);
-      $scope.question.answer = selected;
+      $scope.question.answered_code = selected;
       $scope.progress = question.answer($scope.question);
       if (asked == selected) {
         user.addPoint();
@@ -109,7 +109,7 @@
         setupSummary();
       }
     };
-    
+
     function highlightAnswer (asked, selected) {
       if ($filter('isFindOnMapType')($scope.question)) {
         $scope.map.highlightState(asked, colors.GOOD);
@@ -128,9 +128,9 @@
       $scope.map.clearHighlights();
       $scope.map.hideLayers();
       angular.forEach($scope.summary.questions, function(q) {
-        var correct = q.code == q.answer;
-        $scope.map.showLayerContaining(q.code);
-        $scope.map.highlightState(q.code, correct ? colors.GOOD : colors.BAD, 1);
+        var correct = q.asked_code == q.answered_code;
+        $scope.map.showLayerContaining(q.asked_code);
+        $scope.map.highlightState(q.asked_code, correct ? colors.GOOD : colors.BAD, 1);
       });
       events.emit('questionSetFinished', user.getUser().points);
     }
@@ -144,7 +144,7 @@
 
     function highlightOptions(selected) {
       $scope.question.options.map(function(o) {
-        o.correct = o.code == $scope.question.code;
+        o.correct = o.code == $scope.question.asked_code;
         o.selected = o.code == selected;
         o.disabled = true;
         return o;

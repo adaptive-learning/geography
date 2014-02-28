@@ -79,7 +79,7 @@
     }
     function hasNoTwoSameInARow(array) {
       for (var i = 0, j = array.length; i + 1 < j; i++) {
-        if (array[i].code == array[i + 1].code) {
+        if (array[i].asked_code == array[i + 1].asked_code) {
           return false;
         }
       }
@@ -121,7 +121,7 @@
       },
       summary : function() {
         var correctlyAnswered = summary.filter(function(q) {
-            return q.code == q.answer;
+            return q.asked_code == q.answered_code;
           });
         return {
           correctlyAnsweredRatio : correctlyAnswered.length / summary.length,

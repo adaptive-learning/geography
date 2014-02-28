@@ -397,7 +397,10 @@
         },
         highLightLayer : function(layer) {
           angular.forEach(layers.getAll(), function(l) {
-            if (l.id != 'bg' && l != layer) {
+            if (l == layer) {
+              layers.showLayer(l);
+            }
+            else if  (l.id != 'bg') {
               layers.hideLayer(l);
             }
           });

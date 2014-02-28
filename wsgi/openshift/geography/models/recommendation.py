@@ -17,7 +17,7 @@ def by_additive_function(user, map_place, expected_probability, n, place_type):
         '''
         SELECT
             geography_place.*,
-            geography_elolocalskill_prepared.value as local_skill,
+            geography_currentskill_prepared.value as local_skill,
             COUNT(geography_answer.id) AS number_of_answers,
             COALESCE(MIN(
                 UNIX_TIMESTAMP(\'''' + str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + '''\')
@@ -25,11 +25,11 @@ def by_additive_function(user, map_place, expected_probability, n, place_type):
                 UNIX_TIMESTAMP(geography_answer.inserted)
             ), 31536000) AS number_of_seconds_ago
         FROM
-            geography_elolocalskill_prepared
+            geography_currentskill_prepared
             LEFT JOIN geography_place
-                ON geography_place.id = geography_elolocalskill_prepared.place_id
+                ON geography_place.id = geography_currentskill_prepared.place_id
             LEFT JOIN geography_answer
-                ON geography_answer.user_id = geography_elolocalskill_prepared.user_id
+                ON geography_answer.user_id = geography_currentskill_prepared.user_id
                 AND geography_answer.place_asked_id = place_id
         WHERE
             geography_place.id IN (
@@ -45,9 +45,9 @@ def by_additive_function(user, map_place, expected_probability, n, place_type):
                     geography_placerelation.type = %s
             )
             AND (geography_place.type = %s OR ''' + ("TRUE" if place_type == -1 else "FALSE") + ''')
-            AND geography_elolocalskill_prepared.user_id = %s
+            AND geography_currentskill_prepared.user_id = %s
         GROUP BY
-            geography_elolocalskill_prepared.place_id
+            geography_currentskill_prepared.place_id
         ORDER BY RAND() ASC
         LIMIT 100;
         ''',

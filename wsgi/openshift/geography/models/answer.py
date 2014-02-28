@@ -3,7 +3,7 @@
 from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import User
-import elo
+import knowledge
 import logging
 import place
 LOGGER = logging.getLogger(__name__)
@@ -19,7 +19,7 @@ class AnswerManager(models.Manager):
 
 
 class Answer(models.Model):
-    ON_SAVE_LISTENERS = [elo.Elo.on_answer_save]
+    ON_SAVE_LISTENERS = [knowledge.KnowledgeUpdater.on_answer_save]
     FIND_ON_MAP = 1
     PICK_NAME = 2
     QUESTION_TYPES = (
@@ -39,6 +39,15 @@ class Answer(models.Model):
     response_time = models.IntegerField(default=0)
     options = models.ManyToManyField(place.Place)
     number_of_options = models.IntegerField(default=0)
+    place_map = models.ForeignKey(
+        place.Place,
+        related_name='place_map_id',
+        # because of the backward compatibility
+        null=True,
+        # required for new answers
+        blank=False,
+        default=None
+    )
     objects = AnswerManager()
 
     def save(self, update_model=False):

@@ -25,15 +25,15 @@ class AveragePlace(models.Model):
 
     dummy_id = models.CharField(primary_key=True, max_length=40)
     place = models.ForeignKey(Place, on_delete=models.DO_NOTHING)
-    elo_skill = models.FloatField(default=0)
+    skill = models.FloatField(default=0)
 
     objects = AveragePlaceManager()
 
     def to_serializable(self):
         ret = self.place.to_serializable()
         ret.update({
-            'skill': self.elo_skill,
-            'probability': 1.0 / (1 + exp(self.elo_skill)),
+            'skill': self.skill,
+            'probability': 1.0 / (1 + exp(self.skill)),
             'certainty': 1
         })
         return ret
