@@ -131,6 +131,14 @@
   })
   
   .factory('initLayers', function(getLayerConfig) {
+
+    function _hideLayer(layer){
+      var paths = layer ? layer.getPaths({}) : [];
+      angular.forEach(paths, function(path) {
+        path.svgPath.hide();
+      });
+    }
+
     return function(map, config) {
       var layersConfig = getLayerConfig(config);
       var layersArray = [];
@@ -139,14 +147,14 @@
         var l = map.getLayer(i);
         if (l) {
           layersArray.push(l);
+          if (l.id != 'bg') {
+            _hideLayer(l);
+          }
         }
       }
       var that = {
         hideLayer : function(layer) {
-          var paths = layer ? layer.getPaths({}) : [];
-          angular.forEach(paths, function(path) {
-            path.svgPath.hide();
-          });
+          _hideLayer(layer);
         },
         showLayer : function(layer) {
           var paths = layer ? layer.getPaths({}) : [];
