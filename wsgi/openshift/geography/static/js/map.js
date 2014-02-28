@@ -166,14 +166,14 @@
             "region_it" : "states",
             "autonomous_comunity" : "states",
             "mountains" : "mountains",
-          }
+          };
           var ret;
           angular.forEach(layersArray, function(l) {
             if (l.id == slugToLayerId[slug]) {
               ret = l;
             }
           });
-          return ret
+          return ret;
         },
         getAll : function(){
           return layersArray;
@@ -291,10 +291,10 @@
         if (practice) {
           window.scrollTo(0, $('.navbar').height() - 8);
         }
-        var l = map.getLayer("cities")
+        var l = map.getLayer("cities");
         if(l) {
-          setCitiesSize(l)
-        };
+          setCitiesSize(l);
+        }
       };
     };
   })
@@ -329,7 +329,7 @@
             if (!myMap.panZoom.isDragging()) {
               clickFn(code);
             }
-          }
+          };
         },
         highlightStates : function(states, color, zoomRatio) {
           var state = states.pop();
