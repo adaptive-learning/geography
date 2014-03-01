@@ -410,7 +410,7 @@
         },
         highLightLayer : function(layer) {
           angular.forEach(layers.getAll(), function(l) {
-            if (l == layer) {
+            if (l == layer || (l.id == 'states' && layer.id == 'cities')) {
               layers.showLayer(l);
             }
             else if  (l.id != 'bg') {
