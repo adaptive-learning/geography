@@ -1,0 +1,34 @@
+.thumbnails
+  overflow: hidden
+  li
+    background: #eee
+    margin-bottom: -99999px
+    padding-bottom: 99999px
+  li:nth-child(even)
+    background: #e7e7e7
+  li.collapsed
+    margin-bottom: 0px
+    padding-bottom: 0px
+  h2
+    background: rgba(0,0,0,0.15)
+    &:hover
+      background: rgba(0,0,0,0.2)
+  h3
+    background: rgba(0,0,0,0.05)
+    &:hover
+      background: rgba(0,0,0,0.1)
+      
+  h3, h2
+    margin: 0px -15px 0px -15px
+    padding: 10px
+    cursor: pointer
+    padding-left: 20px
+    i
+      visibility: hidden
+      margin-rigth: 20px
+    &:hover
+      i
+        visibility: visible
+    .btn
+      margin-top: -5px
+      font-weight: bold
