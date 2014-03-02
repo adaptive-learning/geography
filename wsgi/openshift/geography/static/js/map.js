@@ -407,10 +407,13 @@
         showLayerContaining : function(placeCode) {
           var l = myMap.getLayerContaining(placeCode);
           layers.showLayer(l);
+          if (l && l.id == "cities") {
+            layers.showLayer(layers.getLayerBySlug("state"));
+          }
         },
         highLightLayer : function(layer) {
           angular.forEach(layers.getAll(), function(l) {
-            if (l == layer || (l.id == 'states' && layer.id == 'cities')) {
+            if (l == layer || (l.id == 'states' && layer && layer.id == 'cities')) {
               layers.showLayer(l);
             }
             else if  (l.id != 'bg') {
