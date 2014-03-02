@@ -102,7 +102,7 @@
         }
       });
 
-      layerConfig.cities = angular.copy(layerConfig.states, {
+      layerConfig.cities = angular.extend(angular.extend({},layerConfig.states), {
         'mouseenter' : function(data, path) {
           path.toFront();
           var zoomRatio = 2.5 / citySizeRatio(data.population);
