@@ -39,19 +39,6 @@ class Migration(DataMigration):
         # Austria
         u'Vienna': u'Vídeň',
         u'Passau': u'Pasov',
-        # Czech
-        u'Usti Nad Labem': u'Ústi Nad Labem',
-        u'Hradec Kralove': u'Hradec Králove',
-        u'Ceske Budejovice': u'České Budějovice',
-        u'Liberec': u'Liberec',
-        u'Olomouc': u'Olomouc',
-        u'Pizen': u'Plzeň',
-        u'Jihlava': u'Jihlava',
-        u'Zlin': u'Zlín',
-        u'Brno': u'Brno',
-        u'Pardubice': u'Pardubice',
-        u'Ostrava': u'Ostrava',
-        u'Prague': u'Praha',
         # France
         u'Reims': u'Remeš',
         u'Strasbourg': u'Štrasburk',

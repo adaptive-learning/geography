@@ -247,8 +247,10 @@
         return 1.2;
       } else if (population > 100000) {
         return 1;
-      } else {
+      } else if (population > 30000) {
         return 0.8;
+      } else {
+        return 0.6;
       }
     };
   })
