@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, RedirectView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -8,6 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns(
     '',
     url(r'^$', 'geography.views.home', name='home'),
+    url(r'^favicon\.ico$', RedirectView.as_view(url='static/img/favicon.png')),
     url(r'^tpl/welcome_page.html$', TemplateView.as_view(template_name="home/welcome_page.html")),
     url(r'^tpl/how_it_works.html$', TemplateView.as_view(template_name="home/how_it_works.html")),
     url(r'', include('social_auth.urls')),
