@@ -32,3 +32,20 @@
     .btn
       margin-top: -5px
       font-weight: bold
+
+$anim-time: 0.5s
+
+.fade-show-hide.ng-hide-add, .fade-show-hide.ng-hide-remove
+  -webkit-transition: all linear $anim-time
+  -moz-transition: all linear $anim-time
+  -o-transition: all linear $anim-time
+  transition: all linear $anim-time
+  display: block!important
+
+.fade-show-hide.ng-hide-add.ng-hide-add-active,
+.fade-show-hide.ng-hide-remove 
+  opacity: 0
+
+.fade-show-hide.ng-hide-add,
+.fade-show-hide.ng-hide-remove.ng-hide-remove-active 
+  opacity: 1

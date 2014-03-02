@@ -10,6 +10,7 @@
     'blindMaps.map',
     'ngCookies',
     'ngRoute',
+    'ngAnimate',
     'angulartics',
     'angulartics.google.analytics'
   ])

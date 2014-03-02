@@ -18,6 +18,7 @@ def home(request):
         "static/lib/angular-1.2.9/angular.min.js",
         "static/lib/angular-1.2.9/angular-route.min.js",
         "static/lib/angular-1.2.9/angular-cookies.min.js",
+        "static/lib/angular-1.2.9/angular-animate.min.js",
         "static/lib/js/raphael.js",
         "static/lib/raphael-pan-zoom/raphael.pan-zoom.min.js",
         "static/lib/js/kartograph.js",

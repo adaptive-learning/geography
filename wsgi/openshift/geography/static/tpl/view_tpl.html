@@ -3,7 +3,7 @@
   <div ng-hide="placesTypes" class="loading-indicator">
   </div>
   <ul ng-show="placesTypes.length && (filteredTypes = (placesTypes|isTypeCategory:typeCat)).length" 
-      class="thumbnails" 
+      class="thumbnails fade-show-hide"
       ng-repeat="typeCat in typeCategories">
     <h2 ng-click="updateCat(typeCat)"
         ng-show="filteredTypes.length > 0 && filteredTypes.length < placesTypes.length">
