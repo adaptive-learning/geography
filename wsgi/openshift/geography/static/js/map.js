@@ -44,10 +44,10 @@
         }
       };
 
-      layerConfig.states = {
+      layerConfig.state = {
         'styles' : {
           'fill' : function(d) {
-            var state = config.states && config.states[d.name];
+            var state = config.state && config.state[d.name];
             return state ? scale(state.probability).brighten((1 - state.certainty) * 80).hex() : '#fff';
           },
           'stroke-width' : STROKE_WIDTH,
@@ -62,8 +62,8 @@
       };
 
       if (config.showTooltips) {
-        layerConfig.states.tooltips = function(d) {
-          var state = config.states && config.states[d.name];
+        layerConfig.state.tooltips = function(d) {
+          var state = config.state && config.state[d.name];
           var name = ( state ?
             '<span class="label">' +
               '<i class="flag-' + d.name + '"></i> ' +
@@ -78,14 +78,26 @@
             '');
           return [
             name + description,
-            config.states[d.name] ? config.states[d.name].name : ''
+            config.state[d.name] ? config.state[d.name].name : ''
           ];
         };
       }
+      var stateAlternatives = [
+        "region",
+        "province",
+        "region_cz",
+        "region_it",
+        "bundesland",
+        "autonomous_comunity",
+      ]
       
-      layerConfig.mountains = angular.copy(layerConfig.states, {});
+      angular.forEach(stateAlternatives, function(sa){
+        layerConfig[sa] = angular.copy(layerConfig.state, {});
+      });
+      
+      layerConfig.mountains = angular.copy(layerConfig.state, {});
 
-      layerConfig.rivers = angular.extend(angular.extend({}, layerConfig.states), {
+      layerConfig.river = angular.extend(angular.extend({}, layerConfig.state), {
         'styles' : {
           'stroke-width' : RIVER_WIDTH,
           'stroke' : WATER_COLOR,
@@ -102,7 +114,7 @@
         }
       });
 
-      layerConfig.cities = angular.extend(angular.extend({},layerConfig.states), {
+      layerConfig.city = angular.extend(angular.extend({},layerConfig.state), {
         'mouseenter' : function(data, path) {
           path.toFront();
           var zoomRatio = 2.5 / citySizeRatio(data.population);
@@ -121,9 +133,9 @@
         }
       });
 
-      layerConfig.lakes = angular.copy(layerConfig.cities, {});
+      layerConfig.lakes = angular.copy(layerConfig.city, {});
       layerConfig.lakes.styles.fill = function(d) {
-        var state = config.states && config.states[d.name];
+        var state = config.state && config.state[d.name];
         return state ? scale(state.probability).brighten((1 - state.certainty) * 80).hex() : WATER_COLOR;
       };
       return layerConfig;
@@ -163,22 +175,9 @@
           });
         },
         getLayerBySlug: function(slug) {
-          var slugToLayerId = {
-            "city" : "cities",
-            "river" : "rivers",
-            "lake" : "lakes",
-            "state" : "states",
-            "region" : "states",
-            "province" : "states",
-            "region_cz" : "states",
-            "region_it" : "states",
-            "bundesland" : "states",
-            "autonomous_comunity" : "states",
-            "mountains" : "mountains",
-          };
           var ret;
           angular.forEach(layersArray, function(l) {
-            if (l.id == slugToLayerId[slug]) {
+            if (l.id == slug) {
               ret = l;
             }
           });
@@ -225,7 +224,7 @@
             'stroke-width' : Math.min(6, zoomRatio) * origStroke
           };
         if (color) {
-          if (layer.id == 'rivers') {
+          if (layer.id == 'river') {
             animAttrs.stroke = color;
           } else {
             animAttrs.fill = color;
@@ -302,7 +301,7 @@
         if (practice) {
           window.scrollTo(0, $('.navbar').height() - 8);
         }
-        var l = map.getLayer("cities");
+        var l = map.getLayer("city");
         if(l) {
           setCitiesSize(l);
         }
@@ -325,13 +324,13 @@
     $.fn.qtip.defaults.style.classes = 'qtip-dark';
 
     return function(mapCode, showTooltips, holder, callback) {
-      var config = { states : [] };
+      var config = { state : [] };
       var layers;
       var _placesByTypes;
       
       config.showTooltips = showTooltips;
       config.isPractise = !showTooltips;
-      config.states = [];
+      config.state = [];
   
       var myMap = {
         map :  $K.map(holder),
@@ -387,7 +386,7 @@
           });
           
           var places = $filter('StatesFromPlaces')(placesByTypes);
-          config.states = places;
+          config.state = places;
           angular.forEach(layers.getAll(), function(layer) {
             var config = layers.getConfig(layer);
             layer.style('fill', config.styles.fill);
@@ -409,13 +408,13 @@
         showLayerContaining : function(placeCode) {
           var l = myMap.getLayerContaining(placeCode);
           layers.showLayer(l);
-          if (l && l.id == "cities") {
+          if (l && l.id == "city") {
             layers.showLayer(layers.getLayerBySlug("state"));
           }
         },
         highLightLayer : function(layer) {
           angular.forEach(layers.getAll(), function(l) {
-            if (l == layer || (l.id == 'states' && layer && layer.id == 'cities')) {
+            if (l == layer || (l.id == 'state' && layer && layer.id == 'city')) {
               layers.showLayer(l);
             }
             else if  (l.id != 'bg') {
