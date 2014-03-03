@@ -34,7 +34,6 @@ class Command(BaseCommand):
                     place = self.find_place_or_create_new(code, name, place_type)
                     self.stdout.write(name + "\t" + code)
                     relation.related_places.add(place)
-
         relation.save()
 
     def find_place_relation_or_create_new(self, place):
