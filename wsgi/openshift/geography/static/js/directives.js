@@ -36,7 +36,7 @@
                   '<a ng-show="!practice"' +
                       'href="#/practice/{{part}}/"' +
                       'class="btn btn-primary btn-lg btn-practice" >' +
-                    'Procvičovat vše' +
+                    'Procvičovat' +
                   '</a>' +
                   '<div class="zoom-buttons"></div>'+
                 '</div>',
