@@ -24,8 +24,17 @@
     'BRIGHT_GRAY' : '#ddd'
 
   })
+  
+  .value('stateAlternatives', [
+        "region",
+        "province",
+        "region_cz",
+        "region_it",
+        "bundesland",
+        "autonomous_comunity",
+      ])
 
-  .factory('getLayerConfig', function($log, chroma, colors, citySizeRatio) {
+  .factory('getLayerConfig', function($log, chroma, colors, citySizeRatio, stateAlternatives) {
     var scale = chroma.scale([
         colors.BAD,
         '#ff4500',
@@ -47,26 +56,26 @@
       layerConfig.state = {
         'styles' : {
           'fill' : function(d) {
-            var state = config.state && config.state[d.name];
+            var state = config.state && config.state[d.code];
             return state ? scale(state.probability).brighten((1 - state.certainty) * 80).hex() : '#fff';
           },
           'stroke-width' : STROKE_WIDTH,
           'transform' : ''
         },
         'click' : function(data) {
-          $log.log(data.name);
+          $log.log(data.code);
           if (config.click !== undefined) {
-            config.click(data.name);
+            config.click(data.code);
           }
         }
       };
 
       if (config.showTooltips) {
         layerConfig.state.tooltips = function(d) {
-          var state = config.state && config.state[d.name];
+          var state = config.state && config.state[d.code];
           var name = ( state ?
             '<span class="label">' +
-              '<i class="flag-' + d.name + '"></i> ' +
+              '<i class="flag-' + d.code + '"></i> ' +
               state.name +
               '</span>' :
             '<br>Zatím neprocvičováno<br><br>');
@@ -78,18 +87,10 @@
             '');
           return [
             name + description,
-            config.state[d.name] ? config.state[d.name].name : ''
+            config.state[d.code] ? config.state[d.code].name : ''
           ];
         };
       }
-      var stateAlternatives = [
-        "region",
-        "province",
-        "region_cz",
-        "region_it",
-        "bundesland",
-        "autonomous_comunity",
-      ]
       
       angular.forEach(stateAlternatives, function(sa){
         layerConfig[sa] = angular.copy(layerConfig.state, {});
@@ -142,7 +143,7 @@
     };
   })
   
-  .factory('initLayers', function(getLayerConfig) {
+  .factory('initLayers', function(getLayerConfig, stateAlternatives) {
 
     function _hideLayer(layer){
       var paths = layer ? layer.getPaths({}) : [];
@@ -188,13 +189,23 @@
         },
         getConfig : function(layer){
           return layersConfig[layer.id];
+        },
+        getStateAlternative : function() {
+          var ret;
+          angular.forEach(stateAlternatives.concat(['state']), function(alternative){
+            l = getLayerBySlug(alternative);
+            if (l) {
+              ret = l;
+            }
+          })
+          return ret;
         }
       };
       return that;
     };
   })
   
-  .factory('mapFunctions', function($timeout, $){
+  .factory('mapFunctions', function($timeout, $, stateAlternatives){
     var that = {
       getZoomRatio : function(bboxArea) {
         var zoomRatio = Math.max(1.2, 70 / Math.sqrt(bboxArea));
@@ -231,6 +242,15 @@
           }
         }
         return animAttrs;
+      },
+      isStateAlternative : function (id) {
+        var ret;
+        angular.forEach(stateAlternatives.concat(['state']), function(alternative){
+          if (id == alternative) {
+            ret = alternative;
+          }
+        })
+        return ret;        
       }
     };
     return that;
@@ -345,7 +365,7 @@
         highlightStates : function(states, color, zoomRatio) {
           var state = states.pop();
           var layer = this.getLayerContaining(state);
-          var placePath = layer ? layer.getPaths({ name : state })[0] : undefined;
+          var placePath = layer ? layer.getPaths({ code : state })[0] : undefined;
           if (placePath && layer.id != "bg") {
             placePath.svgPath.toFront();
             var origStroke = layers.getConfig(layer).styles['stroke-width'];
@@ -399,7 +419,7 @@
         getLayerContaining : function(placeCode) {
           var ret;
           angular.forEach(layers.getAll(), function(layer) {
-            if (layer.getPaths({ name : placeCode }).length >= 1) {
+            if (layer.getPaths({ code : placeCode }).length >= 1) {
               ret = layer;
             }
           });
@@ -409,12 +429,12 @@
           var l = myMap.getLayerContaining(placeCode);
           layers.showLayer(l);
           if (l && l.id == "city") {
-            layers.showLayer(layers.getLayerBySlug("state"));
+            layers.showLayer(layers.getStateAlternative());
           }
         },
         highLightLayer : function(layer) {
           angular.forEach(layers.getAll(), function(l) {
-            if (l == layer || (l.id == 'state' && layer && layer.id == 'city')) {
+            if (l == layer || (layer && layer.id == 'city' && mapFunctions.isStateAlternative(l.id))) {
               layers.showLayer(l);
             }
             else if  (l.id != 'bg') {
@@ -431,7 +451,7 @@
         },
         placeToFront : function(placeCode) {
           angular.forEach(layers.getAll(), function(layer) {
-            var place = layer.getPaths({ name : placeCode })[0];
+            var place = layer.getPaths({ code : placeCode })[0];
             if (place) {
               place.svgPath.toFront();
             }
