@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from geography.models import Place, PlaceRelation
 from django.core.management.base import BaseCommand, CommandError
-import re
+from xml.dom import minidom
 
 
 class Command(BaseCommand):
@@ -10,27 +10,31 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         if(len(args) < 2):
             raise CommandError(
-                'Not enough arguments. Two arguments required: <slug> <displayName> [<PLACES_TYPE>]')
-        file_name = 'geography/static/map/{0}.svg'.format(args[0])
-        map_file = open(file_name)
-        map_data = map_file.read()
-        map_file.close()
+                'Not enough arguments. Two arguments required:' +
+                ' <slug> <displayName>')
 
-        if len(args) > 2:
-            place_type = Place.PLACE_TYPE_SLUGS[args[2]]
-        codes = re.findall(r'-name="[^"]*"', map_data)
-        codes = [c[7:-1] for c in codes]
-        names = re.findall(r'realname="[^"]*"', map_data)
-        names = [c[10:-1] for c in names]
         new_place = self.find_place_or_create_new(args[0], args[1])
         relation = self.find_place_relation_or_create_new(new_place)
         relation.save()
-        for name, code in zip(names, codes):
-            if code.strip() == '':
-                continue
-            place = self.find_place_or_create_new(code, name, place_type)
-            self.stdout.write(name + "\t" + code)
-            relation.related_places.add(place)
+
+        file_name = 'geography/static/map/{0}.svg'.format(args[0])
+        map_dom = minidom.parse(file_name)
+        groups = map_dom.getElementsByTagName('g')
+        for g in groups:
+            paths = g.getElementsByTagName('path') + g.getElementsByTagName('circle')
+            group_id = g.attributes['id'].value
+            if group_id != 'bg':
+                place_type = Place.PLACE_TYPE_SLUGS[group_id.upper()]
+                self.stdout.write('## ' + group_id + ':')
+                for path in paths:
+                    code = path.attributes['data-code'].value
+                    name = path.attributes['data-name'].value
+                    if code.strip() == '':
+                        continue
+                    place = self.find_place_or_create_new(code, name, place_type)
+                    self.stdout.write(name + "\t" + code)
+                    relation.related_places.add(place)
+
         relation.save()
 
     def find_place_relation_or_create_new(self, place):
