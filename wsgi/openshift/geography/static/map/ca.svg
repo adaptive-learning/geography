@@ -34,13 +34,15 @@
     <path d="M870.210952,535.087052L870.792805,531.938437L867.992464,533.954319L866.059847,537.804893L869.125377,538.439656L869.088609,541.145497L873.814214,542.050844L874.055044,543.490760L879.264147,545.128664L880.633754,543.967732L882.711145,544.668491L881.554333,546.288396L883.636320,547.597519L885.470123,547.779909L886.931650,546.625576L889.286639,542.491818L893.455668,540.569531L889.159789,540.205952L882.428951,541.020705L878.733769,540.796318L875.837831,539.242409L872.181256,539.808176L871.944562,537.794094L870.210952,535.087052Z " data-code="ca-pe" data-name="Prince Edward Island"/>
   </g>
   <g class="" id="city">
+    <circle cx="675.764443888" cy="591.949904235" data-code="London_Ca" data-name="London" data-population="346765" data-state-code="ca" r="16"/>
+    <circle cx="655.621244343" cy="601.337956241" data-code="Windsor" data-name="Windsor" data-population="319246" data-state-code="ca" r="16"/>
     <circle cx="495.991203402" cy="490.019706761" data-code="Winnipeg" data-name="Winnipeg" data-population="632063" data-state-code="ca" r="16"/>
     <circle cx="304.923438819" cy="472.297269167" data-code="Calgary" data-name="Calgary" data-population="1110000" data-state-code="ca" r="16"/>
     <circle cx="738.430075038" cy="555.845293551" data-code="Ottawa" data-name="Ottawa" data-population="1145000" data-state-code="ca" r="16"/>
-    <circle cx="788.765108356" cy="534.888210164" data-code="Quebec" data-name="Québec" data-population="624177" data-state-code="ca" r="16"/>
+    <circle cx="788.765108356" cy="534.888210164" data-code="Quebec" data-name="Qumbec" data-population="624177" data-state-code="ca" r="16"/>
     <circle cx="875.123166528" cy="567.178354463" data-code="Halifax" data-name="Halifax" data-population="359111" data-state-code="ca" r="16"/>
     <circle cx="311.474794128" cy="435.921520221" data-code="Edmonton" data-name="Edmonton" data-population="1058000" data-state-code="ca" r="16"/>
-    <circle cx="762.33866955" cy="554.617021509" data-code="Montreal" data-name="Montréal" data-population="3678000" data-state-code="ca" r="16"/>
+    <circle cx="762.33866955" cy="554.617021509" data-code="Montreal" data-name="Montraal" data-population="3678000" data-state-code="ca" r="16"/>
     <circle cx="202.796933051" cy="498.978977738" data-code="Vancouver" data-name="Vancouver" data-population="2313328" data-state-code="ca" r="16"/>
     <circle cx="696.412154608" cy="581.15783163" data-code="Toronto" data-name="Toronto" data-population="5213000" data-state-code="ca" r="16"/>
   </g>
