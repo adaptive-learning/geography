@@ -24,19 +24,23 @@
                   '</div>' +
                   '<h1 ng-bind="name"></h1>' +
                   '<div class="btn-group-vertical map-switch" data-toggle="buttons" ng-show="!practice" >' +
-                    '<a class="btn btn-default" href="#/view/{{part}}/"' +
-                        'ng-class="\'/view/\'+part+\'/\'|isActive">' +
-                      'Moje znalosti' +
+                    '<a class="btn btn-default atooltip" href="#/view/{{part}}/"' +
+                        'ng-class="\'/view/\'+part+\'/\'|isActive"' +
+                        'placement="right"' +
+                        'title="Moje znalosti">' +
+                      '<i class="glyphicon glyphicon-user"></i>' +
                     '</a>' +
-                    '<a class="btn btn-default" href="#/view/{{part}}/average"' +
-                        'ng-class="\'/view/\'+part+\'/average\'|isActive">' +
-                      'Průměrný nový uživatel' +
+                    '<a class="btn btn-default atooltip" href="#/view/{{part}}/average"' +
+                        'ng-class="\'/view/\'+part+\'/average\'|isActive"' +
+                        'placement="right"' +
+                        'title="Průměrný nový uživatel">' +
+                      '<i class="glyphicon glyphicon-globe"></i> ' +
                     '</a>' +
                   '</div>' +
                   '<a ng-show="!practice"' +
                       'href="#/practice/{{part}}/"' +
                       'class="btn btn-primary btn-lg btn-practice" >' +
-                    'Procvičovat' +
+                    '<i class="glyphicon glyphicon-check"></i> Procvičovat' +
                   '</a>' +
                   '<div class="zoom-buttons"></div>'+
                 '</div>',
@@ -91,8 +95,8 @@
   .directive('atooltip', function() {
     return {
       restrict : 'C',
-      compile : function(elem) {
-        elem.tooltip({ 'placement' : 'bottom' });
+      link : function($scope, elem, attrs) {
+        elem.tooltip({ 'placement' : attrs.placement || 'bottom' });
       }
     };
   })

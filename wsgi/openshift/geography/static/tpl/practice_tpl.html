@@ -6,7 +6,7 @@
   <div ng-show="!question && !showSummary" class="loading-indicator">
   </div>
   <div ng-show="question != undefined && !showSummary" class="practice">
-    <h2>
+    <div class="question">
       <span>{{question.text}} </span>
       <span class="label label-default" ng-show="question|isFindOnMapType">
         <i class="flag-{{question.asked_code}}"></i> {{question.place}}
@@ -18,7 +18,7 @@
         </span>
       </span>
       <br class="clearfix">
-    </h2>
+    </div>
     <span class="col-sm-7">
       <span ng-show="question|isPickNameOfType">
         <button ng-repeat="place in question.options"
@@ -34,18 +34,18 @@
       <button class="btn btn-lg btn-default" 
               ng-click="checkAnswer()" 
               ng-disabled="canNext" >
-          Nevím
+          <i class="glyphicon glyphicon-question-sign"></i> Nevím
       </button>
       <button class="btn btn-lg btn-default {{!canNext || 'btn-primary'}}" 
               ng-click="next()" 
               ng-disabled="!canNext" >
-          Pokračovat
+          <i class="glyphicon glyphicon-arrow-right"></i> Pokračovat
       </button>
       <button class="btn btn-lg btn-default" 
               ng-click="highlight()" 
               ng-disabled="canNext"  
               ng-show="question.options != undefined" >
-          Znovu zvýraznit
+          <i class="glyphicon glyphicon-repeat"></i> Znovu zvýraznit
       </button>
     </span>
   </div>
@@ -72,11 +72,11 @@
     <span class="pull-right" >
       <a class="btn btn-lg btn-default" 
          href="#/refreshpractice/{{part}}/{{placeType}}" >
-        Znovu procvičovat
+        <i class="glyphicon glyphicon-repeat"></i> Znovu procvičovat
       </a>
       <a class="btn-continue btn btn-lg btn-default {{!showSummary || 'btn-primary'}}" 
          href="#/view/{{part}}/" >
-        Mapa znalostí
+        <i class="glyphicon glyphicon-globe"></i> Mapa znalostí
       </a>
     </span>
   </div>

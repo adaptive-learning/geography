@@ -193,7 +193,7 @@
         getStateAlternative : function() {
           var ret;
           angular.forEach(stateAlternatives.concat(['state']), function(alternative){
-            l = getLayerBySlug(alternative);
+            l = that.getLayerBySlug(alternative);
             if (l) {
               ret = l;
             }
@@ -283,7 +283,7 @@
         var screenAspectRatio = $(window).height() / $(window).width();
         if (screenAspectRatio - mapAspectRatio < -0.2) {
           $('#ng-view').addClass('horizontal');
-          newHeight = $(window).height() + 5;
+          newHeight = $(window).height();
         } else {
           var controlsHeight = $(window).width() > 767 ? 290 : 200;
           newHeight = $(window).height() - controlsHeight;
@@ -319,7 +319,7 @@
           panZoom.zoomOut(1);
         }
         if (practice) {
-          window.scrollTo(0, $('.navbar').height() - 8);
+          $("html, body").animate({ scrollTop: ($('.navbar').height() - 8) + "px" });
         }
         var l = map.getLayer("city");
         if(l) {

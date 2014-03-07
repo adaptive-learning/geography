@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app="blindMaps" data-ng-controller="AppCtrl">
+<html data-ng-app="blindMaps" data-ng-controller="AppCtrl" lang="cs">
   <head>
     <meta charset="utf-8">
     <title>{{ title }}Slepé Mapy - adaptivní aplikace na procvičování polohy států</title>
@@ -63,7 +63,7 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a id="drop-continents" href=""  class="dropdown-toggle" data-toggle="dropdown">Státy <b class="caret"></b></a>
+                  <a id="drop-states" href=""  class="dropdown-toggle" data-toggle="dropdown">Státy <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop-continents">
                     {% for state in states %}
                     <li><a href="#/view/{{ state.code }}/">{{ state.name }}</a></li>

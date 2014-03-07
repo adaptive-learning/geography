@@ -63,7 +63,7 @@
   })
 
   .controller('AppPractice', function($scope, $routeParams, $timeout, $filter,
-      question, user, events, colors, places) {
+      question, user, events, colors, places, $) {
     $scope.part = $routeParams.part;
     $scope.placeType = $routeParams.place_type;
     
@@ -130,6 +130,7 @@
         $scope.map.showLayerContaining(q.asked_code);
         $scope.map.highlightState(q.asked_code, correct ? colors.GOOD : colors.BAD, 1);
       });
+      $("html, body").animate({ scrollTop: "0px" });
       events.emit('questionSetFinished', user.getUser().points);
     }
 

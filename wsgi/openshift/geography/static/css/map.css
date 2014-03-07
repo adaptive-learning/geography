@@ -1,2 +1,2 @@
-svg .bg{stroke-width:1.5}svg .states,svg .cities,svg .rivers,svg .lakes,svg .mountains{cursor:pointer}svg .states,svg .cities,svg .lakes,svg .mountains{fill-opacity:1}svg .states:hover,svg .lakes:hover,svg .mountains:hover{fill-opacity:0.8}svg .lakes{stroke:#53a5df}
+svg .bg{stroke-width:1.5}svg .state,svg .city,svg .river,svg .lake,svg .mountains{cursor:pointer}svg .state,svg .city,svg .lake,svg .mountains{fill-opacity:1}svg .state:hover,svg .lake:hover,svg .mountains:hover{fill-opacity:0.8}svg .lake{stroke:#53a5df}
 /*# sourceMappingURL=map.css.map */
