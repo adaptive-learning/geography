@@ -37,8 +37,16 @@
     });
   })
 
-  .run(function($cookies, $http) {
+  .run(function($cookies, $http, $rootScope, $) {
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    
+    var isFirst = true;
+    $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+      if (!isFirst) {
+        $("#nav-main").collapse('hide');
+      }
+      isFirst = false;
+    });
   });
 }());
