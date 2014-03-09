@@ -34,7 +34,7 @@
         "autonomous_comunity",
       ])
 
-  .factory('getLayerConfig', function($log, chroma, colors, citySizeRatio, stateAlternatives) {
+  .factory('getLayerConfig', function($log, chroma, colors, citySizeRatio, stateAlternatives, $filter) {
     var scale = chroma.scale([
         colors.BAD,
         '#ff4500',
@@ -74,16 +74,24 @@
         layerConfig.state.tooltips = function(d) {
           var state = config.state && config.state[d.code];
           var name = ( state ?
-            '<span class="label">' +
+            '<div class="label label-default">' +
               '<i class="flag-' + d.code + '"></i> ' +
               state.name +
-              '</span>' :
+              '</div>' :
             '<br>Zatím neprocvičováno<br><br>');
           var description = (state ?
             '<div>' +
-              '<i class="color-indicator" style="background-color :' +
-              scale(state.probability).hex() + '"></i>' +
-              ' Odhad znalosti : ' + Math.round(100 * state.probability) + '%</div>' :
+              ' Odhad znalosti: ' + 
+                '<span class="badge badge-default">' +
+                  '<i class="color-indicator" style="background-color :' +
+                  scale(state.probability).hex() + '"></i>' +
+                  Math.round(100 * state.probability) + '% ' +
+                '</span><br><br>' +
+              (d.population ? ' Počet obyvatel: ' +
+                '<span class="badge badge-default">' +
+                  $filter('number')(d.population) + 
+                '</span><br><br>' : '') +
+            '</div>' :
             '');
           return [
             name + description,

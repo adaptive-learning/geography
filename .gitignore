@@ -13,3 +13,4 @@ dist
 Geography.egg-info
 .django_cache
 .ropeproject
+node_modules
