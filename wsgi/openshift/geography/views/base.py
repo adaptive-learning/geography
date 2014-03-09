@@ -44,7 +44,12 @@ def home(request):
         "static/css/map.css"
     )
     request.META["CSRF_COOKIE_USED"] = True
-    title = 'Loc - ' if not settings.ON_OPENSHIFT else ''
+    if not settings.DEBUG:
+        title = ''
+    elif settings.ON_OPENSHIFT:
+        title = 'Stage - '
+    else:
+        title = 'Loc - '
     c = {
         'title': title,
         'isProduction': settings.ON_OPENSHIFT,
