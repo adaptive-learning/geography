@@ -42,7 +42,7 @@
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
     
     var isFirst = true;
-    $rootScope.$on("$routeChangeStart", function(event, next, current) {
+    $rootScope.$on("$routeChangeStart", function() {
       if (!isFirst) {
         $("#nav-main").collapse('hide');
       }

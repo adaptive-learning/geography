@@ -26,13 +26,13 @@
   })
   
   .value('stateAlternatives', [
-        "region",
-        "province",
-        "region_cz",
-        "region_it",
-        "bundesland",
-        "autonomous_comunity",
-      ])
+    "region",
+    "province",
+    "region_cz",
+    "region_it",
+    "bundesland",
+    "autonomous_comunity",
+  ])
 
   .factory('getLayerConfig', function($log, chroma, colors, citySizeRatio, stateAlternatives, $filter) {
     var scale = chroma.scale([
@@ -166,11 +166,9 @@
       for (var i in layersConfig) {
         map.addLayer(i, layersConfig[i]);
         var l = map.getLayer(i);
-        if (l) {
+        if (l && l.id != 'bg') {
           layersArray.push(l);
-          if (l.id != 'bg') {
-            _hideLayer(l);
-          }
+          _hideLayer(l);
         }
       }
       var that = {
@@ -205,7 +203,7 @@
             if (l) {
               ret = l;
             }
-          })
+          });
           return ret;
         }
       };
@@ -257,7 +255,7 @@
           if (id == alternative) {
             ret = alternative;
           }
-        })
+        });
         return ret;        
       }
     };
@@ -265,19 +263,20 @@
   })
   
   .service('citySizeRatio', function(){
+    var min_pop_ratios = [
+      [5000000, 1.8],
+      [1000000, 1.4],
+      [500000, 1.2],
+      [100000, 1],
+      [30000, 0.8],
+      [0, 0.6]
+    ];
+
     return function (population) {
-      if (population > 5000000) {
-        return 1.8;
-      } else if (population > 1000000) {
-        return 1.4;
-      } else if (population > 500000) {
-        return 1.2;
-      } else if (population > 100000) {
-        return 1;
-      } else if (population > 30000) {
-        return 0.8;
-      } else {
-        return 0.6;
+      for (var i = 0; i < min_pop_ratios.length; i++) {
+        if (population > min_pop_ratios[i][0]) {
+          return min_pop_ratios[i][1];
+        }
       }
     };
   })
@@ -374,7 +373,7 @@
           var state = states.pop();
           var layer = this.getLayerContaining(state);
           var placePath = layer ? layer.getPaths({ code : state })[0] : undefined;
-          if (placePath && layer.id != "bg") {
+          if (placePath) {
             placePath.svgPath.toFront();
             var origStroke = layers.getConfig(layer).styles['stroke-width'];
             var animAttrs = mapFunctions.getHighlightAnimationAttributes(placePath, layer,
@@ -445,16 +444,14 @@
             if (l == layer || (layer && layer.id == 'city' && mapFunctions.isStateAlternative(l.id))) {
               layers.showLayer(l);
             }
-            else if  (l.id != 'bg') {
+            else {
               layers.hideLayer(l);
             }
           });
         },
         hideLayers : function() {
           angular.forEach(layers.getAll(), function(l) {
-            if (l.id != 'bg') {
-              layers.hideLayer(l);
-            }
+            layers.hideLayer(l);
           });
         },
         placeToFront : function(placeCode) {

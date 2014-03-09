@@ -46,7 +46,7 @@
     function addToNames(code, data) {
       angular.forEach(data.placesTypes, function(type) {
         angular.forEach(type.places, function(place) {
-          addOneToNames(place.code, place.name)
+          addOneToNames(place.code, place.name);
         });
       });
       addOneToNames(code, data.name);
@@ -76,10 +76,12 @@
         });
       },
       getPlaces : function(part, fn) {
-        var url = 'places/' + part
+        var url = 'places/' + part;
         $http.get(url, {cache: true}).success(function(data) {
           addToNames(part, data);
-          fn && fn(data.placesTypes);
+          if (fn) {
+            fn(data.placesTypes);
+          }
         });
       },
       getCached : function(part, user) {
