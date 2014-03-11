@@ -113,7 +113,7 @@ class MemoryKnowledgeRetriever:
         if new_value:
             self._current_skill[self.answer['place_asked_id'], self.answer['user_id']] = new_value
         else:
-            return self._current_skill.get((self.answer['place_asked_id'], self.answer['user_id']), 0)
+            return self._current_skill.get((self.answer['place_asked_id'], self.answer['user_id']), self.prior_skill() - self.difficulty())
 
     def flush(self):
         cursor = connection.cursor()
