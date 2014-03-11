@@ -91,9 +91,10 @@ class MemoryKnowledgeRetriever:
         return copy
 
     def update_numbers(self):
-        self.first_place[self.answer['place_asked_id']] = self.first_place.get(
-            self.answer['place_asked_id'], 0) + 1
-        self.first_user[self.answer['user_id']] = self.first_user.get(self.answer['user_id'], 0) + 1
+        if not self.both.get((self.answer['place_asked_id'], self.answer['user_id']), None):
+            self.first_place[self.answer['place_asked_id']] = self.first_place.get(
+                self.answer['place_asked_id'], 0) + 1
+            self.first_user[self.answer['user_id']] = self.first_user.get(self.answer['user_id'], 0) + 1
         self.both[self.answer['place_asked_id'], self.answer['user_id']] = self.both.get((self.answer['place_asked_id'], self.answer['user_id']), 0) + 1
 
     def difficulty(self, new_value=None):

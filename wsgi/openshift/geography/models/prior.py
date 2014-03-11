@@ -17,7 +17,7 @@ def elo(answer, prior_skill, difficulty, knowledge_retriever):
     difficulty_alpha = alpha_fun(knowledge_retriever.number_of_first_answers_for_place())
     prior_skill_alpha = alpha_fun(knowledge_retriever.number_of_first_answers_for_user())
     g = guess(answer)
-    prediction = predict(prior_skill, g)
+    prediction = predict(prior_skill - difficulty, g)
     result = answer['place_asked_id'] == answer['place_answered_id']
     return (
         prior_skill + prior_skill_alpha * (result - prediction),
