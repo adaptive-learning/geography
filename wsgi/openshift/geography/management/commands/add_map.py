@@ -27,8 +27,8 @@ class Command(BaseCommand):
                 place_type = Place.PLACE_TYPE_SLUGS[group_id.upper()]
                 self.stdout.write('## ' + group_id + ':')
                 for path in paths:
-                    code = path.attributes['data-code'].value
-                    name = path.attributes['data-name'].value
+                    code = unicode(path.attributes['data-code'].value).encode("utf-8")
+                    name = unicode(path.attributes['data-name'].value).encode("utf-8")
                     if code.strip() == '':
                         continue
                     place = self.find_place_or_create_new(code, name, place_type)
