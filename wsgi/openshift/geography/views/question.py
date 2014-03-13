@@ -28,10 +28,12 @@ def question(request, map_code, place_type_slug):
         qs.answer(answer)
         question_index = answer['index'] + 1
     if should_get_questions(request, question_index):
-        place_type = (Place.PLACE_TYPE_SLUGS_LOWER_REVERSE[place_type_slug]
-                      if place_type_slug in Place.PLACE_TYPE_SLUGS_LOWER_REVERSE
-                      else -1)
-        response = qs.get_questions(10 - question_index, place_type)
+        place_types = ([Place.PLACE_TYPE_SLUGS_LOWER_REVERSE[place_type_slug]]
+                       if place_type_slug in Place.PLACE_TYPE_SLUGS_LOWER_REVERSE
+                       else Place.CATEGORIES[place_type_slug]
+                       if place_type_slug in Place.CATEGORIES
+                       else [t[0] for t in Place.PLACE_TYPES])
+        response = qs.get_questions(10 - question_index, place_types)
     else:
         response = []
     return JsonResponse(response)

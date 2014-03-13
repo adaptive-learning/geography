@@ -21,9 +21,9 @@ class WeghtedPlace:
 
 class PlaceManager(models.Manager):
 
-    def get_places_to_ask(self, user, map_place, expected_probability, n, place_type):
+    def get_places_to_ask(self, user, map_place, expected_probability, n, place_types):
         return recommendation.by_additive_function(
-            user, map_place, expected_probability, n, place_type)
+            user, map_place, expected_probability, n, place_types)
 
     def get_states_with_map(self):
         return [pr.place for pr in PlaceRelation.objects.filter(
@@ -85,6 +85,25 @@ class Place(models.Model):
     PLACE_TYPE_SLUGS = dict((t[1].upper(), t[0]) for t in PLACE_TYPES)
     PLACE_TYPE_SLUGS_LOWER = dict((t[0], slugify(t[1].lower())) for t in PLACE_TYPES)
     PLACE_TYPE_SLUGS_LOWER_REVERSE = dict((slugify(t[1].lower()), t[0]) for t in PLACE_TYPES)
+    CATEGORIES = {
+        'political': [
+            STATE,
+            CITY,
+            REGION,
+            PROVINCE,
+            REGION_CZ,
+            REGION_IT,
+            AUTONOMOUS_COMUNITY,
+            BUNDESLAND,
+        ],
+        'water': [
+            RIVER,
+            LAKE,
+        ],
+        'surface': [
+            MOUNTAINS,
+        ],
+    }
     code = models.SlugField(
         max_length=100,
         db_index=True,

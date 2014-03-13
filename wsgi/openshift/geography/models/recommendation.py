@@ -9,7 +9,7 @@ WEIGHT_NUMBER_OF_ANSWERS = 5
 WEIGHT_TIME_AGO = 120
 
 
-def by_additive_function(user, map_place, expected_probability, n, place_type):
+def by_additive_function(user, map_place, expected_probability, n, place_types):
     if expected_probability < 0 or expected_probability > 1:
         raise Exception('target probability has to be in range [0,1] and was ' + str(expected_probability))
     cursor = connection.cursor()
@@ -44,7 +44,7 @@ def by_additive_function(user, map_place, expected_probability, n, place_type):
                     AND
                     geography_placerelation.type = %s
             )
-            AND (geography_place.type = %s OR ''' + ("TRUE" if place_type == -1 else "FALSE") + ''')
+            AND geography_place.type IN ''' + str(tuple(place_types)) + '''
             AND geography_currentskill_prepared.user_id = %s
         GROUP BY
             geography_currentskill_prepared.place_id
@@ -54,7 +54,6 @@ def by_additive_function(user, map_place, expected_probability, n, place_type):
         [
             int(map_place.place.id),
             int(place.PlaceRelation.IS_ON_MAP),
-            int(place_type),
             int(user.id)
         ]
     )

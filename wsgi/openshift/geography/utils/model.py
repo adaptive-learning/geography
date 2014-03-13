@@ -50,14 +50,14 @@ class QuestionService:
         self.target_probability = target_probability
         self.history_length = history_length
 
-    def get_questions(self, n, place_type):
+    def get_questions(self, n, place_types):
         target_probability = self.target_probability
         candidates = Place.objects.get_places_to_ask(
             self.user,
             self.map_place,
             target_probability,
             n,
-            place_type)
+            place_types)
         LOGGER.debug(
             "user %s, question candidates with predicted probability (target %s) for map %s are:\n %s",
             str(self.user),
