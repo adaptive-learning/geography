@@ -2018,7 +2018,10 @@
         return bb;
     },
         pathClone = function (pathArray) {
-            var res = clone(pathArray);
+            // hack by slaweet to speed things up in our particular use.
+            // var res = clone(pathArray);
+            var res = pathArray;
+            // end of hack
             res.toString = R._path2string;
             return res;
         },
