@@ -37,11 +37,6 @@
                       '<i class="glyphicon glyphicon-globe"></i> ' +
                     '</a>' +
                   '</div>' +
-                  '<a ng-show="!practice"' +
-                      'href="#/practice/{{part}}/"' +
-                      'class="btn btn-primary btn-lg btn-practice" >' +
-                    '<i class="glyphicon glyphicon-check"></i> Procvičovat' +
-                  '</a>' +
                   '<div class="zoom-buttons"></div>'+
                 '</div>',
       link : function($scope, elem, attrs) {

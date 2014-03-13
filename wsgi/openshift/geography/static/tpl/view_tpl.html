@@ -6,9 +6,14 @@
       class="thumbnails fade-show-hide"
       ng-repeat="typeCat in typeCategories">
     <h2 ng-click="updateCat(typeCat)"
-        ng-show="filteredTypes.length > 0 && filteredTypes.length < placesTypes.length">
+        ng-show="filteredTypes.length > 0 && placesTypes.length > 1">
       <i class="glyphicon {{typeCat.hidden && 'glyphicon-plus-sign' || 'glyphicon-minus-sign'}}"></i>
       {{typeCat.name}}
+        <a href="#/practice/{{part}}/{{typeCat.slug}}" 
+           class="btn btn-primary pull-right" 
+           ng-hide="typeCat.hidden || filteredTypes.length == 1" >
+          <i class="glyphicon glyphicon-check"></i> Procvičovat
+        </a>
     </h2>
     <div ng-hide="typeCat.hidden">
       <li class="col-sm-{{filteredTypes.length|colNum}}" 
@@ -20,8 +25,7 @@
           <i class="glyphicon {{type.hidden && 'glyphicon-plus-sign' || 'glyphicon-minus-sign'}}"></i>
           {{type.name}}
           <a href="#/practice/{{part}}/{{type.slug}}" 
-             class="btn btn-primary pull-right" 
-             ng-show="placesTypes.length > 1" >
+             class="btn btn-primary pull-right"  >
             <i class="glyphicon glyphicon-check"></i> Procvičovat
           </a>
         </h3>
