@@ -55,6 +55,12 @@ module.exports = function(grunt) {
           interrupt: true,
         },
       },
+    },
+    rename: {
+        moveAboveFoldCss: {
+            src: 'geography/static/css/above-fold.css',
+            dest: 'templates/home/above-fold.css'
+        },
     }
   });
 
@@ -65,10 +71,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-rename');
 
   // Default task(s).
   grunt.registerTask('js', ['newer:jshint','newer:uglify']);
-  grunt.registerTask('default', ['js','sass']);
+  grunt.registerTask('default', ['js', 'sass', 'rename']);
   grunt.registerTask('travis', ['jshint']);
 
 };

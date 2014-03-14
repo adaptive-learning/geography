@@ -26,9 +26,10 @@
     <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
     <!-- Le styles -->
-    {% for file in top_css_files %}
-    <link href="{{ file }}" rel="stylesheet">
-    {% endfor %}
+    <style>
+        {% include "home/above-fold-bootstrap.css" %}
+        {% include "home/above-fold.css" %}
+    </style>
 
   </head>
 
@@ -134,7 +135,8 @@
     {% for file in js_files %}
     <script src="{{ file }}"></script>
     {% endfor %}
-    {% for file in bottom_css_files %}
+
+    {% for file in css_files %}
     <link href="{{ file }}" rel="stylesheet">
     {% endfor %}
 

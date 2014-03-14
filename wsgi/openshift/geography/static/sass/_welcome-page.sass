@@ -1,6 +1,9 @@
 .welcome-page.jumbotron
+  background-color: #73c5ef
+  color: white
   padding-left: 20px
   padding-right: 20px
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8), 0 0 0px rgba(0, 0, 0, 0.075)
   h1
     font-size: 3em
     text-align: center
@@ -10,7 +13,6 @@
   [class*="col-"]
     float: none
   .block-welcome_page
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8), 0 0 0px rgba(0, 0, 0, 0.075)
     font-size: 1.25em
     line-height: 120%
     .flatblock-content
@@ -18,6 +20,7 @@
   .btn-centerer
     text-align: center
     margin: 30px auto 30px auto
+
 
 .how-it-works
   align: center
@@ -36,6 +39,16 @@
       margin-right: 15px
       margin-left: -10px
 
+.navbar 
+  margin-bottom: 0px
+  border-radius: 0px
+
+h1, h2, h3
+  font-weight: bold
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
+  display: none
+
 @media (min-width: 767px)
   $huge-radius: 9px
   .btn-huge
@@ -44,3 +57,21 @@
     -webkit-border-radius: $huge-radius
     -moz-border-radius: $huge-radius
     border-radius: $huge-radius
+
+@media (max-width: 767px)
+  .welcome-page
+    p
+      padding: 10px
+    
+  .welcome-page.jumbotron
+    font-size: 1em
+    h1
+      font-size: 3em
+      padding-top: 10px
+    p
+      font-size: 0.65em
+      padding: 5px
+    .main-paragraph
+      font-size: 1em
+  .jumbotron 
+    padding: 0 0 20px 0

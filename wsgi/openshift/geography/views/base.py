@@ -35,11 +35,9 @@ def home(request):
         "static/js/filters.js",
         "static/js/directives.js"
     )
-    TOP_CSS_FILES = (
+    CSS_FILES = (
         "static/lib/css/bootstrap.css",
         "static/css/app.css",
-    )
-    BOTTOM_CSS_FILES = (
         "static/lib/css/flags.css",
         "static/lib/css/tips.css",
         "static/css/map.css"
@@ -54,8 +52,7 @@ def home(request):
     c = {
         'title': title,
         'isProduction': settings.ON_OPENSHIFT,
-        'top_css_files': StaticFiles.add_hash(TOP_CSS_FILES),
-        'bottom_css_files': StaticFiles.add_hash(BOTTOM_CSS_FILES),
+        'css_files': StaticFiles.add_hash(CSS_FILES),
         'js_files': StaticFiles.add_hash(JS_FILES),
         'continents': Place.objects.get_continents(),
         'states': Place.objects.get_states_with_map(),
