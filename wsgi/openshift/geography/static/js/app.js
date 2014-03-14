@@ -37,9 +37,10 @@
     });
   })
 
-  .run(function($cookies, $http, $rootScope, $) {
+  .run(function($cookies, $http, $rootScope, $, $analytics) {
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    $analytics.settings.pageTracking.autoTrackFirstPage = false;
     
     $rootScope.$on("$routeChangeStart", function(event, next, current) {
       if (current && current.originalPath !== "" && $(window).width() < 770) {
