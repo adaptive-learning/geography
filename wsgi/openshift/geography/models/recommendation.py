@@ -44,7 +44,7 @@ def by_additive_function(user, map_place, expected_probability, n, place_types):
                     AND
                     geography_placerelation.type = %s
             )
-            AND geography_place.type IN ''' + str(tuple(place_types)) + '''
+            AND geography_place.type IN ''' + str(tuple(place_types)).replace(',)', ')') + '''
             AND geography_currentskill_prepared.user_id = %s
         GROUP BY
             geography_currentskill_prepared.place_id

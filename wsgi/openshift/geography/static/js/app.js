@@ -41,12 +41,11 @@
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
     
-    var isFirst = true;
-    $rootScope.$on("$routeChangeStart", function() {
-      if (!isFirst) {
+    $rootScope.$on("$routeChangeStart", function(event, next, current) {
+      if (current && current.originalPath !== "" && $(window).width() < 770) {
+        $("#nav-main").collapse();
         $("#nav-main").collapse('hide');
       }
-      isFirst = false;
     });
   });
 }());
