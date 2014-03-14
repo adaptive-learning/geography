@@ -21,8 +21,8 @@ def home(request):
         "static/lib/angular-1.2.9/angular-cookies.min.js",
         "static/lib/angular-1.2.9/angular-animate.min.js",
         "static/lib/angular-1.2.9/i18n/angular-locale_cs.js",
-        "static/lib/js/raphael.js",
-        "static/lib/raphael-pan-zoom/raphael.pan-zoom.min.js",
+        "static/lib/js/raphael.min.js",
+        "static/lib/js/raphael.pan-zoom.min.js",
         "static/lib/js/kartograph.js",
         "static/lib/js/chroma.min.js",
         "static/lib/js/jquery.qtip.min.js",
@@ -36,7 +36,7 @@ def home(request):
         "static/js/directives.js"
     )
     CSS_FILES = (
-        "static/lib/css/bootstrap.css",
+        "static/lib/css/bootstrap.min.css",
         "static/css/app.css",
         "static/lib/css/flags.css",
         "static/lib/css/tips.css",
