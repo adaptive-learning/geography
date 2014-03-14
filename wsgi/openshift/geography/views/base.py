@@ -3,6 +3,7 @@ from django.conf import settings
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 from geography.utils import JsonResponse, StaticFiles
+from geography.views import get_user
 from django.http import HttpResponse
 from geography.models import Place
 import json
@@ -59,6 +60,7 @@ def home(request):
         'continents': Place.objects.get_continents(),
         'states': Place.objects.get_states_with_map(),
         'hashes': json.dumps(settings.HASHES),
+        'user': get_user(request),
     }
     c.update(csrf(request))
     return render_to_response('home/home.html', c)

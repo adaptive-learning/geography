@@ -12,7 +12,7 @@ def user_list_view(request):
     return JsonResponse(response)
 
 
-def user_view(request):
+def get_user(request):
     user = request.user
     if user and geography.models.user.is_lazy(user) and geography.models.user.is_named(user):
         geography.models.user.convert_lazy_user(request.user)
@@ -22,6 +22,11 @@ def user_view(request):
         'username': username,
         'points': points,
     }
+    return response
+
+
+def user_view(request):
+    response = get_user(request)
     return JsonResponse(response)
 
 

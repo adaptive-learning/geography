@@ -9,7 +9,10 @@
     var updateUser = function(data) {
       $rootScope.user = data;
     };
-    user.getUser(updateUser);
+    
+    $scope.initUser = function (username, points) {
+      $rootScope.user = user.initUser(username, points);
+    };
 
     $rootScope.logout = function() {
       $rootScope.user = user.logout(updateUser);

@@ -177,22 +177,19 @@
   .factory('user', function($http, $cookies, events) {
     var user;
     return {
+      initUser : function(username, points) {
+        user = {
+          'username' : username,
+          'points' : points
+        };
+        return user;
+      },
       getUser : function(callback) {
-        if (!user) {
-          $http.get('user/').success(function(data) {
-            user = data;
-            callback(user);
-            events.emit('userUpdated', user);
-          });
-        }
         return user;
       },
       logout : function(callback) {
         $http.get('user/logout/').success(callback);
-        user = {
-          'username' : '',
-          'points' : 0
-        };
+        this.initUser('', 0);
         events.emit('userUpdated', user);
         return user;
       },
