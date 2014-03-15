@@ -184,7 +184,7 @@
         };
         return user;
       },
-      getUser : function(callback) {
+      getUser : function() {
         return user;
       },
       logout : function(callback) {

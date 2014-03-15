@@ -1451,6 +1451,7 @@
 
         return d;
     }
+    var pathCache = {};
     /*\
      * Raphael.parsePathString
      [ method ]
@@ -1465,6 +1466,9 @@
     R.parsePathString = function (pathString) {
         if (!pathString) {
             return null;
+        }
+        if (pathCache[pathString]) {
+            return pathCache[pathString];
         }
         var pth = paths(pathString);
         if (pth.arr) {
@@ -1500,6 +1504,7 @@
         }
         data.toString = R._path2string;
         pth.arr = pathClone(data);
+        pathCache[pathString] = data;
         return data;
     };
     /*\

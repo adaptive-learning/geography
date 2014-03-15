@@ -71,7 +71,7 @@
       };
 
       if (config.showTooltips) {
-        layerConfig.state.tooltips = function(d) {
+        layerConfig.state._tooltips = function(d) {
           var state = config.state && config.state[d.code];
           var name = ( state ?
             '<div class="label label-default">' +
@@ -417,8 +417,8 @@
           angular.forEach(layers.getAll(), function(layer) {
             var config = layers.getConfig(layer);
             layer.style('fill', config.styles.fill);
-            if (config.tooltips) {
-              layer.tooltips(config.tooltips);
+            if (config._tooltips) {
+              layer.tooltips(config._tooltips);
             }
 
           });
