@@ -27,7 +27,8 @@
         places, mapTitle) {
     $scope.part = $routeParams.part;
     var user = $routeParams.user || '';
-    $scope.typeCategories = places.getCategories();
+    $scope.typeCategories = places.getCategories($scope.part);
+    
 
     places.get($scope.part, user, updatePlaces);
 

@@ -6,6 +6,7 @@
 
   .factory('places', function($http) {
     var cache = {};
+    var categoriesCache = {};
     var names = {
         'us' : 'USA',
         'world' : 'Svět'
@@ -91,8 +92,17 @@
       getName : function(code) {
         return names[code];
       },
-      getCategories : function() {
-        return categories;
+      getCategories : function(part) {
+        if (!categoriesCache[part]) {
+          categoriesCache[part] = angular.copy(categories);
+        }
+        var allHidden = 0 == categoriesCache[part].filter(function(c){
+          return !c.hidden;
+        }).length;
+        if (allHidden) {
+          categoriesCache[part][0].hidden = false;
+        }
+        return categoriesCache[part];
       }
     };
     return that;
