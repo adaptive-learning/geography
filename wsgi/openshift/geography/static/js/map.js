@@ -212,8 +212,14 @@
   })
   
   .factory('mapFunctions', function($timeout, $, stateAlternatives){
+    var bboxCache = {}
     var that = {
-      getZoomRatio : function(bboxArea) {
+      getZoomRatio : function(placePath) {
+        if (!bboxCache[placePath.data.code]) {
+          bboxCache[placePath.data.code] = placePath.svgPath.getBBox();
+        }
+        var bbox = bboxCache[placePath.data.code];
+        var bboxArea = bbox.width * bbox.height;
         var zoomRatio = Math.max(1.2, 70 / Math.sqrt(bboxArea));
         return zoomRatio;
       },
@@ -233,9 +239,7 @@
         return panZoom;
       },
       getHighlightAnimationAttributes : function(placePath, layer, origStroke, color, zoomRatio) {
-        var bbox = placePath.svgPath.getBBox();
-        var bboxArea = bbox.width * bbox.height;
-        zoomRatio = zoomRatio || that.getZoomRatio(bboxArea);
+        zoomRatio = zoomRatio || that.getZoomRatio(placePath);
         var animAttrs = {
             transform : 's' + zoomRatio,
             'stroke-width' : Math.min(6, zoomRatio) * origStroke
