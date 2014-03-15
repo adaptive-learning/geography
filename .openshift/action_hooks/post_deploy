@@ -3,4 +3,5 @@ cd $OPENSHIFT_REPO_DIR/wsgi/openshift
 ./manage.py migrate geography --delete-ghost-migrations --traceback
 ./manage.py sqlcustom geography | ./manage.py dbshell
 ./manage.py derived_knowledge_data
+./manage.py update_maps 
 rm -rf $OPENSHIFT_DATA_DIR/.django_cache
