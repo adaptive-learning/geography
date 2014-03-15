@@ -50,6 +50,7 @@ class Place(models.Model):
     REGION = 11
     AUTONOMOUS_COMUNITY = 12
     MOUNTAINS = 13
+    ISLAND = 14
     PLACE_TYPES = (
         (UNKNOWN, 'Unknown'),
         (STATE, 'State'),
@@ -65,6 +66,7 @@ class Place(models.Model):
         (REGION, 'Region'),
         (AUTONOMOUS_COMUNITY, 'Autonomous_Comunity'),
         (MOUNTAINS, 'Mountains'),
+        (ISLAND, 'Island'),
     )
     PLACE_TYPE_PLURALS = (
         (UNKNOWN, u'Neznámé'),
@@ -81,6 +83,7 @@ class Place(models.Model):
         (REGION, u'Regiony'),
         (AUTONOMOUS_COMUNITY, u'Autonomní společenství'),
         (MOUNTAINS, u'Pohoří'),
+        (ISLAND, u'Ostrovy'),
     )
     PLACE_TYPE_SLUGS = dict((t[1].upper(), t[0]) for t in PLACE_TYPES)
     PLACE_TYPE_SLUGS_LOWER = dict((t[0], slugify(t[1].lower())) for t in PLACE_TYPES)
@@ -102,6 +105,7 @@ class Place(models.Model):
         ],
         'surface': [
             MOUNTAINS,
+            ISLAND,
         ],
     }
     code = models.SlugField(

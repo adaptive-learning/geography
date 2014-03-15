@@ -33,7 +33,7 @@
       },{
         slug : 'surface',
         name : 'Povrch',
-        types : ['mountains'],
+        types : ['mountains', 'island'],
         hidden:true
       }
     ];
