@@ -104,9 +104,9 @@
         layerConfig[sa] = angular.copy(layerConfig.state, {});
       });
       
-      layerConfig.mountains = angular.copy(layerConfig.state, {});
-      
       layerConfig.island = angular.copy(layerConfig.state);
+      
+      layerConfig.mountains = angular.copy(layerConfig.state);
 
       layerConfig.river = angular.extend(angular.extend({}, layerConfig.state), {
         'styles' : {
