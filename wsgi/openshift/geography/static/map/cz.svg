@@ -35,8 +35,6 @@
     <circle cx="518.721494916" cy="372.808041355" data-code="Jihlava" data-name="Jihlava" data-population="47626" r="16"/>
     <circle cx="190.042363358" cy="295.427033354" data-code="Plzen" data-name="Plzeň" data-population="150824" r="16"/>
     <circle cx="809.948141818" cy="404.852404902" data-code="Otrokovice" data-name="Otrokovice" data-population="19261" r="16"/>
-    <circle cx="608.09278503" cy="131.51393054" data-code="Kudowa-Zdroj" data-name="Kudowa-Zdrój" data-population="10107" r="16"/>
-    <circle cx="58.2174618383" cy="154.349402897" data-code="Klingenthal" data-name="Klingenthal" data-population="" r="16"/>
     <circle cx="972.283111165" cy="288.058701846" data-code="Trinec" data-name="Třinec" data-population="30012" r="16"/>
     <circle cx="160.813912923" cy="149.630022885" data-code="Klasterec_nad_Ohri" data-name="Klášterec nad Ohří" data-population="15398" r="16"/>
     <circle cx="463.998162683" cy="365.833754165" data-code="Pelhrimov" data-name="Pelhřimov" data-population="14860" r="16"/>
@@ -153,8 +151,6 @@
     <circle cx="729.349496937" cy="392.811304845" data-code="Vyskov" data-name="Vyškov" data-population="13758" r="16"/>
     <circle cx="590.595055763" cy="494.473655467" data-code="Znojmo" data-name="Znojmo" data-population="29121" r="16"/>
     <circle cx="343.546414369" cy="217.597849202" data-code="Praha" data-name="Praha" data-population="1241664" r="16"/>
-    <circle cx="478.243010417" cy="66.8783704991" data-code="Rejdice" data-name="Rejdice" data-population="" r="16"/>
     <circle cx="801.220854174" cy="437.493006739" data-code="Uherske_Hradiste" data-name="Uherské Hradiště" data-population="21737" r="16"/>
-    <circle cx="451.732314454" cy="35.4133428007" data-code="Hejnice" data-name="Hejnice" data-population="" r="16"/>
   </g>
 </svg>
