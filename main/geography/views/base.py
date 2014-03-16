@@ -45,13 +45,13 @@ def home(request):
     request.META["CSRF_COOKIE_USED"] = True
     if not settings.DEBUG:
         title = ''
-    elif settings.ON_OPENSHIFT:
+    elif settings.ON_PRODUCTION:
         title = 'Stage - '
     else:
         title = 'Loc - '
     c = {
         'title': title,
-        'isProduction': settings.ON_OPENSHIFT,
+        'isProduction': settings.ON_PRODUCTION,
         'css_files': StaticFiles.add_hash(CSS_FILES),
         'js_files': StaticFiles.add_hash(JS_FILES),
         'continents': Place.objects.get_continents(),

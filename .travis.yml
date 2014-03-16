@@ -5,15 +5,6 @@ install:
 - pip install pep8 --use-mirrors
 - pip install https://github.com/dcramer/pyflakes/tarball/master
 script:
-  - cd wsgi/openshift
+  - cd main
   - pep8 --exclude=migrations --ignore=E501,E225 .
   - pyflakes -x W .
-deploy:
-  provider: openshift
-  user:
-    master: slaweet@gmail.com
-  app: geography
-  domain:
-    master: geography
-  password:
-    secure: "E3QlBD9nDyY9cEqu9WXfgh+f28j64P0inxIU5sIPJEBwAqgcKiGBFEr/k5WwuFtKwGoxDWRwrm3SVbXId8FskfU7jy7zjcKvJqWzCx5SkOZ16RYezXdtxkjUeRFxZNy7U413dE3qmzqBild6zTR2FFKG7UjICfvcHYW39uoZ28c="

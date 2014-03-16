@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# Django settings for openshift project.
 import imp
 import os
 
@@ -8,17 +7,18 @@ try:
 except ImportError:
     pass
 
-# a setting to determine whether we are running on OpenShift
-ON_OPENSHIFT = False
-if 'OPENSHIFT_REPO_DIR' in os.environ:
-    ON_OPENSHIFT = True
+ON_PRODUCTION = False
+ON_STAGING = False
+if 'GEOGRAPHY_ON_PRODUCTION' in os.environ:
+    ON_PRODUCTION = True
+elif 'GEOGRAPHY_ON_STAGING' in os.environ:
+    ON_STAGING = True
 
 PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
-if ON_OPENSHIFT:
-    if os.environ['OPENSHIFT_APP_DNS'] == "geography-geography.rhcloud.com":
-        DEBUG = True
-    else:
-        DEBUG = False
+if ON_PRODUCTION:
+    DEBUG = False
+elif ON_STAGING:
+    DEBUG = True
 else:
     DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -29,30 +29,31 @@ ADMINS = (
 )
 MANAGERS = ADMINS
 
-if ON_OPENSHIFT:
+if ON_PRODUCTION or ON_STAGING:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ['OPENSHIFT_APP_NAME'],
-            'USER': os.environ['OPENSHIFT_MYSQL_DB_USERNAME'],
-            'PASSWORD': os.environ['OPENSHIFT_MYSQL_DB_PASSWORD'],
-            'HOST': os.environ['OPENSHIFT_MYSQL_DB_HOST'],
-            'PORT': os.environ['OPENSHIFT_MYSQL_DB_PORT'],
+            'ENGINE': os.environ['GEOGRAPHY_DATABASE_ENGINE'],
+            'NAME': os.environ['GEOGRAPHY_DATABASE_NAME'],
+            'USER': os.environ['GEOGRAPHY_DATABASE_USER'],
+            'PASSWORD': os.environ['GEOGRAPHY_DATABASE_PASSWORD'],
+            'HOST': os.environ['GEOGRAPHY_DATABASE_HOST'],
+            'PORT': os.environ['GEOGRAPHY_DATABASE_PORT']
         }
     }
 else:
-    if 'GEOGRAPHY_MYSQL_DB_USERNAME' not in os.environ.keys():
+    if 'GEOGRAPHY_DATABASE_USER' not in os.environ.keys():
         raise Exception(
             'The database connection is not set, you have to set\n'
-            '  "GEOGRAPHY_MYSQL_DB_USERNAME" and "GEOGRAPHY_MYSQL_DB_PASSWORD" variables.'
+            '  "GEOGRAPHY_DATABASE_USER" and "GEOGRAPHY_DATABASE_PASSWORD" variables.'
         )
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'geography',
-            'USER': os.environ['GEOGRAPHY_MYSQL_DB_USERNAME'],
-            'PASSWORD': os.environ['GEOGRAPHY_MYSQL_DB_PASSWORD'],
-            'HOST': 'localhost'
+            'ENGINE': os.getenv('GEOGRAPHY_DATABASE_ENGINE', 'django.db.backends.mysql'),
+            'NAME': os.getenv('GEOGRAPHY_DATABASE_NAME', 'geography'),
+            'USER': os.environ['GEOGRAPHY_DATABASE_USER'],
+            'PASSWORD': os.environ['GEOGRAPHY_DATABASE_PASSWORD'],
+            'HOST': os.getenv('GEOGRAPHY_DATABASE_HOST', 'localhost'),
+            'PORT': os.getenv('GEOGRAPHY_DATABASE_PORT', None)
         }
     }
 
@@ -88,7 +89,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.environ.get('OPENSHIFT_DATA_DIR', '')
+MEDIA_ROOT = os.environ.get('GEOGRAPHY_DATA_DIR', '')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -99,7 +100,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_DIR, '..', 'static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static/')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -117,19 +118,17 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make a dictionary of default keys
 default_keys = {
-    'SECRET_KEY': 'vm4rl5*ymb@2&d_(gc$gb-^twq9w(u69hi--%$5xrh!xk(t%hw'}
+    'SECRET_KEY': 'vm4rl5*ymb@2&d_(gc$gb-^twq9w(u69hi--%$5xrh!xk(t%hw'
+}
 
-# Replace default keys with dynamic values if we are in OpenShift
+# Replace default keys with dynamic values if we are on server
 use_keys = default_keys
-if ON_OPENSHIFT:
-    imp.find_module('openshiftlibs')
-    import openshiftlibs
-    use_keys = openshiftlibs.openshift_secure(default_keys)
+if ON_PRODUCTION or ON_STAGING:
+    default_keys['SECRET_KEY'] = os.environ['GEOGRAPHY_SECRET_KEY']
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = use_keys['SECRET_KEY']
@@ -138,7 +137,6 @@ SECRET_KEY = use_keys['SECRET_KEY']
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-    # 'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -152,7 +150,7 @@ MIDDLEWARE_CLASSES = (
     'geography.middleware.AuthAlreadyAssociatedMiddleware',
 )
 
-ROOT_URLCONF = 'openshift.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
