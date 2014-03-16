@@ -30,7 +30,7 @@ else
 	exit 1
 fi
 
-git reset $DEPLOY_VERSION --hard
+git reset origin/$DEPLOY_VERSION --hard
 
 
 ###############################################################################
