@@ -2,14 +2,13 @@
 SELF=`readlink -f $0`
 SELF_DIR=`dirname $SELF`
 
-set -x
-
 
 ###############################################################################
 # disable site
 ###############################################################################
 
 if [ $GEOGRAPHY_ON_PRODUCTION ]; then
+	echo " * disable production"
 	sudo a2ensite maintenance-production.slepemapy.cz
 	sudo a2dissite production.slepemapy.cz
 	sudo service apache2 reload
@@ -30,6 +29,7 @@ else
 	exit 1
 fi
 
+echo " * reset to origin/$DEPLOY_VERSION"
 git reset origin/$DEPLOY_VERSION --hard
 
 
@@ -44,12 +44,19 @@ else
 	DATA_DIR="$APP_DIR"
 fi
 
+echo " * collect static"
 $APP_DIR/manage.py collectstatic --noinput
 echo "HASHES = $( python $APP_DIR/manage.py static_hashes )" > $APP_DIR/hashes.py
 
+echo " * migrate"
 $APP_DIR/manage.py migrate geography --delete-ghost-migrations --traceback
+echo " * load custom SQLs"
 $APP_DIR/manage.py sqlcustom geography | $APP_DIR/manage.py dbshell
-$APP_DIR/manage.py derived_knowledge_data
+if git diff --summary HEAD origin/master $APP_DIR/geography/models/ | egrep 'knowledge\.py|prior.py|current.py'; then
+	echo " * derive knowledge data"
+	$APP_DIR/manage.py derived_knowledge_data
+fi
+echo " * remove django cache"
 rm -rf $DATA_DIR/.django_cache
 
 
@@ -58,6 +65,7 @@ rm -rf $DATA_DIR/.django_cache
 ###############################################################################
 
 if [ $GEOGRAPHY_ON_PRODUCTION ]; then
+	echo " * enable production"
 	sudo a2dissite maintenance-production.slepemapy.cz
 	sudo a2ensite production.slepemapy.cz
 	sudo service apache2 reload
