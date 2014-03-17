@@ -1,5 +1,5 @@
 #!/bin/bash
-SELF=`readlink -f $0`
+SELF=$BASH_SOURCE
 SELF_DIR=`dirname $SELF`
 REPO_DIR="$SELF_DIR/../.."
 
