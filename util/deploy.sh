@@ -68,5 +68,7 @@ if [ $GEOGRAPHY_ON_PRODUCTION ]; then
 	echo " * enable production"
 	sudo a2dissite maintenance-production.slepemapy.cz
 	sudo a2ensite production.slepemapy.cz
-	sudo service apache2 reload
 fi
+
+echo " * reload httpd"
+sudo service apache2 reload
