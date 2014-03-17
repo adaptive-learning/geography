@@ -244,6 +244,17 @@ if DEBUG:
         if logger != 'django.db':
             LOGGING['loggers'][logger]['handlers'].append('console')
 
+FACEBOOK_APP_ID = os.getenv('GEOGRAPHY_FACEBOOK_APP_ID', '')
+FACEBOOK_API_SECRET = os.getenv('GEOGRAPHY_FACEBOOK_API_SECRET', '')
+GOOGLE_OAUTH2_CLIENT_KEY = os.getenv('GEOGRAPHY_GOOGLE_OAUTH2_CLIENT_KEY', '')
+GOOGLE_OAUTH2_CLIENT_SECRET = os.getenv('GEOGRAPHY_GOOGLE_OAUTH2_CLIENT_SECRET', '')
+SOCIAL_AUTH_CREATE_USERS = True
+SOCIAL_AUTH_FORCE_RANDOM_USERNAME = False
+SOCIAL_AUTH_DEFAULT_USERNAME = 'socialauth_user'
+LOGIN_ERROR_URL = '/login/error/'
+SOCIAL_AUTH_ERROR_KEY = 'socialauth_error'
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'lazysignup.backends.LazySignupBackend',
