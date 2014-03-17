@@ -263,7 +263,6 @@ AUTHENTICATION_BACKENDS = (
 )
 
 ALLOWED_HOSTS = [
-    '.rhcloud.com',
     '.slepemapy.cz',
 ]
 
