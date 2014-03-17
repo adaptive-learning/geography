@@ -2,11 +2,6 @@
 import imp
 import os
 
-try:
-    from local_settings import *
-except ImportError:
-    pass
-
 ON_PRODUCTION = False
 ON_STAGING = False
 if 'GEOGRAPHY_ON_PRODUCTION' in os.environ:
