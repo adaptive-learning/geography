@@ -1,0 +1,6 @@
+#!/bin/bash
+SELF=`readlink -f $0`
+SELF_DIR=`dirname $SELF`
+REPO_DIR="$SELF_DIR/../.."
+
+. $REPO_DIR/util/export.sh

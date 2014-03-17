@@ -1,0 +1,8 @@
+#!/bin/bash
+SELF=`readlink -f $0`
+SELF_DIR=`dirname $SELF`
+REPO_DIR="$SELF_DIR/../.."
+
+if [ $GEOGRAPHY_ON_STAGING ]; then
+	. $REPO_DIR/util/deploy.sh
+fi

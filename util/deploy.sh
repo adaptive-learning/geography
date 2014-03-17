@@ -1,6 +1,7 @@
 #!/bin/bash
 SELF=`readlink -f $0`
 SELF_DIR=`dirname $SELF`
+GIT_DIR=$SELF_DIR/../.git
 
 
 ###############################################################################
@@ -19,7 +20,8 @@ fi
 # checkout the requested version
 ###############################################################################
 
-git fetch origin
+
+git --git-dir=$GIT_DIR fetch origin
 if [ $GEOGRAPHY_ON_PRODUCTION ]; then
 	DEPLOY_VERSION=release-`git tag -l | grep release | sort | tail -n 1 | awk -F "-" '{print $2}'`;
 elif [ $GEOGRAPHY_ON_STAGING ]; then
@@ -30,7 +32,7 @@ else
 fi
 
 echo " * reset to origin/$DEPLOY_VERSION"
-git reset origin/$DEPLOY_VERSION --hard
+git --git-dir=$GIT_DIR reset origin/$DEPLOY_VERSION --hard
 
 
 ###############################################################################
@@ -52,7 +54,7 @@ echo " * migrate"
 $APP_DIR/manage.py migrate geography --delete-ghost-migrations --traceback
 echo " * load custom SQLs"
 $APP_DIR/manage.py sqlcustom geography | $APP_DIR/manage.py dbshell
-if git diff --summary HEAD origin/master $APP_DIR/geography/models/ | egrep 'knowledge\.py|prior.py|current.py'; then
+if git --git-dir=$GIT_DIR diff --summary HEAD origin/master | egrep 'main\/geography\/models\/(knowledge\.py|prior.py|current.py)'; then
 	echo " * derive knowledge data"
 	$APP_DIR/manage.py derived_knowledge_data
 fi
