@@ -10,9 +10,9 @@ GIT_DIR=$SELF_DIR/../.git
 
 if [ $GEOGRAPHY_ON_PRODUCTION ]; then
 	echo " * disable production"
-	sudo a2ensite maintenance-production.slepemapy.cz
-	sudo a2dissite production.slepemapy.cz
-	sudo service apache2 reload
+	a2ensite maintenance-production.slepemapy.cz
+	a2dissite production.slepemapy.cz
+	service apache2 reload
 fi
 
 
@@ -68,9 +68,9 @@ rm -rf $DATA_DIR/.django_cache
 
 if [ $GEOGRAPHY_ON_PRODUCTION ]; then
 	echo " * enable production"
-	sudo a2dissite maintenance-production.slepemapy.cz
-	sudo a2ensite production.slepemapy.cz
+	a2dissite maintenance-production.slepemapy.cz
+	a2ensite production.slepemapy.cz
 fi
 
 echo " * reload httpd"
-sudo service apache2 reload
+service apache2 reload
