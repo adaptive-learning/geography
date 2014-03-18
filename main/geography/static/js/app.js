@@ -18,7 +18,7 @@
   .config(function($routeProvider) {
     $routeProvider.when('/', {
       templateUrl : './tpl/welcome_page.html'
-    }).when('/how_it_works', {
+    }).when('/how-it-works', {
       templateUrl : './tpl/how_it_works.html'
     }).when('/about', {
       templateUrl : './tpl/about.html'
