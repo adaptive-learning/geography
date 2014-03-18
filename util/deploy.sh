@@ -55,6 +55,9 @@ echo " * collect static"
 $APP_DIR/manage.py collectstatic --noinput
 echo "HASHES = $( python $APP_DIR/manage.py static_hashes )" > $APP_DIR/hashes.py
 
+echo " * update maps"
+$APP_DIR/manage.py update_maps 
+
 echo " * migrate"
 $APP_DIR/manage.py migrate geography --delete-ghost-migrations --traceback
 echo " * load custom SQLs"
