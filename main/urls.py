@@ -11,6 +11,7 @@ urlpatterns = patterns(
     url(r'^favicon\.ico$', RedirectView.as_view(url='static/img/favicon.png')),
     url(r'^tpl/welcome_page.html$', TemplateView.as_view(template_name="home/welcome_page.html")),
     url(r'^tpl/how_it_works.html$', TemplateView.as_view(template_name="home/how_it_works.html")),
+    url(r'^tpl/about.html$', TemplateView.as_view(template_name="home/about.html")),
     url(r'', include('social_auth.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^usersplaces/(?P<map_code>\w+)/(?P<user>\w*)', 'geography.views.users_places', name='usersplaces'),
