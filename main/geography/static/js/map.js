@@ -309,10 +309,15 @@
       return newHeight;
     }
     
-    function setCitiesSize(layer) {
+    var initCitySizes = {};
+    
+    function setCitiesSize(layer, currZoom) {
+      currZoom = currZoom || 0;
       var paths = layer.paths;
       angular.forEach(paths, function(path) {
-        var newRadius = path.svgPath.attr("r") * citySizeRatio(path.data.population);
+        var initSize = initCitySizes[path.data.code] || path.svgPath.attr("r");
+        initCitySizes[path.data.code] = initSize;
+        var newRadius = initSize * citySizeRatio(path.data.population) * (1 - (currZoom * 0.08));
         path.svgPath.attr({r: newRadius});
       });
     }
@@ -330,6 +335,9 @@
         if (panZoom) {
           panZoom.zoomIn(1);
           panZoom.zoomOut(1);
+          panZoom.onZoomChange(function(currZoom) {
+            setCitiesSize(l, currZoom);
+          });
         }
         if (practice) {
           $("html, body").animate({ scrollTop: ($('.navbar').height() - 8) + "px" });

@@ -22,7 +22,7 @@ def home(request):
         "static/lib/angular-1.2.9/angular-animate.min.js",
         "static/lib/angular-1.2.9/i18n/angular-locale_cs.js",
         "static/lib/js/raphael.js",
-        "static/lib/js/raphael.pan-zoom.min.js",
+        "static/lib/js/raphael.pan-zoom.js",
         "static/lib/js/kartograph.js",
         "static/lib/js/chroma.min.js",
         "static/lib/js/jquery.qtip.min.js",

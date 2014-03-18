@@ -42,6 +42,8 @@
 
         return { x: x, y: y };
     }
+    
+    var zoomChange = function(){};
 
     var panZoomFunctions = {
         enable: function () {
@@ -74,6 +76,9 @@
 
         getCurrentZoom: function () {
             return this.currZoom;
+        },
+        onZoomChange: function (callback) {
+            zoomChange = callback;
         }
     },
 
@@ -162,6 +167,7 @@
                     deltaY = (paper.height * settings.zoomStep) * (centerPoint.y / paper.height) * val;
     
                     repaint();
+                    zoomChange(me.currZoom);
                 }
             }
     
