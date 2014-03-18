@@ -29,14 +29,14 @@ LAST_HEAD=`$GIT_COMMAND rev-parse HEAD`
 if [ $GEOGRAPHY_ON_PRODUCTION ]; then
 	DEPLOY_VERSION=release-`git tag -l | grep release | sort | tail -n 1 | awk -F "-" '{print $2}'`;
 elif [ $GEOGRAPHY_ON_STAGING ]; then
-	DEPLOY_VERSION=master
+	DEPLOY_VERSION="origin/master"
 else
 	echo "You have to set your environment to production or staging before the deployment";
 	exit 1
 fi
 
-echo " * reset to origin/$DEPLOY_VERSION"
-$GIT_COMMAND reset origin/$DEPLOY_VERSION --hard
+echo " * reset to $DEPLOY_VERSION"
+$GIT_COMMAND reset $DEPLOY_VERSION --hard
 $GIT_COMMAND clean -df
 
 
