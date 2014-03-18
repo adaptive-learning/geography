@@ -79,7 +79,7 @@
       compile : function(elem) {
         var emailAddress = elem.html();
         emailAddress = emailAddress.replace('{zavinac}', '@');
-        emailAddress = '<a href="mailto :' + emailAddress + 
+        emailAddress = '<a href="mailto:' + emailAddress + 
   '">' + emailAddress + 
   '</a>';
         elem.html(emailAddress);

@@ -96,7 +96,7 @@
         if (!categoriesCache[part]) {
           categoriesCache[part] = angular.copy(categories);
         }
-        var allHidden = 0 == categoriesCache[part].filter(function(c){
+        var allHidden = 0 === categoriesCache[part].filter(function(c){
           return !c.hidden;
         }).length;
         if (allHidden) {

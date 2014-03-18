@@ -6,7 +6,6 @@
   /* global Kartograph */
   var STROKE_WIDTH = 1.5;
   var RIVER_WIDTH = STROKE_WIDTH * 2;
-  var WATER_COLOR = '#73c5ef';
   var ANIMATION_TIME_MS = 500;
 
   angular.module('blindMaps.map', [])
@@ -21,8 +20,8 @@
     'GOOD': '#0d0',
     'BAD': '#ff0000',
     'NEUTRAL': '#bbb',
-    'BRIGHT_GRAY' : '#ddd'
-
+    'BRIGHT_GRAY' : '#ddd',
+    'WATER_COLOR' : '#73c5ef'
   })
   
   .value('stateAlternatives', [
@@ -34,7 +33,7 @@
     "autonomous_comunity",
   ])
 
-  .factory('getLayerConfig', function($log, chroma, colors, citySizeRatio, stateAlternatives, $filter) {
+  .factory('colorScale', function(colors, chroma) {
     var scale = chroma.scale([
         colors.BAD,
         '#ff4500',
@@ -42,7 +41,10 @@
         '#ffff00',
         colors.GOOD
       ]);
+    return scale;
+  })
 
+  .factory('getLayerConfig', function($log, colors, colorScale, citySizeRatio, stateAlternatives) {
     return function(config) {
       var layerConfig = {};
       layerConfig.bg = {
@@ -56,8 +58,10 @@
       layerConfig.state = {
         'styles' : {
           'fill' : function(d) {
-            var state = config.state && config.state[d.code];
-            return state ? scale(state.probability).brighten((1 - state.certainty) * 80).hex() : '#fff';
+            var state = config.places && config.places[d.code];
+            return state ?
+              colorScale(state.probability).brighten((1 - state.certainty) * 80).hex() :
+              '#fff';
           },
           'stroke-width' : STROKE_WIDTH,
           'transform' : ''
@@ -69,49 +73,15 @@
           }
         }
       };
-
-      if (config.showTooltips) {
-        layerConfig.state._tooltips = function(d) {
-          var state = config.state && config.state[d.code];
-          var name = ( state ?
-            '<div class="label label-default">' +
-              '<i class="flag-' + d.code + '"></i> ' +
-              state.name +
-              '</div>' :
-            '<br>Zatím neprocvičováno<br><br>');
-          var description = (state ?
-            '<div>' +
-              ' Odhad znalosti: ' + 
-                '<span class="badge badge-default">' +
-                  '<i class="color-indicator" style="background-color :' +
-                  scale(state.probability).hex() + '"></i>' +
-                  Math.round(100 * state.probability) + '% ' +
-                '</span><br><br>' +
-              (d.population ? ' Počet obyvatel: ' +
-                '<span class="badge badge-default">' +
-                  $filter('number')(d.population) + 
-                '</span><br><br>' : '') +
-            '</div>' :
-            '');
-          return [
-            name + description,
-            config.state[d.code] ? config.state[d.code].name : ''
-          ];
-        };
-      }
       
-      angular.forEach(stateAlternatives, function(sa){
-        layerConfig[sa] = angular.copy(layerConfig.state, {});
+      angular.forEach(stateAlternatives.concat('island', 'mountains'), function(sa){
+        layerConfig[sa] = angular.copy(layerConfig.state);
       });
-      
-      layerConfig.island = angular.copy(layerConfig.state);
-      
-      layerConfig.mountains = angular.copy(layerConfig.state);
 
       layerConfig.river = angular.extend(angular.extend({}, layerConfig.state), {
         'styles' : {
           'stroke-width' : RIVER_WIDTH,
-          'stroke' : WATER_COLOR,
+          'stroke' : colors.WATER_COLOR,
           'transform' : ''
         },
         'mouseenter' : function(data, path) {
@@ -146,8 +116,10 @@
 
       layerConfig.lakes = angular.copy(layerConfig.city, {});
       layerConfig.lakes.styles.fill = function(d) {
-        var state = config.state && config.state[d.name];
-        return state ? scale(state.probability).brighten((1 - state.certainty) * 80).hex() : WATER_COLOR;
+        var state = config.places && config.places[d.name];
+        return state ?
+          colorScale(state.probability).brighten((1 - state.certainty) * 80).hex() :
+          colors.WATER_COLOR;
       };
       return layerConfig;
     };
@@ -214,7 +186,7 @@
   })
   
   .factory('mapFunctions', function($timeout, $, stateAlternatives){
-    var bboxCache = {}
+    var bboxCache = {};
     var that = {
       getZoomRatio : function(placePath) {
         if (!bboxCache[placePath.data.code]) {
@@ -266,6 +238,38 @@
       }
     };
     return that;
+  })
+  
+  .factory('getTooltipGetter', function($filter, colorScale){
+    return function(config) { 
+      return function(d) {
+        var state = config.places && config.places[d.code];
+        var name = ( state ?
+          '<div class="label label-default">' +
+            '<i class="flag-' + d.code + '"></i> ' +
+            state.name +
+            '</div>' :
+          '<br>Zatím neprocvičováno<br><br>');
+        var description = (state ?
+          '<div>' +
+            ' Odhad znalosti: ' + 
+              '<span class="badge badge-default">' +
+                '<i class="color-indicator" style="background-color :' +
+                colorScale(state.probability).hex() + '"></i>' +
+                Math.round(100 * state.probability) + '% ' +
+              '</span><br><br>' +
+            (d.population ? ' Počet obyvatel: ' +
+              '<span class="badge badge-default">' +
+                $filter('number')(d.population) + 
+              '</span><br><br>' : '') +
+          '</div>' :
+          '');
+        return [
+          name + description,
+          config.places[d.code] ? config.places[d.code].name : ''
+        ];
+      };
+    };
   })
   
   .service('citySizeRatio', function(){
@@ -360,7 +364,7 @@
     };
   })
 
-  .factory('mapControler', function($, $K, mapFunctions, initLayers, $filter) {
+  .factory('mapControler', function($, $K, mapFunctions, initLayers, $filter, getTooltipGetter) {
     
     $.fn.qtip.defaults.style.classes = 'qtip-dark';
 
@@ -371,7 +375,7 @@
       
       config.showTooltips = showTooltips;
       config.isPractise = !showTooltips;
-      config.state = [];
+      config.places = [];
   
       var myMap = {
         map :  $K.map(holder),
@@ -427,12 +431,12 @@
           });
           
           var places = $filter('StatesFromPlaces')(placesByTypes);
-          config.state = places;
+          config.places = places;
           angular.forEach(layers.getAll(), function(layer) {
-            var config = layers.getConfig(layer);
-            layer.style('fill', config.styles.fill);
-            if (config._tooltips) {
-              layer.tooltips(config._tooltips);
+            var layerConfig = layers.getConfig(layer);
+            layer.style('fill', layerConfig.styles.fill);
+            if (config.showTooltips) {
+              layer.tooltips(getTooltipGetter(config));
             }
 
           });
