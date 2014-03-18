@@ -70,12 +70,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-notify');
-  grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-rename');
 
   // Default task(s).
-  grunt.registerTask('js', ['newer:jshint','newer:uglify']);
-  grunt.registerTask('default', ['js', 'sass', 'rename']);
+  grunt.registerTask('js', ['jshint','uglify']);
+  grunt.registerTask('styles', ['sass','rename']);
+  grunt.registerTask('default', ['js', 'styles']);
   grunt.registerTask('travis', ['jshint']);
 
 };
