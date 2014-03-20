@@ -22,9 +22,9 @@ fi
 # checkout the requested version
 ###############################################################################
 
-
 $GIT_COMMAND fetch origin
 LAST_HEAD=`$GIT_COMMAND rev-parse HEAD`
+echo " * original HEAD: $LAST_HEAD"
 
 if [ $GEOGRAPHY_ON_PRODUCTION ]; then
 	DEPLOY_VERSION=release-`git tag -l | grep release | sort | tail -n 1 | awk -F "-" '{print $2}'`;
@@ -38,6 +38,8 @@ fi
 echo " * reset to $DEPLOY_VERSION"
 $GIT_COMMAND reset $DEPLOY_VERSION --hard
 $GIT_COMMAND clean -df
+NEW_HEAD=`$GIT_COMMAND rev-parse HEAD`
+echo " * new HEAD: $NEW_HEAD"
 
 
 ###############################################################################
