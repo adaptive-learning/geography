@@ -2,6 +2,7 @@
 from geography.models import Place, PlaceRelation
 from xml.dom import minidom
 from os import listdir
+import settings
 
 
 class MapUpdater():
@@ -19,7 +20,7 @@ class MapUpdater():
         )
         for c in continents:
             self.find_place_or_create_new(c[0], c[1], Place.CONTINENT)
-        for f in sorted(listdir('geography/static/map/')):
+        for f in sorted(listdir(settings.PROJECT_DIR + '/geography/static/map/')):
             if f.endswith('.svg'):
                 print 'updating map: ' + f
                 self.update_map(f[:-4], None)
@@ -29,7 +30,7 @@ class MapUpdater():
         relation = self.find_place_relation_or_create_new(new_place)
         relation.save()
 
-        file_name = 'geography/static/map/{0}.svg'.format(map_code)
+        file_name = settings.PROJECT_DIR + '/geography/static/map/{0}.svg'.format(map_code)
         map_dom = minidom.parse(file_name)
         groups = map_dom.getElementsByTagName('g')
         for g in groups:

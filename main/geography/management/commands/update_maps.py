@@ -2,6 +2,7 @@ from django.core.management.base import BaseCommand
 from geography.management import MapUpdater
 from django.db import connection
 import csv
+import settings
 
 
 class Command(BaseCommand):
@@ -31,7 +32,7 @@ class Command(BaseCommand):
 
     def get_translations(self):
         translations = []
-        with open('translations.csv', 'rb') as csvfile:
+        with open(settings.PROJECT_DIR + '/translations.csv', 'rb') as csvfile:
             translations_reader = csv.reader(csvfile, delimiter='\t')
             for row in translations_reader:
                 if len(row) == 2:
