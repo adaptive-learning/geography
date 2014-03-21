@@ -43,14 +43,14 @@ def home(request):
         "static/css/map.css"
     )
     request.META["CSRF_COOKIE_USED"] = True
-    if not settings.DEBUG:
+    if settings.ON_PRODUCTION:
         title = ''
-    elif settings.ON_PRODUCTION:
+    elif settings.ON_STAGING:
         title = 'Stage - '
     else:
         title = 'Loc - '
     c = {
-        'title': title,
+        'title': title + 'Slepé Mapy - inteligentní aplikace na procvičování zeměpisu',
         'isProduction': settings.ON_PRODUCTION,
         'css_files': StaticFiles.add_hash(CSS_FILES),
         'js_files': StaticFiles.add_hash(JS_FILES),

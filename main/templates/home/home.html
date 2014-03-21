@@ -2,7 +2,7 @@
 <html data-ng-app="blindMaps" data-ng-controller="AppCtrl" lang="cs">
   <head>
     <meta charset="utf-8">
-    <title>{{ title }}Slepé Mapy - inteligentní aplikace na procvičování zeměpisu</title>
+    <title ng-bind="title" ng-init="initTitle('{{ title }}')">{{ title }}</title>
     {% if isProduction  %}
         <script type='text/javascript'>
         window.Muscula = { settings:{
@@ -67,7 +67,7 @@
                 </li>
                 <li class="dropdown">
                   <a id="drop-states" href=""  class="dropdown-toggle" data-toggle="dropdown">Státy <b class="caret"></b></a>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="drop-continents">
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="drop-states">
                     {% for state in states %}
                     <li><a href="#/view/{{ state.code }}/">{{ state.name }}</a></li>
                     {% endfor %}

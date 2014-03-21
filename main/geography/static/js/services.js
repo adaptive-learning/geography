@@ -89,6 +89,9 @@
         var url = 'usersplaces/' + part + '/' + user;
         return cache[url] || undefined;
       },
+      setName : function(code, name) {
+        names[code] = names[code] || name;
+      },
       getName : function(code) {
         return names[code];
       },
@@ -224,6 +227,24 @@
           handler(args);
         });
       }
+    };
+  })
+
+  .factory('pageTitle', function(places) {
+    
+    var titles = {
+      './tpl/welcome_page.html' : '',
+      './tpl/how_it_works.html' : 'Jak to funguje? - ',
+      './tpl/about.html' : 'O prjektu - ',
+    };
+    return function (route) {
+      var title;
+      if (route.controller == "AppView" || route.controller == "AppPractice") {
+        title = places.getName(route.params.part) + ' - ';
+      } else {
+        title = titles[route.templateUrl];
+      }
+      return title;
     };
   });
 }());

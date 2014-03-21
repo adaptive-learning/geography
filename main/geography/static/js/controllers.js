@@ -3,9 +3,17 @@
   /* Controllers */
   angular.module('blindMaps.controllers', [])
 
-  .controller('AppCtrl', function($scope, $rootScope, user) {
+  .controller('AppCtrl', function($scope, $rootScope, user, pageTitle) {
     $rootScope.topScope = $rootScope;
-
+    
+    $rootScope.initTitle = function (title) {
+      $rootScope.initialTitle = title;
+    };
+    
+    $rootScope.$on("$routeChangeStart", function(event, next) {
+      $rootScope.title = pageTitle(next) + $rootScope.initialTitle;
+    });
+    
     var updateUser = function(data) {
       $rootScope.user = data;
     };

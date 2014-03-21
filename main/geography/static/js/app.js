@@ -39,7 +39,7 @@
     });
   })
 
-  .run(function($cookies, $http, $rootScope, $, $analytics) {
+  .run(function($cookies, $http, $rootScope, $, $analytics, places) {
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
     $analytics.settings.pageTracking.autoTrackFirstPage = false;
@@ -50,5 +50,11 @@
         $("#nav-main").collapse('hide');
       }
     });
+
+    $('.dropdown-menu a[href^="#/view/"]').each( function(i, link){
+      var code = $(link).attr('href').replace('#/view/', '').replace('/', '');
+      var name = $(link).text();
+      places.setName(code, name);
+    });    
   });
 }());
