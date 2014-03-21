@@ -316,6 +316,9 @@
     var initCitySizes = {};
     
     function setCitiesSize(layer, currZoom) {
+      if (!layer) {
+        return;
+      }
       currZoom = currZoom || 0;
       var paths = layer.paths;
       angular.forEach(paths, function(path) {
@@ -340,16 +343,13 @@
           panZoom.zoomIn(1);
           panZoom.zoomOut(1);
           panZoom.onZoomChange(function(currZoom) {
-            setCitiesSize(l, currZoom);
+            setCitiesSize(map.getLayer("city"), currZoom);
           });
         }
         if (practice) {
           $("html, body").animate({ scrollTop: ($('.navbar').height() - 8) + "px" });
         }
-        var l = map.getLayer("city");
-        if(l) {
-          setCitiesSize(l);
-        }
+        setCitiesSize(map.getLayer("city"));
       };
     };
   })
