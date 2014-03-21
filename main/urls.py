@@ -4,6 +4,8 @@ from django.views.generic import TemplateView, RedirectView
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+from sitemap import sitemaps
+
 
 urlpatterns = patterns(
     '',
@@ -22,4 +24,5 @@ urlpatterns = patterns(
     url(r'^user/list/', 'geography.views.user_list_view', name='user_list_view'),
     url(r'^user/logout/', 'geography.views.logout_view', name='logout_view'),
     url(r'^user/', 'geography.views.user_view', name='user_view'),
+    url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
 )
