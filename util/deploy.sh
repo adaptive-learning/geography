@@ -68,7 +68,7 @@ echo " * migrate"
 $APP_DIR/manage.py migrate geography --delete-ghost-migrations --traceback
 echo " * load custom SQLs"
 $APP_DIR/manage.py sqlcustom geography | $APP_DIR/manage.py dbshell
-if $GIT_COMMAND diff --name-only $LAST_HEAD origin/master | egrep 'main\/geography\/models\/(knowledge\.py|prior.py|current.py)'; then
+if $GIT_COMMAND diff --name-only $LAST_HEAD $DEPLOY_VERSION | egrep 'main\/geography\/models\/(knowledge\.py|prior.py|current.py)'; then
 	echo " * derive knowledge data"
 	$APP_DIR/manage.py derived_knowledge_data
 fi
