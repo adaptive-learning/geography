@@ -37,13 +37,17 @@ $GIT_COMMAND fetch origin
 LAST_HEAD=`$GIT_COMMAND rev-parse HEAD`
 echo " * original HEAD: $LAST_HEAD"
 
-if [ $GEOGRAPHY_ON_PRODUCTION ]; then
-	DEPLOY_VERSION=release-`git tag -l | grep release | sort | tail -n 1 | awk -F "-" '{print $2}'`;
-elif [ $GEOGRAPHY_ON_STAGING ]; then
-	DEPLOY_VERSION="origin/master"
+if [ $GEOGRAPHY_DEPLOY_VERSION ]; then
+	DEPLOY_VERSION=$GEOGRAPHY_DEPLOY_VERSION
 else
-	echo "You have to set your environment to production or staging before the deployment";
-	exit 1
+	if [ $GEOGRAPHY_ON_PRODUCTION ]; then
+		DEPLOY_VERSION=release-`git tag -l | grep release | sort | tail -n 1 | awk -F "-" '{print $2}'`;
+	elif [ $GEOGRAPHY_ON_STAGING ]; then
+		DEPLOY_VERSION="origin/master"
+	else
+		echo "You have to set your environment to production or staging before the deployment";
+		exit 1
+	fi
 fi
 
 echo " * reset to $DEPLOY_VERSION"
