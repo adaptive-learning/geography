@@ -7,6 +7,12 @@ else
 	WORKSPACE_DIR=$SELF_DIR/..
 fi
 WORK_TREE=$WORKSPACE_DIR
+APP_DIR="$WORKSPACE_DIR/main"
+if [ "$GEOGRAPHY_DATA_DIR" ]; then
+	DATA_DIR="$GEOGRAPHY_DATA_DIR"
+else
+	DATA_DIR="$APP_DIR"
+fi
 GIT_DIR=$WORK_TREE/.git
 GIT_COMMAND="git --git-dir=$GIT_DIR --work-tree=$WORK_TREE"
 
@@ -50,13 +56,6 @@ echo " * new HEAD: $NEW_HEAD"
 ###############################################################################
 # reset the application
 ###############################################################################
-
-APP_DIR="$WORKSPACE_DIR/main"
-if [ "$GEOGRAPHY_DATA_DIR" ]; then
-	DATA_DIR="$GEOGRAPHY_DATA_DIR"
-else
-	DATA_DIR="$APP_DIR"
-fi
 
 echo " * collect static"
 $APP_DIR/manage.py collectstatic --noinput
