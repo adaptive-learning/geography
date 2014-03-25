@@ -1,7 +1,12 @@
 #!/bin/bash
-SELF=$BASH_SOURCE
+SELF=$0
 SELF_DIR=`dirname $SELF`
-WORK_TREE=$SELF_DIR/..
+if [ $GEOGRAPHY_WORKSPACE_DIR ]; then
+	WORKSPACE_DIR=$GEOGRAPHY_WORKSPACE_DIR;
+else
+	WORKSPACE_DIR=$SELF_DIR/..
+fi
+WORK_TREE=$WORKSPACE_DIR
 GIT_DIR=$WORK_TREE/.git
 GIT_COMMAND="git --git-dir=$GIT_DIR --work-tree=$WORK_TREE"
 
@@ -46,7 +51,7 @@ echo " * new HEAD: $NEW_HEAD"
 # reset the application
 ###############################################################################
 
-APP_DIR="$SELF_DIR/../main"
+APP_DIR="$WORKSPACE_DIR/main"
 if [ "$GEOGRAPHY_DATA_DIR" ]; then
 	DATA_DIR="$GEOGRAPHY_DATA_DIR"
 else
@@ -58,7 +63,7 @@ $APP_DIR/manage.py collectstatic --noinput
 echo "HASHES = $( python $APP_DIR/manage.py static_hashes )" > $APP_DIR/hashes.py
 
 echo " * update maps"
-$APP_DIR/manage.py update_maps 
+$APP_DIR/manage.py update_maps
 
 echo " * migrate"
 $APP_DIR/manage.py migrate geography --delete-ghost-migrations --traceback

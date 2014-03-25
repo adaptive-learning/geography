@@ -1,8 +1,12 @@
 #!/bin/bash
-SELF=$BASH_SOURCE
+SELF=$0
 SELF_DIR=`dirname $SELF`
-REPO_DIR="$SELF_DIR/../.."
+if [ $GEOGRAPHY_WORKSPACE_DIR ]; then
+	WORKSPACE_DIR=$GEOGRAPHY_WORKSPACE_DIR;
+else
+	WORKSPACE_DIR=$SELF_DIR/../..
+fi
 
 if [ $GEOGRAPHY_ON_STAGING ]; then
-	. $REPO_DIR/util/deploy.sh
+	. $WORKSPACE_DIR/util/deploy.sh
 fi
