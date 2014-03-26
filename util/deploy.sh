@@ -83,6 +83,18 @@ fi
 
 
 ###############################################################################
+# ownership and permissions
+###############################################################################
+
+chgrp www-data -R $WORKSPACE_DIR
+chgrp www-data -R $WORKSPACE_DIR/.git
+chown www-data -R $WORKSPACE_DIR
+chown www-data -R $WORKSPACE_DIR/.git
+chmod g=rwx -R $WORKSPACE_DIR
+chmod g=rwx -R $WORKSPACE_DIR/.git
+
+
+###############################################################################
 # enable site
 ###############################################################################
 
