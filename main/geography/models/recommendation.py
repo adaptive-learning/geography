@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 import place
+import utils
 from django.db import connection
 from datetime import datetime
 from math import exp, sqrt
-
 WEIGHT_PROBABILITY = 10
 WEIGHT_NUMBER_OF_ANSWERS = 5
 WEIGHT_TIME_AGO = 120
@@ -57,7 +57,7 @@ def by_additive_function(user, map_place, expected_probability, n, place_types):
             int(user.id)
         ]
     )
-    dict_places = fetchall(cursor)
+    dict_places = utils.fetchall(cursor)
     to_sort = []
     for p in dict_places:
         p['predicted_probability'] = 1.0 / (1 + exp(-p['local_skill']))
@@ -94,13 +94,4 @@ def dicts_to_places(dict_places):
     return [
         (place.Place(id=d['id'], code=d['code'], name=d['name'], type=d['type']), d)
         for d in dict_places
-    ]
-
-
-def fetchall(cursor):
-    "Returns all rows from a cursor as a dict"
-    desc = cursor.description
-    return [
-        dict(zip([col[0] for col in desc], row))
-        for row in cursor.fetchall()
     ]
