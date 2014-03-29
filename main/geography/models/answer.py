@@ -14,7 +14,10 @@ class AnswerManager(models.Manager):
         answers = self.filter(
             user=user,
         ).order_by("-inserted")[:n]
-        return sum([a.place_asked_id == a.place_answered_id for a in answers]) / float(n)
+        if n:
+            return sum([a.place_asked_id == a.place_answered_id for a in answers]) / float(n)
+        else:
+            return 1.0
 
 
 class Answer(models.Model):
