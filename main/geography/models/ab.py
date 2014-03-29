@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
 import random
 import utils
+import settings
+import datetime
+import logging
 from django.db import models
 from django.contrib.auth.models import User
 from django.db import connection
+
+LOGGER = logging.getLogger(__name__)
 
 
 class GroupManager(models.Manager):
@@ -180,3 +185,32 @@ class UserValues(models.Model):
         db_table = 'geography_ab_uservalues'
         app_label = 'geography'
 
+
+class ABEnvironment:
+
+    def __init__(self, request):
+        self._request = request
+        self._used = {}
+
+    def is_member_of(self, ab_value, reason):
+        is_member = ab_value in self.request.session['ab_values']
+        if is_member:
+            affecting = self._used.get(reason, [])
+            affecting.append(ab_value)
+            self._used[reason] = affecting
+        return is_member
+
+    def get_affecting_values(self, reason):
+        return self._used.get(reason, [])
+
+    @staticmethod
+    def init_session(user, session):
+        if not settings.DEBUG and ('ab_values_modified' in session.keys() or
+                (session['ab_values_modified'] - datetime.datetime.now()).total_seconds() <= 15 * 60):
+            return session
+        user_values = UserValues.objects.load_user_values(user)
+        session['ab_values'] = user_values
+        LOGGER.debug(
+            'init values AB values for user %s: %s',
+            user, session['ab_values'])
+        return session

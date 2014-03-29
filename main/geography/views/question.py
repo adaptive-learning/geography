@@ -2,7 +2,7 @@
 from django.contrib.auth.models import User
 from django.http import Http404, HttpResponseBadRequest
 from django.utils import simplejson
-from geography.models import Place, PlaceRelation, UserPlace, AveragePlace
+from geography.models import Place, PlaceRelation, UserPlace, AveragePlace, ABEnvironment
 from geography.utils import JsonResponse, QuestionService
 from lazysignup.decorators import allow_lazy_user
 from logging import getLogger
@@ -20,6 +20,7 @@ def question(request, map_code, place_type_slug):
             type=PlaceRelation.IS_ON_MAP)
     except PlaceRelation.DoesNotExist:
         raise Http404
+    ABEnvironment.init_session(request.user, request.session)
     qs = QuestionService(user=request.user, map_place=map)
     question_index = 0
     if request.raw_post_data:
