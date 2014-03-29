@@ -5,7 +5,10 @@ def fetchone(cursor):
     "Returns o row from a cursor as a dict, or None"
     desc = cursor.description
     row = cursor.fetchone()
-    return dict(zip([col[0] for col in desc], row))
+    if row:
+        return dict(zip([col[0] for col in desc], row))
+    else:
+        return None
 
 
 def fetchall(cursor):
