@@ -114,18 +114,18 @@
         }
       });
 
-      layerConfig.lakes = angular.copy(layerConfig.city, {});
-      layerConfig.lakes.styles.fill = function(d) {
-        var state = config.places && config.places[d.name];
-        return state ?
-          colorScale(state.probability).brighten((1 - state.certainty) * 80).hex() :
+      layerConfig.lake = angular.copy(layerConfig.city, {});
+      layerConfig.lake.styles.fill = function(d) {
+        var place = config.places && config.places[d.name];
+        return place ?
+          colorScale(place.probability).brighten((1 - place.certainty) * 80).hex() :
           colors.WATER_COLOR;
       };
       return layerConfig;
     };
-  })
+  }])
   
-  .factory('initLayers', function(getLayerConfig, stateAlternatives) {
+  .factory('initLayers', ['getLayerConfig', 'stateAlternatives', function(getLayerConfig, stateAlternatives) {
 
     function _hideLayer(layer){
       var paths = layer ? layer.getPaths({}) : [];
