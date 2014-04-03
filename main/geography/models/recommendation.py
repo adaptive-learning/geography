@@ -134,8 +134,8 @@ def dicts_to_places(dict_places):
         for d in dict_places
     ]
 
-
+DEFAULT_STRATEGY_NAME = 'recommendation_by_additive_function'
 STRATEGIES = {
-    'recommendation_by_additive_function': by_additive_function,
+    DEFAULT_STRATEGY_NAME: by_additive_function,
     'racommendation_by_random': by_random
 }

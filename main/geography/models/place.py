@@ -24,7 +24,7 @@ class PlaceManager(models.Manager):
     def get_places_to_ask(self, user, map_place, expected_probability, n, place_types, ab_env):
         strategy_name = ab_env.get_membership(
             recommendation.STRATEGIES.keys(),
-            'recommendation_by_additive_function',
+            recommendation.DEFAULT_STRATEGY_NAME,
             Place.AB_REASON_RECOMMENDATION)
         strategy = recommendation.STRATEGIES[strategy_name]
         return strategy(user, map_place, expected_probability, n, place_types)
