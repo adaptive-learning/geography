@@ -40,7 +40,10 @@
     $scope.typeCategories = places.getCategories($scope.part);
     
 
-    places.get($scope.part, user, updatePlaces);
+    places.get($scope.part, user, updatePlaces).
+      error(function(){
+        $scope.error = "V aplikaci bohužel nastala chyba.";
+      });
 
     $scope.placeClick = function(place) {
       $scope.map.highlightState(place.code);
@@ -173,6 +176,8 @@
     $scope.mapCallback = function() {
       question.first($scope.part, $routeParams.place_type, function(q) {
         setQuestion(q);
+      }).error(function(){
+        $scope.error = "V aplikaci bohužel nastala chyba.";
       });
       $scope.map.onClick(function(code) {
         if ($filter('isFindOnMapType')($scope.question) && 

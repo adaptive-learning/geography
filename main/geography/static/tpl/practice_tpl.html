@@ -3,7 +3,9 @@
   <div class="progress-bar" style="width: {{progress}}%;"></div>
 </div>
 <div id="container">
-  <div ng-show="!question && !showSummary" class="loading-indicator">
+  <div ng-hide="question || showSummary || error" class="loading-indicator">
+  </div>
+  <div ng-show="error" ng-bind="error" class="alert alert-danger">
   </div>
   <div ng-show="question != undefined && !showSummary" class="practice">
     <div class="question">

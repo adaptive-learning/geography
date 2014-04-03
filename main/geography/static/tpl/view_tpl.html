@@ -1,6 +1,8 @@
 <blind-map code="{{part}}" show-tooltips="true" map="map" ></blind-map>
 <div id="container">
-  <div ng-hide="placesTypes" class="loading-indicator">
+  <div ng-hide="placesTypes || error" class="loading-indicator">
+  </div>
+  <div ng-show="error" ng-bind="error" class="alert alert-danger">
   </div>
   <ul ng-show="placesTypes.length && (filteredTypes = (placesTypes|isTypeCategory:typeCat)).length" 
       class="thumbnails fade-show-hide"

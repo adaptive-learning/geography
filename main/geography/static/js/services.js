@@ -68,13 +68,14 @@
     var that = {
       get : function(part, user, fn) {
         var url = 'usersplaces/' + part + '/' + user;
-        $http.get(url, {cache: user == 'average'}).success(function(data) {
+        var promise = $http.get(url, {cache: user == 'average'}).success(function(data) {
           that.getPlaces(part, function(availablePlacesTypes) {
             var placesTypes = filterPlaceTypes(data.placesTypes, availablePlacesTypes);
             cache[url] = placesTypes;
             fn(placesTypes);
           });
         });
+        return promise;
       },
       getPlaces : function(part, fn) {
         var url = 'places/' + part;
@@ -147,11 +148,12 @@
       first : function(part, placeType, fn) {
         url = 'question/' + part + '/' + (placeType ? placeType : '');
         summary = [];
-        $http.get(url).success(function(data) {
+        var promise = $http.get(url).success(function(data) {
           qIndex = 0;
           questions = data;
           returnQuestion(fn);
         });
+        return promise;
       },
       next : function(part, placeType, fn) {
         returnQuestion(fn);
