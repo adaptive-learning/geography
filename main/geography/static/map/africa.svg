@@ -65,4 +65,68 @@
     <path d="M705.139718,761.597920L700.183514,760.270035L701.086724,756.715437L698.537857,755.963608L678.895182,758.759790L674.950281,760.740060L670.599034,771.316026L673.717729,778.622337L670.710168,798.236931L668.510853,814.866384L672.364675,817.814045L682.357074,824.261593L686.429045,821.248852L687.130406,839.113967L676.021423,838.976983L670.315651,829.859028L665.150395,822.799313L654.069363,820.484325L651.017456,811.803149L642.002268,817.033253L630.410526,814.722554L625.715301,807.200597L616.508436,805.672408L609.680645,806.072220L608.949042,800.922607L603.936350,800.505672L605.372918,805.649292L603.553189,813.684067L605.941187,821.454325L603.636101,827.659604L604.741094,833.378632L574.498100,833.169733L572.510212,885.887563L581.862780,899.443202L590.959539,909.792924L602.904335,906.027402L612.235314,906.981202L617.801757,910.715890L617.861443,912.090913L620.411761,913.328942L636.471523,915.143164L641.085429,917.051550L645.970439,916.667134L654.374415,905.944351L667.458864,892.317782L672.684059,891.014616L674.659988,885.270227L683.146031,878.669618L694.196158,876.401497L693.254960,864.609880L737.746964,850.953796L730.268836,846.662697L735.192478,831.271663L739.948122,825.504704L737.567128,811.777465L740.864098,798.347372L743.462791,793.857830L740.106814,779.795248L733.396392,772.404184L725.230345,767.429988L716.021496,764.641522L710.264189,761.866969L709.537788,761.357173L709.537790,761.357179L710.676011,764.108999L708.223377,765.047335L705.139718,761.597920Z " data-code="zm" data-name="Zambia" data-population="11862740.0"/>
     <path d="M702.473855,988.116575L718.491082,969.317432L722.854922,957.372729L725.097789,955.865476L727.193621,946.114675L725.118188,941.208049L726.326495,928.828498L729.677876,917.346924L730.601906,896.377107L723.325217,891.053146L716.490252,889.849300L713.542868,885.749711L706.979044,882.252901L694.895859,882.582546L694.196158,876.401497L683.146031,878.669618L674.659988,885.270227L672.684059,891.014616L667.458864,892.317782L654.374415,905.944351L645.970439,916.667134L641.085429,917.051550L636.471523,915.143164L620.411761,913.328942L625.480233,926.574365L628.269184,929.529644L632.431806,939.115908L647.985416,957.310248L654.063689,959.091373L653.857622,964.933640L657.635150,975.436967L668.610348,977.978964L677.407743,985.463113L683.226286,985.643717L690.022367,988.449548L694.942901,986.461149L702.473855,988.116575Z " data-code="zw" data-name="Zimbabwe" data-population="12619600.0"/>
   </g>
+  <g class="" id="city">
+    <circle cx="698.629946343" cy="1057.98865941" data-code="Lobamba" data-name="Lobamba" data-population="9782" data-state-code="sz" r="16"/>
+    <circle cx="118.77919953" cy="186.727645906" data-code="Bir_Lehlou" data-name="Bir Lehlou" data-population="500" data-state-code="eh" r="16"/>
+    <circle cx="884.80251976" cy="813.383805886" data-code="Moroni" data-name="Moroni" data-population="128698" data-state-code="km" r="16"/>
+    <circle cx="695.671893926" cy="651.809988435" data-code="Kigali" data-name="Kigali" data-population="860000" data-state-code="rw" r="16"/>
+    <circle cx="697.847996675" cy="1055.50038902" data-code="Mbabane" data-name="Mbabane" data-population="90138" data-state-code="sz" r="16"/>
+    <circle cx="717.438403725" cy="539.455556835" data-code="Juba" data-name="Juba" data-population="111975" data-state-code="ss" r="16"/>
+    <circle cx="778.025101635" cy="721.918056735" data-code="Dodoma" data-name="Dodoma" data-population="218269" data-state-code="tz" r="16"/>
+    <circle cx="68.8809233375" cy="169.631395406" data-code="Laayoune" data-name="Laayoune" data-population="188084" data-state-code="ma" r="16"/>
+    <circle cx="883.528886691" cy="427.376745484" data-code="Djibouti" data-name="Djibouti" data-population="923000" data-state-code="dj" r="16"/>
+    <circle cx="15.0081909249" cy="396.580383242" data-code="Banjul" data-name="Banjul" data-population="43094" data-state-code="gm" r="16"/>
+    <circle cx="294.085127994" cy="512.063937646" data-code="Porto-Novo" data-name="Porto-Novo" data-population="300000" data-state-code="bj" r="16"/>
+    <circle cx="685.258896228" cy="675.409447855" data-code="Bujumbura" data-name="Bujumbura" data-population="331700" data-state-code="bi" r="16"/>
+    <circle cx="273.705259078" cy="517.853128046" data-code="Lome" data-name="Lome" data-population="1452000" data-state-code="tg" r="16"/>
+    <circle cx="395.255159594" cy="9.23846021258" data-code="Tunis" data-name="Tunis" data-population="2412500" data-state-code="tn" r="16"/>
+    <circle cx="665.396760026" cy="874.859132142" data-code="Lusaka" data-name="Lusaka" data-population="1328000" data-state-code="zm" r="16"/>
+    <circle cx="703.732683884" cy="914.642843256" data-code="Harare" data-name="Harare" data-population="1572000" data-state-code="zw" r="16"/>
+    <circle cx="732.699265303" cy="614.197706887" data-code="Kampala" data-name="Kampala" data-population="1420000" data-state-code="ug" r="16"/>
+    <circle cx="286.571481403" cy="395.507208877" data-code="Niamey" data-name="Niamey" data-population="915000" data-state-code="ne" r="16"/>
+    <circle cx="62.8272423651" cy="479.116919182" data-code="Freetown" data-name="Freetown" data-population="827000" data-state-code="sl" r="16"/>
+    <circle cx="625.39779685" cy="1101.95468169" data-code="Bloemfontein" data-name="Bloemfontein" data-population="463064" data-state-code="za" r="16"/>
+    <circle cx="657.185148207" cy="1045.35451382" data-code="Pretoria" data-name="Pretoria" data-population="1338000" data-state-code="za" r="16"/>
+    <circle cx="161.18918371" cy="55.8979475946" data-code="Rabat" data-name="Rabat" data-population="1705000" data-state-code="ma" r="16"/>
+    <circle cx="718.89538709" cy="1049.47398426" data-code="Maputo" data-name="Maputo" data-population="1446000" data-state-code="mz" r="16"/>
+    <circle cx="919.602126298" cy="585.204259108" data-code="Mogadishu" data-name="Mogadishu" data-population="1100000" data-state-code="so" r="16"/>
+    <circle cx="500.333915503" cy="993.392312311" data-code="Windhoek" data-name="Windhoek" data-population="268132" data-state-code="na" r="16"/>
+    <circle cx="365.668623362" cy="468.955750464" data-code="Abuja" data-name="Abuja" data-population="1576000" data-state-code="ng" r="16"/>
+    <circle cx="642.824773521" cy="1105.20776725" data-code="Maseru" data-name="Maseru" data-population="361324" data-state-code="ls" r="16"/>
+    <circle cx="940.130635853" cy="932.847523904" data-code="Antananarivo" data-name="Antananarivo" data-population="1697000" data-state-code="mg" r="16"/>
+    <circle cx="474.643638712" cy="418.761360577" data-code="Ndjamena" data-name="Ndjamena" data-population="989000" data-state-code="td" r="16"/>
+    <circle cx="384.309120973" cy="557.347850614" data-code="Malabo" data-name="Malabo" data-population="155963" data-state-code="gq" r="16"/>
+    <circle cx="819.704744679" cy="365.441248802" data-code="Asmara" data-name="Asmara" data-population="620802" data-state-code="er" r="16"/>
+    <circle cx="745.999123163" cy="851.143250264" data-code="Lilongwe" data-name="Lilongwe" data-population="646750" data-state-code="mw" r="16"/>
+    <circle cx="394.289985223" cy="613.09126871" data-code="Libreville" data-name="Libreville" data-population="578156" data-state-code="ga" r="16"/>
+    <circle cx="25.4972609245" cy="319.826580448" data-code="Nouakchott" data-name="Nouakchott" data-population="742144" data-state-code="mr" r="16"/>
+    <circle cx="139.600880774" cy="409.866097951" data-code="Bamako" data-name="Bamako" data-population="1494000" data-state-code="ml" r="16"/>
+    <circle cx="479.300722539" cy="690.007976056" data-code="Brazzaville" data-name="Brazzaville" data-population="1355000" data-state-code="cg" r="16"/>
+    <circle cx="56.4806834006" cy="461.530430542" data-code="Conakry" data-name="Conakry" data-population="1494000" data-state-code="gn" r="16"/>
+    <circle cx="178.849832105" cy="506.51262866" data-code="Yamoussoukro" data-name="Yamoussoukro" data-population="206499" data-state-code="ci" r="16"/>
+    <circle cx="527.174490116" cy="547.131822034" data-code="Bangui" data-name="Bangui" data-population="831925" data-state-code="cf" r="16"/>
+    <circle cx="424.241716454" cy="555.382423398" data-code="Yaounde" data-name="Yaounde" data-population="1611000" data-state-code="cm" r="16"/>
+    <circle cx="292.647220955" cy="513.41182173" data-code="Cotonou" data-name="Cotonou" data-population="762000" data-state-code="bj" r="16"/>
+    <circle cx="625.140556753" cy="1027.7985362" data-code="Gaborone" data-name="Gaborone" data-population="208411" data-state-code="bw" r="16"/>
+    <circle cx="233.684012334" cy="414.499947716" data-code="Ouagadougou" data-name="Ouagadougou" data-population="1149000" data-state-code="bf" r="16"/>
+    <circle cx="898.033832173" cy="461.090506963" data-code="Hargeysa" data-name="Hargeysa" data-population="477876" data-state-code="xs" r="16"/>
+    <circle cx="354.415541928" cy="613.952553055" data-code="Sao_Tome" data-name="Sao Tome" data-population="88219" data-state-code="st" r="16"/>
+    <circle cx="726.832574747" cy="361.188292305" data-code="Khartoum" data-name="Khartoum" data-population="4754000" data-state-code="sd" r="16"/>
+    <circle cx="829.184429971" cy="732.103174579" data-code="Dar_es_Salaam" data-name="Dar es Salaam" data-population="2930000" data-state-code="tz" r="16"/>
+    <circle cx="98.1497397862" cy="514.859380467" data-code="Monrovia" data-name="Monrovia" data-population="1041000" data-state-code="lr" r="16"/>
+    <circle cx="252.679313514" cy="527.493866707" data-code="Accra" data-name="Accra" data-population="2121000" data-state-code="gh" r="16"/>
+    <circle cx="439.20819063" cy="74.6998783295" data-code="Tripoli" data-name="Tripoli" data-population="2189000" data-state-code="ly" r="16"/>
+    <circle cx="196.811623405" cy="531.30504133" data-code="Abidjan" data-name="Abidjan" data-population="3802000" data-state-code="ci" r="16"/>
+    <circle cx="448.816584923" cy="765.872339954" data-code="Luanda" data-name="Luanda" data-population="5172900" data-state-code="ao" r="16"/>
+    <circle cx="297.62275832" cy="9.8762879781" data-code="Algiers" data-name="Algiers" data-population="3354000" data-state-code="dz" r="16"/>
+    <circle cx="2.58723967946" cy="375.640139931" data-code="Dakar" data-name="Dakar" data-population="2604000" data-state-code="sm" r="16"/>
+    <circle cx="653.909669828" cy="1053.03635991" data-code="Johannesburg" data-name="Johannesburg" data-population="3435000" data-state-code="za" r="16"/>
+    <circle cx="150.186679353" cy="62.9381100565" data-code="Casablanca" data-name="Casablanca" data-population="3181000" data-state-code="ma" r="16"/>
+    <circle cx="479.736444585" cy="691.17662359" data-code="Kinshasa" data-name="Kinshasa" data-population="7843000" data-state-code="cd" r="16"/>
+    <circle cx="820.04623016" cy="469.784497867" data-code="Addis_Ababa" data-name="Addis Ababa" data-population="3100000" data-state-code="et" r="16"/>
+    <circle cx="511.280117864" cy="1181.26949404" data-code="Cape_Town" data-name="Cape Town" data-population="3215000" data-state-code="za" r="16"/>
+    <circle cx="305.373864226" cy="512.695221137" data-code="Lagos" data-name="Lagos" data-population="9466000" data-state-code="ng" r="16"/>
+    <circle cx="794.597759538" cy="640.705747206" data-code="Nairobi" data-name="Nairobi" data-population="3010000" data-state-code="ke" r="16"/>
+    <circle cx="694.823891485" cy="121.59515542" data-code="Cairo" data-name="Cairo" data-population="11893000" data-state-code="eg" r="16"/>
+  </g>
 </svg>
