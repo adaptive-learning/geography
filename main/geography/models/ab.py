@@ -199,6 +199,15 @@ class ABEnvironment:
             self._used[reason] = affecting
         return is_member
 
+    def get_membership(self, ab_values, default_value, reason):
+        for v in self._request.session['ab_values']:
+            if v.value in ab_values:
+                affecting = self._used.get(reason, [])
+                affecting.append(v)
+                self._used[reason] = affecting
+                return v.value
+        return default_value
+
     def get_affecting_values(self, reason):
         return self._used.get(reason, [])
 
