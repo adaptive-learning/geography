@@ -8,6 +8,7 @@ WEIGHT_PROBABILITY = 10
 WEIGHT_NUMBER_OF_ANSWERS = 5
 WEIGHT_TIME_AGO = 120
 
+
 def by_random(user, map_place, expected_probability, n, place_types):
     if expected_probability < 0 or expected_probability > 1:
         raise Exception('target probability has to be in range [0,1] and was ' + str(expected_probability))

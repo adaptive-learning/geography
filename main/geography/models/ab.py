@@ -174,7 +174,6 @@ class UserValuesManager(models.Manager):
         return user_values.values.get_query_set()
 
 
-
 class UserValues(models.Model):
 
     user = models.ForeignKey(User)
@@ -205,8 +204,7 @@ class ABEnvironment:
 
     @staticmethod
     def init_session(user, session):
-        if not settings.DEBUG and ('ab_values_modified' in session.keys() or
-                (session['ab_values_modified'] - datetime.datetime.now()).total_seconds() <= 15 * 60):
+        if not settings.DEBUG and ('ab_values_modified' in session.keys() or (session['ab_values_modified'] - datetime.datetime.now()).total_seconds() <= 15 * 60):
             return session
         user_values = UserValues.objects.load_user_values(user)
         session['ab_values'] = user_values

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 from geography.models import Group
+
 
 class Command(BaseCommand):
 
@@ -14,5 +15,3 @@ class Command(BaseCommand):
             value = value.strip()
             values.append((probability, value))
         Group.objects.init_group(group_name, default_value, values)
-
-
