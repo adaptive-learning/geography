@@ -8,6 +8,43 @@ WEIGHT_PROBABILITY = 10
 WEIGHT_NUMBER_OF_ANSWERS = 5
 WEIGHT_TIME_AGO = 120
 
+def by_random(user, map_place, expected_probability, n, place_types):
+    if expected_probability < 0 or expected_probability > 1:
+        raise Exception('target probability has to be in range [0,1] and was ' + str(expected_probability))
+    cursor = connection.cursor()
+    cursor.execute(
+        '''
+        SELECT
+            geography_place.*
+        FROM
+            geography_place
+        WHERE
+            geography_place.id IN (
+                SELECT
+                    geography_placerelation_related_places.place_id
+                FROM
+                    geography_placerelation
+                    INNER JOIN geography_placerelation_related_places
+                        ON placerelation_id = geography_placerelation.id
+                WHERE
+                    geography_placerelation.place_id = %s
+                    AND
+                    geography_placerelation.type = %s
+            )
+            AND geography_place.type IN ''' + str(tuple(place_types)).replace(',)', ')') + '''
+        GROUP BY
+            geography_currentskill_prepared.place_id
+        ORDER BY RAND() ASC
+        LIMIT %s;
+        ''',
+        [
+            int(map_place.place.id),
+            int(place.PlaceRelation.IS_ON_MAP),
+            int(n)
+        ]
+    )
+    return dicts_to_places(utils.fetchall(cursor))
+
 
 def by_additive_function(user, map_place, expected_probability, n, place_types):
     if expected_probability < 0 or expected_probability > 1:
@@ -95,3 +132,9 @@ def dicts_to_places(dict_places):
         (place.Place(id=d['id'], code=d['code'], name=d['name'], type=d['type']), d)
         for d in dict_places
     ]
+
+
+STRATEGIES = {
+    'recommendation_by_additive_function': by_additive_function,
+    'racommendation_by_random': by_random
+}
