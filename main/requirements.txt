@@ -3,6 +3,7 @@ MySQL-python==1.2.5
 South==0.8.4
 argparse==1.2.1
 distribute==0.6.34
+django-ipware==0.0.8
 django-lazysignup==0.12.2
 django-social-auth==0.7.28
 httplib2==0.8

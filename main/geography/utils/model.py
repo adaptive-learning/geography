@@ -95,7 +95,7 @@ class QuestionService:
         k = round_fun(1.0 / g) if g != 0 else 1
         return 1 if k > 6 else k
 
-    def answer(self, a):
+    def answer(self, a, ip_address):
         place_asked = Place.objects.get(code=a["asked_code"])
         place_map = Place.objects.get(code=a["map_code"])
         try:
@@ -116,6 +116,7 @@ class QuestionService:
             type=int(str(a["type"])[0]),
             response_time=a["response_time"],
             number_of_options=int(str(a["type"][1:])),
+            ip_address=ip_address,
         )
         LOGGER.debug("answered: %s", answer)
         answer.save(True)

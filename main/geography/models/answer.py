@@ -53,6 +53,7 @@ class Answer(models.Model):
         default=None
     )
     ab_values = models.ManyToManyField(ab.Value)
+    ip_address = models.CharField(max_length=39, null=True, blank=True, default=None)
     objects = AnswerManager()
 
     def save(self, update_model=False):

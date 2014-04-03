@@ -6,6 +6,7 @@ from geography.models import Place, PlaceRelation, UserPlace, AveragePlace, ABEn
 from geography.utils import JsonResponse, QuestionService
 from lazysignup.decorators import allow_lazy_user
 from logging import getLogger
+from ipware.ip import get_ip
 import geography.models.user
 import math
 
@@ -26,7 +27,7 @@ def question(request, map_code, place_type_slug):
     if request.raw_post_data:
         LOGGER.debug("processing raw answer %s", request.raw_post_data)
         answer = simplejson.loads(request.raw_post_data)
-        qs.answer(answer)
+        qs.answer(answer, get_ip(request))
         question_index = answer['index'] + 1
     if should_get_questions(request, question_index):
         place_types = ([Place.PLACE_TYPE_SLUGS_LOWER_REVERSE[place_type_slug]]
