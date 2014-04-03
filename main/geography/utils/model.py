@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-from geography.models import Answer
-from geography.models import Place
+from geography.models import Answer, Place, Value
 from random import choice
 from math import floor
 import logging
@@ -12,9 +11,10 @@ LOGGER = logging.getLogger(__name__)
 class Question():
     options = []
 
-    def __init__(self, place, number_of_options, map_place):
+    def __init__(self, place, number_of_options, map_place, ab_values):
         self.place = place
         self.map_place = map_place
+        self.ab_values = ab_values
         if number_of_options > 1:
             self.qtype = QuestionType(
                 choice([Answer.FIND_ON_MAP, Answer.PICK_NAME]),
@@ -29,7 +29,8 @@ class Question():
         ret = self.qtype.to_serializable()
         ret['asked_code'] = self.place.code
         ret['map_code'] = self.map_place.place.code
-        ret["place"] = self.place.name
+        ret['place'] = self.place.name
+        ret['ab_values'] = [v.value for v in self.ab_values]
         if (self.options != []):
             ret["options"] = self.options
         return ret
@@ -44,11 +45,12 @@ class Question():
 
 class QuestionService:
 
-    def __init__(self, user, map_place, target_probability=0.75, history_length=10):
+    def __init__(self, user, map_place, ab_env, target_probability=0.75, history_length=10):
         self.user = user
         self.map_place = map_place
         self.target_probability = target_probability
         self.history_length = history_length
+        self.ab_env = ab_env
 
     def get_questions(self, n, place_types):
         target_probability = self.adjust_target_probability()
@@ -57,7 +59,8 @@ class QuestionService:
             self.map_place,
             target_probability,
             n,
-            place_types)
+            place_types,
+            self.ab_env)
         LOGGER.debug(
             "user %s, question candidates with predicted probability (target %s) for map %s are:\n %s",
             str(self.user),
@@ -76,7 +79,8 @@ class QuestionService:
             Question(
                 place,
                 options,
-                self.map_place).to_serializable()
+                self.map_place,
+                self.ab_env.get_affecting_values(Place.AB_REASON_RECOMMENDATION)).to_serializable()
             for (place, options) in candidates]
 
     def adjust_target_probability(self):
@@ -119,6 +123,9 @@ class QuestionService:
             answer.options = Place.objects.filter(
                 code__in=[o["code"] for o in a["options"]],
             )
+        if 'ab_values' in a:
+            answer.ab_values = Value.objects.filter(
+                value__in=[v for v in a['ab_values']])
         answer.save()
 
 

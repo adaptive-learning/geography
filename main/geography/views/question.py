@@ -21,7 +21,7 @@ def question(request, map_code, place_type_slug):
     except PlaceRelation.DoesNotExist:
         raise Http404
     ABEnvironment.init_session(request.user, request.session)
-    qs = QuestionService(user=request.user, map_place=map)
+    qs = QuestionService(user=request.user, map_place=map, ab_env=ABEnvironment(request))
     question_index = 0
     if request.raw_post_data:
         LOGGER.debug("processing raw answer %s", request.raw_post_data)

@@ -21,9 +21,13 @@ class WeghtedPlace:
 
 class PlaceManager(models.Manager):
 
-    def get_places_to_ask(self, user, map_place, expected_probability, n, place_types):
-        return recommendation.by_additive_function(
-            user, map_place, expected_probability, n, place_types)
+    def get_places_to_ask(self, user, map_place, expected_probability, n, place_types, ab_env):
+        strategy_name = ab_env.get_membership(
+            recommendation.STRATEGIES.keys(),
+            'recommendation_by_additive_function',
+            Place.AB_REASON_RECOMMENDATION)
+        strategy = recommendation.STRATEGIES[strategy_name]
+        return strategy(user, map_place, expected_probability, n, place_types)
 
     def get_states_with_map(self):
         return [pr.place for pr in PlaceRelation.objects.filter(
@@ -36,6 +40,9 @@ class PlaceManager(models.Manager):
 
 
 class Place(models.Model):
+
+    AB_REASON_RECOMMENDATION = 'reason_recommendation'
+
     UNKNOWN = 0
     STATE = 1
     CITY = 2
