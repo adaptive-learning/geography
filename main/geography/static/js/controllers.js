@@ -3,11 +3,13 @@
   /* Controllers */
   angular.module('blindMaps.controllers', [])
 
-  .controller('AppCtrl', function($scope, $rootScope, user, pageTitle) {
+  .controller('AppCtrl', ['$scope', '$rootScope', 'user', 'pageTitle',
+      function($scope, $rootScope, user, pageTitle) {
     $rootScope.topScope = $rootScope;
     
     $rootScope.initTitle = function (title) {
       $rootScope.initialTitle = title;
+      $rootScope.title = title;
     };
     
     $rootScope.$on("$routeChangeStart", function(event, next) {
@@ -29,10 +31,10 @@
     $scope.vip = function() {
       return $scope.user && $scope.user.username == 'Verunka';
     };
-  })
+  }])
 
-  .controller('AppView', function($scope, $routeParams, $filter,
-        places, mapTitle) {
+  .controller('AppView', ['$scope', '$routeParams', '$filter', 'places', 'mapTitle',
+      function($scope, $routeParams, $filter, places, mapTitle) {
     $scope.part = $routeParams.part;
     var user = $routeParams.user || '';
     $scope.typeCategories = places.getCategories($scope.part);
@@ -72,9 +74,11 @@
       $scope.map.updatePlaces($scope.placesTypes);
       $scope.name = mapTitle($scope.part, user);
     }
-  })
+  }])
 
-  .controller('AppPractice', function($scope, $routeParams, $timeout, $filter,
+  .controller('AppPractice', ['$scope', '$routeParams', '$timeout', '$filter',
+      'question', 'user', 'events', 'colors', 'places', '$',
+      function($scope, $routeParams, $timeout, $filter,
       question, user, events, colors, places, $) {
     $scope.part = $routeParams.part;
     $scope.placeType = $routeParams.place_type;
@@ -180,5 +184,5 @@
         }
       });
     };
-  });
+  }]);
 }());

@@ -44,7 +44,8 @@
     return scale;
   })
 
-  .factory('getLayerConfig', function($log, colors, colorScale, citySizeRatio, stateAlternatives) {
+  .factory('getLayerConfig', ['$log', 'colors', 'colorScale', 'citySizeRatio', 'stateAlternatives',
+      function($log, colors, colorScale, citySizeRatio, stateAlternatives) {
     return function(config) {
       var layerConfig = {};
       layerConfig.bg = {
@@ -114,7 +115,7 @@
         }
       });
 
-      layerConfig.lake = angular.copy(layerConfig.city, {});
+      layerConfig.lake = angular.copy(layerConfig.state, {});
       layerConfig.lake.styles.fill = function(d) {
         var place = config.places && config.places[d.name];
         return place ?
@@ -183,9 +184,9 @@
       };
       return that;
     };
-  })
+  }])
   
-  .factory('mapFunctions', function($timeout, $, stateAlternatives){
+  .factory('mapFunctions', ['$timeout', '$', 'stateAlternatives', function($timeout, $, stateAlternatives){
     var bboxCache = {};
     var that = {
       getZoomRatio : function(placePath) {
@@ -238,9 +239,9 @@
       }
     };
     return that;
-  })
+  }])
   
-  .factory('getTooltipGetter', function($filter, colorScale){
+  .factory('getTooltipGetter', ['$filter', 'colorScale', function($filter, colorScale){
     return function(config) { 
       return function(d) {
         var state = config.places && config.places[d.code];
@@ -270,7 +271,7 @@
         ];
       };
     };
-  })
+  }])
   
   .service('citySizeRatio', function(){
     var min_pop_ratios = [
@@ -291,7 +292,7 @@
     };
   })
   
-  .service('getMapResizeFunction', function($, citySizeRatio){
+  .service('getMapResizeFunction', ['$', 'citySizeRatio', function($, citySizeRatio){
 
     function getNewHeight(mapAspectRatio, isPractise, holderInitHeight) {
       $('#ng-view').removeClass('horizontal');
@@ -352,9 +353,9 @@
         setCitiesSize(map.getLayer("city"));
       };
     };
-  })
+  }])
   
-  .service('singleWindowResizeFn', function($){
+  .service('singleWindowResizeFn', ['$', function($){
     var fn = function(){};
     $(window).resize(function() {
       fn();
@@ -362,10 +363,10 @@
     return function(newFn) {
       fn = newFn;
     };
-  })
+  }])
 
-  .factory('mapControler', function($, $K, mapFunctions, initLayers, $filter, getTooltipGetter) {
-    
+  .factory('mapControler', ['$', '$K', 'mapFunctions', 'initLayers', '$filter', 'getTooltipGetter',
+      function($, $K, mapFunctions, initLayers, $filter, getTooltipGetter) {
     $.fn.qtip.defaults.style.classes = 'qtip-dark';
 
     return function(mapCode, showTooltips, holder, callback) {
@@ -494,5 +495,5 @@
       });
       return myMap;
     };
-  });
+  }]);
 }());

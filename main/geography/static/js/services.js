@@ -4,7 +4,7 @@
   /* Services */
   angular.module('blindMaps.services', [])
 
-  .factory('places', function($http) {
+  .factory('places', ['$http', function($http) {
     var cache = {};
     var categoriesCache = {};
     var names = {
@@ -109,9 +109,9 @@
       }
     };
     return that;
-  })
+  }])
 
-  .factory('mapTitle', function(places) {
+  .factory('mapTitle', ['places', function(places) {
     return function(part, user) {
       var name = places.getName(part);
       if (!name) {
@@ -122,9 +122,9 @@
         return name + ' - ' + user;
       }
     };
-  })
+  }])
 
-  .service('question', function($http, $log) {
+  .service('question', ['$http', '$log', function($http, $log) {
     var qIndex = 0;
     var url;
     function returnQuestion(fn) {
@@ -185,9 +185,10 @@
         };
       }
     };
-  })
+  }])
 
-  .factory('user', function($http, $cookies, events) {
+  .factory('user', ['$http', '$cookies', 'events', 
+      function($http, $cookies, events) {
     var user;
     return {
       initUser : function(username, points) {
@@ -212,7 +213,7 @@
         events.emit('userUpdated', user);
       }
     };
-  })
+  }])
 
   .factory('events', function() {
     var handlers = {};
