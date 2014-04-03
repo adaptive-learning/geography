@@ -51,7 +51,7 @@ class QuestionService:
         self.history_length = history_length
 
     def get_questions(self, n, place_types):
-        target_probability = self.target_probability
+        target_probability = self.adjust_target_probability()
         candidates = Place.objects.get_places_to_ask(
             self.user,
             self.map_place,
@@ -79,7 +79,7 @@ class QuestionService:
                 self.map_place).to_serializable()
             for (place, options) in candidates]
 
-    def get_target_probability(self):
+    def adjust_target_probability(self):
         success_rate = Answer.objects.get_success_rate(self.user, self.history_length)
         norm = 1 - self.target_probability if success_rate > self.target_probability else self.target_probability
         correction = ((self.target_probability - success_rate) / norm) * (1 - norm)
