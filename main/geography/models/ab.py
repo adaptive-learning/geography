@@ -192,7 +192,7 @@ class ABEnvironment:
         self._used = {}
 
     def is_member_of(self, ab_value, reason):
-        is_member = ab_value in self.request.session['ab_values']
+        is_member = any([v.value == ab_value for v in self._request.session['ab_values']])
         if is_member:
             affecting = self._used.get(reason, [])
             affecting.append(ab_value)
