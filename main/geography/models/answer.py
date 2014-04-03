@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 import knowledge
 import logging
 import place
+import ab
+
 LOGGER = logging.getLogger(__name__)
 
 
@@ -50,6 +52,7 @@ class Answer(models.Model):
         blank=False,
         default=None
     )
+    ab_values = models.ManyToManyField(ab.Value)
     objects = AnswerManager()
 
     def save(self, update_model=False):
