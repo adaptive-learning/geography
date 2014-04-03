@@ -48,7 +48,6 @@ def should_get_questions(request, question_index):
 
 
 def average_users_places(request, map_code):
-
     response = {}
     return JsonResponse(response)
 
