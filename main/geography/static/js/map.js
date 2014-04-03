@@ -117,7 +117,7 @@
 
       layerConfig.lake = angular.copy(layerConfig.state, {});
       layerConfig.lake.styles.fill = function(d) {
-        var place = config.places && config.places[d.name];
+        var place = config.places && config.places[d.code];
         return place ?
           colorScale(place.probability).brighten((1 - place.certainty) * 80).hex() :
           colors.WATER_COLOR;
