@@ -101,4 +101,69 @@
     <path d="M394.677884,178.645297L395.578360,178.829865L395.401795,178.751557L393.298059,178.333642L394.677884,178.645297Z M394.677884,178.645297L389.698005,177.604467L393.298059,178.333642L387.438440,176.980225L386.184031,177.136312L385.152977,177.759357L384.414112,178.976740L384.268891,179.733919L384.897674,184.519157L384.794682,185.618602L381.983344,195.635995L379.388672,201.349023L379.027714,202.850196L379.003737,203.345586L379.131459,203.649655L379.426817,203.825755L391.931610,206.315008L408.630251,206.108328L445.394648,192.879750L461.737188,190.712555L476.283195,193.824397L478.224873,193.720593L481.070131,192.704770L488.675771,186.830456L488.913720,186.514019L489.057876,186.209626L489.148429,185.886270L489.368491,184.517540L489.484010,184.184045L489.662008,183.865163L490.420233,183.108588L491.269665,182.806774L492.180625,182.861105L497.592235,185.433434L498.489774,185.540143L500.198239,185.316141L503.629853,184.130962L503.884241,182.600686L504.927061,181.590947L506.540075,181.001772L518.623904,180.981958L520.074504,181.385793L521.495938,182.285768L524.126475,184.846295L525.473993,185.746160L526.282817,186.021352L527.227437,186.150121L530.783193,185.779659L532.334847,185.147950L533.652164,184.183798L534.671039,182.859405L535.331196,181.150906L535.572930,179.031104L535.336228,176.473177L535.081997,175.425566L534.747928,174.673304L534.335247,174.165179L533.845867,173.850533L533.280050,173.679897L514.177294,171.701255L502.008024,174.509178L486.431505,174.150627L477.812848,171.848678L470.869770,172.339917L462.177686,172.871349L456.984850,175.740202L456.471040,175.891204L455.312311,176.230346L407.073290,175.325122L400.241132,179.086093L397.962154,179.313117L395.578360,178.829865L395.657478,178.864935L394.677884,178.645297Z " data-code="TIAN_SHAN" data-name="TIAN SHAN"/>
     <path d="M458.993224,308.081430L455.933705,306.677320L409.281611,266.093303L407.913563,264.802365L404.156182,261.222238L403.326026,260.773559L400.421101,260.915944L395.636492,261.132550L394.757098,261.483160L394.120101,262.086294L393.125883,263.314662L388.774719,267.293193L388.133057,268.425773L387.889746,269.763019L388.031689,270.632481L388.154359,271.380315L388.990331,273.249975L390.548383,275.132235L399.998495,286.283560L414.650781,298.356580L435.151810,314.344530L438.187087,317.557725L438.889336,317.913803L445.439485,318.822501L447.061002,319.610099L448.859003,320.871467L449.895744,321.335802L456.419580,322.783041L461.806406,325.513900L475.518445,328.375888L481.753646,329.618733L485.633132,328.896424L488.947198,327.563535L489.225950,327.450854L490.161193,327.361317L490.977332,327.483641L493.409836,328.598688L494.927876,329.290823L496.628874,329.754878L497.085256,329.766905L513.836700,330.085767L531.422044,327.310243L535.594142,325.176602L540.026972,320.799217L543.302003,317.527829L543.155515,317.252020L542.949724,316.864336L542.811615,316.335108L542.808571,315.905459L542.898367,315.209646L542.833834,314.875138L542.591617,314.504543L539.432700,311.947306L538.945610,311.273157L538.673432,310.532504L538.689461,309.721844L539.064693,308.838098L539.433765,308.390111L539.931723,307.977331L545.223307,305.085865L545.401098,304.858215L545.443799,304.573059L545.379192,304.360241L545.330493,304.199786L545.260378,304.081566L545.039444,303.708887L544.633389,303.223693L544.178435,302.860658L543.690918,302.615126L543.189109,302.482954L542.689324,302.460669L542.208756,302.542548L541.763804,302.726866L541.372663,303.007360L539.400716,305.290031L538.383592,305.894280L535.366278,307.676673L531.458677,308.996376L529.223212,310.766245L528.429893,311.054463L527.185896,311.179974L525.856683,311.032467L519.938921,309.348842L484.372040,307.416272L481.622383,307.956933L478.993763,309.047546L458.993224,308.081430Z " data-code="HIMALAYAS" data-name="HIMALAYAS"/>
   </g>
+  <g class="" id="city">
+    <circle cx="898.564120951" cy="455.957224957" data-code="Melekeok" data-name="Melekeok" data-population="7026" data-state-code="pw" r="8"/>
+    <circle cx="188.551675548" cy="301.821080826" data-code="Doha" data-name="Doha" data-population="1450000" data-state-code="qa" r="8"/>
+    <circle cx="766.214750266" cy="400.188960633" data-code="Baguio_City" data-name="Baguio City" data-population="447824" data-state-code="ph" r="8"/>
+    <circle cx="609.043169705" cy="546.507137147" data-code="Putrajaya" data-name="Putrajaya" data-population="67964" data-state-code="my" r="8"/>
+    <circle cx="183.920102867" cy="290.831552322" data-code="Manama" data-name="Manama" data-population="563920" data-state-code="bh" r="8"/>
+    <circle cx="208.324489194" cy="315.574442038" data-code="Abu_Dhabi" data-name="Abu Dhabi" data-population="603492" data-state-code="ae" r="8"/>
+    <circle cx="273.468022329" cy="199.79517017" data-code="Ashgabat" data-name="Ashgabat" data-population="727700" data-state-code="tm" r="8"/>
+    <circle cx="830.771665412" cy="626.316362808" data-code="Dili" data-name="Dili" data-population="234331" data-state-code="tl" r="8"/>
+    <circle cx="347.157461715" cy="210.010149266" data-code="Dushanbe" data-name="Dushanbe" data-population="1086244" data-state-code="tj" r="8"/>
+    <circle cx="371.127796854" cy="259.120202435" data-code="Islamabad" data-name="Islamabad" data-population="780000" data-state-code="pk" r="8"/>
+    <circle cx="461.765093574" cy="321.63018353" data-code="Kathmandu" data-name="Kathmandu" data-population="895000" data-state-code="np" r="8"/>
+    <circle cx="239.74800031" cy="331.732501271" data-code="Muscat" data-name="Muscat" data-population="734697" data-state-code="om" r="8"/>
+    <circle cx="406.527274926" cy="510.660221341" data-code="Colombo" data-name="Colombo" data-population="217000" data-state-code="lk" r="8"/>
+    <circle cx="606.262261178" cy="130.362112212" data-code="Ulaanbaatar" data-name="Ulaanbaatar" data-population="885000" data-state-code="mn" r="8"/>
+    <circle cx="102.229598276" cy="197.571456293" data-code="Amman" data-name="Amman" data-population="1060000" data-state-code="jo" r="8"/>
+    <circle cx="394.853748277" cy="176.966893565" data-code="Bishkek" data-name="Bishkek" data-population="837000" data-state-code="kg" r="8"/>
+    <circle cx="108.261850562" cy="178.82191683" data-code="Beirut" data-name="Beirut" data-population="1846000" data-state-code="lb" r="8"/>
+    <circle cx="200.284967444" cy="136.227059727" data-code="Tbilisi" data-name="Tbilisi" data-population="1100000" data-state-code="ge" r="8"/>
+    <circle cx="390.3361429" cy="99.8498990187" data-code="Astana" data-name="Astana" data-population="345604" data-state-code="kz" r="8"/>
+    <circle cx="610.205157605" cy="407.644892595" data-code="Vientiane" data-name="Vientiane" data-population="754000" data-state-code="la" r="8"/>
+    <circle cx="729.460807688" cy="516.244353638" data-code="Bandar_Seri_Begawan" data-name="Bandar Seri Begawan" data-population="296500" data-state-code="bn" r="8"/>
+    <circle cx="191.835454737" cy="149.071168871" data-code="Yerevan" data-name="Yerevan" data-population="1102000" data-state-code="am" r="8"/>
+    <circle cx="225.752770577" cy="160.31465879" data-code="Baku" data-name="Baku" data-population="2122300" data-state-code="az" r="8"/>
+    <circle cx="634.759461354" cy="465.067088292" data-code="Phnom_Penh" data-name="Phnom Penh" data-population="1466000" data-state-code="kh" r="8"/>
+    <circle cx="497.046548018" cy="324.518890778" data-code="Thimphu" data-name="Thimphu" data-population="98676" data-state-code="bt" r="8"/>
+    <circle cx="553.011292588" cy="394.433800549" data-code="Naypyidaw" data-name="Naypyidaw" data-population="930000" data-state-code="mm" r="8"/>
+    <circle cx="347.045111822" cy="531.681266478" data-code="Male" data-name="Male" data-population="112927" data-state-code="mv" r="8"/>
+    <circle cx="96.8635221585" cy="196.789275175" data-code="Jerusalem" data-name="Jerusalem" data-population="1029300" data-state-code="il" r="8"/>
+    <circle cx="101.507095971" cy="160.168532572" data-code="Nicosia" data-name="Nicosia" data-population="224300" data-state-code="cy" r="8"/>
+    <circle cx="635.673102891" cy="376.703163241" data-code="Hanoi" data-name="Hanoi" data-population="4378000" data-state-code="vn" r="8"/>
+    <circle cx="123.379868214" cy="116.712227162" data-code="Ankara" data-name="Ankara" data-population="3716000" data-state-code="tr" r="8"/>
+    <circle cx="106.816129862" cy="377.502622986" data-code="Sanaa" data-name="Sanaa" data-population="2008000" data-state-code="ye" r="8"/>
+    <circle cx="111.463173083" cy="184.718017666" data-code="Damascus" data-name="Damascus" data-population="2466000" data-state-code="sy" r="8"/>
+    <circle cx="750.949258456" cy="182.140953222" data-code="Pyongyang" data-name="Pyongyang" data-population="3300000" data-state-code="kp" r="8"/>
+    <circle cx="608.939104065" cy="544.187886945" data-code="Kuala_Lumpur" data-name="Kuala Lumpur" data-population="1448000" data-state-code="my" r="8"/>
+    <circle cx="174.108092254" cy="255.584534467" data-code="Kuwait" data-name="Kuwait" data-population="2063000" data-state-code="kw" r="8"/>
+    <circle cx="95.4612058928" cy="192.587916744" data-code="Tel_Aviv-Yafo" data-name="Tel Aviv-Yafo" data-population="3112000" data-state-code="il" r="8"/>
+    <circle cx="503.429850035" cy="359.033507023" data-code="Dhaka" data-name="Dhaka" data-population="12797394" data-state-code="bd" r="8"/>
+    <circle cx="554.407694309" cy="421.897373132" data-code="Rangoon" data-name="Rangoon" data-population="4088000" data-state-code="mm" r="8"/>
+    <circle cx="217.212216914" cy="310.331863297" data-code="Dubai" data-name="Dubai" data-population="1379000" data-state-code="ae" r="8"/>
+    <circle cx="356.233213826" cy="185.70009949" data-code="Tashkent" data-name="Tashkent" data-population="2184000" data-state-code="uz" r="8"/>
+    <circle cx="594.197597333" cy="447.830364455" data-code="Bangkok" data-name="Bangkok" data-population="6704000" data-state-code="th" r="8"/>
+    <circle cx="764.073917435" cy="192.586873997" data-code="Seoul" data-name="Seoul" data-population="9796000" data-state-code="kr" r="8"/>
+    <circle cx="772.428181088" cy="416.545388496" data-code="Manila" data-name="Manila" data-population="11100000" data-state-code="ph" r="8"/>
+    <circle cx="483.583292378" cy="174.990934155" data-code="Urumqi" data-name="Urumqi" data-population="2151000" data-state-code="cn" r="8"/>
+    <circle cx="611.308952148" cy="289.389968018" data-code="Chengdu" data-name="Chengdu" data-population="4123000" data-state-code="cn" r="8"/>
+    <circle cx="830.405799779" cy="197.624776822" data-code="Osaka" data-name="Osaka" data-population="11294000" data-state-code="jp" r="8"/>
+    <circle cx="396.653478553" cy="309.429332564" data-code="New_Delhi" data-name="New Delhi" data-population="317797" data-state-code="in" r="8"/>
+    <circle cx="388.193900764" cy="453.810281544" data-code="Bangalore" data-name="Bangalore" data-population="6787000" data-state-code="in" r="8"/>
+    <circle cx="163.154397662" cy="210.001422462" data-code="Baghdad" data-name="Baghdad" data-population="5054000" data-state-code="iq" r="8"/>
+    <circle cx="218.914737481" cy="206.21465673" data-code="Tehran" data-name="Tehran" data-population="7873000" data-state-code="ir" r="8"/>
+    <circle cx="342.577795239" cy="247.3183102" data-code="Kabul" data-name="Kabul" data-population="3277000" data-state-code="af" r="8"/>
+    <circle cx="758.579586299" cy="318.232471061" data-code="Taipei" data-name="Taipei" data-population="6900273" data-state-code="tw" r="8"/>
+    <circle cx="109.782296778" cy="93.4293056487" data-code="Istanbul" data-name="Istanbul" data-population="10061000" data-state-code="tr" r="8"/>
+    <circle cx="150.826763973" cy="296.408046967" data-code="Riyadh" data-name="Riyadh" data-population="4465000" data-state-code="sa" r="8"/>
+    <circle cx="685.529085947" cy="190.600730684" data-code="Beijing" data-name="Beijing" data-population="11106000" data-state-code="cn" r="8"/>
+    <circle cx="658.476820528" cy="625.544266784" data-code="Jakarta" data-name="Jakarta" data-population="9125000" data-state-code="id" r="8"/>
+    <circle cx="743.313136489" cy="261.429423178" data-code="Shanghai" data-name="Shanghai" data-population="14987000" data-state-code="cn" r="8"/>
+    <circle cx="854.081581971" cy="177.194444745" data-code="Tokyo" data-name="Tokyo" data-population="35676000" data-state-code="jp" r="8"/>
+    <circle cx="351.36795859" cy="394.13145576" data-code="Mumbai" data-name="Mumbai" data-population="18978000" data-state-code="in" r="8"/>
+    <circle cx="485.72415256" cy="370.272312126" data-code="Kolkata" data-name="Kolkata" data-population="14787000" data-state-code="in" r="8"/>
+    <circle cx="629.460016447" cy="559.916343202" data-code="Singapore" data-name="Singapore" data-population="5183700" data-state-code="sg" r="8"/>
+    <circle cx="703.917969421" cy="355.419535086" data-code="Hong_Kong" data-name="Hong Kong" data-population="7206000" data-state-code="hk" r="8"/>
+  </g>
 </svg>
