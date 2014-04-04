@@ -75,7 +75,7 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('js', ['jshint','uglify']);
   grunt.registerTask('styles', ['sass','rename']);
-  grunt.registerTask('default', ['js', 'styles']);
+  grunt.registerTask('default', ['styles', 'js']);
   grunt.registerTask('travis', ['jshint']);
 
 };
