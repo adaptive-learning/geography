@@ -1,4 +1,5 @@
 (function() {
+  /* global hash  */
   'use strict';
 
   /* Services */
@@ -238,8 +239,9 @@
     var titles = {
       './tpl/welcome_page.html' : '',
       './tpl/how_it_works.html' : 'Jak to funguje? - ',
-      './tpl/about.html' : 'O prjektu - ',
+      './tpl/about.html' : 'O prjektu - '
     };
+    titles['./'+hash('static/tpl/overview_tpl.html')] = 'Přehled map - ';
     return function (route) {
       var title;
       if (route.controller == "AppView" || route.controller == "AppPractice") {

@@ -18,6 +18,7 @@ urlpatterns = patterns(
 
     url(r'^usersplaces/(?P<map_code>\w+)/(?P<user>\w*)', 'geography.views.users_places', name='usersplaces'),
     url(r'^places/(?P<map_code>\w+)', 'geography.views.places', name='places'),
+    url(r'^placesoverview/', 'geography.views.places_overview', name='places_overview'),
     url(r'^csv/(?P<model>\w*)', 'geography.views.csv_view', name='csv_view'),
     url(r'^question/(?P<map_code>\w+)/(?P<place_type_slug>\w*)', 'geography.views.question', name='question'),
 

@@ -5,8 +5,7 @@ from geography.utils import JsonResponse
 from django.views.decorators.cache import cache_page
 
 
-@cache_page(60 * 60)
-def places(request, map_code):
+def _places(request, map_code):
     try:
         map = PlaceRelation.objects.get(
             place__code=map_code,
@@ -24,6 +23,7 @@ def places(request, map_code):
 
     response = {
         'name': map.place.name,
+        'slug': map.place.code,
         'placesTypes': [
             {
                 'name': place_type[1],
@@ -35,4 +35,29 @@ def places(request, map_code):
     }
     response['placesTypes'] = [pt for pt in response['placesTypes']
                                if len(pt['places']) > 0]
-    return JsonResponse(response)
+    return response
+
+
+@cache_page(60 * 60)
+def places(request, map_code):
+    return JsonResponse(_places(request, map_code))
+
+
+@cache_page(60 * 60)
+def places_overview(request):
+    map_types = [{
+        'name': 'Svět',
+        'maps': Place.objects.filter(code='world'),
+    }, {
+        'name': 'Kontinenty',
+        'maps': Place.objects.get_continents(),
+    }, {
+        'name': 'Státy',
+        'maps': Place.objects.get_states_with_map(),
+    }]
+    for map_type in map_types:
+        map_type['maps'] = [_places(request, m.code) for m in map_type['maps']]
+        for map_ in map_type['maps']:
+            for place_type in map_['placesTypes']:
+                del place_type['places']
+    return JsonResponse(map_types)

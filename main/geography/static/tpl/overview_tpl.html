@@ -1,0 +1,22 @@
+<div class="overview">
+  <h1>Přehled map</h1>
+  <div class="map-categories" ng-repeat="c in mapCategories">
+      <h2 class="col-md-offset-1" ng-hide="c.name == 'Svět'"> {{c.name}}</h2>
+      <ul>
+        <li class="overview-row" ng-repeat="map in c.maps">
+          <h3 class="col-md-offset-1 col-sm-3"><a href="#/view/{{map.slug}}">{{map.name}}</a></h3>
+          <ul class="col-sm-9 col-md-7 inline">
+            <li class="inline" ng-repeat="layer in map.placesTypes">
+              <a href="#/practice/{{map.slug}}/{{layer.slug}}" 
+                 class="btn btn-primary atooltip"
+                 title="Procvičovat">
+                 {{layer.name}}</a>
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </li>
+      </ul>
+    <div class="clearfix"></div>
+  </div>
+  <div class="clearfix"></div>
+</div>

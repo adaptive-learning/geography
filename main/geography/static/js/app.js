@@ -34,6 +34,9 @@
     }).when('/practice/:part/:place_type?', {
       controller : 'AppPractice',
       templateUrl : './'+hash('static/tpl/practice_tpl.html')
+    }).when('/overview/', {
+      controller : 'AppOverview',
+      templateUrl : './'+hash('static/tpl/overview_tpl.html')
     }).otherwise({
       //redirectTo : '/'
     });

@@ -189,5 +189,11 @@
         }
       });
     };
+  }])
+
+  .controller('AppOverview', ['$scope', '$http', function($scope, $http) {
+    $http.get('/placesoverview/', {cache: true}).success(function(data){
+      $scope.mapCategories = data;
+    });
   }]);
 }());
