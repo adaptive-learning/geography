@@ -13,6 +13,29 @@ LOGGER = logging.getLogger(__name__)
 
 class GroupManager(models.Manager):
 
+    def users_per_value(self, group_name):
+        cursor = connection.cursor()
+        cursor.execute(
+            '''
+            SELECT
+                COUNT(geography_ab_uservalues.user_id) AS user_count,
+                geography_ab_value.value AS value
+            FROM
+                geography_ab_value
+                INNER JOIN geography_ab_group ON
+                    geography_ab_group.id = geography_ab_value.group_id
+                LEFT JOIN geography_ab_uservalues_values ON
+                    geography_ab_uservalues_values.value_id = geography_ab_value.id
+                LEFT JOIN geography_ab_uservalues ON
+                    geography_ab_uservalues_values.uservalues_id = geography_ab_uservalues.id
+            WHERE
+                geography_ab_group.name = %s
+            GROUP BY
+                geography_ab_value.id
+            ''', [str(group_name)])
+        rows = utils.fetchall(cursor)
+        return dict([(r['value'], r['user_count']) for r in rows])
+
     def init_group(self, name, default_value, values, active=True):
         total_prob = sum([probability for (probability, value) in values])
         if total_prob != 100:
@@ -217,6 +240,7 @@ class ABEnvironment:
             return session
         user_values = UserValues.objects.load_user_values(user)
         session['ab_values'] = user_values
+        session['ab_values_modified'] = datetime.datetime.now()
         LOGGER.debug(
             'init values AB values for user %s: %s',
             user, session['ab_values'])
