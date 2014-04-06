@@ -13,6 +13,31 @@ LOGGER = logging.getLogger(__name__)
 
 class GroupManager(models.Manager):
 
+    def answers_per_value(self, group_name):
+        cursor = connection.cursor()
+        cursor.execute(
+            '''
+            SELECT
+                COUNT(geography_answer.id) AS answer_count,
+                geography_ab_value.value AS value
+            FROM
+                geography_ab_value
+                INNER JOIN geography_ab_group ON
+                    geography_ab_group.id = geography_ab_value.group_id
+                LEFT JOIN geography_ab_uservalues_values ON
+                    geography_ab_uservalues_values.value_id = geography_ab_value.id
+                LEFT JOIN geography_ab_uservalues ON
+                    geography_ab_uservalues_values.uservalues_id = geography_ab_uservalues.id
+                LEFT JOIN geography_answer ON
+                    geography_answer.user_id = geography_ab_uservalues.user_id
+            WHERE
+                geography_ab_group.name = %s
+            GROUP BY
+                geography_ab_value.id
+            ''', [str(group_name)])
+        rows = utils.fetchall(cursor)
+        return dict([(r['value'], r['answer_count']) for r in rows])
+
     def users_per_value(self, group_name):
         cursor = connection.cursor()
         cursor.execute(
