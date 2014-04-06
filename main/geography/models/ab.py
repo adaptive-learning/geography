@@ -88,14 +88,15 @@ class GroupManager(models.Manager):
                 raise Exception('there is no default value')
             return group
         except Exception:
-            cursor = connection.cursor()
-            cursor.execute(
-                '''
-                DELETE FROM geography_ab_value
-                WHERE group_id = %s
-                ''',
-                [group.id])
-            group.delete()
+            if group.id:
+                cursor = connection.cursor()
+                cursor.execute(
+                    '''
+                    DELETE FROM geography_ab_value
+                    WHERE group_id = %s
+                    ''',
+                    [group.id])
+                group.delete()
             raise
 
 
