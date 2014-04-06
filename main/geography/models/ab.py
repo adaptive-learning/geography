@@ -135,7 +135,7 @@ class UserValuesManager(models.Manager):
         user_values = self.for_user(user)
         defaults = self._prepare_defaults()
         defaults_v = [d.value for d in defaults]
-        users = list(self._prepare_user_values(user_values))
+        users = self._prepare_user_values(user_values)
         return defaults + filter(lambda v: v.value not in defaults_v, users)
 
     def for_user(self, user):
@@ -191,6 +191,7 @@ class UserValuesManager(models.Manager):
             '''
             SELECT
                 geography_ab_value.id,
+                geography_ab_value.is_default,
                 geography_ab_value.probability,
                 geography_ab_value.group_id,
                 geography_ab_group.max_answers,
@@ -212,21 +213,28 @@ class UserValuesManager(models.Manager):
             GROUP BY geography_ab_value.id;
             ''', [user_values.user_id])
         ab_values = {}
+        ab_values_default = {}
         ab_value = utils.fetchone(cursor)
+        user_values_defaults = []
         while ab_value:
             group_values = ab_values.get(ab_value['group_id'], [])
             group_values.append(ab_value)
             ab_values[ab_value['group_id']] = group_values
             ab_value = utils.fetchone(cursor)
+            print ab_value
+            if ab_value and ab_value['is_default']:
+                ab_values_default[ab_value['group_id']] = ab_value
         updated = False
         for (group_id, group_values) in ab_values.iteritems():
             if (not group_values[0]['min_answers'] or num_answers >= group_values[0]['min_answers']) and (not group_values[0]['max_answers'] or num_answers <= group_values[0]['max_answers']):
                 chosen_value = self._choose_value(group_values)
                 user_values.values.add(Value.objects.get(id=chosen_value['id']))
                 updated = True
+            else:
+                user_values_defaults.append(Value.objects.get(id=user_values_defaults[group_id]['id']))
         if updated:
             user_values.save()
-        return user_values.values.get_query_set()
+        return list(user_values.values.get_query_set()) + user_values_defaults
 
 
 class UserValues(models.Model):
