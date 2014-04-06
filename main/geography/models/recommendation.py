@@ -16,9 +16,21 @@ def by_random(user, map_place, expected_probability, n, place_types):
     cursor.execute(
         '''
         SELECT
-            geography_place.*
+            geography_place.*,
+            geography_currentskill_prepared.value as local_skill,
+            COUNT(geography_answer.id) AS number_of_answers,
+            COALESCE(MIN(
+                UNIX_TIMESTAMP(\'''' + str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')) + '''\')
+                -
+                UNIX_TIMESTAMP(geography_answer.inserted)
+            ), 31536000) AS number_of_seconds_ago
         FROM
-            geography_place
+            geography_currentskill_prepared
+            LEFT JOIN geography_place
+                ON geography_place.id = geography_currentskill_prepared.place_id
+            LEFT JOIN geography_answer
+                ON geography_answer.user_id = geography_currentskill_prepared.user_id
+                AND geography_answer.place_asked_id = place_id
         WHERE
             geography_place.id IN (
                 SELECT
@@ -33,18 +45,23 @@ def by_random(user, map_place, expected_probability, n, place_types):
                     geography_placerelation.type = %s
             )
             AND geography_place.type IN ''' + str(tuple(place_types)).replace(',)', ')') + '''
+            AND geography_currentskill_prepared.user_id = %s
         GROUP BY
-            geography_currentskill_prepared.place_id
+            geography_place.id
         ORDER BY RAND() ASC
         LIMIT %s;
         ''',
         [
             int(map_place.place.id),
             int(place.PlaceRelation.IS_ON_MAP),
-            int(n)
+            int(n),
+            int(user.id)
         ]
     )
-    return dicts_to_places(utils.fetchall(cursor))
+    dict_places = utils.fetchall(cursor)
+    for p in dict_places:
+        p['predicted_probability'] = 1.0 / (1 + exp(-p['local_skill']))
+    return dicts_to_places(dict_places)
 
 
 def by_additive_function(user, map_place, expected_probability, n, place_types):
@@ -137,5 +154,5 @@ def dicts_to_places(dict_places):
 DEFAULT_STRATEGY_NAME = 'recommendation_by_additive_function'
 STRATEGIES = {
     DEFAULT_STRATEGY_NAME: by_additive_function,
-    'racommendation_by_random': by_random
+    'recommendation_by_random': by_random
 }
