@@ -55,6 +55,8 @@ class GroupManager(models.Manager):
                     probability=probability,
                     is_default=default_used)
                 value.save()
+            if not default_used:
+                raise Exception('there is no default value')
             return group
         except Exception:
             cursor = connection.cursor()
