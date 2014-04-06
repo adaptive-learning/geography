@@ -61,12 +61,16 @@ class GroupManager(models.Manager):
         rows = utils.fetchall(cursor)
         return dict([(r['value'], r['user_count']) for r in rows])
 
-    def init_group(self, name, default_value, values, active=True):
+    def init_group(self, name, default_value, values, active=True, max_answers=0, min_answers=0):
         total_prob = sum([probability for (probability, value) in values])
         if total_prob != 100:
             raise Exception('Total probability has to be equal to 100, it was ' + total_prob)
         try:
-            group = Group(name=name, active=active)
+            group = Group(
+                name=name,
+                active=active,
+                max_answers=max_answers,
+                min_answers=min_answers)
             group.save()
             default_used = False
             for probability, value in values:
