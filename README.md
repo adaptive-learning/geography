@@ -5,42 +5,68 @@
 
 ## Deployment
 
-The content of this repository is continuously built by [https://travis-ci.org](https://travis-ci.org/proso/geography)
-which deploys the current code to the [staging server](https://travis-ci.org/proso/geography).
+### Staging Server
 
-To release `master` branch to production execute the release script and follow the instructions.
+[staging.slepemapy.cz](http://staging.slepemapy.cz)
 
-	./release.sh
+You have to log on the server and:
 
+```
+sudo su
+. /bin/staging-environment
+cd $GEOGRAPHY_WORKSPACE_DIR
+./util/deploy.sh
+```
 
-## Repository Layout
+### Production Server
 
-* `wsgi/` - Externally exposed wsgi code goes
-* `wsgi/static/` - Public static content gets served here
-* `libs/` - Additional libraries
-* `data/` - For not-externally exposed wsgi code
-* `setup.py` - Standard setup.py, specify deps here
-* `../data` - For persistent data (also env var: OPENSHIFT_DATA_DIR)
-* `.openshift/action_hooks/pre_build` - Script that gets run every git push before the build
-* `.openshift/action_hooks/build` - Script that gets run every git push as part of the build process (on the CI system if available)
-* `.openshift/action_hooks/deploy` - Script that gets run every git push after build but before the app is restarted
-* `.openshift/action_hooks/post_deploy` - Script that gets run every git push after the app is restarted
+[www.slepemapy.cz](http://www.slepemapy.cz)
 
+Firstly you need to tag a new version:
 
-## Openshift Environment Variables
+```
+git tag <new version>
+git push origin <new version>
+```
 
-OpenShift provides several environment variables to reference for ease
-of use.  The following list are some common variables but far from exhaustive:
+Then you have to log on the server and:
 
-	os.environ['OPENSHIFT_APP_NAME']  - Application name
-	os.environ['OPENSHIFT_DATA_DIR']  - For persistent storage (between pushes)
-	os.environ['OPENSHIFT_TMP_DIR']   - Temp storage (unmodified files deleted after 10 days)
-	os.environ['OPENSHIFT_MYSQL_DB_HOST']      - DB host
-	os.environ['OPENSHIFT_MYSQL_DB_PORT']      - DB Port
-	os.environ['OPENSHIFT_MYSQL_DB_USERNAME']  - DB Username
-	os.environ['OPENSHIFT_MYSQL_DB_PASSWORD']  - DB Password
+```
+sudo su
+. /bin/production-environment
+cd $GEOGRAPHY_WORKSPACE_DIR
+./util/deploy.sh
+```
 
-To get a full list of environment variables, simply add a line in your
-.openshift/action_hooks/build script that says "export" and push.
+## Data
 
+You can download data from the following url:
 
+```
+<server>/csv/<model name>
+```
+
+where `<server>` is the address of the server and `<model name>` is one of the following:
+
+* `answer`
+* `answer_options`
+* `place`
+* `placerelation`
+* `placerelation_related_places`
+
+## Environment Variables
+
+```
+GEOGRAPHY_ON_PRODUCTION or GEOGRAPHY_ON_STAGING
+GEOGRAPHY_DATABASE_ENGINE
+GEOGRAPHY_DATABASE_NAME
+GEOGRAPHY_DATABASE_USER
+GEOGRAPHY_DATABASE_PASSWORD
+GEOGRAPHY_DATABASE_HOST
+GEOGRAPHY_DATABASE_PORT
+GEOGRAPHY_DATA_DIR
+GEOGRAPHY_SECRET_KEY
+GEOGRAPHY_FACEBOOK_APP_ID
+GEOGRAPHY_FACEBOOK_API_SECRET
+GEOGRAPHY_WORKSPACE_DIR
+```
