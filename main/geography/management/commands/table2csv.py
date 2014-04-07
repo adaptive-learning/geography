@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.core.management.base import BaseCommand, CommandError
 from django.db import connection
-import csv
+from geography.utils.db import dump_cursor
 
 
 class Command(BaseCommand):
@@ -35,20 +35,10 @@ class Command(BaseCommand):
         if table_name in allowed_tables:
             cursor = connection.cursor()
             cursor.execute('SELECT * FROM ' + table_name)
-            self.dump_cursor(
+            dump_cursor(
                 cursor,
                 dest_file,
                 **field_mapping)
         else:
             raise CommandError('table ' + table_name + ' is not supported')
 
-    def dump_cursor(self, cursor, dest_file, **field_mapping):
-        headers = [field_mapping.get(col[0], col[0]) for col in cursor.description]
-        with open(dest_file, 'w') as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow(headers)
-            row = cursor.fetchone()
-            while row:
-                row = [val.encode('utf-8') if isinstance(val, unicode) else val for val in row]
-                writer.writerow(row)
-                row = cursor.fetchone()
