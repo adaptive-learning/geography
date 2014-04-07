@@ -22,7 +22,7 @@ class Command(BaseCommand):
             'geography_place',
             'geography_placerelation',
             'geography_answer_options',
-            'geography_placerelation_related.places'
+            'geography_placerelation_related_places'
         ]
         field_mapping = {
             'answer_id': 'answer',
@@ -30,6 +30,7 @@ class Command(BaseCommand):
             'place_asked_id': 'place_asked',
             'place_answered_id': 'place_answered',
             'place_map_id': 'place_map',
+            'placerelation_id': 'placerelation',
             'user_id': 'user'}
         if table_name in allowed_tables:
             cursor = connection.cursor()

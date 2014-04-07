@@ -72,7 +72,8 @@ def csv_view(request, model):
         'place',
         'placerelation',
         'answer',
-        'answer_options']
+        'answer_options',
+        'placerelation_related_places']
     if model not in allowed_models:
         response = {"error": "the requested model '" + model + "' is not valid"}
         return JsonResponse(response)
