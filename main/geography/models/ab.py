@@ -64,7 +64,7 @@ class GroupManager(models.Manager):
     def init_group(self, name, default_value, values, active=True, max_answers=0, min_answers=0):
         total_prob = sum([probability for (probability, value) in values])
         if total_prob != 100:
-            raise Exception('Total probability has to be equal to 100, it was ' + total_prob)
+            raise Exception('Total probability has to be equal to 100, it was ' + str(total_prob))
         try:
             group = Group(
                 name=name,
