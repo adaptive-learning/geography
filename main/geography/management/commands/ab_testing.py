@@ -187,7 +187,6 @@ class Command(BaseCommand):
         ./manage.py ab_testing export-answers <group name> <dest file>
                 '''
 
-
     def help_init(self):
         return '''
     initilize a new A/B testing group with its values

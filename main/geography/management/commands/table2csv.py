@@ -41,4 +41,3 @@ class Command(BaseCommand):
                 **field_mapping)
         else:
             raise CommandError('table ' + table_name + ' is not supported')
-
