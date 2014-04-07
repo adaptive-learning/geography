@@ -103,7 +103,7 @@ class GroupManager(models.Manager):
 class Group(models.Model):
 
     active = models.BooleanField(default=True)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     max_answers = models.IntegerField(default=0)
     min_answers = models.IntegerField(default=0)
 
@@ -117,7 +117,7 @@ class Group(models.Model):
 class Value(models.Model):
 
     group = models.ForeignKey(Group)
-    value = models.CharField(max_length=100)
+    value = models.CharField(max_length=100, unique=True)
     probability = models.IntegerField(default=0)
     is_default = models.BooleanField()
 
