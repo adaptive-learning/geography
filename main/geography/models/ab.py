@@ -217,13 +217,12 @@ class UserValuesManager(models.Manager):
         ab_value = utils.fetchone(cursor)
         user_values_defaults = []
         while ab_value:
+            if ab_value and ab_value['is_default']:
+                ab_values_default[ab_value['group_id']] = ab_value
             group_values = ab_values.get(ab_value['group_id'], [])
             group_values.append(ab_value)
             ab_values[ab_value['group_id']] = group_values
             ab_value = utils.fetchone(cursor)
-            print ab_value
-            if ab_value and ab_value['is_default']:
-                ab_values_default[ab_value['group_id']] = ab_value
         updated = False
         for (group_id, group_values) in ab_values.iteritems():
             if (not group_values[0]['min_answers'] or num_answers >= group_values[0]['min_answers']) and (not group_values[0]['max_answers'] or num_answers <= group_values[0]['max_answers']):
@@ -231,7 +230,7 @@ class UserValuesManager(models.Manager):
                 user_values.values.add(Value.objects.get(id=chosen_value['id']))
                 updated = True
             else:
-                user_values_defaults.append(Value.objects.get(id=user_values_defaults[group_id]['id']))
+                user_values_defaults.append(Value.objects.get(id=ab_values_default[group_id]['id']))
         if updated:
             user_values.save()
         return list(user_values.values.get_query_set()) + user_values_defaults
