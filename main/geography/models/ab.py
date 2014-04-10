@@ -82,7 +82,7 @@ class GroupManager(models.Manager):
                     group=group,
                     value=value,
                     probability=probability,
-                    is_default=default_used)
+                    is_default=(value==default_value))
                 value.save()
             if not default_used:
                 raise Exception('there is no default value')
