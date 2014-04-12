@@ -276,9 +276,8 @@ class ABEnvironment:
     @staticmethod
     def init_session(user, session):
         if not settings.DEBUG and (
-                'ab_values_modified' in session.keys() or
-                (session['ab_values_modified'] - datetime.datetime.now()).total_seconds() <= 15 * 60 or
-                session['ab_values_user_id'] != user.id):
+                ('ab_values_modified' in session.keys() and (session['ab_values_modified'] - datetime.datetime.now()).total_seconds() <= 15 * 60)
+                or ('ab_values_user_id' in session.keys() and session['ab_values_user_id'] != user.id)):
             return session
         user_values = UserValues.objects.load_user_values(user)
         session['ab_values'] = user_values
