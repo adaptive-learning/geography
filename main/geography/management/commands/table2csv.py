@@ -18,7 +18,10 @@ class Command(BaseCommand):
         table_name = args[0]
         dest_file = args[1]
         allowed_tables = [
+            'geography_ab_group',
+            'geography_ab_value',
             'geography_answer',
+            'geography_answer_ab_values',
             'geography_place',
             'geography_placerelation',
             'geography_answer_options',
@@ -26,12 +29,14 @@ class Command(BaseCommand):
         ]
         field_mapping = {
             'answer_id': 'answer',
+            'group_id': 'group',
             'place_id': 'place',
             'place_asked_id': 'place_asked',
             'place_answered_id': 'place_answered',
             'place_map_id': 'place_map',
             'placerelation_id': 'placerelation',
-            'user_id': 'user'}
+            'user_id': 'user',
+            'value_id': 'value'}
         if table_name in allowed_tables:
             cursor = connection.cursor()
             cursor.execute('SELECT * FROM ' + table_name)

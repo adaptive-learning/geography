@@ -71,7 +71,10 @@ def csv_view(request, model):
     allowed_models = [
         'place',
         'placerelation',
+        'ab_group',
+        'ab_value',
         'answer',
+        'answer_ab_values',
         'answer_options',
         'placerelation_related_places']
     if model not in allowed_models:

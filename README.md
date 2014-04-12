@@ -48,7 +48,10 @@ You can download data from the following url:
 
 where `<server>` is the address of the server and `<model name>` is one of the following:
 
-* `answer`
+* `ab_group`,
+* `ab_value`,
+* `answer`,
+* `answer_ab_values`,
 * `answer_options`
 * `place`
 * `placerelation`
