@@ -80,9 +80,9 @@
   }])
 
   .controller('AppPractice', ['$scope', '$routeParams', '$timeout', '$filter',
-      'question', 'user', 'events', 'colors', 'places', '$',
+      'question', 'user', 'events', 'colors', 'places', '$', 'highlighted',
       function($scope, $routeParams, $timeout, $filter,
-      question, user, events, colors, places, $) {
+      question, user, events, colors, places, $, highlighted) {
     $scope.part = $routeParams.part;
     $scope.placeType = $routeParams.place_type;
     
@@ -98,9 +98,11 @@
         $scope.map.highlightState(active.asked_code, colors.NEUTRAL);
       }
       if ($filter('isFindOnMapType')($scope.question) && active.options) {
-        $scope.map.highlightStates(active.options.map(function(option) {
+        var codes = active.options.map(function(option) {
           return option.code;
-        }), colors.NEUTRAL);
+        });
+        highlighted.setHighlighted(codes);
+        $scope.map.highlightStates(codes, colors.NEUTRAL);
       }
     };
 

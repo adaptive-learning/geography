@@ -44,8 +44,9 @@
     return scale;
   })
 
-  .factory('getLayerConfig', ['$log', 'colors', 'colorScale', 'citySizeRatio', 'stateAlternatives',
-      function($log, colors, colorScale, citySizeRatio, stateAlternatives) {
+  .factory('getLayerConfig', ['$log', 'colors', 'colorScale', 'citySizeRatio', 
+      'stateAlternatives', 'highlighted',
+      function($log, colors, colorScale, citySizeRatio, stateAlternatives, highlighted) {
     return function(config) {
       var layerConfig = {};
       layerConfig.bg = {
@@ -98,6 +99,9 @@
 
       layerConfig.city = angular.extend(angular.extend({},layerConfig.state), {
         'mouseenter' : function(data, path) {
+          if (!highlighted.isHighlighted(data.code)) {
+            return;
+          }
           path.toFront();
           var zoomRatio = 2.5 / citySizeRatio(data.population);
           var animAttrs = {
@@ -292,6 +296,21 @@
     };
   })
   
+  .factory('highlighted', function(){
+    var places = [];
+    return {
+      clear: function() {
+        places = [];
+      },
+      isHighlighted: function(code) {
+        return places.length === 0 || places.indexOf(code) != -1;
+      },
+      setHighlighted: function(codes) {
+        places = angular.copy(codes);
+      }
+    };
+  })
+  
   .service('getMapResizeFunction', ['$', 'citySizeRatio', function($, citySizeRatio){
 
     function getNewHeight(mapAspectRatio, isPractise, holderInitHeight) {
@@ -365,8 +384,9 @@
     };
   }])
 
-  .factory('mapControler', ['$', '$K', 'mapFunctions', 'initLayers', '$filter', 'getTooltipGetter',
-      function($, $K, mapFunctions, initLayers, $filter, getTooltipGetter) {
+  .factory('mapControler', ['$', '$K', 'mapFunctions', 'initLayers', '$filter', 
+      'getTooltipGetter', 'highlighted',
+      function($, $K, mapFunctions, initLayers, $filter, getTooltipGetter, highlighted) {
     $.fn.qtip.defaults.style.classes = 'qtip-dark';
 
     return function(mapCode, showTooltips, holder, callback) {
@@ -412,6 +432,7 @@
           myMap.highlightStates([state], color, zoomRatio);
         },
         clearHighlights : function() {
+          highlighted.clear();
           angular.forEach(layers.getAll(), function(layer) {
             layer.style(layers.getConfig(layer).styles);
             layers.showLayer(layer);
@@ -485,6 +506,7 @@
 
       myMap.map.loadCSS(hash('static/css/map.css'), function() {
         myMap.map.loadMap(hash('static/map/' + mapCode + '.svg'), function() {
+          highlighted.clear();
           layers = initLayers(myMap.map, config);
           if (_placesByTypes !== undefined) {
             myMap.updatePlaces(_placesByTypes);
