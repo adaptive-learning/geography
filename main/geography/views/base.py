@@ -49,6 +49,11 @@ def home(request):
         title = 'Stage - '
     else:
         title = 'Loc - '
+    hashes = dict((key, value)
+                  for key, value
+                  in settings.HASHES.iteritems()
+                  if not "/lib/" in key and not "/js/" in key and not "/sass/" in key
+                  )
     c = {
         'title': title + 'Slepé Mapy - inteligentní aplikace na procvičování zeměpisu',
         'isProduction': settings.ON_PRODUCTION,
@@ -56,7 +61,7 @@ def home(request):
         'js_files': StaticFiles.add_hash(JS_FILES),
         'continents': Place.objects.get_continents(),
         'states': Place.objects.get_states_with_map(),
-        'hashes': json.dumps(settings.HASHES),
+        'hashes': json.dumps(hashes),
         'user': get_user(request),
     }
     c.update(csrf(request))
