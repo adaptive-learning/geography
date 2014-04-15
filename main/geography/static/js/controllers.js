@@ -86,8 +86,7 @@
     $scope.part = $routeParams.part;
     $scope.placeType = $routeParams.place_type;
     
-    // To fetch names of all places on map and be able to show name of wrongly answered place
-    places.getPlaces($scope.part);
+    places.practicing($scope.part, $scope.placeType);
 
     $scope.highlight = function() {
       var active = $scope.question;

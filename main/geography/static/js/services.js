@@ -108,6 +108,20 @@
           categoriesCache[part][0].hidden = false;
         }
         return categoriesCache[part];
+      },
+      _setActiveCategory : function (part, active) {
+        that.getCategories(part, active);
+        angular.forEach(categoriesCache[part], function(cat) {
+          cat.hidden = cat.slug != active &&  
+            0 === cat.types.filter(function(t){ 
+              return t == active;
+            }).length;
+        });
+      },
+      practicing : function (part, type) {
+        that._setActiveCategory(part, type);
+        // To fetch names of all places on map and be able to show name of wrongly answered place
+        that.getPlaces(part);
       }
     };
     return that;
