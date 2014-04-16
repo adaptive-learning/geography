@@ -52,7 +52,7 @@ def home(request):
     hashes = dict((key, value)
                   for key, value
                   in settings.HASHES.iteritems()
-                  if not "/lib/" in key and not "/js/" in key and not "/sass/" in key
+                  if "/lib/" not in key and "/js/" not in key and "/sass/" not in key
                   )
     c = {
         'title': title + 'Slepé Mapy - inteligentní aplikace na procvičování zeměpisu',
