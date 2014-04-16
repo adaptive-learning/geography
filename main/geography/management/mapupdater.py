@@ -30,6 +30,14 @@ class MapUpdater():
         relation = self.find_place_relation_or_create_new(new_place)
         relation.save()
 
+        try:
+            too_small_places = PlaceRelation.objects.get(
+                place__code=map_code,
+                type=PlaceRelation.IS_TOO_SMALL_ON_MAP)
+            too_small_places_codes = [p.code for p in too_small_places.related_places.all()]
+        except PlaceRelation.DoesNotExist:
+            too_small_places_codes = []
+
         file_name = settings.PROJECT_DIR + '/geography/static/map/{0}.svg'.format(map_code)
         map_dom = minidom.parse(file_name)
         groups = map_dom.getElementsByTagName('g')
@@ -46,6 +54,8 @@ class MapUpdater():
                         continue
                     place = self.find_place_or_create_new(code, name, place_type)
                     relation.related_places.add(place)
+                    if code in too_small_places_codes:
+                        relation.related_places.remove(place)
         relation.save()
 
     def find_place_relation_or_create_new(self, place):
@@ -63,5 +73,5 @@ class MapUpdater():
         except Place.DoesNotExist:
             place = Place(code=code, name=name, type=place_type)
             place.save()
-            print ("created: " + name + "\t" + code)
+            print (code + "\t" + name)
         return place
