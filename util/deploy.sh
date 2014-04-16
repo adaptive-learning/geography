@@ -71,6 +71,11 @@ echo " * new HEAD: $NEW_HEAD"
 ###############################################################################
 
 if [[ `$GIT_COMMAND diff --name-only $LAST_HEAD $DEPLOY_VERSION` ]]; then
+	echo " * run grunt"
+	cd main 
+	grunt deploy
+	cd ../
+
 	echo " * collect static"
 	$APP_DIR/manage.py collectstatic --noinput
 	echo "HASHES = $( python $APP_DIR/manage.py static_hashes )" > $APP_DIR/hashes.py

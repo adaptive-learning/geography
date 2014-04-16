@@ -77,5 +77,6 @@ module.exports = function(grunt) {
   grunt.registerTask('styles', ['sass','rename']);
   grunt.registerTask('default', ['styles', 'js']);
   grunt.registerTask('travis', ['jshint']);
+  grunt.registerTask('deploy', ['styles', 'uglify']);
 
 };
