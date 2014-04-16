@@ -72,9 +72,8 @@ echo " * new HEAD: $NEW_HEAD"
 
 if [[ `$GIT_COMMAND diff --name-only $LAST_HEAD $DEPLOY_VERSION` ]]; then
 	echo " * run grunt"
-	cd main 
+	cd $APP_DIR/main 
 	grunt deploy
-	cd ../
 
 	echo " * collect static"
 	$APP_DIR/manage.py collectstatic --noinput
