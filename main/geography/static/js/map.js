@@ -33,7 +33,7 @@
     "autonomous_comunity",
   ])
 
-  .factory('colorScale', function(colors, chroma) {
+  .factory('colorScale', ['colors', 'chroma', function(colors, chroma) {
     var scale = chroma.scale([
         colors.BAD,
         '#ff4500',
@@ -42,7 +42,7 @@
         colors.GOOD
       ]);
     return scale;
-  })
+  }])
 
   .factory('getLayerConfig', ['$log', 'colors', 'colorScale', 'citySizeRatio', 
       'stateAlternatives', 'highlighted',

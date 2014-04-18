@@ -15,7 +15,7 @@
     'angulartics.google.analytics'
   ])
 
-  .config(function($routeProvider) {
+  .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {
       templateUrl : './tpl/welcome_page.html'
     }).when('/how-it-works', {
@@ -40,9 +40,10 @@
     }).otherwise({
       //redirectTo : '/'
     });
-  })
+  }])
 
-  .run(function($cookies, $http, $rootScope, $, $analytics, places) {
+  .run(['$cookies', '$http', '$rootScope', '$', '$analytics', 'places',
+      function($cookies, $http, $rootScope, $, $analytics, places) {
     $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
     $analytics.settings.pageTracking.autoTrackFirstPage = false;
@@ -59,5 +60,5 @@
       var name = $(link).text();
       places.setName(code, name);
     });    
-  });
+  }]);
 }());

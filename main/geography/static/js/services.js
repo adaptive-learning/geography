@@ -248,7 +248,7 @@
     };
   })
 
-  .factory('pageTitle', function(places) {
+  .factory('pageTitle',['places', function(places) {
     
     var titles = {
       './tpl/welcome_page.html' : '',
@@ -265,5 +265,5 @@
       }
       return title;
     };
-  });
+  }]);
 }());

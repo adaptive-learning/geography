@@ -14,7 +14,8 @@
     };
   })
 
-  .directive('blindMap', function(mapControler, places, singleWindowResizeFn, getMapResizeFunction, $parse) {
+  .directive('blindMap', ['mapControler', 'places', 'singleWindowResizeFn', 'getMapResizeFunction', '$parse',
+      function(mapControler, places, singleWindowResizeFn, getMapResizeFunction, $parse) {
     return {
       restrict : 'E',
       template : '<div class="map-container">' +
@@ -58,7 +59,7 @@
       },
       replace : true
     };
-  })
+  }])
 
   .directive('zoomButtons', function() {
     return {
@@ -107,7 +108,7 @@
     };
   })
 
-  .directive('points', function($timeout, events) {
+  .directive('points', ['$timeout', 'events', function($timeout, events) {
     return {
       scope : true,
       restrict : 'C',
@@ -122,9 +123,9 @@
         });
       }
     };
-  })
+  }])
 
-  .directive('dropLogin', function($timeout, events) {
+  .directive('dropLogin',['$timeout', 'events', function($timeout, events) {
     return {
       restrict : 'C',
       link : function($scope, elem) {
@@ -137,5 +138,5 @@
         });
       }
     };
-  });
+  }]);
 }());

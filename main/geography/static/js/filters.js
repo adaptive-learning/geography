@@ -32,7 +32,7 @@
     };
   })
 
-  .filter('isActive', function($location) {
+  .filter('isActive',['$location', function($location) {
     return function(path) {
       if ($location.path() == path) {
         return 'active';
@@ -40,7 +40,7 @@
         return '';
       }
     };
-  })
+  }])
 
   .filter('isFindOnMapType', function() {
     return function(question) {
@@ -73,9 +73,9 @@
     };
   })
 
-  .filter('codeToName', function(places) {
+  .filter('codeToName',['places', function(places) {
     return function(code) {
       return places.getName(code) || "Neznámý";
     };
-  });
+  }]);
 }());
