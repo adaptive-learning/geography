@@ -7,7 +7,12 @@ import settings
 
 class MapUpdater():
 
+    places_cache = {}
+
     def update_all_maps(self):
+        for p in Place.objects.all():
+            self.places_cache[p.code] = p
+
         self.find_place_or_create_new('world', 'Svět', Place.WORLD)
         self.update_map('world', 'Svět')
         continents = (
@@ -28,7 +33,6 @@ class MapUpdater():
     def update_map(self, map_code, map_name):
         new_place = self.find_place_or_create_new(map_code, map_name)
         relation = self.find_place_relation_or_create_new(new_place)
-        relation.save()
 
         try:
             too_small_places = PlaceRelation.objects.get(
@@ -47,16 +51,15 @@ class MapUpdater():
             if group_id != 'bg':
                 place_type = Place.PLACE_TYPE_SLUGS[group_id.upper()]
                 print ('## ' + group_id + ':')
+                to_be_added = []
                 for path in paths:
                     code = unicode(path.attributes['data-code'].value).encode("utf-8")
                     name = unicode(path.attributes['data-name'].value).encode("utf-8")
-                    if code.strip() == '':
+                    if code.strip() == '' or code in too_small_places_codes:
                         continue
                     place = self.find_place_or_create_new(code, name, place_type)
-                    relation.related_places.add(place)
-                    if code in too_small_places_codes:
-                        relation.related_places.remove(place)
-        relation.save()
+                    to_be_added.append(place)
+                relation.related_places.add(*to_be_added)
 
     def find_place_relation_or_create_new(self, place):
         try:
@@ -68,10 +71,16 @@ class MapUpdater():
         return place_relation
 
     def find_place_or_create_new(self, code, name, place_type=Place.UNKNOWN):
+        if code in self.places_cache:
+            return self.places_cache[code]
         try:
             place = Place.objects.get(code=code)
         except Place.DoesNotExist:
             place = Place(code=code, name=name, type=place_type)
             place.save()
+            self.places_cache[code] = place
             print (code + "\t" + name)
         return place
+
+    def get_all_places(self):
+        return self.places_cache
