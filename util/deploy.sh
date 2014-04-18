@@ -71,7 +71,7 @@ echo " * new HEAD: $NEW_HEAD"
 ###############################################################################
 
 if [[ `$GIT_COMMAND diff --name-only $LAST_HEAD $DEPLOY_VERSION` ]]; then
-	echo " * run grunt"
+	echo " * grunt deploy"
 	cd $APP_DIR/main 
 	grunt deploy
 
