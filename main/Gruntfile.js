@@ -24,7 +24,31 @@ module.exports = function(grunt) {
         sourceMap: true
       },
       build: {
-        src: 'geography/static/js/*.js',
+        src: [
+        /*
+          'geography/static/lib/js/fallbacks.js',
+          'geography/static/lib/js/jquery-1.11.0.js',
+          'geography/static/lib/angular-1.2.9/angular.js',
+          'geography/static/lib/angular-1.2.9/i18n/angular-locale_cs.js',
+          'geography/static/lib/js/raphael.min.js',
+          */
+          'geography/static/lib/js/raphael.pan-zoom.js',
+          'geography/static/lib/js/kartograph.js',
+          'geography/static/lib/js/chroma.js',
+          'geography/static/lib/js/bootstrap.js',
+          'geography/static/lib/angular-1.2.9/angular-route.js',
+          'geography/static/lib/angular-1.2.9/angular-cookies.js',
+          'geography/static/lib/angular-1.2.9/angular-animate.js',
+          'geography/static/lib/js/jquery.qtip.min.js',
+          'geography/static/lib/js/angulartics.min.js',
+          'geography/static/lib/js/angulartics-google-analytics.min.js',
+          'geography/static/js/app.js',
+          'geography/static/js/controllers.js',
+          'geography/static/js/services.js',
+          'geography/static/js/filters.js',
+          'geography/static/js/map.js',
+          'geography/static/js/directives.js'
+        ],
         dest: 'geography/static/dist/js/<%= pkg.name %>.min.js'
       }
     },
@@ -71,11 +95,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-rename');
+  grunt.loadNpmTasks('grunt-newer');
 
   // Default task(s).
-  grunt.registerTask('js', ['jshint','uglify']);
   grunt.registerTask('styles', ['sass','rename']);
-  grunt.registerTask('default', ['styles', 'js']);
+  grunt.registerTask('minify', ['newer:uglify:build']);
+  grunt.registerTask('default', ['styles', 'jshint', 'minify']);
   grunt.registerTask('travis', ['jshint']);
   grunt.registerTask('deploy', ['styles', 'uglify']);
 

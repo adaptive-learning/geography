@@ -15,25 +15,10 @@ def home(request):
     JS_FILES = (
         "static/lib/js/fallbacks.js",
         "static/lib/js/jquery-1.11.0.min.js",
-        "static/lib/js/bootstrap.js",
         "static/lib/angular-1.2.9/angular.min.js",
-        "static/lib/angular-1.2.9/angular-route.min.js",
-        "static/lib/angular-1.2.9/angular-cookies.min.js",
-        "static/lib/angular-1.2.9/angular-animate.min.js",
-        "static/lib/angular-1.2.9/i18n/angular-locale_cs.js",
         "static/lib/js/raphael.js",
-        "static/lib/js/raphael.pan-zoom.js",
-        "static/lib/js/kartograph.js",
-        "static/lib/js/chroma.min.js",
-        "static/lib/js/jquery.qtip.min.js",
-        "static/lib/js/angulartics.min.js",
-        "static/lib/js/angulartics-google-analytics.min.js",
-        "static/js/map.js",
-        "static/js/app.js",
-        "static/js/controllers.js",
-        "static/js/services.js",
-        "static/js/filters.js",
-        "static/js/directives.js"
+        "static/dist/js/blind-maps.min.js",
+        "static/lib/angular-1.2.9/i18n/angular-locale_cs.js",
     )
     CSS_FILES = (
         "static/lib/css/bootstrap.min.css",
