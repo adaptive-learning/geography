@@ -38,6 +38,21 @@ cd $GEOGRAPHY_WORKSPACE_DIR
 ./util/deploy.sh
 ```
 
+### Localhost
+
+[localhost:8000](http://localhost:8000)
+
+```
+cd <path_to_your_local_git_repo>/main
+grunt deploy
+./manage.py runserver
+```
+When editing `*.sass` and `*.js` files you need to run also
+```
+grunt watch
+```
+in order to see the changes
+
 ## Data
 
 You can download data from the following url:
