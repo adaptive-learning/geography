@@ -30,8 +30,8 @@ module.exports = function(grunt) {
           'geography/static/lib/js/jquery-1.11.0.js',
           'geography/static/lib/angular-1.2.9/angular.js',
           'geography/static/lib/angular-1.2.9/i18n/angular-locale_cs.js',
-          'geography/static/lib/js/raphael.min.js',
           */
+          'geography/static/lib/js/raphael.js',
           'geography/static/lib/js/raphael.pan-zoom.js',
           'geography/static/lib/js/kartograph.js',
           'geography/static/lib/js/chroma.js',
