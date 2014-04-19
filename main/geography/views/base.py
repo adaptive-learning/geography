@@ -38,8 +38,6 @@ def home(request):
     CSS_FILES = (
         "static/lib/css/bootstrap.min.css",
         "static/css/app.css",
-        "static/lib/css/flags.css",
-        "static/lib/css/tips.css",
         "static/css/map.css"
     )
     request.META["CSRF_COOKIE_USED"] = True

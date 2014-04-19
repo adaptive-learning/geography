@@ -14,3 +14,5 @@ Geography.egg-info
 .django_cache
 .ropeproject
 node_modules
+static/css/*
+above-fold.css
