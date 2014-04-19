@@ -9,22 +9,10 @@
   li.collapsed
     margin-bottom: 0px
     padding-bottom: 0px
-  h2
-    margin: 0px
+  .collapse-control
     background: rgba(0,0,0,0.15)
     &:hover
       background: rgba(0,0,0,0.2)
-    .btn
-      font-size: 16px
-  h3
-    margin: 0px -15px 0px -15px
-    background: rgba(0,0,0,0.05)
-    &:hover
-      background: rgba(0,0,0,0.1)
-    .btn
-      margin-top: -3px
-      
-  h3, h2
     padding: 10px
     cursor: pointer
     padding-left: 20px
@@ -34,9 +22,19 @@
       i
         visibility: visible
     .btn
+      font-size: 16px
+      margin: 0
       font-weight: bold
       i
         visibility: visible
+  .collapse-control-inner
+    margin: 0px -15px 0px -15px
+    .btn
+      font-size: 12px
+    
+  h2, h3
+    margin: 0px
+    display: inline
 
 
 $anim-time: 0.5s
