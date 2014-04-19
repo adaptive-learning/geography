@@ -268,7 +268,7 @@ CACHES = {
     }
 }
 
-LOGIN_REDIRECT_URL = '/#/view/'
+LOGIN_REDIRECT_URL = '/'
 
 SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
 
