@@ -18,6 +18,25 @@ module.exports = function(grunt) {
           }]
       }
     },
+    concat: {
+      homepage: {
+        src: ['templates/home/welcome_page.html', 'templates/home/how_it_works.html'],
+        dest: 'geography/static/tpl/homepage.html',
+      },
+    },
+    ngtemplates:    {
+      blindMaps:          {
+        cwd: 'geography',
+        src: [
+          '../templates/home/how_it_works.html',
+          'static/tpl/*.html',
+        ],
+        dest: 'geography/static/dist/js/templates.js',
+        options:    {
+          htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true }
+        }
+      }
+    },
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
@@ -47,7 +66,8 @@ module.exports = function(grunt) {
           'geography/static/js/services.js',
           'geography/static/js/filters.js',
           'geography/static/js/map.js',
-          'geography/static/js/directives.js'
+          'geography/static/js/directives.js',
+          'geography/static/dist/js/templates.js',
         ],
         dest: 'geography/static/dist/js/<%= pkg.name %>.min.js'
       }
@@ -96,12 +116,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-notify');
   grunt.loadNpmTasks('grunt-rename');
   grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-angular-templates');
+  grunt.loadNpmTasks('grunt-contrib-concat');
 
   // Default task(s).
   grunt.registerTask('styles', ['sass','rename']);
-  grunt.registerTask('minify', ['newer:uglify:build']);
+  grunt.registerTask('minify', ['concat', 'newer:ngtemplates', 'newer:uglify:build']);
   grunt.registerTask('default', ['styles', 'jshint', 'minify']);
   grunt.registerTask('travis', ['jshint']);
-  grunt.registerTask('deploy', ['styles', 'uglify']);
+  grunt.registerTask('deploy', ['styles', 'concat', 'ngtemplates', 'uglify']);
 
 };

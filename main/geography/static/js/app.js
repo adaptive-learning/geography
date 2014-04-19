@@ -1,5 +1,4 @@
 (function() {
-  /* global hash  */
   'use strict';
   // Declare app level module which depends on filters, and services
   angular.module('blindMaps', [
@@ -17,26 +16,26 @@
 
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {
-      templateUrl : './tpl/welcome_page.html'
+      templateUrl : 'static/tpl/homepage.html'
     }).when('/how-it-works', {
-      templateUrl : './tpl/how_it_works.html'
+      templateUrl : '../templates/home/how_it_works.html'
     }).when('/about', {
-      templateUrl : './tpl/about.html'
+      templateUrl : 'static/tpl/about.html'
     }).when('/view/', {
       redirectTo : '/view/world/'
     }).when('/view/:part/:user?', {
       controller : 'AppView',
-      templateUrl : './'+hash('static/tpl/view_tpl.html')
+      templateUrl : 'static/tpl/view_tpl.html'
     }).when('/practice/', {
       redirectTo : '/practice/world/'
     }).when('/refreshpractice/:part/:place_type?', {
       redirectTo : '/practice/:part/:place_type'
     }).when('/practice/:part/:place_type?', {
       controller : 'AppPractice',
-      templateUrl : './'+hash('static/tpl/practice_tpl.html')
+      templateUrl : 'static/tpl/practice_tpl.html'
     }).when('/overview/', {
       controller : 'AppOverview',
-      templateUrl : './'+hash('static/tpl/overview_tpl.html')
+      templateUrl : 'static/tpl/overview_tpl.html'
     }).otherwise({
       //redirectTo : '/'
     });

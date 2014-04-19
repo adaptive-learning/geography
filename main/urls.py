@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from django.views.generic import TemplateView, RedirectView
+from django.views.generic import RedirectView
 from django.http import HttpResponse
 
 # Uncomment the next two lines to enable the admin:
@@ -25,10 +25,6 @@ urlpatterns = patterns(
     url(r'^user/list/', 'geography.views.user_list_view', name='user_list_view'),
     url(r'^user/logout/', 'geography.views.logout_view', name='logout_view'),
     url(r'^user/', 'geography.views.user_view', name='user_view'),
-
-    url(r'^tpl/welcome_page\.html$', TemplateView.as_view(template_name="home/welcome_page.html")),
-    url(r'^tpl/how_it_works\.html$', TemplateView.as_view(template_name="home/how_it_works.html")),
-    url(r'^tpl/about\.html$', TemplateView.as_view(template_name="home/about.html")),
 
     url(r'^favicon\.ico$', RedirectView.as_view(url='static/img/favicon.png')),
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),

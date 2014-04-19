@@ -1,5 +1,4 @@
 (function() {
-  /* global hash  */
   'use strict';
 
   /* Services */
@@ -251,11 +250,11 @@
   .factory('pageTitle',['places', function(places) {
     
     var titles = {
-      './tpl/welcome_page.html' : '',
-      './tpl/how_it_works.html' : 'Jak to funguje? - ',
-      './tpl/about.html' : 'O prjektu - '
+      'static/tpl/homepage.html' : '',
+      '../templates/home/how_it_works.html' : 'Jak to funguje? - ',
+      'static/tpl/about.html' : 'O prjektu - ',
+      'static/tpl/overview_tpl.html' : 'Přehled map - '
     };
-    titles['./'+hash('static/tpl/overview_tpl.html')] = 'Přehled map - ';
     return function (route) {
       var title;
       if (route.controller == "AppView" || route.controller == "AppPractice") {
