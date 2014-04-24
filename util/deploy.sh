@@ -71,7 +71,7 @@ echo " * new HEAD: $NEW_HEAD"
 ###############################################################################
 
 if [[ `$GIT_COMMAND diff --name-only $LAST_HEAD $DEPLOY_VERSION` ]]; then
-	cd $APP_DIR 
+	cd $APP_DIR
 	echo " * npm install"
     npm install
 	echo " * grunt deploy"
