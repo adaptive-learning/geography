@@ -3,7 +3,6 @@ from geography.models import Answer, Place, Value
 from random import choice
 from math import floor
 import logging
-import pprint
 
 LOGGER = logging.getLogger(__name__)
 
@@ -61,12 +60,6 @@ class QuestionService:
             n,
             place_types,
             self.ab_env)
-        LOGGER.debug(
-            "user %s, question candidates with predicted probability (target %s) for map %s are:\n %s",
-            str(self.user),
-            target_probability,
-            str(self.map_place),
-            pprint.pformat(map(lambda (place, raw): raw, candidates)))
         candidates = map(
             lambda (place, raw): (place, self.number_of_options(raw['predicted_probability'], 0.75, raw['number_of_answers'])),
             candidates)
