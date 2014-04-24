@@ -3,7 +3,6 @@ from geography.models import Answer, Place, Value
 from random import choice
 from math import floor
 import logging
-import pprint
 
 LOGGER = logging.getLogger(__name__)
 
@@ -61,12 +60,6 @@ class QuestionService:
             n,
             place_types,
             self.ab_env)
-        LOGGER.debug(
-            "user %s, question candidates with predicted probability (target %s) for map %s are:\n %s",
-            str(self.user),
-            target_probability,
-            str(self.map_place),
-            pprint.pformat(map(lambda (place, raw): raw, candidates)))
         candidates = map(
             lambda (place, raw): (place, self.number_of_options(raw['predicted_probability'], 0.75, raw['number_of_answers'])),
             candidates)
@@ -108,26 +101,30 @@ class QuestionService:
             code = a["answer_code"] if "answer_code" in a else None
             LOGGER.error("Place with code '{0}' does not exist.".format(code))
 
-        answer = Answer(
-            user=self.user,
-            place_asked=place_asked,
-            place_answered=place_answered,
-            place_map=place_map,
-            type=int(str(a["type"])[0]),
-            response_time=a["response_time"],
-            number_of_options=int(str(a["type"][1:])),
-            ip_address=ip_address,
-        )
-        LOGGER.debug("answered: %s", answer)
-        answer.save(True)
+        answer_dict = {
+            'user': self.user.id,
+            'place_asked': place_asked.id,
+            'place_answered': place_answered.id if place_answered else None,
+            'place_map': place_map.id,
+            'type': int(str(a["type"])[0]),
+            'response_time': a["response_time"],
+            'number_of_options': int(str(a["type"][1:])),
+            'ip_address': ip_address if ip_address else None,
+        }
         if "options" in a:
-            answer.options = Place.objects.filter(
+            options = Place.objects.filter(
                 code__in=[o["code"] for o in a["options"]],
             )
+            answer_dict['options'] = [o.id for o in options]
+        else:
+            answer_dict['options'] = []
         if 'ab_values' in a:
-            answer.ab_values = Value.objects.filter(
+            ab_values = Value.objects.filter(
                 value__in=[v for v in a['ab_values']])
-        answer.save()
+            answer_dict['ab_values'] = [v.id for v in ab_values]
+        else:
+            answer_dict['ab_values'] = []
+        Answer.objects.save_with_listeners(answer_dict)
 
 
 class QuestionType(object):

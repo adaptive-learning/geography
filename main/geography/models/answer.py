@@ -12,6 +12,34 @@ LOGGER = logging.getLogger(__name__)
 
 class AnswerManager(models.Manager):
 
+    def save_with_listeners(self, answer_dict):
+        answer_dict['inserted'] = datetime.now()
+        for listener in Answer.ON_SAVE_LISTENERS:
+            try:
+                listener(answer_dict)
+            except Exception as e:
+                LOGGER.error(e)
+        answer = Answer(
+            user_id=answer_dict['user'],
+            place_asked_id=answer_dict['place_asked'],
+            place_answered_id=answer_dict.get('place_answered', None),
+            place_map_id=answer_dict['place_map'],
+            type=answer_dict['type'],
+            response_time=answer_dict['response_time'],
+            number_of_options=answer_dict['number_of_options'],
+            ip_address=answer_dict.get('ip_address', None),
+            inserted=answer_dict['inserted'])
+        models.Model.save(answer)
+        if len(answer_dict.get('options', [])) > 0:
+            answer.options = place.Place.objects.filter(
+                id__in=answer_dict['options'],
+            )
+        if len(answer_dict.get('ab_values', [])) > 0:
+            answer.ab_values = ab.Value.objects.filter(
+                id__in=answer_dict['ab_values'])
+        models.Model.save(answer)
+        LOGGER.debug("answered: %s", answer_dict)
+
     def get_success_rate(self, user, n):
         answers = self.filter(
             user=user,
@@ -23,7 +51,7 @@ class AnswerManager(models.Manager):
 
 
 class Answer(models.Model):
-    ON_SAVE_LISTENERS = [knowledge.KnowledgeUpdater.on_answer_save]
+    ON_SAVE_LISTENERS = [knowledge.KnowledgeUpdater(knowledge.DatabaseEnvironment()).stream_answer]
     FIND_ON_MAP = 1
     PICK_NAME = 2
     QUESTION_TYPES = (
@@ -56,11 +84,21 @@ class Answer(models.Model):
     ip_address = models.CharField(max_length=39, null=True, blank=True, default=None)
     objects = AnswerManager()
 
-    def save(self, update_model=False):
-        if update_model:
-            for listener in Answer.ON_SAVE_LISTENERS:
-                listener(self)
-        models.Model.save(self)
+    def save(self, **kwargs):
+        raise NotImplementedError('use Answer.objects.save_with_listeners instead')
+        new_answer = Answer(
+            user=self.user,
+            place_asked=self.place_asked,
+            place_answered=self.place_answered,
+            place_map=self.place_map,
+            type=self.type,
+            response_time=self.response_time,
+            number_of_options=self.number_of_options,
+            ip_address=self.ip_address)
+        models.Model.save(new_answer, **kwargs)
+        new_answer.options = self.options
+        new_answer.ab_values = self.ab_values
+        models.Model.save(new_answer, **kwargs)
 
     def __unicode__(self):
         return (
