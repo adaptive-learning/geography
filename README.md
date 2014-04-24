@@ -25,8 +25,8 @@ cd $GEOGRAPHY_WORKSPACE_DIR
 Firstly you need to tag a new version:
 
 ```
-git tag <new version>
-git push origin <new version>
+git tag release-<new version>
+git push origin release-<new version>
 ```
 
 Then you have to log on the server and:
