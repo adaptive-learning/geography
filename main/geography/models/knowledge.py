@@ -3,119 +3,197 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db import connection
 from place import Place
-import answer
-import current
-import prior
+from proso.geography.environment import Environment, InMemoryEnvironment
+from proso.geography.model import AnswerStream
+from proso.geography.prior import elo_prepare, elo_predict, elo_update
+from proso.geography.current import pfa_prepare, pfa_predict, pfa_update
 
 
-class KnowledgeUpdater:
+class KnowledgeUpdater(AnswerStream):
 
-    @staticmethod
-    def on_answer_save(a, knowledge_retriever=None, in_memory=False):
-        if not knowledge_retriever:
-            if in_memory:
-                knowledge_retriever = MemoryKnowledgeRetriever(a)
-            else:
-                knowledge_retriever = DatabaseKnowledgeRetriever(a)
+    def __init__(self, environment):
+        self._environment = environment
+
+    def current_prepare(self, answer, env):
+        return pfa_prepare(answer, env)
+
+    def current_predict(self, answer, data):
+        return pfa_predict(answer, data)
+
+    def current_update(self, answer, env, data, prediction):
+        return pfa_update(answer, env, data, prediction)
+
+    def environment(self):
+        return self._environment
+
+    def prior_prepare(self, answer, env):
+        return elo_prepare(answer, env)
+
+    def prior_predict(self, answer, data):
+        return elo_predict(answer, data)
+
+    def prior_update(self, answer, env, data, prediction):
+        return elo_update(answer, env, data, prediction)
+
+
+class DatabaseEnvironment(Environment):
+
+    USER = 1
+    PLACE = 2
+    USER_PLACE = 3
+
+    def current_skill(self, user_id, place_id, new_value):
+        if new_value is not None:
+            skill = CurrentSkill.objects.from_user_and_place(user_id, place_id)
+            skill.value = new_value
+            skill.save()
         else:
-            knowledge_retriever = knowledge_retriever.clone_with(a)
-        if isinstance(a, answer.Answer):
-            a = a.__dict__
-        # if this is the first answer, update the prior knowledge
-        if knowledge_retriever.is_first_answer_for_user_place():
-            prior_model = KnowledgeUpdater.get_prior_model()
-            prior_skill = knowledge_retriever.prior_skill()
-            difficulty = knowledge_retriever.difficulty()
-            (prior_skill, difficulty) = prior_model(
-                a,
-                prior_skill,
-                difficulty,
-                knowledge_retriever)
-            knowledge_retriever.prior_skill(prior_skill)
-            knowledge_retriever.difficulty(difficulty)
-        # update the current knowledge
-        current_model = KnowledgeUpdater.get_current_model()
-        current_skill = knowledge_retriever.current_skill()
-        current_skill = current_model(
-            a,
-            current_skill,
-            knowledge_retriever)
-        knowledge_retriever.current_skill(current_skill)
-        # further update
-        knowledge_retriever.update_numbers()
-        return knowledge_retriever
+            return self.current_skills([user_id], [place_id])[0]
 
-    @staticmethod
-    def get_prior_model():
-        return prior.elo
+    def current_skills(self, user_ids, place_ids):
+        cursor = connection.cursor()
+        cursor.execute(
+            '''
+            SELECT
+                user_id,
+                place_id,
+                value
+            FROM geography_currentskill_prepared
+            WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
+            AND place_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+            ''')
+        current_skills = dict(map(lambda (i, j, k): ((i, j), k), cursor.fetchall()))
+        return map(lambda k: current_skills.get(k, 0), zip(user_ids, place_ids))
 
-    @staticmethod
-    def get_current_model():
-        return current.pfa
-
-
-class MemoryKnowledgeRetriever:
-
-    def __init__(self, a):
-        if isinstance(a, answer.Answer):
-            self.answer = a.__dict__
-        else:
-            self.answer = a
-        self.first_place = {}
-        self.first_user = {}
-        self.both = {}
-        self._difficulty = {}
-        self._current_skill = {}
-        self._prior_skill = {}
-
-    def is_first_answer_for_user_place(self):
-        return self.number_of_answers() == 0
-
-    def number_of_first_answers_for_place(self):
-        return self.first_place.get(self.answer['place_asked_id'], 0)
-
-    def number_of_first_answers_for_user(self):
-        return self.first_user.get(self.answer['user_id'], 0)
-
-    def number_of_answers(self):
-        return self.both.get((self.answer['place_asked_id'], self.answer['user_id']), 0)
-
-    def clone_with(self, answer):
-        copy = MemoryKnowledgeRetriever(answer)
-        copy.first_user = self.first_user
-        copy.first_place = self.first_place
-        copy.both = self.both
-        copy._difficulty = self._difficulty
-        copy._prior_skill = self._prior_skill
-        copy._current_skill = self._current_skill
-        return copy
-
-    def update_numbers(self):
-        if not self.both.get((self.answer['place_asked_id'], self.answer['user_id']), None):
-            self.first_place[self.answer['place_asked_id']] = self.first_place.get(
-                self.answer['place_asked_id'], 0) + 1
-            self.first_user[self.answer['user_id']] = self.first_user.get(self.answer['user_id'], 0) + 1
-        self.both[self.answer['place_asked_id'], self.answer['user_id']] = self.both.get((self.answer['place_asked_id'], self.answer['user_id']), 0) + 1
-
-    def difficulty(self, new_value=None):
+    def difficulty(self, place_id, new_value=None):
         if new_value:
-            self._difficulty[self.answer['place_asked_id']] = new_value
+            difficulty = Difficulty.objects.from_place(place_id)
+            difficulty.value = new_value
+            difficulty.save()
         else:
-            return self._difficulty.get(self.answer['place_asked_id'], 0.0)
+            return self.difficulties([place_id])
 
-    def prior_skill(self, new_value=None):
-        if new_value:
-            self._prior_skill[self.answer['user_id']] = new_value
+    def difficulties(self, place_ids):
+        cursor = connection.cursor()
+        cursor.execute(
+            '''
+            SELECT
+                place_id,
+                value
+            FROM geography_difficulty
+            WHERE place_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+            ''')
+        found = dict(cursor.fetchall())
+        return map(lambda i: found.get(i, 0), place_ids)
+
+    def first_answers_num(self, user_id=None, place_id=None):
+        return self.first_answers_nums([user_id], [place_id])[0]
+
+    def first_answers_nums(self, user_ids, place_ids):
+        args_type = self._args_type(user_ids, place_ids)
+        if args_type == DatabaseEnvironment.USER:
+            cursor = connection.cursor()
+            cursor.execute(
+                '''
+                SELECT
+                    user_id,
+                    COUNT(DISTINCT(place_asked_id))
+                FROM geography_answer
+                WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
+                GROUP BY user_id
+                ''')
+            found = dict(cursor.fetchall())
+            return map(lambda i: found[i], user_ids)
+        elif args_type == DatabaseEnvironment.PLACE:
+            cursor = connection.cursor()
+            cursor.execute(
+                '''
+                SELECT
+                    place_asked_id,
+                    COUNT(DISTINCT(place_asked_id))
+                FROM geography_answer
+                WHERE place_asked_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+                GROUP BY place_asked_id
+                ''')
+            found = dict(cursor.fetchall())
+            return map(lambda i: found[i], place_ids)
         else:
-            return self._prior_skill.get(self.answer['user_id'], 0.0)
+            cursor = connection.cursor()
+            cursor.execute(
+                '''
+                SELECT
+                    user_id,
+                    place_asked_id,
+                    1
+                FROM geography_answer
+                WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
+                AND place_asked_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+                GROUP BY place_asked_id
+                ''')
+            found = dict(map(lambda (i, j, k): ((i, j), k), cursor.fetchall()))
+            return map(lambda i: found.get(0), zip(user_ids, place_ids))
 
-    def current_skill(self, new_value=None):
-        if new_value:
-            self._current_skill[self.answer['place_asked_id'], self.answer['user_id']] = new_value
+    def has_answer(self, user_id=None, place_id=None):
+        return self.first_answers_num(user_id=user_id, place_id=place_id) > 0
+
+    def have_answer(self, user_ids=None, place_ids=None):
+        return map(
+            lambda x: x > 0,
+            self.first_answers_nums(user_ids, place_ids))
+
+    def last_time(self, user_id=None, place_id=None):
+        return self.last_times([user_id], [place_id])[0]
+
+    def last_times(self, user_ids, place_ids):
+        args_type = self._args_type(user_ids, place_ids)
+        if args_type == DatabaseEnvironment.USER:
+            return [0 for i in user_ids]
         else:
-            return self._current_skill.get((self.answer['place_asked_id'], self.answer['user_id']), self.prior_skill() - self.difficulty())
+            return [0 for i in place_ids]
 
-    def flush(self):
+    def prior_skill(self, user_id, new_value=None):
+        if new_value is not None:
+            prior_skill = PriorSkill.objects.from_user(user_id)
+            prior_skill.value = new_value
+            prior_skill.save()
+        else:
+            return self.prior_skills([user_id])[0]
+
+    def prior_skills(self, user_ids):
+        cursor = connection.cursor()
+        cursor.execute(
+            '''
+            SELECT
+                user_id,
+                value
+            FROM geography_priorskill_prepared
+            WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
+            ''')
+        found = dict(cursor.fetchall())
+        return map(lambda user_id: found[user_id], user_ids)
+
+    def process_answer(self, user_id, place_id, inserted):
+        pass
+
+    def _args_type(self, user_ids, place_ids):
+        user_ids_nones = [id is None for id in user_ids]
+        place_ids_nones = [id is None for id in place_ids]
+        if any(user_ids_nones) and not all(user_ids_nones):
+            raise Exception('no or all user ids have to specified')
+        if any(place_ids_nones) and not all(place_ids_nones):
+            raise Exception('no or all user ids have to specified')
+        if all(user_ids_nones) and all(place_ids_nones):
+            raise Exception('ether user ids or place ids have to specified')
+        if any(place_ids_nones):
+            return DatabaseEnvironment.USER
+        if any(user_ids_nones):
+            return DatabaseEnvironment.PLACE
+        return DatabaseEnvironment.USER_PLACE
+
+
+class InMemoryEnvironmentWithFlush(InMemoryEnvironment):
+
+    def flush_all(self, prior_skill, current_skill, difficulty):
         cursor = connection.cursor()
         for user_id, skill in self._prior_skill.iteritems():
             cursor.execute(
@@ -127,75 +205,11 @@ class MemoryKnowledgeRetriever:
                 [place_id, difficulty])
         for (place_id, user_id), skill in self._current_skill.iteritems():
             cursor.execute(
-                'INSERT INTO geography_currentskill (user_id, place_id, value) VALUES (%s, %s, %s)',
+                '''
+                INSERT INTO geography_currentskill (user_id, place_id, value)
+                VALUES (%s, %s, %s)
+                ''',
                 [user_id, place_id, skill])
-
-
-class DatabaseKnowledgeRetriever:
-
-    def __init__(self, answer):
-        self.answer = answer
-        self._difficulty = None
-        self._prior_skill = None
-        self._current_skill = None
-
-    def is_first_answer_for_user_place(self):
-        return not answer.Answer.objects.filter(
-            user_id=self.answer.user_id,
-            place_asked_id=self.answer.place_asked_id).exists()
-
-    def number_of_first_answers_for_place(self):
-        if not self._difficulty:
-            self._difficulty = Difficulty.objects.from_place(answer.place_asked_id)
-        return self._difficulty.get_num_of_answers()
-
-    def number_of_first_answers_for_user(self):
-        if not self._prior_skill:
-            self._prior_skill = PriorSkill.objects.from_user(answer.user_id)
-        return self._prior_skill.get_num_of_answers()
-
-    def number_of_answers(self):
-        if not self._current_skill:
-            self._current_skill = CurrentSkill.objects.from_user_and_place(
-                self.answer.user_id, self.answer.place_asked_id)
-        return self._current_skill.get_num_of_answers()
-
-    def clone_with(self, answer):
-        return DatabaseKnowledgeRetriever(answer)
-
-    def update_numbers(self):
-        pass
-
-    def difficulty(self, new_value=None):
-        if not self._difficulty:
-            self._difficulty = Difficulty.objects.from_place(self.answer.place_asked_id)
-        if new_value:
-            self._difficulty.value = new_value
-            self._difficulty.save()
-        else:
-            return self._difficulty.value
-
-    def prior_skill(self, new_value=None):
-        if not self._prior_skill:
-            self._prior_skill = PriorSkill.objects.from_user(self.answer.user_id)
-        if new_value:
-            self._prior_skill.value = new_value
-            self._prior_skill.save()
-        else:
-            return self._prior_skill.value
-
-    def current_skill(self, new_value=None):
-        if not self._current_skill:
-            self._current_skill = CurrentSkill.objects.from_user_and_place(
-                self.answer.user_id, self.answer.place_asked_id)
-        if new_value:
-            self._current_skill.value = new_value
-            self._current_skill.save()
-        else:
-            return self._current_skill.value
-
-    def flush(self):
-        pass
 
 
 class DifficultyManager(models.Manager):

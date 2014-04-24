@@ -51,7 +51,7 @@ class AnswerManager(models.Manager):
 
 
 class Answer(models.Model):
-    ON_SAVE_LISTENERS = [knowledge.KnowledgeUpdater.on_answer_save]
+    ON_SAVE_LISTENERS = [knowledge.KnowledgeUpdater(knowledge.DatabaseEnvironment()).stream_answer]
     FIND_ON_MAP = 1
     PICK_NAME = 2
     QUESTION_TYPES = (
