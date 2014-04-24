@@ -126,9 +126,9 @@ if [ $GEOGRAPHY_ON_PRODUCTION ]; then
 	echo " * enable production"
 	a2dissite maintenance-production.slepemapy.cz
 	a2ensite production.slepemapy.cz
-fi
-
-if [[ `$GIT_COMMAND diff --name-only $LAST_HEAD $DEPLOY_VERSION` ]]; then
+	echo " * reload httpd"
+	service apache2 reload
+elif [[ `$GIT_COMMAND diff --name-only $LAST_HEAD $DEPLOY_VERSION` ]]; then
 	echo " * reload httpd"
 	service apache2 reload
 fi
