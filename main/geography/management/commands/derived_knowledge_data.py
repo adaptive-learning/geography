@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.core.management.base import BaseCommand, CommandError
 from django.db import connection
-from math import exp
-from geography.models import KnowledgeUpdater
+from geography.models import KnowledgeUpdater, InMemoryEnvironmentWithFlush
+from geography.models.utils import fetchone
 
 
 class Command(BaseCommand):
@@ -14,30 +14,60 @@ class Command(BaseCommand):
         self.load_derived_data()
 
     def load_derived_data(self):
-        cursor = connection.cursor()
+        cursor_answers = connection.cursor()
+        cursor_options = connection.cursor()
         # foreach answer update new datasets
         print 'computing knowledge data in memory'
-        cursor.execute('SELECT * FROM geography_answer ORDER BY id')
-        answer = self.fetchone(cursor)
-        knowledge_retriever = KnowledgeUpdater.on_answer_save(answer, in_memory=True)
+        cursor_options.execute(
+            '''
+            SELECT
+                answer_id,
+                place_id
+            FROM geography_answer_options
+            ORDER BY answer_id
+            ''')
+        row = cursor_options.fetchone()
+        current_options = []
+        last_options = None
+        current_answer = -1
+        last_answer = None
+        cursor_answers.execute(
+            '''
+            SELECT
+                id,
+                user_id AS user,
+                place_asked_id AS place_asked,
+                place_answered_id AS place_answered,
+                place_map_id AS place_map,
+                inserted,
+                response_time,
+                number_of_options,
+                type
+            FROM geography_answer ORDER BY id
+            ''')
+
+        answer = fetchone(cursor_answers)
+        env = InMemoryEnvironmentWithFlush()
+        stream = KnowledgeUpdater(env)
         while answer:
-            knowledge_retriever = KnowledgeUpdater.on_answer_save(
-                answer, knowledge_retriever=knowledge_retriever)
-            answer = self.fetchone(cursor)
+            while current_answer <= answer['id'] and row:
+                current_options.append(row[1])
+                row = cursor_options.fetchone()
+                if not row or row[0] != current_answer:
+                    last_answer = current_answer
+                    last_options = current_options
+                    current_answer = row[0] if row else None
+                    current_options = []
+            if last_answer == answer['id']:
+                answer['options'] = last_options
+            else:
+                answer['options'] = []
+            stream.stream_answer(answer)
+            answer = fetchone(cursor_answers)
         # empty precomputed datasets
-        cursor.execute('DELETE FROM geography_difficulty;')
-        cursor.execute('DELETE FROM geography_priorskill;')
-        cursor.execute('DELETE FROM geography_currentskill;')
+        cursor_answers.execute('DELETE FROM geography_difficulty;')
+        cursor_answers.execute('DELETE FROM geography_priorskill;')
+        cursor_answers.execute('DELETE FROM geography_currentskill;')
         # save new precomputed datasets
         print 'flushing knowledge data to database'
-        knowledge_retriever.flush()
-
-    def predict(self, local_skill, guess):
-        return guess + (1 - guess) * (1.0 / (1 + exp(-local_skill)))
-
-    def fetchone(self, cursor):
-        fetched = cursor.fetchone()
-        if fetched:
-            return dict(zip([col[0] for col in cursor.description], fetched))
-        else:
-            return None
+        env.flush()
