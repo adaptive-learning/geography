@@ -54,8 +54,8 @@ def by_random(user, map_place, expected_probability, n, place_types):
         [
             int(map_place.place.id),
             int(place.PlaceRelation.IS_ON_MAP),
-            int(n),
-            int(user.id)
+            int(user.id),
+            int(n)
         ]
     )
     dict_places = utils.fetchall(cursor)
