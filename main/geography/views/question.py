@@ -9,13 +9,11 @@ from logging import getLogger
 from ipware.ip import get_ip
 import geography.models.user
 import math
-from django.views.decorators.csrf import csrf_exempt
 
 LOGGER = getLogger(__name__)
 
 
 @allow_lazy_user
-@csrf_exempt
 def question(request, map_code, place_type_slug):
     try:
         map = PlaceRelation.objects.get(

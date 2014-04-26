@@ -7,7 +7,6 @@
     'blindMaps.directives',
     'blindMaps.controllers',
     'blindMaps.map',
-    'ngCookies',
     'ngRoute',
     'ngAnimate',
     'angulartics',
@@ -41,10 +40,8 @@
     });
   }])
 
-  .run(['$cookies', '$http', '$rootScope', '$', '$analytics', 'places',
-      function($cookies, $http, $rootScope, $, $analytics, places) {
-    $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
-    $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+  .run(['$rootScope', '$', '$analytics', 'places',
+      function($rootScope, $, $analytics, places) {
     $analytics.settings.pageTracking.autoTrackFirstPage = false;
     
     $rootScope.$on("$routeChangeStart", function(event, next, current) {

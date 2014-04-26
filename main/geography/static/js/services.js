@@ -2,7 +2,9 @@
   'use strict';
 
   /* Services */
-  angular.module('blindMaps.services', [])
+  angular.module('blindMaps.services', [
+    'ngCookies'
+  ])
 
   .factory('places', ['$http', function($http) {
     var cache = {};
@@ -139,9 +141,12 @@
     };
   }])
 
-  .service('question', ['$http', '$log', function($http, $log) {
+  .service('question', ['$http', '$log', '$cookies', 
+      function($http, $log, $cookies) {
     var qIndex = 0;
     var url;
+    $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    
     function returnQuestion(fn) {
       var q = questions[qIndex++];
       if (q)
@@ -176,6 +181,7 @@
         question.response_time += new Date().valueOf();
         question.index = qIndex - 1;
         summary.push(question);
+        $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
         $http.post(url, question).success(function(data) {
           var futureLength = qIndex + data.length;
           // questions array should be always the same size
