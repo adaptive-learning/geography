@@ -97,12 +97,20 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      scripts: {
-        files: ['geography/static/js/*.js', 'geography/static/sass/*.sass'],
-        tasks: ['default'],
-        options: {
-          interrupt: true,
-        },
+      options: {
+        interrupt: true,
+      },
+      jsapp: {
+        files: ['geography/static/js/*.js', 'geography/static/tpl/*.html'],
+        tasks: ['quickminifyjs'],
+      },
+      styles: {
+        files: ['geography/static/sass/*.sass'],
+        tasks: ['styles'],
+      },
+      jslibs: {
+        files: ['geography/static/lib/js/*.js', 'geography/static/lib/angular-1.2.9/*.js'],
+        tasks: ['uglify:libs'],
       },
     },
     rename: {
