@@ -28,7 +28,7 @@ module.exports = function(grunt) {
       blindMaps:          {
         cwd: 'geography',
         src: [
-          '../templates/home/how_it_works.html',
+          './../templates/home/how_it_works.html',
           'static/tpl/*.html',
         ],
         dest: 'geography/static/dist/js/templates.js',
@@ -42,7 +42,19 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
         sourceMap: true
       },
-      build: {
+      app: {
+        src: [
+          'geography/static/js/app.js',
+          'geography/static/js/controllers.js',
+          'geography/static/js/services.js',
+          'geography/static/js/filters.js',
+          'geography/static/js/map.js',
+          'geography/static/js/directives.js',
+          'geography/static/dist/js/templates.js',
+        ],
+        dest: 'geography/static/dist/js/<%= pkg.name %>.min.js'
+      },
+      libs: {
         src: [
         /*
           'geography/static/lib/js/fallbacks.js',
@@ -61,15 +73,8 @@ module.exports = function(grunt) {
           'geography/static/lib/js/jquery.qtip.min.js',
           'geography/static/lib/js/angulartics.min.js',
           'geography/static/lib/js/angulartics-google-analytics.min.js',
-          'geography/static/js/app.js',
-          'geography/static/js/controllers.js',
-          'geography/static/js/services.js',
-          'geography/static/js/filters.js',
-          'geography/static/js/map.js',
-          'geography/static/js/directives.js',
-          'geography/static/dist/js/templates.js',
         ],
-        dest: 'geography/static/dist/js/<%= pkg.name %>.min.js'
+        dest: 'geography/static/dist/js/libs.min.js'
       }
     },
     jshint: {
@@ -121,9 +126,10 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('styles', ['sass','rename']);
-  grunt.registerTask('minify', ['concat', 'newer:ngtemplates', 'newer:uglify:build']);
-  grunt.registerTask('default', ['styles', 'jshint', 'minify']);
-  grunt.registerTask('travis', ['jshint']);
-  grunt.registerTask('deploy', ['styles', 'concat', 'ngtemplates', 'uglify']);
+  grunt.registerTask('templates', ['newer:concat', 'ngtemplates']);
+  grunt.registerTask('minifyjs', ['templates', 'uglify']);
+  grunt.registerTask('quickminifyjs', ['templates', 'newer:uglify:app']);
+  grunt.registerTask('default', ['styles', 'jshint', 'quickminifyjs']);
+  grunt.registerTask('deploy', ['styles', 'minifyjs']);
 
 };
