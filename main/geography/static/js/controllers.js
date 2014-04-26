@@ -192,8 +192,8 @@
     };
   }])
 
-  .controller('AppOverview', ['$scope', '$http', function($scope, $http) {
-    $http.get('/placesoverview/', {cache: true}).success(function(data){
+  .controller('AppOverview', ['$scope', 'places', function($scope, places) {
+    places.getOverview().success(function(data){
       $scope.mapCategories = data;
     });
   }]);

@@ -55,6 +55,6 @@
       var code = $(link).attr('href').replace('#/view/', '').replace('/', '');
       var name = $(link).text();
       places.setName(code, name);
-    });    
+    });
   }]);
 }());

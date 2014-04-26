@@ -311,22 +311,23 @@
     };
   })
   
-  .service('getMapResizeFunction', ['$', 'citySizeRatio', function($, citySizeRatio){
+  .service('getMapResizeFunction', ['$', 'citySizeRatio', '$window',
+      function($, citySizeRatio, $window){
 
     function getNewHeight(mapAspectRatio, isPractise, holderInitHeight) {
-      $('#ng-view').removeClass('horizontal');
+      angular.element('#ng-view').removeClass('horizontal');
       var newHeight;
       if (isPractise) {
-        var screenAspectRatio = $(window).height() / $(window).width();
+        var screenAspectRatio = $window.innerHeight / $window.innerWidth;
         if (screenAspectRatio - mapAspectRatio < -0.2) {
-          $('#ng-view').addClass('horizontal');
-          newHeight = $(window).height();
+          angular.element('#ng-view').addClass('horizontal');
+          newHeight = $window.innerHeight;
         } else {
-          var controlsHeight = $(window).width() > 767 ? 290 : 150;
-          newHeight = $(window).height() - controlsHeight;
+          var controlsHeight = $window.innerWidth > 767 ? 290 : 150;
+          newHeight = $window.innerHeight - controlsHeight;
         }
-      } else if (holderInitHeight / mapAspectRatio >= $(window).width()) {
-        newHeight = Math.max(holderInitHeight / 2, mapAspectRatio * $(window).width());
+      } else if (holderInitHeight / mapAspectRatio >= $window.innerWidth) {
+        newHeight = Math.max(holderInitHeight / 2, mapAspectRatio * $window.innerWidth);
       } else {
         newHeight = holderInitHeight;
       }
@@ -374,9 +375,9 @@
     };
   }])
   
-  .service('singleWindowResizeFn', ['$', function($){
+  .service('singleWindowResizeFn', ['$window', function($window){
     var fn = function(){};
-    $(window).resize(function() {
+    angular.element($window).bind('resize', function() {
       fn();
     });
     return function(newFn) {

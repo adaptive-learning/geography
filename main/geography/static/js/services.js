@@ -123,6 +123,9 @@
         that._setActiveCategory(part, type);
         // To fetch names of all places on map and be able to show name of wrongly answered place
         that.getPlaces(part);
+      },
+      getOverview : function () {
+        return $http.get('/placesoverview/', {cache: true});
       }
     };
     return that;
