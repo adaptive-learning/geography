@@ -28,7 +28,7 @@
     
     function getRelativePosition(e, obj) {
         var x, y, pos;
-        if (e.pageX || e.pageY) {
+        if ((e.pageX || e.pageY) && !e.touches) {
             x = e.pageX;
             y = e.pageY;
         } else {
@@ -77,6 +77,7 @@
         getCurrentZoom: function () {
             return this.currZoom;
         },
+
         onZoomChange: function (callback) {
             zoomChange = callback;
         }
@@ -197,7 +198,7 @@
             }
             
             repaint();
-    
+            
             container.onmousedown = function (e) {
                 var evt = window.event || e;
                 if (!me.enabled) {
@@ -228,7 +229,53 @@
             } else if (container.addEventListener) {//WC3 browsers
                 container.addEventListener(mousewheelevt, handleScroll, false);
             }
-            
+            var distance = 0;
+            var isClick = 0;
+            $(container).bind('touchstart', function(event) {
+                me.dragThreshold = 2;
+                if (isClick == 0)
+                    isClick = 1;
+                else if (isClick == 1)
+                    isClick = 2;
+                var orig = event.originalEvent || event;
+                orig.clientX = orig.changedTouches[0].pageX;
+                orig.clientY = orig.changedTouches[0].pageY;
+                if (orig.touches.length > 1) {
+                    distance = Math.sqrt(Math.pow(orig.touches[0].pageX - orig.touches[1].pageX, 2)
+                            + Math.pow(orig.touches[0].pageY - orig.touches[1].pageY, 2));
+                    return;
+                }
+                container.onmousedown(orig);
+            });
+            $(container).bind('touchend', function(event) {
+                var orig = event.originalEvent || event;
+                orig.clientX = orig.changedTouches[0].pageX;
+                orig.clientY = orig.changedTouches[0].pageY;
+                if (orig.touches.length > 1) {
+                    return;
+                }
+                container.onmouseup(orig);
+                if (isClick == 1 && !me.isDragging())
+                    $(orig.target).click();
+                isClick = 0;
+            });
+            $(container).bind('touchmove', function(event) {
+                var orig = event.originalEvent || event;
+                orig.clientX = orig.changedTouches[0].pageX;
+                orig.clientY = orig.changedTouches[0].pageY;
+                if (orig.touches.length > 1) {
+                    var distance2 = Math.sqrt(Math.pow(orig.touches[0].pageX - orig.touches[1].pageX, 2)
+                            + Math.pow(orig.touches[0].pageY - orig.touches[1].pageY, 2));
+                    orig.wheelDelta = ((distance2 / distance - 1) * 360) * 3;
+                    distance = distance2;
+                    orig.clientX = (orig.touches[0].pageX + orig.touches[1].pageX) / 2;
+                    orig.clientY = (orig.touches[0].pageY + orig.touches[1].pageY) / 2;
+                    handleScroll(orig);
+                    return;
+                }
+                dragging(orig);
+            });
+
             function applyPan(dX, dY) {
                 deltaX = dX;
                 deltaY = dY;

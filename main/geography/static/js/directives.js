@@ -22,7 +22,7 @@
                   '<div id="map-holder">' +
                       '<div class="loading-indicator" ng-show="loading"></div>' +
                   '</div>' +
-                  '<h1 ng-bind="name"></h1>' +
+                  '<h1 ng-bind="name" ng-show="!practice"></h1>' +
                   '<div class="btn-group-vertical map-switch" data-toggle="buttons" ng-show="!practice" >' +
                     '<a class="btn btn-default atooltip" href="#/view/{{part}}/"' +
                         'ng-class="\'/view/\'+part+\'/\'|isActive"' +

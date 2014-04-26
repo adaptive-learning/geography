@@ -322,7 +322,7 @@
           $('#ng-view').addClass('horizontal');
           newHeight = $(window).height();
         } else {
-          var controlsHeight = $(window).width() > 767 ? 290 : 200;
+          var controlsHeight = $(window).width() > 767 ? 290 : 150;
           newHeight = $(window).height() - controlsHeight;
         }
       } else if (holderInitHeight / mapAspectRatio >= $(window).width()) {
