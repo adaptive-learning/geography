@@ -113,7 +113,8 @@ class Command(BaseCommand):
         field_mapping = {
             'answer_id': 'answer',
             'place_asked_id': 'place_asked',
-            'place_answered_id': 'place_answered'}
+            'place_answered_id': 'place_answered',
+            'user_id': 'user'}
         dump_cursor(
             cursor,
             dest_file,
