@@ -48,7 +48,7 @@ def home(request):
         'user': get_user(request),
     }
     c.update(csrf(request))
-    return render_to_response('home/home.html', c)
+    return render_to_response('home.html', c)
 
 
 def csv_view(request, model):

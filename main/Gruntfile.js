@@ -20,8 +20,8 @@ module.exports = function(grunt) {
     },
     concat: {
       homepage: {
-        src: ['templates/home/welcome_page.html', 'templates/home/how_it_works.html'],
-        dest: 'geography/static/tpl/homepage.html',
+        src: ['geography/static/tpl/homepage.html'],
+        dest: 'templates/generated/homepage.html',
       },
     },
     shell: { 

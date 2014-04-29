@@ -14,10 +14,5 @@ Geography.egg-info
 .django_cache
 .ropeproject
 node_modules
-above-fold.css
-above-fold.css.map
-app.css
-app.css.map
-map.css
-map.css.map
-main/geography/static/tpl/homepage.html
+main/templates/generated
+main/geography/static/css

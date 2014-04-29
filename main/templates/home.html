@@ -30,8 +30,8 @@
 
     <!-- Le styles -->
     <style>
-        {% include "home/above-fold-bootstrap.css" %}
-        {% include "home/above-fold.css" %}
+        {% include "above-fold-bootstrap.css" %}
+        {% include "generated/above-fold.css" %}
     </style>
 
   </head>
@@ -119,8 +119,7 @@
     <!-- Main content
     ================================================== -->
     <div data-ng-view id="ng-view" ng-class="vip() && 'vip'">
-        {% include "home/welcome_page.html" %}
-        {% include "home/how_it_works.html" %}
+        {% include "generated/homepage.html" %}
     </div>
   </div>
 
