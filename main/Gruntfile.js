@@ -24,6 +24,25 @@ module.exports = function(grunt) {
         dest: 'geography/static/tpl/homepage.html',
       },
     },
+    shell: { 
+        hashes: {
+            command: './manage.py static_hashes "(css|svg)" > geography/static/dist/hashes.json'
+        }
+    },
+    'string-replace': {
+      hashes: {
+        options: {
+          replacements: [
+            {
+                pattern: '{{ hashes|safe }}',
+                replacement: "<%= grunt.file.read('geography/static/dist/hashes.json') %>"
+            }
+          ]
+        },
+        src: ['geography/static/jstpl/hash.js'],
+        dest: 'geography/static/dist/js/hash.js',
+      }
+    },
     ngtemplates:    {
       blindMaps:          {
         cwd: 'geography',
@@ -44,6 +63,7 @@ module.exports = function(grunt) {
       },
       app: {
         src: [
+          'geography/static/dist/js/hash.js',
           'geography/static/js/app.js',
           'geography/static/js/controllers.js',
           'geography/static/js/services.js',
@@ -131,12 +151,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-angular-templates');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-string-replace');
+  grunt.loadNpmTasks('grunt-shell');
 
   // Default task(s).
   grunt.registerTask('styles', ['sass','rename']);
+  grunt.registerTask('hashes', ['shell:hashes', 'string-replace:hashes']);
   grunt.registerTask('templates', ['newer:concat', 'ngtemplates']);
-  grunt.registerTask('minifyjs', ['templates', 'uglify']);
-  grunt.registerTask('quickminifyjs', ['templates', 'newer:uglify:app']);
+  grunt.registerTask('minifyjs', ['hashes', 'templates', 'uglify']);
+  grunt.registerTask('quickminifyjs', ['hashes', 'templates', 'newer:uglify:app']);
   grunt.registerTask('default', ['styles', 'jshint', 'quickminifyjs']);
   grunt.registerTask('deploy', ['styles', 'minifyjs']);
 
