@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.http import Http404
-from geography.models import Place, PlaceRelation
+from geography.models import Place, PlaceRelation, MapSkill
 from geography.utils import JsonResponse
 from django.views.decorators.cache import cache_page
 
@@ -59,5 +59,11 @@ def places_overview(request):
         map_type['maps'] = [_places(request, m.code) for m in map_type['maps']]
         for map_ in map_type['maps']:
             for place_type in map_['placesTypes']:
+                place_type['count'] = len(place_type['places'])
                 del place_type['places']
     return JsonResponse(map_types)
+
+
+def mapskill(request):
+    maps_skills = MapSkill.objects.for_user(request.user)
+    return JsonResponse([m.to_serializable() for m in maps_skills])
