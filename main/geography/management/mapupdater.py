@@ -64,7 +64,7 @@ class MapUpdater():
     def find_place_relation_or_create_new(self, place):
         try:
             place_relation = PlaceRelation.objects.get(place=place, type=PlaceRelation.IS_ON_MAP)
-            place_relation.related_places.remove()
+            place_relation.related_places.clear()
         except PlaceRelation.DoesNotExist:
             place_relation = PlaceRelation(place=place, type=PlaceRelation.IS_ON_MAP)
             place_relation.save()
