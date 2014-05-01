@@ -51,3 +51,29 @@ CREATE OR REPLACE VIEW geography_averageplace AS
     geography_difficulty
   GROUP BY
     geography_difficulty.place_id;
+
+CREATE OR REPLACE VIEW geography_mapskill AS
+    SELECT 
+		geography_userplace.user_id * 100000 + geography_placerelation.place_id AS dummy_id,
+        geography_placerelation.place_id AS place_id,
+        geography_place.type AS type,
+        geography_userplace.user_id AS user_id,
+        AVG(geography_userplace.skill) AS skill,
+        COUNT(geography_userplace.skill) AS count 
+    FROM
+        geography_placerelation 
+        INNER JOIN geography_placerelation_related_places 
+            ON geography_placerelation.id = 
+                geography_placerelation_related_places.placerelation_id
+        INNER JOIN geography_userplace 
+            ON geography_placerelation_related_places.place_id = 
+                geography_userplace.place_id 
+        INNER JOIN geography_place
+            ON geography_place.id = geography_placerelation_related_places.place_id
+    WHERE 
+        geography_placerelation.type = 1 OR
+        geography_placerelation.type = 4
+    GROUP BY 
+        geography_placerelation.place_id,
+        geography_userplace.user_id,
+        geography_place.type;
