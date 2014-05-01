@@ -77,5 +77,11 @@
     return function(code) {
       return places.getName(code) || "Neznámý";
     };
+  }])
+
+  .filter('probColor', ['colorScale', function(colorScale) {
+    return function(probability) {
+      return colorScale(probability).hex();
+    };
   }]);
 }());

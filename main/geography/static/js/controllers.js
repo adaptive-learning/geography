@@ -192,9 +192,24 @@
     };
   }])
 
-  .controller('AppOverview', ['$scope', 'places', function($scope, places) {
-    places.getOverview().success(function(data){
-      $scope.mapCategories = data;
+  .controller('AppOverview', ['$scope', 'places', '$http', function($scope, places, $http) {
+
+    var mapSkills = {};
+    $http.get('/mapskill/').success(function(data){
+      angular.forEach(data, function(p){
+        mapSkills[p.code] = mapSkills[p.code] || {};
+        mapSkills[p.code][p.type] = p;
+      });
+      places.getOverview().success(function(data){
+        $scope.mapCategories = data;
+      });
     });
+
+    $scope.mapSkills = function(code, type) {
+      var defalut = {
+        count : 0
+      };
+      return (mapSkills[code] && mapSkills[code][type]) || defalut;
+    };
   }]);
 }());
