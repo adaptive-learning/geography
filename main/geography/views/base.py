@@ -14,8 +14,6 @@ from django.core.servers.basehttp import FileWrapper
 def home(request):
     JS_FILES = (
         "static/lib/js/fallbacks.js",
-        "static/lib/js/jquery-1.11.0.min.js",
-        "static/lib/angular-1.2.9/angular.min.js",
         "static/dist/js/libs.min.js",
         "static/dist/js/blind-maps.min.js",
         "static/lib/angular-1.2.9/i18n/angular-locale_cs.js",

@@ -27,6 +27,9 @@ module.exports = function(grunt) {
     shell: { 
         hashes: {
             command: './manage.py static_hashes "(css|svg)" > geography/static/dist/hashes.json'
+        },
+        runserver: {
+            command: './manage.py runserver'
         }
     },
     'string-replace': {
@@ -47,7 +50,6 @@ module.exports = function(grunt) {
       blindMaps:          {
         cwd: 'geography',
         src: [
-          './../templates/home/how_it_works.html',
           'static/tpl/*.html',
         ],
         dest: 'geography/static/dist/js/templates.js',
@@ -78,10 +80,10 @@ module.exports = function(grunt) {
         src: [
         /*
           'geography/static/lib/js/fallbacks.js',
-          'geography/static/lib/js/jquery-1.11.0.js',
-          'geography/static/lib/angular-1.2.9/angular.js',
           'geography/static/lib/angular-1.2.9/i18n/angular-locale_cs.js',
           */
+          'geography/static/lib/js/jquery-1.11.0.js',
+          'geography/static/lib/angular-1.2.9/angular.js',
           'geography/static/lib/js/raphael.js',
           'geography/static/lib/js/raphael.pan-zoom.js',
           'geography/static/lib/js/kartograph.js',
@@ -120,13 +122,17 @@ module.exports = function(grunt) {
       options: {
         interrupt: true,
       },
-      jsapp: {
-        files: ['geography/static/js/*.js', 'geography/static/tpl/*.html'],
-        tasks: ['quickminifyjs'],
-      },
       styles: {
         files: ['geography/static/sass/*.sass'],
         tasks: ['styles'],
+      },
+      hashes: {
+        files: ['geography/static/map/*.svg', 'geography/static/sass/*.sass'],
+        tasks: ['hashes'],
+      },
+      jsapp: {
+        files: ['geography/static/js/*.js', 'geography/static/tpl/*.html'],
+        tasks: ['quickminifyjs'],
       },
       jslibs: {
         files: ['geography/static/lib/js/*.js', 'geography/static/lib/angular-1.2.9/*.js'],
@@ -136,7 +142,7 @@ module.exports = function(grunt) {
     rename: {
         moveAboveFoldCss: {
             src: 'geography/static/css/above-fold.css',
-            dest: 'templates/home/above-fold.css'
+            dest: 'templates/generated/above-fold.css'
         },
     }
   });
@@ -156,6 +162,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('styles', ['sass','rename']);
+  grunt.registerTask('runserver', ['shell:runserver','watch']);
   grunt.registerTask('hashes', ['shell:hashes', 'string-replace:hashes']);
   grunt.registerTask('templates', ['newer:concat', 'ngtemplates']);
   grunt.registerTask('minifyjs', ['hashes', 'templates', 'uglify']);
