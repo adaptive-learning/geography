@@ -50,7 +50,7 @@ module.exports = function(grunt) {
           replacements: [
             {
                 pattern: '{{bboxes}}',
-                replacement: "<%= grunt.file.read('geography/static/dist/bboxcache.json') %>"
+                replacement: "<%= grunt.file.read('geography/static/hack/bboxcache.json') %>"
             }
           ]
         },
@@ -170,7 +170,7 @@ module.exports = function(grunt) {
     bboxcache: {
       default: {
         files: {
-          'geography/static/dist/bboxcache.json': ['geography/static/map/*.svg'],
+          'geography/static/hack/bboxcache.json': ['geography/static/map/*.svg'],
         },
       },
     },
@@ -198,7 +198,7 @@ module.exports = function(grunt) {
   grunt.registerTask('minifyjs', ['hashes', 'templates', 'uglify']);
   grunt.registerTask('quickminifyjs', ['hashes', 'templates', 'newer:uglify:app']);
   grunt.registerTask('default', ['styles', 'jshint', 'quickminifyjs']);
-  grunt.registerTask('deploy', ['styles', 'bboxcache', 'minifyjs']);
+  grunt.registerTask('deploy', ['styles', 'string-replace:bboxcache', 'minifyjs']);
 
   grunt.registerMultiTask('bboxcache', 'Precompute bbox of svg paths.', function() {
 
