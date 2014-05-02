@@ -89,10 +89,15 @@ module.exports = function(grunt) {
         ],
         dest: 'geography/static/dist/js/<%= pkg.name %>.min.js'
       },
+      fallbacks: {
+        src: [
+          'geography/static/lib/js/fallbacks.js',
+        ],
+        dest: 'geography/static/dist/js/fallbacks.min.js'
+      },
       libs: {
         src: [
         /*
-          'geography/static/lib/js/fallbacks.js',
           'geography/static/lib/angular-1.2.9/i18n/angular-locale_cs.js',
           */
           'geography/static/lib/js/jquery-1.11.0.js',

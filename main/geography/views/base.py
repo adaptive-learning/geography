@@ -13,7 +13,7 @@ from django.core.servers.basehttp import FileWrapper
 
 def home(request):
     JS_FILES = (
-        "static/lib/js/fallbacks.js",
+        "static/dist/js/fallbacks.min.js",
         "static/dist/js/libs.min.js",
         "static/dist/js/blind-maps.min.js",
         "static/lib/angular-1.2.9/i18n/angular-locale_cs.js",
