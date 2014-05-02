@@ -203,7 +203,7 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('bboxcache', 'Precompute bbox of svg paths.', function() {
 
     var raphael = require('node-raphael');
-    var cheerio = require('cheerio');
+    var DomJS = require("dom-js").DomJS;
     var RANDOM_CONST = 42;
 
     function mapNameFromFilepath (filepath) {
@@ -229,29 +229,40 @@ module.exports = function(grunt) {
           return true;
         }
       }).map(function(filepath) {
-        var $ = cheerio.load(grunt.file.read(filepath));
-        var mapName = mapNameFromFilepath(filepath);
-        var map = {
-            width :  parseInt($('svg').attr('width')),
-            height :  parseInt($('svg').attr('height')),
-        };
-        cache.maps[mapName] = map;
 
-        raphael.generate(RANDOM_CONST, RANDOM_CONST, function draw(paper) { 
-            $('path').each(function(i, elem) {
-                var d = $(elem).attr('d');
-                var code = $(elem).attr('data-code');
-                if (code) {
-                    var path = paper.path(d);
-                    var bbox =  path.getBBox();
-                    var keys = ['x', 'y', 'cx', 'cy', 'x2', 'y2', 'width', 'height'];
-                    for (var j = 0; j < keys.length; j++) {
-                        bbox[keys[j]] = Math.round(bbox[keys[j]]);
+        var domjs = new DomJS();
+
+        domjs.parse(grunt.file.read(filepath), function(err, dom) {
+            var mapName = mapNameFromFilepath(filepath);
+            var map = {
+                width :  parseInt(dom.attributes.width),
+                height :  parseInt(dom.attributes.height),
+            };
+            cache.maps[mapName] = map;
+
+            raphael.generate(RANDOM_CONST, RANDOM_CONST, function draw(paper) { 
+                dom.children.filter(function(e){
+                    return e.name == 'g';
+                }).map(function (e) {
+                    return e.children.filter(function(ch){
+                        return ch.name == 'path' && ch.attributes['data-code'];
+                    }).map(function(ch){
+                    var d = ch.attributes.d;
+                    var code = ch.attributes['data-code'];
+                    if (code) {
+                        var path = paper.path(d);
+                        var bbox =  path.getBBox();
+                        var keys = ['x', 'y', 'cx', 'cy', 'x2', 'y2', 'width', 'height'];
+                        for (var j = 0; j < keys.length; j++) {
+                            bbox[keys[j]] = Math.round(bbox[keys[j]]);
+                        }
+                        bbox.map = mapName;
+                        cache.bboxes[code] = bbox;
                     }
-                    bbox.map = mapName;
-                    cache.bboxes[code] = bbox;
-                }
+                    });
+                });
             });
+
         });
         return; 
       });
