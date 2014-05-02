@@ -1,5 +1,5 @@
 ;(function(window, undefined){
-    var hashes = {{ hashes|safe }};
+    var hashes = {{hashes}};
     function get_hash(filename) {
         return hashes[filename] ? hashes[filename] : "";
     }

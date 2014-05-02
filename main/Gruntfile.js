@@ -37,13 +37,25 @@ module.exports = function(grunt) {
         options: {
           replacements: [
             {
-                pattern: '{{ hashes|safe }}',
+                pattern: '{{hashes}}',
                 replacement: "<%= grunt.file.read('geography/static/dist/hashes.json') %>"
             }
           ]
         },
         src: ['geography/static/jstpl/hash.js'],
         dest: 'geography/static/dist/js/hash.js',
+      },
+      bboxcache: {
+        options: {
+          replacements: [
+            {
+                pattern: '{{bboxes}}',
+                replacement: "<%= grunt.file.read('geography/static/dist/bboxcache.json') %>"
+            }
+          ]
+        },
+        src: ['geography/static/jstpl/bbox.js'],
+        dest: 'geography/static/dist/js/bbox.js',
       }
     },
     ngtemplates:    {
@@ -66,6 +78,7 @@ module.exports = function(grunt) {
       app: {
         src: [
           'geography/static/dist/js/hash.js',
+          'geography/static/dist/js/bbox.js',
           'geography/static/js/app.js',
           'geography/static/js/controllers.js',
           'geography/static/js/services.js',
@@ -130,6 +143,10 @@ module.exports = function(grunt) {
         files: ['geography/static/map/*.svg', 'geography/static/sass/*.sass'],
         tasks: ['hashes'],
       },
+      jstpl: {
+        files: ['geography/static//jstpl/*.js'],
+        tasks: ['string-replace'],
+      },
       jsapp: {
         files: ['geography/static/js/*.js', 'geography/static/tpl/*.html'],
         tasks: ['quickminifyjs'],
@@ -144,7 +161,14 @@ module.exports = function(grunt) {
             src: 'geography/static/css/above-fold.css',
             dest: 'templates/generated/above-fold.css'
         },
-    }
+    },
+    bboxcache: {
+      default: {
+        files: {
+          'geography/static/dist/bboxcache.json': ['geography/static/map/*.svg'],
+        },
+      },
+    },
   });
 
   // Load plugins.
@@ -164,10 +188,74 @@ module.exports = function(grunt) {
   grunt.registerTask('styles', ['sass','rename']);
   grunt.registerTask('runserver', ['shell:runserver','watch']);
   grunt.registerTask('hashes', ['shell:hashes', 'string-replace:hashes']);
+  grunt.registerTask('bboxcacheall', ['bboxcache', 'string-replace:bboxcache']);
   grunt.registerTask('templates', ['newer:concat', 'ngtemplates']);
   grunt.registerTask('minifyjs', ['hashes', 'templates', 'uglify']);
   grunt.registerTask('quickminifyjs', ['hashes', 'templates', 'newer:uglify:app']);
   grunt.registerTask('default', ['styles', 'jshint', 'quickminifyjs']);
-  grunt.registerTask('deploy', ['styles', 'minifyjs']);
+  grunt.registerTask('deploy', ['styles', 'bboxcache', 'minifyjs']);
 
+  grunt.registerMultiTask('bboxcache', 'Precompute bbox of svg paths.', function() {
+
+    var raphael = require('node-raphael');
+    var cheerio = require('cheerio');
+    var RANDOM_CONST = 42;
+
+    function mapNameFromFilepath (filepath) {
+        var splittedPath = filepath.split('/');
+        var filename = splittedPath[splittedPath.length -1];
+        return filename.split('.')[0];
+    }
+
+    // Iterate over all specified file groups.
+    this.files.forEach(function(f) {
+      
+      var cache = {
+          bboxes : {},
+          maps : {},
+      };
+
+      f.src.filter(function(filepath) {
+        // Warn on and remove invalid source files (if nonull was set).
+        if (!grunt.file.exists(filepath)) {
+          grunt.log.warn('Source file "' + filepath + '" not found.');
+          return false;
+        } else {
+          return true;
+        }
+      }).map(function(filepath) {
+        var $ = cheerio.load(grunt.file.read(filepath));
+        var mapName = mapNameFromFilepath(filepath);
+        var map = {
+            width :  parseInt($('svg').attr('width')),
+            height :  parseInt($('svg').attr('height')),
+        };
+        cache.maps[mapName] = map;
+
+        raphael.generate(RANDOM_CONST, RANDOM_CONST, function draw(paper) { 
+            $('path').each(function(i, elem) {
+                var d = $(elem).attr('d');
+                var code = $(elem).attr('data-code');
+                if (code) {
+                    var path = paper.path(d);
+                    var bbox =  path.getBBox();
+                    var keys = ['x', 'y', 'cx', 'cy', 'x2', 'y2', 'width', 'height'];
+                    for (var j = 0; j < keys.length; j++) {
+                        bbox[keys[j]] = Math.round(bbox[keys[j]]);
+                    }
+                    bbox.map = mapName;
+                    cache.bboxes[code] = bbox;
+                }
+            });
+        });
+        return; 
+      });
+
+      // Write the destination file.
+      grunt.file.write(f.dest, JSON.stringify(cache));
+
+      // Print a success message.
+      grunt.log.writeln('File "' + f.dest + '" created.');
+    });
+  });
 };

@@ -4,6 +4,7 @@
   /* global jQuery  */
   /* global chroma  */
   /* global Kartograph */
+  /* global bboxCache */
   var STROKE_WIDTH = 1.5;
   var RIVER_WIDTH = STROKE_WIDTH * 2;
   var ANIMATION_TIME_MS = 500;
@@ -15,6 +16,8 @@
   .value('$', jQuery)
 
   .value('$K', Kartograph)
+
+  .value('bboxCache', bboxCache)
 
   .value('colors', {
     'GOOD': '#0d0',
@@ -190,14 +193,15 @@
     };
   }])
   
-  .factory('mapFunctions', ['$timeout', '$', 'stateAlternatives', function($timeout, $, stateAlternatives){
-    var bboxCache = {};
+  .factory('mapFunctions', ['$timeout', '$', 'stateAlternatives', 'bboxCache', 
+      function($timeout, $, stateAlternatives, bboxCache){
     var that = {
       getZoomRatio : function(placePath) {
-        if (!bboxCache[placePath.data.code]) {
-          bboxCache[placePath.data.code] = placePath.svgPath.getBBox();
+        if (!bboxCache.get(placePath.data.code)) {
+          bboxCache.set(placePath.data.code, placePath.svgPath.getBBox());
         }
-        var bbox = bboxCache[placePath.data.code];
+        var bbox = bboxCache.get(placePath.data.code, placePath.svgPath.paper);
+        bboxCache.setKey(placePath.svgPath.node.id, placePath.data.code);
         var bboxArea = bbox.width * bbox.height;
         var zoomRatio = Math.max(1.2, 70 / Math.sqrt(bboxArea));
         return zoomRatio;
