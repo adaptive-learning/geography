@@ -143,27 +143,33 @@
   .directive('mapProgress',['$filter', 'colorScale', function($filter, colorScale) {
     return {
       restrict : 'C',
-      link : function($scope, elem) {
-        $scope.$watch('mapSkillsLoaded', function() {
-          if($scope.mapSkillsLoaded) {
-            var mapSkill = $scope.mapSkills($scope.map.slug, $scope.layer.slug);
+      template : '<div class="progress overview-progress">' +
+                    '<div class="progress-bar" style="' +
+                        'background-color: {{skills.probability|probColor}};' +
+                        'width: {{(skills.count / count)|percent}};">' +
+                    '</div>' +
+                  '</div>',
+      link : function($scope, elem, attrs) {
+        $scope.count = attrs.count;
+        attrs.$observe('skills', function(skills) {
+          if(skills !== '') {
+            $scope.skills = angular.fromJson(skills);
             elem.tooltip({
               html : true,
               placement: 'bottom',
-              //selector: '#map-tooltip-' + $scope.layer.slug,
               title : '<div class="skill-tooltip">' +
                      'Procvičeno: ' +
                      '<span class="badge badge-default">' +
-                       mapSkill.count + ' / ' + $scope.layer.count +
+                       $scope.skills.count + ' / ' + $scope.count +
                      '</span>' +
                    '</div>' +
-                   '<div class="skill-tooltip" ' + (mapSkill.probability ? '' 
+                   '<div class="skill-tooltip" ' + ($scope.skills.probability ? '' 
                         : 'style="display: none;"') + '>' +
                      'Odhad znalostí: ' +
                      '<span class="badge badge-default">' +
                        '<i class="color-indicator" style="background-color :' + 
-                       colorScale(mapSkill.probability).hex() + '"></i>' +
-                       $filter('percent')(mapSkill.probability) +
+                       colorScale($scope.skills.probability).hex() + '"></i>' +
+                       $filter('percent')($scope.skills.probability) +
                      '</span>' +
                    '</div>'
             });

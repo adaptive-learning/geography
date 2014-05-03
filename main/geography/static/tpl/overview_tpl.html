@@ -13,12 +13,8 @@
                  class="btn btn-primary atooltip"
                  title="Procvičovat">
                  {{layer.name}}</a>
-               <div class="progress overview-progress map-progress">
-                <div class="progress-bar" style="
-                    background-color: {{mapSkills(map.slug, layer.slug).probability|probColor}};
-                    width: {{(mapSkills(map.slug, layer.slug).count / layer.count)|percent}};">
-                </div>
-              </div>
+              <div class="map-progress" count="{{layer.count}}" 
+                   skills="{{mapSkills(map.slug, layer.slug)}}"></div>
             </li>
           </ul>
           <div class="clearfix"></div>

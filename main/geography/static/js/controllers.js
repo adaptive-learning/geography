@@ -207,6 +207,9 @@
     });
 
     $scope.mapSkills = function(code, type) {
+      if (!$scope.mapSkillsLoaded) {
+        return;
+      }
       var defalut = {
         count : 0
       };
