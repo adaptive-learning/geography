@@ -8,6 +8,7 @@
 
   .factory('places', ['$http', function($http) {
     var cache = {};
+    var mapCache = {};
     var categoriesCache = {};
     var names = {
         'us' : 'USA',
@@ -73,6 +74,10 @@
         var promise = $http.get(url, {cache: user == 'average'}).success(function(data) {
           that.getPlaces(part, function(availablePlacesTypes) {
             var placesTypes = filterPlaceTypes(data.placesTypes, availablePlacesTypes);
+            placesTypes = placesTypes.map(function(l){
+              l.count = that.getMapLayerCount(part, l.slug);
+              return l;
+            });
             cache[url] = placesTypes;
             fn(placesTypes);
           });
@@ -126,8 +131,30 @@
       },
       getOverview : function () {
         return $http.get('/placesoverview/', {cache: true});
+      },
+      getMapLayers : function(map) {
+        return mapCache[map].placesTypes.map(function(l){
+          return l.slug;
+        });
+      },
+      getMapLayerCount : function(map, layer) {
+        if (!mapCache[map]) {
+          return 0;
+        }
+        return mapCache[map].placesTypes.filter(function(l){
+          return l.slug == layer;
+        }).map(function(l){
+          return l.count;
+        })[0];
       }
     };
+    that.getOverview().success(function(data){
+      angular.forEach(data, function(category){
+        angular.forEach(category.maps, function(map){
+          mapCache[map.slug] = map;
+        });
+      });
+    });
     return that;
   }])
 

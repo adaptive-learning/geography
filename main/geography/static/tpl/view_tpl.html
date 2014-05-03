@@ -39,6 +39,8 @@
           </a>
           <div class="clearfix"></div>
         </div>
+        <div class="map-progress" count="{{type.count}}" 
+             skills="{{ {count:type.places.length, probability: (type.places|avgProb)} }}"></div>
         <div class="view-places collapse in" id="collapse-{{type.slug}}">
           <div ng-hide="type.places.length" class="alert alert-info">
             Zde zatím nebylo nic procvičováno.
