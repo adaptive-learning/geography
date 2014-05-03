@@ -144,26 +144,30 @@
     return {
       restrict : 'C',
       link : function($scope, elem) {
-        var mapSkill = $scope.mapSkills($scope.map.slug, $scope.layer.slug);
-        elem.tooltip({
-          html : true,
-          placement: 'bottom',
-          //selector: '#map-tooltip-' + $scope.layer.slug,
-          title : '<div class="skill-tooltip">' +
-                 'Procvičeno: ' +
-                 '<span class="badge badge-default">' +
-                   mapSkill.count + ' / ' + $scope.layer.count +
-                 '</span>' +
-               '</div>' +
-               '<div class="skill-tooltip" ' + (mapSkill.probability ? '' 
-                    : 'style="display: none;"') + '>' +
-                 'Odhad znalostí: ' +
-                 '<span class="badge badge-default">' +
-                   '<i class="color-indicator" style="background-color :' + 
-                   colorScale(mapSkill.probability).hex() + '"></i>' +
-                   $filter('percent')(mapSkill.probability) +
-                 '</span>' +
-               '</div>'
+        $scope.$watch('mapSkillsLoaded', function() {
+          if($scope.mapSkillsLoaded) {
+            var mapSkill = $scope.mapSkills($scope.map.slug, $scope.layer.slug);
+            elem.tooltip({
+              html : true,
+              placement: 'bottom',
+              //selector: '#map-tooltip-' + $scope.layer.slug,
+              title : '<div class="skill-tooltip">' +
+                     'Procvičeno: ' +
+                     '<span class="badge badge-default">' +
+                       mapSkill.count + ' / ' + $scope.layer.count +
+                     '</span>' +
+                   '</div>' +
+                   '<div class="skill-tooltip" ' + (mapSkill.probability ? '' 
+                        : 'style="display: none;"') + '>' +
+                     'Odhad znalostí: ' +
+                     '<span class="badge badge-default">' +
+                       '<i class="color-indicator" style="background-color :' + 
+                       colorScale(mapSkill.probability).hex() + '"></i>' +
+                       $filter('percent')(mapSkill.probability) +
+                     '</span>' +
+                   '</div>'
+            });
+          }
         });
       }
     };

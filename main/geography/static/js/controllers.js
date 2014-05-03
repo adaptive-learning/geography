@@ -200,9 +200,10 @@
         mapSkills[p.code] = mapSkills[p.code] || {};
         mapSkills[p.code][p.type] = p;
       });
-      places.getOverview().success(function(data){
-        $scope.mapCategories = data;
-      });
+      $scope.mapSkillsLoaded = true;
+    });
+    places.getOverview().success(function(data){
+      $scope.mapCategories = data;
     });
 
     $scope.mapSkills = function(code, type) {
