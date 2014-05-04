@@ -213,7 +213,25 @@
       var defalut = {
         count : 0
       };
+      if (!type) {
+        return avgSkills(mapSkills[code]);
+      }
       return (mapSkills[code] && mapSkills[code][type]) || defalut;
     };
+    
+    function avgSkills(skills) {
+      var probSum = 0;
+      var count = 0;
+      for (var i in skills){
+        var p = skills[i];
+        count += p.count;
+        probSum += p.probability * p.count;
+      }
+      var avg = {
+        count : count,
+        probability : probSum / count,
+      };
+      return avg;
+    }
   }]);
 }());

@@ -98,5 +98,19 @@
       var avg = sum / places.length;
       return avg;
     };
+  }])
+
+  .filter('sumCounts', [ function() {
+    return function(layers) {
+      if (!layers || layers.length === 0) {
+        return 0;
+      }
+      var sum = layers.map(function(p){
+        return p.count;
+      }).reduce(function(a, b) { 
+        return a + b;
+      });
+      return sum;
+    };
   }]);
 }());
