@@ -47,6 +47,7 @@
           </div>
           <span ng-repeat="place in type.places"
                 ng-click="placeClick(place)"
+                style="border-bottom: 5px solid {{place.probability|probColor}};"
                 place-label>
           </span>
           <div class="clearfix"></div>
