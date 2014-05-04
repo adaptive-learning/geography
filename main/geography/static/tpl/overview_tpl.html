@@ -6,7 +6,7 @@
       <h2 class="col-md-offset-1" ng-hide="c.name == 'Svět'"> {{c.name}}</h2>
       <ul>
         <li class="overview-row" ng-repeat="map in c.maps">
-          <h3 class="col-md-offset-1 col-sm-3"><a href="#/view/{{map.slug}}">{{map.name}}</a>
+          <h3 class="col-md-offset-1 col-sm-3"><a href="#/view/{{map.slug}}/{{user}}">{{map.name}}</a>
             <div class="map-progress" count="{{map.placesTypes|sumCounts}}" 
                  skills="{{mapSkills(map.slug)}}">
             </div>

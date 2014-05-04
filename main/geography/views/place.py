@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from django.http import Http404
+from django.contrib.auth.models import User
+from django.http import Http404, HttpResponseBadRequest
 from geography.models import Place, PlaceRelation, MapSkill
 from geography.utils import JsonResponse
 from django.views.decorators.cache import cache_page
@@ -64,6 +65,13 @@ def places_overview(request):
     return JsonResponse(map_types)
 
 
-def mapskill(request):
-    maps_skills = MapSkill.objects.for_user(request.user)
+def mapskill(request, user=None):
+    if not user:
+        user = request.user
+    else:
+        try:
+            user = User.objects.get(username=user)
+        except User.DoesNotExist:
+            raise HttpResponseBadRequest("Invalid username: {0}" % user)
+    maps_skills = MapSkill.objects.for_user(user)
     return JsonResponse([m.to_serializable() for m in maps_skills])

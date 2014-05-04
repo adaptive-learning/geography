@@ -32,7 +32,7 @@
     }).when('/practice/:part/:place_type?', {
       controller : 'AppPractice',
       templateUrl : 'static/tpl/practice_tpl.html'
-    }).when('/overview/', {
+    }).when('/overview/:user?', {
       controller : 'AppOverview',
       templateUrl : 'static/tpl/overview_tpl.html'
     }).otherwise({

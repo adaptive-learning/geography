@@ -192,10 +192,12 @@
     };
   }])
 
-  .controller('AppOverview', ['$scope', 'places', '$http', function($scope, places, $http) {
+  .controller('AppOverview', ['$scope', 'places', '$http', '$routeParams',
+      function($scope, places, $http, $routeParams) {
 
     var mapSkills = {};
-    $http.get('/mapskill/').success(function(data){
+    $scope.user = $routeParams.user || '';
+    $http.get('/mapskill/' + $scope.user).success(function(data){
       angular.forEach(data, function(p){
         mapSkills[p.code] = mapSkills[p.code] || {};
         mapSkills[p.code][p.type] = p;
