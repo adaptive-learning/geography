@@ -257,7 +257,9 @@ module.exports = function(grunt) {
                             bbox[keys[j]] = Math.round(bbox[keys[j]]);
                         }
                         bbox.map = mapName;
-                        cache.bboxes[code] = bbox;
+                        if (!cache.bboxes[code]) {
+                            cache.bboxes[code] = bbox;
+                        }
                     }
                     });
                 });

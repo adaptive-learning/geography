@@ -200,8 +200,8 @@
         if (!bboxCache.get(placePath.data.code)) {
           bboxCache.set(placePath.data.code, placePath.svgPath.getBBox());
         }
-        var bbox = bboxCache.get(placePath.data.code, placePath.svgPath.paper);
         bboxCache.setKey(placePath.svgPath.node.id, placePath.data.code);
+        var bbox = placePath.svgPath.getBBox();
         var bboxArea = bbox.width * bbox.height;
         var zoomRatio = Math.max(1.2, 70 / Math.sqrt(bboxArea));
         return zoomRatio;

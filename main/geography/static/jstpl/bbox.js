@@ -2,6 +2,9 @@
     var cache = {{bboxes}};
     
     function resize(bbox, paper) {
+      if (window.location.hash.indexOf(bbox.map) == -1) {
+          return;
+      }
       var map = cache.maps[bbox.map];
       var transform = getTransform(paper, map);
       var scaledBBox = {}
