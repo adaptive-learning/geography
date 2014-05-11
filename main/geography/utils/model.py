@@ -84,7 +84,7 @@ class QuestionService:
 
     def number_of_options(self, prob_real, prob_expected, number_of_answers):
         round_fun = round if number_of_answers else floor
-        g = min(0.5, max(0, prob_expected - prob_real) / (1 - prob_real))
+        g = min(0.5, max(0, prob_expected - prob_real) / max(1 - prob_real, 0.0001))
         k = round_fun(1.0 / g) if g != 0 else 1
         return 1 if k > 6 else k
 
