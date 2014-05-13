@@ -194,22 +194,32 @@ class InMemoryEnvironmentWithFlush(InMemoryEnvironment):
 
     def flush_all(self, prior_skill, current_skill, difficulty):
         with closing(connection.cursor()) as cursor:
-            for user_id, skill in self._prior_skill.iteritems():
-                cursor.execute(
-                    'INSERT INTO geography_priorskill (user_id, value) VALUES (%s, %s)',
-                    [user_id, skill])
-            for place_id, difficulty in self._difficulty.iteritems():
-                print place_id, difficulty
-                cursor.execute(
-                    'INSERT INTO geography_difficulty (place_id, value) VALUES (%s, %s)',
-                    [place_id, difficulty])
-            for (place_id, user_id), skill in self._current_skill.iteritems():
-                cursor.execute(
-                    '''
-                    INSERT INTO geography_currentskill (user_id, place_id, value)
-                    VALUES (%s, %s, %s)
-                    ''',
-                    [user_id, place_id, skill])
+            cursor.executemany(
+                'INSERT INTO geography_priorskill (user_id, value) VALUES (%s, %s)',
+                self._prior_skill_generator())
+        with closing(connection.cursor()) as cursor:
+            cursor.executemany(
+                'INSERT INTO geography_difficulty (place_id, value) VALUES (%s, %s)',
+                self._difficulty_generator())
+        with closing(connection.cursor()) as cursor:
+            cursor.executemany(
+                '''
+                INSERT INTO geography_currentskill (user_id, place_id, value)
+                VALUES (%s, %s, %s)
+                ''',
+                self._current_skill_generator())
+
+    def _difficulty_generator(self):
+        for place_id, difficulty in self._difficulty.iteritems():
+            yield (place_id, difficulty)
+
+    def _prior_skill_generator(self):
+        for user_id, skill in self._prior_skill.iteritems():
+            yield (user_id, skill)
+
+    def _current_skill_generator(self):
+        for (user_id, place_id), skill in self._current_skill.iteritems():
+            yield (user_id, place_id, skill)
 
 
 class DifficultyManager(models.Manager):

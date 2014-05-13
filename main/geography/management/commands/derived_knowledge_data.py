@@ -15,6 +15,7 @@ class Command(BaseCommand):
         self.load_derived_data()
 
     def load_derived_data(self):
+        connection.enter_transaction_management(False)
         with closing(connection.cursor()) as cursor_answers:
             with closing(connection.cursor()) as cursor_options:
                 # foreach answer update new datasets
@@ -68,10 +69,14 @@ class Command(BaseCommand):
                         answer['options'] = []
                     stream.stream_answer(answer)
                     answer = fetchone(cursor_answers)
-                # empty precomputed datasets
-                cursor_answers.execute('DELETE FROM geography_difficulty;')
-                cursor_answers.execute('DELETE FROM geography_priorskill;')
-                cursor_answers.execute('DELETE FROM geography_currentskill;')
+        # empty precomputed datasets
+        with closing(connection.cursor()) as cursor:
+            cursor.execute('DELETE FROM geography_difficulty')
+        with closing(connection.cursor()) as cursor:
+            cursor.execute('DELETE FROM geography_priorskill')
+        with closing(connection.cursor()) as cursor:
+            cursor.execute('DELETE FROM geography_currentskill')
         # save new precomputed datasets
         print 'flushing knowledge data to database'
         env.flush()
+        connection.commit()
