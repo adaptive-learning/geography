@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from lazysignup.models import LazyUser
 from django.db import connection
+from contextlib import closing
 
 
 def convert_lazy_user(user):
@@ -38,19 +39,19 @@ def get_unused_username(user):
 
 
 def get_points(user):
-    cursor = connection.cursor()
-    cursor.execute(
-        '''
-        SELECT
-            COUNT(geography_answer.id)
-        FROM
-            geography_answer
-        WHERE
-            user_id = %s
-            AND
-            geography_answer.place_asked_id = geography_answer.place_answered_id
-        ''', [user.id])
-    return cursor.fetchone()[0]
+    with closing(connection.cursor()) as cursor:
+        cursor.execute(
+            '''
+            SELECT
+                COUNT(geography_answer.id)
+            FROM
+                geography_answer
+            WHERE
+                user_id = %s
+                AND
+                geography_answer.place_asked_id = geography_answer.place_answered_id
+            ''', [user.id])
+        return cursor.fetchone()[0]
 
 
 def to_serializable(user):

@@ -5,6 +5,7 @@ from optparse import make_option
 from prettytable import PrettyTable
 from django.db import connection
 from geography.utils.db import dump_cursor
+from contextlib import closing
 
 
 class Command(BaseCommand):
@@ -91,34 +92,34 @@ class Command(BaseCommand):
         group_name = args[0]
         dest_file = args[1]
         print 'exporting answers with group ' + group_name + ' to file ' + dest_file
-        cursor = connection.cursor()
-        cursor.execute(
-            '''
-            SELECT
-                geography_answer.*,
-                geography_ab_value.value AS ab_value
-            FROM
-                geography_answer
-                LEFT JOIN geography_answer_ab_values ON
-                    geography_answer_ab_values.answer_id = geography_answer.id
-                LEFT JOIN geography_ab_value ON
-                    geography_ab_value.id = geography_answer_ab_values.value_id
-                LEFT JOIN geography_ab_group ON
-                    geography_ab_group.id = geography_ab_value.group_id
-            WHERE
-                geography_ab_group.name = %s OR ISNULL(geography_ab_group.name)
-            GROUP BY
-                geography_answer.id
-            ''', [group_name])
-        field_mapping = {
-            'answer_id': 'answer',
-            'place_asked_id': 'place_asked',
-            'place_answered_id': 'place_answered',
-            'user_id': 'user'}
-        dump_cursor(
-            cursor,
-            dest_file,
-            **field_mapping)
+        with closing(connection.cursor()) as cursor:
+            cursor.execute(
+                '''
+                SELECT
+                    geography_answer.*,
+                    geography_ab_value.value AS ab_value
+                FROM
+                    geography_answer
+                    LEFT JOIN geography_answer_ab_values ON
+                        geography_answer_ab_values.answer_id = geography_answer.id
+                    LEFT JOIN geography_ab_value ON
+                        geography_ab_value.id = geography_answer_ab_values.value_id
+                    LEFT JOIN geography_ab_group ON
+                        geography_ab_group.id = geography_ab_value.group_id
+                WHERE
+                    geography_ab_group.name = %s OR ISNULL(geography_ab_group.name)
+                GROUP BY
+                    geography_answer.id
+                ''', [group_name])
+            field_mapping = {
+                'answer_id': 'answer',
+                'place_asked_id': 'place_asked',
+                'place_answered_id': 'place_answered',
+                'user_id': 'user'}
+            dump_cursor(
+                cursor,
+                dest_file,
+                **field_mapping)
 
     def init(self, args, options):
         if options.get('command_help', False):

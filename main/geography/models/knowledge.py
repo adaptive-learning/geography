@@ -7,6 +7,7 @@ from proso.geography.environment import Environment, InMemoryEnvironment
 from proso.geography.model import AnswerStream
 from proso.geography.prior import elo_prepare, elo_predict, elo_update
 from proso.geography.current import pfa_prepare, pfa_predict, pfa_update
+from contextlib import closing
 
 
 class KnowledgeUpdater(AnswerStream):
@@ -51,19 +52,19 @@ class DatabaseEnvironment(Environment):
             return self.current_skills([user_id], [place_id])[0]
 
     def current_skills(self, user_ids, place_ids):
-        cursor = connection.cursor()
-        cursor.execute(
-            '''
-            SELECT
-                user_id,
-                place_id,
-                value
-            FROM geography_currentskill_prepared
-            WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
-            AND place_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
-            ''')
-        current_skills = dict(map(lambda (i, j, k): ((i, j), k), cursor.fetchall()))
-        return map(lambda k: current_skills.get(k, 0), zip(user_ids, place_ids))
+        with closing(connection.cursor()) as cursor:
+            cursor.execute(
+                '''
+                SELECT
+                    user_id,
+                    place_id,
+                    value
+                FROM geography_currentskill_prepared
+                WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
+                AND place_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+                ''')
+            current_skills = dict(map(lambda (i, j, k): ((i, j), k), cursor.fetchall()))
+            return map(lambda k: current_skills.get(k, 0), zip(user_ids, place_ids))
 
     def difficulty(self, place_id, new_value=None):
         if new_value:
@@ -74,64 +75,62 @@ class DatabaseEnvironment(Environment):
             return self.difficulties([place_id])
 
     def difficulties(self, place_ids):
-        cursor = connection.cursor()
-        cursor.execute(
-            '''
-            SELECT
-                place_id,
-                value
-            FROM geography_difficulty
-            WHERE place_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
-            ''')
-        found = dict(cursor.fetchall())
-        return map(lambda i: found.get(i, 0), place_ids)
+        with closing(connection.cursor()) as cursor:
+            cursor.execute(
+                '''
+                SELECT
+                    place_id,
+                    value
+                FROM geography_difficulty
+                WHERE place_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+                ''')
+            found = dict(cursor.fetchall())
+            return map(lambda i: found.get(i, 0), place_ids)
 
     def first_answers_num(self, user_id=None, place_id=None):
         return self.first_answers_nums([user_id], [place_id])[0]
 
     def first_answers_nums(self, user_ids, place_ids):
-        args_type = self._args_type(user_ids, place_ids)
-        if args_type == DatabaseEnvironment.USER:
-            cursor = connection.cursor()
-            cursor.execute(
-                '''
-                SELECT
-                    user_id,
-                    COUNT(DISTINCT(place_asked_id))
-                FROM geography_answer
-                WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
-                GROUP BY user_id
-                ''')
-            found = dict(cursor.fetchall())
-            return map(lambda i: found[i], user_ids)
-        elif args_type == DatabaseEnvironment.PLACE:
-            cursor = connection.cursor()
-            cursor.execute(
-                '''
-                SELECT
-                    place_asked_id,
-                    COUNT(DISTINCT(place_asked_id))
-                FROM geography_answer
-                WHERE place_asked_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
-                GROUP BY place_asked_id
-                ''')
-            found = dict(cursor.fetchall())
-            return map(lambda i: found[i], place_ids)
-        else:
-            cursor = connection.cursor()
-            cursor.execute(
-                '''
-                SELECT
-                    user_id,
-                    place_asked_id,
-                    1
-                FROM geography_answer
-                WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
-                AND place_asked_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
-                GROUP BY place_asked_id
-                ''')
-            found = dict(map(lambda (i, j, k): ((i, j), k), cursor.fetchall()))
-            return map(lambda i: found.get(0), zip(user_ids, place_ids))
+        with closing(connection.cursor()) as cursor:
+            args_type = self._args_type(user_ids, place_ids)
+            if args_type == DatabaseEnvironment.USER:
+                cursor.execute(
+                    '''
+                    SELECT
+                        user_id,
+                        COUNT(DISTINCT(place_asked_id))
+                    FROM geography_answer
+                    WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
+                    GROUP BY user_id
+                    ''')
+                found = dict(cursor.fetchall())
+                return map(lambda i: found[i], user_ids)
+            elif args_type == DatabaseEnvironment.PLACE:
+                cursor.execute(
+                    '''
+                    SELECT
+                        place_asked_id,
+                        COUNT(DISTINCT(place_asked_id))
+                    FROM geography_answer
+                    WHERE place_asked_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+                    GROUP BY place_asked_id
+                    ''')
+                found = dict(cursor.fetchall())
+                return map(lambda i: found[i], place_ids)
+            else:
+                cursor.execute(
+                    '''
+                    SELECT
+                        user_id,
+                        place_asked_id,
+                        1
+                    FROM geography_answer
+                    WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
+                    AND place_asked_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+                    GROUP BY place_asked_id
+                    ''')
+                found = dict(map(lambda (i, j, k): ((i, j), k), cursor.fetchall()))
+                return map(lambda i: found.get(0), zip(user_ids, place_ids))
 
     def has_answer(self, user_id=None, place_id=None):
         return self.first_answers_num(user_id=user_id, place_id=place_id) > 0
@@ -160,17 +159,17 @@ class DatabaseEnvironment(Environment):
             return self.prior_skills([user_id])[0]
 
     def prior_skills(self, user_ids):
-        cursor = connection.cursor()
-        cursor.execute(
-            '''
-            SELECT
-                user_id,
-                value
-            FROM geography_priorskill_prepared
-            WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
-            ''')
-        found = dict(cursor.fetchall())
-        return map(lambda user_id: found[user_id], user_ids)
+        with closing(connection.cursor()) as cursor:
+            cursor.execute(
+                '''
+                SELECT
+                    user_id,
+                    value
+                FROM geography_priorskill_prepared
+                WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
+                ''')
+            found = dict(cursor.fetchall())
+            return map(lambda user_id: found[user_id], user_ids)
 
     def process_answer(self, user_id, place_id, inserted):
         pass
@@ -194,22 +193,23 @@ class DatabaseEnvironment(Environment):
 class InMemoryEnvironmentWithFlush(InMemoryEnvironment):
 
     def flush_all(self, prior_skill, current_skill, difficulty):
-        cursor = connection.cursor()
-        for user_id, skill in self._prior_skill.iteritems():
-            cursor.execute(
-                'INSERT INTO geography_priorskill (user_id, value) VALUES (%s, %s)',
-                [user_id, skill])
-        for place_id, difficulty in self._difficulty.iteritems():
-            cursor.execute(
-                'INSERT INTO geography_difficulty (place_id, value) VALUES (%s, %s)',
-                [place_id, difficulty])
-        for (place_id, user_id), skill in self._current_skill.iteritems():
-            cursor.execute(
-                '''
-                INSERT INTO geography_currentskill (user_id, place_id, value)
-                VALUES (%s, %s, %s)
-                ''',
-                [user_id, place_id, skill])
+        with closing(connection.cursor()) as cursor:
+            for user_id, skill in self._prior_skill.iteritems():
+                cursor.execute(
+                    'INSERT INTO geography_priorskill (user_id, value) VALUES (%s, %s)',
+                    [user_id, skill])
+            for place_id, difficulty in self._difficulty.iteritems():
+                print place_id, difficulty
+                cursor.execute(
+                    'INSERT INTO geography_difficulty (place_id, value) VALUES (%s, %s)',
+                    [place_id, difficulty])
+            for (place_id, user_id), skill in self._current_skill.iteritems():
+                cursor.execute(
+                    '''
+                    INSERT INTO geography_currentskill (user_id, place_id, value)
+                    VALUES (%s, %s, %s)
+                    ''',
+                    [user_id, place_id, skill])
 
 
 class DifficultyManager(models.Manager):
@@ -230,16 +230,16 @@ class Difficulty(models.Model):
     objects = DifficultyManager()
 
     def get_num_of_answers(self):
-        cursor = connection.cursor()
-        cursor.execute(
-            '''
-            SELECT COUNT(DISTINCT(user_id))
-            FROM geography_answer
-            WHERE place_asked_id = %s
-            ''',
-            [int(self.place_id)]
-        )
-        return cursor.fetchone()[0]
+        with closing(connection.cursor()) as cursor:
+            cursor.execute(
+                '''
+                SELECT COUNT(DISTINCT(user_id))
+                FROM geography_answer
+                WHERE place_asked_id = %s
+                ''',
+                [int(self.place_id)]
+            )
+            return cursor.fetchone()[0]
 
     class Meta:
         app_label = 'geography'
@@ -263,16 +263,16 @@ class PriorSkill(models.Model):
     objects = PriorSkillManager()
 
     def get_num_of_answers(self):
-        cursor = connection.cursor()
-        cursor.execute(
-            '''
-            SELECT COUNT(DISTINCT(place_asked_id))
-            FROM geography_answer
-            WHERE user_id = %s
-            ''',
-            [int(self.user_id)]
-        )
-        return cursor.fetchone()[0]
+        with closing(connection.cursor()) as cursor:
+            cursor.execute(
+                '''
+                SELECT COUNT(DISTINCT(place_asked_id))
+                FROM geography_answer
+                WHERE user_id = %s
+                ''',
+                [int(self.user_id)]
+            )
+            return cursor.fetchone()[0]
 
     class Meta:
         app_label = 'geography'
@@ -311,19 +311,19 @@ class CurrentSkill(models.Model):
     objects = CurrentSkillManager()
 
     def get_num_of_answers(self):
-        cursor = connection.cursor()
-        cursor.execute(
-            '''
-            SELECT COUNT(id)
-            FROM geography_answer
-            WHERE
-                place_asked_id = %s
-                AND
-                user_id = %s
-            ''',
-            [int(self.place_id), int(self.user_id)]
-        )
-        return cursor.fetchone()[0]
+        with closing(connection.cursor()) as cursor:
+            cursor.execute(
+                '''
+                SELECT COUNT(id)
+                FROM geography_answer
+                WHERE
+                    place_asked_id = %s
+                    AND
+                    user_id = %s
+                ''',
+                [int(self.place_id), int(self.user_id)]
+            )
+            return cursor.fetchone()[0]
 
     class Meta:
         app_label = 'geography'

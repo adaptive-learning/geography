@@ -86,19 +86,6 @@ class Answer(models.Model):
 
     def save(self, **kwargs):
         raise NotImplementedError('use Answer.objects.save_with_listeners instead')
-        new_answer = Answer(
-            user=self.user,
-            place_asked=self.place_asked,
-            place_answered=self.place_answered,
-            place_map=self.place_map,
-            type=self.type,
-            response_time=self.response_time,
-            number_of_options=self.number_of_options,
-            ip_address=self.ip_address)
-        models.Model.save(new_answer, **kwargs)
-        new_answer.options = self.options
-        new_answer.ab_values = self.ab_values
-        models.Model.save(new_answer, **kwargs)
 
     def __unicode__(self):
         return (
