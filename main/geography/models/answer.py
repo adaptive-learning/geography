@@ -18,7 +18,7 @@ class AnswerManager(models.Manager):
             try:
                 listener(answer_dict)
             except Exception as e:
-                LOGGER.error(e)
+                LOGGER.error('exception thrown while processing listener for answer save, listener: {}, exception: {}, message: {}'.format(listener.__name__, type(e), str(e)))
         answer = Answer(
             user_id=answer_dict['user'],
             place_asked_id=answer_dict['place_asked'],
