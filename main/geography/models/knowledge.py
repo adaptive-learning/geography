@@ -194,32 +194,37 @@ class InMemoryEnvironmentWithFlush(InMemoryEnvironment):
 
     def flush_all(self, prior_skill, current_skill, difficulty):
         with closing(connection.cursor()) as cursor:
-            cursor.executemany(
-                'INSERT INTO geography_priorskill (user_id, value) VALUES (%s, %s)',
-                self._prior_skill_generator())
+            cursor.execute(
+                '''INSERT INTO geography_priorskill (user_id, value)
+                VALUES ''' + ','.join(self._prior_skill_values())),
         with closing(connection.cursor()) as cursor:
-            cursor.executemany(
-                'INSERT INTO geography_difficulty (place_id, value) VALUES (%s, %s)',
-                self._difficulty_generator())
+            cursor.execute(
+                '''
+                INSERT INTO geography_difficulty (place_id, value)
+                VALUES''' + ','.join(self._difficulty_values()))
         with closing(connection.cursor()) as cursor:
-            cursor.executemany(
+            cursor.execute(
                 '''
                 INSERT INTO geography_currentskill (user_id, place_id, value)
-                VALUES (%s, %s, %s)
-                ''',
-                self._current_skill_generator())
+                VALUES ''' + ','.join(self._current_skill_values()))
 
-    def _difficulty_generator(self):
-        for place_id, difficulty in self._difficulty.iteritems():
-            yield (place_id, difficulty)
+    def _difficulty_values(self):
+        return [
+            '({}, {})'.format(place_id, difficulty)
+            for place_id, difficulty in self._difficulty.iteritems()
+        ]
 
-    def _prior_skill_generator(self):
-        for user_id, skill in self._prior_skill.iteritems():
-            yield (user_id, skill)
+    def _prior_skill_values(self):
+        return [
+            '({}, {})'.format(user_id, skill)
+            for user_id, skill in self._prior_skill.iteritems()
+        ]
 
-    def _current_skill_generator(self):
-        for (user_id, place_id), skill in self._current_skill.iteritems():
-            yield (user_id, place_id, skill)
+    def _current_skill_values(self):
+        return [
+            '({}, {}, {})'.format(user_id, place_id, skill)
+            for (user_id, place_id), skill in self._current_skill.iteritems()
+        ]
 
 
 class DifficultyManager(models.Manager):
