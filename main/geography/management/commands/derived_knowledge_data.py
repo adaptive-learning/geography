@@ -4,6 +4,7 @@ from django.db import connection
 from geography.models import KnowledgeUpdater, InMemoryEnvironmentWithFlush
 from geography.models.utils import fetchone
 from contextlib import closing
+import time
 
 
 class Command(BaseCommand):
@@ -15,10 +16,10 @@ class Command(BaseCommand):
         self.load_derived_data()
 
     def load_derived_data(self):
-        connection.enter_transaction_management(False)
         with closing(connection.cursor()) as cursor_answers:
             with closing(connection.cursor()) as cursor_options:
                 # foreach answer update new datasets
+                time_start = time.time()
                 print 'loading options'
                 cursor_options.execute(
                     '''
@@ -50,6 +51,8 @@ class Command(BaseCommand):
                     ORDER BY id
                     ''')
 
+                time_after_loading = time.time()
+                print 'time:', (time_after_loading - time_start), 'secs'
                 print 'computing knowledge data in memory'
                 answer = fetchone(cursor_answers)
                 env = InMemoryEnvironmentWithFlush()
@@ -69,14 +72,25 @@ class Command(BaseCommand):
                         answer['options'] = []
                     stream.stream_answer(answer)
                     answer = fetchone(cursor_answers)
+                time_after_knowledge = time.time()
+                print 'time:', (time_after_knowledge - time_after_loading), 'secs'
         # empty precomputed datasets
+        print 'deleting old knowledge data from database'
+        connection.enter_transaction_management(False)
         with closing(connection.cursor()) as cursor:
             cursor.execute('DELETE FROM geography_difficulty')
         with closing(connection.cursor()) as cursor:
             cursor.execute('DELETE FROM geography_priorskill')
         with closing(connection.cursor()) as cursor:
             cursor.execute('DELETE FROM geography_currentskill')
+        time_after_delete = time.time()
+        print 'time:', (time_after_delete - time_after_knowledge), 'secs'
         # save new precomputed datasets
         print 'flushing knowledge data to database'
         env.flush()
+        time_after_flush = time.time()
+        print 'time:', (time_after_flush - time_after_delete), 'secs'
+        print 'database commit'
         connection.commit()
+        print 'time:', (time.time() - time_after_flush), 'secs'
+        print 'total time:', (time.time() - time_start), 'secs'
