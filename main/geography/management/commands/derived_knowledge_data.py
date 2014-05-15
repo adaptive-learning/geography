@@ -35,7 +35,7 @@ class Command(BaseCommand):
                 last_options = None
                 current_answer = -1
                 last_answer = None
-                sys.stderr.write('loading answers')
+                sys.stderr.write('loading answers\n')
                 cursor_answers.execute(
                     '''
                     SELECT
