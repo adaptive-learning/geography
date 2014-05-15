@@ -193,20 +193,15 @@ class DatabaseEnvironment(Environment):
 class InMemoryEnvironmentWithFlush(InMemoryEnvironment):
 
     def flush_all(self, prior_skill, current_skill, difficulty):
-        with closing(connection.cursor()) as cursor:
-            cursor.execute(
-                '''INSERT INTO geography_priorskill (user_id, value)
-                VALUES ''' + ','.join(self._prior_skill_values())),
-        with closing(connection.cursor()) as cursor:
-            cursor.execute(
-                '''
+        sql = '''INSERT INTO geography_priorskill (user_id, value)
+                VALUES ''' + ','.join(self._prior_skill_values()) + ';'
+        sql += '''
                 INSERT INTO geography_difficulty (place_id, value)
-                VALUES''' + ','.join(self._difficulty_values()))
-        with closing(connection.cursor()) as cursor:
-            cursor.execute(
-                '''
+                VALUES''' + ','.join(self._difficulty_values()) + ';'
+        sql += '''
                 INSERT INTO geography_currentskill (user_id, place_id, value)
-                VALUES ''' + ','.join(self._current_skill_values()))
+                VALUES ''' + ','.join(self._current_skill_values()) + ';'
+        return sql
 
     def _difficulty_values(self):
         return [

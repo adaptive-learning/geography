@@ -26,7 +26,7 @@ fi
 ###############################################################################
 
 echo " * derive knowledge data"
-$APP_DIR/manage.py derived_knowledge_data
+$APP_DIR/manage.py derived_knowledge_data | $APP_DIR/manage.py dbshell
 
 
 ###############################################################################

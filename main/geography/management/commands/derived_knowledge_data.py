@@ -5,6 +5,7 @@ from geography.models import KnowledgeUpdater, InMemoryEnvironmentWithFlush
 from geography.models.utils import fetchone
 from contextlib import closing
 import time
+import sys
 
 
 class Command(BaseCommand):
@@ -20,7 +21,7 @@ class Command(BaseCommand):
             with closing(connection.cursor()) as cursor_options:
                 # foreach answer update new datasets
                 time_start = time.time()
-                print 'loading options'
+                sys.stderr.write('loading options\n')
                 cursor_options.execute(
                     '''
                     SELECT
@@ -34,7 +35,7 @@ class Command(BaseCommand):
                 last_options = None
                 current_answer = -1
                 last_answer = None
-                print 'loading answers'
+                sys.stderr.write('loading answers')
                 cursor_answers.execute(
                     '''
                     SELECT
@@ -52,8 +53,8 @@ class Command(BaseCommand):
                     ''')
 
                 time_after_loading = time.time()
-                print 'time:', (time_after_loading - time_start), 'secs'
-                print 'computing knowledge data in memory'
+                sys.stderr.write('time: ' + str(time_after_loading - time_start) + ' secs\n')
+                sys.stderr.write('computing knowledge data in memory\n')
                 answer = fetchone(cursor_answers)
                 env = InMemoryEnvironmentWithFlush()
                 stream = KnowledgeUpdater(env)
@@ -73,24 +74,17 @@ class Command(BaseCommand):
                     stream.stream_answer(answer)
                     answer = fetchone(cursor_answers)
                 time_after_knowledge = time.time()
-                print 'time:', (time_after_knowledge - time_after_loading), 'secs'
+                sys.stderr.write('time: ' + str(time_after_knowledge - time_after_loading) + ' secs\n')
         # empty precomputed datasets
-        print 'deleting old knowledge data from database'
-        connection.enter_transaction_management(False)
-        with closing(connection.cursor()) as cursor:
-            cursor.execute('DELETE FROM geography_difficulty')
-        with closing(connection.cursor()) as cursor:
-            cursor.execute('DELETE FROM geography_priorskill')
-        with closing(connection.cursor()) as cursor:
-            cursor.execute('DELETE FROM geography_currentskill')
+        sys.stderr.write('deleting old knowledge data from database\n')
+        print 'DELETE FROM geography_difficulty;'
+        print 'DELETE FROM geography_priorskill;'
+        print 'DELETE FROM geography_currentskill;'
         time_after_delete = time.time()
-        print 'time:', (time_after_delete - time_after_knowledge), 'secs'
+        sys.stderr.write('time: ' + str(time_after_delete - time_after_knowledge) + ' secs\n')
         # save new precomputed datasets
-        print 'flushing knowledge data to database'
-        env.flush()
+        sys.stderr.write('flushing knowledge data to database\n')
+        print env.flush()
         time_after_flush = time.time()
-        print 'time:', (time_after_flush - time_after_delete), 'secs'
-        print 'database commit'
-        connection.commit()
-        print 'time:', (time.time() - time_after_flush), 'secs'
-        print 'total time:', (time.time() - time_start), 'secs'
+        sys.stderr.write('time: ' +  str(time.time() - time_after_flush) + ' secs\n')
+        sys.stderr.write('total time: ' + str(time.time() - time_start) + ' secs\n')
