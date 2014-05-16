@@ -85,5 +85,5 @@ class Command(BaseCommand):
         # save new precomputed datasets
         sys.stderr.write('flushing knowledge data to database\n')
         print env.flush()
-        sys.stderr.write('time: ' +  str(time.time() - time_after_delete) + ' secs\n')
+        sys.stderr.write('time: ' + str(time.time() - time_after_delete) + ' secs\n')
         sys.stderr.write('total time: ' + str(time.time() - time_start) + ' secs\n')
