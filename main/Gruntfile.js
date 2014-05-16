@@ -23,6 +23,20 @@ module.exports = function(grunt) {
         src: ['geography/static/tpl/homepage.html'],
         dest: 'templates/generated/homepage.html',
       },
+      app: {
+        src: [
+          'geography/static/dist/js/hash.js',
+          'geography/static/dist/js/bbox.js',
+          'geography/static/js/app.js',
+          'geography/static/js/controllers.js',
+          'geography/static/js/services.js',
+          'geography/static/js/filters.js',
+          'geography/static/js/map.js',
+          'geography/static/js/directives.js',
+          'geography/static/dist/js/templates.js',
+        ],
+        dest: 'geography/static/dist/js/<%= pkg.name %>.min.js'
+      },
     },
     shell: { 
         hashes: {
@@ -152,9 +166,13 @@ module.exports = function(grunt) {
         files: ['geography/static//jstpl/*.js'],
         tasks: ['string-replace'],
       },
+      templates: {
+        files: ['geography/static/tpl/*.html'],
+        tasks: ['templates', 'concat:app'],
+      },
       jsapp: {
-        files: ['geography/static/js/*.js', 'geography/static/tpl/*.html'],
-        tasks: ['quickminifyjs'],
+        files: ['geography/static/js/*.js'],
+        tasks: ['concat:app'],
       },
       jslibs: {
         files: ['geography/static/lib/js/*.js', 'geography/static/lib/angular-1.2.9/*.js'],
@@ -196,8 +214,7 @@ module.exports = function(grunt) {
   grunt.registerTask('bboxcacheall', ['bboxcache', 'string-replace:bboxcache']);
   grunt.registerTask('templates', ['newer:concat', 'ngtemplates']);
   grunt.registerTask('minifyjs', ['hashes', 'templates', 'uglify']);
-  grunt.registerTask('quickminifyjs', ['hashes', 'templates', 'newer:uglify:app']);
-  grunt.registerTask('default', ['styles', 'jshint', 'quickminifyjs']);
+  grunt.registerTask('default', ['styles', 'jshint', 'bboxcache', 'minifyjs']);
   grunt.registerTask('deploy', ['styles', 'string-replace:bboxcache', 'minifyjs']);
 
   grunt.registerMultiTask('bboxcache', 'Precompute bbox of svg paths.', function() {
