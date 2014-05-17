@@ -39,13 +39,13 @@
           </a>
           <div class="clearfix"></div>
         </div>
-        <div class="map-progress" count="{{type.count}}" 
-             skills="{{ {count:type.places.length, probability: (type.places|avgProb)} }}"></div>
+        <div class="map-progress" count="{{type.count}}"  
+             skills="{{ {count:(type.places|filter:{practiced:true}).length, probability: (type.places|filter:{practiced:true}|avgProb)} }}"></div>
         <div class="view-places collapse in" id="collapse-{{type.slug}}">
-          <div ng-hide="type.places.length" class="alert alert-info">
+          <div ng-hide="(type.places|filter:{practiced:true}).length" class="alert alert-info">
             Zde zatím nebylo nic procvičováno.
           </div>
-          <span ng-repeat="place in type.places"
+          <span ng-repeat="place in type.places|filter:{practiced:true}"
                 ng-click="placeClick(place)"
                 style="border-bottom: 5px solid {{place.probability|probColor}};"
                 place-label>

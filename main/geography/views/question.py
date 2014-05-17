@@ -83,7 +83,8 @@ def users_places(request, map_code, user=None):
     if user == "average":
         ps = AveragePlace.objects.for_map(map_places)
     elif request.user.is_authenticated():
-        ps = UserPlace.objects.for_user_and_map(user, map_places)
+        ps = UserPlace.objects.for_user_and_map_prepared(user, map)
+        ps = list(ps)
     else:
         ps = []
     response = {
@@ -93,11 +94,11 @@ def users_places(request, map_code, user=None):
                 'name': place_type[1],
                 'slug': Place.PLACE_TYPE_SLUGS_LOWER[place_type[0]],
                 'places': [p.to_serializable() for p in ps
-                           if p.place.type == place_type[0]]
+                           if p.type == place_type[0]]
             } for place_type in Place.PLACE_TYPE_PLURALS
         ]
     }
     LOGGER.info(
         u"users_places: previewed map '{0}' of user '{1}' with '{2}' places".
-        format(map.place.name, user, len(ps)))
+        format(map.place.name, user, len(list(ps))))
     return JsonResponse(response)

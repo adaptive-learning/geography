@@ -64,7 +64,7 @@
         'styles' : {
           'fill' : function(d) {
             var state = config.places && config.places[d.code];
-            return state ?
+            return state && state.practiced ?
               colorScale(state.probability).brighten((1 - state.certainty) * 80).hex() :
               '#fff';
           },
@@ -258,8 +258,8 @@
             '<i class="flag-' + d.code + '"></i> ' +
             state.name +
             '</div>' :
-          '<br>Zatím neprocvičováno<br><br>');
-        var description = (state ?
+          '');
+        var description = (state && state.practiced ?
           '<div>' +
             ' Odhad znalosti: ' + 
               '<span class="badge badge-default">' +
@@ -272,7 +272,7 @@
                 $filter('number')(d.population) + 
               '</span><br><br>' : '') +
           '</div>' :
-          '');
+          '<br>Zatím neprocvičováno<br><br>');
         return [
           name + description,
           config.places[d.code] ? config.places[d.code].name : ''

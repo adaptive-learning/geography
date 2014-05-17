@@ -25,7 +25,8 @@ CREATE OR REPLACE VIEW geography_currentskill_prepared AS
 		COALESCE(
 			geography_currentskill.value,
 			geography_priorskill_prepared.value - geography_difficulty_prepared.value
-		) AS value
+		) AS value,
+		geography_currentskill.value AS currentskill
 	FROM
 		geography_priorskill_prepared
 		LEFT JOIN geography_difficulty_prepared ON true
