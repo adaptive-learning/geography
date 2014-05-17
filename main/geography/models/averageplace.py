@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from place import Place
-from math import exp
+from math import exp, ceil
 
 
 class AveragePlaceManager(models.Manager):
@@ -33,7 +33,8 @@ class AveragePlace(models.Model):
         ret = self.place.to_serializable()
         ret.update({
             'skill': self.skill,
-            'probability': 1.0 / (1 + exp(self.skill)),
+            'probability': ceil(10 * 1.0 / (1 + exp(self.skill))) / 10.0,
+            'displayed': True,
             'certainty': 1
         })
         return ret

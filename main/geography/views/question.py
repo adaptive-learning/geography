@@ -84,9 +84,9 @@ def users_places(request, map_code, user=None):
         ps = AveragePlace.objects.for_map(map_places)
     elif request.user.is_authenticated():
         ps = UserPlace.objects.for_user_and_map_prepared(user, map)
-        ps = list(ps)
     else:
         ps = []
+    ps = list(ps)
     response = {
         'name': map.place.name,
         'placesTypes': [
@@ -94,7 +94,8 @@ def users_places(request, map_code, user=None):
                 'name': place_type[1],
                 'slug': Place.PLACE_TYPE_SLUGS_LOWER[place_type[0]],
                 'places': [p.to_serializable() for p in ps
-                           if p.type == place_type[0]]
+                           if hasattr(p, 'type') and p.type == place_type[0] or
+                           not hasattr(p, 'type') and p.place.type == place_type[0]]
             } for place_type in Place.PLACE_TYPE_PLURALS
         ]
     }
