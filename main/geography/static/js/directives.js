@@ -140,13 +140,15 @@
     };
   }])
 
-  .directive('mapProgress',['$filter', 'colorScale', function($filter, colorScale) {
+  .directive('mapProgress', [function() {
     return {
       restrict : 'C',
       template : '<div class="progress overview-progress">' +
-                    '<div class="progress-bar" style="' +
-                        'background-color: {{skills.probability|probColor}};' +
-                        'width: {{(skills.count / count)|percent}};">' +
+                    '<div class="progress-bar progress-bar-learned" style="' +
+                        'width: {{(skills.learned / count)|percent}};">' +
+                    '</div>' +
+                    '<div class="progress-bar progress-bar-practiced" style="' +
+                        'width: {{(skills.practiced / count)|percent}};">' +
                     '</div>' +
                   '</div>',
       link : function($scope, elem, attrs) {
@@ -158,18 +160,17 @@
               html : true,
               placement: 'bottom',
               title : '<div class="skill-tooltip">' +
-                     'Procvičeno: ' +
+                     'Naučeno: ' +
                      '<span class="badge badge-default">' +
-                       $scope.skills.count + ' / ' + $scope.count +
+                       '<i class="color-indicator learned"></i>' +
+                       $scope.skills.learned + ' / ' + $scope.count +
                      '</span>' +
                    '</div>' +
-                   '<div class="skill-tooltip" ' + ($scope.skills.probability ? '' 
-                        : 'style="display: none;"') + '>' +
-                     'Odhad znalostí: ' +
+                   '<div class="skill-tooltip">' +
+                     'Procvičováno: ' +
                      '<span class="badge badge-default">' +
-                       '<i class="color-indicator" style="background-color :' + 
-                       colorScale($scope.skills.probability).hex() + '"></i>' +
-                       $filter('percent')($scope.skills.probability) +
+                       '<i class="color-indicator practiced"></i>' +
+                       $scope.skills.practiced + ' / ' + $scope.count +
                      '</span>' +
                    '</div>'
             });

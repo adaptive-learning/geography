@@ -2,16 +2,10 @@
 from django.db import models
 from place import Place
 from django.contrib.auth.models import User
-from math import exp
+from math import exp, ceil
 
 
 class UserPlaceManager(models.Manager):
-
-    def for_user_and_map(self, user, map_places):
-        return self.filter(
-            user=user,
-            place__in=map_places,
-        ).select_related('place').order_by('place__name')
 
     def for_user_and_map_prepared(self, user, map):
         return self.raw("""
@@ -71,9 +65,10 @@ class UserPlace(models.Model):
             'code': self.code,
             'name': self.name,
             'skill': self.skill,
-            'practiced': self.currentskill is not None or learned,
+            'practiced': self.currentskill is not None and not learned,
             'learned': learned,
-            'probability': probability,
+            'displayed': self.currentskill is not None or learned,
+            'probability': ceil(10 * probability) / 10.0,
             'certainty': 1
         }
         return ret

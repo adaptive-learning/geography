@@ -85,21 +85,6 @@
     };
   }])
 
-  .filter('avgProb', [ function() {
-    return function(places) {
-      if (places.length === 0) {
-        return 0;
-      }
-      var sum = places.map(function(p){
-        return p.probability;
-      }).reduce(function(a, b) { 
-        return a + b;
-      });
-      var avg = sum / places.length;
-      return avg;
-    };
-  }])
-
   .filter('sumCounts', [ function() {
     return function(layers) {
       if (!layers || layers.length === 0) {

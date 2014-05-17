@@ -222,16 +222,16 @@
     };
     
     function avgSkills(skills) {
-      var probSum = 0;
-      var count = 0;
+      var learned = 0;
+      var practiced = 0;
       for (var i in skills){
         var p = skills[i];
-        count += p.count;
-        probSum += p.probability * p.count;
+        learned += p.learned;
+        practiced += p.practiced;
       }
       var avg = {
-        count : count,
-        probability : probSum / count,
+        learned : learned,
+        practiced : practiced,
       };
       return avg;
     }

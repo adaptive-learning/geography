@@ -64,7 +64,7 @@
         'styles' : {
           'fill' : function(d) {
             var state = config.places && config.places[d.code];
-            return state && state.practiced ?
+            return state && state.displayed ?
               colorScale(state.probability).brighten((1 - state.certainty) * 80).hex() :
               '#fff';
           },
@@ -259,13 +259,13 @@
             state.name +
             '</div>' :
           '');
-        var description = (state && state.practiced ?
+        var description = (state && state.displayed ?
           '<div>' +
             ' Odhad znalosti: ' + 
               '<span class="badge badge-default">' +
                 '<i class="color-indicator" style="background-color :' +
                 colorScale(state.probability).hex() + '"></i>' +
-                Math.round(100 * state.probability) + '% ' +
+                10 * state.probability + ' / 10 ' +
               '</span><br><br>' +
             (d.population ? ' Počet obyvatel: ' +
               '<span class="badge badge-default">' +
