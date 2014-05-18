@@ -29,19 +29,14 @@ def _places(request, map_code):
             {
                 'name': place_type[1],
                 'slug': Place.PLACE_TYPE_SLUGS_LOWER[place_type[0]],
-                'places': [p.to_serializable() for p in map_places
-                           if p.type == place_type[0]]
+                'count': len([p for p in map_places
+                             if p.type == place_type[0]])
             } for place_type in Place.PLACE_TYPE_PLURALS
         ]
     }
     response['placesTypes'] = [pt for pt in response['placesTypes']
-                               if len(pt['places']) > 0]
+                               if pt['count'] > 0]
     return response
-
-
-@cache_page(60 * 60)
-def places(request, map_code):
-    return JsonResponse(_places(request, map_code))
 
 
 @cache_page(60 * 60)
@@ -58,10 +53,6 @@ def places_overview(request):
     }]
     for map_type in map_types:
         map_type['maps'] = [_places(request, m.code) for m in map_type['maps']]
-        for map_ in map_type['maps']:
-            for place_type in map_['placesTypes']:
-                place_type['count'] = len(place_type['places'])
-                del place_type['places']
     return JsonResponse(map_types)
 
 

@@ -99,6 +99,8 @@ def users_places(request, map_code, user=None):
             } for place_type in Place.PLACE_TYPE_PLURALS
         ]
     }
+    response['placesTypes'] = [pt for pt in response['placesTypes']
+                               if len(pt['places']) > 0]
     LOGGER.info(
         u"users_places: previewed map '{0}' of user '{1}' with '{2}' places".
         format(map.place.name, user, len(list(ps))))

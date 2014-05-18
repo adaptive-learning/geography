@@ -39,7 +39,7 @@
           </a>
           <div class="clearfix"></div>
         </div>
-        <div class="map-progress" count="{{type.count}}"  
+        <div class="map-progress" count="{{type.places.length}}"  
              skills="{{ {
                practiced:(type.places|filter:{practiced:true}).length,
                learned:(type.places|filter:{learned:true}).length

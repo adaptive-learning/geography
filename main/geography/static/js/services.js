@@ -47,24 +47,11 @@
       }
     }
 
-    function addToNames(code, data) {
-      angular.forEach(data.placesTypes, function(type) {
+    function addToNames(code, placesTypes) {
+      angular.forEach(placesTypes, function(type) {
         angular.forEach(type.places, function(place) {
           addOneToNames(place.code, place.name);
         });
-      });
-      addOneToNames(code, data.name);
-    }
-    
-    function filterPlaceTypes(practicedPlacesTypes, availablePlacesTypes) {
-      return practicedPlacesTypes.filter(function(practicedType) {
-        var isAvailable = false;
-        angular.forEach(availablePlacesTypes, function(availableType) {
-          if (practicedType.slug == availableType.slug) {
-            isAvailable = true;
-          }
-        });
-        return isAvailable;
       });
     }
     
@@ -72,30 +59,11 @@
       get : function(part, user, fn) {
         var url = 'usersplaces/' + part + '/' + user;
         var promise = $http.get(url, {cache: user == 'average'}).success(function(data) {
-          that.getPlaces(part, function(availablePlacesTypes) {
-            var placesTypes = filterPlaceTypes(data.placesTypes, availablePlacesTypes);
-            placesTypes = placesTypes.map(function(l){
-              l.count = that.getMapLayerCount(part, l.slug);
-              return l;
-            });
-            cache[url] = placesTypes;
-            fn(placesTypes);
-          });
+          var placesTypes = data.placesTypes;
+          cache[url] = placesTypes;
+          fn(placesTypes);
         });
         return promise;
-      },
-      getPlaces : function(part, fn) {
-        var url = 'places/' + part;
-        $http.get(url, {cache: true}).success(function(data) {
-          addToNames(part, data);
-          if (fn) {
-            fn(data.placesTypes);
-          }
-        });
-      },
-      getCached : function(part, user) {
-        var url = 'usersplaces/' + part + '/' + user;
-        return cache[url] || undefined;
       },
       setName : function(code, name) {
         names[code] = names[code] || name;
@@ -127,7 +95,15 @@
       practicing : function (part, type) {
         that._setActiveCategory(part, type);
         // To fetch names of all places on map and be able to show name of wrongly answered place
-        that.getPlaces(part);
+        var process = function(placesTypes){
+          addToNames(part, placesTypes);
+        };
+        var url = 'usersplaces/' + part + '/';
+        if (cache[url]) {
+          process(cache[url]);
+        } else {
+          that.get(part, '', process);
+        } 
       },
       getOverview : function () {
         return $http.get('/placesoverview/', {cache: true});

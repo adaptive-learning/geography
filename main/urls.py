@@ -17,7 +17,6 @@ urlpatterns = patterns(
     url(r'^convert/', include('lazysignup.urls')),
 
     url(r'^usersplaces/(?P<map_code>\w+)/(?P<user>\w*)', 'geography.views.users_places', name='usersplaces'),
-    url(r'^places/(?P<map_code>\w+)', 'geography.views.places', name='places'),
     url(r'^placesoverview/', 'geography.views.places_overview', name='places_overview'),
     url(r'^mapskill/(?P<user>\w*)', 'geography.views.mapskill', name='mapskill'),
     url(r'^csv/(?P<model>\w*)', 'geography.views.csv_view', name='csv_view'),
