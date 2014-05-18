@@ -1,5 +1,8 @@
 <div class="overview">
-  <h1>Přehled map</h1>
+  <h1>Přehled znalostí {{user}}</h1>
+  <div class="col-sm-offset-2 col-sm-8 overview-stats">
+    <span class="level-progress-bar"></span>
+  </div>
   <div ng-hide="mapCategories" class="loading-indicator">
   </div>
   <div class="map-categories" ng-repeat="c in mapCategories">

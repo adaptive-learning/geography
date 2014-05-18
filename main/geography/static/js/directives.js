@@ -190,5 +190,53 @@
         });
       }
     };
+  }])
+
+  .directive('levelProgressBar',['user', '$timeout', function(user, $timeout) {
+    
+    function getLevelInfo(points) {
+      var levelEnd = 0;
+      var levelRange = 30;
+      var rangeIncrease = 0;
+      for (var i = 1; true; i++) {
+        levelEnd += levelRange;
+        if (points < levelEnd) {
+          return {
+            level : i,
+            form : levelEnd - levelRange,
+            to : levelEnd,
+            range : levelRange,
+            points : points - (levelEnd - levelRange),
+          };
+        }
+        levelRange += rangeIncrease;
+        rangeIncrease += 10;
+      }
+      
+    }
+    return {
+      restrict : 'C',
+      template : '<span class="badge level-start atooltip" ' +
+                   'ng-bind="level.level" title="Aktuální úroveň">' +
+                 '</span>' +
+                 '<div class="progress level-progress" >' +
+                   '<div class="progress-bar progress-bar-warning" ' +
+                        'style="width: {{(level.points/level.range)|percent}};">' +
+                   '</div>' +
+                 '</div>' +
+                 '<span class="badge level-goal atooltip" ' +
+                       'ng-bind="level.level+1" title="Příští úroveň">' +
+                 '</span>',
+      link : function($scope, elem) {
+        $scope.level = getLevelInfo(user.getUser().points);
+        $timeout(function(){
+          //console.log(elem, elem.find('.level-progress'));
+          elem.find('.level-progress').tooltip({
+            placement: 'bottom',
+            title : $scope.level.points + ' z ' + $scope.level.range + ' bodů',
+          });
+        },100);
+      }
+    };
   }]);
 }());
