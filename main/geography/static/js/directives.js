@@ -3,16 +3,28 @@
   /* Directives */
   angular.module('blindMaps.directives', [])
 
-  .directive('placeLabel', function() {
+  .directive('placeLabel', ['colorScale', function(colorScale) {
     return {
       restrict : 'A',
       template : '<i class="flag-{{place.code}}"></i> {{place.name}}',
-      compile : function(element) {
-        element.addClass('label');
-        element.addClass('label-default');
+      link : function($scope, elem) {
+        elem.addClass('label');
+        elem.addClass('label-default');
+        elem.tooltip({
+          html : true,
+          placement: 'bottom',
+          title : '<div class="skill-tooltip">' +
+                ' Odhad znalosti ' + 
+                '<span class="badge badge-default">' +
+                  '<i class="color-indicator" style="background-color :' +
+                  colorScale($scope.place.probability).hex() + '"></i>' +
+                  10 * $scope.place.probability + ' / 10 ' +
+                '</span>' +
+               '</div>'
+        });
       }
     };
-  })
+  }])
 
   .directive('blindMap', ['mapControler', 'places', 'singleWindowResizeFn', 'getMapResizeFunction', '$parse',
       function(mapControler, places, singleWindowResizeFn, getMapResizeFunction, $parse) {
