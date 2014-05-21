@@ -209,6 +209,13 @@ LOGGING = {
             'filename': os.path.join(MEDIA_ROOT, 'geography.log'),
             'formatter': 'simple'
         },
+        'proso_file': {
+
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(MEDIA_ROOT, 'proso.log'),
+            'formatter': 'simple'
+        },
         'queries_file': {
             'level': ('DEBUG' if DEBUG else 'INFO'),
             'class': 'logging.FileHandler',
@@ -223,6 +230,11 @@ LOGGING = {
         },
         'geography': {
             'handlers': ['geography_file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'proso': {
+            'handlers': ['proso_file'],
             'level': 'DEBUG',
             'propagate': True,
         },
