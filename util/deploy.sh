@@ -102,7 +102,7 @@ fi
 ###############################################################################
 
 if [[ `$GIT_COMMAND diff --name-only $LAST_HEAD $DEPLOY_VERSION` ]]; then
-	pip install -r $APP_DIR/requirements.txt
+	pip install --upgrade -r $APP_DIR/requirements.txt
 fi
 
 
