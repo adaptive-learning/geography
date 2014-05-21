@@ -127,10 +127,10 @@ class DatabaseEnvironment(Environment):
                     FROM geography_answer
                     WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
                     AND place_asked_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
-                    GROUP BY place_asked_id
+                    GROUP BY user_id, place_asked_id
                     ''')
                 found = dict(map(lambda (i, j, k): ((i, j), k), cursor.fetchall()))
-                return map(lambda i: found.get(0), zip(user_ids, place_ids))
+                return map(lambda i: found.get(i, 0), zip(user_ids, place_ids))
 
     def has_answer(self, user_id=None, place_id=None):
         return self.first_answers_num(user_id=user_id, place_id=place_id) > 0
