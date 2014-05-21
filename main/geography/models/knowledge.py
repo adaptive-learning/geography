@@ -8,6 +8,9 @@ from proso.geography.model import AnswerStream
 from proso.geography.prior import elo_prepare, elo_predict, elo_update
 from proso.geography.current import pfa_prepare, pfa_predict, pfa_update
 from contextlib import closing
+from django.core.cache import cache
+import hashlib
+import json
 
 
 class KnowledgeUpdater(AnswerStream):
@@ -42,6 +45,85 @@ class DatabaseEnvironment(Environment):
     USER = 1
     PLACE = 2
     USER_PLACE = 3
+
+    def answers_num(self, user_id=None, place_id=None):
+        return self.answers_nums([user_id], [place_id])[0]
+
+    def answers_nums(self, user_ids, place_ids):
+        with closing(connection.cursor()) as cursor:
+            args_type = self._args_type(user_ids, place_ids)
+            if args_type == DatabaseEnvironment.USER:
+                cursor.execute(
+                    '''
+                    SELECT
+                        user_id,
+                        COUNT(geography_answer.id)
+                    FROM geography_answer
+                    WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
+                    GROUP BY user_id
+                    ''')
+                found = dict(cursor.fetchall())
+                return map(lambda i: found[i], user_ids)
+            elif args_type == DatabaseEnvironment.PLACE:
+                cursor.execute(
+                    '''
+                    SELECT
+                        place_asked_id,
+                        COUNT(geography_answer.id)
+                    FROM geography_answer
+                    WHERE place_asked_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+                    GROUP BY place_asked_id
+                    ''')
+                found = dict(cursor.fetchall())
+                return map(lambda i: found[i], place_ids)
+            else:
+                cursor.execute(
+                    '''
+                    SELECT
+                        user_id,
+                        place_asked_id,
+                        COUNT(geography_answer.id)
+                    FROM geography_answer
+                    WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
+                    AND place_asked_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+                    GROUP BY user_id, place_asked_id
+                    ''')
+                found = dict(map(lambda (i, j, k): ((i, j), k), cursor.fetchall()))
+                return map(lambda i: found.get(i, 0), zip(user_ids, place_ids))
+
+    def confused_index(self, place_id, place_ids):
+        cache_key = (
+            'confused_index_' +
+            hashlib.sha1(str(place_id)).hexdigest() +
+            '_' +
+            hashlib.sha1(str(place_ids)).hexdigest())
+        places_json = cache.get(cache_key)
+        if places_json is None:
+            with closing(connection.cursor()) as cursor:
+                cursor.execute(
+                    '''
+                    SELECT
+                        geography_place.id,
+                        COUNT(geography_answer.id) AS confusing_factor
+                    FROM
+                        geography_place
+                        LEFT JOIN geography_answer ON (
+                            geography_answer.place_answered_id = geography_place.id
+                            AND geography_answer.place_asked_id = %s)
+                    WHERE
+                        geography_place.id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+                        AND
+                        geography_answer.place_asked_id != geography_answer.place_answered_id
+                    GROUP BY geography_place.id
+                    ''', [place_id])
+                confusing_factor = dict([(p[0], p[1]) for p in cursor.fetchall()])
+                json_places = json.dumps(map(lambda i: confusing_factor.get(i, 0), place_ids))
+            place_answered_num = self.answers_num(place_id=place_id)
+            expire_hours = max(1, int(round(place_answered_num / 100.0)))
+            expire_seconds = 60 * 60 * expire_hours
+            cache.set(cache_key, json_places, expire_seconds)
+            places_json = cache.get(cache_key)
+        return json.loads(places_json)
 
     def current_skill(self, user_id, place_id, new_value):
         if new_value is not None:
@@ -144,11 +226,48 @@ class DatabaseEnvironment(Environment):
         return self.last_times([user_id], [place_id])[0]
 
     def last_times(self, user_ids, place_ids):
-        args_type = self._args_type(user_ids, place_ids)
-        if args_type == DatabaseEnvironment.USER:
-            return [0 for i in user_ids]
-        else:
-            return [0 for i in place_ids]
+        with closing(connection.cursor()) as cursor:
+            args_type = self._args_type(user_ids, place_ids)
+            if args_type == DatabaseEnvironment.USER:
+                cursor.execute(
+                    '''
+                    SELECT
+                        user_id,
+                        max(inserted)
+                    FROM geography_answer
+                    WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
+                    GROUP BY user_id
+                    ''')
+                found = dict(cursor.fetchall())
+                print 'A', found
+                return map(lambda i: found[i], user_ids)
+            elif args_type == DatabaseEnvironment.PLACE:
+                cursor.execute(
+                    '''
+                    SELECT
+                        place_asked_id,
+                        MAX(inserted)
+                    FROM geography_answer
+                    WHERE place_asked_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+                    GROUP BY place_asked_id
+                    ''')
+                found = dict(cursor.fetchall())
+                print 'B', found
+                return map(lambda i: found[i], place_ids)
+            else:
+                cursor.execute(
+                    '''
+                    SELECT
+                        user_id,
+                        place_asked_id,
+                        MAX(inserted)
+                    FROM geography_answer
+                    WHERE user_id IN (''' + ','.join([str(i) for i in user_ids]) + ''')
+                    AND place_asked_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
+                    GROUP BY user_id, place_asked_id
+                    ''')
+                found = dict(map(lambda (i, j, k): ((i, j), k), cursor.fetchall()))
+                return map(lambda i: found.get(i, None), zip(user_ids, place_ids))
 
     def prior_skill(self, user_id, new_value=None):
         if new_value is not None:
@@ -171,8 +290,24 @@ class DatabaseEnvironment(Environment):
             found = dict(cursor.fetchall())
             return map(lambda user_id: found[user_id], user_ids)
 
-    def process_answer(self, user_id, place_id, inserted):
+    def process_answer(self, user_id, place_asked_id, place_answered_id, inserted):
         pass
+
+    def rolling_success(self, user_id, n=10):
+        if n == 0:
+            return 1.0
+        with closing(connection.cursor()) as cursor:
+            cursor.execute(
+                '''
+                SELECT
+                    place_asked_id,
+                    place_answered_id
+                FROM
+                    geography_answer
+                ORDER BY id DESC
+                LIMIT %s
+                ''', [n])
+            return sum([r[0] == r[1] for r in cursor.fetchall()]) / float(n)
 
     def _args_type(self, user_ids, place_ids):
         user_ids_nones = [id is None for id in user_ids]

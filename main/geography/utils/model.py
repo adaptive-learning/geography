@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-from geography.models import Answer, Place, Value
+from geography.models import Answer, Place, Value, DatabaseEnvironment
 from random import choice
-from math import floor
 import logging
 
 LOGGER = logging.getLogger(__name__)
@@ -10,19 +9,18 @@ LOGGER = logging.getLogger(__name__)
 class Question():
     options = []
 
-    def __init__(self, place, number_of_options, map_place, ab_values):
+    def __init__(self, place, options, map_place, ab_values):
         self.place = place
         self.map_place = map_place
         self.ab_values = ab_values
-        if number_of_options > 1:
+        self.options = options
+        if len(options) > 0:
             self.qtype = QuestionType(
                 choice([Answer.FIND_ON_MAP, Answer.PICK_NAME]),
                 self.place.type,
-                number_of_options)
+                len(options) + 1)
         else:
             self.qtype = QuestionType(Answer.FIND_ON_MAP, self.place.type, 0)
-        if number_of_options > 1:
-            self.options = self.get_options(self.qtype.number_of_options)
 
     def to_serializable(self):
         ret = self.qtype.to_serializable()
@@ -30,16 +28,13 @@ class Question():
         ret['map_code'] = self.map_place.place.code
         ret['place'] = self.place.name
         ret['ab_values'] = [v.value for v in self.ab_values]
-        if (self.options != []):
-            ret["options"] = self.options
+        if len(self.options) > 0:
+            ret["options"] = sorted(
+                map(
+                    lambda o: dict([('code', o.code), ('name', o.name)]),
+                    [self.place] + self.options),
+                key=lambda x: x['name'])
         return ret
-
-    def get_options(self, n):
-        ps = [self.place]
-        ps += self.place.confusing_places(self.map_place, n - 1)
-        options = [p.to_serializable() for p in ps]
-        options.sort(key=lambda tup: tup["name"])
-        return options
 
 
 class QuestionService:
@@ -52,22 +47,13 @@ class QuestionService:
         self.ab_env = ab_env
 
     def get_questions(self, n, place_types):
-        target_probability = self.adjust_target_probability()
         candidates = Place.objects.get_places_to_ask(
             self.user,
             self.map_place,
-            target_probability,
             n,
             place_types,
+            DatabaseEnvironment(),
             self.ab_env)
-        candidates = map(
-            lambda (place, raw): (place, self.number_of_options(raw['predicted_probability'], 0.75, raw['number_of_answers'])),
-            candidates)
-        LOGGER.debug(
-            "user %s, question candidates with number of options for map %s are %s",
-            str(self.user),
-            str(self.map_place),
-            str(candidates))
         return [
             Question(
                 place,
@@ -75,18 +61,6 @@ class QuestionService:
                 self.map_place,
                 self.ab_env.get_affecting_values(Place.AB_REASON_RECOMMENDATION)).to_serializable()
             for (place, options) in candidates]
-
-    def adjust_target_probability(self):
-        success_rate = Answer.objects.get_success_rate(self.user, self.history_length)
-        norm = 1 - self.target_probability if success_rate > self.target_probability else self.target_probability
-        correction = ((self.target_probability - success_rate) / norm) * (1 - norm)
-        return self.target_probability + correction
-
-    def number_of_options(self, prob_real, prob_expected, number_of_answers):
-        round_fun = round if number_of_answers else floor
-        g = min(0.5, max(0, prob_expected - prob_real) / max(1 - prob_real, 0.0001))
-        k = round_fun(1.0 / g) if g != 0 else 1
-        return 1 if k > 6 else k
 
     def answer(self, a, ip_address):
         place_asked = Place.objects.get(code=a["asked_code"])

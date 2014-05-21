@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.template.defaultfilters import slugify
-from django.core.cache import cache
 from django.db import connection
 from contextlib import closing
-import recommendation
-import json
-import random
+import proso.geography.recommendation as recommendation
 import logging
 
 LOGGER = logging.getLogger(__name__)
@@ -22,13 +19,55 @@ class WeghtedPlace:
 
 class PlaceManager(models.Manager):
 
-    def get_places_to_ask(self, user, map_place, expected_probability, n, place_types, ab_env):
+    DEFAULT_RECOMMENDATION_STRATEGY = 'recommendation_by_additive_function'
+
+    RECOMMENDATION_STRATEGIES = {
+        DEFAULT_RECOMMENDATION_STRATEGY: recommendation.by_additive_function,
+        'recommendation_by_random': recommendation.by_random
+    }
+
+    def get_places_to_ask(self, user, map_place, n, place_types, knowledge_env, ab_env):
         strategy_name = ab_env.get_membership(
-            recommendation.STRATEGIES.keys(),
-            recommendation.DEFAULT_STRATEGY_NAME,
+            PlaceManager.RECOMMENDATION_STRATEGIES.keys(),
+            PlaceManager.DEFAULT_RECOMMENDATION_STRATEGY,
             Place.AB_REASON_RECOMMENDATION)
-        strategy = recommendation.STRATEGIES[strategy_name]
-        return strategy(user, map_place, expected_probability, n, place_types)
+        strategy = PlaceManager.RECOMMENDATION_STRATEGIES[strategy_name]
+        with closing(connection.cursor()) as cursor:
+            cursor.execute(
+                '''
+                SELECT
+                    geography_placerelation_related_places.place_id
+                FROM
+                    geography_placerelation
+                    INNER JOIN geography_placerelation_related_places
+                        ON placerelation_id = geography_placerelation.id
+                    INNER JOIN geography_place
+                        ON geography_placerelation_related_places.place_id = geography_place.id
+                WHERE
+                    geography_placerelation.place_id = %s
+                    AND
+                    geography_placerelation.type = %s
+                    AND
+                    geography_place.type IN ''' + str(tuple(place_types)).replace(',)', ')') + '''
+                GROUP BY geography_place.id
+                ORDER BY geography_place.id
+                ''',
+                [
+                    int(map_place.place.id),
+                    int(PlaceRelation.IS_ON_MAP)
+                ])
+            available_place_ids = [p[0] for p in cursor.fetchall()]
+        candidates = strategy(user.id, available_place_ids, knowledge_env, n)
+        targets, options_flatten = zip(*candidates)
+        options = [o for os in options_flatten for o in os]
+        all_ids = set(list(targets) + list(options))
+        all_places = self.filter(id__in=all_ids)
+        all_places_dict = dict([(p.id, p) for p in all_places])
+        targets_places = map(lambda i: all_places_dict[i], targets)
+        options_flatten_places = map(
+            lambda os: map(lambda i: all_places_dict[i], os),
+            options_flatten)
+        return zip(targets_places, options_flatten_places)
 
     def get_states_with_map(self):
         return [pr.place for pr in PlaceRelation.objects.filter(
@@ -125,62 +164,6 @@ class Place(models.Model):
 
     objects = PlaceManager()
 
-    def confusing_places(self, map_place, n):
-        cache_key = "map" + str(map_place.id) + "-place" + str(self.id)
-        places_json = cache.get(cache_key)
-        if places_json is None:
-            with closing(connection.cursor()) as cursor:
-                cursor.execute(
-                    '''
-                    SELECT
-                        geography_place.code,
-                        geography_place.name,
-                        COUNT(geography_answer.id) AS confusing_factor
-                    FROM
-                        geography_place
-                        LEFT JOIN geography_answer ON (
-                            geography_answer.place_answered_id = geography_place.id
-                            AND geography_answer.place_asked_id = %s)
-                    WHERE
-                        geography_place.id IN (
-                            SELECT
-                                geography_placerelation_related_places.place_id
-                            FROM
-                                geography_placerelation
-                                INNER JOIN geography_placerelation_related_places
-                                    ON placerelation_id = geography_placerelation.id
-                            WHERE
-                                geography_placerelation.place_id = %s
-                                AND
-                                geography_placerelation.type = %s
-                        )
-                        AND geography_place.id != %s
-                        AND geography_place.type = %s
-                        AND (geography_answer.place_asked_id != geography_answer.place_answered_id OR ISNULL(geography_answer.place_asked_id))
-                    GROUP BY geography_place.id
-                    ORDER BY
-                        confusing_factor DESC, RAND() DESC
-                    LIMIT 8
-                    ''',
-                    [
-                        int(self.id),
-                        int(map_place.place.id),
-                        int(PlaceRelation.IS_ON_MAP),
-                        int(self.id),
-                        int(self.type)
-                    ])
-                json_places = json.dumps([(p[0], p[1], p[2]) for p in cursor.fetchall()])
-                expire_days = 3
-                # TODO: change expire_days to something like:
-                # expire_days = places[0].confusing_factor / 2
-                expire_seconds = 60 * 60 * 24 * expire_days
-                cache.set(cache_key, json_places, expire_seconds)
-                places_json = cache.get(cache_key)
-        return [
-            Place(code=p[0], name=p[1])
-            for p in Place._weighted_choices(json.loads(places_json), n)
-        ]
-
     def __unicode__(self):
         return u'{0} ({1})'.format(self.name, self.code)
 
@@ -189,34 +172,6 @@ class Place(models.Model):
             'code': self.code,
             'name': self.name
         }
-
-    @staticmethod
-    def _weighted_choices(choices, n):
-        chosen = []
-        choices_set = set()
-        for i in choices:
-            choices_set.add(WeghtedPlace(i[0], i[1], i[2]))
-        for i in range(int(n)):
-            c = Place._weighted_choice(choices_set)
-            chosen.append((c.code, c.name))
-            choices_set.remove(c)
-        return list(chosen)
-
-    @staticmethod
-    def _weighted_choice(choices):
-        if not len(choices):
-            raise Exception("The list 'choices' can't be empty.")
-        total = sum(c.weight for c in choices)
-        if total == 0:
-            LOGGER.warn("choices don't have weights")
-            return random.choice(list(choices))
-        r = random.uniform(0, total)
-        upto = 0
-        for c in choices:
-            if upto + c.weight > r:
-                return c
-            upto += c.weight
-        assert False, "Shouldn't get here"
 
     class Meta:
         app_label = 'geography'
