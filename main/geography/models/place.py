@@ -34,6 +34,8 @@ class PlaceManager(models.Manager):
     }
 
     def get_places_to_ask(self, user, map_place, n, place_types, knowledge_env, ab_env):
+        if n <= 0:
+            return []
         strategy_name = ab_env.get_membership(
             PlaceManager.RECOMMENDATION_STRATEGIES.keys(),
             PlaceManager.DEFAULT_RECOMMENDATION_STRATEGY,
