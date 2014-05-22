@@ -13,8 +13,8 @@ class Migration(DataMigration):
             'ab_testing',
             'init',
             'question_selection_1=recommendation_by_additive_function',
-            'recommendation_by_additive_function=90',
-            'recommendation_by_random=10',
+            'recommendation_by_additive_function=70',
+            'recommendation_by_random=30',
             max_answers=1)
 
     def backwards(self, orm):
