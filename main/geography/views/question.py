@@ -7,8 +7,6 @@ from geography.utils import JsonResponse, QuestionService
 from lazysignup.decorators import allow_lazy_user
 from logging import getLogger
 from ipware.ip import get_ip
-import geography.models.user
-import math
 
 LOGGER = getLogger(__name__)
 
