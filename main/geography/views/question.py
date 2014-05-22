@@ -29,23 +29,13 @@ def question(request, map_code, place_type_slug):
         answer = simplejson.loads(request.raw_post_data)
         qs.answer(answer, get_ip(request))
         question_index = answer['index'] + 1
-    if should_get_questions(request, question_index):
-        place_types = ([Place.PLACE_TYPE_SLUGS_LOWER_REVERSE[place_type_slug]]
-                       if place_type_slug in Place.PLACE_TYPE_SLUGS_LOWER_REVERSE
-                       else Place.CATEGORIES[place_type_slug]
-                       if place_type_slug in Place.CATEGORIES
-                       else [t[0] for t in Place.PLACE_TYPES])
-        response = qs.get_questions(10 - question_index, place_types)
-    else:
-        response = []
+    place_types = ([Place.PLACE_TYPE_SLUGS_LOWER_REVERSE[place_type_slug]]
+                   if place_type_slug in Place.PLACE_TYPE_SLUGS_LOWER_REVERSE
+                   else Place.CATEGORIES[place_type_slug]
+                   if place_type_slug in Place.CATEGORIES
+                   else [t[0] for t in Place.PLACE_TYPES])
+    response = qs.get_questions(10 - question_index, place_types)
     return JsonResponse(response)
-
-
-def should_get_questions(request, question_index):
-    points = geography.models.user.get_points(request.user)
-    return ((points <= 10
-            or question_index % math.ceil(math.log(points, 10)) == 0)
-            and question_index != 9)
 
 
 def average_users_places(request, map_code):
