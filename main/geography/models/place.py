@@ -26,12 +26,24 @@ class PlaceManager(models.Manager):
         'recommendation_by_random': recommendation.by_random
     }
 
+    DEFAULT_OPTIONS_STRATEGY = 'recommendation_options_naive'
+
+    OPTIONS_STRATEGIES = {
+        DEFAULT_OPTIONS_STRATEGY: recommendation.OPTIONS_NAIVE,
+        'recommendation_options_random': recommendation.OPTIONS_RANDOM
+    }
+
     def get_places_to_ask(self, user, map_place, n, place_types, knowledge_env, ab_env):
         strategy_name = ab_env.get_membership(
             PlaceManager.RECOMMENDATION_STRATEGIES.keys(),
             PlaceManager.DEFAULT_RECOMMENDATION_STRATEGY,
             Place.AB_REASON_RECOMMENDATION)
+        options_strategy_name = ab_env.get_membership(
+            PlaceManager.OPTIONS_STRATEGIES.keys(),
+            PlaceManager.DEFAULT_OPTIONS_STRATEGY,
+            Place.AB_REASON_RECOMMENDATION)
         strategy = PlaceManager.RECOMMENDATION_STRATEGIES[strategy_name]
+        options_strategy = PlaceManager.OPTIONS_STRATEGIES[options_strategy_name]
         with closing(connection.cursor()) as cursor:
             cursor.execute(
                 '''
@@ -57,7 +69,12 @@ class PlaceManager(models.Manager):
                     int(PlaceRelation.IS_ON_MAP)
                 ])
             available_place_ids = [p[0] for p in cursor.fetchall()]
-        candidates = strategy(user.id, available_place_ids, knowledge_env, n)
+        candidates = strategy(
+            user.id,
+            available_place_ids,
+            knowledge_env,
+            n,
+            options_strategy=options_strategy)
         targets, options_flatten = zip(*candidates)
         options = [o for os in options_flatten for o in os]
         all_ids = set(list(targets) + list(options))
