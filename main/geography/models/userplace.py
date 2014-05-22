@@ -13,6 +13,7 @@ class UserPlaceManager(models.Manager):
         geography_currentskill_prepared.user_id * 100000 + geography_placerelation.place_id AS dummy_id,
         geography_placerelation.place_id AS place_id,
         geography_currentskill_prepared.user_id AS user_id,
+        geography_currentskill_prepared.currentskill AS currentskill,
         geography_currentskill_prepared.value AS skill,
         geography_place.type AS type,
         geography_place.name AS name,
@@ -64,9 +65,9 @@ class UserPlace(models.Model):
             'code': self.code,
             'name': self.name,
             'skill': self.skill,
-            'practiced': self.skill is not None and not learned,
+            'practiced': self.currentskill is not None and not learned,
             'learned': learned,
-            'displayed': self.skill is not None or learned,
+            'displayed': self.currentskill is not None or learned,
             'probability': ceil(10 * probability) / 10.0,
             'certainty': 1
         }

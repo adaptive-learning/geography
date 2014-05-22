@@ -18,12 +18,12 @@ class MapSkillManager(models.Manager):
         geography_place.name AS name,
         geography_place.code AS code,
         COUNT( IF(
-            1/(1+EXP(-geography_currentskill_prepared.value)) >= %s,
+            1/(1+EXP(-geography_currentskill_prepared.currentskill)) >= %s,
             1,
             NULL
         )) AS learned,
         COUNT( IF(
-            1/(1+EXP(-geography_currentskill_prepared.value)) < %s,
+            1/(1+EXP(-geography_currentskill_prepared.currentskill)) < %s,
             1,
             NULL
         )) AS practiced
