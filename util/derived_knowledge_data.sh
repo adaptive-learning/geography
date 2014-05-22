@@ -7,6 +7,11 @@ else
 	WORKSPACE_DIR=$SELF_DIR/..
 fi
 APP_DIR="$WORKSPACE_DIR/main"
+if [ "$GEOGRAPHY_DATA_DIR" ]; then
+	DATA_DIR="$GEOGRAPHY_DATA_DIR"
+else
+	DATA_DIR="$APP_DIR"
+fi
 
 
 ###############################################################################
@@ -26,7 +31,8 @@ fi
 ###############################################################################
 
 echo " * derive knowledge data"
-$APP_DIR/manage.py derived_knowledge_data | $APP_DIR/manage.py dbshell
+DEST_FILE=$DATA_DIR/derived_knowledge_`date +"%Y-%m-%d_%H-%M-%S"`.sql
+$APP_DIR/manage.py derived_knowledge_data | tee $DEST_FILE | $APP_DIR/manage.py dbshell
 
 
 ###############################################################################
