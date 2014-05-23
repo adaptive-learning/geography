@@ -46,7 +46,7 @@ class MapSkillManager(models.Manager):
     GROUP BY
         geography_placerelation.place_id,
         geography_currentskill_prepared.user_id,
-        geography_place_related.type;
+        geography_place_related.type
     ORDER BY
         geography_place.name
         """, [LEARNED_PROB, LEARNED_PROB, user.id]
