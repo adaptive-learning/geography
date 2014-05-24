@@ -76,6 +76,8 @@ class Command(BaseCommand):
                 time_after_knowledge = time.time()
                 sys.stderr.write('time: ' + str(time_after_knowledge - time_after_loading) + ' secs\n')
         # empty precomputed datasets
+        print 'SET foreign_key_checks=0;'
+        print 'SET unique_checks=0;'
         sys.stderr.write('deleting old knowledge data from database\n')
         print 'DELETE FROM geography_difficulty;'
         print 'DELETE FROM geography_priorskill;'
@@ -85,5 +87,7 @@ class Command(BaseCommand):
         # save new precomputed datasets
         sys.stderr.write('flushing knowledge data to database\n')
         print env.flush()
+        print 'SET foreign_key_checks=1;'
+        print 'SET unique_checks=1;'
         sys.stderr.write('time: ' + str(time.time() - time_after_delete) + ' secs\n')
         sys.stderr.write('total time: ' + str(time.time() - time_start) + ' secs\n')
