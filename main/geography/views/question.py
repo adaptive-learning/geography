@@ -40,7 +40,7 @@ def average_users_places(request, map_code):
     response = {}
     return JsonResponse(response)
 
-
+@allow_lazy_user
 def users_places(request, map_code, user=None):
 
     try:
