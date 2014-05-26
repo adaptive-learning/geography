@@ -40,15 +40,6 @@ class AnswerManager(models.Manager):
         models.Model.save(answer)
         LOGGER.debug("answered: %s", answer_dict)
 
-    def get_success_rate(self, user, n):
-        answers = self.filter(
-            user=user,
-        ).order_by("-inserted")[:n]
-        if n:
-            return sum([a.place_asked_id == a.place_answered_id for a in answers]) / float(n)
-        else:
-            return 1.0
-
 
 class Answer(models.Model):
     ON_SAVE_LISTENERS = [knowledge.KnowledgeUpdater(knowledge.DatabaseEnvironment()).stream_answer]
