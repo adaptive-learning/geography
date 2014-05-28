@@ -9,7 +9,7 @@
   </div>
   <div ng-show="question != undefined && !showSummary" class="practice">
     <div class="question">
-      <span>{{question.text}} </span>
+      <span ng-bind="question.text"></span>
       <span class="label label-default" ng-show="question|isFindOnMapType">
         <i class="flag-{{question.asked_code}}"></i> {{question.place}}
       </span>
@@ -33,12 +33,12 @@
       </span>
     </span>
     <span class="col-sm-5" >
-      <button class="btn btn-lg btn-default" 
+      <button class="btn btn-lg btn-default dont-know" 
               ng-click="checkAnswer()" 
               ng-disabled="canNext" >
           <i class="glyphicon glyphicon-question-sign"></i> Nevím
       </button>
-      <button class="btn btn-lg btn-default {{!canNext || 'btn-primary'}}" 
+      <button class="btn btn-lg btn-default next {{!canNext || 'btn-primary'}}" 
               ng-click="next()" 
               ng-disabled="!canNext" >
           <i class="glyphicon glyphicon-arrow-right"></i> Pokračovat

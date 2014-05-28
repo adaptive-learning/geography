@@ -192,6 +192,21 @@ module.exports = function(grunt) {
         },
       },
     },
+    protractor: {
+      options: {
+        configFile: "geography/static/test/spec.js", // Default config file
+        keepAlive: true, // If false, the grunt process stops when the test fails.
+        noColor: false, // If true, protractor will not use colors in its output.
+        args: {
+          // Arguments passed to the command
+        }
+      },
+      tests: {
+        options: {
+          args: {} // Target-specific arguments
+        }
+      },
+    },
   });
 
   // Load plugins.
@@ -206,6 +221,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-string-replace');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-protractor-runner');
 
   // Default task(s).
   grunt.registerTask('styles', ['sass','rename']);

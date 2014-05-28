@@ -16,6 +16,7 @@
     "grunt-string-replace": "~0.2.7",
     "grunt-shell": "~0.7.0",
     "node-raphael": "~0.2.0",
-    "dom-js": "0.0.9"
+    "dom-js": "0.0.9",
+    "grunt-protractor-runner": "~0.2.4"
   }
 }
