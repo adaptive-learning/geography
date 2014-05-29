@@ -60,7 +60,6 @@ class PlaceManager(models.Manager):
                 ])
             return [p[0] for p in cursor.fetchall()]
 
-
     def get_places_to_ask(self, user, map_place, n, place_types, knowledge_env, ab_env):
         if n <= 0:
             return []

@@ -19,7 +19,7 @@ class TestManager(models.Manager):
             user_id, place_map_id, place_types, passed_place_types)
         in_this_session = self._get_asked_place_test_ids_for_this_session(
             user_id, passed_test_ids)
-        candidate_test_ids =  list(
+        candidate_test_ids = list(
             set(self._get_place_active_test_ids(passed_test_ids + available))
             -
             set(in_this_session))
@@ -33,7 +33,7 @@ class TestManager(models.Manager):
         num_groups = len(places) / test_size
         groups = []
         for i in range(num_groups):
-            groups.append(places[(i * test_size):((i+1) * test_size)])
+            groups.append(places[(i * test_size):((i + 1) * test_size)])
         remains = len(places) % test_size
         if remains > 0:
             last_group = places[-remains:]
@@ -50,22 +50,18 @@ class TestManager(models.Manager):
         return groups
 
     def _get_already_passed_test_ids(self, user_id, place_map_id, place_types):
-        return list(answer.Answer.objects.
-            filter(
-                test__id__isnull=False,
-                place_map_id=place_map_id,
-                user_id=user_id,
-                place_asked__type__in=place_types).
-            values_list('test__id', 'test__place_type').
-            distinct())
+        return list(answer.Answer.objects.filter(
+            test__id__isnull=False,
+            place_map_id=place_map_id,
+            user_id=user_id,
+            place_asked__type__in=place_types
+        ).values_list('test__id', 'test__place_type').distinct())
 
     def _get_available_test_ids(self, user_id, place_map_id, place_types, place_types_exclude):
-        available = list(self.
-            filter(
-                place_test_map_id=place_map_id,
-                place_type__in=place_types).
-            exclude(place_type__in=place_types_exclude).
-            values('id', 'place_type'))
+        available = list(self.filter(
+            place_test_map_id=place_map_id,
+            place_type__in=place_types
+        ).exclude(place_type__in=place_types_exclude).values('id', 'place_type'))
         available_dict = {}
         for row in available:
             avail_type = available_dict.get(row['place_type'], [])
@@ -74,19 +70,17 @@ class TestManager(models.Manager):
         return [random.choice(ids) for place_type, ids in available_dict.items()]
 
     def _get_asked_place_test_ids_for_this_session(self, user_id, test_ids):
-        return list(answer.Answer.objects
-            .filter(
-                test__id__in=test_ids,
-                user_id=user_id,
-                inserted__gt=(datetime.datetime.now() - datetime.timedelta(minutes=30))).
-            values_list('place_asked__id', 'test__id'))
+        return list(answer.Answer.objects.filter(
+            test__id__in=test_ids,
+            user_id=user_id,
+            inserted__gt=(datetime.datetime.now() - datetime.timedelta(minutes=30))
+        ).values_list('place_asked__id', 'test__id'))
 
     def _get_place_active_test_ids(self, test_ids):
-        return list(self.
-            filter(
-                id__in=test_ids,
-                active=True).
-            values_list('places_to_ask__id', 'id'))
+        return list(self.filter(
+            id__in=test_ids,
+            active=True
+        ).values_list('places_to_ask__id', 'id'))
 
 
 class Test (models.Model):

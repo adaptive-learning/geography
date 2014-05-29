@@ -3,6 +3,7 @@ from django.core.management.base import BaseCommand, CommandError
 from optparse import make_option
 from geography.models import PlaceRelation, Test
 
+
 class Command(BaseCommand):
 
     option_list = BaseCommand.option_list + (
