@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from geography.models import Answer, Place, Value, DatabaseEnvironment
-from random import choice
+from geography.models import Answer, Place, Value, DatabaseEnvironment, Test
+from random import choice, shuffle
 import logging
 
 LOGGER = logging.getLogger(__name__)
@@ -9,11 +9,12 @@ LOGGER = logging.getLogger(__name__)
 class Question():
     options = []
 
-    def __init__(self, place, options, map_place, ab_values):
+    def __init__(self, place, options, map_place, ab_values, test_id):
         self.place = place
         self.map_place = map_place
         self.ab_values = ab_values
         self.options = options
+        self.test_id = test_id
         if len(options) > 0:
             self.qtype = QuestionType(
                 choice([Answer.FIND_ON_MAP, Answer.PICK_NAME]),
@@ -28,6 +29,8 @@ class Question():
         ret['map_code'] = self.map_place.place.code
         ret['place'] = self.place.name
         ret['ab_values'] = [v.value for v in self.ab_values]
+        if self.test_id:
+            ret['test_id'] = self.test_id
         if len(self.options) > 0:
             ret["options"] = sorted(
                 map(
@@ -47,20 +50,29 @@ class QuestionService:
         self.ab_env = ab_env
 
     def get_questions(self, n, place_types):
-        candidates = Place.objects.get_places_to_ask(
+        test_candidates = Test.objects.get_test_places(
+            self.user.id, self.map_place.place.id, place_types, n)
+        candidates = []
+        if test_candidates is not None and len(test_candidates) > 0:
+            candidate_places, test_ids = zip(*test_candidates)
+            candidates = zip(zip(candidate_places, [[] for i in test_candidates]), test_ids)
+        shuffle(candidates)
+        LOGGER.debug('user {0}: testing questions are {1}'.format(self.user, str(candidates)))
+        candidates += zip(Place.objects.get_places_to_ask(
             self.user,
             self.map_place,
-            n,
+            n - len(candidates),
             place_types,
             DatabaseEnvironment(),
-            self.ab_env)
+            self.ab_env), [None for i in range(n - len(candidates))])
         return [
             Question(
                 place,
                 options,
                 self.map_place,
-                self.ab_env.get_affecting_values(Place.AB_REASON_RECOMMENDATION)).to_serializable()
-            for (place, options) in candidates]
+                self.ab_env.get_affecting_values(Place.AB_REASON_RECOMMENDATION),
+                test_id).to_serializable()
+            for ((place, options), test_id) in candidates]
 
     def answer(self, a, ip_address):
         place_asked = Place.objects.get(code=a["asked_code"])
@@ -98,6 +110,8 @@ class QuestionService:
             answer_dict['ab_values'] = [v.id for v in ab_values]
         else:
             answer_dict['ab_values'] = []
+        if 'test_id' in a:
+            answer_dict['test_id'] = a['test_id']
         Answer.objects.save_with_listeners(answer_dict)
 
 

@@ -6,6 +6,7 @@ import knowledge
 import logging
 import place
 import ab
+import test
 
 LOGGER = logging.getLogger(__name__)
 
@@ -28,7 +29,8 @@ class AnswerManager(models.Manager):
             response_time=answer_dict['response_time'],
             number_of_options=answer_dict['number_of_options'],
             ip_address=answer_dict.get('ip_address', None),
-            inserted=answer_dict['inserted'])
+            inserted=answer_dict['inserted'],
+            test=test.Test(id=answer_dict['test_id'] if 'test_id' in answer_dict else None))
         models.Model.save(answer)
         if len(answer_dict.get('options', [])) > 0:
             answer.options = place.Place.objects.filter(
@@ -73,6 +75,7 @@ class Answer(models.Model):
     )
     ab_values = models.ManyToManyField(ab.Value)
     ip_address = models.CharField(max_length=39, null=True, blank=True, default=None)
+    test = models.ForeignKey(test.Test, null=True, blank=True, default=None)
     objects = AnswerManager()
 
     def save(self, **kwargs):
