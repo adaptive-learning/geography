@@ -33,19 +33,7 @@ class PlaceManager(models.Manager):
         'recommendation_options_random': recommendation.OPTIONS_RANDOM
     }
 
-    def get_places_to_ask(self, user, map_place, n, place_types, knowledge_env, ab_env):
-        if n <= 0:
-            return []
-        strategy_name = ab_env.get_membership(
-            PlaceManager.RECOMMENDATION_STRATEGIES.keys(),
-            PlaceManager.DEFAULT_RECOMMENDATION_STRATEGY,
-            Place.AB_REASON_RECOMMENDATION)
-        options_strategy_name = ab_env.get_membership(
-            PlaceManager.OPTIONS_STRATEGIES.keys(),
-            PlaceManager.DEFAULT_OPTIONS_STRATEGY,
-            Place.AB_REASON_RECOMMENDATION)
-        strategy = PlaceManager.RECOMMENDATION_STRATEGIES[strategy_name]
-        options_strategy = PlaceManager.OPTIONS_STRATEGIES[options_strategy_name]
+    def get_place_ids_on_map(self, map_place, place_types):
         with closing(connection.cursor()) as cursor:
             cursor.execute(
                 '''
@@ -70,7 +58,23 @@ class PlaceManager(models.Manager):
                     int(map_place.place.id),
                     int(PlaceRelation.IS_ON_MAP)
                 ])
-            available_place_ids = [p[0] for p in cursor.fetchall()]
+            return [p[0] for p in cursor.fetchall()]
+
+
+    def get_places_to_ask(self, user, map_place, n, place_types, knowledge_env, ab_env):
+        if n <= 0:
+            return []
+        strategy_name = ab_env.get_membership(
+            PlaceManager.RECOMMENDATION_STRATEGIES.keys(),
+            PlaceManager.DEFAULT_RECOMMENDATION_STRATEGY,
+            Place.AB_REASON_RECOMMENDATION)
+        options_strategy_name = ab_env.get_membership(
+            PlaceManager.OPTIONS_STRATEGIES.keys(),
+            PlaceManager.DEFAULT_OPTIONS_STRATEGY,
+            Place.AB_REASON_RECOMMENDATION)
+        strategy = PlaceManager.RECOMMENDATION_STRATEGIES[strategy_name]
+        options_strategy = PlaceManager.OPTIONS_STRATEGIES[options_strategy_name]
+        available_place_ids = self.get_place_ids_on_map(map_place, place_types)
         candidates = strategy(
             user.id,
             available_place_ids,
