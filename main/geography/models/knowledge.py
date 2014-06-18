@@ -304,10 +304,13 @@ class DatabaseEnvironment(Environment):
                     place_answered_id
                 FROM
                     geography_answer
+                WHERE
+                    user_id = %s
                 ORDER BY id DESC
                 LIMIT %s
-                ''', [n])
-            return sum([r[0] == r[1] for r in cursor.fetchall()]) / float(n)
+                ''', [user_id, n])
+            all_answered = cursor.fetchall()
+            return sum([r[0] == r[1] for r in all_answered]) / min(float(n), max(1.0, float(len(all_answered))))
 
     def _args_type(self, user_ids, place_ids):
         user_ids_nones = [id is None for id in user_ids]
