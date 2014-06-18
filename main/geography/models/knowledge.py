@@ -331,33 +331,26 @@ class DatabaseEnvironment(Environment):
 class InMemoryEnvironmentWithFlush(InMemoryEnvironment):
 
     def flush_all(self, prior_skill, current_skill, difficulty):
-        sql = '''INSERT INTO geography_priorskill (user_id, value)
-                VALUES ''' + ','.join(self._prior_skill_values()) + ';'
-        sql += '''
-                INSERT INTO geography_difficulty (place_id, value)
-                VALUES''' + ','.join(self._difficulty_values()) + ';'
-        sql += '''
-                INSERT INTO geography_currentskill (user_id, place_id, value)
-                VALUES ''' + ','.join(self._current_skill_values()) + ';'
-        return sql
+        comma = ""
+        print 'INSERT INTO geography_priorskill (user_id, value) VALUES'
+        for user_id, skill in self._prior_skill.iteritems():
+            print "\t{}({}, {})".format(comma, user_id, skill)
+            comma = ','
+        print ";"
 
-    def _difficulty_values(self):
-        return [
-            '({}, {})'.format(place_id, difficulty)
-            for place_id, difficulty in self._difficulty.iteritems()
-        ]
+        comma = ""
+        print 'INSERT INTO geography_difficulty (place_id, value) VALUES'
+        for place_id, difficulty in self._difficulty.iteritems():
+            print "\t{}({}, {})".format(comma, place_id, difficulty)
+            comma = ','
+        print ";"
 
-    def _prior_skill_values(self):
-        return [
-            '({}, {})'.format(user_id, skill)
-            for user_id, skill in self._prior_skill.iteritems()
-        ]
-
-    def _current_skill_values(self):
-        return [
-            '({}, {}, {})'.format(user_id, place_id, skill)
-            for (user_id, place_id), skill in self._current_skill.iteritems()
-        ]
+        comma = ""
+        print 'INSERT INTO geography_currentskill (user_id, place_id, value) VALUES'
+        for (user_id, place_id), skill in self._current_skill.iteritems():
+            print "\t{}({}, {}, {})".format(comma, user_id, place_id, skill)
+            comma = ','
+        print ";"
 
 
 class DifficultyManager(models.Manager):

@@ -86,7 +86,7 @@ class Command(BaseCommand):
         sys.stderr.write('time: ' + str(time_after_delete - time_after_knowledge) + ' secs\n')
         # save new precomputed datasets
         sys.stderr.write('flushing knowledge data to database\n')
-        print env.flush()
+        env.flush()
         print 'SET foreign_key_checks=1;'
         print 'SET unique_checks=1;'
         sys.stderr.write('time: ' + str(time.time() - time_after_delete) + ' secs\n')
