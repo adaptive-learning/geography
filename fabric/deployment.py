@@ -6,7 +6,8 @@ import common
 
 
 def deploy():
-    common.backup('release_before_' + common.get_release_version().replace("/", "-"))
+    version_prepared = common.get_release_version().replace("/", "-").replace(" ", "-")
+    common.backup('release_before_' + version_prepared)
     if not common.update_release_version():
         return
     common.npm_install()
@@ -16,4 +17,4 @@ def deploy():
     common.migrate()
     common.custom_sql()
     common.remove_cache()
-    common.backup('release_after_' + common.get_release_version().replace("/", "-"))
+    common.backup('release_after_' + version_prepared)
