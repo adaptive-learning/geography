@@ -65,6 +65,7 @@
       <h2 ng-show="errorMessage != undefined" ng-bind="errorMessage"></h2>
       <div>
         <span ng-repeat="q in summary.questions" 
+              ng-click="map.highlightState(q.asked_code)"
               class="label {{q.asked_code != q.answered_code && 'label-danger' || 'label-success' }} ">
           <i class="flag-{{q.asked_code}}"></i> {{q.place}}
         </span>

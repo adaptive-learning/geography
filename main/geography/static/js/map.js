@@ -250,32 +250,34 @@
   }])
   
   .factory('getTooltipGetter', ['$filter', 'colorScale', function($filter, colorScale){
-    return function(config) { 
+    return function(places) { 
       return function(d) {
-        var state = config.places && config.places[d.code];
-        var name = ( state ?
+        var place = places && places[d.code];
+        var name = ( place ?
           '<div class="label label-default">' +
             '<i class="flag-' + d.code + '"></i> ' +
-            state.name +
+            place.name +
             '</div>' :
           '');
-        var description = (state && state.displayed ?
+        var description = (place && place.displayed ?
           '<div>' +
             ' Odhad znalosti: ' + 
               '<span class="badge badge-default">' +
                 '<i class="color-indicator" style="background-color :' +
-                colorScale(state.probability).hex() + '"></i>' +
-                10 * state.probability + ' / 10 ' +
+                colorScale(place.probability).hex() + '"></i>' +
+                10 * place.probability + ' / 10 ' +
               '</span><br><br>' +
             (d.population ? ' Počet obyvatel: ' +
               '<span class="badge badge-default">' +
                 $filter('number')(d.population) + 
               '</span><br><br>' : '') +
           '</div>' :
-          '<br>Zatím neprocvičováno<br><br>');
+            (place && place.summary ?
+            '' :
+            '<br>Neprocvičováno<br><br>'));
         return [
           name + description,
-          config.places[d.code] ? config.places[d.code].name : ''
+          place ? place.name : ''
         ];
       };
     };
@@ -463,9 +465,21 @@
             var layerConfig = layers.getConfig(layer);
             layer.style('fill', layerConfig.styles.fill);
             if (config.showTooltips) {
-              layer.tooltips(getTooltipGetter(config));
+              layer.tooltips(getTooltipGetter(places));
             }
-
+          });
+        },
+        showSummaryTooltips : function(questions) {
+          var places = {};
+          questions.map(function(q){
+            places[q.asked_code] = {
+              'code' : q.asked_code,
+              'name' : q.place,
+              'summary' : true,
+            };
+          });
+          angular.forEach(layers.getAll(), function(layer) {
+            layer.tooltips(getTooltipGetter(places));
           });
         },
         getLayerContaining : function(placeCode) {

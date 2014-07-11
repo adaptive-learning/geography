@@ -145,6 +145,7 @@
       $scope.showSummary = true;
       $scope.map.clearHighlights();
       $scope.map.hideLayers();
+      $scope.map.showSummaryTooltips($scope.summary.questions);
       angular.forEach($scope.summary.questions, function(q) {
         var correct = q.asked_code == q.answered_code;
         $scope.map.showLayerContaining(q.asked_code);

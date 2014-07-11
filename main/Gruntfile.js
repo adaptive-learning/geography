@@ -139,7 +139,7 @@ module.exports = function(grunt) {
           "globals": { 
               "angular": false
           },
-          "maxcomplexity": 5,
+          "maxcomplexity": 6,
           "indent": 2,
           "maxstatements": 12,
           "maxdepth" : 2,
