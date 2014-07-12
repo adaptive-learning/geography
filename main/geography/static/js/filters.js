@@ -79,6 +79,12 @@
     };
   }])
 
+  .filter('trans',['gettext', function(gettext) {
+    return function(msgid) {
+      return gettext(msgid);
+    };
+  }])
+
   .filter('probColor', ['colorScale', function(colorScale) {
     return function(probability) {
       return colorScale(probability).hex();

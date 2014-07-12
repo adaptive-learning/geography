@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-12 11:32+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: geography/static/dist/js/blind-maps.min.js:173
+#: geography/static/dist/js/blind-maps.min.js:310
+#: geography/static/js/controllers.js:45
+#: geography/static/js/controllers.js:182
+msgid "V aplikaci bohužel nastala chyba."
+msgstr "Unfortunately there has been an error in the app."
+
+#: templates/home.html:54 templates/generated/homepage.html:25
+msgid "Slepé Mapy"
+msgstr "Blind maps"
+
+#: templates/generated/homepage.html:27
+msgid "Co chcete procvičovat?"
+msgstr "What do you want to practice?"
+
+#: templates/generated/homepage.html:30
+msgid "Státy světa"
+msgstr "States of the world"
+
+#: templates/generated/homepage.html:33
+msgid "Státy Evropy"
+msgstr "European States"
+
+#: templates/generated/homepage.html:36
+msgid "Státy USA"
+msgstr "US States"
+
+#: templates/generated/homepage.html:39
+msgid "Kraje ČR"
+msgstr "Czech regions"
+
+#: templates/generated/homepage.html:42
+msgid "Města ČR"
+msgstr "Czech cities"
+
+#: templates/generated/homepage.html:45
+msgid "Pohoří Evropy"
+msgstr "European mountains"
+
+#: templates/generated/homepage.html:48
+msgid "nebo něco jiného"
+msgstr "or something else"

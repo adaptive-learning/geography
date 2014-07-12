@@ -1,0 +1,313 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-12 11:25+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: settings.py:70
+msgid "Czech"
+msgstr "Česky"
+
+#: settings.py:71
+msgid "English"
+msgstr "Anglicky"
+
+#: geography/models/place.py:160
+msgid "Neznámé"
+msgstr ""
+
+#: geography/models/place.py:161 templates/home.html:72
+msgid "Státy"
+msgstr ""
+
+#: geography/models/place.py:162
+msgid "Města"
+msgstr ""
+
+#: geography/models/place.py:163 templates/home.html:58
+msgid "Svět"
+msgstr ""
+
+#: geography/models/place.py:164 templates/home.html:62
+msgid "Kontinenty"
+msgstr ""
+
+#: geography/models/place.py:165
+msgid "Řeky"
+msgstr ""
+
+#: geography/models/place.py:166
+msgid "Jezera"
+msgstr ""
+
+#: geography/models/place.py:167
+msgid "Kraje"
+msgstr ""
+
+#: geography/models/place.py:168
+msgid "Spolkové Země"
+msgstr ""
+
+#: geography/models/place.py:169
+msgid "Provincie"
+msgstr ""
+
+#: geography/models/place.py:170
+msgid "Oblasti"
+msgstr ""
+
+#: geography/models/place.py:171
+msgid "Regiony"
+msgstr ""
+
+#: geography/models/place.py:172
+msgid "Autonomní společenství"
+msgstr ""
+
+#: geography/models/place.py:173
+msgid "Pohoří"
+msgstr ""
+
+#: geography/models/place.py:174
+msgid "Ostrovy"
+msgstr ""
+
+#: geography/utils/model.py:144 geography/utils/model.py:166
+msgid "unknown"
+msgstr ""
+
+#: geography/utils/model.py:145
+msgid "stát"
+msgstr ""
+
+#: geography/utils/model.py:146
+msgid "město"
+msgstr ""
+
+#: geography/utils/model.py:147
+msgid "svět"
+msgstr ""
+
+#: geography/utils/model.py:148
+msgid "kontinent"
+msgstr ""
+
+#: geography/utils/model.py:149
+msgid "řeka"
+msgstr ""
+
+#: geography/utils/model.py:150
+msgid "jezero"
+msgstr ""
+
+#: geography/utils/model.py:151
+msgid "kraj"
+msgstr ""
+
+#: geography/utils/model.py:152
+msgid "spolková země"
+msgstr ""
+
+#: geography/utils/model.py:153
+msgid "provincie"
+msgstr ""
+
+#: geography/utils/model.py:154
+msgid "oblast"
+msgstr ""
+
+#: geography/utils/model.py:155
+msgid "region"
+msgstr ""
+
+#: geography/utils/model.py:156
+msgid "autonomní společenství"
+msgstr ""
+
+#: geography/utils/model.py:157 geography/utils/model.py:179
+msgid "pohoří"
+msgstr ""
+
+#: geography/utils/model.py:158
+msgid "ostrov"
+msgstr ""
+
+#: geography/utils/model.py:161
+msgid "spolkovou zemi"
+msgstr ""
+
+#: geography/utils/model.py:162
+msgid "provincii"
+msgstr ""
+
+#: geography/utils/model.py:163
+msgid "řeku"
+msgstr ""
+
+#: geography/utils/model.py:167
+msgid "států"
+msgstr ""
+
+#: geography/utils/model.py:168
+msgid "měst"
+msgstr ""
+
+#: geography/utils/model.py:169
+msgid "světů"
+msgstr ""
+
+#: geography/utils/model.py:170
+msgid "kontinentů"
+msgstr ""
+
+#: geography/utils/model.py:171
+msgid "řek"
+msgstr ""
+
+#: geography/utils/model.py:172
+msgid "jezer"
+msgstr ""
+
+#: geography/utils/model.py:173 geography/utils/model.py:177
+msgid "regionů"
+msgstr ""
+
+#: geography/utils/model.py:174
+msgid "spolkových zemí"
+msgstr ""
+
+#: geography/utils/model.py:175
+msgid "provincií"
+msgstr ""
+
+#: geography/utils/model.py:176
+msgid "oblastí"
+msgstr ""
+
+#: geography/utils/model.py:178
+msgid "autonomních společenství"
+msgstr ""
+
+#: geography/utils/model.py:180
+msgid "ostrovů"
+msgstr ""
+
+#: geography/utils/model.py:197
+msgid "Ze zvýrazněných "
+msgstr ""
+
+#: geography/utils/model.py:197
+msgid " na mapě vyber"
+msgstr ""
+
+#: geography/utils/model.py:199
+msgid "Vyber na mapě "
+msgstr ""
+
+#: geography/utils/model.py:201
+msgid "Jak se jmenuje "
+msgstr ""
+
+#: geography/utils/model.py:201
+msgid " na mapě?"
+msgstr ""
+
+#: geography/utils/model.py:207
+msgid "zvýrazněný"
+msgstr ""
+
+#: geography/utils/model.py:209
+msgid "zvýrazněná"
+msgstr ""
+
+#: geography/utils/model.py:211
+msgid "zvýrazněné"
+msgstr ""
+
+#: templates/home.html:54 templates/generated/homepage.html:25
+msgid "Slepé Mapy"
+msgstr "Slepé Mapy"
+
+#: templates/home.html:81
+msgid "Přehled map"
+msgstr ""
+
+#: templates/home.html:91
+msgid ""
+"Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
+"znalosti pamatoval i příště."
+msgstr ""
+
+#: templates/home.html:93
+msgid "Přihlásit se"
+msgstr "Přihlásit se"
+
+#: templates/home.html:98
+msgid "přes Google"
+msgstr ""
+
+#: templates/home.html:103
+msgid "přes Facebook"
+msgstr ""
+
+#: templates/home.html:117
+#, fuzzy
+msgid "Odhlásit se"
+msgstr "Přihlásit se"
+
+#: templates/home.html:123
+msgid "Body - přibývají za každou správnou odpověď"
+msgstr ""
+
+#: templates/home.html:156
+msgid "O projektu"
+msgstr ""
+
+#: templates/home.html:157
+msgid "Kontakty"
+msgstr ""
+
+#: templates/generated/homepage.html:27
+msgid "Co chcete procvičovat?"
+msgstr "Co chcete procvičovat?"
+
+#: templates/generated/homepage.html:30
+msgid "Státy světa"
+msgstr "Státy světa"
+
+#: templates/generated/homepage.html:33
+msgid "Státy Evropy"
+msgstr "Státy Evropy"
+
+#: templates/generated/homepage.html:36
+msgid "Státy USA"
+msgstr "Státy USA"
+
+#: templates/generated/homepage.html:39
+msgid "Kraje ČR"
+msgstr "Kraje ČR"
+
+#: templates/generated/homepage.html:42
+msgid "Města ČR"
+msgstr "Města ČR"
+
+#: templates/generated/homepage.html:45
+msgid "Pohoří Evropy"
+msgstr "Pohoří Evropy"
+
+#: templates/generated/homepage.html:48
+msgid "nebo něco jiného"
+msgstr "nebo něco jiného"

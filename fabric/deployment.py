@@ -17,4 +17,5 @@ def deploy():
     common.migrate()
     common.custom_sql()
     common.remove_cache()
+    common.compilemasseges()
     common.backup('release_after_' + version_prepared)

@@ -44,7 +44,10 @@ def home(request):
         'states': Place.objects.get_states_with_map(),
         'hashes': json.dumps(hashes),
         'user': get_user(request),
+        'LANGUAGE_CODE': request.LANGUAGE_CODE,
+        'LANGUAGES': settings.LANGUAGES,
     }
+    print settings.PROJECT_DIR
     c.update(csrf(request))
     return render_to_response('home.html', c)
 

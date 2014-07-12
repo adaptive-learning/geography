@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from django.utils.translation import ugettext as _
 from geography.models import Answer, Place, Value, DatabaseEnvironment, Test
 from random import choice, shuffle
 import logging
@@ -140,43 +141,43 @@ class QuestionType(object):
     }
 
     PLACE_TYPE_SINGULAR = {
-        Place.UNKNOWN: 'unknown',
-        Place.STATE: u'stát',
-        Place.CITY: u'město',
-        Place.WORLD: u'svět',
-        Place.CONTINENT: u'kontinent',
-        Place.RIVER: u'řeka',
-        Place.LAKE: u'jezero',
-        Place.REGION_CZ: u'kraj',
-        Place.BUNDESLAND: u'spolková země',
-        Place.PROVINCE: u'provincie',
-        Place.REGION_IT: u'oblast',
-        Place.REGION: u'region',
-        Place.AUTONOMOUS_COMUNITY: u'autonomní společenství',
-        Place.MOUNTAINS: u'pohoří',
-        Place.ISLAND: u'ostrov',
+        Place.UNKNOWN: _('unknown'),
+        Place.STATE: _(u'stát'),
+        Place.CITY: _(u'město'),
+        Place.WORLD: _(u'svět'),
+        Place.CONTINENT: _(u'kontinent'),
+        Place.RIVER: _(u'řeka'),
+        Place.LAKE: _(u'jezero'),
+        Place.REGION_CZ: _(u'kraj'),
+        Place.BUNDESLAND: _(u'spolková země'),
+        Place.PROVINCE: _(u'provincie'),
+        Place.REGION_IT: _(u'oblast'),
+        Place.REGION: _(u'region'),
+        Place.AUTONOMOUS_COMUNITY: _(u'autonomní společenství'),
+        Place.MOUNTAINS: _(u'pohoří'),
+        Place.ISLAND: _(u'ostrov'),
     }
     PLACE_TYPE_SINGULAR_CHOICE = {
-        Place.BUNDESLAND: u'spolkovou zemi',
-        Place.PROVINCE: u'provincii',
-        Place.RIVER: u'řeku',
+        Place.BUNDESLAND: _(u'spolkovou zemi'),
+        Place.PROVINCE: _(u'provincii'),
+        Place.RIVER: _(u'řeku'),
     }
     PLACE_TYPE_PLURAL_CHOICE = {
-        Place.UNKNOWN: 'unknown',
-        Place.STATE: u'států',
-        Place.CITY: u'měst',
-        Place.WORLD: u'světů',
-        Place.CONTINENT: u'kontinentů',
-        Place.RIVER: u'řek',
-        Place.LAKE: u'jezer',
-        Place.REGION_CZ: u'regionů',
-        Place.BUNDESLAND: u'spolkových zemí',
-        Place.PROVINCE: u'provincií',
-        Place.REGION_IT: u'oblastí',
-        Place.REGION: u'regionů',
-        Place.AUTONOMOUS_COMUNITY: u'autonomních společenství',
-        Place.MOUNTAINS: u'pohoří',
-        Place.ISLAND: u'ostrovů',
+        Place.UNKNOWN: _('unknown'),
+        Place.STATE: _(u'států'),
+        Place.CITY: _(u'měst'),
+        Place.WORLD: _(u'světů'),
+        Place.CONTINENT: _(u'kontinentů'),
+        Place.RIVER: _(u'řek'),
+        Place.LAKE: _(u'jezer'),
+        Place.REGION_CZ: _(u'regionů'),
+        Place.BUNDESLAND: _(u'spolkových zemí'),
+        Place.PROVINCE: _(u'provincií'),
+        Place.REGION_IT: _(u'oblastí'),
+        Place.REGION: _(u'regionů'),
+        Place.AUTONOMOUS_COMUNITY: _(u'autonomních společenství'),
+        Place.MOUNTAINS: _(u'pohoří'),
+        Place.ISLAND: _(u'ostrovů'),
     }
 
     def __init__(self, type, place_type, number_of_options):
@@ -193,21 +194,21 @@ class QuestionType(object):
 
         if self.type == Answer.FIND_ON_MAP:
             if self.number_of_options > 0:
-                return u"Ze zvýrazněných " + place_plural_choice + u" na mapě vyber"
+                return _(u'Ze zvýrazněných ') + place_plural_choice + _(u' na mapě vyber')
             else:
-                return u"Vyber na mapě " + place_singular_choice
+                return _(u'Vyber na mapě ') + place_singular_choice
         else:
-            return u"Jak se jmenuje " + place_singular + u" " + self.highlighted + u" na mapě?"
+            return _(u'Jak se jmenuje ') + place_singular + ' ' + self.highlighted + _(u' na mapě?')
 
     @property
     def highlighted(self):
         genus = QuestionType.PLACE_TYPE_GENUS[self.place_type]
         if genus == QuestionType.GENUS_MASCULINE:
-            return u"zvýrazněný"
+            return _(u'zvýrazněný')
         elif genus == QuestionType.GENUS_FEMININE:
-            return u"zvýrazněná"
+            return _(u'zvýrazněná')
         else:
-            return u"zvýrazněné"
+            return _(u'zvýrazněné')
 
     def to_serializable(self):
         return {

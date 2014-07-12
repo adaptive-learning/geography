@@ -1,6 +1,7 @@
 *.py[co]
 *.sw[po]
 *.bak
+*.mo
 *.orig
 *~
 .project

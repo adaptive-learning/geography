@@ -33,8 +33,8 @@
     };
   }])
 
-  .controller('AppView', ['$scope', '$routeParams', '$filter', 'places', 'mapTitle',
-      function($scope, $routeParams, $filter, places, mapTitle) {
+  .controller('AppView', ['$scope', '$routeParams', '$filter', 'places', 'mapTitle', 'gettext',
+      function($scope, $routeParams, $filter, places, mapTitle, gettext) {
     $scope.part = $routeParams.part;
     var user = $routeParams.user || '';
     $scope.typeCategories = places.getCategories($scope.part);
@@ -42,7 +42,7 @@
 
     places.get($scope.part, user, updatePlaces).
       error(function(){
-        $scope.error = "V aplikaci bohužel nastala chyba.";
+        $scope.error = gettext("V aplikaci bohužel nastala chyba.");
       });
 
     $scope.placeClick = function(place) {
@@ -80,9 +80,9 @@
   }])
 
   .controller('AppPractice', ['$scope', '$routeParams', '$timeout', '$filter',
-      'question', 'user', 'events', 'colors', 'places', '$', 'highlighted',
+      'question', 'user', 'events', 'colors', 'places', '$', 'highlighted', 'gettext',
       function($scope, $routeParams, $timeout, $filter,
-      question, user, events, colors, places, $, highlighted) {
+      question, user, events, colors, places, $, highlighted, gettext) {
     $scope.part = $routeParams.part;
     $scope.placeType = $routeParams.place_type;
     
@@ -179,7 +179,7 @@
       question.first($scope.part, $routeParams.place_type, function(q) {
         setQuestion(q);
       }).error(function(){
-        $scope.error = "V aplikaci bohužel nastala chyba.";
+        $scope.error = gettext("V aplikaci bohužel nastala chyba.");
       });
       $scope.map.onClick(function(code) {
         if ($filter('isFindOnMapType')($scope.question) && 

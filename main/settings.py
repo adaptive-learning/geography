@@ -62,13 +62,16 @@ TIME_ZONE = 'Europe/Prague'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'cz'
+LANGUAGE_CODE = 'cs'
 
 _ = lambda s: s
 
 LANGUAGES = (
-    ('cz', _('Czech')),
+    ('cs', _('Czech')),
     ('en', _('English')),
+)
+LOCALE_PATHS = (
+    os.path.join(PROJECT_DIR, 'conf', 'locale'),
 )
 
 SITE_ID = 1

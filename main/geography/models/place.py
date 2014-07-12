@@ -2,6 +2,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.db import connection
+from django.utils.translation import ugettext as _
 from contextlib import closing
 import proso.geography.recommendation as recommendation
 import logging
@@ -156,21 +157,21 @@ class Place(models.Model):
         (ISLAND, 'Island'),
     )
     PLACE_TYPE_PLURALS = (
-        (UNKNOWN, u'Neznámé'),
-        (STATE, u'Státy'),
-        (CITY, u'Města'),
-        (WORLD, u'Svět'),
-        (CONTINENT, u'Kontinenty'),
-        (RIVER, u'Řeky'),
-        (LAKE, u'Jezera'),
-        (REGION_CZ, u'Kraje'),
-        (BUNDESLAND, u'Spolkové Země'),
-        (PROVINCE, u'Provincie'),
-        (REGION_IT, u'Oblasti'),
-        (REGION, u'Regiony'),
-        (AUTONOMOUS_COMUNITY, u'Autonomní společenství'),
-        (MOUNTAINS, u'Pohoří'),
-        (ISLAND, u'Ostrovy'),
+        (UNKNOWN, _(u'Neznámé')),
+        (STATE, _(u'Státy')),
+        (CITY, _(u'Města')),
+        (WORLD, _(u'Svět')),
+        (CONTINENT, _(u'Kontinenty')),
+        (RIVER, _(u'Řeky')),
+        (LAKE, _(u'Jezera')),
+        (REGION_CZ, _(u'Kraje')),
+        (BUNDESLAND, _(u'Spolkové Země')),
+        (PROVINCE, _(u'Provincie')),
+        (REGION_IT, _(u'Oblasti')),
+        (REGION, _(u'Regiony')),
+        (AUTONOMOUS_COMUNITY, _(u'Autonomní společenství')),
+        (MOUNTAINS, _(u'Pohoří')),
+        (ISLAND, _(u'Ostrovy')),
     )
     PLACE_TYPE_SLUGS = dict((t[1].upper(), t[0]) for t in PLACE_TYPES)
     PLACE_TYPE_SLUGS_LOWER = dict((t[0], slugify(t[1].lower())) for t in PLACE_TYPES)
@@ -210,7 +211,7 @@ class Place(models.Model):
     def to_serializable(self):
         return {
             'code': self.code,
-            'name': self.name
+            'name': _(self.name)
         }
 
     class Meta:

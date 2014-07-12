@@ -1,3 +1,4 @@
+ {% load i18n %}
 <!DOCTYPE html>
 <html data-ng-app="blindMaps" data-ng-controller="AppCtrl" lang="cs">
   <head>
@@ -50,14 +51,16 @@
       <span class="icon-bar"></span>
     </button>
 
-      <a class="navbar-brand" href="#">Slepé Mapy</a>
+      <a class="navbar-brand" href="#">{% trans "Slepé Mapy" %}</a>
       <div id="nav-main" class="collapse navbar-collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav  pull-left">
                 <li ng-class="'/view/world/'|isActive">
-                  <a href="#/view/world/">Svět</a>
+                  <a href="#/view/world/">{% trans "Svět" %}</a>
                 </li>
                 <li class="dropdown">
-                  <a id="drop-continents" href=""  class="dropdown-toggle" data-toggle="dropdown">Kontinenty <b class="caret"></b></a>
+                  <a id="drop-continents" href=""  class="dropdown-toggle" data-toggle="dropdown">
+                    {% trans "Kontinenty" %} <b class="caret"></b>
+                  </a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop-continents">
                     {% for continent in continents %}
                     <li><a href="#/view/{{ continent.code }}/">{{ continent.name }}</a></li>
@@ -65,7 +68,9 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a id="drop-states" href=""  class="dropdown-toggle" data-toggle="dropdown">Státy <b class="caret"></b></a>
+                  <a id="drop-states" href=""  class="dropdown-toggle" data-toggle="dropdown">
+                    {% trans "Státy" %} <b class="caret"></b>
+                  </a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop-states">
                     {% for state in states %}
                     <li><a href="#/view/{{ state.code }}/">{{ state.name }}</a></li>
@@ -73,7 +78,7 @@
                   </ul>
                 </li>
                 <li ng-class="'/overview/'|isActive">
-                  <a href="#/overview/">Přehled map</a> 
+                  <a href="#/overview/">{% trans "Přehled map" %}</a> 
                 </li>
         </ul>
           ...
@@ -83,32 +88,61 @@
                   <a href="" 
                      role="button" 
                      class="dropdown-toggle atooltip drop-login"
-                     title="Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše znalosti pamatoval i příště."
+                     title="{% trans "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše znalosti pamatoval i příště." %}"
                      data-toggle="dropdown">
-                    Přihlásit se <b class="caret"></b>
+                    {% trans "Přihlásit se" %} <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu login" role="menu" aria-labelledby="drop-login">
                     <li>
                       <a class="btn btn-danger btn-lg btn-block" href="/login/google/">
-                        <i class="social-google"></i> přes Google
+                        <i class="social-google"></i> {% trans "přes Google" %}
                       </a>
                     </li>
                     <li>
                       <a class="btn btn-primary btn-lg btn-block" href="/login/facebook/">
-                        <i class="social-facebook"></i> přes Facebook
+                        <i class="social-facebook"></i>{% trans "přes Facebook" %}
                       </a>
                     </li>
                   </ul>
                 </li>
                 <li class="dropdown" ng-show="user.username !== ''">
                   <a id="drop1" href="" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i> <span ng-bind="user.username"></span> <b class="caret"></b></a>
+                    <i class="glyphicon glyphicon-user"></i>
+                    <span ng-bind="user.username"></span> <b class="caret"></b>
+                  </a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
-                    <li class="forgot-pwd"><a href="#/" ng-click="logout()"><i class="glyphicon glyphicon-log-out"></i> Odhlásit se</a></li>
+                    <li class="forgot-pwd">
+                      <a href="#/" ng-click="logout()">
+                        <i class="glyphicon glyphicon-log-out"></i> 
+                        {% trans "Odhlásit se" %}
+                      </a>
+                    </li>
                   </ul>
                 </li>
-              <li class="atooltip points" title="Body - přibývají za každou správnou odpověď" ng-show="user.points">
+              <li class="atooltip points"
+                  title="{% trans "Body - přibývají za každou správnou odpověď" %}" 
+                  ng-show="user.points">
                 <a><span class="badge" ng-bind="user.points"></span></a>
+            </li>
+              <li class="dropdown">
+                <a href="" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="flag-{{ LANGUAGE_CODE}}"></i> <b class="caret"></b>
+                  <input type="hidden" ng-model="language_code" ng-init="language_code='{{ LANGUAGE_CODE }}'"/>
+                </a>
+                <ul class="dropdown-menu">
+                    {% for lang in LANGUAGES %}
+                    <li>
+                      <a class="menu-link" href=""
+                          onclick="document.setlang{{ lang.0 }}.submit();return false;">
+                        <i class="flag-{{ lang.0 }}"></i> {% trans lang.1 %}
+                      </a>
+                      <form name="setlang{{ lang.0 }}" action="/i18n/setlang/" method="post">
+                        {% csrf_token %}
+                        <input name="language" type="hidden" value="{{ lang.0 }}" />
+                      </form>
+                    </li>
+                    {% endfor %}
+                </ul>
               </li>
             </ul>
         </div><!-- /.nav-collapse -->
@@ -122,17 +156,20 @@
   </div>
 
     <div id="footer">
-      <a href="#/about">O projektu</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      Kontakty:  
+      <a href="#/about">{% trans "O projektu" %}</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      {% trans "Kontakty" %}:  
       <span class="email contact">slepemapy{zavinac}googlegroups.com</span>
       <a class="contact" href="https://plus.google.com/+SlepemapyCz/">Google+</a>
       <a class="contact" href="https://www.facebook.com/slepemapy">Facebook</a>
+      {% if LANGUAGE_CODE == "cs" %}
       &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       Vyzkoušejte také <a href="http://slepaanatomie.cz" target="_blank">Slepou Anatomii</a>
+      {% endif %}
     </div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
     {% for file in js_files %}
     <script src="{{ file }}"></script>
     {% endfor %}
@@ -143,7 +180,7 @@
 
     <!-- Place this tag after the last +1 button tag. -->
     <script type="text/javascript">
-      window.___gcfg = {lang: 'cs'};
+      window.___gcfg = {lang: '{{LANGUAGE_CODE}}'};
 
       (function() {
         var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -157,7 +194,7 @@
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/cs_CZ/all.js#xfbml=1&appId=543575712384201";
+      js.src = "//connect.facebook.net/{{LANGUAGE_CODE}}_CZ/all.js#xfbml=1&appId=543575712384201";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     {% if isProduction  %}

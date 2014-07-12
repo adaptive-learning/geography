@@ -19,10 +19,6 @@ module.exports = function(grunt) {
       }
     },
     concat: {
-      homepage: {
-        src: ['geography/static/tpl/homepage.html'],
-        dest: 'templates/generated/homepage.html',
-      },
       app: {
         src: [
           'geography/static/dist/js/hash.js',
@@ -47,6 +43,21 @@ module.exports = function(grunt) {
         }
     },
     'string-replace': {
+      homepage: {
+        options: {
+          replacements: [
+            {
+                pattern: /\{\{/g,
+                replacement: '{% trans '
+            }, {
+                pattern: /\|\s*trans\s*\}\}/g,
+                replacement: ' %}'
+            }
+          ]
+        },
+        src: ['geography/static/tpl/homepage.html'],
+        dest: 'templates/generated/homepage.html',
+      },
       hashes: {
         options: {
           replacements: [
@@ -143,7 +154,7 @@ module.exports = function(grunt) {
           "indent": 2,
           "maxstatements": 12,
           "maxdepth" : 2,
-          "maxparams": 11,
+          "maxparams": 12,
           "maxlen": 110
       },
       build: {
@@ -228,7 +239,7 @@ module.exports = function(grunt) {
   grunt.registerTask('runserver', ['shell:runserver','watch']);
   grunt.registerTask('hashes', ['shell:hashes', 'string-replace:hashes']);
   grunt.registerTask('bboxcacheall', ['bboxcache', 'string-replace:bboxcache']);
-  grunt.registerTask('templates', ['newer:concat', 'ngtemplates']);
+  grunt.registerTask('templates', ['string-replace:homepage', 'ngtemplates']);
   grunt.registerTask('minifyjs', ['hashes', 'templates', 'uglify']);
   grunt.registerTask('default', ['styles', 'jshint', 'bboxcache', 'minifyjs']);
   grunt.registerTask('deploy', ['styles', 'string-replace:bboxcache', 'minifyjs']);

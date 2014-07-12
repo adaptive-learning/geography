@@ -1,5 +1,6 @@
 (function() {
   'use strict';
+  /* global gettext */
   // Declare app level module which depends on filters, and services
   angular.module('blindMaps', [
     'blindMaps.filters',
@@ -12,6 +13,8 @@
     'angulartics',
     'angulartics.google.analytics'
   ])
+
+  .value('gettext', gettext)
 
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {

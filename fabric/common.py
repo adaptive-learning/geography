@@ -98,6 +98,11 @@ def custom_sql():
 def update_maps():
     run('./main/manage.py update_maps')
 
+
+def compilemasseges():
+    run('cd main && ./manage.py compilemasseges')
+
+
 def remove_cache():
     run('rm -rf $GEOGRAPHY_DATA_DIR/.django_cache')
 

@@ -12,19 +12,40 @@
     </a>
   </div>
   <![endif]-->
+  <!--
+ {% load i18n %}
+    -->
+  <div ng-if="language_code=='en'" class="ng-cloak">
+    <div class="alert alert-danger old-browser">
+      Please, note that English localization of this app is work in progress. 
+      There are some parts that haven't been translated, yet.
+    </div>
+  </div>
   <div class="welcome-page jumbotron">
-      <h1 >Slepé Mapy</h1>
+      <h1 >{{ "Slepé Mapy"|trans }}</h1>
       <div class="flatblock block-welcome_page col-md-offset-1 col-md-10 col-lg-offset-3 col-lg-6">
-        <div class="flatblock-content">Co chcete procvičovat?
+        <div class="flatblock-content">{{ "Co chcete procvičovat?" | trans }}
         </div>
-          <a href="#/practice/world/state" class="btn btn-primary btn-lg btn-huge" >Státy světa</a>
-          <a href="#/practice/europe/state" class="btn btn-default btn-lg btn-huge" >Státy Evropy</a>
-          <a href="#/practice/us/state" class="btn btn-default btn-lg btn-huge" >Státy USA</a>
-          <a href="#/practice/cz/region_cz" class="btn btn-default btn-lg btn-huge" >Kraje ČR</a>
-          <a href="#/practice/cz/city" class="btn btn-default btn-lg btn-huge" >Města ČR</a>
-          <a href="#/practice/europe/mountains" class="btn btn-default btn-lg btn-huge" >Pohoří Evropy</a>
+          <a href="#/practice/world/state" class="btn btn-primary btn-lg btn-huge" >
+            {{"Státy světa" | trans }}
+          </a>
+          <a href="#/practice/europe/state" class="btn btn-default btn-lg btn-huge" >
+            {{"Státy Evropy" | trans }}
+          </a>
+          <a href="#/practice/us/state" class="btn btn-default btn-lg btn-huge" >
+            {{"Státy USA" | trans }}
+          </a>
+          <a href="#/practice/cz/region_cz" class="btn btn-default btn-lg btn-huge" >
+            {{"Kraje ČR" | trans }}
+          </a>
+          <a href="#/practice/cz/city" class="btn btn-default btn-lg btn-huge" >
+            {{"Města ČR" | trans }}
+          </a>
+          <a href="#/practice/europe/mountains" class="btn btn-default btn-lg btn-huge" >
+            {{"Pohoří Evropy" | trans }}
+          </a>
         <div class="flatblock-content">
-          ... nebo <a href="#/overview/">něco jiného</a>?
+          ... <a href="#/overview/">{{"nebo něco jiného" | trans }}</a>?
         </div>
         <div class="plugins-social">
           <div class="g-plusone" data-size="medium"></div>
