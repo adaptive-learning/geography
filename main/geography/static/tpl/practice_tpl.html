@@ -36,18 +36,18 @@
       <button class="btn btn-lg btn-default dont-know" 
               ng-click="checkAnswer()" 
               ng-disabled="canNext" >
-          <i class="glyphicon glyphicon-question-sign"></i> Nevím
+          <i class="glyphicon glyphicon-question-sign"></i> {{'Nevím' | trans }}
       </button>
       <button class="btn btn-lg btn-default next {{!canNext || 'btn-primary'}}" 
               ng-click="next()" 
               ng-disabled="!canNext" >
-          <i class="glyphicon glyphicon-arrow-right"></i> Pokračovat
+          <i class="glyphicon glyphicon-arrow-right"></i> {{'Pokračovat' | trans }}
       </button>
       <button class="btn btn-lg btn-default" 
               ng-click="highlight()" 
               ng-disabled="canNext"  
               ng-show="question.options != undefined" >
-          <i class="glyphicon glyphicon-repeat"></i> Znovu zvýraznit
+          <i class="glyphicon glyphicon-repeat"></i> {{'Znovu zvýraznit' | trans }}
       </button>
     </span>
   </div>
@@ -56,7 +56,7 @@
       <div class="progress" ng-show="summary != undefined">
         <div class="progress-bar progress-bar-success" 
              style="width: {{summary.correctlyAnsweredRatio | percent }};">
-          Úspěšnost: {{summary.correctlyAnsweredRatio | percent }}
+          {{'Úspěšnost' | trans}}: {{summary.correctlyAnsweredRatio | percent }}
         </div>
         <div class="progress-bar progress-bar-danger" 
              style="width: {{(1 - summary.correctlyAnsweredRatio) | percent }};">
@@ -75,11 +75,11 @@
     <span class="pull-right" >
       <a class="btn btn-lg btn-default" 
          href="#/refreshpractice/{{part}}/{{placeType}}" >
-        <i class="glyphicon glyphicon-repeat"></i> Znovu procvičovat
+        <i class="glyphicon glyphicon-repeat"></i> {{'Znovu procvičovat' | trans }}
       </a>
       <a class="btn-continue btn btn-lg btn-default {{!showSummary || 'btn-primary'}}" 
          href="#/view/{{part}}/" >
-        <i class="glyphicon glyphicon-globe"></i> Mapa znalostí
+        <i class="glyphicon glyphicon-globe"></i> {{'Mapa znalostí' | trans }}
       </a>
     </span>
   </div>

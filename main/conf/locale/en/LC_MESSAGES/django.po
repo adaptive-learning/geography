@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-12 11:25+0200\n"
+"POT-Creation-Date: 2014-07-12 19:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,8 @@ msgstr "English"
 msgid "Neznámé"
 msgstr "Unknown"
 
-#: geography/models/place.py:161 templates/home.html:72
+#: geography/models/place.py:161 geography/views/place.py:52
+#: templates/home.html:73
 msgid "Státy"
 msgstr "States"
 
@@ -37,11 +38,12 @@ msgstr "States"
 msgid "Města"
 msgstr "Cities"
 
-#: geography/models/place.py:163 templates/home.html:58
+#: geography/models/place.py:163 templates/home.html:59
 msgid "Svět"
 msgstr "World"
 
-#: geography/models/place.py:164 templates/home.html:62
+#: geography/models/place.py:164 geography/views/place.py:49
+#: templates/home.html:63
 msgid "Kontinenty"
 msgstr "Continents"
 
@@ -239,15 +241,27 @@ msgstr "highlighted"
 msgid "zvýrazněné"
 msgstr "highlighted"
 
-#: templates/home.html:54 templates/generated/homepage.html:25
+#: templates/home.html:24
+msgid "meta content"
+msgstr ""
+"Inteligent application for practicing states, cities, mountains and rivers "
+"on blind maps of the world, Europe, Asia, Africa, America, US and other countries"
+
+#: templates/home.html:28
+msgid "meta keywords"
+msgstr ""
+"geography games, blind maps, map outlines, countries, states, cities, "
+"world, europe, america, africa, asia, mountains, rivers, usa"
+
+#: templates/home.html:55 templates/generated/homepage.html:25
 msgid "Slepé Mapy"
 msgstr "Blind maps"
 
-#: templates/home.html:81
+#: templates/home.html:82
 msgid "Přehled map"
 msgstr "Maps overview"
 
-#: templates/home.html:91
+#: templates/home.html:92
 msgid ""
 "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
 "znalosti pamatoval i příště."
@@ -255,32 +269,32 @@ msgstr ""
 "Sign in simply via Google or Facebook, so the system remembers your "
 "knowledge next time."
 
-#: templates/home.html:93
+#: templates/home.html:94
 msgid "Přihlásit se"
 msgstr "Sign in"
 
-#: templates/home.html:98
+#: templates/home.html:99
 msgid "přes Google"
 msgstr "via Google"
 
-#: templates/home.html:103
+#: templates/home.html:104
 msgid "přes Facebook"
 msgstr "via Facebook"
 
-#: templates/home.html:117
+#: templates/home.html:118
 #, fuzzy
 msgid "Odhlásit se"
 msgstr "Sign out"
 
-#: templates/home.html:123
+#: templates/home.html:124
 msgid "Body - přibývají za každou správnou odpověď"
 msgstr "Points - gained per each correct answer"
 
-#: templates/home.html:156
+#: templates/home.html:160
 msgid "O projektu"
 msgstr "About"
 
-#: templates/home.html:157
+#: templates/home.html:161
 msgid "Kontakty"
 msgstr "Contacts"
 

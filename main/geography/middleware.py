@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.utils import translation
 from django.db import connection
 from social_auth.exceptions import AuthAlreadyAssociated
 from django.contrib.auth import logout
@@ -22,3 +23,16 @@ class AuthAlreadyAssociatedMiddleware(object):
             url = url.replace("complete", "login")
             logout(request)
             return redirect(url)
+
+
+class LanguageInPathMiddleware(object):
+    def __init__(self):
+        self.language_codes = set(dict(settings.LANGUAGES).keys())
+
+    def process_request(self, request):
+        language_code = request.path_info.lstrip('/').split('/', 1)[0]
+        if language_code in self.language_codes:
+            translation.activate(language_code)
+            request.LANGUAGE_CODE = translation.get_language()
+            request.COOKIES[settings.LANGUAGE_COOKIE_NAME] = language_code
+            request.session['django_language'] = language_code

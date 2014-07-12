@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-12 11:32+0200\n"
+"POT-Creation-Date: 2014-07-12 18:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,45 +17,128 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: geography/static/dist/js/blind-maps.min.js:173
-#: geography/static/dist/js/blind-maps.min.js:310
+#: geography/static/dist/js/blind-maps.min.js:176
+#: geography/static/dist/js/blind-maps.min.js:313
 #: geography/static/js/controllers.js:45
 #: geography/static/js/controllers.js:182
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Unfortunately there has been an error in the app."
 
-#: templates/home.html:54 templates/generated/homepage.html:25
+#: geography/static/dist/js/blind-maps.min.js:392
+#: geography/static/js/services.js:20
+msgid "Politická mapa"
+msgstr "Political map"
+
+#: geography/static/dist/js/blind-maps.min.js:405
+#: geography/static/js/services.js:33
+msgid "Vodstvo"
+msgstr "Water"
+
+#: geography/static/dist/js/blind-maps.min.js:410
+#: geography/static/js/services.js:38
+msgid "Povrch"
+msgstr "Surface"
+
+#: geography/static/dist/js/blind-maps.min.js:638
+#: geography/static/js/services.js:266
+msgid "Jak to funguje?"
+msgstr "How does it work?"
+
+#: geography/static/dist/js/blind-maps.min.js:639
+#: geography/static/js/services.js:267
+msgid "O prjektu"
+msgstr "About"
+
+#: geography/static/dist/js/blind-maps.min.js:640
+#: geography/static/js/services.js:268
+msgid "Přehled map"
+msgstr "Maps overview"
+
+#: geography/static/dist/js/blind-maps.min.js:1319
+#: geography/static/js/directives.js:17
+msgid "Odhad znalosti"
+msgstr "Knowledge estimate"
+
+#: geography/static/dist/js/blind-maps.min.js:1346
+#: geography/static/js/directives.js:44
+msgid "Moje znalosti"
+msgstr "My knowledge"
+
+#: geography/static/dist/js/blind-maps.min.js:1352
+#: geography/static/js/directives.js:50
+msgid "Průměrný nový uživatel"
+msgstr "Average new user"
+
+#: geography/static/dist/js/blind-maps.min.js:1479
+#: geography/static/js/directives.js:177
+msgid "Naučeno"
+msgstr "Learned"
+
+#: geography/static/dist/js/blind-maps.min.js:1486
+#: geography/static/js/directives.js:184
+msgid "Procvičováno"
+msgstr "Practiced"
+
+#: geography/static/dist/js/blind-maps.min.js:1525
+#: geography/static/js/directives.js:223
+msgid "Aktuální úroveň"
+msgstr "Current level"
+
+#: geography/static/dist/js/blind-maps.min.js:1533
+#: geography/static/js/directives.js:231
+msgid "Příští úroveň"
+msgstr "Next level"
+
 msgid "Slepé Mapy"
 msgstr "Blind maps"
 
-#: templates/generated/homepage.html:27
 msgid "Co chcete procvičovat?"
 msgstr "What do you want to practice?"
 
-#: templates/generated/homepage.html:30
 msgid "Státy světa"
 msgstr "States of the world"
 
-#: templates/generated/homepage.html:33
 msgid "Státy Evropy"
 msgstr "European States"
 
-#: templates/generated/homepage.html:36
 msgid "Státy USA"
 msgstr "US States"
 
-#: templates/generated/homepage.html:39
 msgid "Kraje ČR"
 msgstr "Czech regions"
 
-#: templates/generated/homepage.html:42
 msgid "Města ČR"
 msgstr "Czech cities"
 
-#: templates/generated/homepage.html:45
 msgid "Pohoří Evropy"
 msgstr "European mountains"
 
-#: templates/generated/homepage.html:48
 msgid "nebo něco jiného"
 msgstr "or something else"
+
+msgid "Vybráno"
+msgstr "Selected"
+
+msgid "Nevím"
+msgstr "Don't know"
+
+msgid "Pokračovat"
+msgstr "Continue"
+
+msgid "Znovu zvýraznit"
+msgstr "Highlight again"
+
+msgid "Úspěšnost"
+msgstr "Success rate"
+
+msgid "Mapa znalostí"
+msgstr "Knowledge map"
+
+msgid "Znovu procvičovat"
+msgstr "Practice again"
+
+msgid "Procvičovat"
+msgstr "Practice"
+
+msgid "Svět"
+msgstr "World"

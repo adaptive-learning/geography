@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib.auth.models import User
 from django.http import Http404, HttpResponseBadRequest
+from django.utils.translation import ugettext as _
 from geography.models import Place, PlaceRelation, MapSkill
 from geography.utils import JsonResponse
 from django.views.decorators.cache import cache_page
@@ -27,7 +28,7 @@ def _places(request, map_code):
         'slug': map.place.code,
         'placesTypes': [
             {
-                'name': place_type[1],
+                'name': _(place_type[1]),
                 'slug': Place.PLACE_TYPE_SLUGS_LOWER[place_type[0]],
                 'count': len([p for p in map_places
                              if p.type == place_type[0]])
@@ -42,13 +43,13 @@ def _places(request, map_code):
 @cache_page(60 * 60)
 def places_overview(request):
     map_types = [{
-        'name': 'Svět',
+        'name': 'World',  # not translated on purpose
         'maps': Place.objects.filter(code='world'),
     }, {
-        'name': 'Kontinenty',
+        'name': _('Kontinenty'),
         'maps': Place.objects.get_continents(),
     }, {
-        'name': 'Státy',
+        'name': _(u'Státy'),
         'maps': Place.objects.get_states_with_map(),
     }]
     for map_type in map_types:

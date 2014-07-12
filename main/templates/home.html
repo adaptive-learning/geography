@@ -1,6 +1,6 @@
  {% load i18n %}
 <!DOCTYPE html>
-<html data-ng-app="blindMaps" data-ng-controller="AppCtrl" lang="cs">
+<html data-ng-app="blindMaps" data-ng-controller="AppCtrl" lang="{{LANGUAGE_CODE}}">
   <head>
     <meta charset="utf-8">
     <title ng-bind="title" ng-init="initTitle('{{ title }}')">{{ title }}</title>
@@ -21,10 +21,8 @@
         </script>
 	{% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Inteligentní aplikace na procvičování
-    států, měst, pohoří a řek na slepé mapě světa, Evropy, Asie, Afriky, Ameriky, ČR, USA 
-    a dalších států">
-    <meta name="keywords" content="slepé mapy, státy, města, čr, svět, evrovpa, amerika, afrika, asie, pohoří, řeky, zeměpis, usa, hry" />
+    <meta name="description" content="{% trans 'meta content' %}">
+    <meta name="keywords" content="{% trans 'meta keywords' %}" />
     <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
     <!-- Le styles -->
@@ -132,14 +130,9 @@
                 <ul class="dropdown-menu">
                     {% for lang in LANGUAGES %}
                     <li>
-                      <a class="menu-link" href=""
-                          onclick="document.setlang{{ lang.0 }}.submit();return false;">
+                      <a class="menu-link" href="/{{ lang.0 }}/#{%verbatim%}{{location.path()}}{%endverbatim%}">
                         <i class="flag-{{ lang.0 }}"></i> {% trans lang.1 %}
                       </a>
-                      <form name="setlang{{ lang.0 }}" action="/i18n/setlang/" method="post">
-                        {% csrf_token %}
-                        <input name="language" type="hidden" value="{{ lang.0 }}" />
-                      </form>
                     </li>
                     {% endfor %}
                 </ul>

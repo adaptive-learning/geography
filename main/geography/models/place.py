@@ -163,7 +163,7 @@ class Place(models.Model):
         (WORLD, _(u'Svět')),
         (CONTINENT, _(u'Kontinenty')),
         (RIVER, _(u'Řeky')),
-        (LAKE, _(u'Jezera')),
+        (LAKE, _('Jezera')),
         (REGION_CZ, _(u'Kraje')),
         (BUNDESLAND, _(u'Spolkové Země')),
         (PROVINCE, _(u'Provincie')),
@@ -211,7 +211,7 @@ class Place(models.Model):
     def to_serializable(self):
         return {
             'code': self.code,
-            'name': _(self.name)
+            'name': self.name
         }
 
     class Meta:

@@ -3,7 +3,7 @@
   /* Directives */
   angular.module('blindMaps.directives', [])
 
-  .directive('placeLabel', ['colorScale', function(colorScale) {
+  .directive('placeLabel', ['colorScale', 'gettext', function(colorScale, gettext) {
     return {
       restrict : 'A',
       template : '<i class="flag-{{place.code}}"></i> {{place.name}}',
@@ -14,8 +14,8 @@
           html : true,
           placement: 'bottom',
           title : '<div class="skill-tooltip">' +
-                ' Odhad znalosti ' + 
-                '<span class="badge badge-default">' +
+                gettext('Odhad znalosti') + 
+                ' <span class="badge badge-default">' +
                   '<i class="color-indicator" style="background-color :' +
                   colorScale($scope.place.probability).hex() + '"></i>' +
                   10 * $scope.place.probability + ' / 10 ' +
@@ -26,8 +26,10 @@
     };
   }])
 
-  .directive('blindMap', ['mapControler', 'places', 'singleWindowResizeFn', 'getMapResizeFunction', '$parse',
-      function(mapControler, places, singleWindowResizeFn, getMapResizeFunction, $parse) {
+  .directive('blindMap', ['mapControler', 'places', 'singleWindowResizeFn', 
+        'getMapResizeFunction', '$parse', 'gettext',
+      function(mapControler, places, singleWindowResizeFn, 
+        getMapResizeFunction, $parse, gettext) {
     return {
       restrict : 'E',
       template : '<div class="map-container">' +
@@ -39,13 +41,13 @@
                     '<a class="btn btn-default atooltip" href="#/view/{{part}}/"' +
                         'ng-class="\'/view/\'+part+\'/\'|isActive"' +
                         'placement="right"' +
-                        'title="Moje znalosti">' +
+                        'title="' + gettext('Moje znalosti') + '">' +
                       '<i class="glyphicon glyphicon-user"></i>' +
                     '</a>' +
                     '<a class="btn btn-default atooltip" href="#/view/{{part}}/average"' +
                         'ng-class="\'/view/\'+part+\'/average\'|isActive"' +
                         'placement="right"' +
-                        'title="Průměrný nový uživatel">' +
+                        'title="' + gettext('Průměrný nový uživatel') + '">' +
                       '<i class="glyphicon glyphicon-globe"></i> ' +
                     '</a>' +
                   '</div>' +
@@ -152,7 +154,7 @@
     };
   }])
 
-  .directive('mapProgress', [function() {
+  .directive('mapProgress', ['gettext', function(gettext) {
     return {
       restrict : 'C',
       template : '<div class="progress overview-progress">' +
@@ -172,14 +174,14 @@
               html : true,
               placement: 'bottom',
               title : '<div class="skill-tooltip">' +
-                     'Naučeno: ' +
+                     gettext('Naučeno') + ' ' +
                      '<span class="badge badge-default">' +
                        '<i class="color-indicator learned"></i>' +
                        $scope.skills.learned + ' / ' + $scope.count +
                      '</span>' +
                    '</div>' +
                    '<div class="skill-tooltip">' +
-                     'Procvičováno: ' +
+                     gettext('Procvičováno') + ' ' +
                      '<span class="badge badge-default">' +
                        '<i class="color-indicator practiced"></i>' +
                        $scope.skills.practiced + ' / ' + $scope.count +
@@ -192,7 +194,8 @@
     };
   }])
 
-  .directive('levelProgressBar',['user', '$timeout', function(user, $timeout) {
+  .directive('levelProgressBar',['user', '$timeout', 'gettext',
+      function(user, $timeout, gettext) {
     
     function getLevelInfo(points) {
       var levelEnd = 0;
@@ -217,7 +220,7 @@
     return {
       restrict : 'C',
       template : '<span class="badge level-start atooltip" ' +
-                   'ng-bind="level.level" title="Aktuální úroveň">' +
+                   'ng-bind="level.level" title="' + gettext('Aktuální úroveň') + '">' +
                  '</span>' +
                  '<div class="progress level-progress" >' +
                    '<div class="progress-bar progress-bar-warning" ' +
@@ -225,7 +228,7 @@
                    '</div>' +
                  '</div>' +
                  '<span class="badge level-goal atooltip" ' +
-                       'ng-bind="level.level+1" title="Příští úroveň">' +
+                       'ng-bind="level.level+1" title="' + gettext('Příští úroveň') + '">' +
                  '</span>',
       link : function($scope, elem) {
         $scope.level = getLevelInfo(user.getUser().points);

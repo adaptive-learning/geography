@@ -13,15 +13,15 @@ from django.core.servers.basehttp import FileWrapper
 
 def home(request):
     JS_FILES = (
-        "static/dist/js/fallbacks.min.js",
-        "static/dist/js/libs.min.js",
-        "static/dist/js/blind-maps.min.js",
-        "static/lib/angular-1.2.9/i18n/angular-locale_cs.js",
+        "/static/dist/js/fallbacks.min.js",
+        "/static/dist/js/libs.min.js",
+        "/static/dist/js/blind-maps.min.js",
+        "/static/lib/angular-1.2.9/i18n/angular-locale_cs.js",
     )
     CSS_FILES = (
-        "static/lib/css/bootstrap.min.css",
-        "static/css/app.css",
-        "static/css/map.css"
+        "/static/lib/css/bootstrap.min.css",
+        "/static/css/app.css",
+        "/static/css/map.css"
     )
     request.META["CSRF_COOKIE_USED"] = True
     if settings.ON_PRODUCTION:

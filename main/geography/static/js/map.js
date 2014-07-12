@@ -523,8 +523,8 @@
         }
       };
 
-      myMap.map.loadCSS(hash('static/css/map.css'), function() {
-        myMap.map.loadMap(hash('static/map/' + mapCode + '.svg'), function() {
+      myMap.map.loadCSS(hash('/static/css/map.css'), function() {
+        myMap.map.loadMap(hash('/static/map/' + mapCode + '.svg'), function() {
           highlighted.clear();
           layers = initLayers(myMap.map, config);
           if (_placesByTypes !== undefined) {

@@ -6,18 +6,18 @@
     'ngCookies'
   ])
 
-  .factory('places', ['$http', function($http) {
+  .factory('places', ['$http', 'gettext', function($http, gettext) {
     var cache = {};
     var mapCache = {};
     var categoriesCache = {};
     var names = {
-        'us' : 'USA',
-        'world' : 'Svět'
+        'us' : gettext('USA'),
+        'world' : gettext('Svět')
       };
     var categories = [
       {
         slug :'political',
-        name :'Politická mapa',
+        name : gettext('Politická mapa'),
         types : [
           'state',
           'city',
@@ -30,12 +30,12 @@
         ]
       },{
         slug : 'water',
-        name : 'Vodstvo',
+        name : gettext('Vodstvo'),
         types : ['river', 'lake'],
         hidden:true
       },{
         slug : 'surface',
-        name : 'Povrch',
+        name : gettext('Povrch'),
         types : ['mountains', 'island'],
         hidden:true
       }
@@ -57,7 +57,7 @@
     
     var that = {
       get : function(part, user, fn) {
-        var url = 'usersplaces/' + part + '/' + user;
+        var url = '/usersplaces/' + part + '/' + user;
         var promise = $http.get(url, {cache: user == 'average'}).success(function(data) {
           var placesTypes = data.placesTypes;
           cache[url] = placesTypes;
@@ -98,7 +98,7 @@
         var process = function(placesTypes){
           addToNames(part, placesTypes);
         };
-        var url = 'usersplaces/' + part + '/';
+        var url = '/usersplaces/' + part + '/';
         if (cache[url]) {
           process(cache[url]);
         } else {
@@ -171,7 +171,7 @@
     var summary = [];
     return {
       first : function(part, placeType, fn) {
-        url = 'question/' + part + '/' + (placeType ? placeType : '');
+        url = '/question/' + part + '/' + (placeType ? placeType : '');
         summary = [];
         var promise = $http.get(url).success(function(data) {
           qIndex = 0;
@@ -230,7 +230,7 @@
         return user;
       },
       logout : function(callback) {
-        $http.get('user/logout/').success(callback);
+        $http.get('/user/logout/').success(callback);
         this.initUser('', 0);
         events.emit('userUpdated', user);
         return user;
@@ -259,13 +259,13 @@
     };
   })
 
-  .factory('pageTitle',['places', function(places) {
+  .factory('pageTitle',['places', 'gettext', function(places, gettext) {
     
     var titles = {
       'static/tpl/homepage.html' : '',
-      '../templates/home/how_it_works.html' : 'Jak to funguje? - ',
-      'static/tpl/about.html' : 'O prjektu - ',
-      'static/tpl/overview_tpl.html' : 'Přehled map - '
+      '../templates/home/how_it_works.html' : gettext('Jak to funguje?') + ' - ',
+      'static/tpl/about.html' : gettext('O prjektu') + ' - ',
+      'static/tpl/overview_tpl.html' : gettext('Přehled map') + ' - '
     };
     return function (route) {
       var title;

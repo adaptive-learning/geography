@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-12 11:25+0200\n"
+"POT-Creation-Date: 2014-07-12 19:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,8 @@ msgstr "Anglicky"
 msgid "Neznámé"
 msgstr ""
 
-#: geography/models/place.py:161 templates/home.html:72
+#: geography/models/place.py:161 geography/views/place.py:52
+#: templates/home.html:73
 msgid "Státy"
 msgstr ""
 
@@ -37,11 +38,12 @@ msgstr ""
 msgid "Města"
 msgstr ""
 
-#: geography/models/place.py:163 templates/home.html:58
+#: geography/models/place.py:163 templates/home.html:59
 msgid "Svět"
 msgstr ""
 
-#: geography/models/place.py:164 templates/home.html:62
+#: geography/models/place.py:164 geography/views/place.py:49
+#: templates/home.html:63
 msgid "Kontinenty"
 msgstr ""
 
@@ -237,46 +239,59 @@ msgstr ""
 msgid "zvýrazněné"
 msgstr ""
 
-#: templates/home.html:54 templates/generated/homepage.html:25
+#: templates/home.html:24
+msgid "meta content"
+msgstr ""
+"Inteligentní aplikace na procvičování států, měst, pohoří a řek "
+"na slepé mapě světa, Evropy, Asie, Afriky, Ameriky, ČR, USA "
+"a dalších států"
+
+#: templates/home.html:28
+msgid "meta keywords"
+msgstr ""
+"slepé mapy, státy, města, čr, svět, evrovpa, amerika, "
+"afrika, asie, pohoří, řeky, zeměpis, usa, hry"
+
+#: templates/home.html:55 templates/generated/homepage.html:25
 msgid "Slepé Mapy"
 msgstr "Slepé Mapy"
 
-#: templates/home.html:81
+#: templates/home.html:82
 msgid "Přehled map"
 msgstr ""
 
-#: templates/home.html:91
+#: templates/home.html:92
 msgid ""
 "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
 "znalosti pamatoval i příště."
 msgstr ""
 
-#: templates/home.html:93
+#: templates/home.html:94
 msgid "Přihlásit se"
 msgstr "Přihlásit se"
 
-#: templates/home.html:98
+#: templates/home.html:99
 msgid "přes Google"
 msgstr ""
 
-#: templates/home.html:103
+#: templates/home.html:104
 msgid "přes Facebook"
 msgstr ""
 
-#: templates/home.html:117
+#: templates/home.html:118
 #, fuzzy
 msgid "Odhlásit se"
 msgstr "Přihlásit se"
 
-#: templates/home.html:123
+#: templates/home.html:124
 msgid "Body - přibývají za každou správnou odpověď"
 msgstr ""
 
-#: templates/home.html:156
+#: templates/home.html:160
 msgid "O projektu"
 msgstr ""
 
-#: templates/home.html:157
+#: templates/home.html:161
 msgid "Kontakty"
 msgstr ""
 

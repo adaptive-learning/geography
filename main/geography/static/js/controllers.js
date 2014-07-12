@@ -3,9 +3,10 @@
   /* Controllers */
   angular.module('blindMaps.controllers', [])
 
-  .controller('AppCtrl', ['$scope', '$rootScope', 'user', 'pageTitle',
-      function($scope, $rootScope, user, pageTitle) {
+  .controller('AppCtrl', ['$scope', '$rootScope', '$location', 'user', 'pageTitle',
+      function($scope, $rootScope, $location, user, pageTitle) {
     $rootScope.topScope = $rootScope;
+    $rootScope.location = $location;
     
     $rootScope.initTitle = function (title) {
       $rootScope.initialTitle = title;
