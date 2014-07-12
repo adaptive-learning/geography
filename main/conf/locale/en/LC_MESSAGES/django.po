@@ -217,7 +217,7 @@ msgstr " on the map choose"
 
 #: geography/utils/model.py:199
 msgid "Vyber na mapě "
-msgstr "Choose on the map"
+msgstr "Choose on the map "
 
 #: geography/utils/model.py:201
 msgid "Jak se jmenuje "

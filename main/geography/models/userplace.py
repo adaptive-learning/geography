@@ -7,7 +7,7 @@ from math import exp, ceil
 
 class UserPlaceManager(models.Manager):
 
-    def for_user_and_map_prepared(self, user, map):
+    def for_user_and_map_prepared(self, user, map, lang_code):
         return self.raw("""
     SELECT
         geography_currentskill_prepared.user_id * 100000 + geography_placerelation.place_id AS dummy_id,
@@ -16,7 +16,7 @@ class UserPlaceManager(models.Manager):
         geography_currentskill_prepared.currentskill AS currentskill,
         geography_currentskill_prepared.value AS skill,
         geography_place.type AS type,
-        geography_place.name AS name,
+        geography_place.name_""" + lang_code + """ AS name,
         geography_place.code AS code
     FROM
         geography_placerelation

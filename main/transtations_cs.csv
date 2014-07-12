@@ -1,0 +1,1234 @@
+world	Svět
+europe	Evropa
+asia	Asie
+oceania	Austrálie a Oceánie
+samerica	Severní Amerika
+namerica	Jižní Amerika
+africa	Afrika
+af	Afghánistán
+ao	Angola
+ar	Argentina
+au	Austrálie
+bf	Burkina Faso
+bd	Bangladéš
+by	Bělorusko
+bo	Bolívie
+br	Brazílie
+bw	Botswana
+cf	Středoafrická republika
+ca	Kanada
+cl	Chile
+cn	Čína
+ci	Pobřeží slonoviny
+cm	Kamerun
+cd	Demokratická republika Kongo
+cg	Kongo
+co	Kolumbie
+de	Německo
+dz	Alžírsko
+ec	Ekvádor
+eg	Egypt
+er	Eritrea
+es	Španělsko
+et	Etiopie
+fi	Finsko
+fr	Francie
+ga	Gabon
+gb	Spojené království
+gh	Ghana
+gn	Guinea
+gr	Řecko
+gl	Grónsko
+gy	Guyana
+hn	Honduras
+id	Indonésie
+in	Indie
+ir	Írán
+iq	Irák
+is	Island
+it	Itálie
+jp	Japonsko
+kz	Kazachstán
+ke	Keňa
+kg	Kyrgyzstán
+kh	Kambodža
+kr	Jižní Korea
+la	Laos
+ly	Libye
+ma	Maroko
+mg	Madagaskar
+mx	Mexiko
+ml	Mali
+mm	Myanmar
+mn	Mongolsko
+mz	Mosambik
+mr	Mauritánie
+mw	Malawi
+my	Malajsie
+na	Namibie
+ne	Niger
+ng	Nigérie
+ni	Nikaragua
+no	Norsko
+np	Nepál
+nz	Nový Zéland
+om	Omán
+pk	Pákistán
+pe	Peru
+ph	Filipíny
+pg	Papua-Nová Guinea
+pl	Polsko
+kp	Severní Korea
+py	Paraguay
+ro	Rumunsko
+ru	Rusko
+eh	Západní Sahara
+sa	Saúdská Arábie
+sd	Súdán
+ss	Jižní Súdán
+sn	Senegal
+sb	Šalamounovy ostrovy
+so	Somálsko
+sr	Surinam
+se	Švédsko
+sy	Sýrie
+td	Čad
+th	Thajsko
+tj	Tádžikistán
+tm	Turkmenistán
+tt	Trinidad and Tobago
+tn	Tunisko
+tr	Turecko
+tz	Tanzanie
+ug	Uganda
+ua	Ukrajina
+uy	Uruguay
+us	Spojené státy americké
+uz	Uzbekistán
+ve	Venezuela
+vn	Vietnam
+vu	Vanuatu
+ye	Jemen
+za	Jihoafrická republika
+zm	Zambie
+zw	Zimbabwe
+TIERRA_DEL_FUEGO	Ohňová Země
+Nova_Scotia	Nové Skotsko
+Vancouver_Island	Vancouver
+VICTORIA_ISLAND	Viktoriin ostrov
+LABRADOR	Labrador
+ELLESMERE_ISLAND	Ellesmerův ostrov
+BAFFIN_ISLAND	Baffinův ostrov
+ISLAND_OF_NEWFOUNDLAND	Newfoundland
+SULAWESI	Sulavesi
+JAVA	Jáva
+MINDANAO	Mindanao
+LUZON	Luzon
+TAIWAN	Taiwan
+KYUSHU	Kjúšú
+SHIKOKU	Šikoku
+HOKKAIDO	Hokkaidó
+SAKHALIN	Sachalin
+Sardegna	Sardinie
+Corse	Korsika
+Sicilia	Sicílie
+SRI_LANKA	Srí Lanka
+TASMANIA	Tasmánie
+NEW_GUINEA	Nová Guinea
+BORNEO	Borneo
+SUMATRA	Sumatra
+HONSHU	Honšú
+IRELAND	Irsko
+GREAT_BRITAIN	Velká Británie
+ICELAND	Island
+GREENLAND	Grónsko
+MADAGASCAR	Madagaskar
+SOUTH_ISLAND	Jižní ostrov (Nový Zéland)
+NORTH_ISLAND	Severní ostrov (Nový Zéland)
+ETHIOPIAN_HIGHLANDS	Etiopská vysočina
+ZAGROS_MOUNTAINS	Zagros
+ALTAY_MOUNTAINS	Altaj
+GREATER_KHINGAN_RANGE	Velký Chingan
+STANOVOY_RANGE	Stanové pohoří
+CHAINE_ANNAMITIQUE	Annamské pohoří
+Siwalik_Hills	Šiválik
+PAMIRS	Pamír
+HINDU_KUSH	Hindúkuš
+KARAKORAM_RA.	Karákóram
+KUNLUN_MOUNTAINS	Kchun-lun-šan
+ATLAS_MOUNTAINS	Atlas
+APPALACHIAN_MTS.	Appalačské pohoří
+BROOKS_RANGE	Brooksovo pohoří
+COAST_MOUNTAINS	Pobřežní hory
+CASCADE_RANGE	Kaskádové pohoří
+ALASKA_RANGE	Aljašské hory
+GREAT_DIVIDING_RANGE	Velké předělové pohoří
+ALPS	Alpy
+TIAN_SHAN	Ťan-šan
+URAL_MOUNTAINS	Ural
+CAUCASUS_MTS.	Kavkaz
+HIMALAYAS	Himaláje
+ANDES	Andy
+ROCKY_MOUNTAINS	Skalnaté hory
+Brahmaputra	Brahmaputra
+Mekong	Mekong
+Ob	Ob
+Danube	Dunaj
+Parana	Paraná
+Congo	Congo
+Lena	Lena
+Chang_(Yangtze)	Jang-c’-ťiang
+Nile	Nil
+Amazon	Amazonka
+Mississippi	Mississippi
+Lake_Baikal	Bajkal
+Lake_Winnipeg	Winnipežské jezero
+Great_Slave_Lake	Velké otročí jezero
+L._Ontario	Ontario
+L._Erie	Erijské jezero
+Lake_Superior	Hořejší jezero
+Lake_Victoria	Viktoriino jezero
+Lake_Ladoga	Ladožské jezero
+Balqash_Koli	Balchaš
+Lake_Tanganyika	Tanganika
+Lake_Malawi	Malawi
+Aral_Sea	Aralské moře
+Vanern	Vänern
+Lago_de_Nicaragua	Nikaragua
+Lago_Titicaca	Titicaca
+Lake_Winnipegosis	Winnipegosis
+Lake_Onega	Oněžské jezero
+Great_Bear_Lake	Velké medvědí jezero
+Reindeer_Lake	Sobí jezero
+Lake_Huron	Hurónské jezero
+Lake_Michigan	Michiganské jezero
+Tunis	Tunis 
+Baku	Baku 
+Hanoi	Hanoi 
+Ankara	Ankara 
+Sanaa	San'á
+Damascus	Damašek 
+Lisbon	Lisabon
+Khartoum	Chartúm 
+Pyongyang	Pchjongjang 
+Dar_es_Salaam	Dar es Salaam 
+Havana	Havana 
+Kuwait	Kuvajt 
+Santo_Domingo	Santo Domingo 
+Accra	Accra 
+Tripoli	Tripoli 
+Tel_Aviv-Yafo	Tel Aviv-Yafo 
+Abidjan	Abidjan 
+Brasilia	Brasilia 
+Dhaka	Dhaka 
+Luanda	Luanda 
+Algiers	Alžír 
+Rangoon	Rangún 
+San_Francisco	San Francisco
+Denver	Denver
+Houston	Houston
+Miami	Miami
+Atlanta	Atlanta
+Chicago	Chicago
+Caracas	Caracas 
+Kiev	Kyjev
+Tashkent	Taškent 
+Madrid	Madrid
+Bangkok	Bangkok 
+Lima	Lima 
+Dakar	Dakar 
+Johannesburg	Johannesburg 
+Casablanca	Casablanca 
+Seoul	Soul 
+Manila	Manila 
+Monterrey	Monterrey 
+Berlin	Berlín
+Urumqi	Urumči 
+Chengdu	Chengdu 
+Osaka	Osaka 
+Kinshasa	Kinshasa 
+Bangalore	Bangalore 
+Athens	Athény
+Baghdad	Bagdád 
+Addis_Ababa	Addis Ababa 
+Tehran	Teherán 
+Vancouver	Vancouver
+Toronto	Toronto
+Buenos_Aires	Buenos Aires 
+Kabul	Kábul 
+Vienna	Vídeň
+Melbourne	Melbourne
+Taipei	Taipei 
+Los_Angeles	Los Angeles
+Washington,_D.C.	Washington, D.C.
+New_York	New York
+London	Londýn
+Istanbul	Istanbul 
+Riyadh	Rijád 
+Cape_Town	Kapské Město 
+Moscow	Moskva
+Mexico_City	Mexico City 
+Lagos	Lagos 
+Rome	Řím
+Beijing	Peking 
+Nairobi	Nairobi 
+Jakarta	Jakarta 
+Bogota	Bogota 
+Cairo	Káhira 
+Shanghai	Šanghai 
+Tokyo	Tokio 
+Mumbai	Mumbai 
+Paris	Paříž
+Santiago	Santiago 
+Kolkata	Kalkata
+Rio_de_Janeiro	Rio de Janeiro 
+Sao_Paulo	Sao Paulo 
+Sydney	Sydney
+Singapore	Singapur 
+Hong_Kong	Hongkong
+bi	Burundi
+bj	Benin
+dj	Džibutsko
+gm	Gambie
+gw	Guinea-Bissau
+gq	Rovníková Guinea
+lr	Libérie
+ls	Lesotho
+rw	Rwanda
+sl	Sierra Leone
+xs	Somaliland
+sz	Svazijsko
+tg	Togo
+Bir_Lehlou	Bir Lehlou 
+Moroni	Moroni 
+Kigali	Kigali 
+Mbabane	Mbabane 
+Juba	Juba 
+Dodoma	Dodoma 
+Laayoune	Laayoune
+Djibouti	Džibuti 
+Banjul	Banjul 
+Porto-Novo	Porto-Novo 
+Bujumbura	Bujumbura 
+Lome	Lome 
+Lusaka	Lusaka 
+Harare	Harare 
+Kampala	Kampala 
+Niamey	Niamey 
+Freetown	Freetown 
+Bloemfontein	Bloemfontein 
+Pretoria	Pretoria 
+Rabat	Rabat
+Maputo	Maputo 
+Mogadishu	Mogadišu 
+Windhoek	Windhoek 
+Abuja	Abuja 
+Maseru	Maseru 
+Antananarivo	Antananarivo 
+Ndjamena	Ndjamena 
+Malabo	Malabo 
+Asmara	Asmara 
+Lilongwe	Lilongwe 
+Libreville	Libreville 
+Nouakchott	Nouakchott 
+Bamako	Bamako 
+Conakry	Conakry 
+Yamoussoukro	Yamoussoukro 
+Bangui	Bangui 
+Yaounde	Yaoundé 
+Gaborone	Gaborone 
+Ouagadougou	Ouagadougou 
+Hargeysa	Hargeysa 
+Sao_Tome	Sao Tome 
+Monrovia	Monrovia
+ae	Spojené arabské emiráty
+am	Arménie
+az	Ázerbájdžán
+bn	Brunej
+bt	Bhútán
+ge	Gruzie
+il	Izrael
+jo	Jordánsko
+kw	Kuvajt
+lb	Libanon
+lk	Šrí Lanka
+ps	Palestinská autonomie
+qa	Katar
+tl	Východní Timor
+tw	Tchaj-wan
+HAINAN	Hainan
+TIMOR	Timor
+Palawan	Palawan
+Bohol	Bohol
+Negros	Negros
+Leyte	Leyte
+Samar	Samar
+Panay	Panay
+Mindoro	Mindoro
+Melekeok	Melekeok 
+Doha	Doha 
+Baguio_City	Baguio 
+Putrajaya	Putrajaya 
+Manama	Manama 
+Abu_Dhabi	Abu Dhabi 
+Ashgabat	Ashgabat 
+Dili	Dili 
+Dushanbe	Dušanbe 
+Islamabad	Islamabad 
+Kathmandu	Kathmandu 
+Muscat	Muscat 
+Colombo	Colombo 
+Ulaanbaatar	Ulánbátar 
+Amman	Amman 
+Bishkek	Biškek 
+Beirut	Bejrút 
+Tbilisi	Tbilisi 
+Astana	Astana 
+Vientiane	Vientiane 
+Bandar_Seri_Begawan	Bandar Seri Begawan 
+Yerevan	Jerevan
+Phnom_Penh	Phnompenh
+Thimphu	Thimphu 
+Naypyidaw	Neipyijto
+Male	Male
+Jerusalem	Jeruzalém 
+Nicosia	Nicosia 
+Kuala_Lumpur	Kuala Lumpur 
+Dubai	Dubaj 
+New_Delhi	Nové Dilí
+at-vo	Vorarlbersko
+at-bu	Burgenland
+at-st	Štýrsko
+at-ka	Korutany
+at-oo	Horní Rakousko
+at-sz	Salcbursko
+at-tr	Tyrolsko
+at-no	Dolní Rakousko
+at-wi	Vídeň
+Bregenz	Bregenz
+Eisenstadt	Eisenstadt
+Wiener_Neustadt	Wiener Neustadt
+Graz	Graz
+Klagenfurt	Klagenfurt
+Linz	Linz
+Passau	Pasov
+Salzburg	Salcbursko
+Innsbruck	Innsbruck
+au-nt	Severní Teritorium
+au-wa	Západní Austrálie
+au-ct	Teritorium hlavního města
+au-ns	Nový Jižní Wales
+au-sa	Jižní Austrálie
+au-vi	Victoria
+au-ql	Queensland
+au-ts	Tasmánie
+Cranbourne	Cranbourne
+Gold_Coast	Gold Coast
+Canberra	Canberra
+Newcastle	Newcastle
+Adelaide	Adelaide
+Brisbane	Brisbane
+Perth	Perth
+ca-mb	Manitoba
+ca-sk	Saskatchewan
+ca-ab	Alberta
+ca-bc	Britská Kolumbie
+ca-nu	Nunavut
+ca-nt	Severozápadní teritoria
+ca-yt	Yukon
+ca-on	Ontario
+ca-qc	Québec
+ca-nb	Nový Brunšvik
+ca-ns	Nové Skotsko
+ca-nl	Newfoundland a Labrador
+ca-pe	Ostrov prince
+London_Ca	Londýn
+Windsor	Windsor
+Winnipeg	Winnipeg
+Calgary	Calgary
+Ottawa	Ottawa
+Quebec	Québec
+Halifax	Halifax
+Edmonton	Edmonton
+Montreal	Montraal
+cn-62	Kan-su
+cn-63	Čching-chaj
+cn-45	Kuang-si
+cn-52	Kuej-čou
+cn-50	Čchung-čching
+cn-11	Peking
+cn-35	Fu-ťien
+cn-34	An-chuej
+cn-44	Kuang-tung
+cn-54	Tibetská autonomní oblast
+cn-65	Sin-ťiang
+cn-46	Chaj-nan
+cn-64	Ning-sia
+cn-61	Šen-si
+cn-14	Šan-si
+cn-42	Chu-pej
+cn-43	Chu-nan
+cn-51	S'-čchuan
+cn-53	Jün-nan
+cn-13	Che-pej
+cn-41	Che-nan
+cn-21	Liao-ning
+cn-37	Šan-tung
+cn-12	Tchien-ťin
+cn-36	Ťiang-si
+cn-32	Ťiang-su
+cn-31	Šanghaj
+cn-33	Če-ťiang
+cn-22	Ťi-lin
+cn-15	Vnitřní Mongolsko
+cn-23	Chej-lung-ťiang
+cz-us	Ústecký
+cz-pl	Plzeňský
+cz-jm	Jihomoravský
+cz-zl	Zlínský
+cz-ol	Olomoucký
+cz-pa	Pardubický
+cz-ka	Karlovarský
+cz-jc	Jihočeský
+cz-vy	Vysočina
+cz-pr	Praha
+cz-st	Středočeský
+cz-li	Liberecký
+cz-kr	Královéhradecký
+cz-mo	Moravskoslezský
+Jihlava	Jihlava
+Plzen	Plzeň
+Otrokovice	Otrokovice
+Trinec	Třinec
+Klasterec_nad_Ohri	Klášterec nad Ohří
+Pelhrimov	Pelhřimov
+Chrudim	Chrudim
+Pardubice	Pardubice
+Hradec_Kralove	Hradec Králové
+Havlickuv_Brod	Havlíčkův Brod
+Zdar_nad_Sazavou	Žďár nad Sázavou
+Velke_Mezirici	Velké Meziříčí
+Svitavy	Svitavy
+Moravska_Trebova	Moravská Třebová
+Ceska_Trebova	Česká Třebová
+Usti_nad_Orlici	Ústí nad Orlicí
+Vysoke_Myto	Vysoké Mýto
+Trebic	Třebíč
+Nachod	Náchod
+Jicin	Jičín
+Vrchlabi	Vrchlabí
+Trutnov	Trutnov
+Dvur_Kralove_nad_Labem	Dvůr Králové nad Labem
+Rychnov_nad_Kneznou	Rychnov nad Kněžnou
+Turnov	Turnov
+Liberec	Liberec
+Jablonec_nad_Nisou	Jablonec nad Nisou
+Ceska_Lipa	Česká Lípa
+Novy_Bor	Nový Bor
+Usti_nad_Labem	Ústí nad Labem
+Teplice	Teplice
+Bilina	Bílina
+Most	Most
+Litvinov	Litvínov
+Zatec	Žatec
+Louny	Louny
+Kadan	Kadaň
+Jirkov	Jirkov
+Chomutov	Chomutov
+Varnsdorf	Varnsdorf
+Rumburk	Rumburk
+Decin	Děčín
+Roudnice_nad_Labem	Roudnice nad Labem
+Litomerice	Litoměřice
+Kromeriz	Kroměříž
+Holesov	Holešov
+Uhersky_Brod	Uherský Brod
+Vsetin	Vsetín
+Valasske_Mezirici	Valašské Meziříčí
+Roznov_pod_Radhostem	Rožnov pod Radhoštěm
+Zlin	Zlín
+Marianske_Lazne	Mariánské Lázně
+Cheb	Cheb
+As	Aš
+Ostrov	Ostrov
+Karlovy_Vary	Karlovy Vary
+Sokolov	Sokolov
+Chodov	Chodov
+Ceske_Budejovice	České Budějovice
+Cesky_Krumlov	Český Krumlov
+Jindrichuv_Hradec	Jindřichův Hradec
+Pisek	Písek
+Prachatice	Prachatice
+Strakonice	Strakonice
+Tabor	Tábor
+Jesenik	Jeseník
+Sternberk	Šternberk
+Unicov	Uničov
+Olomouc	Olomouc
+Prostejov	Prostějov
+Prerov	Přerov
+Hranice	Hranice
+Sumperk	Šumperk
+Zabreh	Zábřeh
+Domazlice	Domažlice
+Susice	Sušice
+Klatovy	Klatovy
+Rokycany	Rokycany
+Tachov	Tachov
+Vlasim	Vlašim
+Benesov	Benešov
+Beroun	Beroun
+Slany	Slaný
+Kladno	Kladno
+Kolin	Kolín
+Kutna_Hora	Kutná Hora
+Neratovice	Neratovice
+Melnik	Mělník
+Kralupy_nad_Vltavou	Kralupy nad Vltavou
+Mlada_Boleslav	Mladá Boleslav
+Podebrady	Poděbrady
+Nymburk	Nymburk
+Brandys_nad_Labem-Stara_Boleslav	Brandýs nad Labem-Stará Boleslav
+Pribram	Příbram
+Rakovnik	Rakovník
+Krnov	Krnov
+Bruntal	Bruntál
+Frydek-Mistek	Frýdek-Místek
+Cesky_Tesin	Český Těšín
+Orlova	Orlová
+Karvina	Karviná
+Havirov	Havířov
+Bohumin	Bohumín
+Novy_Jicin	Nový Jičín
+Koprivnice	Kopřivnice
+Frenstat_pod_Radhostem	Frenštát pod Radhoštěm
+Opava	Opava
+Hlucin	Hlučín
+Ostrava	Ostrava
+Boskovice	Boskovice
+Blansko	Blansko
+Brno	Brno
+Breclav	Břeclav
+Veseli_nad_Moravou	Veselí nad Moravou
+Hodonin	Hodonín
+Kyjov	Kyjov
+Vyskov	Vyškov
+Znojmo	Znojmo
+Praha	Praha
+Uherske_Hradiste	Uherské Hradiště
+Sumava	Šumava
+Krusne_hory	Krušné hory
+Ceske_Stredohori	České středohoří
+Krkonose	Krkonoše
+Jizerske_hory	Jizerské hory
+Orlicke_hory	Orlické hory
+Hruby_Jesenik	Hrubý Jeseník
+Beskydy	Beskydy
+Ceskomoravska_vrchovina	Českomoravská vrchovina
+Bile_Karpaty	Bílé Karpaty
+Cesky_les	Český les
+Drahanska_vrchovina	Drahanská vrchovina
+Rychlebske_hory	Rychlebské hory
+Nizky_Jesenik	Nízký Jeseník
+Plzenska_pahorkatina	Plzeňská pahorkatina
+Novohradske_hory	Novohradské hory
+Chriby	Chřiby
+Doupovske_hory	Doupovské hory
+Brdy	Brdy
+Jestedsko-kozakovsky_hrbet	Ještědsko-kozákovský hřbet
+Luzicke_hory	Lužické hory
+Javorniky	Javorníky
+Stredoceska_pahorkatina	Středočeská pahorkatina
+Labe	Labe
+Vltava	Vltava
+Ohre	Ohře
+Berounka	Berounka
+Sazava	Sázava
+Otava	Otava
+Luznice	Lužnice
+Morava	Morava
+Orlice	Orlice
+Odra	Odra
+Ostravice	Ostravice
+Dyje	Dyje
+Svratka	Svratka
+Svitava	Svitava
+Jizera	Jizera
+Uslava	Úslava
+Uhlava	Úhlava
+Radbuza	Radbuza
+Mze	Mže
+Becva	Bečva
+de-nw	Severní Porýní-Vestfálsko
+de-bw	Bádensko-Württembersko
+de-he	Hesensko
+de-hb	Brémy
+de-ni	Dolní Sasko
+de-th	Durynsko
+de-hh	Hamburk
+de-sh	Šlesvicko-Holštýnsko
+de-rp	Porýní-Falc
+de-sl	Sársko
+de-by	Bavorsko
+de-be	Berlín
+de-st	Sasko-Anhaltsko
+de-sn	Sasko
+de-bb	Braniborsko
+de-mv	Meklenbursko-Přední Pomořansko
+Bielefeld	Bielefeld
+Dortmund	Dortmund
+Duisburg	Duisburg
+Wuppertal	Wuppertal
+Essen	Essen
+Karlsruhe	Karlsruhe
+Heidelberg	Heidelberg
+Augsburg	Augsburg
+Chemnitz	Chemnitz
+Bonn	Bonn
+Dusseldorf	Düsseldorf
+Mannheim	Mannheim
+Wiesbaden	Wiesbaden
+Hannover	Hannover
+Koblenz	Koblenz
+Saarbrucken	Saarbrücken
+Leipzig	Lipsko
+Stuttgart	Stuttgart
+Bremen	Brémy
+Nurnberg	Norimberk
+Cologne	Kolín nad Rýnem
+Dresden	Drážďany
+Frankfurt	Frankfurt
+Hamburg	Hamburg
+Munich	Mnichov
+es-an	Andalusie
+es-ar	Aragonie
+es-cb	Kantábrie
+es-cl	Kastilie a León
+es-cm	Kastilie-La Mancha
+es-ct	Katalánsko
+es-md	Madrid
+es-na	Navarra
+es-vc	Valencie
+es-ex	Extremadura
+es-ga	Galicie
+es-pm	Baleárské ostrovy
+es-lo	La Rioja
+es-pv	Baskicko
+es-as	Asturie
+es-mu	Murcie
+Marbella	Marbella
+Mataro	Mataro
+Gijon	Gijon
+Vitoria	Vitoria
+Almeria	Almeria
+Malaga	Malaga
+Albacete	Albacete
+Santander	Santander
+Salamanca	Salamanca
+Burgos	Burgos
+Cartagena	Cartagena
+Oviedo	Oviedo
+San_Sebastian	San Sebastiln
+Alicante	Alicante
+Castello	Castello
+Cadiz	Cadiz
+Granada	Granada
+Murcia	Murcia
+La_Coruna	A Coruña
+Pamplona	Pamplona
+Valladolid	Valladolid
+Palma	Palma
+Zaragoza	Zaragoza
+Cordoba	Cordoba
+Vigo	Vigo
+Bilbao	Bilbao
+Seville	Sevilla
+Valencia	Valencia
+Barcelona	Barcelona
+al	Albánie
+at	Rakousko
+be	Belgie
+bg	Bulharsko
+ba	Bosna a Hercegovina
+ch	Švýcarsko
+cz	Česká republika
+dk	Dánsko
+ee	Estonsko
+hr	Chorvatsko
+hu	Maďarsko
+ie	Irsko
+xk	Kosovo
+lt	Litva
+lu	Lucembursko
+lv	Lotyšsko
+md	Moldavsko
+mk	Makedonie
+me	Černá Hora
+nl	Nizozemsko
+pt	Portugalsko
+rs	Srbsko
+sk	Slovensko
+si	Slovinsko
+Saaremaa	Saaremaa
+Aland	Ålandy
+Gotland	Gotland
+Zealand	Sjælland
+Lofoten	Lofoty
+Vesteralen	Vesterály
+Rhodes	Rhodos
+Crete	Kréta
+Malta	Malta
+Menorca	Menorca
+Mallorca	Mallorca
+Ibiza	Ibiza
+Lesbos	Lesbos
+Kolguyev_I.	Kolgujev
+Hardanger-vidda	Hardangervidda
+Bohmerwald	Šumava
+Transylvanian_Alps	Jižní Karpaty
+Tatra_Mts.	Tatry
+Pindus_Mts.	Pindos
+Calabria	Kalábrie
+Harz	Harz
+Vosges	Vogézy
+Sudetes_Mts.	Sudetská pohoří
+Erzgebirge	Krušné hory
+Ardennes	Ardeny
+Jura	Jura
+Grampian_Mts.	Grampiany
+Cambrian_Mts.	 Kumbrické hory
+Balkan_Mts.	Stará planina
+Dinaric_Alps	Dinárské hory
+Cord._Cantabrica	Kantaberské pohoří
+S._Nevada	Sierra Nevada
+Sierra_Morena	Sierra Morena
+KJLEN_MOUNTAINS	Skandinávské pohoří
+CARPATHIAN_MOUNTAINS	Karpaty
+APPENNINI	Apeniny
+PYRENEES	Pyreneje
+Daugava_(Zapadnaya_Dvina)	Západní Dvina
+Dniester	Dněstr
+Drava	Drava
+Duero	Duero
+Ebro	Ebro
+Elbe	Labe
+Garonne	Garonna
+Loire	Loira
+Oder	Odra
+Po	Pád
+Seine	Seina
+Svernaya_Dvina	Severní Dvina
+Thames	Temže
+Vistula	Visla
+Vychegda	Vychegda
+Rhine	Rýn
+Volga	Volha
+Don	Don
+Dalalven	Dalälven
+Kama	Kama
+Tajo	Tajo
+Tisa	Tisa
+Dnepre	Dněpr
+Rhone	Rhôna
+Glomma	Glomma
+Kemijoki	Kemijoki
+Sukhona	Suchona
+San_Marino	San Marino
+Vaduz	Vaduz
+Luxembourg	Lucemburk
+Monaco	Monako
+Andorra	Andorra
+Ljubljana	Lublaň
+Bratislava	Bratislava
+Podgorica	Podgorica
+Bern	Bern
+Pristina	Priština
+Skopje	Skopje
+Reykjavik	Reykjavík
+Chisinau	Kišiněv
+Vilnius	Vilnius
+Riga	Riga
+Zagreb	Záhřeb
+Tallinn	Talinn
+Belgrade	Bělehrad
+Tirana	Tirana
+Sofia	Sofie
+Minsk	Minsk
+Sarajevo	Sarajevo
+Valletta	Valletta
+Budapest	Budapešť
+Bucharest	Bukurešť
+Oslo	Oslo
+Warsaw	Varšava
+Dublin	Dublin
+Prague	Praha
+Helsinki	Helsinki
+Kobenhavn	Kodaň
+Brussels	Brusel
+Stockholm	Stockholm
+Amsterdam	Amsterdam
+fr-a	Alsasko
+fr-b	Akvitánie
+fr-c	Auvergne
+fr-p	Dolní Normandie
+fr-d	Burgundsko
+fr-e	Bretaň
+fr-f	Centre
+fr-g	Champagne-Ardenne
+fr-h	Korsika
+fr-i	Franche-Comté
+fr-q	Horní Normandie
+fr-j	Île-de-France
+fr-k	Languedoc-Roussillon
+fr-l	Limousin
+fr-m	Lotrinsko
+fr-n	Midi-Pyrénées
+fr-o	Nord-Pas-de-Calais
+fr-r	Pays de la Loire
+fr-s	Pikardie
+fr-t	Poitou-Charentes
+fr-u	Provensálsko-Alpy-Azurové pobřeží
+fr-v	Rhône-Alpes
+Angers	Angers
+Clermont-Ferrand	Clermont-Ferrand
+Melun	Melun
+Saint-Etienne	Saint-Etienne
+Grenoble	Grenoble
+Caen	Caen
+Nantes	Nantes
+Toulon	Toulon
+Montpellier	Montpellier
+Nimes	Nimes
+Dijon	Dijon
+Tours	Tours
+Orleans	Orleans
+Rouen	Rouen
+Reims	Remeš
+Mulhouse	Mulhouse
+Nancy	Nancy
+Metz	Metz
+Rennes	Rennes
+Nice	Nice
+Toulouse	Toulouse
+Limoges	Limoges
+Lille	Lille
+Strasbourg	Štrasburk
+Bordeaux	Bordeaux
+Marseille	Marseille
+Le_Havre	Le Havre
+Lyon	Lyon
+Sunderland	Sunderland
+Southampton	Southampton
+Bristol	Bristol
+Bournemouth	Bournemouth
+Southend	Southend-on-Sea
+Reading	Reading
+Leicester	Leicester
+Bradford	Bradford
+Sheffield	Sheffield
+Middlesbrough	Middlesbrough
+Coventry	Coventry
+Kingston_upon_Hull	Kingston upon Hull
+Brighton	Brighton
+Portsmouth	Portsmouth
+Nottingham	Nottingham
+Stoke	Stoke
+Edinburgh	Edinburgh
+Liverpool	Liverpool
+Cardiff	Cardiff
+Leeds	Leeds
+Manchester	Manchester
+Birmingham	Birmingham
+Belfast	Belfast
+Glasgow	Glasgow
+-99	N. Cyprus
+in-dl	Dillí
+in-hp	Himáčalpradéš
+in-hr	Harijána
+in-jk	Džammú a Kašmír
+in-ap	Ándhrapradéš
+in-kl	Kérala
+in-or	Urísa
+in-ka	Karnátaka
+in-mh	Maháráštra
+in-as	Ásám
+in-mn	Manípur
+in-nl	Nágáland
+in-ml	Méghálaj
+in-pb	Paňdžáb
+in-rj	Rádžasthán
+in-up	Uttarákhand
+in-ut	Uttarpradéš
+in-jh	Džhárkhand
+in-wb	Západní Bengálsko
+in-br	Bihár
+in-sk	Sikkim
+in-ct	Čandígarh
+in-mp	Madhjapradéš
+in-tn	Tamilnádu
+in-gj	Gudžarát
+in-ga	Goa
+in-ar	Arunáčalpradéš
+in-mz	Mizóram
+in-tr	Tripura
+it-65	Abruzzo
+it-75	Apulie
+it-77	Basilicata
+it-78	Kalábrie
+it-72	Kampánie
+it-45	Emilia-Romagna
+it-36	Furlandsko-Julské Benátsko
+it-62	Lazio
+it-42	Ligurie
+it-25	Lombardie
+it-57	Marche
+it-67	Molise
+it-21	Piemont
+it-88	Sardinie
+it-82	Sicilie
+it-52	Toskánsko
+it-32	Tridentsko-Jižní Tyrolsko
+it-55	Umbrie
+it-23	Údolí Aosty
+it-34	Benátsko
+Modena	Modena
+Reggio_di_Calabria	Reggio di Calabria
+Caserta	Caserta
+Como	Como
+Treviso	Treviso
+Parma	Parma
+Bologna	Bologna
+Cagliari	Cagliari
+Pisa	Pisa
+Livorno	Livorno
+Salerno	Salerno
+Bari	Bari
+Foggia	Foggia
+Lecce	Lecce
+Taranto	Taranto
+Messina	Messina
+Pescara	Pescara
+Bergamo	Bergamo
+Trieste	Terst
+Verona	Verona
+Turin	Turín
+Genoa	Janov
+Florence	Florencie
+Catania	Catania
+Venice	Benátky
+Palermo	Palermo
+Naples	Neapol
+Milan	Milán
+bs	Bahamy
+bz	Belize
+cr	Kostarika
+cu	Kuba
+do	Dominikánská republika
+gt	Guatemala
+ht	Haiti
+jm	Jamajka
+pa	Panama
+pr	Portoriko
+sv	Salvador
+Port-of-Spain	Port-of-Spain
+Roseau	Roseau
+Bridgetown	Bridgetown
+Kingstown	Kingstown
+Castries	Castries
+Basseterre	Basseterre
+Saint_George's	Saint George's
+Saint_John's	Saint John's
+Tegucigalpa	Tegucigalpa
+Port-au-Prince	Port-au-Prince
+Managua	Managua
+Panama_City	Panama City
+San_Jose	San Jose
+San_Salvador	San Salvador
+Kingston	Kingston
+Guatemala	Guatemala
+Belmopan	Belmopan
+Nassau	Nassau
+fj	Fidži
+nc	Nová Kaledonie
+Funafuti	Funafuti
+Tarawa	Tarawa
+Port-Vila	Port Vila
+Port_Moresby	Port Moresby
+Honiara	Honiara
+Wellington	Wellington
+Suva	Suva
+Auckland	Auckland
+fk	Falklandy (Malvíny)
+Montevideo	Montevideo
+Georgetown	Georgetown
+Paramaribo	Paramaribo
+Asuncion	Asuncion
+Quito	Quito
+Sucre	Sucre
+La_Paz	La Paz
+sk-bl	Bratislavský
+sk-bc	Banskobystrický
+sk-zi	Žilinský
+sk-ni	Nitriansky
+sk-tc	Trenciansky
+sk-ta	Trnavský
+sk-ki	Košický
+sk-pv	Prešovský
+Zvolen	Zvolen
+Handlova	Handlová
+Puchov	Púchov
+Surany	Šurany
+Galanta	Galanta
+Povazska_Bystrica	Považská Bystrica
+Martin	Martin
+Kezmarok	Kežmarok
+Topolcany	Topoľčany
+Banska_Stiavnica	Banská Štiavnica
+Partizanske	Partizánske
+Hlohovec	Hlohovec
+Levoca	Levoča
+Myjava	Myjava
+Michalovce	Michalovce
+Samorin	Šamorín
+Humenne	Humenné
+Sabinov	Sabinov
+Dubnica_nad_Vahom	Dubnica nad Váhom
+Snina	Snina
+Rimavska_Sobota	Rimavská Sobota
+Malacky	Malacky
+Dolny_Kubin	Dolný Kubín
+Roznava	Rožňava
+Kolarovo	Kolárovo
+Zilina	Žilina
+Kysucke_Nove_Mesto	Kysucké Nové Mesto
+Holic	Holíč
+Trencin	Trenčín
+Spisska_Nova_Ves	Spišská Nová Ves
+Trebisov	Trebišov
+Revuca	Revúca
+Banovce_nad_Bebravou	Bánovce nad Bebravou
+Stara_Lubovna	Stará Ľubovňa
+Zlate_Moravce	Zlaté Moravce
+Komarno	Komárno
+Lucenec	Lučenec
+Bardejov	Bardejov
+Skalica	Skalica
+Velky_Krtis	Veľký Krtíš
+Piestany	Piešťany
+Sturovo	Štúrovo
+Brezno	Brezno
+Presov	Prešov
+Filakovo	Fiľakovo
+Stropkov	Stropkov
+Dunajska_Streda	Dunajská Streda
+Nove_Mesto_nad_Vahom	Nové Mesto nad Váhom
+Cadca	Čadca
+Pezinok	Pezinok
+Trnava	Trnava
+Ruzomberok	Ružomberok
+Liptovsky_Mikulas	Liptovský Mikuláš
+Banska_Bystrica	Banská Bystrica
+Nova_Dubnica	Nová Dubnica
+Senec	Senec
+Detva	Detva
+Prievidza	Prievidza
+Nove_Zamky	Nové Zámky
+Svidnik	Svidník
+Sered	Sereď
+Vranov_nad_Toplou	Vranov nad Topľou
+Ziar_nad_Hronom	Žiar nad Hronom
+Poprad	Poprad
+Nitra	Nitra
+Levice	Levice
+Bytca	Bytča
+Moldava_nad_Bodvou	Moldava nad Bodvou
+Kosice	Košice
+Sala	Šaľa
+Senica	Senica
+us-ma	Massachusetts
+us-mn	Minnesota
+us-mt	Montana
+us-nd	Severní Dakota
+us-id	Idaho
+us-wa	Washington
+us-az	Arizona
+us-ca	Kalifornie
+us-co	Colorado
+us-nv	Nevada
+us-nm	Nové Mexiko
+us-or	Oregon
+us-ut	Utah
+us-wy	Wyoming
+us-ar	Arkansas
+us-ia	Iowa
+us-ks	Kansas
+us-mo	Missouri
+us-ne	Nebraska
+us-ok	Oklahoma
+us-sd	Jižní Dakota
+us-la	Louisiana
+us-tx	Texas
+us-ct	Connecticut
+us-nh	New Hampshire
+us-ri	Rhode Island
+us-vt	Vermont
+us-al	Alabama
+us-fl	Florida
+us-ga	Georgie
+us-ms	Mississippi
+us-sc	Jižní Karolína
+us-il	Illinois
+us-in	Indiana
+us-ky	Kentucky
+us-nc	Severní Karolína
+us-oh	Ohio
+us-tn	Tennessee
+us-va	Virginie
+us-wi	Wisconsin
+us-wv	Západní Virginie
+us-de	Delaware
+us-md	Maryland
+us-nj	New Jersey
+us-ny	New York
+us-pa	Pensylvánie
+us-me	Maine
+us-mi	Michigan
+Mesa	Mesa
+Irvine	Irvine
+Fort_Lauderdale	Fort Lauderdale
+Long_Beach	Long Beach
+Providence	Providence
+Virginia_Beach	Virginia Beach
+Oakland	Oakland
+West_Palm_Beach	West Palm Beach
+Columbus	Columbus
+San_Bernardino	San Bernardino
+Bridgeport	Bridgeport
+Kansas_City	Kansas City
+Ft._Worth	Ft. Worth
+Austin	Austin
+Orlando	Orlando
+Indianapolis	Indianapolis
+Baltimore	Baltimore
+Sacramento	Sacramento
+Las_Vegas	Las Vegas
+Portland	Portland
+San_Antonio	San Antonio
+Raleigh	Raleigh
+Cleveland	Cleveland
+Cincinnati	Cincinnati
+Memphis	Memphis
+Norfolk	Norfolk
+Milwaukee	Milwaukee
+Buffalo	Buffalo
+Pittsburgh	Pittsburgh
+Minneapolis	Minneapolis
+Seattle	Seattle
+Phoenix	Phoenix
+San_Diego	San Diego
+St._Louis	St. Louis
+Dallas	Dallas
+Boston	Boston
+Tampa	Tampa
+Philadelphia	Philadelphia
+Detroit	Detroit

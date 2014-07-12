@@ -72,7 +72,7 @@ def users_places(request, map_code, user=None):
     if user == "average":
         ps = AveragePlace.objects.for_map(map_places)
     elif request.user.is_authenticated():
-        ps = UserPlace.objects.for_user_and_map_prepared(user, map)
+        ps = UserPlace.objects.for_user_and_map_prepared(user, map, request.LANGUAGE_CODE)
     else:
         ps = []
     ps = list(ps)
