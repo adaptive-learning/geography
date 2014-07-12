@@ -72,13 +72,12 @@ msgstr "Průměrný nový uživatel"
 #: geography/static/dist/js/blind-maps.min.js:1479
 #: geography/static/js/directives.js:177
 msgid "Naučeno"
-msgstr ""
+msgstr "Naučeno"
 
 #: geography/static/dist/js/blind-maps.min.js:1486
 #: geography/static/js/directives.js:184
-#, fuzzy
 msgid "Procvičováno"
-msgstr "Procvičovat"
+msgstr "Procvičováno"
 
 #: geography/static/dist/js/blind-maps.min.js:1525
 #: geography/static/js/directives.js:223
@@ -137,3 +136,67 @@ msgstr "Mapa znalostí"
 
 msgid "Znovu procvičovat"
 msgstr "Znovu procvičovat"
+
+msgid "Procvičovat"
+msgstr "Procvičovat"
+
+msgid "Svět"
+msgstr "Svět"
+
+msgid "Zeměpis hrou"
+msgstr "Zeměpis hrou"
+
+msgid ""
+"Procvičte si své znalosti zeměpisu hravou formou. V aktuální verzi zatím "
+"soutěžíte jen sami se sebou, respektive proti systému. Dokážete obarvit na "
+"zeleno celou mapu Evropy? Celou ČR? A co celý svět?"
+msgstr ""
+"Procvičte si své znalosti zeměpisu hravou formou. V aktuální verzi zatím "
+"soutěžíte jen sami se sebou, respektive proti systému. Dokážete obarvit na "
+"zeleno celou mapu Evropy? Celou ČR? A co celý svět?"
+
+msgid "Adaptabilní procvičování"
+msgstr "Adaptabilní procvičování"
+
+msgid ""
+"Systém vás zkouší ze znalosti slepých map, přičemž chování systému je "
+"adaptabilní - podle toho, jaké máte vědomosti, aplikace volí podobu otázek "
+"(otevřená, výběr z možností) a frekvenci opakování. Aplikace vám tak "
+"předkládá státy, jejichž procvičení je pro vás nejužitečnější."
+msgstr ""
+"Systém vás zkouší ze znalosti slepých map, přičemž chování systému je "
+"adaptabilní - podle toho, jaké máte vědomosti, aplikace volí podobu otázek "
+"(otevřená, výběr z možností) a frekvenci opakování. Aplikace vám tak "
+"předkládá státy, jejichž procvičení je pro vás nejužitečnější."
+
+msgid "Vizualizace znalostí"
+msgstr "Vizualizace znalostí"
+
+msgid ""
+"Na základě odpovědí systém odhadne jak dobře znáte různé státy a znázorní "
+"vám mapu vašich znalostí, což vám pomůže ujasnit si, co vlastně umíte."
+msgstr ""
+"Na základě odpovědí systém odhadne jak dobře znáte různé státy a znázorní "
+"vám mapu vašich znalostí, což vám pomůže ujasnit si, co vlastně umíte."
+
+msgid "Specializovaný systém"
+msgstr "Specializovaný systém"
+
+msgid ""
+"Procvičování slepých map nabízí i řada jiných výukových systémů, ty však "
+"většinou pokrývají mnoho dílčích oblastí. Náš systém se soustředí pouze na "
+"slepé mapy, díky čemuž je pro učení v této oblasti optimalizovaný."
+msgstr ""
+"Procvičování slepých map nabízí i řada jiných výukových systémů, ty však "
+"většinou pokrývají mnoho dílčích oblastí. Náš systém se soustředí pouze na "
+"slepé mapy, díky čemuž je pro učení v této oblasti optimalizovaný."
+
+msgid "Učení z dat"
+msgstr "Učení z dat"
+
+msgid ""
+"Aplikace se učí z dat od všech uživatelů. Výběr otázek je založen na těchto "
+"datech, nikoliv na znalostech experta na zeměpis, který "
+msgstr ""
+"Aplikace se učí z dat od všech uživatelů. Výběr otázek je založen na těchto "
+"datech, nikoliv na znalostech experta na zeměpis, který "

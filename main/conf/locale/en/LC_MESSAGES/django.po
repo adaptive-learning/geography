@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-12 19:00+0200\n"
+"POT-Creation-Date: 2014-07-12 21:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgid "Neznámé"
 msgstr "Unknown"
 
 #: geography/models/place.py:161 geography/views/place.py:52
-#: templates/home.html:73
+#: templates/home.html:70
 msgid "Státy"
 msgstr "States"
 
@@ -38,12 +38,12 @@ msgstr "States"
 msgid "Města"
 msgstr "Cities"
 
-#: geography/models/place.py:163 templates/home.html:59
+#: geography/models/place.py:163 templates/home.html:56
 msgid "Svět"
 msgstr "World"
 
 #: geography/models/place.py:164 geography/views/place.py:49
-#: templates/home.html:63
+#: templates/home.html:60
 msgid "Kontinenty"
 msgstr "Continents"
 
@@ -104,9 +104,8 @@ msgid "svět"
 msgstr "world"
 
 #: geography/utils/model.py:148
-#, fuzzy
 msgid "kontinent"
-msgstr "Continents"
+msgstr "continent"
 
 #: geography/utils/model.py:149
 msgid "řeka"
@@ -173,9 +172,8 @@ msgid "světů"
 msgstr "worlds"
 
 #: geography/utils/model.py:170
-#, fuzzy
 msgid "kontinentů"
-msgstr "Continents"
+msgstr "continents"
 
 #: geography/utils/model.py:171
 msgid "řek"
@@ -245,23 +243,24 @@ msgstr "highlighted"
 msgid "meta content"
 msgstr ""
 "Inteligent application for practicing states, cities, mountains and rivers "
-"on blind maps of the world, Europe, Asia, Africa, America, US and other countries"
+"on blind maps of the world, Europe, Asia, Africa, America, US and other "
+"countries"
 
-#: templates/home.html:28
+#: templates/home.html:25
 msgid "meta keywords"
 msgstr ""
-"geography games, blind maps, map outlines, countries, states, cities, "
-"world, europe, america, africa, asia, mountains, rivers, usa"
+"geography games, blind maps, map outlines, countries, states, cities, world, "
+"europe, america, africa, asia, mountains, rivers, usa"
 
-#: templates/home.html:55 templates/generated/homepage.html:25
+#: templates/home.html:52 templates/generated/homepage.html:25
 msgid "Slepé Mapy"
 msgstr "Blind maps"
 
-#: templates/home.html:82
+#: templates/home.html:79
 msgid "Přehled map"
 msgstr "Maps overview"
 
-#: templates/home.html:92
+#: templates/home.html:89
 msgid ""
 "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
 "znalosti pamatoval i příště."
@@ -269,32 +268,31 @@ msgstr ""
 "Sign in simply via Google or Facebook, so the system remembers your "
 "knowledge next time."
 
-#: templates/home.html:94
+#: templates/home.html:91
 msgid "Přihlásit se"
 msgstr "Sign in"
 
-#: templates/home.html:99
+#: templates/home.html:96
 msgid "přes Google"
 msgstr "via Google"
 
-#: templates/home.html:104
+#: templates/home.html:101
 msgid "přes Facebook"
 msgstr "via Facebook"
 
-#: templates/home.html:118
-#, fuzzy
+#: templates/home.html:115
 msgid "Odhlásit se"
 msgstr "Sign out"
 
-#: templates/home.html:124
+#: templates/home.html:121
 msgid "Body - přibývají za každou správnou odpověď"
 msgstr "Points - gained per each correct answer"
 
-#: templates/home.html:160
+#: templates/home.html:152
 msgid "O projektu"
 msgstr "About"
 
-#: templates/home.html:161
+#: templates/home.html:153
 msgid "Kontakty"
 msgstr "Contacts"
 
@@ -329,3 +327,76 @@ msgstr "European mountains"
 #: templates/generated/homepage.html:48
 msgid "nebo něco jiného"
 msgstr "or something else"
+
+#: templates/generated/homepage.html:58
+msgid "Jak to funguje?"
+msgstr "How does it work?"
+
+#: templates/generated/homepage.html:62
+msgid "Zeměpis hrou"
+msgstr "Geography game"
+
+#: templates/generated/homepage.html:63
+msgid ""
+"Procvičte si své znalosti zeměpisu hravou formou. V aktuální verzi zatím "
+"soutěžíte jen sami se sebou, respektive proti systému. Dokážete obarvit na "
+"zeleno celou mapu Evropy? Celou ČR? A co celý svět?"
+msgstr ""
+"Practice your geography knowledge in a playful way. Can you color green the "
+"map of Europe? Or map of the US? And what about the whole world?"
+
+#: templates/generated/homepage.html:67
+msgid "Adaptabilní procvičování"
+msgstr "Adaptive practice"
+
+#: templates/generated/homepage.html:68
+msgid ""
+"Systém vás zkouší ze znalosti slepých map, přičemž chování systému je "
+"adaptabilní - podle toho, jaké máte vědomosti, aplikace volí podobu otázek "
+"(otevřená, výběr z možností) a frekvenci opakování. Aplikace vám tak "
+"předkládá státy, jejichž procvičení je pro vás nejužitečnější."
+msgstr ""
+"The application examines your knowledge of maps adaptively - depending on "
+"your level of knowledge is chosen type of questions (how many options etc.) "
+"and repeat frequency. Thus is asks you about the countries which are most "
+"beneficial to practice."
+
+#: templates/generated/homepage.html:72
+msgid "Vizualizace znalostí"
+msgstr "Knowledge visualization"
+
+#: templates/generated/homepage.html:73
+msgid ""
+"Na základě odpovědí systém odhadne jak dobře znáte různé státy a znázorní "
+"vám mapu vašich znalostí, což vám pomůže ujasnit si, co vlastně umíte."
+msgstr ""
+"Based on your answers the system estimates your knowledge and displays it is "
+"a form of map, which can help you to realize what you actually know."
+
+#: templates/generated/homepage.html:77
+msgid "Specializovaný systém"
+msgstr "Specialized system"
+
+#: templates/generated/homepage.html:78
+msgid ""
+"Procvičování slepých map nabízí i řada jiných výukových systémů, ty však "
+"většinou pokrývají mnoho dílčích oblastí. Náš systém se soustředí pouze na "
+"slepé mapy, díky čemuž je pro učení v této oblasti optimalizovaný."
+msgstr ""
+"There are many other learning systems that provide blind maps practice, but "
+"they usually cover also many other areas. Our system focuses exclusively on "
+"blind maps, which allows it to be optimized for this area."
+
+#: templates/generated/homepage.html:82
+msgid "Učení z dat"
+msgstr "Data mining"
+
+#: templates/generated/homepage.html:83
+msgid ""
+"Aplikace se učí z dat od všech uživatelů. Výběr otázek je založen na těchto "
+"datech, nikoliv na znalostech experta na zeměpis, který \"ví\", jestli je "
+"těžší poznat Keňu nebo Nigérii."
+msgstr ""
+"The application learns from data of all users. Question choice is based on "
+"this data, instead of being based on knowledge of an geography expert who "
+"\"knows\" whether it's generally more difficult to know Kenya or Nigeria."
