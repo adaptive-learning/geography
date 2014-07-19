@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-12 21:02+0200\n"
+"POT-Creation-Date: 2014-07-19 17:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -248,7 +248,7 @@ msgstr ""
 #: templates/home.html:25
 msgid "meta keywords"
 msgstr ""
-"slepé mapy, státy, města, čr, svět, evrovpa, amerika, afrika, asie, pohoří, "
+"slepá mapa, státy, města, čr, svět, evrovpa, amerika, afrika, asie, pohoří, "
 "řeky, zeměpis, usa, hry"
 
 #: templates/home.html:52 templates/generated/homepage.html:25
@@ -335,52 +335,53 @@ msgid "Zeměpis hrou"
 msgstr ""
 
 #: templates/generated/homepage.html:63
-msgid ""
+msgid "Zeměpis hrou - text"
+msgstr ""
 "Procvičte si své znalosti zeměpisu hravou formou. V aktuální verzi zatím "
 "soutěžíte jen sami se sebou, respektive proti systému. Dokážete obarvit na "
 "zeleno celou mapu Evropy? Celou ČR? A co celý svět?"
-msgstr ""
 
 #: templates/generated/homepage.html:67
 msgid "Adaptabilní procvičování"
 msgstr ""
 
 #: templates/generated/homepage.html:68
-msgid ""
-"Systém vás zkouší ze znalosti slepých map, přičemž chování systému je "
-"adaptabilní - podle toho, jaké máte vědomosti, aplikace volí podobu otázek "
+msgid "Adaptabilní procvičování - text"
+msgstr ""
+"Každá slepá mapa nabízí adaptabilní procvičování "
+" - podle toho, jaké máte vědomosti, aplikace volí podobu otázek "
 "(otevřená, výběr z možností) a frekvenci opakování. Aplikace vám tak "
 "předkládá státy, jejichž procvičení je pro vás nejužitečnější."
-msgstr ""
 
 #: templates/generated/homepage.html:72
 msgid "Vizualizace znalostí"
 msgstr ""
 
 #: templates/generated/homepage.html:73
-msgid ""
+msgid "Vizualizace znalostí - text"
+msgstr ""
 "Na základě odpovědí systém odhadne jak dobře znáte různé státy a znázorní "
 "vám mapu vašich znalostí, což vám pomůže ujasnit si, co vlastně umíte."
-msgstr ""
 
 #: templates/generated/homepage.html:77
 msgid "Specializovaný systém"
 msgstr ""
 
 #: templates/generated/homepage.html:78
-msgid ""
+msgid "Specializovaný systém - text"
+msgstr ""
 "Procvičování slepých map nabízí i řada jiných výukových systémů, ty však "
 "většinou pokrývají mnoho dílčích oblastí. Náš systém se soustředí pouze na "
 "slepé mapy, díky čemuž je pro učení v této oblasti optimalizovaný."
-msgstr ""
 
 #: templates/generated/homepage.html:82
 msgid "Učení z dat"
 msgstr ""
 
 #: templates/generated/homepage.html:83
-msgid ""
+msgid "Učení z dat - text"
+msgstr ""
 "Aplikace se učí z dat od všech uživatelů. Výběr otázek je založen na těchto "
 "datech, nikoliv na znalostech experta na zeměpis, který \"ví\", jestli je "
 "těžší poznat Keňu nebo Nigérii."
-msgstr ""
+

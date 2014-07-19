@@ -149,7 +149,9 @@
   </div>
 
     <div id="footer">
+      {% if LANGUAGE_CODE == "cs" %}
       <a href="#/about">{% trans "O projektu" %}</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      {% endif %}
       {% trans "Kontakty" %}:  
       <span class="email contact">slepemapy{zavinac}googlegroups.com</span>
       <a class="contact" href="https://plus.google.com/+SlepemapyCz/">Google+</a>
