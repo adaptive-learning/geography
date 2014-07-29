@@ -99,8 +99,8 @@ def update_maps():
     run('./main/manage.py update_maps --traceback')
 
 
-def compilemasseges():
-    run('cd main && ./manage.py compilemasseges')
+def compilemessages():
+    run('./main/manage.py compilemessages --traceback')
 
 
 def remove_cache():
