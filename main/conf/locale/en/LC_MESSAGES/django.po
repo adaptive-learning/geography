@@ -302,15 +302,15 @@ msgstr "What do you want to practice?"
 
 #: templates/generated/homepage.html:30
 msgid "Státy světa"
-msgstr "States of the world"
+msgstr "World states"
 
 #: templates/generated/homepage.html:33
 msgid "Státy Evropy"
-msgstr "European States"
+msgstr "Europe states"
 
 #: templates/generated/homepage.html:36
 msgid "Státy USA"
-msgstr "US States"
+msgstr "US states"
 
 #: templates/generated/homepage.html:39
 msgid "Kraje ČR"
@@ -322,7 +322,7 @@ msgstr "Czech cities"
 
 #: templates/generated/homepage.html:45
 msgid "Pohoří Evropy"
-msgstr "European mountains"
+msgstr "Europe mountains"
 
 #: templates/generated/homepage.html:48
 msgid "nebo něco jiného"

@@ -96,13 +96,13 @@ msgid "Co chcete procvičovat?"
 msgstr "What do you want to practice?"
 
 msgid "Státy světa"
-msgstr "States of the world"
+msgstr "World states"
 
 msgid "Státy Evropy"
-msgstr "European States"
+msgstr "Europe states"
 
 msgid "Státy USA"
-msgstr "US States"
+msgstr "US states"
 
 msgid "Kraje ČR"
 msgstr "Czech regions"
@@ -111,7 +111,7 @@ msgid "Města ČR"
 msgstr "Czech cities"
 
 msgid "Pohoří Evropy"
-msgstr "European mountains"
+msgstr "Europe mountains"
 
 msgid "nebo něco jiného"
 msgstr "or something else"
