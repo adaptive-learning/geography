@@ -5,40 +5,25 @@
 
 ## Deployment
 
-### Staging Server
-
-[staging.slepemapy.cz](http://staging.slepemapy.cz)
-
-You have to log on the server and:
-
-```
-sudo su
-. /bin/staging-environment
-cd $GEOGRAPHY_WORKSPACE_DIR
-./util/deploy.sh
-```
-
-### Production Server
-
-[www.slepemapy.cz](http://www.slepemapy.cz)
-
-Firstly you need to tag a new version:
+Before the deployment on the production server, please release a new tag with
+the following command:
 
 ```
 git tag release-<new version>
 git push origin release-<new version>
 ```
 
-Then you have to log on the server and:
+Connect to the [MUNI VPN](https://vpn.muni.cz) to be able to connect to
+porsena.fi.muni.cz directly and use the following command:
 
 ```
-sudo su
-. /bin/production-environment
-cd $GEOGRAPHY_WORKSPACE_DIR
-./util/deploy.sh
+fab -f deployment.py deploy --set=environment=<environment> -H porsena.fi.muni.cz -u <user>
 ```
 
-### Localhost
+where **environment** is 'production' or 'staging' and **user** is your username
+used for porsena.fi.muni.cz (or just 'root').
+
+## Localhost
 
 [localhost:8000](http://localhost:8000)
 
