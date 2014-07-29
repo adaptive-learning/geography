@@ -11,10 +11,11 @@ def deploy():
     if not common.update_release_version():
         return
     common.npm_install()
+    common.install_requirements()
+    common.migrate()
     common.grunt_deploy()
     common.collect_static()
     common.update_maps()
-    common.migrate()
     common.custom_sql()
     common.remove_cache()
     common.compilemasseges()
