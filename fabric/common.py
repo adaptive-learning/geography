@@ -84,7 +84,7 @@ def grunt_deploy():
 
 
 def collect_static():
-    run('./main/manage.py collectstatic --noinput')
+    run('./main/manage.py collectstatic --noinput --traceback')
 
 
 def migrate():
@@ -92,11 +92,11 @@ def migrate():
 
 
 def custom_sql():
-    run('./main/manage.py sqlcustom geography')
+    run('./main/manage.py sqlcustom geography --traceback')
 
 
 def update_maps():
-    run('./main/manage.py update_maps')
+    run('./main/manage.py update_maps --traceback')
 
 
 def compilemasseges():
