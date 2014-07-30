@@ -19,7 +19,7 @@ def mysqldump(name=None):
     if not name:
         name = time.strftime('%Y-%m-%d_%H-%M-%S')
     dest_file = run('echo $GEOGRAPHY_DATA_DIR') + '/' + name  + '.sql'
-    run('mysqldump -p$GEOGRAPHY_DATABASE_PASSWORD -u$GEOGRAPHY_DATABASE_USER -h$GEOGRAPHY_DATABASE_HOST -P$GEOGRAPHY_DATABASE_PORT $GEOGRAPHY_DATABASE_NAME > ' + dest_file)
+    sudo('mysqldump -p$GEOGRAPHY_DATABASE_PASSWORD -u$GEOGRAPHY_DATABASE_USER -h$GEOGRAPHY_DATABASE_HOST -P$GEOGRAPHY_DATABASE_PORT $GEOGRAPHY_DATABASE_NAME > ' + dest_file)
 
 
 def run(command):
@@ -29,7 +29,7 @@ def run(command):
 
 def sudo(command):
     validate_environment(env.environment)
-    fab_sudo('. /bin/' + env.environment + '-environment && ' + command)
+    return fab_sudo('. /bin/' + env.environment + '-environment && cd $GEOGRAPHY_WORKSPACE_DIR &&' + command)
 
 
 def aptget_upgrade():
@@ -72,39 +72,39 @@ def disable_maintenance():
 
 
 def install_requirements():
-    run('pip install --upgrade -r ./main/requirements.txt')
+    sudo('pip install --upgrade -r ./main/requirements.txt')
 
 
 def npm_install():
-    run('cd main && npm install')
+    sudo('cd main && npm install')
 
 
 def grunt_deploy():
-    run('cd main && grunt deploy')
+    sudo('cd main && grunt deploy')
 
 
 def collect_static():
-    run('./main/manage.py collectstatic --noinput --traceback')
+    sudo('./main/manage.py collectstatic --noinput --traceback')
 
 
 def migrate():
-    run('./main/manage.py migrate geography --delete-ghost-migrations --traceback')
+    sudo('./main/manage.py migrate geography --delete-ghost-migrations --traceback')
 
 
 def custom_sql():
-    run('./main/manage.py sqlcustom geography --traceback')
+    sudo('./main/manage.py sqlcustom geography --traceback')
 
 
 def update_maps():
-    run('./main/manage.py update_maps --traceback')
+    sudo('./main/manage.py update_maps --traceback')
 
 
 def compilemessages():
-    run('./main/manage.py compilemessages --traceback')
+    sudo('./main/manage.py compilemessages --traceback')
 
 
 def remove_cache():
-    run('rm -rf $GEOGRAPHY_DATA_DIR/.django_cache')
+    sudo('rm -rf $GEOGRAPHY_DATA_DIR/.django_cache')
 
 
 def backup(name=None):
@@ -113,9 +113,9 @@ def backup(name=None):
 
 def derive_knowledge():
     now = time.strftime('%Y-%m-%d_%H-%M-%S')
-    dest_file = run('echo $GEOGRAPHY_DATA_DIR') + '/knowledge_data_' + now + '.sql'
+    dest_file = sudo('echo $GEOGRAPHY_DATA_DIR') + '/knowledge_data_' + now + '.sql'
     enable_maintenance()
-    run('./main/manage.py derived_knowledge_data | tee ' + dest_file + ' | ./main/manage.py dbshell')
+    sudo('./main/manage.py derived_knowledge_data | tee ' + dest_file + ' | ./main/manage.py dbshell')
     disable_maintenance()
 
 
@@ -131,7 +131,7 @@ def get_release_version():
 
 
 def update_release_version():
-    run('git fetch origin')
+    sudo('git fetch origin')
     last_head = get_version()
     to_release = get_release_version()
     modified = bool(run(
@@ -141,6 +141,6 @@ def update_release_version():
         '  echo 0;'
         'fi;'
     ))
-    run('git reset ' + to_release + ' --hard')
-    run('git clean -df')
+    sudo('git reset ' + to_release + ' --hard')
+    sudo('git clean -df')
     return modified
