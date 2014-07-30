@@ -29,6 +29,7 @@ class AnswerManager(models.Manager):
             response_time=answer_dict['response_time'],
             number_of_options=answer_dict['number_of_options'],
             ip_address=answer_dict.get('ip_address', None),
+            language=Answer.LANGUAGES_REVERSE[answer_dict['language_code']],
             inserted=answer_dict['inserted'],
             test=test.Test(id=answer_dict['test_id'] if 'test_id' in answer_dict else None))
         models.Model.save(answer)
@@ -51,6 +52,13 @@ class Answer(models.Model):
         (FIND_ON_MAP, "find on map"),
         (PICK_NAME, "pick name")
     )
+    LANG_CS = 0
+    LANG_EN = 1
+    LANGUAGES = (
+        (LANG_CS, "cs"),
+        (LANG_EN, "en"),
+    )
+    LANGUAGES_REVERSE = dict((t[1], t[0]) for t in LANGUAGES)
     user = models.ForeignKey(User)
     place_asked = models.ForeignKey(place.Place, related_name='place_asked_id')
     place_answered = models.ForeignKey(
@@ -60,6 +68,7 @@ class Answer(models.Model):
         blank=True,
         default=None)
     type = models.IntegerField(choices=QUESTION_TYPES)
+    language = models.SmallIntegerField(choices=LANGUAGES, default=LANG_CS)
     inserted = models.DateTimeField(default=datetime.now)
     response_time = models.IntegerField(default=0)
     options = models.ManyToManyField(place.Place)

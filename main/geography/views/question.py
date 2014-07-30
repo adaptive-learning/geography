@@ -26,7 +26,7 @@ def question(request, map_code, place_type_slug):
     if request.raw_post_data:
         LOGGER.debug("processing raw answer %s", request.raw_post_data)
         answer = simplejson.loads(request.raw_post_data)
-        qs.answer(answer, get_ip(request))
+        qs.answer(answer, get_ip(request), request.LANGUAGE_CODE)
         question_index = answer['index'] + 1
     place_types = ([Place.PLACE_TYPE_SLUGS_LOWER_REVERSE[place_type_slug]]
                    if place_type_slug in Place.PLACE_TYPE_SLUGS_LOWER_REVERSE

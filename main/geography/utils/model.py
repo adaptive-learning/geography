@@ -75,7 +75,7 @@ class QuestionService:
                 test_id).to_serializable()
             for ((place, options), test_id) in candidates]
 
-    def answer(self, a, ip_address):
+    def answer(self, a, ip_address, language_code):
         place_asked = Place.objects.get(code=a["asked_code"])
         place_map = Place.objects.get(code=a["map_code"])
         try:
@@ -97,6 +97,7 @@ class QuestionService:
             'response_time': a["response_time"],
             'number_of_options': int(str(a["type"][1:])),
             'ip_address': ip_address if ip_address else None,
+            'language_code': language_code,
         }
         if "options" in a:
             options = Place.objects.filter(
