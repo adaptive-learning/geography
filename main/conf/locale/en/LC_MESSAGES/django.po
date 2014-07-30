@@ -243,18 +243,18 @@ msgstr "highlighted"
 msgid "meta content"
 msgstr ""
 "Inteligent application for practicing states, cities, mountains and rivers "
-"on blind maps of the world, Europe, Asia, Africa, America, US and other "
+"on outline maps of the world, Europe, Asia, Africa, America, US and other "
 "countries"
 
 #: templates/home.html:25
 msgid "meta keywords"
 msgstr ""
-"geography games, blind maps, map outlines, countries, states, cities, world, "
+"geography games, outline maps, map outlines, countries, states, cities, world, "
 "europe, america, africa, asia, mountains, rivers, usa"
 
 #: templates/home.html:52 templates/generated/homepage.html:25
 msgid "Slepé Mapy"
-msgstr "Blind maps"
+msgstr "Outline maps"
 
 #: templates/home.html:79
 msgid "Přehled map"
@@ -371,9 +371,9 @@ msgstr "Specialized system"
 #: templates/generated/homepage.html:78
 msgid "Specializovaný systém - text"
 msgstr ""
-"There are many other learning systems that provide blind maps practice, "
+"There are many other learning systems that provide outline maps practice, "
 "but they usually cover also many other areas. Our system focuses "
-"exclusively on blind maps, which allows it to be optimized for this area."
+"exclusively on outline maps, which allows it to be optimized for this area."
 
 #: templates/generated/homepage.html:82
 msgid "Učení z dat"

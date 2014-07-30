@@ -90,7 +90,7 @@ msgid "Příští úroveň"
 msgstr "Next level"
 
 msgid "Slepé Mapy"
-msgstr "Blind maps"
+msgstr "Outline maps"
 
 msgid "Co chcete procvičovat?"
 msgstr "What do you want to practice?"
@@ -174,9 +174,9 @@ msgstr "Specialized system"
 
 msgid "Specializovaný systém - text"
 msgstr ""
-"There are many other learning systems that provide blind maps practice, "
+"There are many other learning systems that provide outline maps practice, "
 "but they usually cover also many other areas. Our system focuses "
-"exclusively on blind maps, which allows it to be optimized for this area."
+"exclusively on outline maps, which allows it to be optimized for this area."
 
 msgid "Učení z dat"
 msgstr "Data mining"
