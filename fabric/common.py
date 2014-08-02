@@ -18,7 +18,7 @@ def validate_environment(environment):
 def mysqldump(name=None):
     if not name:
         name = time.strftime('%Y-%m-%d_%H-%M-%S')
-    dest_file = run('echo $GEOGRAPHY_DATA_DIR') + '/' + name  + '.sql'
+    dest_file = run('echo $GEOGRAPHY_DATA_DIR') + '/' + name + '.sql'
     sudo('mysqldump -p$GEOGRAPHY_DATABASE_PASSWORD -u$GEOGRAPHY_DATABASE_USER -h$GEOGRAPHY_DATABASE_HOST -P$GEOGRAPHY_DATABASE_PORT $GEOGRAPHY_DATABASE_NAME > ' + dest_file)
 
 
@@ -101,6 +101,7 @@ def update_maps():
 
 def compilemessages():
     sudo('./main/manage.py compilemessages --traceback')
+    reload_httpd()
 
 
 def remove_cache():
