@@ -173,6 +173,7 @@
             elem.tooltip({
               html : true,
               placement: 'bottom',
+              container: 'body',
               title : '<div class="skill-tooltip">' +
                      gettext('Naučeno') + ' ' +
                      '<span class="badge badge-default">' +
@@ -219,26 +220,21 @@
     }
     return {
       restrict : 'C',
-      template : '<span class="badge level-start atooltip" ' +
-                   'ng-bind="level.level" title="' + gettext('Aktuální úroveň') + '">' +
+      template : '<span class="badge level-start" ' +
+                   'ng-bind="level.level" tooltip="' + gettext('Aktuální úroveň') + '">' +
                  '</span>' +
-                 '<div class="progress level-progress" >' +
+                 '<div class="progress level-progress" ' +
+                     'tooltip="{{level.points}} / {{level.range}} ' + 
+                     gettext('bodů') + '">' +
                    '<div class="progress-bar progress-bar-warning" ' +
                         'style="width: {{(level.points/level.range)|percent}};">' +
                    '</div>' +
                  '</div>' +
-                 '<span class="badge level-goal atooltip" ' +
-                       'ng-bind="level.level+1" title="' + gettext('Příští úroveň') + '">' +
+                 '<span class="badge level-goal" ' +
+                       'ng-bind="level.level+1" tooltip="' + gettext('Příští úroveň') + '">' +
                  '</span>',
-      link : function($scope, elem) {
+      link : function($scope) {
         $scope.level = getLevelInfo(user.getUser().points);
-        $timeout(function(){
-          //console.log(elem, elem.find('.level-progress'));
-          elem.find('.level-progress').tooltip({
-            placement: 'bottom',
-            title : $scope.level.points + ' z ' + $scope.level.range + ' bodů',
-          });
-        },100);
       }
     };
   }]);

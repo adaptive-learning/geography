@@ -85,8 +85,9 @@
                 <li class="dropdown" ng-show="user.username === ''" >
                   <a href="" 
                      role="button" 
-                     class="dropdown-toggle atooltip drop-login"
-                     title="{% trans "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše znalosti pamatoval i příště." %}"
+                     class="dropdown-toggle drop-login"
+                     tooltip="{% trans "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše znalosti pamatoval i příště." %}"
+                     tooltip-placement="bottom"
                      data-toggle="dropdown">
                     {% trans "Přihlásit se" %} <b class="caret"></b>
                   </a>
@@ -117,8 +118,9 @@
                     </li>
                   </ul>
                 </li>
-              <li class="atooltip points"
-                  title="{% trans "Body - přibývají za každou správnou odpověď" %}" 
+              <li class="points"
+                  tooltip="{% trans "Body - přibývají za každou správnou odpověď" %}" 
+                  tooltip-placement="bottom"
                   ng-show="user.points">
                 <a><span class="badge" ng-bind="user.points"></span></a>
             </li>

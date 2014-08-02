@@ -89,6 +89,9 @@ msgstr "Current level"
 msgid "Příští úroveň"
 msgstr "Next level"
 
+msgid "bodů"
+msgstr "points"
+
 msgid "Slepé Mapy"
 msgstr "Outline maps"
 

@@ -89,6 +89,9 @@ msgstr "Aktuální úroveň"
 msgid "Příští úroveň"
 msgstr "Příští úroveň"
 
+msgid "bodů"
+msgstr "bodů"
+
 msgid "Slepé Mapy"
 msgstr "Slepé Mapy"
 
