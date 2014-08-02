@@ -13,7 +13,7 @@ body { margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 .navbar-toggle .icon-bar + .icon-bar { margin-top: 4px; }
 a { color: rgb(66, 139, 202); text-decoration: none; }
 .navbar-brand { float: left; padding: 15px; font-size: 18px; line-height: 20px; }
-.navbar-inverse .navbar-brand { color: rgb(153, 153, 153); }
+.navbar-inverse .navbar-brand { color: #777; }
 .navbar-collapse { max-height: 340px; overflow-x: visible; padding-right: 15px; padding-left: 15px; border-top-width: 1px; border-top-style: solid; border-top-color: transparent; box-shadow: rgba(255, 255, 255, 0.0980392) 0px 1px 0px inset; }
 .collapse { display: none; }
 .container > .navbar-header, .container > .navbar-collapse { margin-right: -15px; margin-left: -15px; }
@@ -27,12 +27,12 @@ body li { list-style-type: none; }
 .nav > li { position: relative; display: block; }
 .nav > li > a { position: relative; display: block; padding: 10px 15px; }
 .navbar-nav > li > a { padding-top: 10px; padding-bottom: 10px; line-height: 20px; }
-.navbar-inverse .navbar-nav > li > a { color: rgb(153, 153, 153); }
+.navbar-inverse .navbar-nav > li > a { color: #777; }
 .dropdown { position: relative; }
 b, strong { font-weight: bold; }
 .caret { display: inline-block; width: 0px; height: 0px; margin-left: 2px; vertical-align: middle; border-width: 4px 4px 0px; border-style: solid solid dotted; border-top-color: rgb(0, 0, 0); border-right-color: transparent; border-left-color: transparent; content: ''; }
 .nav .caret { border-top-color: rgb(66, 139, 202); border-bottom-color: rgb(66, 139, 202); }
-.navbar-inverse .navbar-nav > .dropdown > a .caret { border-top-color: rgb(153, 153, 153); border-bottom-color: rgb(153, 153, 153); }
+.navbar-inverse .navbar-nav > .dropdown > a .caret { border-top-color: #777; border-bottom-color: #777; }
 ul ul, ol ul, ul ol, ol ol { margin-bottom: 0px; }
 .dropdown-menu { position: absolute; top: 100%; left: 0px; z-index: 1000; display: none; float: left; min-width: 160px; padding: 5px 0px; margin: 2px 0px 0px; list-style: none; font-size: 14px; background-color: rgb(255, 255, 255); border: 1px solid rgba(0, 0, 0, 0.14902); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; -webkit-box-shadow: rgba(0, 0, 0, 0.172549) 0px 6px 12px; box-shadow: rgba(0, 0, 0, 0.172549) 0px 6px 12px; background-clip: padding-box; }
 .navbar-nav > li > .dropdown-menu { margin-top: 0px; border-top-right-radius: 0px; border-top-left-radius: 0px; }
@@ -62,7 +62,7 @@ body { margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 .navbar-toggle .icon-bar + .icon-bar { margin-top: 4px; }
 a { color: rgb(66, 139, 202); text-decoration: none; }
 .navbar-brand { float: left; padding: 15px; font-size: 18px; line-height: 20px; }
-.navbar-inverse .navbar-brand { color: rgb(153, 153, 153); }
+.navbar-inverse .navbar-brand { color: #777; }
 .navbar > .container .navbar-brand { margin-left: -15px; }
 .navbar-collapse { max-height: 340px; overflow-x: visible; padding-right: 15px; padding-left: 15px; border-top-width: 0px; border-top-style: solid; border-top-color: transparent; box-shadow: none; width: auto; }
 .collapse { display: none; }
@@ -77,12 +77,12 @@ ul, ol { margin-top: 0px; margin-bottom: 10px; }
 .navbar-nav > li { float: left; }
 .nav > li > a { position: relative; display: block; padding: 10px 15px; }
 .navbar-nav > li > a { padding-top: 15px; padding-bottom: 15px; line-height: 20px; }
-.navbar-inverse .navbar-nav > li > a { color: rgb(153, 153, 153); }
+.navbar-inverse .navbar-nav > li > a { color: #777; }
 .dropdown { position: relative; }
 b, strong { font-weight: bold; }
 .caret { display: inline-block; width: 0px; height: 0px; margin-left: 2px; vertical-align: middle; border-width: 4px 4px 0px; border-style: solid solid dotted; border-top-color: rgb(0, 0, 0); border-right-color: transparent; border-left-color: transparent; content: ''; }
 .nav .caret { border-top-color: rgb(66, 139, 202); border-bottom-color: rgb(66, 139, 202); }
-.navbar-inverse .navbar-nav > .dropdown > a .caret { border-top-color: rgb(153, 153, 153); border-bottom-color: rgb(153, 153, 153); }
+.navbar-inverse .navbar-nav > .dropdown > a .caret { border-top-color: #777; border-bottom-color: #777; }
 ul ul, ol ul, ul ol, ol ol { margin-bottom: 0px; }
 .dropdown-menu { position: absolute; top: 100%; left: 0px; z-index: 1000; display: none; float: left; min-width: 160px; padding: 5px 0px; margin: 2px 0px 0px; list-style: none; font-size: 14px; background-color: rgb(255, 255, 255); border: 1px solid rgba(0, 0, 0, 0.14902); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; -webkit-box-shadow: rgba(0, 0, 0, 0.172549) 0px 6px 12px; box-shadow: rgba(0, 0, 0, 0.172549) 0px 6px 12px; background-clip: padding-box; }
 .navbar-nav > li > .dropdown-menu { margin-top: 0px; border-top-right-radius: 0px; border-top-left-radius: 0px; }
@@ -132,3 +132,4 @@ ul.dropdown-menu.login a.btn i { float: left; margin: -5px 0px -10px -10px; }
 .btn-primary { color: rgb(255, 255, 255); background-color: rgb(66, 139, 202); border-color: rgb(53, 126, 189); }
 .social-facebook { width: 32px; height: 32px; background-position: 0px -492px; }
 .glyphicon { position: relative; top: 1px; display: inline-block; font-family: 'Glyphicons Halflings'; font-style: normal; font-weight: normal; line-height: 1; -webkit-font-smoothing: antialiased; }
+body { font-size: 1.5em; }
