@@ -219,10 +219,11 @@
       function($http, $cookies, events) {
     var user;
     return {
-      initUser : function(username, points) {
+      initUser : function(username, points, email) {
         user = {
           'username' : username,
-          'points' : points
+          'points' : points,
+          'email' : email,
         };
         return user;
       },

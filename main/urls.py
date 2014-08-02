@@ -34,6 +34,8 @@ urlpatterns = patterns(
     url(r'^user/logout/', 'geography.views.logout_view', name='logout_view'),
     url(r'^user/', 'geography.views.user_view', name='user_view'),
 
+    url(r'^feedback/', 'geography.views.feedback', name='feedback'),
+
     url(r'^favicon\.ico$', RedirectView.as_view(url='static/img/favicon.png')),
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     url(r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: ", mimetype="text/plain")),

@@ -3,8 +3,9 @@
   /* Controllers */
   angular.module('blindMaps.controllers', [])
 
-  .controller('AppCtrl', ['$scope', '$rootScope', '$location', 'user', 'pageTitle',
-      function($scope, $rootScope, $location, user, pageTitle) {
+  .controller('AppCtrl', ['$scope', '$rootScope', '$location', '$modal',
+      '$window', 'user', 'pageTitle', 
+      function($scope, $rootScope, $location, $modal, $window, user, pageTitle) {
     $rootScope.topScope = $rootScope;
     $rootScope.location = $location;
     
@@ -21,8 +22,8 @@
       $rootScope.user = data;
     };
     
-    $scope.initUser = function (username, points) {
-      $rootScope.user = user.initUser(username, points);
+    $scope.initUser = function (username, points, email) {
+      $rootScope.user = user.initUser(username, points, email);
     };
 
     $rootScope.logout = function() {
@@ -32,6 +33,69 @@
     $scope.vip = function() {
       return $scope.user && $scope.user.username == 'Verunka';
     };
+
+    $scope.feedback = {
+      user_agent: $window.navigator.userAgent,
+      email: '@',
+      text: '',
+    };
+
+    $scope.openFeedback = function () {
+      if ($rootScope.user && $rootScope.user.email) {
+        $scope.feedback.email = $rootScope.user.email;
+      }
+
+      var modalInstance = $modal.open({
+        templateUrl: 'myModalContent.html',
+        controller: ModalInstanceCtrl,
+        size: 'lg',
+        resolve: {
+          feedback: function () {
+            return $scope.feedback;
+          }
+        }
+      });
+
+      modalInstance.result.then(function (selectedItem) {
+        $scope.selected = selectedItem;
+      }, function () {
+      });
+    };
+
+
+    var ModalInstanceCtrl = ['$scope', '$modalInstance', '$http', '$cookies',
+          '$location', 'feedback', 'gettext',
+        function ($scope, $modalInstance, $http, $cookies, 
+          $location, feedback, gettext) {
+
+      $scope.feedback = feedback;
+      $scope.alerts = [];
+
+      $scope.send = function() {
+        feedback.page = $location.absUrl();
+        $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+        $http.post('/feedback/', feedback).success(function(data){
+          $scope.alerts.push(data);
+          $scope.sending = false;
+        }).error(function(){
+          $scope.alerts.push({
+            type : 'danger',
+            msg : gettext("V aplikaci bohužel nastala chyba."),
+          });
+          $scope.sending = false;
+        });
+        $scope.sending = true;
+      };
+
+      $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+      };
+
+      $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+      };
+    }];
+
   }])
 
   .controller('AppView', ['$scope', '$routeParams', '$filter', 'places', 'mapTitle', 'gettext',

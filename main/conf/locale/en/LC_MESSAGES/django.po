@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-19 17:49+0200\n"
+"POT-Creation-Date: 2014-08-02 20:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,157 +87,161 @@ msgstr "Mountains"
 msgid "Ostrovy"
 msgstr "Islands"
 
-#: geography/utils/model.py:144 geography/utils/model.py:166
+#: geography/utils/model.py:145 geography/utils/model.py:167
 msgid "unknown"
 msgstr "unknown"
 
-#: geography/utils/model.py:145
+#: geography/utils/model.py:146
 msgid "stát"
 msgstr "state"
 
-#: geography/utils/model.py:146
+#: geography/utils/model.py:147
 msgid "město"
 msgstr "city"
 
-#: geography/utils/model.py:147
+#: geography/utils/model.py:148
 msgid "svět"
 msgstr "world"
 
-#: geography/utils/model.py:148
+#: geography/utils/model.py:149
 msgid "kontinent"
 msgstr "continent"
 
-#: geography/utils/model.py:149
+#: geography/utils/model.py:150
 msgid "řeka"
 msgstr "river"
 
-#: geography/utils/model.py:150
+#: geography/utils/model.py:151
 msgid "jezero"
 msgstr "lake"
 
-#: geography/utils/model.py:151
+#: geography/utils/model.py:152
 msgid "kraj"
 msgstr "region"
 
-#: geography/utils/model.py:152
+#: geography/utils/model.py:153
 msgid "spolková země"
 msgstr "state"
 
-#: geography/utils/model.py:153
+#: geography/utils/model.py:154
 msgid "provincie"
 msgstr "province"
 
-#: geography/utils/model.py:154
+#: geography/utils/model.py:155
 msgid "oblast"
 msgstr "region"
 
-#: geography/utils/model.py:155
+#: geography/utils/model.py:156
 msgid "region"
 msgstr "region"
 
-#: geography/utils/model.py:156
+#: geography/utils/model.py:157
 msgid "autonomní společenství"
 msgstr "autonomous comunity"
 
-#: geography/utils/model.py:157 geography/utils/model.py:179
+#: geography/utils/model.py:158 geography/utils/model.py:180
 msgid "pohoří"
 msgstr "mountains"
 
-#: geography/utils/model.py:158
+#: geography/utils/model.py:159
 msgid "ostrov"
 msgstr "island"
 
-#: geography/utils/model.py:161
+#: geography/utils/model.py:162
 msgid "spolkovou zemi"
 msgstr "state"
 
-#: geography/utils/model.py:162
+#: geography/utils/model.py:163
 msgid "provincii"
 msgstr "province"
 
-#: geography/utils/model.py:163
+#: geography/utils/model.py:164
 msgid "řeku"
 msgstr "river"
 
-#: geography/utils/model.py:167
+#: geography/utils/model.py:168
 msgid "států"
 msgstr "states"
 
-#: geography/utils/model.py:168
+#: geography/utils/model.py:169
 msgid "měst"
 msgstr "cities"
 
-#: geography/utils/model.py:169
+#: geography/utils/model.py:170
 msgid "světů"
 msgstr "worlds"
 
-#: geography/utils/model.py:170
+#: geography/utils/model.py:171
 msgid "kontinentů"
 msgstr "continents"
 
-#: geography/utils/model.py:171
+#: geography/utils/model.py:172
 msgid "řek"
 msgstr "rivers"
 
-#: geography/utils/model.py:172
+#: geography/utils/model.py:173
 msgid "jezer"
 msgstr "lakes"
 
-#: geography/utils/model.py:173 geography/utils/model.py:177
+#: geography/utils/model.py:174 geography/utils/model.py:178
 msgid "regionů"
 msgstr "regions"
 
-#: geography/utils/model.py:174
+#: geography/utils/model.py:175
 msgid "spolkových zemí"
 msgstr "states"
 
-#: geography/utils/model.py:175
+#: geography/utils/model.py:176
 msgid "provincií"
 msgstr "provinces"
 
-#: geography/utils/model.py:176
+#: geography/utils/model.py:177
 msgid "oblastí"
 msgstr "regions"
 
-#: geography/utils/model.py:178
+#: geography/utils/model.py:179
 msgid "autonomních společenství"
 msgstr "autonomous comunities"
 
-#: geography/utils/model.py:180
+#: geography/utils/model.py:181
 msgid "ostrovů"
 msgstr "islands"
 
-#: geography/utils/model.py:197
+#: geography/utils/model.py:198
 msgid "Ze zvýrazněných "
 msgstr "Out of highlighted "
 
-#: geography/utils/model.py:197
+#: geography/utils/model.py:198
 msgid " na mapě vyber"
 msgstr " on the map choose"
 
-#: geography/utils/model.py:199
+#: geography/utils/model.py:200
 msgid "Vyber na mapě "
 msgstr "Choose on the map "
 
-#: geography/utils/model.py:201
+#: geography/utils/model.py:202
 msgid "Jak se jmenuje "
 msgstr "What is the name of "
 
-#: geography/utils/model.py:201
+#: geography/utils/model.py:202
 msgid " na mapě?"
 msgstr " on the map?"
 
-#: geography/utils/model.py:207
+#: geography/utils/model.py:208
 msgid "zvýrazněný"
 msgstr "highlighted"
 
-#: geography/utils/model.py:209
+#: geography/utils/model.py:210
 msgid "zvýrazněná"
 msgstr "highlighted"
 
-#: geography/utils/model.py:211
+#: geography/utils/model.py:212
 msgid "zvýrazněné"
 msgstr "highlighted"
+
+#: geography/views/feedback.py:31
+msgid "Feedback confirmed"
+msgstr "Thank you for the message. User feedback is very important for us."
 
 #: templates/home.html:24
 msgid "meta content"
@@ -249,8 +253,8 @@ msgstr ""
 #: templates/home.html:25
 msgid "meta keywords"
 msgstr ""
-"geography games, outline maps, map outlines, countries, states, cities, world, "
-"europe, america, africa, asia, mountains, rivers, usa"
+"geography games, outline maps, map outlines, countries, states, cities, "
+"world, europe, america, africa, asia, mountains, rivers, usa"
 
 #: templates/home.html:52 templates/generated/homepage.html:25
 msgid "Slepé Mapy"
@@ -268,33 +272,52 @@ msgstr ""
 "Sign in simply via Google or Facebook, so the system remembers your "
 "knowledge next time."
 
-#: templates/home.html:91
+#: templates/home.html:92
 msgid "Přihlásit se"
 msgstr "Sign in"
 
-#: templates/home.html:96
+#: templates/home.html:97
 msgid "přes Google"
-msgstr "via Google"
+msgstr "with Google"
 
-#: templates/home.html:101
+#: templates/home.html:102
 msgid "přes Facebook"
-msgstr "via Facebook"
+msgstr "with Facebook"
 
-#: templates/home.html:115
+#: templates/home.html:116
 msgid "Odhlásit se"
 msgstr "Sign out"
 
-#: templates/home.html:121
+#: templates/home.html:122
 msgid "Body - přibývají za každou správnou odpověď"
 msgstr "Points - gained per each correct answer"
 
-#: templates/home.html:152
+#: templates/home.html:155
 msgid "O projektu"
 msgstr "About"
 
-#: templates/home.html:153
-msgid "Kontakty"
-msgstr "Contacts"
+#: templates/home.html:159 templates/home.html.py:172
+msgid "Napište nám"
+msgstr "Feedback"
+
+#: templates/home.html:178
+msgid "Feedback text label"
+msgstr ""
+"Did you find a bug in the app? Do you have an improvement idea? "
+"Or any other cooment? We are eager to hear anything you'd like "
+"to tell us. Here you can convey it to us."
+
+#: templates/home.html:182
+msgid "Vaše emailová adresa (nepovinné)"
+msgstr "Your email address (optional)"
+
+#: templates/home.html:193
+msgid "Odeslat"
+msgstr "Send"
+
+#: templates/home.html:196
+msgid "Zavřít"
+msgstr "Close"
 
 #: templates/generated/homepage.html:27
 msgid "Co chcete procvičovat?"
@@ -339,8 +362,8 @@ msgstr "Geography game"
 #: templates/generated/homepage.html:63
 msgid "Zeměpis hrou - text"
 msgstr ""
-"Practice your geography knowledge in a playful way. Can you colour green "
-"the map of Europe? Or map of the US? And what about the whole world?"
+"Practice your geography knowledge in a playful way. Can you colour green the "
+"map of Europe? Or map of the US? And what about the whole world?"
 
 #: templates/generated/homepage.html:67
 msgid "Adaptabilní procvičování"
@@ -350,9 +373,9 @@ msgstr "Adaptive practice"
 msgid "Adaptabilní procvičování - text"
 msgstr ""
 "The application examines your knowledge of maps adaptively - depending on "
-"your level of knowledge is chosen type of questions (how many options "
-"etc.) and repeat frequency. Thus is asks you about the countries which "
-"are most beneficial to practice."
+"your level of knowledge is chosen type of questions (how many options etc.) "
+"and repeat frequency. Thus is asks you about the countries which are most "
+"beneficial to practice."
 
 #: templates/generated/homepage.html:72
 msgid "Vizualizace znalostí"
@@ -361,8 +384,8 @@ msgstr "Knowledge visualization"
 #: templates/generated/homepage.html:73
 msgid "Vizualizace znalostí - text"
 msgstr ""
-"Based on your answers the system estimates your knowledge and displays it "
-"is a form of map, which can help you to realize what you actually know."
+"Based on your answers the system estimates your knowledge and displays it is "
+"a form of map, which can help you to realize what you actually know."
 
 #: templates/generated/homepage.html:77
 msgid "Specializovaný systém"
@@ -372,8 +395,8 @@ msgstr "Specialized system"
 msgid "Specializovaný systém - text"
 msgstr ""
 "There are many other learning systems that provide outline maps practice, "
-"but they usually cover also many other areas. Our system focuses "
-"exclusively on outline maps, which allows it to be optimized for this area."
+"but they usually cover also many other areas. Our system focuses exclusively "
+"on outline maps, which allows it to be optimized for this area."
 
 #: templates/generated/homepage.html:82
 msgid "Učení z dat"
@@ -382,7 +405,6 @@ msgstr "Data mining"
 #: templates/generated/homepage.html:83
 msgid "Učení z dat - text"
 msgstr ""
-"The application learns from data of all users. Question choice is based "
-"on this data, instead of being based on knowledge of an geography expert "
-"who \"knows\" whether it's generally more difficult to know Kenya or "
-"Nigeria."
+"The application learns from data of all users. Question choice is based on "
+"this data, instead of being based on knowledge of an geography expert who "
+"\"knows\" whether it's generally more difficult to know Kenya or Nigeria."

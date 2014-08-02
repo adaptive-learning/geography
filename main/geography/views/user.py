@@ -21,6 +21,7 @@ def get_user(request):
     response = {
         'username': username,
         'points': points,
+        'email': user.email if username != '' else None,
     }
     return response
 
