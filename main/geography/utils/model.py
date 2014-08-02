@@ -188,10 +188,10 @@ class QuestionType(object):
 
     @property
     def text(self):
-        place_singular = QuestionType.PLACE_TYPE_SINGULAR[self.place_type]
-        place_plural_choice = QuestionType.PLACE_TYPE_PLURAL_CHOICE[self.place_type]
-        place_singular_choice = QuestionType.PLACE_TYPE_SINGULAR_CHOICE.get(
-            self.place_type, place_singular)
+        place_singular = _(QuestionType.PLACE_TYPE_SINGULAR[self.place_type])
+        place_plural_choice = _(QuestionType.PLACE_TYPE_PLURAL_CHOICE[self.place_type])
+        place_singular_choice = _(QuestionType.PLACE_TYPE_SINGULAR_CHOICE.get(
+            self.place_type, place_singular))
 
         if self.type == Answer.FIND_ON_MAP:
             if self.number_of_options > 0:
