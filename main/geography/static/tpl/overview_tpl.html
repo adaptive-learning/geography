@@ -18,7 +18,7 @@
             <li class="inline-block" ng-repeat="layer in map.placesTypes" >
               <a href="#/practice/{{map.slug}}/{{layer.slug}}" 
                  class="btn btn-primary"
-                 title="{{'Procvičovat'| trans}}">
+                 tooltip="{{'Procvičovat'| trans}}">
                  {{layer.name}}</a>
               <div class="map-progress" count="{{layer.count}}" 
                    skills="{{mapSkills(map.slug, layer.slug)}}">

@@ -11,7 +11,8 @@
     'ngRoute',
     'ngAnimate',
     'angulartics',
-    'angulartics.google.analytics'
+    'angulartics.google.analytics',
+    'ui.bootstrap',
   ])
 
   .value('gettext', gettext)

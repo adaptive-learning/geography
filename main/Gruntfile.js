@@ -132,6 +132,7 @@ module.exports = function(grunt) {
           'geography/static/lib/js/kartograph.js',
           'geography/static/lib/js/chroma.js',
           'geography/static/lib/js/bootstrap.js',
+          'geography/static/lib/js/ui-bootstrap-tpls-0.11.0.js',
           'geography/static/lib/angular-1.2.9/angular-route.js',
           'geography/static/lib/angular-1.2.9/angular-cookies.js',
           'geography/static/lib/angular-1.2.9/angular-animate.js',
