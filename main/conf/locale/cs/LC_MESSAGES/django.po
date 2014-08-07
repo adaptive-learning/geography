@@ -302,8 +302,8 @@ msgstr ""
 msgid "Feedback text label"
 msgstr ""
 "Narazili jste na chybu v aplikaci? Máte nápad na vylepšení? "
-"Nebo jakýkoliv jiný postřeh či komentář? Jsme velice zvědaví "
-"na všechno, co nám chcete říct. Zde máte možnost nám to sdělit."
+"Nebo jakýkoliv jiný postřeh či komentář? Zajímá nás všechno, "
+"co nám chcete sdělit."
 
 #: templates/home.html:182
 msgid "Vaše emailová adresa (nepovinné)"
