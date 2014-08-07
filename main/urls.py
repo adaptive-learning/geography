@@ -32,7 +32,7 @@ urlpatterns = patterns(
 
     url(r'^user/list/', 'geography.views.user_list_view', name='user_list_view'),
     url(r'^user/logout/', 'geography.views.logout_view', name='logout_view'),
-    url(r'^user/', 'geography.views.user_view', name='user_view'),
+    url(r'^user/(?P<username>\w*)', 'geography.views.user_view', name='user_view'),
 
     url(r'^feedback/', 'geography.views.feedback', name='feedback'),
 
