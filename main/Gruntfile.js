@@ -154,7 +154,7 @@ module.exports = function(grunt) {
           "maxcomplexity": 6,
           "indent": 2,
           "maxstatements": 12,
-          "maxdepth" : 2,
+          "maxdepth" : 3,
           "maxparams": 12,
           "maxlen": 110
       },

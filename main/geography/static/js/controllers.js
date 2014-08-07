@@ -252,11 +252,149 @@
     };
   }])
 
+  .controller('AppUser', ['$scope', 'user', '$http', '$routeParams', '$cookies', '$modal',
+      function($scope, user, $http, $routeParams, $cookies, $modal) {
+
+    $scope.user = {username: $routeParams.user};
+    user.getPromiseByName($routeParams.user).success(function(data){
+      $scope.user = data;
+      $scope.editRights = data.username == user.getUser().username;
+    });
+
+    $scope.deleteGoal = function(goal) {
+      if (goal.can_be_deleted) {
+        goal.deleting = true;
+        $http.get("/goal/delete/" + goal.id).success(function() {
+          $scope.goals = $scope.goals.filter(function(g){
+            return g.id != goal.id;
+          });
+        });
+      }
+    };
+    
+    $scope.loadGoals = function(){
+      $http.get("/goal/" + $scope.user.username).success(function(goals) {
+        $scope.loaded = true;
+        $scope.goals = goals;
+        goals.map(function(g){
+          g.progress_diff = g.expected_progress - g.progress;
+        });
+      });
+    };
+    $scope.loadGoals();
+
+    $scope.addGoal = function () {
+      $modal.open({
+        templateUrl: 'add_goal_modal.html',
+        controller: ModalAddGoalCtrl,
+        resolve: {
+          loadGoals: function() {
+            return $scope.loadGoals;
+          },
+          goals: function () {
+            return $scope.goals;
+          }
+        }
+      });
+    };
+
+    var ModalAddGoalCtrl = ['$scope', '$modalInstance', '$http', '$cookies',
+          '$location', 'goals', 'gettext', 'places', 'loadGoals',
+        function ($scope, $modalInstance, $http, $cookies, 
+          $location, goals, gettext, places, loadGoals) {
+
+      $scope.goal = {
+        finish_date: new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 14),
+      };
+      $scope.minFinish = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 7);
+      $scope.alerts = [];
+      $scope.datePopup = {};
+
+      function filterGoals(maps, goals) {
+        maps.forEach(function(map){
+          var disabledCounter = 0;
+          map.placesTypes.forEach(function(l) {
+            goals.forEach(function(g){
+              if (l.slug == g.type.slug && map.slug == g.map.code) {
+                l.disabled = true;
+                disabledCounter++;
+              }
+            });
+          });
+          map.disabled = disabledCounter == map.placesTypes.length;
+        });
+      }
+
+      function firstGoal(maps) {
+        for (var i = 0; i < maps.length; i++) {
+          var map = maps[i];
+          for (var j = 0; j < map.placesTypes.length; j++) {
+            if (!map.placesTypes[j].disabled) {
+              return {
+                finish_date : new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 14),
+                map : map.slug,
+                layer : map.placesTypes[j].slug,
+              };
+            }
+          }
+        }
+      }
+
+      function getMaps(mapCategories) {
+        var maps = [];
+        mapCategories.forEach(function(cat){
+          maps = maps.concat(cat.maps);
+        });
+        return maps;
+      }
+
+      places.getOverview().success(function(data){
+        $scope.maps = getMaps(data);
+        filterGoals($scope.maps, goals);
+        $scope.mapCategories = data;
+        $scope.goal = firstGoal($scope.maps);
+      });
+
+      $scope.openDatePopup = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.datePopup.isOpen = true;
+      };
+
+      $scope.send = function() {
+        $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+        $http.post('/goal/', $scope.goal).success(function(data){
+          $scope.alerts.push(data);
+          $scope.sending = false;
+          loadGoals();
+          $scope.cancel();
+        }).error(function(){
+          $scope.alerts.push({
+            type : 'danger',
+            msg : gettext("V aplikaci bohužel nastala chyba."),
+          });
+          $scope.sending = false;
+        });
+        $scope.sending = true;
+      };
+
+      $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+      };
+
+      $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+      };
+    }];
+
   }])
+
   .controller('AppOverview', ['$scope', 'places', '$http', '$routeParams',
       function($scope, places, $http, $routeParams) {
 
     var mapSkills = {};
+
     $scope.user = $routeParams.user || '';
     $http.get('/mapskill/' + $scope.user).success(function(data){
       angular.forEach(data, function(p){

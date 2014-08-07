@@ -240,6 +240,9 @@
         user.points++;
         $cookies.points = user.points;
         events.emit('userUpdated', user);
+      },
+      getPromiseByName : function(name) {
+        return $http.get('/user/' + name + '/');
       }
     };
   }])
@@ -261,19 +264,19 @@
   })
 
   .factory('pageTitle',['places', 'gettext', function(places, gettext) {
-    
+
     var titles = {
-      'static/tpl/homepage.html' : '',
-      '../templates/home/how_it_works.html' : gettext('Jak to funguje?') + ' - ',
       'static/tpl/about.html' : gettext('O prjektu') + ' - ',
-      'static/tpl/overview_tpl.html' : gettext('Přehled map') + ' - '
+      'static/tpl/overview_tpl.html' : gettext('Přehled map') + ' - ',
     };
     return function (route) {
       var title;
       if (route.controller == "AppView" || route.controller == "AppPractice") {
         title = places.getName(route.params.part) + ' - ';
+      } else if (route.controller == "AppUser") {
+        title = route.params.user + ' - ';
       } else {
-        title = titles[route.templateUrl];
+        title = titles[route.templateUrl] || '';
       }
       return title;
     };

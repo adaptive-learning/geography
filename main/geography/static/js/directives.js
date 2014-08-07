@@ -239,8 +239,14 @@
                  '<span class="badge level-goal" ' +
                        'ng-bind="level.level+1" tooltip="' + gettext('Příští úroveň') + '">' +
                  '</span>',
-      link : function($scope) {
-        $scope.level = getLevelInfo(user.getUser().points);
+      link : function($scope, elem, attrs) {
+        if (attrs.username) {
+          user.getPromiseByName(attrs.username).success(function(data){
+            $scope.level = getLevelInfo(data.points);
+          });
+        } else {
+          $scope.level = getLevelInfo(user.getUser().points);
+        }
       }
     };
   }]);
