@@ -3,6 +3,7 @@ from geography.utils import JsonResponse
 from django.contrib.auth.models import User
 from django.http import Http404, HttpResponseBadRequest
 from django.utils import simplejson
+from django.utils.translation import ugettext as _
 from geography.models import Goal, Place, PlaceRelation, MapSkill
 
 
@@ -38,7 +39,7 @@ def goals_add(request, username=None):
     goal.save()
     response = {
         'type': 'success',
-        'msg': u'Cíl byl vytvořen',
+        'msg': _(u'Cíl byl vytvořen'),
     }
     return JsonResponse(response)
 

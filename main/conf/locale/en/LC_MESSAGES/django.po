@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-02 20:12+0200\n"
+"POT-Creation-Date: 2014-08-07 20:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -243,6 +243,10 @@ msgstr "highlighted"
 msgid "Feedback confirmed"
 msgstr "Thank you for the message. User feedback is very important for us."
 
+#: geography/views/goal.py:42
+msgid "Cíl byl vytvořen"
+msgstr "Goal has been set up"
+
 #: templates/home.html:24
 msgid "meta content"
 msgstr ""
@@ -285,39 +289,59 @@ msgid "přes Facebook"
 msgstr "with Facebook"
 
 #: templates/home.html:116
+msgid "Můj profil"
+msgstr "My  profile"
+
+#: templates/home.html:122
 msgid "Odhlásit se"
 msgstr "Sign out"
 
-#: templates/home.html:122
+#: templates/home.html:128
 msgid "Body - přibývají za každou správnou odpověď"
 msgstr "Points - gained per each correct answer"
 
-#: templates/home.html:155
-msgid "O projektu"
-msgstr "About"
-
-#: templates/home.html:159 templates/home.html.py:172
+#: templates/home.html:161 templates/home.html.py:170 templates/home.html:183
 msgid "Napište nám"
 msgstr "Feedback"
 
-#: templates/home.html:178
+#: templates/home.html:166
+msgid "O projektu"
+msgstr "About"
+
+#: templates/home.html:187
 msgid "Feedback text label"
 msgstr ""
-"Did you find a bug in the app? Do you have an improvement idea? "
-"Or any other cooment? We are eager to hear anything you'd like "
-"to tell us. Here you can convey it to us."
+"Did you find a bug in the app? Do you have an improvement idea? Or any other "
+"cooment? We are eager to hear anything you'd like to tell us. Here you can "
+"convey it to us."
 
-#: templates/home.html:182
+#: templates/home.html:191
 msgid "Vaše emailová adresa (nepovinné)"
 msgstr "Your email address (optional)"
 
-#: templates/home.html:193
+#: templates/home.html:202
 msgid "Odeslat"
 msgstr "Send"
 
-#: templates/home.html:196
+#: templates/home.html:205 templates/home.html.py:275
 msgid "Zavřít"
 msgstr "Close"
+
+#: templates/home.html:213
+msgid "Vytvořit cíl"
+msgstr "Create goal"
+
+#: templates/home.html:217
+msgid "Mapa"
+msgstr "Map"
+
+#: templates/home.html:244
+msgid "Datum splnění cíle"
+msgstr "Goal completion date"
+
+#: templates/home.html:272
+msgid "Vytrvořit"
+msgstr "Create"
 
 #: templates/generated/homepage.html:27
 msgid "Co chcete procvičovat?"
