@@ -252,6 +252,7 @@
     };
   }])
 
+  }])
   .controller('AppOverview', ['$scope', 'places', '$http', '$routeParams',
       function($scope, places, $http, $routeParams) {
 

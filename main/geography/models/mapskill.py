@@ -17,6 +17,11 @@ class MapSkillManager(models.Manager):
         geography_currentskill_prepared.user_id AS user_id,
         geography_place.name AS name,
         geography_place.code AS code,
+        AVG( LEAST(
+            1/(1+EXP(-geography_currentskill_prepared.currentskill)),
+            %s)
+        ) AS goal_probability,
+        COUNT(geography_currentskill_prepared.value) AS count,
         COUNT( IF(
             1/(1+EXP(-geography_currentskill_prepared.currentskill)) >= %s,
             1,
@@ -49,7 +54,7 @@ class MapSkillManager(models.Manager):
         geography_place_related.type
     ORDER BY
         geography_place.name
-        """, [LEARNED_PROB, LEARNED_PROB, user.id]
+        """, [LEARNED_PROB, LEARNED_PROB, LEARNED_PROB, user.id]
         )
 
 
@@ -71,6 +76,7 @@ class MapSkill(models.Model):
             'type': Place.PLACE_TYPE_SLUGS_LOWER[self.type],
             'learned': self.learned,
             'practiced': self.practiced,
+            'goal_probability': self.goal_probability,
             'certainty': 1
         }
         return ret
