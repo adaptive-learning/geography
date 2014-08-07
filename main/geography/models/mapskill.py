@@ -57,6 +57,12 @@ class MapSkillManager(models.Manager):
         """, [LEARNED_PROB, LEARNED_PROB, LEARNED_PROB, user.id]
         )
 
+    def for_user_and_map_and_type(self, user, map, type):
+        skills = self.for_user(user)
+        for s in skills:
+            if s.place_id == map.place_id and s.type == type:
+                return s
+
 
 class MapSkill(models.Model):
 
