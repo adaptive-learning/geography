@@ -13,6 +13,7 @@
         elem.tooltip({
           html : true,
           placement: 'bottom',
+          container: 'body',
           title : '<div class="skill-tooltip">' +
                 gettext('Odhad znalosti') + 
                 ' <span class="badge badge-default">' +
@@ -38,16 +39,18 @@
                   '</div>' +
                   '<h1 ng-bind="name" ng-show="!practice"></h1>' +
                   '<div class="btn-group-vertical map-switch" data-toggle="buttons" ng-show="!practice" >' +
-                    '<a class="btn btn-default atooltip" href="#/view/{{part}}/"' +
+                    '<a class="btn btn-default" href="#/view/{{part}}/"' +
                         'ng-class="\'/view/\'+part+\'/\'|isActive"' +
-                        'placement="right"' +
-                        'title="' + gettext('Moje znalosti') + '">' +
+                        'tooltip-append-to-body="true"' +
+                        'tooltip-placement="right"' +
+                        'tooltip="' + gettext('Moje znalosti') + '">' +
                       '<i class="glyphicon glyphicon-user"></i>' +
                     '</a>' +
-                    '<a class="btn btn-default atooltip" href="#/view/{{part}}/average"' +
+                    '<a class="btn btn-default" href="#/view/{{part}}/average"' +
                         'ng-class="\'/view/\'+part+\'/average\'|isActive"' +
-                        'placement="right"' +
-                        'title="' + gettext('Průměrný nový uživatel') + '">' +
+                        'tooltip-append-to-body="true"' +
+                        'tooltip-placement="right"' +
+                        'tooltip="' + gettext('Průměrný nový uživatel') + '">' +
                       '<i class="glyphicon glyphicon-globe"></i> ' +
                     '</a>' +
                   '</div>' +
@@ -105,7 +108,10 @@
     return {
       restrict : 'C',
       link : function($scope, elem, attrs) {
-        elem.tooltip({ 'placement' : attrs.placement || 'bottom' });
+        elem.tooltip({ 
+          'placement' : attrs.placement || 'bottom',
+          'container' : attrs.container,
+        });
       }
     };
   })
