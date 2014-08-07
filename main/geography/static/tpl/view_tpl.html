@@ -21,14 +21,11 @@
       </a>
       <div class="clearfix"></div>
     </div>
-    <div ng-hide="typeCat.hidden">
+    <div collapse="typeCat.hidden">
       <li class="col-sm-{{filteredTypes.length|colNum}}" 
-          ng-repeat="type in filteredTypes"
-          ng-class="{'collapsed': type.hidden}">
-        <div data-toggle="collapse" 
-            class="collapse-control collapse-control-inner"
-            data-target="#collapse-{{type.slug}}"
-            ng-click="updateMap(type)">
+          ng-repeat="type in filteredTypes">
+        <div ng-click="updateMap(type)"
+            class="collapse-control collapse-control-inner">
           <h3>
             <i class="glyphicon {{type.hidden && 'glyphicon-plus-sign' || 'glyphicon-minus-sign'}}"></i>
             {{type.name}}
@@ -44,7 +41,7 @@
                practiced:(type.places|filter:{practiced:true}).length,
                learned:(type.places|filter:{learned:true}).length
              } }}"></div>
-        <div class="view-places collapse in" id="collapse-{{type.slug}}">
+        <div class="view-places" collapse="type.hidden">
           <div ng-hide="(type.places|filter:{displayed:true}).length" class="alert alert-info">
             {{'Zde zatím nebylo nic procvičováno.' | trans }}
           </div>
