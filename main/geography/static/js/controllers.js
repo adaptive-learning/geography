@@ -45,9 +45,9 @@
         $scope.feedback.email = $rootScope.user.email;
       }
 
-      var modalInstance = $modal.open({
-        templateUrl: 'myModalContent.html',
-        controller: ModalInstanceCtrl,
+      $modal.open({
+        templateUrl: 'feedback_modal.html',
+        controller: ModalFeedbackCtrl,
         size: 'lg',
         resolve: {
           feedback: function () {
@@ -55,15 +55,9 @@
           }
         }
       });
-
-      modalInstance.result.then(function (selectedItem) {
-        $scope.selected = selectedItem;
-      }, function () {
-      });
     };
 
-
-    var ModalInstanceCtrl = ['$scope', '$modalInstance', '$http', '$cookies',
+    var ModalFeedbackCtrl = ['$scope', '$modalInstance', '$http', '$cookies',
           '$location', 'feedback', 'gettext',
         function ($scope, $modalInstance, $http, $cookies, 
           $location, feedback, gettext) {

@@ -172,7 +172,7 @@
       Vyzkoušejte také <a href="http://slepaanatomie.cz" target="_blank">Slepou Anatomii</a>
     {% endif %}
 
-    <script type="text/ng-template" id="myModalContent.html">
+    <script type="text/ng-template" id="feedback_modal.html">
         <div class="modal-header">
             <h3 class="modal-title">{% trans "Napište nám"%}</h3>
         </div>
@@ -180,11 +180,11 @@
             <label>
               {% trans "Feedback text label"%}
             </label>
-            <textarea ng-model="feedback.text" class="btn-block" rows="8" ></textarea>
+            <textarea ng-model="feedback.text" class="form-control" rows="8" ></textarea>
             <label>
               {% trans "Vaše emailová adresa (nepovinné)"%}
             </label>
-            <input type="text" ng-model="feedback.email" class="btn-block"/>
+            <input type="text" ng-model="feedback.email" class="form-control"/>
             <br>
             {%verbatim%}
             <alert ng-repeat="alert in alerts" type="{{alert.type}}"
