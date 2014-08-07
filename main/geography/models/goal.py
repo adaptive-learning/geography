@@ -53,20 +53,23 @@ class Goal(models.Model):
     @property
     def expected_progress_yesterday(self):
         before_start = self.start_date - timedelta(days=1)
-        return ((date.today() - self.start_date).total_seconds() /
-                (self.finish_date - before_start).total_seconds())
+        numerator = (date.today() - self.start_date).total_seconds()
+        denominator = (self.finish_date - before_start).total_seconds()
+        return numerator / denominator
 
     @property
     def expected_progress(self):
         before_start = self.start_date - timedelta(days=1)
-        return ((date.today() - before_start).total_seconds() /
-                (self.finish_date - before_start).total_seconds())
+        numerator = (date.today() - before_start).total_seconds()
+        denominator = (self.finish_date - before_start).total_seconds()
+        return numerator / denominator
 
     @property
     def progress(self):
-        return min(1,
-                  ((self.probability - self.start_probability) /
-                   (self.GOAL_PROBABILITY - self.start_probability)))
+        numerator = self.probability - self.start_probability
+        denominator = self.GOAL_PROBABILITY - self.start_probability
+        ratio = numerator / denominator
+        return min(1, ratio)
 
     class Meta:
         app_label = 'geography'
