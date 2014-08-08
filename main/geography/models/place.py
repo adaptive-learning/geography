@@ -2,7 +2,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.db import connection
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from contextlib import closing
 import proso.geography.recommendation as recommendation
 import logging

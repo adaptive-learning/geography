@@ -28,7 +28,7 @@ def _places(request, map_code):
         'slug': map.place.code,
         'placesTypes': [
             {
-                'name': _(place_type[1]),
+                'name': unicode(place_type[1]),
                 'slug': Place.PLACE_TYPE_SLUGS_LOWER[place_type[0]],
                 'count': len([p for p in map_places
                              if p.type == place_type[0]])

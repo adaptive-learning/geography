@@ -39,7 +39,7 @@ class Goal(models.Model):
             'map': self.map.place.to_serializable(),
             'type': {
                 'slug': Place.PLACE_TYPE_SLUGS_LOWER[self.place_type],
-                'name': Place.PLACE_TYPE_PLURALS[self.place_type][1],
+                'name': unicode(Place.PLACE_TYPE_PLURALS[self.place_type][1]),
             },
             'probability': self.probability,
             'progress': self.progress,
