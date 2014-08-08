@@ -252,9 +252,11 @@
     };
   }])
 
-  .controller('AppUser', ['$scope', 'user', '$http', '$routeParams', '$cookies', '$modal',
-      function($scope, user, $http, $routeParams, $cookies, $modal) {
+  .controller('AppUser', ['$scope', 'user', '$http', '$routeParams', '$cookies', 
+      '$modal', '$location',
+      function($scope, user, $http, $routeParams, $cookies, $modal, $location) {
 
+    $scope.profileUrl = $location.absUrl();
     $scope.user = {username: $routeParams.user};
     user.getPromiseByName($routeParams.user).success(function(data){
       $scope.user = data;

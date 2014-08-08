@@ -249,5 +249,35 @@
         }
       }
     };
+  }])
+
+  .directive('myGooglePlus', ['$window', function ($window) {
+    return {
+      restrict: 'A',
+      link: function (scope, element) {
+        element.addClass('g-plus');
+        scope.$watch(function () { return !!$window.gapi; },
+          function (gapiIsReady) {
+            if (gapiIsReady) {
+              $window.gapi.plus.go(element.parent()[0]);
+            }
+          });
+      }
+    };
+  }])
+
+  .directive('myFbShare', ['$window', function ($window) {
+    return {
+      restrict: 'A',
+      link: function (scope, element) {
+        element.addClass('fb-share-button');
+        scope.$watch(function () { return !!$window.FB; },
+          function (fbIsReady) {
+            if (fbIsReady) {
+              $window.FB.XFBML.parse(element.parent()[0]);
+            }
+          });
+      }
+    };
   }]);
 }());
