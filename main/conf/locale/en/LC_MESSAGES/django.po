@@ -312,8 +312,7 @@ msgstr "About"
 msgid "Feedback text label"
 msgstr ""
 "Did you find a bug in the app? Do you have an improvement idea? Or any other "
-"cooment? We are eager to hear anything you'd like to tell us. Here you can "
-"convey it to us."
+"comment? We are eager to hear anything you'd like to tell us."
 
 #: templates/home.html:191
 msgid "Vaše emailová adresa (nepovinné)"
@@ -398,8 +397,8 @@ msgid "Adaptabilní procvičování - text"
 msgstr ""
 "The application examines your knowledge of maps adaptively - depending on "
 "your level of knowledge is chosen type of questions (how many options etc.) "
-"and repeat frequency. Thus is asks you about the countries which are most "
-"beneficial to practice."
+"and repeat frequency. Thus it asks you about the countries that you need "
+"to practice the most."
 
 #: templates/generated/homepage.html:72
 msgid "Vizualizace znalostí"
@@ -408,8 +407,8 @@ msgstr "Knowledge visualization"
 #: templates/generated/homepage.html:73
 msgid "Vizualizace znalostí - text"
 msgstr ""
-"Based on your answers the system estimates your knowledge and displays it is "
-"a form of map, which can help you to realize what you actually know."
+"Based on your answers the system estimates your knowledge and displays it in "
+"form of a map, which can help you realize what you actually know."
 
 #: templates/generated/homepage.html:77
 msgid "Specializovaný systém"
