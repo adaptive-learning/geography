@@ -133,7 +133,7 @@
               <li class="dropdown">
                 <a href="" role="button" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="flag-{{ LANGUAGE_CODE}}"></i> <b class="caret"></b>
-                  <input type="hidden" ng-model="language_code" ng-init="language_code='{{ LANGUAGE_CODE }}'"/>
+                  <input type="hidden" ng-init="LANGUAGE_CODE='{{ LANGUAGE_CODE }}'"/>
                 </a>
                 <ul class="dropdown-menu">
                     {% for lang in LANGUAGES %}
