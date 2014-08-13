@@ -63,7 +63,7 @@ class DatabaseEnvironment(Environment):
                     GROUP BY user_id
                     ''')
                 found = dict(cursor.fetchall())
-                return map(lambda i: found[i], user_ids)
+                return map(lambda i: found.get(i, 0), user_ids)
             elif args_type == DatabaseEnvironment.PLACE:
                 cursor.execute(
                     '''
@@ -75,7 +75,7 @@ class DatabaseEnvironment(Environment):
                     GROUP BY place_asked_id
                     ''')
                 found = dict(cursor.fetchall())
-                return map(lambda i: found[i], place_ids)
+                return map(lambda i: found.get(i, 0), place_ids)
             else:
                 cursor.execute(
                     '''
@@ -186,7 +186,7 @@ class DatabaseEnvironment(Environment):
                     GROUP BY user_id
                     ''')
                 found = dict(cursor.fetchall())
-                return map(lambda i: found[i], user_ids)
+                return map(lambda i: found.get(i, 0), user_ids)
             elif args_type == DatabaseEnvironment.PLACE:
                 cursor.execute(
                     '''
@@ -198,7 +198,7 @@ class DatabaseEnvironment(Environment):
                     GROUP BY place_asked_id
                     ''')
                 found = dict(cursor.fetchall())
-                return map(lambda i: found[i], place_ids)
+                return map(lambda i: found.get(i, 0), place_ids)
             else:
                 cursor.execute(
                     '''
@@ -240,7 +240,7 @@ class DatabaseEnvironment(Environment):
                     ''')
                 found = dict(cursor.fetchall())
                 print 'A', found
-                return map(lambda i: found[i], user_ids)
+                return map(lambda i: found.get(i, None), user_ids)
             elif args_type == DatabaseEnvironment.PLACE:
                 cursor.execute(
                     '''
@@ -253,7 +253,7 @@ class DatabaseEnvironment(Environment):
                     ''')
                 found = dict(cursor.fetchall())
                 print 'B', found
-                return map(lambda i: found[i], place_ids)
+                return map(lambda i: found.get(i, None), place_ids)
             else:
                 cursor.execute(
                     '''
