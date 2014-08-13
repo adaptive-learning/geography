@@ -67,10 +67,8 @@ class PlaceManager(models.Manager):
                 GROUP BY geography_place.id
                 ORDER BY geography_place.id
                 ''',
-                [
-                    int(map_place.place.id),
-                    int(PlaceRelation.IS_ON_MAP)
-                ])
+                [int(map_place.place.id), int(PlaceRelation.IS_ON_MAP)]
+            )
             return [p[0] for p in cursor.fetchall()]
 
     def get_places_to_ask(self, user, map_place, n, place_types, knowledge_env, ab_env):
