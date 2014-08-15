@@ -28,34 +28,12 @@
   }])
 
   .directive('blindMap', ['mapControler', 'places', 'singleWindowResizeFn', 
-        'getMapResizeFunction', '$parse', 'gettext',
+        'getMapResizeFunction', '$parse',
       function(mapControler, places, singleWindowResizeFn, 
-        getMapResizeFunction, $parse, gettext) {
+        getMapResizeFunction, $parse) {
     return {
       restrict : 'E',
-      template : '<div class="map-container">' +
-                  '<div id="map-holder">' +
-                      '<div class="loading-indicator" ng-show="loading"></div>' +
-                  '</div>' +
-                  '<h1 ng-bind="name" ng-show="!practice"></h1>' +
-                  '<div class="btn-group-vertical map-switch" data-toggle="buttons" ng-show="!practice" >' +
-                    '<a class="btn btn-default" href="#/view/{{part}}/"' +
-                        'ng-class="\'/view/\'+part+\'/\'|isActive"' +
-                        'tooltip-append-to-body="true"' +
-                        'tooltip-placement="right"' +
-                        'tooltip="' + gettext('Moje znalosti') + '">' +
-                      '<i class="glyphicon glyphicon-user"></i>' +
-                    '</a>' +
-                    '<a class="btn btn-default" href="#/view/{{part}}/average"' +
-                        'ng-class="\'/view/\'+part+\'/average\'|isActive"' +
-                        'tooltip-append-to-body="true"' +
-                        'tooltip-placement="right"' +
-                        'tooltip="' + gettext('Průměrný nový uživatel') + '">' +
-                      '<i class="glyphicon glyphicon-globe"></i> ' +
-                    '</a>' +
-                  '</div>' +
-                  '<div class="zoom-buttons"></div>'+
-                '</div>',
+      templateUrl : 'static/tpl/map_tpl.html',
       link : function($scope, elem, attrs) {
         $scope.loading = true;
         $scope.name = places.getName($scope.part);
@@ -77,18 +55,6 @@
       replace : true
     };
   }])
-
-  .directive('zoomButtons', function() {
-    return {
-      restrict : 'C',
-      template : '<div class="btn-group zoom-btn" ng-show="!loading">' +
-                    '<a class="btn btn-default" id="zoom-out">' +
-                      '<i class="glyphicon glyphicon-minus"></i></a>' +
-                    '<a class="btn btn-default" id="zoom-in">' +
-                      '<i class="glyphicon glyphicon-plus"></i></a>' +
-                  '</div>'
-    };
-  })
 
   .directive('email', function() {
     return {
@@ -184,14 +150,14 @@
                      gettext('Naučeno') + ' ' +
                      '<span class="badge badge-default">' +
                        '<i class="color-indicator learned"></i>' +
-                       $scope.skills.learned + ' / ' + $scope.count +
+                       ($scope.skills.learned || 0) + ' / ' + $scope.count +
                      '</span>' +
                    '</div>' +
                    '<div class="skill-tooltip">' +
                      gettext('Procvičováno') + ' ' +
                      '<span class="badge badge-default">' +
                        '<i class="color-indicator practiced"></i>' +
-                       $scope.skills.practiced + ' / ' + $scope.count +
+                       ($scope.skills.practiced || 0) + ' / ' + $scope.count +
                      '</span>' +
                    '</div>'
             });
