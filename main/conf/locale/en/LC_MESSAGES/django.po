@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-13 14:48+0200\n"
+"POT-Creation-Date: 2014-08-16 20:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -343,8 +343,8 @@ msgid "Vytrvořit"
 msgstr "Create"
 
 #: templates/generated/homepage.html:27
-msgid "Kterou mapu chcete procvičovat?"
-msgstr "Which map do you want to practice?"
+msgid "Vyberte si mapu k procvičování:"
+msgstr "Choose a map to practice:"
 
 #: templates/generated/homepage.html:30
 msgid "Státy světa"
@@ -371,12 +371,12 @@ msgid "Pohoří Evropy"
 msgstr "Europe mountains"
 
 #: templates/generated/homepage.html:48
-msgid "nebo některou z"
-msgstr "or any of"
+msgid "Chcete jinou? Podívejte se na"
+msgstr "Do you want another one? See"
 
 #: templates/generated/homepage.html:49
-msgid "dalších map"
-msgstr "the other maps"
+msgid "další mapy"
+msgstr "more maps"
 
 #: templates/generated/homepage.html:59
 msgid "Jak to funguje?"
@@ -443,6 +443,3 @@ msgstr ""
 "The application learns from data of all users. Question choice is based on "
 "this data, instead of being based on knowledge of an geography expert who "
 "\"knows\" whether it's generally more difficult to know Kenya or Nigeria."
-
-#~ msgid "nebo něco jiného"
-#~ msgstr "or something else"

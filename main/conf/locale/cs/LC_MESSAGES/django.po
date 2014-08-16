@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-13 14:48+0200\n"
+"POT-Creation-Date: 2014-08-16 20:13+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -341,9 +341,8 @@ msgid "Vytrvořit"
 msgstr ""
 
 #: templates/generated/homepage.html:27
-#, fuzzy
-msgid "Kterou mapu chcete procvičovat?"
-msgstr "Co chcete procvičovat?"
+msgid "Vyberte si mapu k procvičování:"
+msgstr ""
 
 #: templates/generated/homepage.html:30
 msgid "Státy světa"
@@ -370,11 +369,11 @@ msgid "Pohoří Evropy"
 msgstr "Pohoří Evropy"
 
 #: templates/generated/homepage.html:48
-msgid "nebo některou z"
+msgid "Chcete jinou? Podívejte se na"
 msgstr ""
 
 #: templates/generated/homepage.html:49
-msgid "dalších map"
+msgid "další mapy"
 msgstr ""
 
 #: templates/generated/homepage.html:59
@@ -444,5 +443,3 @@ msgstr ""
 "datech, nikoliv na znalostech experta na zeměpis, který \"ví\", jestli je "
 "těžší poznat Keňu nebo Nigérii."
 
-#~ msgid "nebo něco jiného"
-#~ msgstr "nebo něco jiného"

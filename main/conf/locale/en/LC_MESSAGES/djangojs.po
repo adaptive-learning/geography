@@ -109,8 +109,8 @@ msgstr "How does it work?"
 msgid "Slepé Mapy"
 msgstr "Outline maps"
 
-msgid "Kterou mapu chcete procvičovat?"
-msgstr "Which map do you want to practice?"
+msgid "Vyberte si mapu k procvičování:"
+msgstr "Choose a map to practice:"
 
 msgid "Státy světa"
 msgstr "World states"
@@ -130,11 +130,11 @@ msgstr "Czech cities"
 msgid "Pohoří Evropy"
 msgstr "Europe mountains"
 
-msgid "nebo některou z"
-msgstr "or any of"
+msgid "Chcete jinou? Podívejte se na"
+msgstr "Do you want another one? See"
 
-msgid "dalších map"
-msgstr "the other maps"
+msgid "další mapy"
+msgstr "more maps"
 
 msgid "Vybráno"
 msgstr "Selected"
