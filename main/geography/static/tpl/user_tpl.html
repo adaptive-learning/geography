@@ -12,7 +12,7 @@
       <dt>{{'Příjmení' | trans }}</dt>
       <dd>{{user.last_name}}</dd>
     </dl>
-    <dl>
+    <dl ng-show="editRights">
       <dt>{{'E-mail' | trans }}</dt>
       <dd>{{user.email}}</dd>
     </dl>

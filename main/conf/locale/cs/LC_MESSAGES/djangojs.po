@@ -223,8 +223,8 @@ msgstr "Osobní cíle"
 msgid "Vytvořit cíl"
 msgstr "Vytvořit cíl"
 
-msgid "Žádné cíle zatím nebyly nestanoveny"
-msgstr "Žádné cíle zatím nebyly nestanoveny"
+msgid "Žádné cíle zatím nebyly stanoveny"
+msgstr "Žádné cíle zatím nebyly stanoveny"
 
 msgid "Dnes již není třeba procvičovat"
 msgstr "Dnes již není třeba procvičovat"

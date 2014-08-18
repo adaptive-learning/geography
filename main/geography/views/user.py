@@ -28,7 +28,7 @@ def get_user(request, username=None):
     response = {
         'username': username,
         'points': points,
-        'email': user.email if username != '' else None,
+        'email': user.email if username != '' and username == request.user.username else None,
         'first_name': user.first_name if username != '' else None,
         'last_name': user.last_name if username != '' else None,
     }
