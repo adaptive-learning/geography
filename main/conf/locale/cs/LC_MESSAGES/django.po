@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-16 20:13+0200\n"
+"POT-Creation-Date: 2014-08-18 16:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -239,6 +239,15 @@ msgstr ""
 msgid "zvýrazněné"
 msgstr ""
 
+#: geography/views/base.py:40 templates/home.html:52
+#: templates/generated/homepage.html:19
+msgid "Slepé Mapy"
+msgstr "Slepé Mapy"
+
+#: geography/views/base.py:41
+msgid "inteligentní aplikace na procvičování zeměpisu"
+msgstr ""
+
 #: geography/views/feedback.py:31
 msgid "Feedback confirmed"
 msgstr ""
@@ -259,10 +268,6 @@ msgid "meta keywords"
 msgstr ""
 "slepá mapa, státy, města, čr, svět, evrovpa, amerika, afrika, asie, pohoří, "
 "řeky, zeměpis, usa, hry"
-
-#: templates/home.html:52 templates/generated/homepage.html:25
-msgid "Slepé Mapy"
-msgstr "Slepé Mapy"
 
 #: templates/home.html:79
 msgid "Přehled map"
@@ -298,7 +303,7 @@ msgstr ""
 msgid "Body - přibývají za každou správnou odpověď"
 msgstr ""
 
-#: templates/home.html:161 templates/home.html.py:170 templates/home.html:183
+#: templates/home.html:161 templates/home.html.py:170 templates/home.html:184
 msgid "Napište nám"
 msgstr ""
 
@@ -306,96 +311,96 @@ msgstr ""
 msgid "O projektu"
 msgstr ""
 
-#: templates/home.html:187
+#: templates/home.html:188
 msgid "Feedback text label"
 msgstr ""
 "Narazili jste na chybu v aplikaci? Máte nápad na vylepšení? Nebo jakýkoliv "
 "jiný postřeh či komentář? Zajímá nás všechno, co nám chcete sdělit."
 
-#: templates/home.html:191
+#: templates/home.html:192
 msgid "Vaše emailová adresa (nepovinné)"
 msgstr ""
 
-#: templates/home.html:202
+#: templates/home.html:203
 msgid "Odeslat"
 msgstr ""
 
-#: templates/home.html:205 templates/home.html.py:275
+#: templates/home.html:206 templates/home.html.py:276
 msgid "Zavřít"
 msgstr ""
 
-#: templates/home.html:213
+#: templates/home.html:214
 msgid "Vytvořit cíl"
 msgstr ""
 
-#: templates/home.html:217
+#: templates/home.html:218
 msgid "Mapa"
 msgstr ""
 
-#: templates/home.html:244
+#: templates/home.html:245
 msgid "Datum splnění cíle"
 msgstr ""
 
-#: templates/home.html:272
+#: templates/home.html:273
 msgid "Vytrvořit"
 msgstr ""
 
-#: templates/generated/homepage.html:27
+#: templates/generated/homepage.html:21
 msgid "Vyberte si mapu k procvičování:"
 msgstr ""
 
-#: templates/generated/homepage.html:30
+#: templates/generated/homepage.html:24
 msgid "Státy světa"
 msgstr "Státy světa"
 
-#: templates/generated/homepage.html:33
+#: templates/generated/homepage.html:27
 msgid "Státy Evropy"
 msgstr "Státy Evropy"
 
-#: templates/generated/homepage.html:36
+#: templates/generated/homepage.html:30
 msgid "Státy USA"
 msgstr "Státy USA"
 
-#: templates/generated/homepage.html:39
+#: templates/generated/homepage.html:33
 msgid "Kraje ČR"
 msgstr "Kraje ČR"
 
-#: templates/generated/homepage.html:42
+#: templates/generated/homepage.html:36
 msgid "Města ČR"
 msgstr "Města ČR"
 
-#: templates/generated/homepage.html:45
+#: templates/generated/homepage.html:39
 msgid "Pohoří Evropy"
 msgstr "Pohoří Evropy"
 
-#: templates/generated/homepage.html:48
+#: templates/generated/homepage.html:42
 msgid "Chcete jinou? Podívejte se na"
 msgstr ""
 
-#: templates/generated/homepage.html:49
+#: templates/generated/homepage.html:43
 msgid "další mapy"
 msgstr ""
 
-#: templates/generated/homepage.html:59
+#: templates/generated/homepage.html:53
 msgid "Jak to funguje?"
 msgstr ""
 
-#: templates/generated/homepage.html:63
+#: templates/generated/homepage.html:57
 msgid "Zeměpis hrou"
 msgstr ""
 
-#: templates/generated/homepage.html:64
+#: templates/generated/homepage.html:58
 msgid "Zeměpis hrou - text"
 msgstr ""
 "Procvičte si své znalosti zeměpisu hravou formou. V aktuální verzi zatím "
 "soutěžíte jen sami se sebou, respektive proti systému. Dokážete obarvit na "
 "zeleno celou mapu Evropy? Celou ČR? A co celý svět?"
 
-#: templates/generated/homepage.html:68
+#: templates/generated/homepage.html:62
 msgid "Adaptabilní procvičování"
 msgstr ""
 
-#: templates/generated/homepage.html:69
+#: templates/generated/homepage.html:63
 msgid "Adaptabilní procvičování - text"
 msgstr ""
 "Každá slepá mapa nabízí adaptabilní procvičování  - podle toho, jaké máte "
@@ -403,43 +408,42 @@ msgstr ""
 "frekvenci opakování. Aplikace vám tak předkládá státy, jejichž procvičení je "
 "pro vás nejužitečnější."
 
-#: templates/generated/homepage.html:71
+#: templates/generated/homepage.html:65
 msgid "Ukázka procvičování"
 msgstr ""
 
-#: templates/generated/homepage.html:75
+#: templates/generated/homepage.html:69
 msgid "Specializovaný systém"
 msgstr ""
 
-#: templates/generated/homepage.html:76
+#: templates/generated/homepage.html:70
 msgid "Specializovaný systém - text"
 msgstr ""
 "Procvičování slepých map nabízí i řada jiných výukových systémů, ty však "
 "většinou pokrývají mnoho dílčích oblastí. Náš systém se soustředí pouze na "
 "slepé mapy, díky čemuž je pro učení v této oblasti optimalizovaný."
 
-#: templates/generated/homepage.html:80
+#: templates/generated/homepage.html:74
 msgid "Vizualizace znalostí"
 msgstr ""
 
-#: templates/generated/homepage.html:81
+#: templates/generated/homepage.html:75
 msgid "Vizualizace znalostí - text"
 msgstr ""
 "Na základě odpovědí systém odhadne jak dobře znáte různé státy a znázorní "
 "vám mapu vašich znalostí, což vám pomůže ujasnit si, co vlastně umíte."
 
-#: templates/generated/homepage.html:83
+#: templates/generated/homepage.html:77
 msgid "Ukázka mapy znalostí"
 msgstr ""
 
-#: templates/generated/homepage.html:87
+#: templates/generated/homepage.html:81
 msgid "Učení z dat"
 msgstr ""
 
-#: templates/generated/homepage.html:88
+#: templates/generated/homepage.html:82
 msgid "Učení z dat - text"
 msgstr ""
 "Aplikace se učí z dat od všech uživatelů. Výběr otázek je založen na těchto "
 "datech, nikoliv na znalostech experta na zeměpis, který \"ví\", jestli je "
 "těžší poznat Keňu nebo Nigérii."
-

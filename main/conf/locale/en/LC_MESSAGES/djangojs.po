@@ -173,10 +173,9 @@ msgstr "Adaptive practice"
 
 msgid "Adaptabilní procvičování - text"
 msgstr ""
-"The application examines your knowledge of maps adaptively - depending on "
-"your level of knowledge is chosen type of questions (how many options "
-"etc.) and repeat frequency. Thus is asks you about the countries which "
-"are most beneficial to practice."
+"The application examines your knowledge of maps adaptively - type of questions "
+"(how many options etc.) and repeat frequency is chosen based on your previous"
+"answers. Thus it asks you about the countries that you need to practice the most."
 
 msgid "Vizualizace znalostí"
 msgstr "Knowledge visualization"

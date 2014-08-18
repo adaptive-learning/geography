@@ -9,6 +9,7 @@ from geography.models import Place
 import json
 import os
 from django.core.servers.basehttp import FileWrapper
+from django.utils.translation import ugettext as _
 
 
 def home(request):
@@ -36,7 +37,8 @@ def home(request):
                   if "/lib/" not in key and "/js/" not in key and "/sass/" not in key
                   )
     c = {
-        'title': title + 'Slepé Mapy - inteligentní aplikace na procvičování zeměpisu',
+        'title': title + _(u'Slepé Mapy') + ' - ' +
+        _(u'inteligentní aplikace na procvičování zeměpisu'),
         'isProduction': settings.ON_PRODUCTION,
         'css_files': StaticFiles.add_hash(CSS_FILES),
         'js_files': StaticFiles.add_hash(JS_FILES),

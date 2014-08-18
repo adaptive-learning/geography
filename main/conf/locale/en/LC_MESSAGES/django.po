@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-16 20:13+0200\n"
+"POT-Creation-Date: 2014-08-18 16:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -239,6 +239,15 @@ msgstr "highlighted"
 msgid "zvýrazněné"
 msgstr "highlighted"
 
+#: geography/views/base.py:40 templates/home.html:52
+#: templates/generated/homepage.html:19
+msgid "Slepé Mapy"
+msgstr "Outline maps"
+
+#: geography/views/base.py:41
+msgid "inteligentní aplikace na procvičování zeměpisu"
+msgstr "intelligent geography practice app"
+
 #: geography/views/feedback.py:31
 msgid "Feedback confirmed"
 msgstr "Thank you for the message. User feedback is very important for us."
@@ -259,10 +268,6 @@ msgid "meta keywords"
 msgstr ""
 "geography games, outline maps, map outlines, countries, states, cities, "
 "world, europe, america, africa, asia, mountains, rivers, usa"
-
-#: templates/home.html:52 templates/generated/homepage.html:25
-msgid "Slepé Mapy"
-msgstr "Outline maps"
 
 #: templates/home.html:79
 msgid "Přehled map"
@@ -300,7 +305,7 @@ msgstr "Sign out"
 msgid "Body - přibývají za každou správnou odpověď"
 msgstr "Points - gained per each correct answer"
 
-#: templates/home.html:161 templates/home.html.py:170 templates/home.html:183
+#: templates/home.html:161 templates/home.html.py:170 templates/home.html:184
 msgid "Napište nám"
 msgstr "Feedback"
 
@@ -308,136 +313,135 @@ msgstr "Feedback"
 msgid "O projektu"
 msgstr "About"
 
-#: templates/home.html:187
+#: templates/home.html:188
 msgid "Feedback text label"
 msgstr ""
 "Did you find a bug in the app? Do you have an improvement idea? Or any other "
 "comment? We are eager to hear anything you'd like to tell us."
 
-#: templates/home.html:191
+#: templates/home.html:192
 msgid "Vaše emailová adresa (nepovinné)"
 msgstr "Your email address (optional)"
 
-#: templates/home.html:202
+#: templates/home.html:203
 msgid "Odeslat"
 msgstr "Send"
 
-#: templates/home.html:205 templates/home.html.py:275
+#: templates/home.html:206 templates/home.html.py:276
 msgid "Zavřít"
 msgstr "Close"
 
-#: templates/home.html:213
+#: templates/home.html:214
 msgid "Vytvořit cíl"
 msgstr "Create goal"
 
-#: templates/home.html:217
+#: templates/home.html:218
 msgid "Mapa"
 msgstr "Map"
 
-#: templates/home.html:244
+#: templates/home.html:245
 msgid "Datum splnění cíle"
 msgstr "Goal completion date"
 
-#: templates/home.html:272
+#: templates/home.html:273
 msgid "Vytrvořit"
 msgstr "Create"
 
-#: templates/generated/homepage.html:27
+#: templates/generated/homepage.html:21
 msgid "Vyberte si mapu k procvičování:"
 msgstr "Choose a map to practice:"
 
-#: templates/generated/homepage.html:30
+#: templates/generated/homepage.html:24
 msgid "Státy světa"
 msgstr "World states"
 
-#: templates/generated/homepage.html:33
+#: templates/generated/homepage.html:27
 msgid "Státy Evropy"
 msgstr "Europe states"
 
-#: templates/generated/homepage.html:36
+#: templates/generated/homepage.html:30
 msgid "Státy USA"
 msgstr "US states"
 
-#: templates/generated/homepage.html:39
+#: templates/generated/homepage.html:33
 msgid "Kraje ČR"
 msgstr "Czech regions"
 
-#: templates/generated/homepage.html:42
+#: templates/generated/homepage.html:36
 msgid "Města ČR"
 msgstr "Czech cities"
 
-#: templates/generated/homepage.html:45
+#: templates/generated/homepage.html:39
 msgid "Pohoří Evropy"
 msgstr "Europe mountains"
 
-#: templates/generated/homepage.html:48
+#: templates/generated/homepage.html:42
 msgid "Chcete jinou? Podívejte se na"
 msgstr "Do you want another one? See"
 
-#: templates/generated/homepage.html:49
+#: templates/generated/homepage.html:43
 msgid "další mapy"
 msgstr "more maps"
 
-#: templates/generated/homepage.html:59
+#: templates/generated/homepage.html:53
 msgid "Jak to funguje?"
 msgstr "How does it work?"
 
-#: templates/generated/homepage.html:63
+#: templates/generated/homepage.html:57
 msgid "Zeměpis hrou"
 msgstr "Geography game"
 
-#: templates/generated/homepage.html:64
+#: templates/generated/homepage.html:58
 msgid "Zeměpis hrou - text"
 msgstr ""
 "Practice your geography knowledge in a playful way. Can you colour green the "
 "map of Europe? Or map of the US? And what about the whole world?"
 
-#: templates/generated/homepage.html:68
+#: templates/generated/homepage.html:62
 msgid "Adaptabilní procvičování"
 msgstr "Adaptive practice"
 
-#: templates/generated/homepage.html:69
+#: templates/generated/homepage.html:63
 msgid "Adaptabilní procvičování - text"
 msgstr ""
-"The application examines your knowledge of maps adaptively - depending on "
-"your level of knowledge is chosen type of questions (how many options etc.) "
-"and repeat frequency. Thus it asks you about the countries that you need to "
-"practice the most."
+"The application examines your knowledge of maps adaptively - type of questions "
+"(how many options etc.) and repeat frequency is chosen based on what you knew. "
+"Thus it asks you about the countries that you need to practice the most."
 
-#: templates/generated/homepage.html:71
+#: templates/generated/homepage.html:65
 msgid "Ukázka procvičování"
 msgstr "Practice example"
 
-#: templates/generated/homepage.html:75
+#: templates/generated/homepage.html:69
 msgid "Specializovaný systém"
 msgstr "Specialized system"
 
-#: templates/generated/homepage.html:76
+#: templates/generated/homepage.html:70
 msgid "Specializovaný systém - text"
 msgstr ""
 "There are many other learning systems that provide outline maps practice, "
 "but they usually cover also many other areas. Our system focuses exclusively "
 "on outline maps, which allows it to be optimized for this area."
 
-#: templates/generated/homepage.html:80
+#: templates/generated/homepage.html:74
 msgid "Vizualizace znalostí"
 msgstr "Knowledge visualization"
 
-#: templates/generated/homepage.html:81
+#: templates/generated/homepage.html:75
 msgid "Vizualizace znalostí - text"
 msgstr ""
 "Based on your answers the system estimates your knowledge and displays it in "
 "form of a map, which can help you realize what you actually know."
 
-#: templates/generated/homepage.html:83
+#: templates/generated/homepage.html:77
 msgid "Ukázka mapy znalostí"
 msgstr "Knowledge visualization example"
 
-#: templates/generated/homepage.html:87
+#: templates/generated/homepage.html:81
 msgid "Učení z dat"
 msgstr "Data mining"
 
-#: templates/generated/homepage.html:88
+#: templates/generated/homepage.html:82
 msgid "Učení z dat - text"
 msgstr ""
 "The application learns from data of all users. Question choice is based on "
