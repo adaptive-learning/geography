@@ -21,7 +21,7 @@
 
   .value('colors', {
     'GOOD': '#0d0',
-    'BAD': '#ff0000',
+    'BAD': '#e23',
     'NEUTRAL': '#bbb',
     'BRIGHT_GRAY' : '#ddd',
     'WATER_COLOR' : '#73c5ef'
@@ -39,9 +39,9 @@
   .factory('colorScale', ['colors', 'chroma', function(colors, chroma) {
     var scale = chroma.scale([
         colors.BAD,
-        '#ff4500',
-        '#ffa500',
-        '#ffff00',
+        '#f40',
+        '#fa0',
+        '#fe3',
         colors.GOOD
       ]);
     return scale;

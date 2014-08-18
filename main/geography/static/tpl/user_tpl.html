@@ -75,7 +75,7 @@
             tooltip="{{'Postup plnění cíle' | trans }}">
           <span style="width: {{goal.progress|percent}}"
             tooltip="{{'Splněno' | trans }}"
-            class="progress-bar progress-bar-success"></span>
+            class="progress-bar progress-bar-learned"></span>
           <span style="width: {{goal.progress_diff|percent}}"
             ng-show="goal.needs_practice && !goal.behind_schedule"
             tooltip="{{'Dnešní nesplněné procvičování' | trans }}"
@@ -83,7 +83,7 @@
           <span style="width: {{goal.progress_diff|percent}}"
             ng-show="goal.behind_schedule"
             tooltip="{{'Více než den nesplněného procvičování' | trans }}"
-            class="progress-bar progress-bar-danger"></span>
+            class="progress-bar progress-bar-unlearned"></span>
         </div>
       </div>
     </div>
