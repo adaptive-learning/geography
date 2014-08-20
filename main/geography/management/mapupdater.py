@@ -19,8 +19,8 @@ class MapUpdater():
             ('europe', 'Evropa'),
             ('asia', 'Asie'),
             ('oceania', 'Austrálie a Oceánie'),
-            ('samerica', 'Severní Amerika'),
-            ('namerica', 'Jižní Amerika'),
+            ('samerica', 'Jižní Amerika'),
+            ('namerica', 'Severní Amerika'),
             ('africa', 'Afrika'),
         )
         for c in continents:
