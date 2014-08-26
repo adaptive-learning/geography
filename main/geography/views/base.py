@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
-from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 from geography.utils import JsonResponse, StaticFiles
 from geography.views import get_user
@@ -10,8 +9,10 @@ import json
 import os
 from django.core.servers.basehttp import FileWrapper
 from django.utils.translation import ugettext as _
+from geography.decorators import cache_per_user
 
 
+@cache_per_user(12 * 60 * 60)
 def home(request):
     JS_FILES = (
         "/static/dist/js/fallbacks.min.js",
@@ -49,8 +50,6 @@ def home(request):
         'LANGUAGE_CODE': request.LANGUAGE_CODE,
         'LANGUAGES': settings.LANGUAGES,
     }
-    print settings.PROJECT_DIR
-    c.update(csrf(request))
     return render_to_response('home.html', c)
 
 
