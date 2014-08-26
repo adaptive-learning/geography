@@ -4,6 +4,12 @@
     <center>
     <span class="level-progress-bar" username="{{user.username}}"></span>
     </center>
+    <dl class="points" ng-show="user.points">
+      <dt>{{'Body' | trans }}</dt>
+      <dd class="badge" ng-bind="user.points"
+        tooltip="{{'přibývají za každou správnou odpověď' | trans }}" 
+        tooltip-placement="bottom" ></dd>
+    </dl>
     <dl>
       <dt>{{'Jméno' | trans }}</dt>
       <dd>{{user.first_name}}</dd>
