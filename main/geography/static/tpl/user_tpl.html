@@ -1,9 +1,7 @@
 <div class="overview">
   <div class="col-sm-offset-2 col-sm-8">
     <h1>{{user.username}}</h1>
-    <center>
-    <span class="level-progress-bar" username="{{user.username}}"></span>
-    </center>
+    <div class="level-progress-bar" username="{{user.username}}"></div>
     <dl class="points" ng-show="user.points">
       <dt>{{'Body' | trans }}</dt>
       <dd class="badge" ng-bind="user.points"

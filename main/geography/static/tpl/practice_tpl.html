@@ -52,18 +52,23 @@
     </span>
   </div>
   <div ng-show="showSummary" class="summary col-lg-12">
-    <div>
-      <div class="progress" ng-show="summary != undefined">
-        <div class="progress-bar progress-bar-learned" 
-             style="width: {{summary.correctlyAnsweredRatio | percent }};">
-          {{'Úspěšnost' | trans}}: {{summary.correctlyAnsweredRatio | percent }}
-        </div>
-        <div class="progress-bar progress-bar-unlearned" 
-             style="width: {{(1 - summary.correctlyAnsweredRatio) | percent }};">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="summary-progress progress" ng-show="summary != undefined">
+          <div class="progress-bar progress-bar-learned" 
+               style="width: {{summary.correctlyAnsweredRatio | percent }};">
+            {{'Úspěšnost' | trans}}: {{summary.correctlyAnsweredRatio | percent }}
+          </div>
+          <div class="progress-bar progress-bar-unlearned" 
+               style="width: {{(1 - summary.correctlyAnsweredRatio) | percent }};">
+          </div>
         </div>
       </div>
-      <h2 ng-show="errorMessage != undefined" ng-bind="errorMessage"></h2>
-      <div>
+      <div class="col-sm-6">
+        <div class="level-progress-bar"></div>
+      </div>
+      <h2 class="clearfix" ng-show="errorMessage != undefined" ng-bind="errorMessage"></h2>
+      <div class="col-sm-12">
         <span ng-repeat="q in summary.questions" 
               ng-click="map.highlightState(q.asked_code)"
               class="label {{q.asked_code != q.answered_code &&

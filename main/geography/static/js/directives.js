@@ -206,6 +206,7 @@
                        'ng-bind="level.level+1" tooltip="' + gettext('Příští úroveň') + '">' +
                  '</span>',
       link : function($scope, elem, attrs) {
+        elem.addClass('level-wrapper');
         if (attrs.username) {
           user.getPromiseByName(attrs.username).success(function(data){
             $scope.level = getLevelInfo(data.points);
