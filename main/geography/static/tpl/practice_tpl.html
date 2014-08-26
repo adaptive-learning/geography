@@ -54,11 +54,11 @@
   <div ng-show="showSummary" class="summary col-lg-12">
     <div>
       <div class="progress" ng-show="summary != undefined">
-        <div class="progress-bar progress-bar-success" 
+        <div class="progress-bar progress-bar-learned" 
              style="width: {{summary.correctlyAnsweredRatio | percent }};">
           {{'Úspěšnost' | trans}}: {{summary.correctlyAnsweredRatio | percent }}
         </div>
-        <div class="progress-bar progress-bar-danger" 
+        <div class="progress-bar progress-bar-unlearned" 
              style="width: {{(1 - summary.correctlyAnsweredRatio) | percent }};">
         </div>
       </div>
@@ -66,7 +66,8 @@
       <div>
         <span ng-repeat="q in summary.questions" 
               ng-click="map.highlightState(q.asked_code)"
-              class="label {{q.asked_code != q.answered_code && 'label-danger' || 'label-success' }} ">
+              class="label {{q.asked_code != q.answered_code &&
+                'label-unlearned' || 'label-learned' }} ">
           <i class="flag-{{q.asked_code}}"></i> {{q.place}}
         </span>
       </div>
