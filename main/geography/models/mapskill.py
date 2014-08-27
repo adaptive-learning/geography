@@ -18,7 +18,7 @@ class MapSkillManager(models.Manager):
         geography_place.name AS name,
         geography_place.code AS code,
         AVG( LEAST(
-            1/(1+EXP(-geography_currentskill_prepared.currentskill)),
+            1/(1+EXP(-geography_currentskill_prepared.value)),
             %s)
         ) AS goal_probability,
         COUNT(geography_currentskill_prepared.value) AS count,
