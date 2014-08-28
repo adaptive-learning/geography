@@ -218,13 +218,22 @@
   .factory('user', ['$http', '$cookies', 'events', 
       function($http, $cookies, events) {
     var user;
-    return {
+    var that = {
       initUser : function(username, points, email) {
         user = {
           'username' : username,
           'points' : points,
           'email' : email,
+          'getLevelInfo' : function() {
+            return that.getLevelInfo(user.points);
+          },
         };
+        $http.get('/user/').success(function(data) {
+          user.points = data.points;
+          user.email = data.email;
+          user.first_name = data.first_name;
+          user.last_name = data.last_name;
+        });
         return user;
       },
       getUser : function() {
@@ -242,9 +251,36 @@
         events.emit('userUpdated', user);
       },
       getPromiseByName : function(name) {
-        return $http.get('/user/' + name + '/');
+        if (name == user.username) {
+          return {
+            success : function(fn) {fn(user);},
+          };
+        } else {
+          return $http.get('/user/' + name + '/');
+        }
+      },
+      getLevelInfo : function(points) {
+        var levelEnd = 0;
+        var levelRange = 30;
+        var rangeIncrease = 0;
+        for (var i = 1; true; i++) {
+          levelEnd += levelRange;
+          if (points < levelEnd) {
+            return {
+              level : i,
+              form : levelEnd - levelRange,
+              to : levelEnd,
+              range : levelRange,
+              points : points - (levelEnd - levelRange),
+            };
+          }
+          levelRange += rangeIncrease;
+          rangeIncrease += 10;
+        }
+        
       }
     };
+    return that;
   }])
 
   .factory('events', function() {

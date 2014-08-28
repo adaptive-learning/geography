@@ -169,27 +169,6 @@
 
   .directive('levelProgressBar',['user', '$timeout', 'gettext',
       function(user, $timeout, gettext) {
-    
-    function getLevelInfo(points) {
-      var levelEnd = 0;
-      var levelRange = 30;
-      var rangeIncrease = 0;
-      for (var i = 1; true; i++) {
-        levelEnd += levelRange;
-        if (points < levelEnd) {
-          return {
-            level : i,
-            form : levelEnd - levelRange,
-            to : levelEnd,
-            range : levelRange,
-            points : points - (levelEnd - levelRange),
-          };
-        }
-        levelRange += rangeIncrease;
-        rangeIncrease += 10;
-      }
-      
-    }
     return {
       restrict : 'C',
       template : '<span class="badge level-start" ' +
@@ -209,10 +188,10 @@
         elem.addClass('level-wrapper');
         if (attrs.username) {
           user.getPromiseByName(attrs.username).success(function(data){
-            $scope.level = getLevelInfo(data.points);
+            $scope.level = user.getLevelInfo(data);
           });
         } else {
-          $scope.level = getLevelInfo(user.getUser().points);
+          $scope.level = user.getUser().getLevelInfo();
         }
       }
     };
