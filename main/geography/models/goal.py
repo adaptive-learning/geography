@@ -69,7 +69,7 @@ class Goal(models.Model):
         numerator = self.probability - self.start_probability
         denominator = self.GOAL_PROBABILITY - self.start_probability
         ratio = numerator / denominator
-        return min(1, ratio)
+        return max(0, min(ratio, 1))
 
     class Meta:
         app_label = 'geography'
