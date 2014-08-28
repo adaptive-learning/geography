@@ -4,3 +4,4 @@ from base import *
 from place import *
 from feedback import *
 from goal import *
+from confused import *

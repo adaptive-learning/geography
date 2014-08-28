@@ -42,6 +42,9 @@
     }).when('/u/:user', {
       controller : 'AppUser',
       templateUrl : 'static/tpl/user_tpl.html'
+    }).when('/confused/', {
+      controller : 'AppConfused',
+      templateUrl : 'static/tpl/confused_tpl.html'
     }).otherwise({
       //redirectTo : '/'
     });

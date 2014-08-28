@@ -436,5 +436,15 @@
       };
       return avg;
     }
+  }])
+
+  .controller('AppConfused', ['$scope', '$http', function($scope, $http){
+    $http.get('/confused/').success(function(data){
+      angular.forEach(data, function(p){
+        p.wrongRatio = p.mistake_count / p.asked_count;
+      });
+      $scope.confused = data;
+      $scope.loaded = true;
+    });
   }]);
 }());
