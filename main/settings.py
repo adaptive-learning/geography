@@ -23,6 +23,8 @@ ADMINS = (
 )
 MANAGERS = ADMINS
 
+SEND_BROKEN_LINK_EMAILS = True
+
 if ON_PRODUCTION or ON_STAGING:
     DATABASES = {
         'default': {
