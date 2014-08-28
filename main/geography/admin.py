@@ -113,7 +113,7 @@ class DifficultyAdmin(admin.ModelAdmin):
 
 
 class GoalAdmin(admin.ModelAdmin):
-    list_display = ('user', 'start_date', 'finish_date')
+    list_display = ('user', 'map', 'place_type', 'start_date', 'finish_date')
 
 ################################################################################
 # registers
