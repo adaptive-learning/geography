@@ -20,7 +20,7 @@ def get_user(request, username=None):
         try:
             user = User.objects.get(username=username)
         except User.DoesNotExist:
-            raise Http404("Invalid username: {0}" % username)
+            raise Http404(u"Invalid username: {0}".format(username))
     if user and geography.models.user.is_lazy(user) and geography.models.user.is_named(user):
         geography.models.user.convert_lazy_user(request.user)
     username = user.username if user and not geography.models.user.is_lazy(user) else ''

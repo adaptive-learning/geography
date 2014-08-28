@@ -32,11 +32,11 @@ urlpatterns = patterns(
 
     url(r'^user/list/', 'geography.views.user_list_view', name='user_list_view'),
     url(r'^user/logout/', 'geography.views.logout_view', name='logout_view'),
-    url(r'^user/(?P<username>\w*)', 'geography.views.user_view', name='user_view'),
+    url(r'^user/(?P<username>[\w\.]*)', 'geography.views.user_view', name='user_view'),
 
     url(r'^feedback/', 'geography.views.feedback', name='feedback'),
     url(r'^goal/delete/(?P<id>[0-9]+)', 'geography.views.goals_delete', name='goals_delete'),
-    url(r'^goal/(?P<username>\w*)', 'geography.views.goals_view', name='goals_view'),
+    url(r'^goal/(?P<username>[\w\.]*)', 'geography.views.goals_view', name='goals_view'),
 
     url(r'^favicon\.ico$', RedirectView.as_view(url='static/img/favicon.png')),
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
