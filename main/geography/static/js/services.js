@@ -225,7 +225,7 @@
           'points' : points,
           'email' : email,
           'getLevelInfo' : function() {
-            return that.getLevelInfo(user.points);
+            return that.getLevelInfo(user);
           },
         };
         $http.get('/user/').success(function(data) {
@@ -259,19 +259,19 @@
           return $http.get('/user/' + name + '/');
         }
       },
-      getLevelInfo : function(points) {
+      getLevelInfo : function(user) {
         var levelEnd = 0;
         var levelRange = 30;
         var rangeIncrease = 0;
         for (var i = 1; true; i++) {
           levelEnd += levelRange;
-          if (points < levelEnd) {
+          if (user.points < levelEnd) {
             return {
               level : i,
               form : levelEnd - levelRange,
               to : levelEnd,
               range : levelRange,
-              points : points - (levelEnd - levelRange),
+              points : user.points - (levelEnd - levelRange),
             };
           }
           levelRange += rangeIncrease;
