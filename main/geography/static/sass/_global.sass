@@ -1,6 +1,8 @@
 $learned: #0c0
 $practiced: #fe3
 $unlearned: #e23
+$sideWidth: 900px
+
 
 body
   overflow-y: scroll
@@ -150,13 +152,32 @@ dt, dd
 
 
 .confused
+  position: relative
   padding: 5px
-  .progress
-    margin: 0
   .label
     margin: 0
+    line-height: inherit
+  .progress
+    margin: 0
+    height: 30px
+  .progress-bar
+    line-height: 30px
+  .btn-primary
+    margin-left: 20px
+
 .confused:nth-child(even)
   background: rgba(0,0,0,0.1)
+.confused:nth-child(even):before, .confused:nth-child(even):after
+  width: $sideWidth
+  background: rgba(0,0,0,0.1)
+  height: 40px
+  display: inline-block
+  position: absolute
+  top: 0px
+.confused:nth-child(even):before
+  left: -$sideWidth
+.confused:nth-child(even):after
+  right: -$sideWidth
   
 
 .start-date 
@@ -216,3 +237,4 @@ dt, dd
   line-height: 150%
   border-radius: 50%
   width: 32px
+
