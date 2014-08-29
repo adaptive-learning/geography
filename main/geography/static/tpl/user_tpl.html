@@ -50,47 +50,49 @@
     <div class="alert alert-info" ng-show="goals.length === 0">
       {{'Žádné cíle zatím nebyly stanoveny' | trans }}
     </div>
-    <div ng-repeat="goal in goals" class="goal striped-row">
-        <span class="btn-group pull-right" ng-show="editRights">
-          <a href="#/practice/{{goal.map.code}}/{{goal.type.slug}}" 
-             tooltip="{{'Dnes již není třeba procvičovat' | trans}}"
-             tooltip-trigger="{{ goal.needs_practice ? 'none' : 'mouseenter'}}" 
-             tooltip-append-to-body="true"
-             class="btn btn-primary">
-             <i class="glyphicon glyphicon-check"></i> 
-             {{'Procvičovat'| trans}}</a>
-          <a ng-click="deleteGoal(goal)"
-             ng-disabled="!goal.can_be_deleted"
-             tooltip="{{'Odstranit cíl - lze jen v den jeho vytvoření' | trans}}"
-             tooltip-append-to-body="true"
-             class="btn btn-default">
-             <i ng-hide="goal.deleting" class="glyphicon glyphicon-trash"></i> 
-             <i ng-show="goal.deleting" class="icon-loading"></i> 
-          </a>
-         </span>
-      <h3>{{goal.map.name}} - {{goal.type.name}}
-      </h3>
-      <div class="clearfix"></div>
-      <div>
-        <span class="pull-left start-date"> {{goal.start_date | date}} </span>
-        <span class="pull-right finish-date"> {{goal.finish_date | date}} </span>
-        <div class="progress"
-            tooltip-placement="bottom"
-            tooltip="{{'Postup plnění cíle' | trans }}">
-          <span style="width: {{goal.progress|percent}}"
-            tooltip="{{'Splněno' | trans }}"
-            class="progress-bar progress-bar-learned"></span>
-          <span style="width: {{goal.progress_diff|percent}}"
-            ng-show="goal.needs_practice && !goal.behind_schedule"
-            tooltip="{{'Dnešní nesplněné procvičování' | trans }}"
-            class="progress-bar progress-bar-warning"></span>
-          <span style="width: {{goal.progress_diff|percent}}"
-            ng-show="goal.behind_schedule"
-            tooltip="{{'Více než den nesplněného procvičování' | trans }}"
-            class="progress-bar progress-bar-unlearned"></span>
+    <ul>
+      <li ng-repeat="goal in goals" class="goal striped-row">
+          <span class="btn-group pull-right" ng-show="editRights">
+            <a href="#/practice/{{goal.map.code}}/{{goal.type.slug}}" 
+               tooltip="{{'Dnes již není třeba procvičovat' | trans}}"
+               tooltip-trigger="{{ goal.needs_practice ? 'none' : 'mouseenter'}}" 
+               tooltip-append-to-body="true"
+               class="btn btn-primary">
+               <i class="glyphicon glyphicon-check"></i> 
+               {{'Procvičovat'| trans}}</a>
+            <a ng-click="deleteGoal(goal)"
+               ng-disabled="!goal.can_be_deleted"
+               tooltip="{{'Odstranit cíl - lze jen v den jeho vytvoření' | trans}}"
+               tooltip-append-to-body="true"
+               class="btn btn-default">
+               <i ng-hide="goal.deleting" class="glyphicon glyphicon-trash"></i> 
+               <i ng-show="goal.deleting" class="icon-loading"></i> 
+            </a>
+           </span>
+        <h3>{{goal.map.name}} - {{goal.type.name}}
+        </h3>
+        <div class="clearfix"></div>
+        <div>
+          <span class="pull-left start-date"> {{goal.start_date | date}} </span>
+          <span class="pull-right finish-date"> {{goal.finish_date | date}} </span>
+          <div class="progress"
+              tooltip-placement="bottom"
+              tooltip="{{'Postup plnění cíle' | trans }}">
+            <span style="width: {{goal.progress|percent}}"
+              tooltip="{{'Splněno' | trans }}"
+              class="progress-bar progress-bar-learned"></span>
+            <span style="width: {{goal.progress_diff|percent}}"
+              ng-show="goal.needs_practice && !goal.behind_schedule"
+              tooltip="{{'Dnešní nesplněné procvičování' | trans }}"
+              class="progress-bar progress-bar-warning"></span>
+            <span style="width: {{goal.progress_diff|percent}}"
+              ng-show="goal.behind_schedule"
+              tooltip="{{'Více než den nesplněného procvičování' | trans }}"
+              class="progress-bar progress-bar-unlearned"></span>
+          </div>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
   <div class="clearfix"></div>
 </div>

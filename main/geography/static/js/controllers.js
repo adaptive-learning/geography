@@ -438,13 +438,17 @@
     }
   }])
 
-  .controller('AppConfused', ['$scope', '$http', function($scope, $http){
+  .controller('AppConfused', ['$scope', '$http', 'gettext',
+      function($scope, $http, gettext){
     $http.get('/confused/').success(function(data){
       angular.forEach(data, function(p){
         p.wrongRatio = p.mistake_count / p.asked_count;
       });
       $scope.confused = data;
       $scope.loaded = true;
+    }).error(function(){
+      $scope.loaded = true;
+      $scope.error = gettext("V aplikaci bohužel nastala chyba.");
     });
   }]);
 }());

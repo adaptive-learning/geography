@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-18 16:12+0200\n"
+"POT-Creation-Date: 2014-08-29 19:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: settings.py:70
+#: settings.py:72
 msgid "Czech"
 msgstr "Česky"
 
-#: settings.py:71
+#: settings.py:73
 msgid "English"
 msgstr "Anglicky"
 
@@ -239,12 +239,12 @@ msgstr ""
 msgid "zvýrazněné"
 msgstr ""
 
-#: geography/views/base.py:40 templates/home.html:52
+#: geography/views/base.py:42 templates/home.html:52
 #: templates/generated/homepage.html:19
 msgid "Slepé Mapy"
 msgstr "Slepé Mapy"
 
-#: geography/views/base.py:41
+#: geography/views/base.py:43
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr ""
 
@@ -296,11 +296,11 @@ msgid "Můj profil"
 msgstr ""
 
 #: templates/home.html:122
-msgid "Odhlásit se"
+msgid "Moje chyby"
 msgstr ""
 
 #: templates/home.html:128
-msgid "Body - přibývají za každou správnou odpověď"
+msgid "Odhlásit se"
 msgstr ""
 
 #: templates/home.html:161 templates/home.html.py:170 templates/home.html:184

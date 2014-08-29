@@ -247,3 +247,14 @@ msgstr "Dnešní nesplněné procvičování"
 msgid "Více než den nesplněného procvičování"
 msgstr "Více než den nesplněného procvičování"
 
+msgid "Moje časté chyby"
+msgstr "Moje časté chyby"
+
+msgid "Žádné časté chyby nebyly nalezeny"
+msgstr "Žádné časté chyby nebyly nalezeny"
+
+msgid "Správné odpovědi"
+msgstr "Správné odpovědi"
+
+msgid "Chybné odpovědi"
+msgstr "Chybné odpovědi"

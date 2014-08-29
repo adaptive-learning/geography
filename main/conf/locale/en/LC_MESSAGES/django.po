@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-18 16:12+0200\n"
+"POT-Creation-Date: 2014-08-29 19:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: settings.py:70
+#: settings.py:72
 msgid "Czech"
 msgstr "Czech"
 
-#: settings.py:71
+#: settings.py:73
 msgid "English"
 msgstr "English"
 
@@ -239,12 +239,12 @@ msgstr "highlighted"
 msgid "zvýrazněné"
 msgstr "highlighted"
 
-#: geography/views/base.py:40 templates/home.html:52
+#: geography/views/base.py:42 templates/home.html:52
 #: templates/generated/homepage.html:19
 msgid "Slepé Mapy"
 msgstr "Outline maps"
 
-#: geography/views/base.py:41
+#: geography/views/base.py:43
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr "intelligent geography practice app"
 
@@ -298,12 +298,12 @@ msgid "Můj profil"
 msgstr "My  profile"
 
 #: templates/home.html:122
-msgid "Odhlásit se"
-msgstr "Sign out"
+msgid "Moje časté chyby"
+msgstr "My frequent mistakes"
 
 #: templates/home.html:128
-msgid "Body - přibývají za každou správnou odpověď"
-msgstr "Points - gained per each correct answer"
+msgid "Odhlásit se"
+msgstr "Sign out"
 
 #: templates/home.html:161 templates/home.html.py:170 templates/home.html:184
 msgid "Napište nám"
@@ -404,9 +404,10 @@ msgstr "Adaptive practice"
 #: templates/generated/homepage.html:63
 msgid "Adaptabilní procvičování - text"
 msgstr ""
-"The application examines your knowledge of maps adaptively - type of questions "
-"(how many options etc.) and repeat frequency is chosen based on what you knew. "
-"Thus it asks you about the countries that you need to practice the most."
+"The application examines your knowledge of maps adaptively - type of "
+"questions (how many options etc.) and repeat frequency is chosen based on "
+"what you knew. Thus it asks you about the countries that you need to "
+"practice the most."
 
 #: templates/generated/homepage.html:65
 msgid "Ukázka procvičování"
@@ -447,3 +448,6 @@ msgstr ""
 "The application learns from data of all users. Question choice is based on "
 "this data, instead of being based on knowledge of an geography expert who "
 "\"knows\" whether it's generally more difficult to know Kenya or Nigeria."
+
+#~ msgid "Body - přibývají za každou správnou odpověď"
+#~ msgstr "Points - gained per each correct answer"

@@ -246,3 +246,15 @@ msgstr "Today practice to be done"
 
 msgid "Více než den nesplněného procvičování"
 msgstr "More than a day of practice to be done"
+
+msgid "Moje časté chyby"
+msgstr "My frequent mistakes"
+
+msgid "Žádné časté chyby nebyly nalezeny"
+msgstr "No frequent mistakes have been found"
+
+msgid "Správné odpovědi"
+msgstr "Correct answers"
+
+msgid "Chybné odpovědi"
+msgstr "Incorrect answers"
