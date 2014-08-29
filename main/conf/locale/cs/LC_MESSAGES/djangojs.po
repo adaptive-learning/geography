@@ -95,8 +95,8 @@ msgstr "Aktuální úroveň"
 
 #: geography/static/dist/js/blind-maps.min.js:1742
 #: geography/static/js/directives.js:234
-msgid "bodů"
-msgstr "bodů"
+msgid "bodů do příští úrovně"
+msgstr "bodů do příští úrovně"
 
 #: geography/static/dist/js/blind-maps.min.js:1748
 #: geography/static/js/directives.js:240
@@ -216,6 +216,9 @@ msgstr "E-mail"
 
 msgid "Přehled znalostí uživatele"
 msgstr "Přehled znalostí uživatele"
+
+msgid "Sdílej svůj profil"
+msgstr "Sdílej svůj profil"
 
 msgid "Osobní cíle"
 msgstr "Osobní cíle"

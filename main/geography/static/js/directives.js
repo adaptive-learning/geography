@@ -176,7 +176,7 @@
                  '</span>' +
                  '<div class="progress level-progress" ' +
                      'tooltip="{{level.points}} / {{level.range}} ' + 
-                     gettext('bodů') + '">' +
+                     gettext('bodů do příští úrovně') + '">' +
                    '<div class="progress-bar progress-bar-warning" ' +
                         'style="width: {{(level.points/level.range)|percent}};">' +
                    '</div>' +
