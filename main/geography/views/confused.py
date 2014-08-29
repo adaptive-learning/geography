@@ -22,7 +22,7 @@ def confused(request):
                     geography_answer.place_asked_id
             ) as count,
             map_place.code AS map_code,
-            map_place.name AS map_name
+            map_place.name_''' + request.LANGUAGE_CODE + ''' AS map_name
         FROM
             geography_answer
                 INNER JOIN
@@ -46,6 +46,7 @@ def confused(request):
         'code': r[0],
         'name': r[1],
         'type': Place.PLACE_TYPE_SLUGS_LOWER[r[2]],
+        'type_name': unicode(Place.PLACE_TYPE_PLURALS[r[2]][1]),
         'mistake_count': r[3],
         'asked_count': r[4],
         'map_slug': r[5],

@@ -25,7 +25,7 @@
     </a>
     <div ng-show="editRights">
       <br>
-      <h4>{{'Sdílejte svůj profil' | trans }}</h4>
+      <h4>{{'Sdílej svůj profil' | trans }}</h4>
       <div my-fb-share="" data-type="button" data-href="{{profileUrl}}"></div>
       <!-- Place this tag where you want the share button to render. -->
       <span class="g-plus-wrapper">
@@ -50,7 +50,7 @@
     <div class="alert alert-info" ng-show="goals.length === 0">
       {{'Žádné cíle zatím nebyly stanoveny' | trans }}
     </div>
-    <div ng-repeat="goal in goals" class="well goal">
+    <div ng-repeat="goal in goals" class="goal striped-row">
         <span class="btn-group pull-right" ng-show="editRights">
           <a href="#/practice/{{goal.map.code}}/{{goal.type.slug}}" 
              tooltip="{{'Dnes již není třeba procvičovat' | trans}}"

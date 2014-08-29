@@ -137,12 +137,14 @@ dt, dd
   margin-top: 60px
 
 .overview
+  overflow: hidden
   h2
     .glyphicon-plus-sign
       cursor: pointer
       &:hover
         opacity: 0.8
-.overview .goal 
+.goal 
+  padding: 20px 0
   h3
     margin-bottom: 10px
   .btn-group
@@ -150,10 +152,8 @@ dt, dd
   .progress
     margin: 0
 
-
 .confused
-  position: relative
-  padding: 5px
+  padding: 10px 0
   .label
     margin: 0
     line-height: inherit
@@ -165,20 +165,13 @@ dt, dd
   .btn-primary
     margin-left: 20px
 
-.confused:nth-child(even)
+.striped-row
+  padding-left: 1000px
+  padding-right: 1000px
+  margin-left: -1000px
+  margin-right: -1000px
+.striped-row:nth-child(even)
   background: rgba(0,0,0,0.1)
-.confused:nth-child(even):before, .confused:nth-child(even):after
-  width: $sideWidth
-  background: rgba(0,0,0,0.1)
-  height: 40px
-  display: inline-block
-  position: absolute
-  top: 0px
-.confused:nth-child(even):before
-  left: -$sideWidth
-.confused:nth-child(even):after
-  right: -$sideWidth
-  
 
 .start-date 
   margin-right: 5px

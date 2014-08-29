@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
+from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 from geography.utils import JsonResponse, StaticFiles
 from geography.views import get_user
