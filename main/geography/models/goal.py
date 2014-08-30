@@ -14,6 +14,9 @@ class GoalManager(models.Manager):
                 if g.map.place.code == ms.code and g.place_type == ms.type:
                     g.probability = ms.goal_probability
                     g.place_count = ms.count
+                    if g.probability < g.start_probability:
+                        g.start_probability = g.probability
+                        g.save()
         return goals
 
 
