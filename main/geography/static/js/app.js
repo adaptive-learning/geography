@@ -17,11 +17,25 @@
 
   .value('gettext', gettext)
 
-  .config(['$routeProvider', function($routeProvider) {
+  .config(['$routeProvider', '$locationProvider',
+      function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
       templateUrl : 'static/tpl/homepage.html'
-    }).when('/how-it-works', {
-      templateUrl : '../templates/home/how_it_works.html'
+    }).when('/login/:somepath/', {
+      controller : 'ReloadController',
+      templateUrl : 'loading.html'
+    }).when('/cs/:somepath?', {
+      controller : 'ReloadController',
+      templateUrl : 'loading.html'
+    }).when('/en/:somepath?', {
+      controller : 'ReloadController',
+      templateUrl : 'loading.html'
+    }).when('/cs/:somepath/:more?/:path?', {
+      controller : 'ReloadController',
+      templateUrl : 'loading.html'
+    }).when('/en/:somepath/:more?/:path?', {
+      controller : 'ReloadController',
+      templateUrl : 'loading.html'
     }).when('/about', {
       templateUrl : 'static/tpl/about.html'
     }).when('/view/', {
@@ -42,12 +56,14 @@
     }).when('/u/:user', {
       controller : 'AppUser',
       templateUrl : 'static/tpl/user_tpl.html'
-    }).when('/confused/', {
+    }).when('/mistakes/', {
       controller : 'AppConfused',
       templateUrl : 'static/tpl/confused_tpl.html'
     }).otherwise({
       //redirectTo : '/'
     });
+
+    $locationProvider.html5Mode(true);
   }])
 
   .run(['$rootScope', '$', '$analytics', 'places',

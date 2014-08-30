@@ -24,12 +24,15 @@
     <meta name="description" content="{% trans 'meta content' %}">
     <meta name="keywords" content="{% trans 'meta keywords' %}" />
     <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+    <link rel="alternate" href="/cs/" hreflang="cs" />
+    <link rel="alternate" href="/en/" hreflang="en" />
 
     <!-- Le styles -->
     <style>
         {% include "above-fold-bootstrap.css" %}
         {% include "generated/above-fold.css" %}
     </style>
+    <base href="/">
 
   </head>
 
@@ -117,7 +120,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="#/confused/" >
+                      <a href="#/mistakes/" >
                         <i class="glyphicon glyphicon-remove-sign"></i> 
                         {% trans "Moje časté chyby" %}
                       </a>
@@ -138,7 +141,7 @@
                 <ul class="dropdown-menu">
                     {% for lang in LANGUAGES %}
                     <li>
-                      <a class="menu-link" href="/{{ lang.0 }}/#{%verbatim%}{{location.path()}}{%endverbatim%}">
+                      <a class="menu-link" href="/{{ lang.0 }}{%verbatim%}{{location.path()}}{%endverbatim%}">
                         <i class="flag-{{ lang.0 }}"></i> {% trans lang.1 %}
                       </a>
                     </li>
@@ -152,7 +155,11 @@
     <!-- Main content
     ================================================== -->
     <div data-ng-view id="ng-view" ng-class="vip() && 'vip'">
+     {% if isHomepage %}
         {% include "generated/homepage.html" %}
+     {% else %}
+        <div class="loading-indicator"></div>
+     {% endif %}
     </div>
   </div>
 
@@ -278,6 +285,11 @@
         </div>
       </form>
     </script>
+
+    <script type="text/ng-template" id="loading.html">
+      <div class="loading-indicator"></div>
+    </script>
+
 
     </div>
     <!-- Le javascript

@@ -4,6 +4,7 @@ from django.db import connection
 from social_auth.exceptions import AuthAlreadyAssociated
 from django.contrib.auth import logout
 from django.shortcuts import redirect
+from django.http import HttpResponseRedirect
 
 
 class SqldumpMiddleware(object):
@@ -36,3 +37,6 @@ class LanguageInPathMiddleware(object):
             request.LANGUAGE_CODE = translation.get_language()
             request.COOKIES[settings.LANGUAGE_COOKIE_NAME] = language_code
             request.session['django_language'] = language_code
+            url = request.path
+            url = url.replace('/' + language_code, '')
+            return HttpResponseRedirect(url)

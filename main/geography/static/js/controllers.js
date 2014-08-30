@@ -450,5 +450,9 @@
       $scope.loaded = true;
       $scope.error = gettext("V aplikaci bohužel nastala chyba.");
     });
+  }])
+  
+  .controller('ReloadController', ['$window', function($window){
+    $window.location.reload();
   }]);
 }());
