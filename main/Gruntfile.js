@@ -55,6 +55,26 @@ module.exports = function(grunt) {
         src: ['geography/static/tpl/homepage.html'],
         dest: 'templates/generated/homepage.html',
       },
+      'tpl-gettext-hack': {
+        options: {
+          replacements: [
+            {
+                pattern: /\{\{\s*(("[^"]+")|('[^']+'))\s*\|\s*trans\s*\}\}/g,
+                replacement: '\ngettext($1);\n  '
+            }, {
+                pattern: /(  |<).*\n/g,
+                replacement: ''
+            }
+          ]
+        },
+        files: [{
+          expand: true,
+          cwd: 'geography/static',
+          src: 'tpl/*',
+          dest: 'geography/static/hack/',
+          ext: '.js'
+        }]
+      },
       hashes: {
         options: {
           replacements: [
@@ -237,7 +257,7 @@ module.exports = function(grunt) {
   grunt.registerTask('runserver', ['shell:runserver','watch']);
   grunt.registerTask('hashes', ['shell:hashes', 'string-replace:hashes']);
   grunt.registerTask('bboxcacheall', ['bboxcache', 'string-replace:bboxcache']);
-  grunt.registerTask('templates', ['string-replace:homepage', 'ngtemplates']);
+  grunt.registerTask('templates', ['string-replace:homepage', 'ngtemplates', 'string-replace:tpl-gettext-hack']);
   grunt.registerTask('minifyjs', ['hashes', 'templates', 'uglify']);
   grunt.registerTask('default', ['styles', 'jshint', 'bboxcache', 'minifyjs']);
   grunt.registerTask('deploy', ['styles', 'string-replace:bboxcache', 'minifyjs']);

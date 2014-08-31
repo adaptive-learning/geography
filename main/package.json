@@ -1,5 +1,7 @@
 {
   "name": "blind-maps",
+  "description": "An intelligent application for practicing map outlines",
+  "repository": "https://github.com/proso/geography",
   "version": "0.9.3",
   "devDependencies": {
     "grunt": "~0.4.4",
@@ -17,6 +19,7 @@
     "grunt-shell": "~0.7.0",
     "node-raphael": "~0.2.0",
     "dom-js": "0.0.9",
-    "grunt-protractor-runner": "~0.2.4"
+    "grunt-protractor-runner": "~0.2.4",
+    "grunt-search": "~0.1.6"
   }
 }

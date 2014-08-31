@@ -17,3 +17,4 @@ Geography.egg-info
 node_modules
 main/templates/generated
 main/geography/static/css
+main/geography/static/hack/tpl
