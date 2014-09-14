@@ -131,10 +131,10 @@
       restrict : 'C',
       template : '<div class="progress overview-progress">' +
                     '<div class="progress-bar progress-bar-learned" style="' +
-                        'width: {{(skills.learned / count)|percent}};">' +
+                        'width: {{100 * skills.learned / count}}%;">' +
                     '</div>' +
                     '<div class="progress-bar progress-bar-practiced" style="' +
-                        'width: {{(skills.practiced / count)|percent}};">' +
+                        'width: {{100 * skills.practiced / count}}%;">' +
                     '</div>' +
                   '</div>',
       link : function($scope, elem, attrs) {
