@@ -41,6 +41,11 @@
 
     <h2>
       {{'Osobní cíle' | trans }}
+      <i class="glyphicon glyphicon-question-sign"
+         popover-title="{{'Chceš se naučit některou mapu do určitého data?'| trans}}"
+         popover="{{'Nastav si cíl a systém ti podle tvých aktuálních znalostí rozloží procvičování na jednotlivé dny.' | trans }}"
+         popover-append-to-body="true"
+         popover-trigger="mouseenter click"></i>
       <i ng-click="addGoal()" ng-show="editRights"
          tooltip="{{'Vytvořit cíl' | trans }}"
          class="pull-right glyphicon glyphicon-plus-sign"></i>
