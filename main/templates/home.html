@@ -141,7 +141,7 @@
                 <ul class="dropdown-menu">
                     {% for lang in LANGUAGES %}
                     <li>
-                      <a class="menu-link" href="/{{ lang.0 }}{%verbatim%}{{location.path()}}{%endverbatim%}">
+                      <a class="menu-link" location-append href="/{{ lang.0 }}/">
                         <i class="flag-{{ lang.0 }}"></i> {% trans lang.1 %}
                       </a>
                     </li>

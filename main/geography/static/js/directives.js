@@ -228,5 +228,18 @@
           });
       }
     };
+  }])
+
+  .directive('locationAppend', ['$rootScope', '$location', 
+      function ($rootScope, $location) {
+    return {
+      restrict: 'A',
+      link: function ($scope, element, attrs) {
+        var url = attrs.href.substring(0, 3);
+        $rootScope.$on("$routeChangeSuccess", function() {
+          element.attr('href', url + $location.path());
+        });
+      }
+    };
   }]);
 }());
