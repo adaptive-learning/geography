@@ -172,9 +172,11 @@
     return {
       restrict : 'C',
       template : '<span class="badge level-start" ' +
+                   'tooltip-append-to-body="true" ' +
                    'ng-bind="level.level" tooltip="' + gettext('Aktuální úroveň') + '">' +
                  '</span>' +
                  '<div class="progress level-progress" ' +
+                     'tooltip-append-to-body="true" ' +
                      'tooltip="{{level.points}} / {{level.range}} ' + 
                      gettext('bodů do příští úrovně') + '">' +
                    '<div class="progress-bar progress-bar-warning" ' +
@@ -182,7 +184,8 @@
                    '</div>' +
                  '</div>' +
                  '<span class="badge level-goal" ' +
-                       'ng-bind="level.level+1" tooltip="' + gettext('Příští úroveň') + '">' +
+                     'tooltip-append-to-body="true" ' +
+                     'ng-bind="level.level+1" tooltip="' + gettext('Příští úroveň') + '">' +
                  '</span>',
       link : function($scope, elem, attrs) {
         elem.addClass('level-wrapper');

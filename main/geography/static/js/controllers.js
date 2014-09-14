@@ -198,6 +198,7 @@
     }
 
     function setupSummary() {
+      $scope.question.slideOut = true;
       $scope.layer = undefined;
       // prevents additional points gain. issue #38
       $scope.summary = question.summary();
@@ -215,7 +216,11 @@
     }
 
     function setQuestion(active) {
+      if ($scope.question) {
+        $scope.question.slideOut = true;
+      }
       $scope.question = active;
+      $scope.questions.push(active);
       $scope.map.clearHighlights();
       $scope.highlight();
       $scope.canNext = false;
@@ -236,6 +241,7 @@
     
     $scope.mapCallback = function() {
       question.first($scope.part, $routeParams.place_type, function(q) {
+        $scope.questions = [];
         setQuestion(q);
       }).error(function(){
         $scope.error = gettext("V aplikaci bohužel nastala chyba.");
