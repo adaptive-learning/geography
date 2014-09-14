@@ -3,7 +3,6 @@ from geography.utils import JsonResponse
 from django.contrib.auth.models import User
 from django.http import Http404, HttpResponseBadRequest
 from django.utils import simplejson
-from django.utils.translation import ugettext as _
 from geography.models import Goal, Place, PlaceRelation, MapSkill
 
 
@@ -19,16 +18,16 @@ def goals_add(request, username=None):
             place=Place.objects.get(code=goal_dict.get('map')),
             type=PlaceRelation.IS_ON_MAP)
     except Place.DoesNotExist:
-        raise HttpResponseBadRequest("Invalid place code: {0}".format(goal_dict.get('map')))
+        return HttpResponseBadRequest("Invalid place code: {0}".format(goal_dict.get('map')))
     except PlaceRelation.DoesNotExist:
-        raise HttpResponseBadRequest("No map for place code: {0}".format(goal_dict.get('map')))
+        return HttpResponseBadRequest("No map for place code: {0}".format(goal_dict.get('map')))
     try:
         place_type = Place.PLACE_TYPE_SLUGS_LOWER_REVERSE[goal_dict['layer']]
     except KeyError:
-        raise HttpResponseBadRequest("Invalid place type slug: {0}".format(goal_dict.get('layer')))
+        return HttpResponseBadRequest("Invalid place type slug: {0}".format(goal_dict.get('layer')))
     map_skill = MapSkill.objects.for_user_and_map_and_type(request.user, map_relation, place_type)
-    if map_skill.goal_probability == Goal.GOAL_PROBABILITY:
-        raise HttpResponseBadRequest("The goal is already reached")
+    if map_skill.goal_probability >= Goal.GOAL_PROBABILITY:
+        return HttpResponseBadRequest("The goal is already reached")
     goal = Goal(
         user=request.user,
         finish_date=goal_dict['finish_date'].split('T')[0],
@@ -37,11 +36,9 @@ def goals_add(request, username=None):
         start_probability=map_skill.goal_probability,
     )
     goal.save()
-    response = {
-        'type': 'success',
-        'msg': _(u'Cíl byl vytvořen'),
-    }
-    return JsonResponse(response)
+    goal = Goal.objects.get(id=goal.id)
+    goal.probability = goal.start_probability
+    return JsonResponse(goal.to_serializable())
 
 
 def goals_view(request, username=None):

@@ -103,5 +103,25 @@
       });
       return sum;
     };
+  }])
+
+  .filter('stripedStyle', [function () {
+    return function (goal, isLearnedBar) {
+      var barWidth =  isLearnedBar ? goal.progress : goal.progress_diff;
+      var deg = isLearnedBar ? "90" : "270";
+      var noOfDays = (new Date(goal.finish_date) - new Date(goal.start_date)) / 
+        (24 * 60 * 60 * 1000);
+      var dayWidth = 1 / noOfDays;
+      var relDayWidth = dayWidth / barWidth;
+      var dayPercent = relDayWidth * 100 + '%';
+      var startPercent = (relDayWidth * 100) - (0.5 / barWidth) + '%';
+      var style = {
+        "background-image" :
+        "repeating-linear-gradient( " + deg + "deg, transparent, transparent " + 
+          startPercent + ", rgba(0,0,0,0.2) " + startPercent + ", rgba(0,0,0,0.2) " + dayPercent + ")"
+      };
+      return style;
+    };
   }]);
+
 }());

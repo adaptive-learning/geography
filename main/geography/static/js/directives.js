@@ -241,5 +241,17 @@
         });
       }
     };
+  }])
+
+  .directive('goalProgress', ['goal', function (goal) {
+    return {
+      restrict: 'A',
+      templateUrl : 'static/tpl/goal-progress_tpl.html',
+      link: function ($scope, element, attrs) {
+        if(attrs.map && attrs.placeType) {
+          $scope.goal = goal.getForMap(attrs.map, attrs.placeType);
+        }
+      }
+    };
   }]);
 }());

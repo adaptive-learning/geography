@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.http import Http404, HttpResponseBadRequest
 from django.utils import simplejson
 from django.utils.translation import ugettext as _
-from geography.models import Place, PlaceRelation, UserPlace, AveragePlace, ABEnvironment
+from geography.models import Place, PlaceRelation, UserPlace, AveragePlace, ABEnvironment, Goal
 from geography.utils import JsonResponse, QuestionService
 from lazysignup.decorators import allow_lazy_user
 from logging import getLogger
@@ -33,7 +33,13 @@ def question(request, map_code, place_type_slug):
                    else Place.CATEGORIES[place_type_slug]
                    if place_type_slug in Place.CATEGORIES
                    else [t[0] for t in Place.PLACE_TYPES])
-    response = qs.get_questions(10 - question_index, place_types)
+    NUMBER_OF_QUESTIONS = 10
+    response = {
+        'questions': qs.get_questions(NUMBER_OF_QUESTIONS - question_index, place_types),
+    }
+    if question_index == NUMBER_OF_QUESTIONS:
+        response['goals'] = [g.to_serializable() for g in
+                             Goal.objects.for_user_and_map(request.user, map, place_types)]
     return JsonResponse(response)
 
 

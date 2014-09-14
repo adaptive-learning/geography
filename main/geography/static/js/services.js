@@ -147,8 +147,8 @@
     };
   }])
 
-  .service('question', ['$http', '$log', '$cookies', 
-      function($http, $log, $cookies) {
+  .service('question', ['$http', '$log', '$cookies', 'goal',
+      function($http, $log, $cookies, goal) {
     var qIndex = 0;
     var url;
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -175,7 +175,7 @@
         summary = [];
         var promise = $http.get(url).success(function(data) {
           qIndex = 0;
-          questions = data;
+          questions = data.questions;
           returnQuestion(fn);
         });
         return promise;
@@ -189,16 +189,19 @@
         summary.push(question);
         $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
         $http.post(url, question).success(function(data) {
-          var futureLength = qIndex + data.length;
+          var futureLength = qIndex + data.questions.length;
           // questions array should be always the same size
           // if data sent by server is longer, it means the server is delayed
           if (questions.length == futureLength) {
             // try to handle interleaving
-            var questionsCandidate = questions.slice(0, qIndex).concat(data);
+            var questionsCandidate = questions.slice(0, qIndex).concat(data.questions);
             if (hasNoTwoSameInARow(questionsCandidate)) {
               questions = questionsCandidate;
               $log.log('questions updated, question index', qIndex);
             }
+          }
+          if (data.goals) {
+            goal.update(data.goals);
           }
         });
         return 100 * qIndex / questions.length;
@@ -316,5 +319,78 @@
       }
       return title;
     };
+  }])
+
+  .factory('goal',['$http', '$cookies', function($http, $cookies) {
+    
+    var goalDict = {};
+    var goals = [];
+    function updateGoal(g){
+      g.progress_diff = g.expected_progress - g.progress;
+      if (goalDict[g.id]) {
+        angular.copy(g, goalDict[g.id]);
+      } else {
+        goalDict[g.id] = g;
+        goals.unshift(g);
+      }
+    }
+    var goalsPromise = $http.get("/goal/");
+
+    var that = {
+      update : function(newGoals) {
+        for (var i = 0; i < newGoals.length; i++) {
+          updateGoal(newGoals[i]);
+        }
+      },
+      get : function(user) {
+        if (user) {
+          return $http.get("/goal/" + user);
+        } else {
+          return {
+            success : function(fn) {
+              goalsPromise.success(function() {
+                fn(goals);
+              });
+            }
+          };
+        }
+      },
+      getForMap : function(mapCode, typeSlug) {
+        for (var i = 0; i < goals.length; i++) {
+          var g = goals[i];
+          if (g.map.code == mapCode && g.type.slug == typeSlug) {
+            return g;
+          }
+        }
+      },
+      remove : function(goal) {
+        if (goal.can_be_deleted) {
+          goal.deleting = true;
+          $http.get("/goal/delete/" + goal.id).success(function() {
+            for (var i = 0; i < goals.length; i++) {
+              if (goals[i].id == goal.id) {
+                goals.splice(i, 1);
+                break;
+              }
+            }
+            delete goalDict[goal.id];
+          });
+        }
+      },
+      add : function(goal) {
+        $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+        var promise = $http.post('/goal/', goal);
+        promise.success(function(data) {
+          updateGoal(data);
+        });
+        return promise;
+      }
+    };
+
+    goalsPromise.success(function(data) {
+      that.update(data.reverse());
+    });
+
+    return that;
   }]);
 }());

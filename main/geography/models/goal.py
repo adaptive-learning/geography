@@ -8,6 +8,18 @@ from datetime import date, timedelta
 class GoalManager(models.Manager):
     def for_user(self, user):
         goals = self.filter(user=user)
+        goals = self.fetch_probability_and_place_count(user, goals)
+        return goals
+
+    def for_user_and_map(self, user, map, place_type):
+        goals = self.filter(
+            user=user,
+            map=map,
+            place_type__in=place_type)
+        goals = self.fetch_probability_and_place_count(user, goals)
+        return goals
+
+    def fetch_probability_and_place_count(self, user, goals):
         maps_skills = MapSkill.objects.for_user(user)
         for g in goals:
             for ms in maps_skills:
@@ -58,14 +70,16 @@ class Goal(models.Model):
         before_start = self.start_date - timedelta(days=1)
         numerator = (date.today() - self.start_date).total_seconds()
         denominator = (self.finish_date - before_start).total_seconds()
-        return numerator / denominator
+        ratio = numerator / denominator
+        return max(0, min(ratio, 1))
 
     @property
     def expected_progress(self):
         before_start = self.start_date - timedelta(days=1)
         numerator = (date.today() - before_start).total_seconds()
         denominator = (self.finish_date - before_start).total_seconds()
-        return numerator / denominator
+        ratio = numerator / denominator
+        return max(0, min(ratio, 1))
 
     @property
     def progress(self):

@@ -259,8 +259,8 @@
   }])
 
   .controller('AppUser', ['$scope', 'user', '$http', '$routeParams', '$cookies', 
-      '$modal', '$location',
-      function($scope, user, $http, $routeParams, $cookies, $modal, $location) {
+      '$modal', '$location', 'goal',
+      function($scope, user, $http, $routeParams, $cookies, $modal, $location, goal) {
 
     $scope.profileUrl = $location.absUrl();
     $scope.user = {username: $routeParams.user};
@@ -269,36 +269,18 @@
       $scope.editRights = data.username == user.getUser().username;
     });
 
-    $scope.deleteGoal = function(goal) {
-      if (goal.can_be_deleted) {
-        goal.deleting = true;
-        $http.get("/goal/delete/" + goal.id).success(function() {
-          $scope.goals = $scope.goals.filter(function(g){
-            return g.id != goal.id;
-          });
-        });
-      }
-    };
+    $scope.deleteGoal = goal.remove;
     
-    $scope.loadGoals = function(){
-      $http.get("/goal/" + $scope.user.username).success(function(goals) {
-        $scope.loaded = true;
-        $scope.goals = goals;
-        goals.map(function(g){
-          g.progress_diff = g.expected_progress - g.progress;
-        });
-      });
-    };
-    $scope.loadGoals();
+    goal.get().success(function(goals) {
+      $scope.loaded = true;
+      $scope.goals = goals;
+    });
 
     $scope.addGoal = function () {
       $modal.open({
         templateUrl: 'add_goal_modal.html',
         controller: ModalAddGoalCtrl,
         resolve: {
-          loadGoals: function() {
-            return $scope.loadGoals;
-          },
           goals: function () {
             return $scope.goals;
           }
@@ -306,10 +288,10 @@
       });
     };
 
-    var ModalAddGoalCtrl = ['$scope', '$modalInstance', '$http', '$cookies',
-          '$location', 'goals', 'gettext', 'places', 'loadGoals',
-        function ($scope, $modalInstance, $http, $cookies, 
-          $location, goals, gettext, places, loadGoals) {
+    var ModalAddGoalCtrl = ['$scope', '$modalInstance', 
+          '$location', 'goals', 'gettext', 'places', 'goal',
+        function ($scope, $modalInstance, 
+          $location, goals, gettext, places, goal) {
 
       $scope.goal = {
         finish_date: new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 14),
@@ -371,11 +353,12 @@
       };
 
       $scope.send = function() {
-        $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
-        $http.post('/goal/', $scope.goal).success(function(data){
-          $scope.alerts.push(data);
+        goal.add($scope.goal).success(function(){
+          $scope.alerts.push({
+            type : 'success',
+            msg : gettext("Cíl byl vytvořen"),
+          });
           $scope.sending = false;
-          loadGoals();
           $scope.cancel();
         }).error(function(){
           $scope.alerts.push({
