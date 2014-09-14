@@ -70,6 +70,7 @@ def pretty_date(time=False):
 class PlaceAdmin(admin.ModelAdmin):
     list_display = ('name', 'code', 'type')
     list_filter = ('type',)
+    search_fields = ('code', 'name', 'name_cs', 'name_en',)
 
 
 class PlaceRelationAdmin(admin.ModelAdmin):
@@ -95,7 +96,9 @@ class AnswerAdmin(admin.ModelAdmin):
         'place_asked',
         'place_answered',
         'is_correct',
+        'language',
         'asked_ago')
+    list_filter = ('language', 'type', 'place_asked__type', 'place_map',)
     search_fields = ('user__username', 'place_asked__code', 'place_asked__name',)
     actions = [export_selected_objects]
 
