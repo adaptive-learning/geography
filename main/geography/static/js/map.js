@@ -86,7 +86,12 @@
       layerConfig.river = angular.extend(angular.extend({}, layerConfig.state), {
         'styles' : {
           'stroke-width' : RIVER_WIDTH,
-          'stroke' : colors.WATER_COLOR,
+          'stroke' : function(d) {
+            var state = config.places && config.places[d.code];
+            return state && state.displayed ?
+              colorScale(state.probability).brighten((1 - state.certainty) * 80).hex() :
+              colors.WATER_COLOR;
+          },
           'transform' : ''
         },
         'mouseenter' : function(data, path) {
@@ -464,6 +469,7 @@
           angular.forEach(layers.getAll(), function(layer) {
             var layerConfig = layers.getConfig(layer);
             layer.style('fill', layerConfig.styles.fill);
+            layer.style('stroke', layerConfig.styles.stroke);
             if (config.showTooltips) {
               layer.tooltips(getTooltipGetter(places));
             }
