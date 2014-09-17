@@ -155,7 +155,7 @@ module.exports = function(grunt) {
           'geography/static/lib/angular-1.2.9/angular-animate.js',
           'geography/static/lib/js/jquery.qtip.min.js',
           'geography/static/lib/js/angulartics.min.js',
-          'geography/static/lib/js/angulartics-google-analytics.min.js',
+          'geography/static/lib/js/angulartics-ga.min.js',
         ],
         dest: 'geography/static/dist/js/libs.min.js'
       }
