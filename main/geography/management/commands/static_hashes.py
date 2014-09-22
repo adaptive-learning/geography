@@ -20,7 +20,7 @@ class Command(NoArgsCommand):
         module = "geography"
         static_files = self.get_static_files(module, filter_)
         for f in static_files:
-            hashes[f[0]] = hashlib.md5(f[1]).hexdigest()
+            hashes['/' + f[0]] = hashlib.md5(f[1]).hexdigest()
         return hashes
 
     def get_static_files(self, module, filter_):
