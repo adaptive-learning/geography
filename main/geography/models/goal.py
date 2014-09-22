@@ -7,7 +7,7 @@ from datetime import date, timedelta
 
 class GoalManager(models.Manager):
     def for_user(self, user):
-        goals = self.filter(user=user)
+        goals = self.filter(user=user.id)
         goals = self.fetch_probability_and_place_count(user, goals)
         return goals
 
