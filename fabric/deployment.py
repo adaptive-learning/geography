@@ -16,6 +16,7 @@ def deploy():
     common.compilemessages()
     common.grunt_deploy()
     common.collect_static()
+    common.static_hashes()
     common.update_maps()
     common.custom_sql()
     common.remove_cache()

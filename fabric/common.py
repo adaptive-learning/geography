@@ -87,6 +87,10 @@ def collect_static():
     sudo('./main/manage.py collectstatic --noinput --traceback')
 
 
+def static_hashes():
+    sudo('echo "HASHES = $( python ./main/manage.py static_hashes )" > ./main/hashes.py')
+
+
 def migrate():
     sudo('./main/manage.py migrate geography --delete-ghost-migrations --traceback')
 
