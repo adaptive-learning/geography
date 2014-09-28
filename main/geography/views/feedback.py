@@ -9,6 +9,10 @@ from django.core.mail import send_mail
 LOGGER = getLogger(__name__)
 
 
+def is_likely_worthless(feedback):
+    return len(feedback['text']) <= 50
+
+
 def feedback(request):
     if request.body:
         feedback = simplejson.loads(request.body)
@@ -20,9 +24,13 @@ def feedback(request):
                      '\nusername: ' + request.user.username +
                      '\npage: ' + feedback['page'] +
                      '\nuser agent: ' + feedback['user_agent'])
+        if is_likely_worthless(feedback):
+            mail_from = 'spam@slepemapy.cz'
+        else:
+            mail_from = 'feedback@slepemapy.cz'
         send_mail('slepemapy.cz feedback',
                   mail_text,
-                  'feedback@slepemapy.cz',
+                  mail_from,
                   ['slepemapy@googlegroups.com'],
                   fail_silently=False)
         LOGGER.debug("email sent %s\n", mail_text)
