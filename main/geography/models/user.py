@@ -1,7 +1,11 @@
 from django.contrib.auth.models import User
+from django.contrib.auth.signals import user_logged_in
+from django.conf import settings
+from django.utils import translation
 from lazysignup.models import LazyUser
 from django.db import connection
 from contextlib import closing
+from geography.models import Answer
 
 
 def convert_lazy_user(user):
@@ -59,3 +63,18 @@ def to_serializable(user):
         'username': user.username,
         'points': get_points(user),
     }
+
+
+def set_lang_from_last_answer(sender, user, request, **kwargs):
+    try:
+        latest_answer = Answer.objects.filter(user=user).latest('inserted')
+        language_code = Answer.LANGUAGES[latest_answer.language][1]
+        translation.activate(language_code)
+        request.LANGUAGE_CODE = translation.get_language()
+        request.COOKIES[settings.LANGUAGE_COOKIE_NAME] = language_code
+        request.session['django_language'] = language_code
+    except Answer.DoesNotExist:
+        pass
+
+
+user_logged_in.connect(set_lang_from_last_answer)
