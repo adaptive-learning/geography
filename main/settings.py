@@ -258,6 +258,13 @@ if DEBUG:
         if logger != 'django.db':
             LOGGING['loggers'][logger]['handlers'].append('console')
 
+if DEBUG:
+    INSTALLED_APPS += ('debug_toolbar',)
+    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+    if 'GEOGRAPHY_ON_STAGING' in os.environ:
+        DEBUG_TOOLBAR_PATCH_SETTINGS = False
+
+
 FACEBOOK_APP_ID = os.getenv('GEOGRAPHY_FACEBOOK_APP_ID', '')
 FACEBOOK_API_SECRET = os.getenv('GEOGRAPHY_FACEBOOK_API_SECRET', '')
 GOOGLE_OAUTH2_CLIENT_KEY = os.getenv('GEOGRAPHY_GOOGLE_OAUTH2_CLIENT_KEY', '')
