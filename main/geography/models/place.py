@@ -194,6 +194,11 @@ class Place(models.Model):
             ISLAND,
         ],
     }
+    CATEGORIES_NAMES = {
+        'political': _(u'Politická mapa'),
+        'water': _(u'Vodstvo'),
+        'surface': _(u'Povrch'),
+    }
     code = models.SlugField(
         max_length=100,
         db_index=True,

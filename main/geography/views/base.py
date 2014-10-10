@@ -30,14 +30,16 @@ def home(request, hack=None):
         title = 'Stage - '
     else:
         title = 'Loc - '
+    title = title + _(u'Slepé Mapy') + ' - ' + _(
+        u'inteligentní aplikace na procvičování zeměpisu')
     hashes = dict((key, value)
                   for key, value
                   in settings.HASHES.iteritems()
                   if "/lib/" not in key and "/js/" not in key and "/sass/" not in key
                   )
     c = {
-        'title': title + _(u'Slepé Mapy') + ' - ' +
-        _(u'inteligentní aplikace na procvičování zeměpisu'),
+        'title': title,
+        'map': get_map_from_url(hack),
         'isProduction': settings.ON_PRODUCTION,
         'css_files': StaticFiles.add_hash(CSS_FILES),
         'js_files': StaticFiles.add_hash(JS_FILES),
@@ -50,6 +52,32 @@ def home(request, hack=None):
         'isHomepage': hack is None,
     }
     return render_to_response('home.html', c)
+
+
+def get_map_from_url(hack):
+    map_string = ""
+    if hack:
+        url = hack.split('/')
+        if url[0] == u'view' or url[0] == u'practice':
+            map_code = url[1]
+            try:
+                map_place = Place.objects.get(code=map_code)
+                map_string = map_place.name
+                if len(url) >= 3 and url[2] != '':
+                    map_string = map_string + ' - ' + resolve_map_type(url[2])
+            except Place.DoesNotExist:
+                pass
+    return map_string
+
+
+def resolve_map_type(place_type_slug):
+    place_type = (Place.PLACE_TYPE_PLURALS[
+                  Place.PLACE_TYPE_SLUGS_LOWER_REVERSE[place_type_slug]][1]
+                  if place_type_slug in Place.PLACE_TYPE_SLUGS_LOWER_REVERSE
+                  else Place.CATEGORIES_NAMES[place_type_slug]
+                  if place_type_slug in Place.CATEGORIES
+                  else '')
+    return unicode(place_type)
 
 
 def csv_view(request, model):

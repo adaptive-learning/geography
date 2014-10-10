@@ -3,7 +3,9 @@
 <html data-ng-app="blindMaps" data-ng-controller="AppCtrl" lang="{{LANGUAGE_CODE}}">
   <head>
     <meta charset="utf-8">
-    <title ng-bind="title" ng-init="initTitle('{{ title }}')">{{ title }}</title>
+    <title ng-bind="title" ng-init="initTitle('{{ title }}')">
+      {{ map }}{% if map != ''  %} - {% endif %}{{ title }}
+    </title>
     {% if isProduction  %}
         <script type='text/javascript'>
         window.Muscula = { settings:{
@@ -154,6 +156,11 @@
     <div data-ng-view id="ng-view" ng-class="vip() && 'vip'">
      {% if isHomepage %}
         {% include "generated/homepage.html" %}
+     {% elif map != '' %}
+        <div class="map-container">
+          <h1> {{map}}</h1>
+          <div class="loading-indicator"></div>
+        </div>
      {% else %}
         <div class="loading-indicator"></div>
      {% endif %}
