@@ -56,6 +56,8 @@
     }).when('/u/:user', {
       controller : 'AppUser',
       templateUrl : 'static/tpl/user_tpl.html'
+    }).when('/goals/', {
+      templateUrl : 'static/tpl/personal-goals-page_tpl.html'
     }).when('/mistakes/', {
       controller : 'AppConfused',
       templateUrl : 'static/tpl/confused_tpl.html'

@@ -16,7 +16,7 @@ js_info_dict = {
 urlpatterns = patterns(
     '',
     url(r'^$', 'geography.views.home', name='home'),
-    url(r'^(about|overview|mistakes|view/\w+|u/\w+|practice/\w+)',
+    url(r'^(about|overview|mistakes|goals|view/\w+|u/\w+|practice/\w+)',
         'geography.views.home', name='home'),
 
     url(r'', include('social_auth.urls')),
