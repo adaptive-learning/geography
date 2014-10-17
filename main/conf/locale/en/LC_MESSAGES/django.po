@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-29 19:22+0200\n"
+"POT-Creation-Date: 2014-10-17 06:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgid "Neznámé"
 msgstr "Unknown"
 
 #: geography/models/place.py:159 geography/views/place.py:52
-#: templates/home.html:70
+#: templates/home.html:75
 msgid "Státy"
 msgstr "States"
 
@@ -38,12 +38,12 @@ msgstr "States"
 msgid "Města"
 msgstr "Cities"
 
-#: geography/models/place.py:161 templates/home.html:56
+#: geography/models/place.py:161 templates/home.html:61
 msgid "Svět"
 msgstr "World"
 
 #: geography/models/place.py:162 geography/views/place.py:49
-#: templates/home.html:60
+#: templates/home.html:65
 msgid "Kontinenty"
 msgstr "Continents"
 
@@ -86,6 +86,18 @@ msgstr "Mountains"
 #: geography/models/place.py:172
 msgid "Ostrovy"
 msgstr "Islands"
+
+#: geography/models/place.py:198
+msgid "Politická mapa"
+msgstr "Political map"
+
+#: geography/models/place.py:199
+msgid "Vodstvo"
+msgstr "Water"
+
+#: geography/models/place.py:200
+msgid "Povrch"
+msgstr "Surface"
 
 #: geography/utils/model.py:145 geography/utils/model.py:167
 msgid "unknown"
@@ -239,41 +251,37 @@ msgstr "highlighted"
 msgid "zvýrazněné"
 msgstr "highlighted"
 
-#: geography/views/base.py:42 templates/home.html:52
+#: geography/views/base.py:33 templates/home.html:57
 #: templates/generated/homepage.html:19
 msgid "Slepé Mapy"
 msgstr "Outline maps"
 
-#: geography/views/base.py:43
+#: geography/views/base.py:34
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr "intelligent geography practice app"
 
-#: geography/views/feedback.py:31
+#: geography/views/feedback.py:39
 msgid "Feedback confirmed"
 msgstr "Thank you for the message. User feedback is very important for us."
 
-#: geography/views/goal.py:42
-msgid "Cíl byl vytvořen"
-msgstr "Goal has been set up"
-
-#: templates/home.html:24
+#: templates/home.html:26
 msgid "meta content"
 msgstr ""
 "Inteligent application for practicing states, cities, mountains and rivers "
 "on outline maps of the world, Europe, Asia, Africa, America, US and other "
 "countries"
 
-#: templates/home.html:25
+#: templates/home.html:27
 msgid "meta keywords"
 msgstr ""
 "geography games, outline maps, map outlines, countries, states, cities, "
 "world, europe, america, africa, asia, mountains, rivers, usa"
 
-#: templates/home.html:79
+#: templates/home.html:84
 msgid "Přehled map"
 msgstr "Maps overview"
 
-#: templates/home.html:89
+#: templates/home.html:94
 msgid ""
 "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
 "znalosti pamatoval i příště."
@@ -281,69 +289,69 @@ msgstr ""
 "Sign in simply via Google or Facebook, so the system remembers your "
 "knowledge next time."
 
-#: templates/home.html:92
+#: templates/home.html:97
 msgid "Přihlásit se"
 msgstr "Sign in"
 
-#: templates/home.html:97
+#: templates/home.html:102
 msgid "přes Google"
 msgstr "with Google"
 
-#: templates/home.html:102
+#: templates/home.html:107
 msgid "přes Facebook"
 msgstr "with Facebook"
 
-#: templates/home.html:116
+#: templates/home.html:120
 msgid "Můj profil"
 msgstr "My  profile"
 
-#: templates/home.html:122
+#: templates/home.html:125
 msgid "Moje časté chyby"
 msgstr "My frequent mistakes"
 
-#: templates/home.html:128
+#: templates/home.html:130
 msgid "Odhlásit se"
 msgstr "Sign out"
 
-#: templates/home.html:161 templates/home.html.py:170 templates/home.html:184
+#: templates/home.html:172 templates/home.html.py:181 templates/home.html:195
 msgid "Napište nám"
 msgstr "Feedback"
 
-#: templates/home.html:166
+#: templates/home.html:177
 msgid "O projektu"
 msgstr "About"
 
-#: templates/home.html:188
+#: templates/home.html:199
 msgid "Feedback text label"
 msgstr ""
 "Did you find a bug in the app? Do you have an improvement idea? Or any other "
 "comment? We are eager to hear anything you'd like to tell us."
 
-#: templates/home.html:192
+#: templates/home.html:203
 msgid "Vaše emailová adresa (nepovinné)"
 msgstr "Your email address (optional)"
 
-#: templates/home.html:203
+#: templates/home.html:214
 msgid "Odeslat"
 msgstr "Send"
 
-#: templates/home.html:206 templates/home.html.py:276
+#: templates/home.html:217 templates/home.html.py:287
 msgid "Zavřít"
 msgstr "Close"
 
-#: templates/home.html:214
+#: templates/home.html:225
 msgid "Vytvořit cíl"
 msgstr "Create goal"
 
-#: templates/home.html:218
+#: templates/home.html:229
 msgid "Mapa"
 msgstr "Map"
 
-#: templates/home.html:245
+#: templates/home.html:256
 msgid "Datum splnění cíle"
 msgstr "Goal completion date"
 
-#: templates/home.html:273
+#: templates/home.html:284
 msgid "Vytrvořit"
 msgstr "Create"
 
@@ -352,28 +360,28 @@ msgid "Vyberte si mapu k procvičování:"
 msgstr "Choose a map to practice:"
 
 #: templates/generated/homepage.html:24
-msgid "Státy světa"
-msgstr "World states"
-
-#: templates/generated/homepage.html:27
 msgid "Státy Evropy"
 msgstr "Europe states"
+
+#: templates/generated/homepage.html:27
+msgid "Řeky ČR"
+msgstr "Czech rivers"
 
 #: templates/generated/homepage.html:30
 msgid "Státy USA"
 msgstr "US states"
 
 #: templates/generated/homepage.html:33
-msgid "Kraje ČR"
-msgstr "Czech regions"
+msgid "Pohoří ČR"
+msgstr "Czech mountains"
 
 #: templates/generated/homepage.html:36
-msgid "Města ČR"
-msgstr "Czech cities"
+msgid "Státy Asie"
+msgstr "Asian states"
 
 #: templates/generated/homepage.html:39
-msgid "Pohoří Evropy"
-msgstr "Europe mountains"
+msgid "Řeky Afriky"
+msgstr "African rivers"
 
 #: templates/generated/homepage.html:42
 msgid "Chcete jinou? Podívejte se na"
@@ -448,6 +456,21 @@ msgstr ""
 "The application learns from data of all users. Question choice is based on "
 "this data, instead of being based on knowledge of an geography expert who "
 "\"knows\" whether it's generally more difficult to know Kenya or Nigeria."
+
+#~ msgid "Cíl byl vytvořen"
+#~ msgstr "Goal has been set up"
+
+#~ msgid "Státy světa"
+#~ msgstr "World states"
+
+#~ msgid "Kraje ČR"
+#~ msgstr "Czech regions"
+
+#~ msgid "Města ČR"
+#~ msgstr "Czech cities"
+
+#~ msgid "Pohoří Evropy"
+#~ msgstr "Europe mountains"
 
 #~ msgid "Body - přibývají za každou správnou odpověď"
 #~ msgstr "Points - gained per each correct answer"
