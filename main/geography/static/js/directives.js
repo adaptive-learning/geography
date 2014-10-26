@@ -372,5 +372,19 @@
 
       }
     };
+  }])
+
+  .directive('trackClick', ['$analytics', function ($analytics) {
+    return {
+      restrict: 'A',
+      link: function (scope, element, attrs) {
+        element.click(function(){
+          $analytics.eventTrack('click', {
+            category: attrs.trackClick,
+            label: attrs.href,
+          });
+        });
+      }
+    };
   }]);
 }());

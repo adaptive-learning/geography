@@ -90,6 +90,7 @@
                 <li class="dropdown" ng-show="user.username === ''" >
                   <a href="" 
                      role="button" 
+                     track-click="login"
                      class="dropdown-toggle drop-login atooltip"
                      title="{% trans "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše znalosti pamatoval i příště." %}"
                      container="body"
@@ -98,12 +99,16 @@
                   </a>
                   <ul class="dropdown-menu login" role="menu" aria-labelledby="drop-login">
                     <li>
-                      <a class="btn btn-danger btn-lg btn-block" href="/login/google/">
+                      <a class="btn btn-danger btn-lg btn-block"
+                        track-click="login"
+                        href="/login/google/">
                         <i class="social-google"></i> {% trans "přes Google" %}
                       </a>
                     </li>
                     <li>
-                      <a class="btn btn-primary btn-lg btn-block" href="/login/facebook/">
+                      <a class="btn btn-primary btn-lg btn-block"
+                        track-click="login"
+                        href="/login/facebook/">
                         <i class="social-facebook"></i>{% trans "přes Facebook" %}
                       </a>
                     </li>

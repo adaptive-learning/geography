@@ -147,8 +147,8 @@
     };
   }])
 
-  .service('question', ['$http', '$log', '$cookies', 'goal',
-      function($http, $log, $cookies, goal) {
+  .service('question', ['$http', '$log', '$cookies', 'goal', '$analytics',
+      function($http, $log, $cookies, goal, $analytics) {
     var qIndex = 0;
     var url;
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -172,6 +172,10 @@
     return {
       first : function(part, placeType, fn) {
         url = '/question/' + part + '/' + (placeType ? placeType : '');
+        $analytics.eventTrack('started', {
+          category: 'practice',
+          label: url,
+        });
         summary = [];
         var promise = $http.get(url).success(function(data) {
           qIndex = 0;
@@ -207,6 +211,10 @@
         return 100 * qIndex / questions.length;
       },
       summary : function() {
+        $analytics.eventTrack('finished', {
+          category: 'practice',
+          label: url,
+        });
         var correctlyAnswered = summary.filter(function(q) {
             return q.asked_code == q.answered_code;
           });
