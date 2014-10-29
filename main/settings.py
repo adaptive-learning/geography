@@ -217,7 +217,6 @@ LOGGING = {
             'formatter': 'simple'
         },
         'proso_file': {
-
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
             'filename': os.path.join(MEDIA_ROOT, 'proso.log'),
@@ -237,16 +236,16 @@ LOGGING = {
         },
         'geography': {
             'handlers': ['geography_file'],
-            'level': 'DEBUG',
+            'level': 'DEBUG' if DEBUG else 'INFO',
             'propagate': True,
         },
         'proso': {
             'handlers': ['proso_file'],
-            'level': 'DEBUG',
+            'level': 'DEBUG' if DEBUG else 'INFO',
             'propagate': True,
         },
         'django.db': {
-            'level': 'DEBUG',
+            'level': 'DEBUG' if DEBUG else 'INFO',
             'handlers': ['queries_file'],
             'propagate': True
         }
