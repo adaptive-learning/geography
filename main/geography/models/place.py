@@ -49,6 +49,13 @@ class PlaceManager(models.Manager):
         'recommendation_target_prob_95': 0.95
     }
 
+    DEFAULT_RECOMMENDATION_TARGET_PROB_ADJUSTMENT = 'recommendation_target_prob_adjustment_true'
+
+    RECOMMENDATION_TARGET_PROB_ADJUSTMENT = {
+        DEFAULT_RECOMMENDATION_TARGET_PROB_ADJUSTMENT: True,
+        'recommendation_target_prob_adjustment_false': False,
+    }
+
     def get_place_ids_on_map(self, map_place, place_types):
         with closing(connection.cursor()) as cursor:
             cursor.execute(
@@ -89,9 +96,14 @@ class PlaceManager(models.Manager):
             PlaceManager.RECOMMENDATION_TARGET_PROBS,
             PlaceManager.DEFAULT_RECOMMENDATION_TARGET_PROB,
             Place.AB_REASON_RECOMMENDATION)
+        target_prob_adjustment = ab_env.get_membership(
+            PlaceManager.RECOMMENDATION_TARGET_PROB_ADJUSTMENT,
+            PlaceManager.DEFAULT_RECOMMENDATION_TARGET_PROB_ADJUSTMENT,
+            Place.AB_REASON_RECOMMENDATION)
         strategy = PlaceManager.RECOMMENDATION_STRATEGIES[strategy_name]
         options_strategy = PlaceManager.OPTIONS_STRATEGIES[options_strategy_name]
         target_prob = PlaceManager.RECOMMENDATION_TARGET_PROBS[target_prob_name]
+        adjust_target_prob = PlaceManager.RECOMMENDATION_TARGET_PROB_ADJUSTMENT[target_prob_adjustment]
         available_place_ids = self.get_place_ids_on_map(map_place, place_types)
         candidates = strategy(
             user.id,
@@ -99,7 +111,8 @@ class PlaceManager(models.Manager):
             knowledge_env,
             n,
             options_strategy=options_strategy,
-            target_probability=target_prob)
+            target_probability=target_prob,
+            adjust_target_prob=adjust_target_prob)
         targets, options_flatten = zip(*candidates)
         options = [o for os in options_flatten for o in os]
         all_ids = set(list(targets) + list(options))
