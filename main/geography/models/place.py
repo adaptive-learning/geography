@@ -38,6 +38,9 @@ class PlaceManager(models.Manager):
 
     RECOMMENDATION_TARGET_PROBS = {
         DEFAULT_RECOMMENDATION_TARGET_PROB: 0.80,
+        'recommendation_target_prob_50': 0.50,
+        'recommendation_target_prob_55': 0.55,
+        'recommendation_target_prob_60': 0.60,
         'recommendation_target_prob_65': 0.65,
         'recommendation_target_prob_70': 0.70,
         'recommendation_target_prob_75': 0.75,
