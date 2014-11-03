@@ -11,6 +11,6 @@ django-debug-toolbar==1.1
 httplib2==0.8
 oauth2==1.5.211
 prettytable==0.7.2
-proso-geography-model==1.0.3
+proso-geography-model==1.0.4
 python-openid==2.2.5
 wsgiref==0.1.2
