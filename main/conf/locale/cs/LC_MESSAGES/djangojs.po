@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-17 06:31+0200\n"
+"POT-Creation-Date: 2014-11-09 09:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: geography/static/dist/js/blind-maps.min.js:260
 #: geography/static/dist/js/blind-maps.min.js:403
 #: geography/static/dist/js/blind-maps.min.js:484
-#: geography/static/dist/js/blind-maps.min.js:1921
+#: geography/static/dist/js/blind-maps.min.js:1930
 #: geography/static/js/controllers.js:77
 #: geography/static/js/controllers.js:104
 #: geography/static/js/controllers.js:247
@@ -55,48 +55,59 @@ msgstr "Vodstvo"
 msgid "Povrch"
 msgstr "Povrch"
 
-#: geography/static/dist/js/blind-maps.min.js:800
-#: geography/static/js/services.js:308
+#: geography/static/dist/js/blind-maps.min.js:808
+#: geography/static/js/services.js:316
 msgid "O prjektu"
 msgstr "O prjektu"
 
-#: geography/static/dist/js/blind-maps.min.js:801
+#: geography/static/dist/js/blind-maps.min.js:809
 #: geography/static/hack/tpl/overview_tpl.js:1
-#: geography/static/js/services.js:309
+#: geography/static/js/services.js:317
 msgid "Přehled map"
 msgstr "Přehled map"
 
-#: geography/static/dist/js/blind-maps.min.js:1582
-#: geography/static/js/directives.js:18
+#: geography/static/dist/js/blind-maps.min.js:1295
+#: geography/static/dist/js/blind-maps.min.js:1591
+#: geography/static/js/directives.js:18 geography/static/js/map.js:270
 msgid "Odhad znalosti"
 msgstr "Odhad znalosti"
 
-#: geography/static/dist/js/blind-maps.min.js:1714
+#: geography/static/dist/js/blind-maps.min.js:1301
+#: geography/static/js/map.js:276
+msgid "Počet obyvatel"
+msgstr "Počet obyvatel"
+
+#: geography/static/dist/js/blind-maps.min.js:1308
+#: geography/static/js/map.js:283
+msgid "Neprocvičováno"
+msgstr "Neprocvičováno"
+
+#: geography/static/dist/js/blind-maps.min.js:1723
 #: geography/static/js/directives.js:150
 msgid "Naučeno"
 msgstr "Naučeno"
 
-#: geography/static/dist/js/blind-maps.min.js:1721
+#: geography/static/dist/js/blind-maps.min.js:1730
 #: geography/static/js/directives.js:157
 msgid "Procvičováno"
 msgstr "Procvičováno"
 
-#: geography/static/dist/js/blind-maps.min.js:1740
+#: geography/static/dist/js/blind-maps.min.js:1749
 #: geography/static/js/directives.js:176
 msgid "Aktuální úroveň"
 msgstr "Aktuální úroveň"
 
-#: geography/static/dist/js/blind-maps.min.js:1745
+#: geography/static/dist/js/blind-maps.min.js:1754
 #: geography/static/js/directives.js:181
 msgid "bodů do příští úrovně"
 msgstr "bodů do příští úrovně"
 
-#: geography/static/dist/js/blind-maps.min.js:1752
+#: geography/static/dist/js/blind-maps.min.js:1761
 #: geography/static/js/directives.js:188
 msgid "Příští úroveň"
 msgstr "Příští úroveň"
 
-#: geography/static/dist/js/blind-maps.min.js:1914
+#: geography/static/dist/js/blind-maps.min.js:1923
 #: geography/static/js/directives.js:350
 msgid "Cíl byl vytvořen"
 msgstr "Cíl byl vytvořen"

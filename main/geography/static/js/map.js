@@ -254,7 +254,8 @@
     return that;
   }])
   
-  .factory('getTooltipGetter', ['$filter', 'colorScale', function($filter, colorScale){
+  .factory('getTooltipGetter', ['$filter', 'colorScale', 'gettext',
+      function($filter, colorScale, gettext){
     return function(places) { 
       return function(d) {
         var place = places && places[d.code];
@@ -266,20 +267,20 @@
           '');
         var description = (place && place.displayed ?
           '<div>' +
-            ' Odhad znalosti: ' + 
+            gettext('Odhad znalosti') + ': ' + 
               '<span class="badge badge-default">' +
                 '<i class="color-indicator" style="background-color :' +
                 colorScale(place.probability).hex() + '"></i>' +
                 10 * place.probability + ' / 10 ' +
               '</span><br><br>' +
-            (d.population ? ' Počet obyvatel: ' +
+            (d.population ? gettext('Počet obyvatel') + ': ' +
               '<span class="badge badge-default">' +
                 $filter('number')(d.population) + 
               '</span><br><br>' : '') +
           '</div>' :
             (place && place.summary ?
             '' :
-            '<br>Neprocvičováno<br><br>'));
+            '<br>' + gettext('Neprocvičováno') + '<br><br>'));
         return [
           name + description,
           place ? place.name : ''
