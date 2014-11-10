@@ -7,6 +7,7 @@ import logging
 import place
 import ab
 import test
+import settings
 
 LOGGER = logging.getLogger(__name__)
 
@@ -52,12 +53,7 @@ class Answer(models.Model):
         (FIND_ON_MAP, "find on map"),
         (PICK_NAME, "pick name")
     )
-    LANG_CS = 0
-    LANG_EN = 1
-    LANGUAGES = (
-        (LANG_CS, "cs"),
-        (LANG_EN, "en"),
-    )
+    LANGUAGES = [(i, code) for i, (code, name) in enumerate(settings.LANGUAGES)]
     LANGUAGES_REVERSE = dict((t[1], t[0]) for t in LANGUAGES)
     user = models.ForeignKey(User)
     place_asked = models.ForeignKey(place.Place, related_name='place_asked_id')
@@ -68,7 +64,7 @@ class Answer(models.Model):
         blank=True,
         default=None)
     type = models.IntegerField(choices=QUESTION_TYPES)
-    language = models.SmallIntegerField(choices=LANGUAGES, default=LANG_CS)
+    language = models.SmallIntegerField(choices=LANGUAGES, default=LANGUAGES[0][0])
     inserted = models.DateTimeField(default=datetime.now)
     response_time = models.IntegerField(default=0)
     options = models.ManyToManyField(place.Place)
