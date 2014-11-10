@@ -331,26 +331,46 @@ class DatabaseEnvironment(Environment):
 class InMemoryEnvironmentWithFlush(InMemoryEnvironment):
 
     def flush_all(self, prior_skill, current_skill, difficulty):
+        insert_limit = 50000
         comma = ""
-        print 'INSERT INTO geography_priorskill (user_id, value) VALUES'
+        count = 1
+        print 'INSERT INTO geography_priorskill (user_id, value) VALUES',
         for user_id, skill in self._prior_skill.iteritems():
-            print "\t{}({}, {})".format(comma, user_id, skill)
+            print "\t{}({}, {})".format(comma, user_id, skill),
             comma = ','
-        print ";"
+            if count > insert_limit:
+                count = 0
+                print ';'
+                comma = ''
+                print 'INSERT INTO geography_priorskill (user_id, value) VALUES',
+        if count != 0:
+            print ";"
 
         comma = ""
-        print 'INSERT INTO geography_difficulty (place_id, value) VALUES'
+        print 'INSERT INTO geography_difficulty (place_id, value) VALUES',
         for place_id, difficulty in self._difficulty.iteritems():
-            print "\t{}({}, {})".format(comma, place_id, difficulty)
+            print "\t{}({}, {})".format(comma, place_id, difficulty),
             comma = ','
-        print ";"
+            if count > insert_limit:
+                count = 0
+                print ';'
+                comma = ''
+                print 'INSERT INTO geography_difficulty (place_id, value) VALUES',
+        if count != 0:
+            print ";"
 
         comma = ""
-        print 'INSERT INTO geography_currentskill (user_id, place_id, value) VALUES'
+        print 'INSERT INTO geography_currentskill (user_id, place_id, value) VALUES',
         for (user_id, place_id), skill in self._current_skill.iteritems():
-            print "\t{}({}, {}, {})".format(comma, user_id, place_id, skill)
+            print "\t{}({}, {}, {})".format(comma, user_id, place_id, skill),
             comma = ','
-        print ";"
+            if count > insert_limit:
+                count = 0
+                print ';'
+                comma = ''
+                print 'INSERT INTO geography_currentskill (user_id, place_id, value) VALUES',
+        if count != 0:
+            print ";"
 
 
 class DifficultyManager(models.Manager):
