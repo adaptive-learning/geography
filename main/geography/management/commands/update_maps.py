@@ -30,6 +30,10 @@ class Command(BaseCommand):
                     if place.name_cs != name:
                         place.name_cs = name
                         place.save()
+                elif lang_code == 'es':
+                    if place.name_es != name:
+                        place.name_es = name
+                        place.save()
         print "Done"
 
     def get_translations(self, lang_code):

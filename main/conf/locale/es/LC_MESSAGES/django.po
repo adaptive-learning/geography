@@ -1,0 +1,481 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-17 06:28+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: settings.py:72
+msgid "Czech"
+msgstr "Checo"
+
+#: settings.py:73
+msgid "English"
+msgstr "Inglés"
+
+#: geography/models/place.py:158
+msgid "Neznámé"
+msgstr "Desconocido"
+
+#: geography/models/place.py:159 geography/views/place.py:52
+#: templates/home.html:75
+msgid "Státy"
+msgstr "Estados"
+
+#: geography/models/place.py:160
+msgid "Města"
+msgstr "Ciudades"
+
+#: geography/models/place.py:161 templates/home.html:61
+msgid "Svět"
+msgstr "Mundo"
+
+#: geography/models/place.py:162 geography/views/place.py:49
+#: templates/home.html:65
+msgid "Kontinenty"
+msgstr "Continentes"
+
+#: geography/models/place.py:163
+msgid "Řeky"
+msgstr "Ríos"
+
+#: geography/models/place.py:164
+msgid "Jezera"
+msgstr "Lagos"
+
+#: geography/models/place.py:165
+msgid "Kraje"
+msgstr "Regiones"
+
+#: geography/models/place.py:166
+msgid "Spolkové Země"
+msgstr "Estados"
+
+#: geography/models/place.py:167
+msgid "Provincie"
+msgstr "Provincias"
+
+#: geography/models/place.py:168
+msgid "Oblasti"
+msgstr "Provincias"
+
+#: geography/models/place.py:169
+msgid "Regiony"
+msgstr "Regiones"
+
+#: geography/models/place.py:170
+msgid "Autonomní společenství"
+msgstr "Comunidades Autónomas"
+
+#: geography/models/place.py:171
+msgid "Pohoří"
+msgstr "Montañas"
+
+#: geography/models/place.py:172
+msgid "Ostrovy"
+msgstr "Islas"
+
+#: geography/models/place.py:198
+msgid "Politická mapa"
+msgstr "Mapa político"
+
+#: geography/models/place.py:199
+msgid "Vodstvo"
+msgstr "Agua"
+
+#: geography/models/place.py:200
+msgid "Povrch"
+msgstr "Superficie"
+
+#: geography/utils/model.py:145 geography/utils/model.py:167
+msgid "unknown"
+msgstr "desconocido"
+
+#: geography/utils/model.py:146
+msgid "stát"
+msgstr "estado"
+
+#: geography/utils/model.py:147
+msgid "město"
+msgstr "ciudad"
+
+#: geography/utils/model.py:148
+msgid "svět"
+msgstr "mundo"
+
+#: geography/utils/model.py:149
+msgid "kontinent"
+msgstr "continente"
+
+#: geography/utils/model.py:150
+msgid "řeka"
+msgstr "río"
+
+#: geography/utils/model.py:151
+msgid "jezero"
+msgstr "lago"
+
+#: geography/utils/model.py:152
+msgid "kraj"
+msgstr "región"
+
+#: geography/utils/model.py:153
+msgid "spolková země"
+msgstr "estado"
+
+#: geography/utils/model.py:154
+msgid "provincie"
+msgstr "provincia"
+
+#: geography/utils/model.py:155
+msgid "oblast"
+msgstr "región"
+
+#: geography/utils/model.py:156
+msgid "region"
+msgstr "región"
+
+#: geography/utils/model.py:157
+msgid "autonomní společenství"
+msgstr "comunidad autónoma"
+
+#: geography/utils/model.py:158 geography/utils/model.py:180
+msgid "pohoří"
+msgstr "montañas"
+
+#: geography/utils/model.py:159
+msgid "ostrov"
+msgstr "isla"
+
+#: geography/utils/model.py:162
+msgid "spolkovou zemi"
+msgstr "estado"
+
+#: geography/utils/model.py:163
+msgid "provincii"
+msgstr "provincia"
+
+#: geography/utils/model.py:164
+msgid "řeku"
+msgstr "río"
+
+#: geography/utils/model.py:168
+msgid "států"
+msgstr "estados"
+
+#: geography/utils/model.py:169
+msgid "měst"
+msgstr "ciudades"
+
+#: geography/utils/model.py:170
+msgid "světů"
+msgstr "mundos"
+
+#: geography/utils/model.py:171
+msgid "kontinentů"
+msgstr "continentes"
+
+#: geography/utils/model.py:172
+msgid "řek"
+msgstr "ríos"
+
+#: geography/utils/model.py:173
+msgid "jezer"
+msgstr "lagos"
+
+#: geography/utils/model.py:174 geography/utils/model.py:178
+msgid "regionů"
+msgstr "regiones"
+
+#: geography/utils/model.py:175
+msgid "spolkových zemí"
+msgstr "estados"
+
+#: geography/utils/model.py:176
+msgid "provincií"
+msgstr "provincias"
+
+#: geography/utils/model.py:177
+msgid "oblastí"
+msgstr "regiones"
+
+#: geography/utils/model.py:179
+msgid "autonomních společenství"
+msgstr "comunidades autónomas"
+
+#: geography/utils/model.py:181
+msgid "ostrovů"
+msgstr "islas"
+
+#: geography/utils/model.py:198
+msgid "Ze zvýrazněných "
+msgstr "Fuera del área resaltada"
+
+#: geography/utils/model.py:198
+msgid " na mapě vyber"
+msgstr " selecciona en el mapa"
+
+#: geography/utils/model.py:200
+msgid "Vyber na mapě "
+msgstr "Selecciona en el mapa "
+
+#: geography/utils/model.py:202
+msgid "Jak se jmenuje "
+msgstr "¿Cuál es el nombre de "
+
+#: geography/utils/model.py:202
+msgid " na mapě?"
+msgstr " en el mapa?"
+
+#: geography/utils/model.py:208
+msgid "zvýrazněný"
+msgstr "área resaltada"
+
+#: geography/utils/model.py:210
+msgid "zvýrazněná"
+msgstr "área resaltada"
+
+#: geography/utils/model.py:212
+msgid "zvýrazněné"
+msgstr "área resaltada"
+
+#: geography/views/base.py:33 templates/home.html:57
+#: templates/generated/homepage.html:19
+msgid "Slepé Mapy"
+msgstr "Mapas delineados"
+
+#: geography/views/base.py:34
+msgid "inteligentní aplikace na procvičování zeměpisu"
+msgstr "programa inteligente para practicar geografía"
+
+#: geography/views/feedback.py:39
+msgid "Feedback confirmed"
+msgstr "Gracias por tu mensaje. Tu retroalimentación es muy importante para nosotros."
+
+#: templates/home.html:26
+msgid "meta content"
+msgstr ""
+"programa inteligente para practicar el aprendizaje de estados, ciudades, montañas y riós "
+"sobre mapas dibujados del mundo, Europa, Asia, África, América y Estados Unidos y entre otros "
+"países"
+
+#: templates/home.html:27
+msgid "meta keywords"
+msgstr ""
+"juegos de geografía, contorno de mapas, mapas de contorno, países, estados, ciudades, "
+"mundo, europa, américa, áfrica, asia, montañas, ríos, eua"
+
+#: templates/home.html:84
+msgid "Přehled map"
+msgstr "Visión general de Mapas"
+
+#: templates/home.html:94
+msgid ""
+"Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
+"znalosti pamatoval i příště."
+msgstr ""
+"Entra con tu cuenta de Google o Facebook para que el sistema "
+"guarde tu progreso ."
+
+#: templates/home.html:97
+msgid "Přihlásit se"
+msgstr "Iniciar sesión"
+
+#: templates/home.html:102
+msgid "přes Google"
+msgstr "con Google"
+
+#: templates/home.html:107
+msgid "přes Facebook"
+msgstr "con Facebook"
+
+#: templates/home.html:120
+msgid "Můj profil"
+msgstr "Mi  perfil"
+
+#: templates/home.html:125
+msgid "Moje časté chyby"
+msgstr "Mis errores frecuentes"
+
+#: templates/home.html:130
+msgid "Odhlásit se"
+msgstr "Terminar sesión"
+
+#: templates/home.html:172 templates/home.html.py:181 templates/home.html:195
+msgid "Napište nám"
+msgstr "Retroalimentación"
+
+#: templates/home.html:177
+msgid "O projektu"
+msgstr "Sobre"
+
+#: templates/home.html:199
+msgid "Feedback text label"
+msgstr ""
+"¿Encontraste algún error en el programa? ¿Tienes alguna sugerencia sobre como podemos mejorar? "
+"¿Quieres compartir tu opinión con nosotros? Nos gustaría escuchar lo que tengas que decir."
+
+#: templates/home.html:203
+msgid "Vaše emailová adresa (nepovinné)"
+msgstr "tu dirección de correo electrónico (opcional)"
+
+#: templates/home.html:214
+msgid "Odeslat"
+msgstr "Enviar"
+
+#: templates/home.html:217 templates/home.html.py:287
+msgid "Zavřít"
+msgstr "Cerrar"
+
+#: templates/home.html:225
+msgid "Vytvořit cíl"
+msgstr "Crear meta"
+
+#: templates/home.html:229
+msgid "Mapa"
+msgstr "Mapa"
+
+#: templates/home.html:256
+msgid "Datum splnění cíle"
+msgstr "Fecha de cumplimiento de meta"
+
+#: templates/home.html:284
+msgid "Vytrvořit"
+msgstr "Crear"
+
+#: templates/generated/homepage.html:21
+msgid "Vyberte si mapu k procvičování:"
+msgstr "Escoge un mapa para practicar:"
+
+#: templates/generated/homepage.html:24
+msgid "Státy Evropy"
+msgstr "Países Europeos"
+
+#: templates/generated/homepage.html:27
+msgid "Řeky ČR"
+msgstr "Ríos República Checa"
+
+#: templates/generated/homepage.html:30
+msgid "Státy USA"
+msgstr "Estados de Estados Unidos"
+
+#: templates/generated/homepage.html:33
+msgid "Pohoří ČR"
+msgstr "Montañas de República Checa"
+
+#: templates/generated/homepage.html:36
+msgid "Státy Asie"
+msgstr "Países de Asia"
+
+#: templates/generated/homepage.html:39
+msgid "Řeky Afriky"
+msgstr "Ríos de África"
+
+#: templates/generated/homepage.html:42
+msgid "Chcete jinou? Podívejte se na"
+msgstr "¿Quieres algún otro? Ver"
+
+#: templates/generated/homepage.html:43
+msgid "další mapy"
+msgstr "más mapas"
+
+#: templates/generated/homepage.html:53
+msgid "Jak to funguje?"
+msgstr "¿Cómo funciona?"
+
+#: templates/generated/homepage.html:57
+msgid "Zeměpis hrou"
+msgstr "Juego de Geografía"
+
+#: templates/generated/homepage.html:58
+msgid "Zeměpis hrou - text"
+msgstr ""
+"Practica tus conocimientos de geografía de una forma divertida." 
+"¡Coloréa los países de Europa, los estados de Norte América o el mundo completo!"
+
+#: templates/generated/homepage.html:62
+msgid "Adaptabilní procvičování"
+msgstr "Práctica adaptativa"
+
+#: templates/generated/homepage.html:63
+msgid "Adaptabilní procvičování - text"
+msgstr ""
+"El programa analiza tus conocimientos sobre mapas para adaptarse a tí."
+"Usa factores como el tipo de preguntas que contestas y la frecuencia con "
+"la que aciertas para escoger preguntas sobre países que te ayuden "
+"a practicar mejor y al mismo tiempo te sigas divirtiendo."
+
+
+#: templates/generated/homepage.html:65
+msgid "Ukázka procvičování"
+msgstr "Ejemplo de práctica"
+
+#: templates/generated/homepage.html:69
+msgid "Specializovaný systém"
+msgstr "Sistema Especializado"
+
+#: templates/generated/homepage.html:70
+msgid "Specializovaný systém - text"
+msgstr ""
+"Hay muchos otros sistemas para el aprendizaje que incluyen el dibujo de mapas para practicar "
+"pero usualmente son más dispersos y cubren muchas áreas. Nuestro sistem se enfoca exclusivamente"
+"en el delineado de mapas, lo que nos permite optimizar nuestro sistema para esta área."
+
+
+#: templates/generated/homepage.html:74
+msgid "Vizualizace znalostí"
+msgstr "Visualización del Conocimiento"
+
+#: templates/generated/homepage.html:75
+msgid "Vizualizace znalostí - text"
+msgstr ""
+"Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega en "
+"forma de mapa, el cuál te ayuda a visualizar de forma más facíl lo qué sabes." 
+
+#: templates/generated/homepage.html:77
+msgid "Ukázka mapy znalostí"
+msgstr "Ejemplo de visualización de conocimiento"
+
+#: templates/generated/homepage.html:81
+msgid "Učení z dat"
+msgstr "Mineria de Datos"
+
+#: templates/generated/homepage.html:82
+msgid "Učení z dat - text"
+msgstr ""
+"El programa aprende de todas las personas que lo usan. La elección de preguntas que el "
+"programa presenta se basan en esta información. De esta forma se tiene mejores "
+"estimados de dificultad para los usarios, ya que en vez de que un experto "
+"diga que tan dificil es algo, los mismos usuarios definen esto con su desempeño."
+"Así cada quién ayuda a decidir ¿qué es más dificil? saber la geografía de Kenya o de Nigeria."
+
+
+#~ msgid "Cíl byl vytvořen"
+#~ msgstr "La meta ha sido establecida"
+
+#~ msgid "Státy světa"
+#~ msgstr "Países del mundo"
+
+#~ msgid "Kraje ČR"
+#~ msgstr "Regiones Checas"
+
+#~ msgid "Města ČR"
+#~ msgstr "Ciudades Checas"
+
+#~ msgid "Pohoří Evropy"
+#~ msgstr "Montañas Europeas"
+
+#~ msgid "Body - přibývají za každou správnou odpověď"
+#~ msgstr "Puntos - ganados por cada respuesta correcta"

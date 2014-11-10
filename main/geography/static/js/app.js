@@ -30,10 +30,16 @@
     }).when('/en/:somepath?', {
       controller : 'ReloadController',
       templateUrl : 'loading.html'
+    }).when('/es/:somepath?', {
+      controller : 'ReloadController',
+      templateUrl : 'loading.html'
     }).when('/cs/:somepath/:more?/:path?', {
       controller : 'ReloadController',
       templateUrl : 'loading.html'
     }).when('/en/:somepath/:more?/:path?', {
+      controller : 'ReloadController',
+      templateUrl : 'loading.html'
+    }).when('/es/:somepath/:more?/:path?', {
       controller : 'ReloadController',
       templateUrl : 'loading.html'
     }).when('/about', {

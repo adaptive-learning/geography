@@ -66,11 +66,10 @@ TIME_ZONE = 'Europe/Prague'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'cs'
 
-_ = lambda s: s
-
 LANGUAGES = (
-    ('cs', _('Czech')),
-    ('en', _('English')),
+    ('cs', 'Česky'),
+    ('en', 'English'),
+    ('es', 'Español'),
 )
 LOCALE_PATHS = (
     os.path.join(PROJECT_DIR, 'conf', 'locale'),
