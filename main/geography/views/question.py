@@ -8,12 +8,14 @@ from geography.utils import JsonResponse, QuestionService
 from lazysignup.decorators import allow_lazy_user
 from logging import getLogger
 from ipware.ip import get_ip
+from time import time as time_fun
 
 LOGGER = getLogger(__name__)
 
 
 @allow_lazy_user
 def question(request, map_code, place_type_slug):
+    start_time = time_fun()
     try:
         map = PlaceRelation.objects.get(
             place__code=map_code,
@@ -40,6 +42,7 @@ def question(request, map_code, place_type_slug):
     if question_index == NUMBER_OF_QUESTIONS:
         response['goals'] = [g.to_serializable() for g in
                              Goal.objects.for_user_and_map(request.user, map, place_types)]
+    LOGGER.info("recommendation of %s questions took %s seconds" % (NUMBER_OF_QUESTIONS - question_index, time_fun() - start_time))
     return JsonResponse(response)
 
 
