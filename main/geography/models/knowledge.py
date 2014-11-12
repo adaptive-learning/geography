@@ -192,7 +192,7 @@ class DatabaseEnvironment(Environment):
                     '''
                     SELECT
                         place_asked_id,
-                        COUNT(DISTINCT(place_asked_id))
+                        COUNT(DISTINCT(user_id))
                     FROM geography_answer
                     WHERE place_asked_id IN (''' + ','.join([str(i) for i in place_ids]) + ''')
                     GROUP BY place_asked_id
