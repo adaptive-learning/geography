@@ -304,7 +304,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
+    <script src="{% url 'geography.views.cached_javascript_catalog' %}"></script>
     {% for file in js_files %}
     <script src="{{ file }}"></script>
     {% endfor %}

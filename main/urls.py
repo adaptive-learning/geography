@@ -22,7 +22,7 @@ urlpatterns = patterns(
     url(r'', include('social_auth.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^convert/', include('lazysignup.urls')),
-    url(r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),
+    url(r'^jsi18n/$', 'geography.views.cached_javascript_catalog', js_info_dict),
 
     url(r'^usersplaces/(?P<map_code>\w+)/(?P<user>\w*)', 'geography.views.users_places', name='usersplaces'),
     url(r'^placesoverview/', 'geography.views.places_overview', name='places_overview'),
