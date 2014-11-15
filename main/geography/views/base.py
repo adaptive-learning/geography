@@ -52,6 +52,8 @@ def home(request, hack=None):
         'LANGUAGE_CODE': request.LANGUAGE_CODE,
         'LANGUAGES': settings.LANGUAGES,
         'isHomepage': hack is None,
+        'placeTypeNames': json.dumps(dict((Place.PLACE_TYPE_SLUGS_LOWER[i[0]], _(i[1]))
+                                          for i in Place.PLACE_TYPE_PLURALS)),
     }
     return render_to_response('home.html', c)
 

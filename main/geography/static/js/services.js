@@ -40,6 +40,7 @@
         hidden:true
       }
     ];
+    var placeTypeNames = {};
 
     function addOneToNames(code, name) {
       if (!names[code]) {
@@ -122,7 +123,13 @@
         }).map(function(l){
           return l.count;
         })[0];
-      }
+      },
+      setPlaceTypeNames : function (obj) {
+        placeTypeNames = obj;
+      },
+      getPlaceTypeName : function (slug) {
+        return placeTypeNames[slug];
+      },
     };
     that.getOverview().success(function(data){
       angular.forEach(data, function(category){
@@ -320,6 +327,10 @@
       var title;
       if (route.controller == "AppView" || route.controller == "AppPractice") {
         title = places.getName(route.params.part) + ' - ';
+        var typeName = places.getPlaceTypeName(route.params.place_type);
+        if (typeName) {
+          title += typeName + ' - ';
+        }
       } else if (route.controller == "AppUser") {
         title = route.params.user + ' - ';
       } else {

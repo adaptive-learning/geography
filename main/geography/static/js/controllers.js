@@ -4,8 +4,9 @@
   angular.module('blindMaps.controllers', [])
 
   .controller('AppCtrl', ['$scope', '$rootScope', '$location', '$modal',
-      '$window', 'user', 'pageTitle', 
-      function($scope, $rootScope, $location, $modal, $window, user, pageTitle) {
+      '$window', 'user', 'pageTitle', 'places',
+      function($scope, $rootScope, $location, $modal, 
+        $window, user, pageTitle, places) {
     $rootScope.topScope = $rootScope;
     $rootScope.location = $location;
     
@@ -24,6 +25,10 @@
     
     $scope.initUser = function (username, points, email) {
       $rootScope.user = user.initUser(username, points, email);
+    };
+
+    $scope.setPlaceTypeNames = function (obj) {
+      places.setPlaceTypeNames(obj);
     };
 
     $rootScope.logout = function() {

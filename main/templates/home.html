@@ -1,7 +1,7 @@
  {% load i18n %}
 <!DOCTYPE html>
 <html data-ng-app="blindMaps" data-ng-controller="AppCtrl" lang="{{LANGUAGE_CODE}}">
-  <head>
+  <head ng-init='setPlaceTypeNames({{placeTypeNames | safe}})'>
     <meta charset="utf-8">
     <title ng-bind="title" ng-init="initTitle('{{ title }}')">
       {{ map }}{% if map != ''  %} - {% endif %}{{ title }}
