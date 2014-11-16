@@ -221,11 +221,11 @@ msgstr "islas"
 
 #: geography/utils/model.py:198
 msgid "Ze zvýrazněných "
-msgstr "Fuera del área resaltada"
+msgstr "Slecciona de entre los "
 
 #: geography/utils/model.py:198
 msgid " na mapě vyber"
-msgstr " selecciona en el mapa"
+msgstr " el que corresponda a"
 
 #: geography/utils/model.py:200
 msgid "Vyber na mapě "
@@ -233,7 +233,7 @@ msgstr "Selecciona en el mapa "
 
 #: geography/utils/model.py:202
 msgid "Jak se jmenuje "
-msgstr "¿Cuál es el nombre de "
+msgstr "¿Cuál es el nombre del "
 
 #: geography/utils/model.py:202
 msgid " na mapě?"
@@ -241,20 +241,20 @@ msgstr " en el mapa?"
 
 #: geography/utils/model.py:208
 msgid "zvýrazněný"
-msgstr "área resaltada"
+msgstr "resaltado"
 
 #: geography/utils/model.py:210
 msgid "zvýrazněná"
-msgstr "área resaltada"
+msgstr "resaltado"
 
 #: geography/utils/model.py:212
 msgid "zvýrazněné"
-msgstr "área resaltada"
+msgstr "resaltado"
 
 #: geography/views/base.py:33 templates/home.html:57
 #: templates/generated/homepage.html:19
 msgid "Slepé Mapy"
-msgstr "Mapas delineados"
+msgstr "Contorno de Mapas"
 
 #: geography/views/base.py:34
 msgid "inteligentní aplikace na procvičování zeměpisu"
@@ -315,7 +315,7 @@ msgstr "Terminar sesión"
 
 #: templates/home.html:172 templates/home.html.py:181 templates/home.html:195
 msgid "Napište nám"
-msgstr "Retroalimentación"
+msgstr "Sugerencias"
 
 #: templates/home.html:177
 msgid "O projektu"
@@ -329,7 +329,7 @@ msgstr ""
 
 #: templates/home.html:203
 msgid "Vaše emailová adresa (nepovinné)"
-msgstr "tu dirección de correo electrónico (opcional)"
+msgstr "Tu email (opcional)"
 
 #: templates/home.html:214
 msgid "Odeslat"
@@ -357,7 +357,7 @@ msgstr "Crear"
 
 #: templates/generated/homepage.html:21
 msgid "Vyberte si mapu k procvičování:"
-msgstr "Escoge un mapa para practicar:"
+msgstr "Selecciona un mapa para practicar:"
 
 #: templates/generated/homepage.html:24
 msgid "Státy Evropy"
@@ -365,15 +365,15 @@ msgstr "Países Europeos"
 
 #: templates/generated/homepage.html:27
 msgid "Řeky ČR"
-msgstr "Ríos República Checa"
+msgstr "Ríos Rep. Ch."
 
 #: templates/generated/homepage.html:30
 msgid "Státy USA"
-msgstr "Estados de Estados Unidos"
+msgstr "Estados de E.U.A."
 
 #: templates/generated/homepage.html:33
 msgid "Pohoří ČR"
-msgstr "Montañas de República Checa"
+msgstr "Montañas de Rep. Ch."
 
 #: templates/generated/homepage.html:36
 msgid "Státy Asie"
@@ -385,7 +385,7 @@ msgstr "Ríos de África"
 
 #: templates/generated/homepage.html:42
 msgid "Chcete jinou? Podívejte se na"
-msgstr "¿Quieres algún otro? Ver"
+msgstr "¿Quieres ver otros? ver " 
 
 #: templates/generated/homepage.html:43
 msgid "další mapy"
@@ -430,7 +430,7 @@ msgstr "Sistema Especializado"
 msgid "Specializovaný systém - text"
 msgstr ""
 "Hay muchos otros sistemas para el aprendizaje que incluyen el dibujo de mapas para practicar "
-"pero usualmente son más dispersos y cubren muchas áreas. Nuestro sistem se enfoca exclusivamente"
+"pero usualmente son más dispersos y cubren muchas áreas. Nuestro sistema se enfoca exclusivamente"
 "en el delineado de mapas, lo que nos permite optimizar nuestro sistema para esta área."
 
 
@@ -442,7 +442,7 @@ msgstr "Visualización del Conocimiento"
 msgid "Vizualizace znalostí - text"
 msgstr ""
 "Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega en "
-"forma de mapa, el cuál te ayuda a visualizar de forma más facíl lo qué sabes." 
+"forma de mapa, el cuál te ayuda a visualizar de forma más fácil lo qué sabes." 
 
 #: templates/generated/homepage.html:77
 msgid "Ukázka mapy znalostí"
@@ -450,16 +450,16 @@ msgstr "Ejemplo de visualización de conocimiento"
 
 #: templates/generated/homepage.html:81
 msgid "Učení z dat"
-msgstr "Mineria de Datos"
+msgstr "Minería de Datos"
 
 #: templates/generated/homepage.html:82
 msgid "Učení z dat - text"
 msgstr ""
 "El programa aprende de todas las personas que lo usan. La elección de preguntas que el "
-"programa presenta se basan en esta información. De esta forma se tiene mejores "
-"estimados de dificultad para los usarios, ya que en vez de que un experto "
-"diga que tan dificil es algo, los mismos usuarios definen esto con su desempeño."
-"Así cada quién ayuda a decidir ¿qué es más dificil? saber la geografía de Kenya o de Nigeria."
+"programa presenta se basan en esta información. De esta forma, se tiene mejores "
+"estimados de dificultad para los usuarios, ya que en vez de que un experto "
+"dicte la dificultad, los usuarios definen el nivel con su desempeño. "
+"Así cada quién ayuda a decidir qué es más difícil, sí la geografía de Kenia o los rías de Nigeria."
 
 
 #~ msgid "Cíl byl vytvořen"

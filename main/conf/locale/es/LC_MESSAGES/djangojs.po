@@ -143,11 +143,11 @@ msgstr "Práctica para más de un día"
 
 #: geography/static/hack/tpl/homepage.js:1
 msgid "Slepé Mapy"
-msgstr "Controno de mapas"
+msgstr "Contorno de Mapas"
 
 #: geography/static/hack/tpl/homepage.js:2
 msgid "Vyberte si mapu k procvičování:"
-msgstr "Selecciona un mapa a practicar:"
+msgstr "Selecciona un mapa para practicar:"
 
 #: geography/static/hack/tpl/homepage.js:3
 msgid "Státy Evropy"
@@ -155,15 +155,15 @@ msgstr "Países Europeos"
 
 #: geography/static/hack/tpl/homepage.js:4
 msgid "Řeky ČR"
-msgstr "Rios de República Checa"
+msgstr "Ríos de Rep. Ch."
 
 #: geography/static/hack/tpl/homepage.js:5
 msgid "Státy USA"
-msgstr "Estados de Estados Unidos"
+msgstr "Estados de E.U.A."
 
 #: geography/static/hack/tpl/homepage.js:6
 msgid "Pohoří ČR"
-msgstr "Montañas de República Checa"
+msgstr "Montañas de Rep Ch"
 
 #: geography/static/hack/tpl/homepage.js:7
 msgid "Státy Asie"
@@ -175,7 +175,7 @@ msgstr "Ríos de África"
 
 #: geography/static/hack/tpl/homepage.js:9
 msgid "Chcete jinou? Podívejte se na"
-msgstr "¿Desea otro? Ver"
+msgstr "¿Quieres ver otros? ver "
 
 #: geography/static/hack/tpl/homepage.js:10
 msgid "další mapy"
@@ -187,7 +187,7 @@ msgstr "¿Cómo funciona?"
 
 #: geography/static/hack/tpl/homepage.js:14
 msgid "Zeměpis hrou"
-msgstr "Juego de geografía"
+msgstr "Juego de Geografía"
 
 #: geography/static/hack/tpl/homepage.js:16
 msgid "Zeměpis hrou - text"
@@ -219,7 +219,7 @@ msgstr "Sistema Especializado"
 msgid "Specializovaný systém - text"
 msgstr ""
 "Hay muchos otros sistemas para el aprendizaje que incluyen el dibujo de mapas para practicar "
-"pero usualmente son más dispersos y cubren muchas áreas. Nuestro sistem se enfoca exclusivamente"
+"pero usualmente son más dispersos y cubren muchas áreas. Nuestro sistema se enfoca exclusivamente"
 "en el delineado de mapas, lo que nos permite optimizar nuestro sistema para esta área."
 
 #: geography/static/hack/tpl/homepage.js:27
@@ -230,7 +230,7 @@ msgstr "Visualización del Conocimiento"
 msgid "Vizualizace znalostí - text"
 msgstr ""
 "Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega en "
-"forma de mapa, el cuál te ayuda a visualizar de forma más facíl lo qué sabes." 
+"forma de mapa, el cuál te ayuda a visualizar de forma más fácil lo qué sabes." 
 
 #: geography/static/hack/tpl/homepage.js:29
 msgid "Ukázka mapy znalostí"
@@ -238,17 +238,16 @@ msgstr "Ejemplo de visualización de conocimiento"
 
 #: geography/static/hack/tpl/homepage.js:31
 msgid "Učení z dat"
-msgstr "Mineria de Datos"
+msgstr "Minería de Datos"
 
 #: geography/static/hack/tpl/homepage.js:33
 msgid "Učení z dat - text"
 msgstr ""
 "El programa aprende de todas las personas que lo usan. La elección de preguntas que el "
-"programa presenta se basan en esta información. De esta forma se tiene mejores "
-"estimados de dificultad para los usarios, ya que en vez de que un experto "
-"diga que tan dificil es algo, los mismos usuarios definen esto con su desempeño."
-"Así cada quién ayuda a decidir ¿qué es más dificil? saber la geografía de Kenya o de Nigeria."
-
+"programa presenta se basan en esta información. De esta forma, se tiene mejores "
+"estimados de dificultad para los usuarios, ya que en vez de que un experto "
+"dicte la dificultad, los usuarios definen el nivel con su desempeño. "
+"Así cada quién ayuda a decidir qué es más difícil, sí la geografía de Kenia o los rías de Nigeria."
 
 #: geography/static/hack/tpl/map_tpl.js:1
 msgid "Moje znalosti"
@@ -296,7 +295,7 @@ msgstr "Seleccionado"
 
 #: geography/static/hack/tpl/practice_tpl.js:2
 msgid "Nevím"
-msgstr "No sabe"
+msgstr "No sé"
 
 #: geography/static/hack/tpl/practice_tpl.js:3
 msgid "Pokračovat"
