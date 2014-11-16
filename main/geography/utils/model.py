@@ -195,11 +195,15 @@ class QuestionType(object):
 
         if self.type == Answer.FIND_ON_MAP:
             if self.number_of_options > 0:
-                return _(u'Ze zvýrazněných ') + place_plural_choice + _(u' na mapě vyber')
+                return _(u'Ze zvýrazněných %(place_plural)s na mapě vyber'
+                         ) % {'place_plural': place_plural_choice}
             else:
-                return _(u'Vyber na mapě ') + place_singular_choice
+                return _(u'Vyber na mapě %(place_singular)s'
+                         ) % {'place_singular': place_singular_choice}
         else:
-            return _(u'Jak se jmenuje ') + place_singular + ' ' + self.highlighted + _(u' na mapě?')
+            return _(u'Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?'
+                     ) % {'place_singular': place_singular,
+                          'highlighted': self.highlighted}
 
     @property
     def highlighted(self):
