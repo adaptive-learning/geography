@@ -1,7 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import RedirectView
 from django.http import HttpResponse
-import proso_goals.urls
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -36,11 +35,10 @@ urlpatterns = patterns(
     url(r'^user/logout/', 'geography.views.logout_view', name='logout_view'),
     url(r'^user/(?P<username>[\w\.]*)', 'geography.views.user_view', name='user_view'),
 
-    url(r'^feedback/', 'geography.views.feedback', name='feedback'),
-
     url(r'^favicon\.ico$', RedirectView.as_view(url='static/img/favicon.png')),
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     url(r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /question/\nDisallow: /login/\n", mimetype="text/plain")),
 
-    url(r'^goal/', include(proso_goals.urls)),
+    url(r'^goal/', include('proso_goals.urls')),
+    url(r'^feedback/', include('proso_feedback.urls')),
 )

@@ -176,6 +176,7 @@ INSTALLED_APPS = (
     'lazysignup',
     'geography',
     'proso_goals',
+    'proso_feedback',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -312,3 +313,7 @@ except ImportError:
     HASHES = {}
 except SyntaxError:
     HASHES = {}
+
+FEEDBACK_TO = 'slepemapy@googlegroups.com'
+FEEDBACK_FROM = 'feedback@slepemapy.cz'
+FEEDBACK_FROM_SPAM = 'spam@slepemapy.cz'

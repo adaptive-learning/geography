@@ -4,6 +4,7 @@ from django.utils import simplejson
 from geography.utils import JsonResponse
 from logging import getLogger
 from django.core.mail import send_mail
+from django.conf import settings
 
 
 LOGGER = getLogger(__name__)
@@ -25,13 +26,13 @@ def feedback(request):
                      '\npage: ' + feedback['page'] +
                      '\nuser agent: ' + feedback['user_agent'])
         if is_likely_worthless(feedback):
-            mail_from = 'spam@slepemapy.cz'
+            mail_from = settings.FEEDBACK_FROM_SPAM
         else:
-            mail_from = 'feedback@slepemapy.cz'
+            mail_from = settings.FEEDBACK_FROM
         send_mail('slepemapy.cz feedback',
                   mail_text,
                   mail_from,
-                  ['slepemapy@googlegroups.com'],
+                  [settings.FEEDBACK_TO],
                   fail_silently=False)
         LOGGER.debug("email sent %s\n", mail_text)
         response = {
