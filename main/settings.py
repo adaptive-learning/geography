@@ -175,6 +175,7 @@ INSTALLED_APPS = (
     'social_auth',
     'lazysignup',
     'geography',
+    'proso_goals',
 )
 
 # A sample logging configuration. The only tangible logging

@@ -3,7 +3,8 @@ from geography.utils import JsonResponse
 from django.contrib.auth.models import User
 from django.http import Http404, HttpResponseBadRequest
 from django.utils import simplejson
-from geography.models import Goal, Place, PlaceRelation, MapSkill
+from geography.models import Place, PlaceRelation, MapSkill
+from proso_goals.models import Goal
 
 
 def goals_delete(request, id):

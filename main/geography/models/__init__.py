@@ -6,4 +6,3 @@ from knowledge import PriorSkill, CurrentSkill, Difficulty, KnowledgeUpdater, In
 from test import Test
 from ab import Group, Value, UserValues, ABEnvironment
 from mapskill import MapSkill
-from goal import *

@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 from django.http import Http404, HttpResponseBadRequest
 from django.utils import simplejson
 from django.utils.translation import ugettext as _
-from geography.models import Place, PlaceRelation, UserPlace, AveragePlace, ABEnvironment, Goal
+from geography.models import Place, PlaceRelation, UserPlace, AveragePlace, ABEnvironment
+from proso_goals.models import Goal
 from geography.utils import JsonResponse, QuestionService
 from lazysignup.decorators import allow_lazy_user
 from logging import getLogger

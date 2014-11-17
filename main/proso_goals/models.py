@@ -89,6 +89,5 @@ class Goal(models.Model):
         return max(0, min(ratio, 1))
 
     class Meta:
-        app_label = 'geography'
         unique_together = ('user', 'map', 'place_type')
         ordering = ["-id"]
