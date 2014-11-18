@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-16 13:00+0100\n"
+"POT-Creation-Date: 2014-11-18 16:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -143,9 +143,10 @@ msgstr "region"
 msgid "autonomní společenství"
 msgstr "autonomous comunity"
 
-#: geography/utils/model.py:158 geography/utils/model.py:180
+#: geography/utils/model.py:158
+msgctxt "singular"
 msgid "pohoří"
-msgstr "mountains"
+msgstr "mountain range"
 
 #: geography/utils/model.py:159
 msgid "ostrov"
@@ -207,6 +208,11 @@ msgstr "regions"
 msgid "autonomních společenství"
 msgstr "autonomous comunities"
 
+#: geography/utils/model.py:180
+msgctxt "plural"
+msgid "pohoří"
+msgstr "mountain ranges"
+
 #: geography/utils/model.py:181
 msgid "ostrovů"
 msgstr "islands"
@@ -227,14 +233,17 @@ msgid "Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?"
 msgstr "What is the name of %(place_singular)s %(highlighted)s on the map?"
 
 #: geography/utils/model.py:212
+msgctxt "masculine"
 msgid "zvýrazněný"
 msgstr "highlighted"
 
 #: geography/utils/model.py:214
+msgctxt "feminine"
 msgid "zvýrazněná"
 msgstr "highlighted"
 
 #: geography/utils/model.py:216
+msgctxt "neuter"
 msgid "zvýrazněné"
 msgstr "highlighted"
 
@@ -247,7 +256,7 @@ msgstr "Outline maps"
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr "intelligent geography practice app"
 
-#: geography/views/feedback.py:39
+#: proso_feedback/views.py:40
 msgid "Feedback confirmed"
 msgstr "Thank you for the message. User feedback is very important for us."
 

@@ -163,7 +163,7 @@ msgstr "Estados de E.U.A."
 
 #: geography/static/hack/tpl/homepage.js:6
 msgid "Pohoří ČR"
-msgstr "Montañas de Rep Ch"
+msgstr "Montes de Rep Ch"
 
 #: geography/static/hack/tpl/homepage.js:7
 msgid "Státy Asie"

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.utils.translation import ugettext as _
+from django.utils.translation import pgettext, ugettext as _
 from geography.models import Answer, Place, Value, DatabaseEnvironment, Test
 from random import choice, shuffle
 import logging
@@ -155,7 +155,7 @@ class QuestionType(object):
         Place.REGION_IT: _(u'oblast'),
         Place.REGION: _(u'region'),
         Place.AUTONOMOUS_COMUNITY: _(u'autonomní společenství'),
-        Place.MOUNTAINS: _(u'pohoří'),
+        Place.MOUNTAINS: pgettext('singular', u'pohoří'),
         Place.ISLAND: _(u'ostrov'),
     }
     PLACE_TYPE_SINGULAR_CHOICE = {
@@ -177,7 +177,7 @@ class QuestionType(object):
         Place.REGION_IT: _(u'oblastí'),
         Place.REGION: _(u'regionů'),
         Place.AUTONOMOUS_COMUNITY: _(u'autonomních společenství'),
-        Place.MOUNTAINS: _(u'pohoří'),
+        Place.MOUNTAINS: pgettext('plural', u'pohoří'),
         Place.ISLAND: _(u'ostrovů'),
     }
 
@@ -209,11 +209,11 @@ class QuestionType(object):
     def highlighted(self):
         genus = QuestionType.PLACE_TYPE_GENUS[self.place_type]
         if genus == QuestionType.GENUS_MASCULINE:
-            return _(u'zvýrazněný')
+            return pgettext('masculine', u'zvýrazněný')
         elif genus == QuestionType.GENUS_FEMININE:
-            return _(u'zvýrazněná')
+            return pgettext('feminine', u'zvýrazněná')
         else:
-            return _(u'zvýrazněné')
+            return pgettext('neuter', u'zvýrazněné')
 
     def to_serializable(self):
         return {

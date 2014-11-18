@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-16 13:00+0100\n"
+"POT-Creation-Date: 2014-11-18 16:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -143,7 +143,8 @@ msgstr ""
 msgid "autonomní společenství"
 msgstr ""
 
-#: geography/utils/model.py:158 geography/utils/model.py:180
+#: geography/utils/model.py:158
+msgctxt "singular"
 msgid "pohoří"
 msgstr ""
 
@@ -207,6 +208,11 @@ msgstr ""
 msgid "autonomních společenství"
 msgstr ""
 
+#: geography/utils/model.py:180
+msgctxt "plural"
+msgid "pohoří"
+msgstr ""
+
 #: geography/utils/model.py:181
 msgid "ostrovů"
 msgstr ""
@@ -227,14 +233,17 @@ msgid "Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?"
 msgstr ""
 
 #: geography/utils/model.py:212
+msgctxt "masculine"
 msgid "zvýrazněný"
 msgstr ""
 
 #: geography/utils/model.py:214
+msgctxt "feminine"
 msgid "zvýrazněná"
 msgstr ""
 
 #: geography/utils/model.py:216
+msgctxt "neuter"
 msgid "zvýrazněné"
 msgstr ""
 
@@ -247,7 +256,7 @@ msgstr "Slepé Mapy"
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr ""
 
-#: geography/views/feedback.py:39
+#: proso_feedback/views.py:40
 msgid "Feedback confirmed"
 msgstr ""
 "Děkujeme Vám za zaslané informace. Feedback od uživatelů je k nezaplacení."
@@ -357,14 +366,12 @@ msgid "Státy USA"
 msgstr "Státy USA"
 
 #: templates/generated/homepage.html:41
-#, fuzzy
 msgid "Pohoří ČR"
-msgstr "Pohoří Evropy"
+msgstr ""
 
 #: templates/generated/homepage.html:46
-#, fuzzy
 msgid "Státy Asie"
-msgstr "Státy USA"
+msgstr ""
 
 #: templates/generated/homepage.html:51
 msgid "Řeky Afriky"

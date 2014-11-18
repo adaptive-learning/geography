@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-16 13:00+0100\n"
+"POT-Creation-Date: 2014-11-18 16:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -143,9 +143,10 @@ msgstr "región"
 msgid "autonomní společenství"
 msgstr "comunidad autónoma"
 
-#: geography/utils/model.py:158 geography/utils/model.py:180
+#: geography/utils/model.py:158
+msgctxt "singular"
 msgid "pohoří"
-msgstr "montañas"
+msgstr "cordillera"
 
 #: geography/utils/model.py:159
 msgid "ostrov"
@@ -207,6 +208,11 @@ msgstr "regiones"
 msgid "autonomních společenství"
 msgstr "comunidades autónomas"
 
+#: geography/utils/model.py:180
+msgctxt "plural"
+msgid "pohoří"
+msgstr "cordilleras"
+
 #: geography/utils/model.py:181
 msgid "ostrovů"
 msgstr "islas"
@@ -214,7 +220,9 @@ msgstr "islas"
 #: geography/utils/model.py:198
 #, python-format
 msgid "Ze zvýrazněných %(place_plural)s na mapě vyber"
-msgstr "Slecciona de entre los %(place_plural)s el que corresponda a"
+msgstr ""
+"Slecciona de entre los %(place_plural)s resaltados en grís el que "
+"corresponda a"
 
 #: geography/utils/model.py:201
 #, python-format
@@ -227,16 +235,19 @@ msgid "Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?"
 msgstr "¿Cuál es el nombre del %(place_singular)s %(highlighted)s en el mapa?"
 
 #: geography/utils/model.py:212
+msgctxt "masculine"
 msgid "zvýrazněný"
-msgstr "resaltado"
+msgstr "resaltado en grís"
 
 #: geography/utils/model.py:214
+msgctxt "feminine"
 msgid "zvýrazněná"
-msgstr "resaltado"
+msgstr "resaltado en grís"
 
 #: geography/utils/model.py:216
+msgctxt "neuter"
 msgid "zvýrazněné"
-msgstr "resaltado"
+msgstr "resaltado en grís"
 
 #: geography/views/base.py:35 templates/home.html:57
 #: templates/generated/homepage.html:19
@@ -247,7 +258,7 @@ msgstr "Contorno de Mapas"
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr "programa inteligente para practicar geografía"
 
-#: geography/views/feedback.py:39
+#: proso_feedback/views.py:40
 msgid "Feedback confirmed"
 msgstr ""
 "Gracias por tu mensaje. Tu retroalimentación es muy importante para nosotros."
