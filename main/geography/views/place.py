@@ -64,6 +64,6 @@ def mapskill(request, user=None):
         try:
             user = User.objects.get(username=user)
         except User.DoesNotExist:
-            raise HttpResponseBadRequest("Invalid username: {0}" % user)
+            raise HttpResponseBadRequest("Invalid username: %s" % user)
     maps_skills = MapSkill.objects.for_user(user)
     return JsonResponse([m.to_serializable() for m in maps_skills])
