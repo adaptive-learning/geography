@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-18 16:21+0100\n"
+"POT-Creation-Date: 2014-11-21 10:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,175 +79,204 @@ msgstr "Montañas"
 msgid "Ostrovy"
 msgstr "Islas"
 
-#: geography/models/place.py:215
+#: geography/models/place.py:214
 msgid "Politická mapa"
 msgstr "Mapa político"
 
-#: geography/models/place.py:216
+#: geography/models/place.py:215
 msgid "Vodstvo"
 msgstr "Agua"
 
-#: geography/models/place.py:217
+#: geography/models/place.py:216
 msgid "Povrch"
 msgstr "Superficie"
 
-#: geography/utils/model.py:145 geography/utils/model.py:167
+#: geography/utils/model.py:130
+msgctxt "state"
+msgid "zvýrazněný"
+msgstr "resaltado en grís"
+
+#: geography/utils/model.py:131
+msgctxt "city"
+msgid "zvýrazněné"
+msgstr "resaltada en grís"
+
+#: geography/utils/model.py:134
+msgctxt "river"
+msgid "zvýrazněná"
+msgstr "resaltado en grís"
+
+#: geography/utils/model.py:135
+msgctxt "lake"
+msgid "zvýrazněné"
+msgstr "resaltado en grís"
+
+#: geography/utils/model.py:136
+msgctxt "region_cz"
+msgid "zvýrazněný"
+msgstr "resaltada en grís"
+
+#: geography/utils/model.py:137
+msgctxt "bundesland"
+msgid "zvýrazněná"
+msgstr "resaltado en grís"
+
+#: geography/utils/model.py:138
+msgctxt "province"
+msgid "zvýrazněná"
+msgstr "resaltado en grís"
+
+#: geography/utils/model.py:139
+msgctxt "region_it"
+msgid "zvýrazněná"
+msgstr "resaltada en grís"
+
+#: geography/utils/model.py:140
+msgctxt "region"
+msgid "zvýrazněný"
+msgstr "resaltada en grís"
+
+#: geography/utils/model.py:141
+msgctxt "autonomous_comunity"
+msgid "zvýrazněná"
+msgstr "resaltado en grís"
+
+#: geography/utils/model.py:142
+msgctxt "mountains"
+msgid "zvýrazněné"
+msgstr "resaltada en grís"
+
+#: geography/utils/model.py:143
+msgctxt "island"
+msgid "zvýrazněný"
+msgstr "resaltada en grís"
+
+#: geography/utils/model.py:149 geography/utils/model.py:177
 msgid "unknown"
 msgstr "desconocido"
 
-#: geography/utils/model.py:146
+#: geography/utils/model.py:150
 msgid "stát"
 msgstr "estado"
 
-#: geography/utils/model.py:147
+#: geography/utils/model.py:151
 msgid "město"
 msgstr "ciudad"
 
-#: geography/utils/model.py:148
-msgid "svět"
-msgstr "mundo"
-
-#: geography/utils/model.py:149
-msgid "kontinent"
-msgstr "continente"
-
-#: geography/utils/model.py:150
+#: geography/utils/model.py:154
 msgid "řeka"
 msgstr "río"
 
-#: geography/utils/model.py:151
+#: geography/utils/model.py:155
 msgid "jezero"
 msgstr "lago"
 
-#: geography/utils/model.py:152
+#: geography/utils/model.py:156
 msgid "kraj"
 msgstr "región"
 
-#: geography/utils/model.py:153
+#: geography/utils/model.py:157
 msgid "spolková země"
 msgstr "estado"
 
-#: geography/utils/model.py:154
+#: geography/utils/model.py:158
 msgid "provincie"
 msgstr "provincia"
 
-#: geography/utils/model.py:155
+#: geography/utils/model.py:159
 msgid "oblast"
 msgstr "región"
 
-#: geography/utils/model.py:156
+#: geography/utils/model.py:160
 msgid "region"
 msgstr "región"
 
-#: geography/utils/model.py:157
+#: geography/utils/model.py:161
 msgid "autonomní společenství"
 msgstr "comunidad autónoma"
 
-#: geography/utils/model.py:158
+#: geography/utils/model.py:162
 msgctxt "singular"
 msgid "pohoří"
 msgstr "cordillera"
 
-#: geography/utils/model.py:159
+#: geography/utils/model.py:163
 msgid "ostrov"
 msgstr "isla"
 
-#: geography/utils/model.py:162
+#: geography/utils/model.py:169
 msgid "spolkovou zemi"
 msgstr "estado"
 
-#: geography/utils/model.py:163
+#: geography/utils/model.py:170
 msgid "provincii"
 msgstr "provincia"
 
-#: geography/utils/model.py:164
+#: geography/utils/model.py:171
 msgid "řeku"
 msgstr "río"
 
-#: geography/utils/model.py:168
+#: geography/utils/model.py:178
 msgid "států"
 msgstr "estados"
 
-#: geography/utils/model.py:169
+#: geography/utils/model.py:179
 msgid "měst"
 msgstr "ciudades"
 
-#: geography/utils/model.py:170
-msgid "světů"
-msgstr "mundos"
-
-#: geography/utils/model.py:171
-msgid "kontinentů"
-msgstr "continentes"
-
-#: geography/utils/model.py:172
+#: geography/utils/model.py:182
 msgid "řek"
 msgstr "ríos"
 
-#: geography/utils/model.py:173
+#: geography/utils/model.py:183
 msgid "jezer"
 msgstr "lagos"
 
-#: geography/utils/model.py:174 geography/utils/model.py:178
+#: geography/utils/model.py:184 geography/utils/model.py:188
 msgid "regionů"
 msgstr "regiones"
 
-#: geography/utils/model.py:175
+#: geography/utils/model.py:185
 msgid "spolkových zemí"
 msgstr "estados"
 
-#: geography/utils/model.py:176
+#: geography/utils/model.py:186
 msgid "provincií"
 msgstr "provincias"
 
-#: geography/utils/model.py:177
+#: geography/utils/model.py:187
 msgid "oblastí"
 msgstr "regiones"
 
-#: geography/utils/model.py:179
+#: geography/utils/model.py:189
 msgid "autonomních společenství"
 msgstr "comunidades autónomas"
 
-#: geography/utils/model.py:180
+#: geography/utils/model.py:190
 msgctxt "plural"
 msgid "pohoří"
 msgstr "cordilleras"
 
-#: geography/utils/model.py:181
+#: geography/utils/model.py:191
 msgid "ostrovů"
 msgstr "islas"
 
-#: geography/utils/model.py:198
+#: geography/utils/model.py:209
 #, python-format
 msgid "Ze zvýrazněných %(place_plural)s na mapě vyber"
 msgstr ""
 "Slecciona de entre los %(place_plural)s resaltados en grís el que "
 "corresponda a"
 
-#: geography/utils/model.py:201
+#: geography/utils/model.py:212
 #, python-format
 msgid "Vyber na mapě %(place_singular)s"
 msgstr "Selecciona en el mapa %(place_singular)s"
 
-#: geography/utils/model.py:204
+#: geography/utils/model.py:215
 #, python-format
 msgid "Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?"
 msgstr "¿Cuál es el nombre del %(place_singular)s %(highlighted)s en el mapa?"
-
-#: geography/utils/model.py:212
-msgctxt "masculine"
-msgid "zvýrazněný"
-msgstr "resaltado en grís"
-
-#: geography/utils/model.py:214
-msgctxt "feminine"
-msgid "zvýrazněná"
-msgstr "resaltado en grís"
-
-#: geography/utils/model.py:216
-msgctxt "neuter"
-msgid "zvýrazněné"
-msgstr "resaltado en grís"
 
 #: geography/views/base.py:35 templates/home.html:57
 #: templates/generated/homepage.html:19
@@ -461,6 +490,10 @@ msgstr ""
 "vez de que un experto dicte la dificultad, los usuarios definen el nivel con "
 "su desempeño. Así cada quién ayuda a decidir qué es más difícil, sí la "
 "geografía de Kenia o los rías de Nigeria."
+
+#~ msgctxt "budesland"
+#~ msgid "zvýrazněná"
+#~ msgstr "resaltado en grís"
 
 #~ msgid "Cíl byl vytvořen"
 #~ msgstr "La meta ha sido establecida"

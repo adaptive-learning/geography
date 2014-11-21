@@ -119,67 +119,77 @@ class QuestionService:
 
 class QuestionType(object):
 
-    GENUS_MASCULINE = 0
-    GENUS_FEMININE = 1
-    GENUS_NEUTER = 2
+    @property
+    def PLACE_HIGHLIGHTED(self):
+        """
+        These have to be functions because of i18n.
+        They have to be evaluated after a specific language has been set.
+        """
+        return {
+            Place.UNKNOWN: None,
+            Place.STATE: pgettext('state', u'zvýrazněný'),
+            Place.CITY: pgettext('city', u'zvýrazněné'),
+            Place.WORLD: None,
+            Place.CONTINENT: None,
+            Place.RIVER: pgettext('river', u'zvýrazněná'),
+            Place.LAKE: pgettext('lake', u'zvýrazněné'),
+            Place.REGION_CZ: pgettext('region_cz', u'zvýrazněný'),
+            Place.BUNDESLAND: pgettext('bundesland', u'zvýrazněná'),
+            Place.PROVINCE: pgettext('province', u'zvýrazněná'),
+            Place.REGION_IT: pgettext('region_it', u'zvýrazněná'),
+            Place.REGION: pgettext('region', u'zvýrazněný'),
+            Place.AUTONOMOUS_COMUNITY: pgettext('autonomous_comunity', u'zvýrazněná'),
+            Place.MOUNTAINS: pgettext('mountains', u'zvýrazněné'),
+            Place.ISLAND: pgettext('island', u'zvýrazněný'),
+        }
 
-    PLACE_TYPE_GENUS = {
-        Place.UNKNOWN: None,
-        Place.STATE: GENUS_MASCULINE,
-        Place.CITY: GENUS_NEUTER,
-        Place.WORLD: GENUS_MASCULINE,
-        Place.CONTINENT: GENUS_MASCULINE,
-        Place.RIVER: GENUS_FEMININE,
-        Place.LAKE: GENUS_NEUTER,
-        Place.REGION_CZ: GENUS_MASCULINE,
-        Place.BUNDESLAND: GENUS_FEMININE,
-        Place.PROVINCE: GENUS_FEMININE,
-        Place.REGION_IT: GENUS_FEMININE,
-        Place.REGION: GENUS_MASCULINE,
-        Place.AUTONOMOUS_COMUNITY: GENUS_NEUTER,
-        Place.MOUNTAINS: GENUS_NEUTER,
-        Place.ISLAND: GENUS_MASCULINE,
-    }
+    @property
+    def PLACE_TYPE_SINGULAR(self):
+        return {
+            Place.UNKNOWN: _('unknown'),
+            Place.STATE: _(u'stát'),
+            Place.CITY: _(u'město'),
+            Place.WORLD: None,
+            Place.CONTINENT: None,
+            Place.RIVER: _(u'řeka'),
+            Place.LAKE: _(u'jezero'),
+            Place.REGION_CZ: _(u'kraj'),
+            Place.BUNDESLAND: _(u'spolková země'),
+            Place.PROVINCE: _(u'provincie'),
+            Place.REGION_IT: _(u'oblast'),
+            Place.REGION: _(u'region'),
+            Place.AUTONOMOUS_COMUNITY: _(u'autonomní společenství'),
+            Place.MOUNTAINS: pgettext('singular', u'pohoří'),
+            Place.ISLAND: _(u'ostrov'),
+        }
 
-    PLACE_TYPE_SINGULAR = {
-        Place.UNKNOWN: _('unknown'),
-        Place.STATE: _(u'stát'),
-        Place.CITY: _(u'město'),
-        Place.WORLD: _(u'svět'),
-        Place.CONTINENT: _(u'kontinent'),
-        Place.RIVER: _(u'řeka'),
-        Place.LAKE: _(u'jezero'),
-        Place.REGION_CZ: _(u'kraj'),
-        Place.BUNDESLAND: _(u'spolková země'),
-        Place.PROVINCE: _(u'provincie'),
-        Place.REGION_IT: _(u'oblast'),
-        Place.REGION: _(u'region'),
-        Place.AUTONOMOUS_COMUNITY: _(u'autonomní společenství'),
-        Place.MOUNTAINS: pgettext('singular', u'pohoří'),
-        Place.ISLAND: _(u'ostrov'),
-    }
-    PLACE_TYPE_SINGULAR_CHOICE = {
-        Place.BUNDESLAND: _(u'spolkovou zemi'),
-        Place.PROVINCE: _(u'provincii'),
-        Place.RIVER: _(u'řeku'),
-    }
-    PLACE_TYPE_PLURAL_CHOICE = {
-        Place.UNKNOWN: _('unknown'),
-        Place.STATE: _(u'států'),
-        Place.CITY: _(u'měst'),
-        Place.WORLD: _(u'světů'),
-        Place.CONTINENT: _(u'kontinentů'),
-        Place.RIVER: _(u'řek'),
-        Place.LAKE: _(u'jezer'),
-        Place.REGION_CZ: _(u'regionů'),
-        Place.BUNDESLAND: _(u'spolkových zemí'),
-        Place.PROVINCE: _(u'provincií'),
-        Place.REGION_IT: _(u'oblastí'),
-        Place.REGION: _(u'regionů'),
-        Place.AUTONOMOUS_COMUNITY: _(u'autonomních společenství'),
-        Place.MOUNTAINS: pgettext('plural', u'pohoří'),
-        Place.ISLAND: _(u'ostrovů'),
-    }
+    @property
+    def PLACE_TYPE_SINGULAR_CHOICE(self):
+        return {
+            Place.BUNDESLAND: _(u'spolkovou zemi'),
+            Place.PROVINCE: _(u'provincii'),
+            Place.RIVER: _(u'řeku'),
+        }
+
+    @property
+    def PLACE_TYPE_PLURAL_CHOICE(self):
+        return {
+            Place.UNKNOWN: _('unknown'),
+            Place.STATE: _(u'států'),
+            Place.CITY: _(u'měst'),
+            Place.WORLD: None,
+            Place.CONTINENT: None,
+            Place.RIVER: _(u'řek'),
+            Place.LAKE: _(u'jezer'),
+            Place.REGION_CZ: _(u'regionů'),
+            Place.BUNDESLAND: _(u'spolkových zemí'),
+            Place.PROVINCE: _(u'provincií'),
+            Place.REGION_IT: _(u'oblastí'),
+            Place.REGION: _(u'regionů'),
+            Place.AUTONOMOUS_COMUNITY: _(u'autonomních společenství'),
+            Place.MOUNTAINS: pgettext('plural', u'pohoří'),
+            Place.ISLAND: _(u'ostrovů'),
+        }
 
     def __init__(self, type, place_type, number_of_options):
         self.type = type
@@ -188,10 +198,11 @@ class QuestionType(object):
 
     @property
     def text(self):
-        place_singular = _(QuestionType.PLACE_TYPE_SINGULAR[self.place_type])
-        place_plural_choice = _(QuestionType.PLACE_TYPE_PLURAL_CHOICE[self.place_type])
-        place_singular_choice = _(QuestionType.PLACE_TYPE_SINGULAR_CHOICE.get(
-            self.place_type, place_singular))
+        place_singular = self.PLACE_TYPE_SINGULAR[self.place_type]
+        place_plural_choice = self.PLACE_TYPE_PLURAL_CHOICE[self.place_type]
+        place_singular_choice = self.PLACE_TYPE_SINGULAR_CHOICE.get(
+            self.place_type, place_singular)
+        highlighted = self.PLACE_HIGHLIGHTED[self.place_type]
 
         if self.type == Answer.FIND_ON_MAP:
             if self.number_of_options > 0:
@@ -203,17 +214,7 @@ class QuestionType(object):
         else:
             return _(u'Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?'
                      ) % {'place_singular': place_singular,
-                          'highlighted': self.highlighted}
-
-    @property
-    def highlighted(self):
-        genus = QuestionType.PLACE_TYPE_GENUS[self.place_type]
-        if genus == QuestionType.GENUS_MASCULINE:
-            return pgettext('masculine', u'zvýrazněný')
-        elif genus == QuestionType.GENUS_FEMININE:
-            return pgettext('feminine', u'zvýrazněná')
-        else:
-            return pgettext('neuter', u'zvýrazněné')
+                          'highlighted': highlighted}
 
     def to_serializable(self):
         return {
