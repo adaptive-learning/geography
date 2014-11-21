@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-17 06:31+0200\n"
+"POT-Creation-Date: 2014-11-21 11:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,86 +17,97 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: geography/static/dist/js/blind-maps.min.js:233
-#: geography/static/dist/js/blind-maps.min.js:260
-#: geography/static/dist/js/blind-maps.min.js:403
-#: geography/static/dist/js/blind-maps.min.js:484
-#: geography/static/dist/js/blind-maps.min.js:1921
-#: geography/static/js/controllers.js:77
-#: geography/static/js/controllers.js:104
-#: geography/static/js/controllers.js:247
-#: geography/static/js/controllers.js:328
+#: geography/static/dist/js/blind-maps.min.js:244
+#: geography/static/dist/js/blind-maps.min.js:271
+#: geography/static/dist/js/blind-maps.min.js:414
+#: geography/static/dist/js/blind-maps.min.js:496
+#: geography/static/dist/js/blind-maps.min.js:1953
+#: geography/static/js/controllers.js:82
+#: geography/static/js/controllers.js:109
+#: geography/static/js/controllers.js:252
+#: geography/static/js/controllers.js:334
 #: geography/static/js/directives.js:357
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Unfortunately there has been an error in the app."
 
-#: geography/static/dist/js/blind-maps.min.js:506
+#: geography/static/dist/js/blind-maps.min.js:518
 #: geography/static/js/services.js:14
 msgid "USA"
 msgstr "E.U.A."
 
-#: geography/static/dist/js/blind-maps.min.js:507
+#: geography/static/dist/js/blind-maps.min.js:519
 #: geography/static/js/services.js:15
 msgid "Svět"
 msgstr "Mundo"
 
-#: geography/static/dist/js/blind-maps.min.js:512
+#: geography/static/dist/js/blind-maps.min.js:524
 #: geography/static/js/services.js:20
 msgid "Politická mapa"
 msgstr "Mapa Político"
 
-#: geography/static/dist/js/blind-maps.min.js:525
+#: geography/static/dist/js/blind-maps.min.js:537
 #: geography/static/js/services.js:33
 msgid "Vodstvo"
 msgstr "Agua"
 
-#: geography/static/dist/js/blind-maps.min.js:530
+#: geography/static/dist/js/blind-maps.min.js:542
 #: geography/static/js/services.js:38
 msgid "Povrch"
 msgstr "Superficie"
 
-#: geography/static/dist/js/blind-maps.min.js:800
-#: geography/static/js/services.js:308
+#: geography/static/dist/js/blind-maps.min.js:827
+#: geography/static/js/services.js:323
 msgid "O prjektu"
 msgstr "Sobre"
 
-#: geography/static/dist/js/blind-maps.min.js:801
+#: geography/static/dist/js/blind-maps.min.js:828
 #: geography/static/hack/tpl/overview_tpl.js:1
-#: geography/static/js/services.js:309
+#: geography/static/js/services.js:324
 msgid "Přehled map"
 msgstr "Vista general de mapas"
 
-#: geography/static/dist/js/blind-maps.min.js:1582
-#: geography/static/js/directives.js:18
+#: geography/static/dist/js/blind-maps.min.js:1318
+#: geography/static/dist/js/blind-maps.min.js:1614
+#: geography/static/js/directives.js:18 geography/static/js/map.js:270
 msgid "Odhad znalosti"
 msgstr "Estimación de conocimiento"
 
-#: geography/static/dist/js/blind-maps.min.js:1714
+#: geography/static/dist/js/blind-maps.min.js:1324
+#: geography/static/js/map.js:276
+msgid "Počet obyvatel"
+msgstr ""
+
+#: geography/static/dist/js/blind-maps.min.js:1331
+#: geography/static/js/map.js:283
+msgid "Neprocvičováno"
+msgstr ""
+
+#: geography/static/dist/js/blind-maps.min.js:1746
 #: geography/static/js/directives.js:150
 msgid "Naučeno"
 msgstr "Aprendido"
 
-#: geography/static/dist/js/blind-maps.min.js:1721
+#: geography/static/dist/js/blind-maps.min.js:1753
 #: geography/static/js/directives.js:157
 msgid "Procvičováno"
 msgstr "Practicado"
 
-#: geography/static/dist/js/blind-maps.min.js:1740
+#: geography/static/dist/js/blind-maps.min.js:1772
 #: geography/static/js/directives.js:176
 msgid "Aktuální úroveň"
 msgstr "Nivel actual"
 
-#: geography/static/dist/js/blind-maps.min.js:1745
+#: geography/static/dist/js/blind-maps.min.js:1777
 #: geography/static/js/directives.js:181
 msgid "bodů do příští úrovně"
 msgstr "puntos para alcanzar el siguiente nivel"
 
-#: geography/static/dist/js/blind-maps.min.js:1752
+#: geography/static/dist/js/blind-maps.min.js:1784
 #: geography/static/js/directives.js:188
 msgid "Příští úroveň"
 msgstr "Siguiente nivel"
 
-#: geography/static/dist/js/blind-maps.min.js:1914
+#: geography/static/dist/js/blind-maps.min.js:1946
 #: geography/static/js/directives.js:350
 msgid "Cíl byl vytvořen"
 msgstr "La meta ha sido creada"
@@ -192,8 +203,8 @@ msgstr "Juego de Geografía"
 #: geography/static/hack/tpl/homepage.js:16
 msgid "Zeměpis hrou - text"
 msgstr ""
-"Practica tus conocimientos de geografía de una forma divertida." 
-"¡Coloréa los países de Europa, los estados de Norte América o el mundo completo!"
+"Practica tus conocimientos de geografía de una forma divertida.¡Coloréa los "
+"países de Europa, los estados de Norte América o el mundo completo!"
 
 #: geography/static/hack/tpl/homepage.js:18
 msgid "Adaptabilní procvičování"
@@ -202,10 +213,10 @@ msgstr "Práctica adaptativa"
 #: geography/static/hack/tpl/homepage.js:20
 msgid "Adaptabilní procvičování - text"
 msgstr ""
-"El programa analiza tus conocimientos sobre mapas para adaptarse a tí."
-"Usa factores como el tipo de preguntas que contestas y la frecuencia con "
-"la que aciertas para escoger preguntas sobre países que te ayuden "
-"a practicar mejor y al mismo tiempo te sigas divirtiendo."
+"El programa analiza tus conocimientos sobre mapas para adaptarse a tí.Usa "
+"factores como el tipo de preguntas que contestas y la frecuencia con la que "
+"aciertas para escoger preguntas sobre países que te ayuden a practicar mejor "
+"y al mismo tiempo te sigas divirtiendo."
 
 #: geography/static/hack/tpl/homepage.js:21
 msgid "Ukázka procvičování"
@@ -218,9 +229,10 @@ msgstr "Sistema Especializado"
 #: geography/static/hack/tpl/homepage.js:25
 msgid "Specializovaný systém - text"
 msgstr ""
-"Hay muchos otros sistemas para el aprendizaje que incluyen el dibujo de mapas para practicar "
-"pero usualmente son más dispersos y cubren muchas áreas. Nuestro sistema se enfoca exclusivamente"
-"en el delineado de mapas, lo que nos permite optimizar nuestro sistema para esta área."
+"Hay muchos otros sistemas para el aprendizaje que incluyen el dibujo de "
+"mapas para practicar pero usualmente son más dispersos y cubren muchas "
+"áreas. Nuestro sistema se enfoca exclusivamenteen el delineado de mapas, lo "
+"que nos permite optimizar nuestro sistema para esta área."
 
 #: geography/static/hack/tpl/homepage.js:27
 msgid "Vizualizace znalostí"
@@ -229,8 +241,9 @@ msgstr "Visualización del Conocimiento"
 #: geography/static/hack/tpl/homepage.js:28
 msgid "Vizualizace znalostí - text"
 msgstr ""
-"Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega en "
-"forma de mapa, el cuál te ayuda a visualizar de forma más fácil lo qué sabes." 
+"Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega "
+"en forma de mapa, el cuál te ayuda a visualizar de forma más fácil lo qué "
+"sabes."
 
 #: geography/static/hack/tpl/homepage.js:29
 msgid "Ukázka mapy znalostí"
@@ -243,11 +256,12 @@ msgstr "Minería de Datos"
 #: geography/static/hack/tpl/homepage.js:33
 msgid "Učení z dat - text"
 msgstr ""
-"El programa aprende de todas las personas que lo usan. La elección de preguntas que el "
-"programa presenta se basan en esta información. De esta forma, se tiene mejores "
-"estimados de dificultad para los usuarios, ya que en vez de que un experto "
-"dicte la dificultad, los usuarios definen el nivel con su desempeño. "
-"Así cada quién ayuda a decidir qué es más difícil, sí la geografía de Kenia o los rías de Nigeria."
+"El programa aprende de todas las personas que lo usan. La elección de "
+"preguntas que el programa presenta se basan en esta información. De esta "
+"forma, se tiene mejores estimados de dificultad para los usuarios, ya que en "
+"vez de que un experto dicte la dificultad, los usuarios definen el nivel con "
+"su desempeño. Así cada quién ayuda a decidir qué es más difícil, sí la "
+"geografía de Kenia o los rías de Nigeria."
 
 #: geography/static/hack/tpl/map_tpl.js:1
 msgid "Moje znalosti"
@@ -270,8 +284,8 @@ msgid ""
 "Nastav si cíl a systém ti podle tvých aktuálních znalostí rozloží "
 "procvičování na jednotlivé dny."
 msgstr ""
-"Planteate una meta y el programa usará tu conocimiento actual"
-"para crear pequeñas prácticas para cada día."
+"Planteate una meta y el programa usará tu conocimiento actualpara crear "
+"pequeñas prácticas para cada día."
 
 #: geography/static/hack/tpl/personal-goals_tpl.js:4
 msgid "Vytvořit cíl"
