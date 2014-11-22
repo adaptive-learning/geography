@@ -3,7 +3,9 @@
   <div ng-hide="mapCategories" class="loading-indicator">
   </div>
   <div class="map-categories" ng-repeat="c in mapCategories">
-      <h2 class="col-md-offset-1" ng-hide="c.name == 'World'"> {{c.name}}</h2>
+      <h2 class="col-md-offset-1" ng-hide="c.name == 'World'"> 
+        {{places.getPlaceTypeName(c.slug) || c.name}}
+      </h2>
       <ul>
         <li class="overview-row" ng-repeat="map in c.maps">
           <h3 class="col-md-offset-1 col-sm-3"><a href="#/view/{{map.slug}}/{{user}}">{{map.name}}</a>
@@ -16,7 +18,7 @@
               <a href="#/practice/{{map.slug}}/{{layer.slug}}" 
                  class="btn btn-primary"
                  tooltip="{{'Procvičovat'| trans}}">
-                 {{layer.name}}</a>
+                 {{places.getPlaceTypeName(layer.slug) || layer.name}}</a>
               <div class="map-progress" count="{{layer.count}}" 
                    skills="{{mapSkills(map.slug, layer.slug)}}">
               </div>

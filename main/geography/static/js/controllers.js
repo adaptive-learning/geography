@@ -224,6 +224,7 @@
     var mapSkills = {};
 
     $scope.user = $routeParams.user || '';
+    $scope.places = places;
     $http.get('/mapskill/' + $scope.user).success(function(data){
       angular.forEach(data, function(p){
         mapSkills[p.code] = mapSkills[p.code] || {};
