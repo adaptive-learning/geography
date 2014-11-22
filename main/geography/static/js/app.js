@@ -13,6 +13,7 @@
     'angulartics',
     'angulartics.google.analytics',
     'ui.bootstrap',
+    'proso.feedback',
   ])
 
   .value('gettext', gettext)
