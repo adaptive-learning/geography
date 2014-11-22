@@ -173,24 +173,57 @@
   </div>
     {% include "feedback.html" %}
 
+    <div class="" id="footer">
+      <div class="col-md-offset-1 col-md-10 col-lg-offset-3 col-lg-6">
+        <span class="col-sm-4">
+        <ul>
+          {% if LANGUAGE_CODE == "cs" %}
+          <li>
+              <a href="#/about"> {% trans "O projektu" %}</a> 
+          </li>
+          {% endif %}
+          <li>
+            <a href="" ng-click="openFeedback()">
+              {% trans "Napište nám"%}
+            </a>
+          </li>
+          <li>
+            <a href="https://plus.google.com/+SlepemapyCz/">Google+</a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/slepemapy">Facebook</a>
+          </li>
+        </ul>
+        </span>
+        <span class="col-sm-4">
+         {% if LANGUAGE_CODE == "cs" %}
+              <div>
+                Vyzkoušejte také:
+              </div>
+            <ul>
+              <li>
+                <a href="http://slepaanatomie.cz" target="_blank">Slepá anatomie</a>
+              </li>
+              <li>
+                <a href="http://umimecesky.cz" target="_blank">Umíme česky</a>
+              </li>
+              <li>
+                <a href="http://matmat.cz/">MatMat</a>
+              </li>
+              <li>
+                <a href="http://autoskolachytre.cz/">Autoškola chytře</a>
+              </li>
+            </ul>
+          {% endif %}
+        </span>
+        <span class="col-sm-4">
+          <a href="http://www.fi.muni.cz/adaptivelearning/" class="pull-right">
+            <img src="/static/img/al-logo-small.png" alt="Adaptive Learning logo"/>
+          </a>
+        </span>
+      </div>
+      <div class="clearfix"></div>
     </div>
-    <div id="footer">
-      {% if LANGUAGE_CODE == "cs" %}
-      <a href="#/about">{% trans "O projektu" %}</a> 
-      &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      {% endif %}
-      <a href="" ng-click="openFeedback()">
-        {% trans "Napište nám"%}
-      </a>
-      &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <a href="https://plus.google.com/+SlepemapyCz/">Google+</a>
-      &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <a href="https://www.facebook.com/slepemapy">Facebook</a>
-   {% if LANGUAGE_CODE == "cs" %}
-      &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      Vyzkoušejte také <a href="http://slepaanatomie.cz" target="_blank">Slepou Anatomii</a>
-      a <a href="http://umimecesky.cz" target="_blank">Umíme česky</a>
-    {% endif %}
 
     <script type="text/ng-template" id="add_goal_modal.html">
       <form ng-submit="send()" name="add_goal" novalidate>
@@ -268,7 +301,6 @@
     </script>
 
 
-    </div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
