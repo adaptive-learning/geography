@@ -156,6 +156,8 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(PROJECT_DIR, 'templates'),
+    os.path.join(PROJECT_DIR, 'proso_feedback', 'templates'),
+    os.path.join(PROJECT_DIR, 'proso_goals', 'templates'),
 )
 
 INSTALLED_APPS = (
