@@ -1,0 +1,10 @@
+## This email is sent from the feedback form on the site. ##
+
+{{ feedback.text }}
+
+## end of user message ##
+email: {{ feedback.email }}
+user_id: {{ user.id }}
+username: {{ user.username }}
+page: {{ feedback.page }}
+user agent: {{ feedback.user_agent }}
