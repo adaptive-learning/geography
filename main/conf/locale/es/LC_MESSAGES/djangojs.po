@@ -75,12 +75,12 @@ msgstr "Estimación de conocimiento"
 #: geography/static/dist/js/blind-maps.min.js:1324
 #: geography/static/js/map.js:276
 msgid "Počet obyvatel"
-msgstr ""
+msgstr "Población"
 
 #: geography/static/dist/js/blind-maps.min.js:1331
 #: geography/static/js/map.js:283
 msgid "Neprocvičováno"
-msgstr ""
+msgstr "Sin Practicar"
 
 #: geography/static/dist/js/blind-maps.min.js:1746
 #: geography/static/js/directives.js:150
