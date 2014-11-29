@@ -69,6 +69,71 @@
 
       }
     };
+  }])
+
+  .directive('ratingModal', ['$modal', '$window', 'events', '$routeParams', '$timeout',
+      function ($modal, $window, events, $routeParams, $timeout) {
+    return {
+      restrict: 'A',
+      link: function ($scope, element, attrs) {
+
+        var ModalRatingCtrl = ['$scope', '$modalInstance', '$http', '$cookies',
+              '$location', 'gettext',
+            function ($scope, $modalInstance, $http, $cookies, 
+              $location, gettext) {
+
+          $scope.alerts = [];
+
+          $scope.vote = function(answer) {
+            $scope.answer = answer;
+            $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+            $http.post('/feedback/rating', {'value': answer}).success(function(data){
+              $scope.alerts.push(data);
+              $scope.sending = false;
+            }).error(function(){
+              $scope.alerts.push({
+                type : 'danger',
+                msg : gettext("V aplikaci bohužel nastala chyba."),
+              });
+              $scope.sending = false;
+            });
+            $scope.sending = true;
+          };
+
+          $scope.closeAlert = function(index) {
+            $scope.alerts.splice(index, 1);
+            $modalInstance.dismiss('cancel');
+          };
+
+          $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+          };
+        }];
+
+
+        $scope.ratingPoll = function () {
+          $modal.open({
+            templateUrl: 'rating_modal.html',
+            controller: ModalRatingCtrl,
+          });
+        };
+
+        $timeout(function() {
+          if ($routeParams.debugrating) {
+            $scope.ratingPoll();
+          }
+        }, 100);
+
+        var checkPoints = [30, 70, 120, 200];
+        events.on('questionSetFinished', function(answered_count) {
+          angular.forEarch(checkPoints, function(checkPoint) {
+            if (checkPoint - 10 < answered_count && answered_count <= checkPoint) {
+              $scope.ratingPoll();
+            }
+          });
+        });
+      }
+    };
   }]);
 
 })();

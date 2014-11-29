@@ -33,9 +33,11 @@
     </div>
 </script>
 
+<div rating-modal ></div>
 <script type="text/ng-template" id="rating_modal.html">
     <div class="modal-header text-center">
         <h3 class="modal-title">{% trans "Jak těžké jsou kladené otázky?"%}</h3>
+          {% trans "Svou odpovědí nám pomáháte přizpůsobovat obtížnost otázek."%}
     </div>
     <div class="rating modal-body">
       <div class=" text-center" ng-hide="answer">
@@ -48,6 +50,10 @@
         <a class="btn btn-lg btn-danger" ng-click="vote(3)">
           {% trans "Příliž těžké"%}
         </a>
+      <a class="pull-right" href="" ng-click="cancel()">
+        {% trans "Nevím / nechci odpovídat"%}
+      </a>
+      <div class="clearfix"></div>
       </div>
       {%verbatim%}
       <alert ng-repeat="alert in alerts" type="{{alert.type}}"

@@ -6,6 +6,7 @@ from django.template.loader import render_to_string
 from django.core.mail import EmailMultiAlternatives
 from logging import getLogger
 from django.conf import settings
+from models import Rating
 
 
 LOGGER = getLogger(__name__)
@@ -43,5 +44,20 @@ def feedback(request):
         response = {
             'type': 'success',
             'msg': _('Feedback confirmed'),
+        }
+    return JsonResponse(response)
+
+
+def rating(request):
+    if request.body:
+        data = simplejson.loads(request.body)
+        rating = Rating(
+            user=request.user,
+            value=data['value'],
+        )
+        rating.save()
+        response = {
+            'type': 'success',
+            'msg': _(u'Děkujeme za hodnocení.'),
         }
     return JsonResponse(response)
