@@ -12,6 +12,7 @@ def deploy():
         return
     common.npm_install()
     common.install_requirements()
+    common.syncdb()
     common.migrate()
     common.compilemessages()
     common.grunt_deploy()

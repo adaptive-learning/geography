@@ -91,6 +91,10 @@ def static_hashes():
     sudo('echo "HASHES = $( python ./main/manage.py static_hashes )" > ./main/hashes.py')
 
 
+def syncdb():
+    sudo('./main/manage.py syncdb --traceback')
+
+
 def migrate():
     sudo('./main/manage.py migrate geography --delete-ghost-migrations --traceback')
 
