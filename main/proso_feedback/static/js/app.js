@@ -126,7 +126,7 @@
 
         var checkPoints = [30, 70, 120, 200];
         events.on('questionSetFinished', function(answered_count) {
-          angular.forEarch(checkPoints, function(checkPoint) {
+          angular.forEach(checkPoints, function(checkPoint) {
             if (checkPoint - 10 < answered_count && answered_count <= checkPoint) {
               $scope.ratingPoll();
             }
