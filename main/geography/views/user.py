@@ -25,9 +25,11 @@ def get_user(request, username=None):
         geography.models.user.convert_lazy_user(request.user)
     username = user.username if user and not geography.models.user.is_lazy(user) else ''
     points = geography.models.user.get_points(user) if user else 0
+    answered_count = geography.models.user.get_answered_count(user) if user else 0
     response = {
         'username': username,
         'points': points,
+        'answered_count': answered_count,
         'email': user.email if username != '' and username == request.user.username else None,
         'first_name': user.first_name if username != '' else None,
         'last_name': user.last_name if username != '' else None,

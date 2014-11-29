@@ -115,8 +115,8 @@
     return {
       restrict : 'C',
       link : function($scope, elem) {
-        events.on('questionSetFinished', function(points) {
-          if (10 < points && points <= 20) {
+        events.on('questionSetFinished', function(answered_count) {
+          if (10 < answered_count && answered_count == 20) {
             $timeout(function() {
               elem.tooltip('show');
             }, 0);

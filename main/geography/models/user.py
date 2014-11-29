@@ -58,6 +58,20 @@ def get_points(user):
         return cursor.fetchone()[0]
 
 
+def get_answered_count(user):
+    with closing(connection.cursor()) as cursor:
+        cursor.execute(
+            '''
+            SELECT
+                COUNT(geography_answer.id)
+            FROM
+                geography_answer
+            WHERE
+                user_id = %s
+            ''', [user.id])
+        return cursor.fetchone()[0]
+
+
 def to_serializable(user):
     return {
         'username': user.username,

@@ -23,8 +23,8 @@
       $rootScope.user = data;
     };
     
-    $scope.initUser = function (username, points, email) {
-      $rootScope.user = user.initUser(username, points, email);
+    $scope.initUser = function (username, points, answered_count, email) {
+      $rootScope.user = user.initUser(username, points, answered_count, email);
     };
 
     $scope.setPlaceTypeNames = function (obj) {
@@ -118,8 +118,8 @@
       highlightAnswer(asked, selected);
       $scope.question.answered_code = selected;
       $scope.progress = question.answer($scope.question);
+      user.addAnswer(asked == selected);
       if (asked == selected) {
-        user.addPoint();
         $timeout(function() {
           $scope.next();
         }, 700);
@@ -161,7 +161,7 @@
         $scope.map.highlightState(q.asked_code, correct ? colors.GOOD : colors.BAD, 1);
       });
       $("html, body").animate({ scrollTop: "0px" });
-      events.emit('questionSetFinished', user.getUser().points);
+      events.emit('questionSetFinished', user.getUser().answered_count);
     }
 
     function setQuestion(active) {

@@ -237,10 +237,11 @@
       function($http, $cookies, events) {
     var user;
     var that = {
-      initUser : function(username, points, email) {
+      initUser : function(username, points, answered_count, email) {
         user = {
           'username' : username,
           'points' : points,
+          'answered_count' : answered_count,
           'email' : email,
           'getLevelInfo' : function() {
             return that.getLevelInfo(user);
@@ -248,6 +249,7 @@
         };
         $http.get('/user/').success(function(data) {
           user.points = data.points;
+          user.answered_count = data.answered_count;
           user.email = data.email;
           user.first_name = data.first_name;
           user.last_name = data.last_name;
@@ -263,8 +265,11 @@
         events.emit('userUpdated', user);
         return user;
       },
-      addPoint : function() {
-        user.points++;
+      addAnswer : function(isCorrect) {
+        if (isCorrect) {
+          user.points++;
+        }
+        user.answered_count++;
         $cookies.points = user.points;
         events.emit('userUpdated', user);
       },
