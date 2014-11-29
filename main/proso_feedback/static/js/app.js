@@ -47,6 +47,7 @@
             $http.post('/feedback/', feedback).success(function(data){
               $scope.alerts.push(data);
               $scope.sending = false;
+              feedback.text = '';
             }).error(function(){
               $scope.alerts.push({
                 type : 'danger',
