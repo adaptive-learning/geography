@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-21 10:37+0100\n"
+"POT-Creation-Date: 2014-11-29 17:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -276,19 +276,88 @@ msgstr ""
 msgid "Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?"
 msgstr ""
 
-#: geography/views/base.py:35 templates/home.html:57
+#: geography/views/base.py:36 templates/home.html:57
 #: templates/generated/homepage.html:19
 msgid "Slepé Mapy"
 msgstr "Slepé Mapy"
 
-#: geography/views/base.py:36
+#: geography/views/base.py:37
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr ""
 
-#: proso_feedback/views.py:40
+#: proso_feedback/views.py:46
 msgid "Feedback confirmed"
 msgstr ""
 "Děkujeme Vám za zaslané informace. Feedback od uživatelů je k nezaplacení."
+
+#: proso_feedback/views.py:61
+msgid "Děkujeme za hodnocení."
+msgstr ""
+
+#: proso_feedback/templates/feedback.html:4
+#: proso_feedback/templates/feedback.html:9 templates/home.html:189
+msgid "Napište nám"
+msgstr ""
+
+#: proso_feedback/templates/feedback.html:13
+msgid "Feedback text label"
+msgstr ""
+"Narazili jste na chybu v aplikaci? Máte nápad na vylepšení? Nebo jakýkoliv "
+"jiný postřeh či komentář? Zajímá nás všechno, co nám chcete sdělit."
+
+#: proso_feedback/templates/feedback.html:17
+msgid "Vaše emailová adresa (nepovinné)"
+msgstr ""
+
+#: proso_feedback/templates/feedback.html:28
+msgid "Odeslat"
+msgstr ""
+
+#: proso_feedback/templates/feedback.html:31
+#: proso_feedback/templates/feedback.html:65
+#: proso_goals/templates/create_goal.html:67
+msgid "Zavřít"
+msgstr ""
+
+#: proso_feedback/templates/feedback.html:39
+msgid "Jak těžké jsou kladené otázky?"
+msgstr ""
+
+#: proso_feedback/templates/feedback.html:40
+msgid "Svou odpovědí nám pomáháte přizpůsobovat obtížnost otázek."
+msgstr ""
+
+#: proso_feedback/templates/feedback.html:45
+msgid "Příliž lehké"
+msgstr ""
+
+#: proso_feedback/templates/feedback.html:48
+msgid "Tak akorát"
+msgstr ""
+
+#: proso_feedback/templates/feedback.html:51
+msgid "Příliž těžké"
+msgstr ""
+
+#: proso_feedback/templates/feedback.html:54
+msgid "Nevím / nechci odpovídat"
+msgstr ""
+
+#: proso_goals/templates/create_goal.html:5
+msgid "Vytvořit cíl"
+msgstr ""
+
+#: proso_goals/templates/create_goal.html:9
+msgid "Mapa"
+msgstr ""
+
+#: proso_goals/templates/create_goal.html:36
+msgid "Datum splnění cíle"
+msgstr ""
+
+#: proso_goals/templates/create_goal.html:64
+msgid "Vytrvořit"
+msgstr ""
 
 #: templates/home.html:26
 msgid "meta content"
@@ -316,66 +385,32 @@ msgstr ""
 msgid "Přihlásit se"
 msgstr "Přihlásit se"
 
-#: templates/home.html:105
+#: templates/home.html:99
+msgid "Registrovat se"
+msgstr ""
+
+#: templates/home.html:107
 msgid "přes Google"
 msgstr ""
 
-#: templates/home.html:112
+#: templates/home.html:114
 msgid "přes Facebook"
 msgstr ""
 
-#: templates/home.html:125
+#: templates/home.html:127
 msgid "Můj profil"
 msgstr ""
 
-#: templates/home.html:130
+#: templates/home.html:132
 msgid "Moje časté chyby"
 msgstr ""
 
-#: templates/home.html:135
+#: templates/home.html:137
 msgid "Odhlásit se"
 msgstr ""
 
-#: templates/home.html:177 templates/home.html.py:186 templates/home.html:200
-msgid "Napište nám"
-msgstr ""
-
-#: templates/home.html:182
+#: templates/home.html:184
 msgid "O projektu"
-msgstr ""
-
-#: templates/home.html:204
-msgid "Feedback text label"
-msgstr ""
-"Narazili jste na chybu v aplikaci? Máte nápad na vylepšení? Nebo jakýkoliv "
-"jiný postřeh či komentář? Zajímá nás všechno, co nám chcete sdělit."
-
-#: templates/home.html:208
-msgid "Vaše emailová adresa (nepovinné)"
-msgstr ""
-
-#: templates/home.html:219
-msgid "Odeslat"
-msgstr ""
-
-#: templates/home.html:222 templates/home.html.py:292
-msgid "Zavřít"
-msgstr ""
-
-#: templates/home.html:230
-msgid "Vytvořit cíl"
-msgstr ""
-
-#: templates/home.html:234
-msgid "Mapa"
-msgstr ""
-
-#: templates/home.html:261
-msgid "Datum splnění cíle"
-msgstr ""
-
-#: templates/home.html:289
-msgid "Vytrvořit"
 msgstr ""
 
 #: templates/generated/homepage.html:21

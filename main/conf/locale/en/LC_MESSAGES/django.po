@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-21 10:37+0100\n"
+"POT-Creation-Date: 2014-11-29 17:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -276,18 +276,87 @@ msgstr "Choose on the map %(place_singular)s"
 msgid "Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?"
 msgstr "What is the name of %(place_singular)s %(highlighted)s on the map?"
 
-#: geography/views/base.py:35 templates/home.html:57
+#: geography/views/base.py:36 templates/home.html:57
 #: templates/generated/homepage.html:19
 msgid "Slepé Mapy"
 msgstr "Outline maps"
 
-#: geography/views/base.py:36
+#: geography/views/base.py:37
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr "intelligent geography practice app"
 
-#: proso_feedback/views.py:40
+#: proso_feedback/views.py:46
 msgid "Feedback confirmed"
 msgstr "Thank you for the message. User feedback is very important for us."
+
+#: proso_feedback/views.py:61
+msgid "Děkujeme za hodnocení."
+msgstr "Thank you for the rating"
+
+#: proso_feedback/templates/feedback.html:4
+#: proso_feedback/templates/feedback.html:9 templates/home.html:189
+msgid "Napište nám"
+msgstr "Feedback"
+
+#: proso_feedback/templates/feedback.html:13
+msgid "Feedback text label"
+msgstr ""
+"Did you find a bug in the app? Do you have an improvement idea? Or any other "
+"comment? We are eager to hear anything you'd like to tell us."
+
+#: proso_feedback/templates/feedback.html:17
+msgid "Vaše emailová adresa (nepovinné)"
+msgstr "Your email address (optional)"
+
+#: proso_feedback/templates/feedback.html:28
+msgid "Odeslat"
+msgstr "Send"
+
+#: proso_feedback/templates/feedback.html:31
+#: proso_feedback/templates/feedback.html:65
+#: proso_goals/templates/create_goal.html:67
+msgid "Zavřít"
+msgstr "Close"
+
+#: proso_feedback/templates/feedback.html:39
+msgid "Jak těžké jsou kladené otázky?"
+msgstr "How hard are the questions?"
+
+#: proso_feedback/templates/feedback.html:40
+msgid "Svou odpovědí nám pomáháte přizpůsobovat obtížnost otázek."
+msgstr "Your answer helps us TODO difficulty of questions."
+
+#: proso_feedback/templates/feedback.html:45
+msgid "Příliž lehké"
+msgstr "Too easy"
+
+#: proso_feedback/templates/feedback.html:48
+msgid "Tak akorát"
+msgstr "Just right"
+
+#: proso_feedback/templates/feedback.html:51
+msgid "Příliž těžké"
+msgstr "Too hard"
+
+#: proso_feedback/templates/feedback.html:54
+msgid "Nevím / nechci odpovídat"
+msgstr "Don't know / Don't want to rate"
+
+#: proso_goals/templates/create_goal.html:5
+msgid "Vytvořit cíl"
+msgstr "Create goal"
+
+#: proso_goals/templates/create_goal.html:9
+msgid "Mapa"
+msgstr "Map"
+
+#: proso_goals/templates/create_goal.html:36
+msgid "Datum splnění cíle"
+msgstr "Goal completion date"
+
+#: proso_goals/templates/create_goal.html:64
+msgid "Vytrvořit"
+msgstr "Create"
 
 #: templates/home.html:26
 msgid "meta content"
@@ -318,67 +387,33 @@ msgstr ""
 msgid "Přihlásit se"
 msgstr "Sign in"
 
-#: templates/home.html:105
+#: templates/home.html:99
+msgid "Registrovat se"
+msgstr "Sign up"
+
+#: templates/home.html:107
 msgid "přes Google"
 msgstr "with Google"
 
-#: templates/home.html:112
+#: templates/home.html:114
 msgid "přes Facebook"
 msgstr "with Facebook"
 
-#: templates/home.html:125
+#: templates/home.html:127
 msgid "Můj profil"
 msgstr "My  profile"
 
-#: templates/home.html:130
+#: templates/home.html:132
 msgid "Moje časté chyby"
 msgstr "My frequent mistakes"
 
-#: templates/home.html:135
+#: templates/home.html:137
 msgid "Odhlásit se"
 msgstr "Sign out"
 
-#: templates/home.html:177 templates/home.html.py:186 templates/home.html:200
-msgid "Napište nám"
-msgstr "Feedback"
-
-#: templates/home.html:182
+#: templates/home.html:184
 msgid "O projektu"
 msgstr "About"
-
-#: templates/home.html:204
-msgid "Feedback text label"
-msgstr ""
-"Did you find a bug in the app? Do you have an improvement idea? Or any other "
-"comment? We are eager to hear anything you'd like to tell us."
-
-#: templates/home.html:208
-msgid "Vaše emailová adresa (nepovinné)"
-msgstr "Your email address (optional)"
-
-#: templates/home.html:219
-msgid "Odeslat"
-msgstr "Send"
-
-#: templates/home.html:222 templates/home.html.py:292
-msgid "Zavřít"
-msgstr "Close"
-
-#: templates/home.html:230
-msgid "Vytvořit cíl"
-msgstr "Create goal"
-
-#: templates/home.html:234
-msgid "Mapa"
-msgstr "Map"
-
-#: templates/home.html:261
-msgid "Datum splnění cíle"
-msgstr "Goal completion date"
-
-#: templates/home.html:289
-msgid "Vytrvořit"
-msgstr "Create"
 
 #: templates/generated/homepage.html:21
 msgid "Vyberte si mapu k procvičování:"
