@@ -324,7 +324,7 @@ msgstr "How hard are the questions?"
 
 #: proso_feedback/templates/feedback.html:40
 msgid "Svou odpovědí nám pomáháte přizpůsobovat obtížnost otázek."
-msgstr "Your answer helps us TODO difficulty of questions."
+msgstr "Your answer helps us adjust difficulty of questions."
 
 #: proso_feedback/templates/feedback.html:45
 msgid "Příliž lehké"
