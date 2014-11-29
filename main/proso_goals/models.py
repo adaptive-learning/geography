@@ -60,10 +60,14 @@ class Goal(models.Model):
             'progress': self.progress,
             'expected_progress': self.expected_progress,
             'expected_progress_yesterday': self.expected_progress_yesterday,
-            'behind_schedule': round(self.progress, 3) < self.expected_progress_yesterday,
+            'behind_schedule': self.behind_schedule,
             'needs_practice': round(self.progress, 3) < self.expected_progress,
             'can_be_deleted': self.start_date == date.today(),
         }
+
+    @property
+    def behind_schedule(self):
+        return round(self.progress, 3) < self.expected_progress_yesterday
 
     @property
     def expected_progress_yesterday(self):
