@@ -19,6 +19,7 @@ def home(request, hack=None):
         "/static/dist/js/libs.min.js",
         "/static/dist/js/blind-maps.min.js",
         "/static/lib/angular-1.2.9/i18n/angular-locale_cs.js",
+        "/static/lib/js/googleExperiments.min.js",
     )
     CSS_FILES = (
         "/static/lib/css/bootstrap.min.css",

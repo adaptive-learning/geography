@@ -13,13 +13,14 @@
     'angulartics',
     'angulartics.google.analytics',
     'ui.bootstrap',
+    'googleExperiments',
     'proso.feedback',
   ])
 
   .value('gettext', gettext)
 
-  .config(['$routeProvider', '$locationProvider',
-      function($routeProvider, $locationProvider) {
+  .config(['$routeProvider', '$locationProvider', 'googleExperimentsProvider',
+      function($routeProvider, $locationProvider, googleExperimentsProvider) {
     $routeProvider.when('/', {
       templateUrl : 'static/tpl/homepage.html'
     }).when('/login/:somepath/', {
@@ -73,6 +74,10 @@
     });
 
     $locationProvider.html5Mode(true);
+
+    googleExperimentsProvider.configure({
+      experimentId: '2MCxG5W1T5Okrc0s5bLSQA'
+    });
   }])
 
   .run(['$rootScope', '$', '$analytics', 'places',
