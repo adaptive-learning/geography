@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.core.management.base import BaseCommand
 from geography.management import MapUpdater
+from geography.models import Place
 import csv
 import settings
 
@@ -22,18 +23,16 @@ class Command(BaseCommand):
             if code in all_places:
                 place = all_places[code]
                 name = unicode(name, 'utf-8')
-                if lang_code == 'en':
-                    if place.name_en != name:
-                        place.name_en = name
-                        place.save()
-                elif lang_code == 'cs':
-                    if place.name_cs != name:
-                        place.name_cs = name
-                        place.save()
-                elif lang_code == 'es':
-                    if place.name_es != name:
-                        place.name_es = name
-                        place.save()
+                if getattr(place, 'name_' + lang_code) != name:
+                    setattr(place, 'name_' + lang_code, name)
+                    place.save()
+            else:
+                print "Warning: bad place code: " + code
+        places_with_empty_names = Place.objects.filter(**{'name_' + lang_code: None})
+        for place in places_with_empty_names:
+            if place.name_en is not None:
+                setattr(place, 'name_' + lang_code, place.name_en)
+                place.save()
         print "Done"
 
     def get_translations(self, lang_code):
