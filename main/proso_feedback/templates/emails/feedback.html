@@ -5,7 +5,8 @@
 </head>
 
 <body>
-    <b>feedback:</b> {{ feedback.text }}<br/>
+    <b>feedback:</b> <br/>
+    {{ feedback.text | linebreaksbr }}<br/>
 
     <br/><br/>
     <b>email:</b> {{ feedback.email }}<br/>
