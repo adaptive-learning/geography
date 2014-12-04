@@ -98,11 +98,13 @@ def csv_view(request, model):
         'answer',
         'answer_ab_values',
         'answer_options',
-        'placerelation_related_places']
+        'placerelation_related_places',
+        'rating']
     if model not in allowed_models:
         response = {"error": "the requested model '" + model + "' is not valid"}
         return JsonResponse(response)
-    csv_file = "geography." + model + ".zip"
+    prefix = 'geography' if model != 'rating' else 'feedback'
+    csv_file = prefix + "." + model + ".zip"
     logpath = os.path.join(settings.MEDIA_ROOT, csv_file)
     response = HttpResponse(FileWrapper(open(logpath)), content_type='application/zip')
     response['Content-Disposition'] = 'attachment; filename=' + csv_file

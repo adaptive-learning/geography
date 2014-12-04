@@ -13,8 +13,18 @@ else
 	DATA_DIR="$APP_DIR"
 fi
 
+export_table() {
+	echo $1
+	echo $2
+	$APP_DIR/manage.py table2csv $1 ${DATA_DIR}/$2.csv
+	zip --junk-paths ${DATA_DIR}/$2.zip ${DATA_DIR}/$2.csv
+	rm -rf ${DATA_DIR}/$2.csv
+}
+
 for MODEL in place placerelation answer answer_options answer_ab_values ab_value ab_group placerelation_related_places; do
-	$APP_DIR/manage.py table2csv geography_$MODEL ${DATA_DIR}/geography.$MODEL.csv
-	zip --junk-paths ${DATA_DIR}/geography.$MODEL.zip ${DATA_DIR}/geography.$MODEL.csv
-	rm -rf ${DATA_DIR}/geography.$MODEL.csv
+	export_table geography_$MODEL geography.$MODEL;
+done
+
+for MODEL in rating; do
+	export_table proso_feedback_$MODEL feedback.$MODEL;
 done

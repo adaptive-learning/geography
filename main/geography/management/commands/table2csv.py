@@ -31,7 +31,8 @@ class Command(BaseCommand):
             'geography_place',
             'geography_placerelation',
             'geography_answer_options',
-            'geography_placerelation_related_places'
+            'geography_placerelation_related_places',
+            'proso_feedback_rating'
         ]
         field_mapping = {
             'answer_id': 'answer',
@@ -60,4 +61,4 @@ class Command(BaseCommand):
                         append=(offset > 0),
                         **field_mapping)
         else:
-            raise CommandError('table ' + table_name + ' is not supported')
+            raise CommandError('table "' + table_name + '" is not supported')
