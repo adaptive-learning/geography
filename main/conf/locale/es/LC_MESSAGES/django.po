@@ -73,7 +73,7 @@ msgstr "Comunidades Autónomas"
 
 #: geography/models/place.py:187
 msgid "Pohoří"
-msgstr "Montañas"
+msgstr "Montes"
 
 #: geography/models/place.py:188
 msgid "Ostrovy"
@@ -198,7 +198,7 @@ msgstr "comunidad autónoma"
 #: geography/utils/model.py:162
 msgctxt "singular"
 msgid "pohoří"
-msgstr "cordillera"
+msgstr "montes"
 
 #: geography/utils/model.py:163
 msgid "ostrov"
@@ -255,7 +255,7 @@ msgstr "comunidades autónomas"
 #: geography/utils/model.py:190
 msgctxt "plural"
 msgid "pohoří"
-msgstr "cordilleras"
+msgstr "montes"
 
 #: geography/utils/model.py:191
 msgid "ostrovů"
@@ -437,7 +437,7 @@ msgstr "Estados de E.U.A."
 
 #: templates/generated/homepage.html:41
 msgid "Pohoří ČR"
-msgstr "Montañas de Rep. Ch."
+msgstr "Montes de Rep. Ch."
 
 #: templates/generated/homepage.html:46
 msgid "Státy Asie"
@@ -543,7 +543,7 @@ msgstr ""
 #~ msgstr "Ciudades Checas"
 
 #~ msgid "Pohoří Evropy"
-#~ msgstr "Montañas Europeas"
+#~ msgstr "Montes Europeas"
 
 #~ msgid "Body - přibývají za každou správnou odpověď"
 #~ msgstr "Puntos - ganados por cada respuesta correcta"
