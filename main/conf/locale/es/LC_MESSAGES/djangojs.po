@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-21 11:12+0100\n"
+"POT-Creation-Date: 2014-12-05 11:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,101 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: geography/static/dist/js/blind-maps.min.js:244
-#: geography/static/dist/js/blind-maps.min.js:271
-#: geography/static/dist/js/blind-maps.min.js:414
-#: geography/static/dist/js/blind-maps.min.js:496
-#: geography/static/dist/js/blind-maps.min.js:1953
-#: geography/static/js/controllers.js:82
-#: geography/static/js/controllers.js:109
-#: geography/static/js/controllers.js:252
-#: geography/static/js/controllers.js:334
-#: geography/static/js/directives.js:357
-msgid "V aplikaci bohužel nastala chyba."
-msgstr "Unfortunately there has been an error in the app."
-
-#: geography/static/dist/js/blind-maps.min.js:518
-#: geography/static/js/services.js:14
-msgid "USA"
-msgstr "E.U.A."
-
-#: geography/static/dist/js/blind-maps.min.js:519
-#: geography/static/js/services.js:15
-msgid "Svět"
-msgstr "Mundo"
-
-#: geography/static/dist/js/blind-maps.min.js:524
-#: geography/static/js/services.js:20
-msgid "Politická mapa"
-msgstr "Mapa Político"
-
-#: geography/static/dist/js/blind-maps.min.js:537
-#: geography/static/js/services.js:33
-msgid "Vodstvo"
-msgstr "Agua"
-
-#: geography/static/dist/js/blind-maps.min.js:542
-#: geography/static/js/services.js:38
-msgid "Povrch"
-msgstr "Superficie"
-
-#: geography/static/dist/js/blind-maps.min.js:827
-#: geography/static/js/services.js:323
-msgid "O prjektu"
-msgstr "Sobre"
-
-#: geography/static/dist/js/blind-maps.min.js:828
-#: geography/static/hack/tpl/overview_tpl.js:1
-#: geography/static/js/services.js:324
-msgid "Přehled map"
-msgstr "Vista general de mapas"
-
-#: geography/static/dist/js/blind-maps.min.js:1318
-#: geography/static/dist/js/blind-maps.min.js:1614
-#: geography/static/js/directives.js:18 geography/static/js/map.js:270
-msgid "Odhad znalosti"
-msgstr "Estimación de conocimiento"
-
-#: geography/static/dist/js/blind-maps.min.js:1324
-#: geography/static/js/map.js:276
-msgid "Počet obyvatel"
-msgstr "Población"
-
-#: geography/static/dist/js/blind-maps.min.js:1331
-#: geography/static/js/map.js:283
-msgid "Neprocvičováno"
-msgstr "Sin Practicar"
-
-#: geography/static/dist/js/blind-maps.min.js:1746
-#: geography/static/js/directives.js:150
-msgid "Naučeno"
-msgstr "Aprendido"
-
-#: geography/static/dist/js/blind-maps.min.js:1753
-#: geography/static/js/directives.js:157
-msgid "Procvičováno"
-msgstr "Practicado"
-
-#: geography/static/dist/js/blind-maps.min.js:1772
-#: geography/static/js/directives.js:176
-msgid "Aktuální úroveň"
-msgstr "Nivel actual"
-
-#: geography/static/dist/js/blind-maps.min.js:1777
-#: geography/static/js/directives.js:181
-msgid "bodů do příští úrovně"
-msgstr "puntos para alcanzar el siguiente nivel"
-
-#: geography/static/dist/js/blind-maps.min.js:1784
-#: geography/static/js/directives.js:188
-msgid "Příští úroveň"
-msgstr "Siguiente nivel"
-
-#: geography/static/dist/js/blind-maps.min.js:1946
-#: geography/static/js/directives.js:350
-msgid "Cíl byl vytvořen"
-msgstr "La meta ha sido creada"
 
 #: geography/static/hack/tpl/confused_tpl.js:1
 msgid "Moje časté chyby"
@@ -271,6 +176,11 @@ msgstr "Mi Conocimiento"
 msgid "Průměrný nový uživatel"
 msgstr "Nuevo usuario promedio"
 
+#: geography/static/hack/tpl/overview_tpl.js:1
+#: geography/static/js/services.js:330
+msgid "Přehled map"
+msgstr "Vista general de mapas"
+
 #: geography/static/hack/tpl/personal-goals_tpl.js:1
 msgid "Osobní cíle"
 msgstr "Metas personales"
@@ -300,8 +210,8 @@ msgid "Dnes již není třeba procvičovat"
 msgstr "Hemos terminado de prácticar por hoy"
 
 #: geography/static/hack/tpl/personal-goals_tpl.js:8
-msgid "Odstranit cíl - lze jen v den jeho vytvoření"
-msgstr "Eliminar Meta - solo es posible en el día de creación de la meta"
+msgid "Odstranit cíl"
+msgstr "Eliminar meta"
 
 #: geography/static/hack/tpl/practice_tpl.js:1
 msgid "Vybráno"
@@ -366,6 +276,74 @@ msgstr "Dirección de perfil"
 #: geography/static/hack/tpl/view_tpl.js:3
 msgid "Zde zatím nebylo nic procvičováno."
 msgstr "No se ha practido aquí."
+
+#: geography/static/js/controllers.js:53
+#: geography/static/js/controllers.js:196
+#: geography/static/js/controllers.js:278
+#: geography/static/js/directives.js:357 proso_feedback/static/js/app.js:54
+#: proso_feedback/static/js/app.js.c:96
+msgid "V aplikaci bohužel nastala chyba."
+msgstr "Unfortunately there has been an error in the app."
+
+#: geography/static/js/directives.js:18 geography/static/js/map.js:270
+msgid "Odhad znalosti"
+msgstr "Estimación de conocimiento"
+
+#: geography/static/js/directives.js:150
+msgid "Naučeno"
+msgstr "Aprendido"
+
+#: geography/static/js/directives.js:157
+msgid "Procvičováno"
+msgstr "Practicado"
+
+#: geography/static/js/directives.js:176
+msgid "Aktuální úroveň"
+msgstr "Nivel actual"
+
+#: geography/static/js/directives.js:181
+msgid "bodů do příští úrovně"
+msgstr "puntos para alcanzar el siguiente nivel"
+
+#: geography/static/js/directives.js:188
+msgid "Příští úroveň"
+msgstr "Siguiente nivel"
+
+#: geography/static/js/directives.js:350
+msgid "Cíl byl vytvořen"
+msgstr "La meta ha sido creada"
+
+#: geography/static/js/map.js:276
+msgid "Počet obyvatel"
+msgstr "Población"
+
+#: geography/static/js/map.js:283
+msgid "Neprocvičováno"
+msgstr "Sin Practicar"
+
+#: geography/static/js/services.js:14
+msgid "USA"
+msgstr "E.U.A."
+
+#: geography/static/js/services.js:15
+msgid "Svět"
+msgstr "Mundo"
+
+#: geography/static/js/services.js:20
+msgid "Politická mapa"
+msgstr "Mapa Político"
+
+#: geography/static/js/services.js:33
+msgid "Vodstvo"
+msgstr "Agua"
+
+#: geography/static/js/services.js:38
+msgid "Povrch"
+msgstr "Superficie"
+
+#: geography/static/js/services.js:329
+msgid "O prjektu"
+msgstr "Sobre"
 
 #~ msgid "Státy světa"
 #~ msgstr "Países del mundo"
