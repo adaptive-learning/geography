@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-29 17:36+0100\n"
+"POT-Creation-Date: 2014-12-05 08:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -331,7 +331,7 @@ msgid "Svou odpovědí nám pomáháte přizpůsobovat obtížnost otázek."
 msgstr ""
 
 #: proso_feedback/templates/feedback.html:45
-msgid "Příliž lehké"
+msgid "Příliš lehké"
 msgstr ""
 
 #: proso_feedback/templates/feedback.html:48
@@ -339,7 +339,7 @@ msgid "Tak akorát"
 msgstr ""
 
 #: proso_feedback/templates/feedback.html:51
-msgid "Příliž těžké"
+msgid "Příliš těžké"
 msgstr ""
 
 #: proso_feedback/templates/feedback.html:54
