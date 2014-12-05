@@ -154,8 +154,8 @@
     };
   }])
 
-  .service('question', ['$http', '$log', '$cookies', 'goal', '$analytics',
-      function($http, $log, $cookies, goal, $analytics) {
+  .service('question', ['$http', '$log', '$cookies', 'goal', '$analytics', 'params',
+      function($http, $log, $cookies, goal, $analytics, params) {
     var qIndex = 0;
     var url;
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -178,7 +178,8 @@
     var summary = [];
     return {
       first : function(part, placeType, fn) {
-        url = '/question/' + part + '/' + (placeType ? placeType : '');
+        url = '/question/' + part + '/' + (placeType ? placeType : '') +
+          params.queryString().replace('&', '?');
         $analytics.eventTrack('started', {
           category: 'practice',
           label: url,
@@ -415,6 +416,37 @@
       that.update(data.reverse());
     });
 
+    return that;
+  }])
+
+  .factory('params', ["$routeParams", "$location",
+      function ($routeParams, $location) {
+    var keys = ['limit'];
+    var params = {}; 
+    var that =  {
+      get: function (key) {
+        if (params[key] && ! $routeParams[key]) {
+          $location.search(key, params[key]);
+        }   
+        if ($routeParams[key]) {
+          params[key] = $routeParams[key];
+        }   
+        return params[key];
+      },  
+      all : function() {
+        for (var i = 0; i < keys.length; i++) {
+          that.get(keys[i]);
+        }
+        return params;
+      },  
+      queryString : function() {
+        that.all();
+        var string = keys.map(function(key) {
+          return that.get(key) ? '&' + key + '=' + that.get(key) : ''; 
+        }).join('');
+        return string;
+      }   
+    };  
     return that;
   }]);
 }());

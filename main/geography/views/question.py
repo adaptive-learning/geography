@@ -36,14 +36,15 @@ def question(request, map_code, place_type_slug):
                    else Place.CATEGORIES[place_type_slug]
                    if place_type_slug in Place.CATEGORIES
                    else [t[0] for t in Place.PLACE_TYPES])
-    NUMBER_OF_QUESTIONS = 10
+    number_of_questions = min(int(request.GET.get('limit', 10)), 100)
+
     response = {
-        'questions': qs.get_questions(NUMBER_OF_QUESTIONS - question_index, place_types),
+        'questions': qs.get_questions(number_of_questions - question_index, place_types),
     }
-    if question_index == NUMBER_OF_QUESTIONS:
+    if question_index == number_of_questions:
         response['goals'] = [g.to_serializable() for g in
                              Goal.objects.for_user_and_map(request.user, map, place_types)]
-    LOGGER.info("recommendation of %s questions took %s seconds" % (NUMBER_OF_QUESTIONS - question_index, time_fun() - start_time))
+    LOGGER.info("recommendation of %s questions took %s seconds" % (number_of_questions - question_index, time_fun() - start_time))
     return JsonResponse(response)
 
 
