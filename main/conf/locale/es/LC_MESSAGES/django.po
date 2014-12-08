@@ -198,7 +198,7 @@ msgstr "comunidad autónoma"
 #: geography/utils/model.py:162
 msgctxt "singular"
 msgid "pohoří"
-msgstr "montes"
+msgstr "monte"
 
 #: geography/utils/model.py:163
 msgid "ostrov"
@@ -271,7 +271,7 @@ msgstr ""
 #: geography/utils/model.py:212
 #, python-format
 msgid "Vyber na mapě %(place_singular)s"
-msgstr "Selecciona en el mapa %(place_singular)s"
+msgstr "Selecciona en el mapa el %(place_singular)s"
 
 #: geography/utils/model.py:215
 #, python-format
@@ -290,7 +290,7 @@ msgstr "programa inteligente para practicar geografía"
 #: proso_feedback/views.py:46
 msgid "Feedback confirmed"
 msgstr ""
-"Gracias por tu mensaje. Tu retroalimentación es muy importante para nosotros."
+"Gracias por tu mensaje. Tu opinión es muy importante para nosotros."
 
 #: proso_feedback/views.py:61
 msgid "Děkujeme za hodnocení."
@@ -324,27 +324,27 @@ msgstr "Cerrar"
 
 #: proso_feedback/templates/feedback.html:39
 msgid "Jak těžké jsou kladené otázky?"
-msgstr ""
+msgstr "¿Qué tan difíciles son estas preguntas?"
 
 #: proso_feedback/templates/feedback.html:40
 msgid "Svou odpovědí nám pomáháte přizpůsobovat obtížnost otázek."
-msgstr ""
+msgstr "Tu respuesta ayuda a ajustar la dificultad de las preguntas."
 
 #: proso_feedback/templates/feedback.html:45
 msgid "Příliš lehké"
-msgstr ""
+msgstr "Muy facil"
 
 #: proso_feedback/templates/feedback.html:48
 msgid "Tak akorát"
-msgstr ""
+msgstr "Adecuado"
 
 #: proso_feedback/templates/feedback.html:51
 msgid "Příliš těžké"
-msgstr ""
+msgstr "Muy dificil"
 
 #: proso_feedback/templates/feedback.html:54
 msgid "Nevím / nechci odpovídat"
-msgstr ""
+msgstr "No sé/No quiero calificar"
 
 #: proso_goals/templates/create_goal.html:5
 msgid "Vytvořit cíl"
@@ -393,7 +393,7 @@ msgstr "Iniciar sesión"
 
 #: templates/home.html:99
 msgid "Registrovat se"
-msgstr ""
+msgstr "Registrarse"
 
 #: templates/home.html:107
 msgid "přes Google"
