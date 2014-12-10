@@ -158,6 +158,7 @@ module.exports = function(grunt) {
           'geography/static/lib/js/jquery.qtip.min.js',
           'geography/static/lib/js/angulartics.min.js',
           'geography/static/lib/js/angulartics-ga.min.js',
+          'geography/static/lib/js/xeditable.js',
         ],
         dest: 'geography/static/dist/js/libs.min.js'
       }

@@ -24,6 +24,7 @@ def home(request, hack=None):
     )
     CSS_FILES = (
         "/static/lib/css/bootstrap.min.css",
+        "/static/lib/css/xeditable.css",
         "/static/css/app.css",
         "/static/css/map.css"
     )

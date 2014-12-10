@@ -14,6 +14,7 @@
     'angulartics.google.analytics',
     'ui.bootstrap',
     'googleExperiments',
+    'xeditable',
     'proso.feedback',
   ])
 
@@ -80,9 +81,11 @@
     });
   }])
 
-  .run(['$rootScope', '$', '$analytics', 'places',
-      function($rootScope, $, $analytics, places) {
+  .run(['$rootScope', '$', '$analytics', 'places', 'editableOptions',
+      function($rootScope, $, $analytics, places, editableOptions) {
     $analytics.settings.pageTracking.autoTrackFirstPage = false;
+
+    editableOptions.theme = 'bs3';
     
     $rootScope.$on("$routeChangeStart", function(event, next, current) {
       if (current && current.originalPath !== "" && $(window).width() < 770) {
