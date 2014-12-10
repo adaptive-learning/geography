@@ -351,7 +351,6 @@
     var goalDict = {};
     var goals = [];
     function updateGoal(g){
-      g.progress_diff = g.expected_progress - g.progress;
       if (goalDict[g.id]) {
         angular.copy(g, goalDict[g.id]);
       } else {
