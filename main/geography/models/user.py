@@ -3,7 +3,7 @@ from django.contrib.auth.signals import user_logged_in
 from django.conf import settings
 from django.utils import translation
 from lazysignup.models import LazyUser
-from django.db import connection
+from django.db import connection, models
 from contextlib import closing
 from geography.models import Answer
 
@@ -92,3 +92,22 @@ def set_lang_from_last_answer(sender, user, request, **kwargs):
 
 
 user_logged_in.connect(set_lang_from_last_answer)
+
+
+class UserProfileManager(models.Manager):
+    def get_profile(self, user):
+        try:
+            profile = self.get(user=user)
+        except UserProfile.DoesNotExist:
+            profile = UserProfile(user=user)
+            profile.save()
+        return profile
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    send_emails = models.BooleanField(default=True)
+    objects = UserProfileManager()
+
+    class Meta:
+        app_label = 'geography'
