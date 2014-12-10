@@ -302,6 +302,10 @@
           rangeIncrease += 10;
         }
         
+      },
+      save : function(user) {
+        $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+        return $http.post('/user/save/', user).success(updateUser); 
       }
     };
     return that;

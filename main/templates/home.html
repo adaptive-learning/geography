@@ -132,6 +132,11 @@
                         {% trans "Moje časté chyby" %}
                       </a>
                     </li>
+                    <li>
+                      <a href="#/u/{{user.username}}?edit=true" >
+                        {% trans "Nastavení" %}
+                      </a>
+                    </li>
                     <li class="forgot-pwd">
                       <a href="#/" ng-click="logout()">
                         {% trans "Odhlásit se" %}

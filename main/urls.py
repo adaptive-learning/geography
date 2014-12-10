@@ -33,6 +33,7 @@ urlpatterns = patterns(
 
     url(r'^user/list/', 'geography.views.user_list_view', name='user_list_view'),
     url(r'^user/logout/', 'geography.views.logout_view', name='logout_view'),
+    url(r'^user/save/', 'geography.views.user_save', name='user_save'),
     url(r'^user/(?P<username>[\w\.]*)', 'geography.views.user_view', name='user_view'),
 
     url(r'^favicon\.ico$', RedirectView.as_view(url='static/img/favicon.png')),
