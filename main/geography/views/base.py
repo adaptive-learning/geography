@@ -11,6 +11,7 @@ from django.core.servers.basehttp import FileWrapper
 from django.utils.translation import ugettext as _
 from django.views.decorators.cache import cache_page
 from django.views.i18n import javascript_catalog
+from django.utils import simplejson
 
 
 def home(request, hack=None):
@@ -40,6 +41,7 @@ def home(request, hack=None):
                   in settings.HASHES.iteritems()
                   if "/lib/" not in key and "/js/" not in key and "/sass/" not in key
                   )
+    user = get_user(request)
     c = {
         'title': title,
         'map': get_map_from_url(hack),
@@ -49,7 +51,8 @@ def home(request, hack=None):
         'continents': Place.objects.get_continents(),
         'states': Place.objects.get_states_with_map(),
         'hashes': json.dumps(hashes),
-        'user': get_user(request),
+        'user': user,
+        'userJson': simplejson.dumps(user),
         'LANGUAGE_CODE': request.LANGUAGE_CODE,
         'LANGUAGES': settings.LANGUAGES,
         'isHomepage': hack is None,

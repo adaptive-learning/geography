@@ -23,8 +23,8 @@
       $rootScope.user = data;
     };
     
-    $scope.initUser = function (username, points, answered_count, email) {
-      $rootScope.user = user.initUser(username, points, answered_count, email);
+    $scope.initUser = function (data) {
+      $rootScope.user = user.initUser(data);
     };
 
     $scope.setPlaceTypeNames = function (obj) {
