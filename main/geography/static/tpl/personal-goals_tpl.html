@@ -26,8 +26,7 @@
            <i class="glyphicon glyphicon-check"></i> 
            {{'Procvičovat'| trans}}</a>
         <a ng-click="deleteGoal(goal)"
-           ng-disabled="!goal.can_be_deleted"
-           tooltip="{{'Odstranit cíl - lze jen v den jeho vytvoření' | trans}}"
+           tooltip="{{'Odstranit cíl' | trans}}"
            tooltip-append-to-body="true"
            class="btn btn-default">
            <i ng-hide="goal.deleting" class="glyphicon glyphicon-trash"></i> 

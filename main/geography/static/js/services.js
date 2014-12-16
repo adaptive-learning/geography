@@ -357,7 +357,8 @@
     };
   }])
 
-  .factory('goal',['$http', '$cookies', function($http, $cookies) {
+  .factory('goal',['$http', '$cookies', 'confirmModal', 'gettext',
+      function($http, $cookies, confirmModal, gettext) {
     
     var goalDict = {};
     var goals = [];
@@ -399,7 +400,8 @@
         }
       },
       remove : function(goal) {
-        if (goal.can_be_deleted) {
+        var question = gettext("Opravdu chcete cíl smazat?");
+        confirmModal.open(question, function() {
           goal.deleting = true;
           $http.get("/goal/delete/" + goal.id).success(function() {
             for (var i = 0; i < goals.length; i++) {
@@ -410,7 +412,7 @@
             }
             delete goalDict[goal.id];
           });
-        }
+        });
       },
       add : function(goal) {
         $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
@@ -477,6 +479,34 @@
             size: 'sm',
           });
         }
+      }
+    };
+  }])
+
+  .factory('confirmModal', ["$modal", function ($modal) {
+    var ModalConfirmCtrl = ['$scope', '$modalInstance', 'question', 'confirm',
+        function ($scope, $modalInstance, question, confirm) {
+      $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+      };
+      $scope.confirm = confirm;
+      $scope.question = question;
+    }];
+
+    return {
+      open : function(question, callback) {
+        $modal.open({
+          templateUrl: 'static/tpl/confirm_modal.html',
+          controller: ModalConfirmCtrl,
+          resolve: {
+            confirm: function () {
+              return  callback;
+            },
+            question: function () {
+              return  question;
+            },
+          },
+        });
       }
     };
   }]);
