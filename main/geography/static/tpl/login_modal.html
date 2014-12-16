@@ -1,0 +1,27 @@
+<div class="modal-header text-center">
+  <button type="button" class="close" ng-click="cancel()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h3 class="modal-title"> {{ "Přihlásit se" | trans }} </h3>
+</div>
+<div class="modal-body">
+      <ul class="login">
+        <li>
+          <a class="btn btn-danger btn-lg btn-block"
+            track-click="login"
+            href="/login/google/">
+            <i class="social-google"></i> {{ "přes Google" | trans }}
+          </a>
+        </li>
+        <br>
+        <li>
+          <a class="btn btn-primary btn-lg btn-block"
+            track-click="login"
+            href="/login/facebook/">
+            <i class="social-facebook"></i>{{ "přes Facebook" | trans }}
+          </a>
+        </li>
+      </ul>
+</div>
+<div class="modal-footer" >
+</div>

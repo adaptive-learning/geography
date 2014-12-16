@@ -234,8 +234,8 @@
     };
   }])
 
-  .factory('user', ['$http', '$cookies', 'events', 
-      function($http, $cookies, events) {
+  .factory('user', ['$http', '$cookies', 'events', '$routeParams', '$timeout', 'loginModal',
+      function($http, $cookies, events, $routeParams, $timeout, loginModal) {
 
     var user;
 
@@ -254,6 +254,13 @@
         user.getLevelInfo = function() {
           return that.getLevelInfo(user);
         };
+        
+        $timeout(function() {
+          if ($routeParams.requirelogin) {
+            loginModal.open(user);
+          }
+        }, 100);
+
         $http.get('/user/').success(updateUser);
         return user;
       },
@@ -451,5 +458,26 @@
       }   
     };  
     return that;
+  }])
+
+  .factory('loginModal', ["$modal", function ($modal) {
+    var ModalLoginCtrl = ['$scope', '$modalInstance', 
+        function ($scope, $modalInstance) {
+      $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+      };
+    }];
+
+    return {
+      open : function(user) {
+        if (!user.username) {
+          $modal.open({
+            templateUrl: 'static/tpl/login_modal.html',
+            controller: ModalLoginCtrl,
+            size: 'sm',
+          });
+        }
+      }
+    };
   }]);
 }());
