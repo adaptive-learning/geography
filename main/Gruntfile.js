@@ -216,6 +216,10 @@ module.exports = function(grunt) {
             src: 'geography/static/css/above-fold.css',
             dest: 'templates/generated/above-fold.css'
         },
+        moveReminderEmailCss: {
+            src: 'geography/static/css/reminder-email.css',
+            dest: 'templates/generated/reminder-email.css'
+        },
     },
     bboxcache: {
       default: {

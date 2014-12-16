@@ -5,6 +5,8 @@ from django.http import Http404, HttpResponseBadRequest
 from django.utils import simplejson
 from geography.models import Place, PlaceRelation, MapSkill
 from proso_goals.models import Goal
+from proso_goals.utils import get_reminder_email
+from django.http import HttpResponse
 
 
 def goals_delete(request, id):
@@ -56,3 +58,18 @@ def goals_view(request, username=None):
         response = Goal.objects.for_user(user)
         response = map((lambda x: x.to_serializable()), response)
         return JsonResponse(response)
+
+
+def reminder_email(request, username=None):
+    if not username:
+        user = request.user
+    else:
+        try:
+            user = User.objects.get(username=username)
+        except User.DoesNotExist:
+            raise Http404("Invalid username: {0}".format(username))
+    goals = [g.to_serializable() for g in
+             Goal.objects.goals_behind_schedule(user)]
+    email = get_reminder_email(goals, user)
+    email_text = email[0 if 'plain' in request.GET else 1]
+    return HttpResponse(email_text)

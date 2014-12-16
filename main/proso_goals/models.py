@@ -3,6 +3,7 @@ from django.db import models
 from geography.models import PlaceRelation, Place, MapSkill
 from django.contrib.auth.models import User
 from datetime import date, timedelta
+import datetime
 
 
 class GoalManager(models.Manager):
@@ -29,6 +30,17 @@ class GoalManager(models.Manager):
                     if g.probability < g.start_probability:
                         g.start_probability = g.probability
                         g.save()
+        return goals
+
+    def goals_behind_schedule(self, user=None):
+        goals = Goal.objects.filter(
+            finish_date__gt=datetime.date.today()
+        ).select_related('user')
+        if user is not None:
+            goals = goals.filter(
+                user=user,
+            )
+        goals = [g for g in goals if g.behind_schedule]
         return goals
 
 

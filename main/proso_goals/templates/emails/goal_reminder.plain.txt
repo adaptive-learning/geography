@@ -1,0 +1,12 @@
+{% load i18n %}
+{% trans "Slepé Mapy" %} ( {{domain}} )
+
+{% trans 'Je nejvyšší čas pokračovat v plnění osobních cílů!' %} 
+{% for goal in goals %}
+
+{{goal.map.name }} - {{goal.type.name }}
+{{domain}}/#/practice/{{goal.map.code}}/{{goal.type.slug}}?requirelogin=true
+{% endfor %}
+
+{% trans 'Změnit nastavení E-mailů' %}:
+{{domain}}/#/u/{{user.username}}?edit=true&requirelogin=true
