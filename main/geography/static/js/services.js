@@ -494,7 +494,7 @@
           $scope.loading = false;
           $scope.alerts.push({
             type : error.type || 'danger',
-            msg : error.msg || gettext("V aplikaci bohužel nastala chyba"),
+            msg : error.msg || gettext("V aplikaci bohužel nastala chyba."),
           });
         });
       };
@@ -573,7 +573,7 @@
           $scope.loading = false;
           $scope.alerts.push({
             type : error.type || 'danger',
-            msg : error.msg || gettext("V aplikaci bohužel nastala chyba"),
+            msg : error.msg || gettext("V aplikaci bohužel nastala chyba."),
           });
         });
       };
