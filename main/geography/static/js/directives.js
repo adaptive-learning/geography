@@ -82,18 +82,6 @@
     };
   })
 
-  .directive('dropLogin', function() {
-    return {
-      restrict : 'C',
-      compile : function(elem) {
-        elem.bind('click', function() {
-          elem.tooltip('destroy');
-          elem.parent().find('.tooltip').remove();
-        });
-      }
-    };
-  })
-
   .directive('points', ['$timeout', 'events', function($timeout, events) {
     return {
       scope : true,
@@ -102,21 +90,6 @@
         events.on('userUpdated', function(user) {
           $scope.user = user;
           if (user.points == 1) {
-            $timeout(function() {
-              elem.tooltip('show');
-            }, 0);
-          }
-        });
-      }
-    };
-  }])
-
-  .directive('dropLogin',['$timeout', 'events', function($timeout, events) {
-    return {
-      restrict : 'C',
-      link : function($scope, elem) {
-        events.on('questionSetFinished', function(answered_count) {
-          if (10 < answered_count && answered_count == 20) {
             $timeout(function() {
               elem.tooltip('show');
             }, 0);
