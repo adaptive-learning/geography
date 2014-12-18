@@ -252,7 +252,7 @@ msgstr "Create goal"
 
 #: geography/static/hack/tpl/personal-goals_tpl.js:5
 msgid "Žádné cíle zatím nebyly stanoveny"
-msgstr "No goals has been set"
+msgstr "No goals have been set"
 
 #: geography/static/hack/tpl/personal-goals_tpl.js:6
 msgid "Dnes již není třeba procvičovat"
