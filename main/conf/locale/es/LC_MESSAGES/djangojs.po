@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-18 13:06+0100\n"
+"POT-Creation-Date: 2014-12-18 14:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -321,6 +321,10 @@ msgid "Heslo znovu"
 msgstr ""
 
 #: geography/static/hack/tpl/signup_modal.js:12
+msgid "Registrovat se"
+msgstr ""
+
+#: geography/static/hack/tpl/signup_modal.js:13
 msgid "Registrace proběhla úspěšně. Můžete pokračovat v používání aplikace."
 msgstr ""
 
@@ -367,8 +371,8 @@ msgstr "No se ha practido aquí."
 #: geography/static/js/controllers.js:59
 #: geography/static/js/controllers.js:202
 #: geography/static/js/controllers.js:241
-#: geography/static/js/controllers.js:305 geography/static/js/services.js:497
-#: geography/static/js/services.js.c:576 proso_feedback/static/js/app.js:54
+#: geography/static/js/controllers.js:305 geography/static/js/services.js:503
+#: geography/static/js/services.js.c:586 proso_feedback/static/js/app.js:54
 #: proso_feedback/static/js/app.js.c:96 proso_feedback/static/js/app.js:250
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Unfortunately there has been an error in the app."
