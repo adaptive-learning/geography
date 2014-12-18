@@ -265,7 +265,7 @@ msgstr "islas"
 #, python-format
 msgid "Ze zvýrazněných %(place_plural)s na mapě vyber"
 msgstr ""
-"Slecciona de entre los %(place_plural)s resaltados en grís el que "
+"Selecciona de entre los %(place_plural)s resaltados en grís el que "
 "corresponda a"
 
 #: geography/utils/model.py:212
