@@ -24,6 +24,7 @@ module.exports = function(grunt) {
           'geography/static/dist/js/hash.js',
           'geography/static/dist/js/bbox.js',
           'proso_feedback/static/js/app.js',
+          'proso_goals/static/js/app.js',
           'geography/static/js/app.js',
           'geography/static/js/controllers.js',
           'geography/static/js/services.js',
@@ -123,6 +124,7 @@ module.exports = function(grunt) {
           'geography/static/dist/js/hash.js',
           'geography/static/dist/js/bbox.js',
           'proso_feedback/static/js/app.js',
+          'proso_goals/static/js/app.js',
           'geography/static/js/app.js',
           'geography/static/js/controllers.js',
           'geography/static/js/services.js',
@@ -203,7 +205,11 @@ module.exports = function(grunt) {
         tasks: ['templates', 'concat:app'],
       },
       jsapp: {
-        files: ['geography/static/js/*.js', 'proso_feedback/static/js/*.js'],
+        files: [
+          'geography/static/js/*.js',
+          'proso_feedback/static/js/*.js',
+          'proso_goals/static/js/*.js',
+        ],
         tasks: ['concat:app'],
       },
       jslibs: {

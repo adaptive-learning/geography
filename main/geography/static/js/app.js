@@ -16,6 +16,7 @@
     'googleExperiments',
     'xeditable',
     'proso.feedback',
+    'proso.goals',
   ])
 
   .value('gettext', gettext)
