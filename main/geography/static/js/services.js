@@ -475,8 +475,10 @@
   }])
 
   .factory('loginModal', ["$modal", function ($modal) {
-    var ModalLoginCtrl = ['$scope', '$modalInstance', 'user', '$window', 'signupModal', 'gettext',
-        function ($scope, $modalInstance, user, $window, signupModal, gettext) {
+    var ModalLoginCtrl = ['$scope', '$modalInstance', 'user', '$window', 
+          'signupModal', 'gettext', '$analytics',
+        function ($scope, $modalInstance, user, $window,
+          signupModal, gettext, $analytics) {
       $scope.credentials = {};
       $scope.alerts = [];
       $scope.signupModal = signupModal;
@@ -487,6 +489,10 @@
 
       $scope.login = function() {
         $scope.loading = true;
+        $analytics.eventTrack('click', {
+          category: 'login',
+          label: '/login/email',
+        });
         user.login($scope.credentials).success(function() {
           $scope.loading = false;
           $window.location.reload();
@@ -547,8 +553,8 @@
 
   .factory('signupModal', ['$modal', 'events', '$routeParams', '$timeout',
       function ($modal, events, $routeParams, $timeout) {
-    var ModalCtrl = ['$scope', '$modalInstance', 'user', '$rootScope', 'gettext',
-        function ($scope, $modalInstance, user, $rootScope, gettext) {
+    var ModalCtrl = ['$scope', '$modalInstance', 'user', '$rootScope', 'gettext', '$analytics',
+        function ($scope, $modalInstance, user, $rootScope, gettext, $analytics) {
       $scope.registerForm = {};
       $scope.alerts = [];
       $scope.LANGUAGE_CODE = $rootScope.LANGUAGE_CODE;
@@ -569,6 +575,10 @@
           $scope.registerForm = {};
           $scope.success = true;
           $rootScope.user = user;
+          $analytics.eventTrack('click', {
+            category: 'login',
+            label: '/login/email',
+          });
         }).error(function(error) {
           $scope.loading = false;
           $scope.alerts.push({
