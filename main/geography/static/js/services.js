@@ -313,7 +313,19 @@
       save : function(user) {
         $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
         return $http.post('/user/save/', user).success(updateUser); 
-      }
+      },
+      signup : function(userObject) {
+        $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+        var promise = $http.post('/user/signup/', userObject);
+        promise.success(updateUser);
+        return promise;
+      },
+      login : function(credentials) {
+        $http.defaults.headers.post['X-CSRFToken'] = $cookies.csrftoken;
+        var promise = $http.post('/user/login/', credentials);
+        promise.success(updateUser);
+        return promise;
+      },
     };
     return that;
   }])
@@ -463,11 +475,34 @@
   }])
 
   .factory('loginModal', ["$modal", function ($modal) {
-    var ModalLoginCtrl = ['$scope', '$modalInstance', 
-        function ($scope, $modalInstance) {
+    var ModalLoginCtrl = ['$scope', '$modalInstance', 'user', '$window', 'signupModal', 'gettext',
+        function ($scope, $modalInstance, user, $window, signupModal, gettext) {
+      $scope.credentials = {};
+      $scope.alerts = [];
+      $scope.signupModal = signupModal;
+      
       $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
       };
+
+      $scope.login = function() {
+        $scope.loading = true;
+        user.login($scope.credentials).success(function() {
+          $scope.loading = false;
+          $window.location.reload();
+        }).error(function(error) {
+          $scope.loading = false;
+          $scope.alerts.push({
+            type : error.type || 'danger',
+            msg : error.msg || gettext("V aplikaci bohužel nastala chyba"),
+          });
+        });
+      };
+
+      $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+      };
+
     }];
 
     return {
@@ -476,7 +511,6 @@
           $modal.open({
             templateUrl: 'static/tpl/login_modal.html',
             controller: ModalLoginCtrl,
-            size: 'sm',
           });
         }
       }
@@ -509,5 +543,64 @@
         });
       }
     };
+  }])
+
+  .factory('signupModal', ['$modal', 'events', '$routeParams', '$timeout',
+      function ($modal, events, $routeParams, $timeout) {
+    var ModalCtrl = ['$scope', '$modalInstance', 'user', '$rootScope', 'gettext',
+        function ($scope, $modalInstance, user, $rootScope, gettext) {
+      $scope.registerForm = {};
+      $scope.alerts = [];
+      $scope.LANGUAGE_CODE = $rootScope.LANGUAGE_CODE;
+
+      $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+      };
+
+      $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+      };
+
+      $scope.signup = function() {
+        $scope.loading = true;
+        user.signup($scope.registerForm).success(function(user){
+          $scope.loading = false;
+
+          $scope.registerForm = {};
+          $scope.success = true;
+          $rootScope.user = user;
+        }).error(function(error) {
+          $scope.loading = false;
+          $scope.alerts.push({
+            type : error.type || 'danger',
+            msg : error.msg || gettext("V aplikaci bohužel nastala chyba"),
+          });
+        });
+      };
+    }];
+
+    var that = {
+      open : function() {
+        $modal.open({
+          templateUrl: 'static/tpl/signup_modal.html',
+          controller: ModalCtrl,
+        });
+      }
+    };
+
+    $timeout(function() {
+      if ($routeParams.signup) {
+        that.open();
+      }
+    }, 100);
+
+    var checkPoint = 20;
+    events.on('questionSetFinished', function(answered_count) {
+      if (checkPoint - 10 < answered_count && answered_count <= checkPoint) {
+        that.open();
+      }
+    });
+
+    return that;
   }]);
 }());
