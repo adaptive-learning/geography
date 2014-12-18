@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-05 08:26+0100\n"
+"POT-Creation-Date: 2014-12-18 13:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -278,26 +278,52 @@ msgstr "Selecciona en el mapa el %(place_singular)s"
 msgid "Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?"
 msgstr "¿Cuál es el nombre del %(place_singular)s %(highlighted)s en el mapa?"
 
-#: geography/views/base.py:36 templates/home.html:57
-#: templates/generated/homepage.html:19
+#: geography/views/base.py:38
+#: proso_goals/templates/emails/goal_reminder.html:6
+#: proso_goals/templates/emails/goal_reminder.html:55
+#: proso_goals/templates/emails/goal_reminder.plain.txt:2
+#: templates/home.html:57 templates/generated/homepage.html:19
 msgid "Slepé Mapy"
 msgstr "Contorno de Mapas"
 
-#: geography/views/base.py:37
+#: geography/views/base.py:39
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr "programa inteligente para practicar geografía"
 
+#: geography/views/user.py:68
+msgid "Heslo je správné, ale účet není aktivovaný."
+msgstr ""
+
+#: geography/views/user.py:74
+msgid "Nesprávné jméno nebo heslo"
+msgstr ""
+
+#: geography/views/user.py:86
+msgid "Je nutné vyplnit uživatelské jméno."
+msgstr ""
+
+#: geography/views/user.py:88
+msgid "Je nutné vyplnit email."
+msgstr ""
+
+#: geography/views/user.py:90
+msgid "Je nutné vyplnit heslo."
+msgstr ""
+
+#: geography/views/user.py:93
+msgid "Hesla se neshodují."
+msgstr ""
+
 #: proso_feedback/views.py:46
 msgid "Feedback confirmed"
-msgstr ""
-"Gracias por tu mensaje. Tu opinión es muy importante para nosotros."
+msgstr "Gracias por tu mensaje. Tu opinión es muy importante para nosotros."
 
 #: proso_feedback/views.py:61
 msgid "Děkujeme za hodnocení."
 msgstr ""
 
 #: proso_feedback/templates/feedback.html:4
-#: proso_feedback/templates/feedback.html:9 templates/home.html:189
+#: proso_feedback/templates/feedback.html:9 templates/home.html:181
 msgid "Napište nám"
 msgstr "Sugerencias"
 
@@ -362,6 +388,24 @@ msgstr "Fecha de cumplimiento de meta"
 msgid "Vytrvořit"
 msgstr "Crear"
 
+#: proso_goals/templates/emails/goal_reminder.html:7 templates/home.html:119
+msgid "Osobní cíle"
+msgstr ""
+
+#: proso_goals/templates/emails/goal_reminder.html:61
+#: proso_goals/templates/emails/goal_reminder.plain.txt:4
+msgid "Je nejvyšší čas pokračovat v plnění osobních cílů!"
+msgstr ""
+
+#: proso_goals/templates/emails/goal_reminder.html:70
+msgid "Procvičovat"
+msgstr ""
+
+#: proso_goals/templates/emails/goal_reminder.html:89
+#: proso_goals/templates/emails/goal_reminder.plain.txt:11
+msgid "Změnit nastavení E-mailů"
+msgstr ""
+
 #: templates/home.html:26
 msgid "meta content"
 msgstr ""
@@ -391,31 +435,23 @@ msgstr ""
 msgid "Přihlásit se"
 msgstr "Iniciar sesión"
 
-#: templates/home.html:99
-msgid "Registrovat se"
-msgstr "Registrarse"
-
-#: templates/home.html:107
-msgid "přes Google"
-msgstr "con Google"
-
-#: templates/home.html:114
-msgid "přes Facebook"
-msgstr "con Facebook"
-
-#: templates/home.html:127
+#: templates/home.html:109
 msgid "Můj profil"
 msgstr "Mi  perfil"
 
-#: templates/home.html:132
+#: templates/home.html:114
 msgid "Moje časté chyby"
 msgstr "Mis errores frecuentes"
 
-#: templates/home.html:137
+#: templates/home.html:124
+msgid "Nastavení"
+msgstr ""
+
+#: templates/home.html:129
 msgid "Odhlásit se"
 msgstr "Terminar sesión"
 
-#: templates/home.html:184
+#: templates/home.html:176
 msgid "O projektu"
 msgstr "Sobre"
 

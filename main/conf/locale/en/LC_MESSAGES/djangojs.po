@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-05 11:34+0100\n"
+"POT-Creation-Date: 2014-12-18 13:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: geography/static/hack/tpl/confirm_modal.js:1
+msgid "Ne"
+msgstr "No"
+
+#: geography/static/hack/tpl/confirm_modal.js:2
+msgid "Ano"
+msgstr "Yes"
 
 #: geography/static/hack/tpl/confused_tpl.js:1
 msgid "Moje časté chyby"
@@ -40,6 +48,23 @@ msgstr "Correct answers"
 #: geography/static/hack/tpl/confused_tpl.js:5
 msgid "Chybné odpovědi"
 msgstr "Incorrect answers"
+
+#: geography/static/hack/tpl/edit-profile_tpl.js:1
+#: geography/static/hack/tpl/user_tpl.js:4
+msgid "Jméno"
+msgstr "First name"
+
+#: geography/static/hack/tpl/edit-profile_tpl.js:2
+#: geography/static/hack/tpl/user_tpl.js:5
+msgid "Příjmení"
+msgstr "Surname"
+
+#: geography/static/hack/tpl/edit-profile_tpl.js:3
+#: geography/static/hack/tpl/signin_modal.js:9
+#: geography/static/hack/tpl/signup_modal.js:8
+#: geography/static/hack/tpl/user_tpl.js:6
+msgid "E-mail"
+msgstr "E-mail"
 
 #: geography/static/hack/tpl/goal-progress_tpl.js:1
 msgid "Postup plnění cíle"
@@ -163,6 +188,34 @@ msgstr ""
 "this data, instead of being based on knowledge of an geography expert who "
 "\"knows\" whether it's generally more difficult to know Kenya or Nigeria."
 
+#: geography/static/hack/tpl/login_modal.js:1
+msgid "Přihlásit se"
+msgstr "Log in"
+
+#: geography/static/hack/tpl/login_modal.js:2
+#: geography/static/hack/tpl/signin_modal.js:5
+#: geography/static/hack/tpl/signup_modal.js:4
+msgid "přes Google"
+msgstr "with Google"
+
+#: geography/static/hack/tpl/login_modal.js:3
+#: geography/static/hack/tpl/signin_modal.js:6
+#: geography/static/hack/tpl/signup_modal.js:5
+msgid "přes Facebook"
+msgstr "with Facebook"
+
+#: geography/static/hack/tpl/login_modal.js:6
+#: geography/static/hack/tpl/signin_modal.js:10
+#: geography/static/hack/tpl/signup_modal.js:9
+msgid "Uživatelské jméno"
+msgstr "User name"
+
+#: geography/static/hack/tpl/login_modal.js:7
+#: geography/static/hack/tpl/signin_modal.js:11
+#: geography/static/hack/tpl/signup_modal.js:10
+msgid "Heslo"
+msgstr "Password"
+
 #: geography/static/hack/tpl/map_tpl.js:1
 msgid "Moje znalosti"
 msgstr "My knowledge"
@@ -172,11 +225,12 @@ msgid "Průměrný nový uživatel"
 msgstr "Average new user"
 
 #: geography/static/hack/tpl/overview_tpl.js:1
-#: geography/static/js/services.js:330
+#: geography/static/js/services.js:353
 msgid "Přehled map"
 msgstr "Maps overview"
 
 #: geography/static/hack/tpl/personal-goals_tpl.js:1
+#: geography/static/hack/tpl/practice_tpl.js:6
 msgid "Osobní cíle"
 msgstr "Personal goals"
 
@@ -228,43 +282,76 @@ msgstr "Highlight again"
 msgid "Úspěšnost"
 msgstr "Success rate"
 
-#: geography/static/hack/tpl/practice_tpl.js:6
+#: geography/static/hack/tpl/practice_tpl.js:7
 msgid "Znovu procvičovat"
 msgstr "Practice again"
 
-#: geography/static/hack/tpl/practice_tpl.js:7
+#: geography/static/hack/tpl/practice_tpl.js:8
 msgid "Mapa znalostí"
 msgstr "Knowledge map"
 
+#: geography/static/hack/tpl/signin_modal.js:1
+#: geography/static/hack/tpl/signup_modal.js:1
+msgid "Registrujte se"
+msgstr "Sign up"
+
+#: geography/static/hack/tpl/signin_modal.js:2
+#: geography/static/hack/tpl/signup_modal.js:2
+msgid " a získejte všechny výhody registrovaných uživatelů."
+msgstr " and get all the advantages of registered users."
+
+#: geography/static/hack/tpl/signin_modal.js:3
+#: geography/static/hack/tpl/signup_modal.js:3
+msgid "Co získám?"
+msgstr "What do I get?"
+
+#: geography/static/hack/tpl/signin_modal.js:7
+#: geography/static/hack/tpl/signup_modal.js:6
+msgid "přes E-mail"
+msgstr "with E-mail"
+
+#: geography/static/hack/tpl/signin_modal.js:12
+#: geography/static/hack/tpl/signup_modal.js:11
+msgid "Heslo znovu"
+msgstr "Password again"
+
+#: geography/static/hack/tpl/signup_modal.js:12
+msgid "Registrace proběhla úspěšně. Můžete pokračovat v používání aplikace."
+msgstr "Registration successful. You can continue using the app."
+
 #: geography/static/hack/tpl/user_tpl.js:1
+msgid "Upravit profil"
+msgstr "Edit profile"
+
+#: geography/static/hack/tpl/user_tpl.js:2
 msgid "Body"
 msgstr "Points"
 
-#: geography/static/hack/tpl/user_tpl.js:2
+#: geography/static/hack/tpl/user_tpl.js:3
 msgid "přibývají za každou správnou odpověď"
 msgstr "for corrects answers"
 
-#: geography/static/hack/tpl/user_tpl.js:3
-msgid "Jméno"
-msgstr "First name"
+#: geography/static/hack/tpl/user_tpl.js:7
+msgid "Poslat mi email při neplnění cílů"
+msgstr "Send me e-mail if I'm behind schedule with personal goals"
 
-#: geography/static/hack/tpl/user_tpl.js:4
-msgid "Příjmení"
-msgstr "Surname"
+#: geography/static/hack/tpl/user_tpl.js:8
+msgid "Uložit"
+msgstr "Save"
 
-#: geography/static/hack/tpl/user_tpl.js:5
-msgid "E-mail"
-msgstr "E-mail"
+#: geography/static/hack/tpl/user_tpl.js:9
+msgid "Zrušit"
+msgstr "Cancel"
 
-#: geography/static/hack/tpl/user_tpl.js:6
+#: geography/static/hack/tpl/user_tpl.js:10
 msgid "Přehled znalostí uživatele"
 msgstr "Knowladge overview of user"
 
-#: geography/static/hack/tpl/user_tpl.js:7
+#: geography/static/hack/tpl/user_tpl.js:11
 msgid "Sdílej svůj profil"
 msgstr "Share your profile"
 
-#: geography/static/hack/tpl/user_tpl.js:8
+#: geography/static/hack/tpl/user_tpl.js:12
 msgid "Adresa profilu"
 msgstr "Profile address"
 
@@ -272,11 +359,12 @@ msgstr "Profile address"
 msgid "Zde zatím nebylo nic procvičováno."
 msgstr "Nothing has been practiced here."
 
-#: geography/static/js/controllers.js:53
-#: geography/static/js/controllers.js:196
-#: geography/static/js/controllers.js:278
-#: geography/static/js/directives.js:357 proso_feedback/static/js/app.js:54
-#: proso_feedback/static/js/app.js.c:96
+#: geography/static/js/controllers.js:59
+#: geography/static/js/controllers.js:202
+#: geography/static/js/controllers.js:241
+#: geography/static/js/controllers.js:305 geography/static/js/services.js:497
+#: geography/static/js/services.js.c:576 proso_feedback/static/js/app.js:54
+#: proso_feedback/static/js/app.js.c:96 proso_feedback/static/js/app.js:250
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Unfortunately there has been an error in the app."
 
@@ -303,10 +391,6 @@ msgstr "points to the next level"
 #: geography/static/js/directives.js:188
 msgid "Příští úroveň"
 msgstr "Next level"
-
-#: geography/static/js/directives.js:350
-msgid "Cíl byl vytvořen"
-msgstr "Goal has been created"
 
 #: geography/static/js/map.js:276
 msgid "Počet obyvatel"
@@ -336,9 +420,17 @@ msgstr "Water"
 msgid "Povrch"
 msgstr "Surface"
 
-#: geography/static/js/services.js:329
+#: geography/static/js/services.js:352
 msgid "O prjektu"
 msgstr "About"
+
+#: geography/static/js/services.js:415
+msgid "Opravdu chcete cíl smazat?"
+msgstr "Do you really want to delete the goal?"
+
+#: proso_feedback/static/js/app.js:243
+msgid "Cíl byl vytvořen"
+msgstr "Goal has been created"
 
 #~ msgid "Státy světa"
 #~ msgstr "World states"
