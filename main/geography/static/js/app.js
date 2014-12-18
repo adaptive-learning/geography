@@ -77,7 +77,7 @@
     $locationProvider.html5Mode(true);
 
     googleExperimentsProvider.configure({
-      experimentId: '2MCxG5W1T5Okrc0s5bLSQA'
+      experimentId: 'Z701yBLfTbakJh3W6vGdpg'
     });
   }])
 

@@ -551,8 +551,8 @@
     };
   }])
 
-  .factory('signupModal', ['$modal', 'events', '$routeParams', '$timeout',
-      function ($modal, events, $routeParams, $timeout) {
+  .factory('signupModal', ['$modal', 'events', '$routeParams', '$timeout', 'googleExperiments',
+      function ($modal, events, $routeParams, $timeout, googleExperiments) {
     var ModalCtrl = ['$scope', '$modalInstance', 'user', '$rootScope', 'gettext', '$analytics',
         function ($scope, $modalInstance, user, $rootScope, gettext, $analytics) {
       $scope.registerForm = {};
@@ -604,9 +604,18 @@
       }
     }, 100);
 
-    var checkPoint = 20;
+
+    var signupPromotionAnsweredCount = 0;
+
+    googleExperiments.getVariation().then(function (variation) {
+      if (variation < 0 ) {
+        signupPromotionAnsweredCount = 20 * variation;
+      }
+    });
+
     events.on('questionSetFinished', function(answered_count) {
-      if (checkPoint - 10 < answered_count && answered_count <= checkPoint) {
+      if (signupPromotionAnsweredCount - 10 < answered_count && 
+          answered_count <= signupPromotionAnsweredCount) {
         that.open();
       }
     });
