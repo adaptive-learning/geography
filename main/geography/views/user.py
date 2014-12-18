@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 from geography.utils import JsonResponse
 from django.utils import simplejson
-from django.contrib.auth import logout
+from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.models import User
 from django.http import Http404
 import geography.models.user
 from geography.models.user import UserProfile
+from django.utils.translation import ugettext as _
+from lazysignup.decorators import allow_lazy_user
 
 
 def user_list_view(request):
@@ -48,6 +50,60 @@ def user_view(request, username=None):
 def logout_view(request):
     logout(request)
     return user_view(request)
+
+
+def login_view(request):
+    if request.raw_post_data:
+        credentials = simplejson.loads(request.raw_post_data)
+        user = authenticate(
+            username=credentials.get('username', ''),
+            password=credentials.get('password', ''),
+        )
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return user_view(request)
+            else:
+                response = {
+                    'msg': _("Heslo je správné, ale účet není aktivovaný."),
+                    'type': 'danger',
+                }
+                return JsonResponse(response, status=401)
+        else:
+            response = {
+                'msg': _(u"Nesprávné jméno nebo heslo"),
+                'type': 'danger',
+            }
+            return JsonResponse(response, status=401)
+
+
+@allow_lazy_user
+def signup_view(request):
+    if request.raw_post_data:
+        credentials = simplejson.loads(request.raw_post_data)
+        msg = None
+        if 'username' not in credentials:
+            msg = _(u"Je nutné vyplnit uživatelské jméno.")
+        elif 'email' not in credentials:
+            msg = _(u"Je nutné vyplnit email.")
+        elif 'password' not in credentials:
+            msg = _(u"Je nutné vyplnit heslo.")
+        elif ('passwordAgain' not in credentials
+                or credentials['password'] != credentials['passwordAgain']):
+            msg = _(u"Hesla se neshodují.")
+        if msg is not None:
+            response = {
+                'msg': msg,
+                'type': 'danger',
+            }
+            return JsonResponse(response, status=400)
+        else:
+            user = request.user
+            user.username = credentials['username']
+            user.email = credentials['email']
+            user.set_password(credentials['password'])
+            user.save()
+            return user_view(request)
 
 
 def user_save(request):
