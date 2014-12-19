@@ -5,7 +5,7 @@
 
   .value('gettext', gettext)
 
-  .directive('mnemonic', ['$modal', '$http', function ($modal, $http) {
+  .directive('mnemonic', ['gettext', '$http', function (gettext, $http) {
     
     var mnemonics = {};
     $http.get('/proso_mnemonics/').success(function(data) {
@@ -13,14 +13,14 @@
         var m = data.mnemonics[i];
         mnemonics[m.code] = m.text;
       }
-        console.log(mnemonics);
     });
 
     return {
       restrict: 'A',
       template: '<div ng-show="mnemonics[code]" class="alert alert-info">' +
                   '<i class="glyphicon glyphicon-info-sign"></i> ' +
-                  '<strong>Tip na zapamatování: </strong> {{mnemonics[code]}}' +
+                  '<strong>' + gettext('Tip na zapamatování:') + ' </strong>' +
+                  '{{mnemonics[code]}}' +
                 '<div>',
       link: function ($scope, element, attrs) {
         $scope.mnemonics = mnemonics;
