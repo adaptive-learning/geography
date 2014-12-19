@@ -5,8 +5,7 @@
 <div id="container" class="practice-container">
   <div ng-hide="question || showSummary || error" class="loading-indicator">
   </div>
-  <div ng-show="error" ng-bind="error" class="alert alert-danger">
-  </div>
+  <div ng-show="error" error-message ></div>
   <div class="practice">
     <div ng-repeat="question in questions"
         ng-class="{'slide-out': question.slideOut}"

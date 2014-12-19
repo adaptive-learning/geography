@@ -228,5 +228,36 @@
         });
       }
     };
+  }])
+
+  .directive('loginButton', ['loginModal', 'signupModal', 'user',
+      function (loginModal, signupModal, user) {
+    return {
+      restrict: 'A',
+      link: function (scope, element) {
+        element.click(function(){
+          loginModal.open(user.getUser());
+        });
+      }
+    };
+  }])
+
+  .directive('setPlaceTypeNames', ['places', function (places) {
+    return {
+      restrict : 'A',
+      link : function (scope, element, attrs) {
+        var obj = angular.fromJson(attrs.setPlaceTypeNames);
+        places.setPlaceTypeNames(obj);
+      }
+    };
+  }])
+
+  .directive('errorMessage', ['gettext', function (gettext) {
+    return {
+      restrict : 'A',
+      template: '<div class="alert alert-danger">' +
+                  gettext("V aplikaci bohužel nastala chyba.") + 
+                '</div>',
+    };
   }]);
 }());

@@ -3,8 +3,7 @@
     <h1>{{'Moje časté chyby' | trans }}</h1>
     <div ng-hide="loaded || error" class="loading-indicator">
     </div>
-    <div ng-show="error" ng-bind="error" class="alert alert-danger">
-    </div>
+    <div ng-show="error" error-message ></div>
     <div class="alert alert-info" ng-show="goals.length === 0">
       {{'Žádné časté chyby nebyly nalezeny' | trans }}
     </div>

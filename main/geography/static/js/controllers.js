@@ -3,14 +3,8 @@
   /* Controllers */
   angular.module('blindMaps.controllers', [])
 
-  .controller('AppCtrl', ['$scope', '$rootScope', '$location', '$modal',
-      '$window', 'user', 'pageTitle', 'places', 'signupModal', 'loginModal',
-      function($scope, $rootScope, $location, $modal,
-        $window, user, pageTitle, places, signupModal, loginModal) {
-    $rootScope.topScope = $rootScope;
-    $rootScope.location = $location;
-    $rootScope.loginModal = loginModal;
-    $rootScope.signupModal = signupModal;
+  .controller('AppCtrl', ['$scope', '$rootScope', 'user', 'pageTitle',
+      function($scope, $rootScope, user, pageTitle) {
     
     $rootScope.initTitle = function (title) {
       $rootScope.initialTitle = title;
@@ -33,10 +27,6 @@
       $rootScope.user = user.initUser(data);
     };
 
-    $scope.setPlaceTypeNames = function (obj) {
-      places.setPlaceTypeNames(obj);
-    };
-
     $rootScope.logout = function() {
       $rootScope.user = user.logout(updateUser);
     };
@@ -47,8 +37,8 @@
 
   }])
 
-  .controller('AppView', ['$scope', '$routeParams', '$filter', 'places', 'mapTitle', 'gettext',
-      function($scope, $routeParams, $filter, places, mapTitle, gettext) {
+  .controller('AppView', ['$scope', '$routeParams', '$filter', 'places', 'mapTitle',
+      function($scope, $routeParams, $filter, places, mapTitle) {
     $scope.part = $routeParams.part;
     var user = $routeParams.user || '';
     $scope.typeCategories = places.getCategories($scope.part);
@@ -56,7 +46,7 @@
 
     places.get($scope.part, user, updatePlaces).
       error(function(){
-        $scope.error = gettext("V aplikaci bohužel nastala chyba.");
+        $scope.error = true;
       });
 
     $scope.placeClick = function(place) {
@@ -94,9 +84,9 @@
   }])
 
   .controller('AppPractice', ['$scope', '$routeParams', '$timeout', '$filter',
-      'question', 'user', 'events', 'colors', 'places', '$', 'highlighted', 'gettext',
+      'question', 'user', 'events', 'colors', 'places', '$', 'highlighted',
       function($scope, $routeParams, $timeout, $filter,
-      question, user, events, colors, places, $, highlighted, gettext) {
+      question, user, events, colors, places, $, highlighted) {
     $scope.part = $routeParams.part;
     $scope.placeType = $routeParams.place_type;
     
@@ -199,7 +189,7 @@
         $scope.questions = [];
         setQuestion(q);
       }).error(function(){
-        $scope.error = gettext("V aplikaci bohužel nastala chyba.");
+        $scope.error = true;
       });
       $scope.map.onClick(function(code) {
         if ($filter('isFindOnMapType')($scope.question) && 
@@ -292,8 +282,8 @@
     }
   }])
 
-  .controller('AppConfused', ['$scope', '$http', 'gettext',
-      function($scope, $http, gettext){
+  .controller('AppConfused', ['$scope', '$http',
+      function($scope, $http){
     $http.get('/confused/').success(function(data){
       angular.forEach(data, function(p){
         p.wrongRatio = p.mistake_count / p.asked_count;
@@ -302,7 +292,7 @@
       $scope.loaded = true;
     }).error(function(){
       $scope.loaded = true;
-      $scope.error = gettext("V aplikaci bohužel nastala chyba.");
+      $scope.error = true;
     });
   }])
   

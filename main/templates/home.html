@@ -1,7 +1,7 @@
  {% load i18n %}
 <!DOCTYPE html>
 <html data-ng-app="blindMaps" data-ng-controller="AppCtrl" lang="{{LANGUAGE_CODE}}">
-  <head ng-init='setPlaceTypeNames({{placeTypeNames | safe}})'>
+  <head>
     <meta charset="utf-8">
     <title ng-bind="title" ng-init="initTitle('{{ title }}')">
       {{ map }}{% if map != ''  %} - {% endif %}{{ title }}
@@ -40,6 +40,7 @@
 
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
   <div id="wrap">
+    <span set-place-type-names='{{placeTypeNames | safe}}'></span>
     <!-- Navbar
     ================================================== -->
 
@@ -94,7 +95,7 @@
                      class="drop-login atooltip"
                      title="{% trans "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše znalosti pamatoval i příště." %}"
                      container="body"
-                     ng-click="loginModal.open(user)" >
+                     login-button >
                     {% trans "Přihlásit se" %}
                   </a>
                 </li>
