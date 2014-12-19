@@ -83,33 +83,12 @@ def grunt_deploy():
     sudo('cd main && grunt deploy')
 
 
-def collect_static():
-    sudo('./main/manage.py collectstatic --noinput --traceback')
-
-
 def static_hashes():
     sudo('echo "HASHES = $( python ./main/manage.py static_hashes )" > ./main/hashes.py')
 
 
-def syncdb():
-    sudo('./main/manage.py syncdb --traceback')
-
-
-def migrate():
-    sudo('./main/manage.py migrate geography --delete-ghost-migrations --traceback')
-
-
-def custom_sql():
-    sudo('./main/manage.py sqlcustom geography --traceback')
-
-
-def update_maps():
-    sudo('./main/manage.py update_maps --traceback')
-
-
-def compilemessages():
-    sudo('./main/manage.py compilemessages --traceback')
-    reload_httpd()
+def manage_py(command):
+    sudo('./main/manage.py ' + command + ' --traceback')
 
 
 def remove_cache():
