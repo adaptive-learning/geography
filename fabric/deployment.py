@@ -20,6 +20,7 @@ def deploy():
     common.manage_py('collectstatic --noinput')
     common.static_hashes()
     common.manage_py('update_maps')
+    common.manage_py('update_mnemonics')
     common.manage_py('sqlcustom geography')
     common.remove_cache()
     common.backup('release_after_' + version_prepared)

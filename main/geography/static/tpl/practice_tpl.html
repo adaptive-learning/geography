@@ -24,6 +24,9 @@
         </span>
         <br class="clearfix">
       </div>
+        <div mnemonic="{{question.asked_code}}" class="col-sm-12"
+          ng-show="canNext && question.answered_code != question.asked_code">
+        </div>
       <span class="col-sm-7">
         <span ng-show="question|isPickNameOfType">
           <button ng-repeat="place in question.options"

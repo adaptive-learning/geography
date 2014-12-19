@@ -179,6 +179,7 @@ INSTALLED_APPS = (
     'geography',
     'proso_goals',
     'proso_feedback',
+    'proso_mnemonics',
 )
 
 # A sample logging configuration. The only tangible logging

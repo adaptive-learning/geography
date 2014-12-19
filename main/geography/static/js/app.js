@@ -17,6 +17,7 @@
     'xeditable',
     'proso.feedback',
     'proso.goals',
+    'proso.mnemonics',
   ])
 
   .value('gettext', gettext)

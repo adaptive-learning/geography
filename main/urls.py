@@ -44,4 +44,5 @@ urlpatterns = patterns(
 
     url(r'^goal/', include('proso_goals.urls')),
     url(r'^feedback/', include('proso_feedback.urls')),
+    url(r'^proso_mnemonics/', include('proso_mnemonics.urls')),
 )
