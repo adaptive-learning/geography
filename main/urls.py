@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import RedirectView
 from django.http import HttpResponse
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -12,6 +13,11 @@ js_info_dict = {
     'domain': 'djangojs',
     'packages': ('geography',),
 }
+
+if settings.ON_STAGING:
+    robots_txt = "User-agent: *\nDisallow: /\n"
+else:
+    robots_txt = "User-agent: *\nDisallow: /question/\nDisallow: /login/\n"
 
 urlpatterns = patterns(
     '',
@@ -40,7 +46,7 @@ urlpatterns = patterns(
 
     url(r'^favicon\.ico$', RedirectView.as_view(url='static/img/favicon.png')),
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
-    url(r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /question/\nDisallow: /login/\n", mimetype="text/plain")),
+    url(r'^robots\.txt$', lambda r: HttpResponse(robots_txt, mimetype="text/plain")),
 
     url(r'^goal/', include('proso_goals.urls')),
     url(r'^feedback/', include('proso_feedback.urls')),
