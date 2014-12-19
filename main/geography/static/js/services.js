@@ -491,7 +491,7 @@
         $scope.loading = true;
         $analytics.eventTrack('click', {
           category: 'login',
-          label: '/login/email',
+          label: 'email',
         });
         user.login($scope.credentials).success(function() {
           $scope.loading = false;
@@ -577,7 +577,7 @@
           $rootScope.user = user;
           $analytics.eventTrack('click', {
             category: 'login',
-            label: '/login/email',
+            label: 'email',
           });
         }).error(function(error) {
           $scope.loading = false;
