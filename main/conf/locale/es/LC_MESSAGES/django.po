@@ -94,62 +94,62 @@ msgstr "Superficie"
 #: geography/utils/model.py:130
 msgctxt "state"
 msgid "zvýrazněný"
-msgstr "resaltado en grís"
+msgstr "en grís"
 
 #: geography/utils/model.py:131
 msgctxt "city"
 msgid "zvýrazněné"
-msgstr "resaltada en grís"
+msgstr "en grís"
 
 #: geography/utils/model.py:134
 msgctxt "river"
 msgid "zvýrazněná"
-msgstr "resaltado en grís"
+msgstr "en grís"
 
 #: geography/utils/model.py:135
 msgctxt "lake"
 msgid "zvýrazněné"
-msgstr "resaltado en grís"
+msgstr "en grís"
 
 #: geography/utils/model.py:136
 msgctxt "region_cz"
 msgid "zvýrazněný"
-msgstr "resaltada en grís"
+msgstr "en grís"
 
 #: geography/utils/model.py:137
 msgctxt "bundesland"
 msgid "zvýrazněná"
-msgstr "resaltado en grís"
+msgstr "en grís"
 
 #: geography/utils/model.py:138
 msgctxt "province"
 msgid "zvýrazněná"
-msgstr "resaltado en grís"
+msgstr "en grís"
 
 #: geography/utils/model.py:139
 msgctxt "region_it"
 msgid "zvýrazněná"
-msgstr "resaltada en grís"
+msgstr "en grís"
 
 #: geography/utils/model.py:140
 msgctxt "region"
 msgid "zvýrazněný"
-msgstr "resaltada en grís"
+msgstr "en grís"
 
 #: geography/utils/model.py:141
 msgctxt "autonomous_comunity"
 msgid "zvýrazněná"
-msgstr "resaltado en grís"
+msgstr "en grís"
 
 #: geography/utils/model.py:142
 msgctxt "mountains"
 msgid "zvýrazněné"
-msgstr "resaltada en grís"
+msgstr "en grís"
 
 #: geography/utils/model.py:143
 msgctxt "island"
 msgid "zvýrazněný"
-msgstr "resaltada en grís"
+msgstr "en grís"
 
 #: geography/utils/model.py:149 geography/utils/model.py:177
 msgid "unknown"
@@ -265,7 +265,7 @@ msgstr "islas"
 #, python-format
 msgid "Ze zvýrazněných %(place_plural)s na mapě vyber"
 msgstr ""
-"Selecciona de entre los %(place_plural)s resaltados en grís el que "
+"Selecciona de entre los %(place_plural)s en grís el que "
 "corresponda a"
 
 #: geography/utils/model.py:212
@@ -561,10 +561,6 @@ msgstr ""
 "vez de que un experto dicte la dificultad, los usuarios definen el nivel con "
 "su desempeño. Así cada quién ayuda a decidir qué es más difícil, sí la "
 "geografía de Kenia o los rías de Nigeria."
-
-#~ msgctxt "budesland"
-#~ msgid "zvýrazněná"
-#~ msgstr "resaltado en grís"
 
 #~ msgid "Cíl byl vytvořen"
 #~ msgstr "La meta ha sido establecida"
