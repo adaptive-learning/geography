@@ -32,15 +32,16 @@
     </div>
     <alert ng-repeat="alert in alerts" type="{{alert.type}}"
       close="closeAlert($index)">{{alert.msg}}</alert>
-    <button ng-disabled="loading" type="submit" class="btn btn-primary btn-block btn-lg">
-      {{ 'Přihlásit se' }}
+    <button ng-disabled="loading" type="submit"
+      class="btn btn-primary btn-block btn-lg">
+      {{ 'Přihlásit se' | trans }}
     </button>
 
   </form>
 </div>
 <div class="modal-footer" >
     <a class="btn btn-link" ng-click="cancel();signupModal.open()">
-      {{ 'Registrovat se' }}
+      {{ 'Registrovat se' | trans }}
     </a>
 
 </div>
