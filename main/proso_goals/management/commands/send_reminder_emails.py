@@ -5,6 +5,7 @@ from django.core.mail import EmailMultiAlternatives
 from logging import getLogger
 from proso_goals.utils import get_reminder_email
 from django.contrib.sites.models import Site
+from geography.models.user import UserProfile
 
 
 LOGGER = getLogger(__name__)
@@ -25,7 +26,8 @@ def send_reminder_emails():
             goals_by_user[g.user] = []
         goals_by_user[g.user].append(g.to_serializable())
     for user in goals_by_user:
-        if user.email is not None:
+        send_emails = UserProfile.objects.get_profile(user).send_emails
+        if user.email is not None and send_emails:
             send_reminder_email(goals_by_user[user], user)
 
 
