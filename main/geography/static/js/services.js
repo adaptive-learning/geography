@@ -551,8 +551,8 @@
     };
   }])
 
-  .factory('signupModal', ['$modal', 'events', '$routeParams', '$timeout', 'googleExperiments',
-      function ($modal, events, $routeParams, $timeout, googleExperiments) {
+  .factory('signupModal', ['$modal', 'events', '$routeParams', '$timeout', 'googleExperiments', 'user',
+      function ($modal, events, $routeParams, $timeout, googleExperiments, user) {
     var ModalCtrl = ['$scope', '$modalInstance', 'user', '$rootScope', 'gettext', '$analytics',
         function ($scope, $modalInstance, user, $rootScope, gettext, $analytics) {
       $scope.registerForm = {};
@@ -615,7 +615,8 @@
 
     events.on('questionSetFinished', function(answered_count) {
       if (signupPromotionAnsweredCount - 10 < answered_count && 
-          answered_count <= signupPromotionAnsweredCount) {
+          answered_count <= signupPromotionAnsweredCount &&
+          !user.getUser().username) {
         that.open();
       }
     });
