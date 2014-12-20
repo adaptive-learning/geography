@@ -5,7 +5,8 @@ from django.core.mail import EmailMultiAlternatives
 from logging import getLogger
 from proso_goals.utils import get_reminder_email
 from django.contrib.sites.models import Site
-from geography.models.user import UserProfile
+from geography.models.user import UserProfile, get_lang_from_last_answer
+from django.utils import translation
 
 
 LOGGER = getLogger(__name__)
@@ -24,6 +25,9 @@ def send_reminder_emails():
     for g in goals:
         if g.user not in goals_by_user:
             goals_by_user[g.user] = []
+        language_code = get_lang_from_last_answer(g.user)
+        if language_code is not None:
+            translation.activate(language_code)
         goals_by_user[g.user].append(g.to_serializable())
     for user in goals_by_user:
         send_emails = UserProfile.objects.get_profile(user).send_emails
@@ -32,7 +36,11 @@ def send_reminder_emails():
 
 
 def send_reminder_email(goals, user):
+    language_code = get_lang_from_last_answer(user)
+    if language_code is not None:
+        translation.activate(language_code)
     [text_content, html_content] = get_reminder_email(goals, user)
+    print text_content
     domain = Site.objects.get_current().domain
     mail = EmailMultiAlternatives(
         'Je čas procvičovat slepé mapy',

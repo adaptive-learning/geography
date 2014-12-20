@@ -79,16 +79,22 @@ def to_serializable(user):
     }
 
 
-def set_lang_from_last_answer(sender, user, request, **kwargs):
+def get_lang_from_last_answer(user):
     try:
         latest_answer = Answer.objects.filter(user=user).latest('inserted')
         language_code = Answer.LANGUAGES[latest_answer.language][1]
+        return language_code
+    except Answer.DoesNotExist:
+        return None
+
+
+def set_lang_from_last_answer(sender, user, request, **kwargs):
+    language_code = get_lang_from_last_answer(user)
+    if language_code is not None:
         translation.activate(language_code)
         request.LANGUAGE_CODE = translation.get_language()
         request.COOKIES[settings.LANGUAGE_COOKIE_NAME] = language_code
         request.session['django_language'] = language_code
-    except Answer.DoesNotExist:
-        pass
 
 
 user_logged_in.connect(set_lang_from_last_answer)
