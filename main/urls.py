@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.views.generic import RedirectView
 from django.http import HttpResponse
 from django.conf import settings
+from django.contrib.sites.models import Site
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -17,7 +18,12 @@ js_info_dict = {
 if settings.ON_STAGING:
     robots_txt = "User-agent: *\nDisallow: /\n"
 else:
-    robots_txt = "User-agent: *\nDisallow: /question/\nDisallow: /login/\n"
+    robots_txt = """
+    Host: %s
+    User-agent: *
+    Disallow: /question/
+    Disallow: /login/
+    """ % Site.objects.get_current().domain
 
 urlpatterns = patterns(
     '',
