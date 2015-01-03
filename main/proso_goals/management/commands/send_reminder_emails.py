@@ -7,6 +7,7 @@ from proso_goals.utils import get_reminder_email
 from django.contrib.sites.models import Site
 from geography.models.user import UserProfile, get_lang_from_last_answer
 from django.utils import translation
+from django.utils.translation import ugettext as _
 
 
 LOGGER = getLogger(__name__)
@@ -43,7 +44,7 @@ def send_reminder_email(goals, user):
     print text_content
     domain = Site.objects.get_current().domain
     mail = EmailMultiAlternatives(
-        'Je čas procvičovat slepé mapy',
+        _(u'Je čas procvičovat slepé mapy'),
         text_content,
         'no-reply@' + domain,
         [user.email],
