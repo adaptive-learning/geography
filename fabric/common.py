@@ -19,7 +19,7 @@ def mysqldump(name=None):
     if not name:
         name = time.strftime('%Y-%m-%d_%H-%M-%S')
     dest_file = run('echo $GEOGRAPHY_DATA_DIR') + '/' + name + '.sql'
-    sudo('mysqldump -p$GEOGRAPHY_DATABASE_PASSWORD -u$GEOGRAPHY_DATABASE_USER -h$GEOGRAPHY_DATABASE_HOST -P$GEOGRAPHY_DATABASE_PORT $GEOGRAPHY_DATABASE_NAME > ' + dest_file)
+    sudo('mysqldump -p$GEOGRAPHY_DATABASE_PASSWORD -u$GEOGRAPHY_DATABASE_USER -h$GEOGRAPHY_DATABASE_HOST -P$GEOGRAPHY_DATABASE_PORT $GEOGRAPHY_DATABASE_NAME --compatible=postgresql --default-character-set=utf8 -r ' + dest_file)
 
 
 def run(command):
