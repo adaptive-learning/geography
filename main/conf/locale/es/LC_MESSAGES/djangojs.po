@@ -213,13 +213,13 @@ msgstr "con Facebook"
 #: geography/static/hack/tpl/signin_modal.js:10
 #: geography/static/hack/tpl/signup_modal.js:9
 msgid "Uživatelské jméno"
-msgstr ""
+msgstr "Nombre de usuario"
 
 #: geography/static/hack/tpl/login_modal.js:7
 #: geography/static/hack/tpl/signin_modal.js:11
 #: geography/static/hack/tpl/signup_modal.js:10
 msgid "Heslo"
-msgstr ""
+msgstr "Contraseña"
 
 #: geography/static/hack/tpl/map_tpl.js:1
 msgid "Moje znalosti"
@@ -298,39 +298,39 @@ msgstr "Mapa de conocimiento"
 #: geography/static/hack/tpl/signin_modal.js:1
 #: geography/static/hack/tpl/signup_modal.js:1
 msgid "Registrujte se"
-msgstr ""
+msgstr "Registrarse"
 
 #: geography/static/hack/tpl/signin_modal.js:2
 #: geography/static/hack/tpl/signup_modal.js:2
 msgid " a získejte všechny výhody registrovaných uživatelů."
-msgstr ""
+msgstr "y accede a todos los benecifios de un usuario registrado."
 
 #: geography/static/hack/tpl/signin_modal.js:3
 #: geography/static/hack/tpl/signup_modal.js:3
 msgid "Co získám?"
-msgstr ""
+msgstr "¿Qué obtengo?"
 
 #: geography/static/hack/tpl/signin_modal.js:7
 #: geography/static/hack/tpl/signup_modal.js:6
 msgid "přes E-mail"
-msgstr ""
+msgstr "con E-mail"
 
 #: geography/static/hack/tpl/signin_modal.js:12
 #: geography/static/hack/tpl/signup_modal.js:11
 msgid "Heslo znovu"
-msgstr ""
+msgstr "Contraseña de nuevo"
 
 #: geography/static/hack/tpl/signup_modal.js:12
 msgid "Registrovat se"
-msgstr ""
+msgstr "Registrarse"
 
 #: geography/static/hack/tpl/signup_modal.js:13
 msgid "Registrace proběhla úspěšně. Můžete pokračovat v používání aplikace."
-msgstr ""
+msgstr "Registro exitoso. Puedes continuar usando la aplicación."
 
 #: geography/static/hack/tpl/user_tpl.js:1
 msgid "Upravit profil"
-msgstr ""
+msgstr "Editar perfil"
 
 #: geography/static/hack/tpl/user_tpl.js:2
 msgid "Body"
@@ -342,15 +342,15 @@ msgstr "por respuestas correctas"
 
 #: geography/static/hack/tpl/user_tpl.js:7
 msgid "Poslat mi email při neplnění cílů"
-msgstr ""
+msgstr "Enviarme un correo si estoy atrasado con mis metas"
 
 #: geography/static/hack/tpl/user_tpl.js:8
 msgid "Uložit"
-msgstr ""
+msgstr "Salvar"
 
 #: geography/static/hack/tpl/user_tpl.js:9
 msgid "Zrušit"
-msgstr ""
+msgstr "Cancel"
 
 #: geography/static/hack/tpl/user_tpl.js:10
 msgid "Přehled znalostí uživatele"
@@ -435,7 +435,7 @@ msgstr "Sobre"
 
 #: geography/static/js/services.js:415
 msgid "Opravdu chcete cíl smazat?"
-msgstr ""
+msgstr "¿Estás seguro que deseas borrar la meta?"
 
 #: proso_feedback/static/js/app.js:243
 msgid "Cíl byl vytvořen"

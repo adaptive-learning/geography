@@ -292,27 +292,27 @@ msgstr "programa inteligente para practicar geografía"
 
 #: geography/views/user.py:68
 msgid "Heslo je správné, ale účet není aktivovaný."
-msgstr ""
+msgstr "La contraseña es correcta pero no se ha activado la cuenta"
 
 #: geography/views/user.py:74
 msgid "Nesprávné jméno nebo heslo"
-msgstr ""
+msgstr "El usuario o la contraseña son incorrectos"
 
 #: geography/views/user.py:86
 msgid "Je nutné vyplnit uživatelské jméno."
-msgstr ""
+msgstr "Tienes que escribir un nombre de usuario."
 
 #: geography/views/user.py:88
 msgid "Je nutné vyplnit email."
-msgstr ""
+msgstr "Tienes que escribir una dirección de email."
 
 #: geography/views/user.py:90
 msgid "Je nutné vyplnit heslo."
-msgstr ""
+msgstr "Tienes que escribir una contraseña."
 
 #: geography/views/user.py:93
 msgid "Hesla se neshodují."
-msgstr ""
+msgstr "Las contraseñas no son iguales."
 
 #: proso_feedback/views.py:46
 msgid "Feedback confirmed"
@@ -320,7 +320,7 @@ msgstr "Gracias por tu mensaje. Tu opinión es muy importante para nosotros."
 
 #: proso_feedback/views.py:61
 msgid "Děkujeme za hodnocení."
-msgstr ""
+msgstr "Gracias por calificarnos."
 
 #: proso_feedback/templates/feedback.html:4
 #: proso_feedback/templates/feedback.html:9 templates/home.html:181
@@ -390,21 +390,21 @@ msgstr "Crear"
 
 #: proso_goals/templates/emails/goal_reminder.html:7 templates/home.html:119
 msgid "Osobní cíle"
-msgstr ""
+msgstr "Metas personales"
 
 #: proso_goals/templates/emails/goal_reminder.html:61
 #: proso_goals/templates/emails/goal_reminder.plain.txt:4
 msgid "Je nejvyšší čas pokračovat v plnění osobních cílů!"
-msgstr ""
+msgstr "Es hora de continuar con tus metas personales!"
 
 #: proso_goals/templates/emails/goal_reminder.html:70
 msgid "Procvičovat"
-msgstr ""
+msgstr "Practica"
 
 #: proso_goals/templates/emails/goal_reminder.html:89
 #: proso_goals/templates/emails/goal_reminder.plain.txt:11
 msgid "Změnit nastavení E-mailů"
-msgstr ""
+msgstr "Ajusta tus opciones de email"
 
 #: templates/home.html:26
 msgid "meta content"
@@ -445,7 +445,7 @@ msgstr "Mis errores frecuentes"
 
 #: templates/home.html:124
 msgid "Nastavení"
-msgstr ""
+msgstr "Ajustes"
 
 #: templates/home.html:129
 msgid "Odhlásit se"
