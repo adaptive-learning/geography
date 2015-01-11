@@ -421,7 +421,7 @@ msgstr ""
 
 #: templates/home.html:84
 msgid "Přehled map"
-msgstr "Visión general de Mapas"
+msgstr "Todos los mapas"
 
 #: templates/home.html:95
 msgid ""
@@ -529,7 +529,7 @@ msgstr "Sistema Especializado"
 msgid "Specializovaný systém - text"
 msgstr ""
 "Hay muchos otros sistemas para el aprendizaje que incluyen el dibujo de "
-"mapas para practicar pero usualmente son más dispersos y cubren muchas "
+"mapas para practicar, pero usualmente son más dispersos y cubren muchas "
 "áreas. Nuestro sistema se enfoca exclusivamenteen el delineado de mapas, lo "
 "que nos permite optimizar nuestro sistema para esta área."
 
@@ -542,7 +542,8 @@ msgid "Vizualizace znalostí - text"
 msgstr ""
 "Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega "
 "en forma de mapa, el cuál te ayuda a visualizar de forma más fácil lo qué "
-"sabes."
+"sabes. En verde están las áreas que dominas y en rojo las que te faltan"
+"practicar más."
 
 #: templates/generated/homepage.html:91
 msgid "Ukázka mapy znalostí"
@@ -559,8 +560,8 @@ msgstr ""
 "preguntas que el programa presenta se basan en esta información. De esta "
 "forma, se tiene mejores estimados de dificultad para los usuarios, ya que en "
 "vez de que un experto dicte la dificultad, los usuarios definen el nivel con "
-"su desempeño. Así cada quién ayuda a decidir qué es más difícil, sí la "
-"geografía de Kenia o los rías de Nigeria."
+"su desempeño. Así, cada quién ayuda a decidir qué es más fácil, sí las "
+"ciudades de Kenia o los ríos de Nigeria. "
 
 #~ msgid "Cíl byl vytvořen"
 #~ msgstr "La meta ha sido establecida"

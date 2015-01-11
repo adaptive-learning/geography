@@ -160,7 +160,7 @@ msgstr "Sistema Especializado"
 msgid "Specializovaný systém - text"
 msgstr ""
 "Hay muchos otros sistemas para el aprendizaje que incluyen el dibujo de "
-"mapas para practicar pero usualmente son más dispersos y cubren muchas "
+"mapas para practicar, pero usualmente son más dispersos y cubren muchas "
 "áreas. Nuestro sistema se enfoca exclusivamenteen el delineado de mapas, lo "
 "que nos permite optimizar nuestro sistema para esta área."
 
@@ -173,7 +173,8 @@ msgid "Vizualizace znalostí - text"
 msgstr ""
 "Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega "
 "en forma de mapa, el cuál te ayuda a visualizar de forma más fácil lo qué "
-"sabes."
+"sabes. En verde están las áreas que dominas y en rojo las que te faltan"
+"practicar más."
 
 #: geography/static/hack/tpl/homepage.js:29
 msgid "Ukázka mapy znalostí"
@@ -190,8 +191,8 @@ msgstr ""
 "preguntas que el programa presenta se basan en esta información. De esta "
 "forma, se tiene mejores estimados de dificultad para los usuarios, ya que en "
 "vez de que un experto dicte la dificultad, los usuarios definen el nivel con "
-"su desempeño. Así cada quién ayuda a decidir qué es más difícil, sí la "
-"geografía de Kenia o los rías de Nigeria."
+"su desempeño. Así, cada quién ayuda a decidir qué es más fácil, sí las "
+"ciudades de Kenia o los ríos de Nigeria. "
 
 #: geography/static/hack/tpl/login_modal.js:1
 msgid "Přihlásit se"
@@ -232,7 +233,7 @@ msgstr "Nuevo usuario promedio"
 #: geography/static/hack/tpl/overview_tpl.js:1
 #: geography/static/js/services.js:353
 msgid "Přehled map"
-msgstr "Vista general de mapas"
+msgstr "Todos los mapas"
 
 #: geography/static/hack/tpl/personal-goals_tpl.js:1
 #: geography/static/hack/tpl/practice_tpl.js:6
