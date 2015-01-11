@@ -86,24 +86,26 @@ class Goal(models.Model):
         before_start = self.start_date - timedelta(days=1)
         numerator = (date.today() - self.start_date).total_seconds()
         denominator = (self.finish_date - before_start).total_seconds()
-        ratio = numerator / denominator
-        return max(0, min(ratio, 1))
+        return fraction_between_zero_and_one(numerator, denominator)
 
     @property
     def expected_progress(self):
         before_start = self.start_date - timedelta(days=1)
         numerator = (date.today() - before_start).total_seconds()
         denominator = (self.finish_date - before_start).total_seconds()
-        ratio = numerator / denominator
-        return max(0, min(ratio, 1))
+        return fraction_between_zero_and_one(numerator, denominator)
 
     @property
     def progress(self):
         numerator = self.probability - self.start_probability
         denominator = self.GOAL_PROBABILITY - self.start_probability
-        ratio = numerator / denominator
-        return max(0, min(ratio, 1))
+        return fraction_between_zero_and_one(numerator, denominator)
 
     class Meta:
         unique_together = ('user', 'map', 'place_type')
         ordering = ["-id"]
+
+
+def fraction_between_zero_and_one(numerator, denominator):
+    ratio = (numerator / denominator) if denominator != 0 else 0
+    return max(0, min(ratio, 1))
