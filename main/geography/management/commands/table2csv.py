@@ -53,7 +53,6 @@ class Command(BaseCommand):
             sql = 'SELECT * FROM ' + table_name
             for offset in xrange(0, count, batch_size):
                 with closing(connection.cursor()) as cursor:
-                    cursor = connection.cursor()
                     cursor.execute(sql + ' LIMIT ' + str(batch_size) + ' OFFSET ' + str(offset))
                     dump_cursor(
                         cursor,

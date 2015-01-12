@@ -11,4 +11,3 @@ def dump_cursor(cursor, dest_file, append=False, **field_mapping):
         for row in cursor:
             row = [val.encode('utf-8') if isinstance(val, unicode) else val for val in row]
             writer.writerow(row)
-            row = cursor.fetchone()
