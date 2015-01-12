@@ -16,6 +16,7 @@
     'googleExperiments',
     'xeditable',
     'proso.feedback',
+    'proso.auth',
     'proso.goals',
     'proso.mnemonics',
   ])

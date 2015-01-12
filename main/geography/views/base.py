@@ -2,7 +2,7 @@
 from django.conf import settings
 from django.shortcuts import render_to_response
 from geography.utils import JsonResponse, StaticFiles
-from geography.views import get_user
+from proso_auth.views import get_user
 from django.http import HttpResponse
 from geography.models import Place
 import json

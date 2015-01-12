@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from models import Place, PlaceRelation, Answer, PriorSkill, CurrentSkill, Difficulty, UserProfile
+from models import Place, PlaceRelation, Answer, PriorSkill, CurrentSkill, Difficulty
 from django.contrib import admin
 from django.contrib.contenttypes.models import ContentType
 from django.http import HttpResponseRedirect
@@ -115,10 +115,6 @@ class DifficultyAdmin(admin.ModelAdmin):
     list_display = ('place', 'value')
 
 
-class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'send_emails')
-
-
 ################################################################################
 # registers
 
@@ -128,4 +124,3 @@ admin.site.register(PlaceRelation, PlaceRelationAdmin)
 admin.site.register(PriorSkill, PriorSkillAdmin)
 admin.site.register(CurrentSkill, CurrentSkillAdmin)
 admin.site.register(Difficulty, DifficultyAdmin)
-admin.site.register(UserProfile, UserProfileAdmin)

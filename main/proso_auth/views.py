@@ -4,8 +4,8 @@ from django.utils import simplejson
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.models import User
 from django.http import Http404
-import geography.models.user
-from geography.models.user import UserProfile
+import utils
+from models import UserProfile
 from django.utils.translation import ugettext as _
 from lazysignup.decorators import allow_lazy_user
 from django.views.decorators.http import require_POST
@@ -13,8 +13,8 @@ from django.views.decorators.http import require_POST
 
 def user_list_view(request):
     users = User.objects.all()
-    response = [geography.models.user.to_serializable(s) for s in users
-                if not geography.models.user.is_lazy(s)]
+    response = [utils.to_serializable(s) for s in users
+                if not utils.is_lazy(s)]
     return JsonResponse(response)
 
 
@@ -26,11 +26,11 @@ def get_user(request, username=None):
             user = User.objects.get(username=username)
         except User.DoesNotExist:
             raise Http404(u"Invalid username: {0}".format(username))
-    if user and geography.models.user.is_lazy(user) and geography.models.user.is_named(user):
-        geography.models.user.convert_lazy_user(request.user)
-    username = user.username if user and not geography.models.user.is_lazy(user) else ''
-    points = geography.models.user.get_points(user) if user else 0
-    answered_count = geography.models.user.get_answered_count(user) if user else 0
+    if user and utils.is_lazy(user) and utils.is_named(user):
+        utils.convert_lazy_user(request.user)
+    username = user.username if user and not utils.is_lazy(user) else ''
+    points = utils.get_points(user) if user else 0
+    answered_count = utils.get_answered_count(user) if user else 0
     response = {
         'username': username,
         'points': points,

@@ -177,6 +177,7 @@ INSTALLED_APPS = (
     'social_auth',
     'lazysignup',
     'geography',
+    'proso_auth',
     'proso_goals',
     'proso_feedback',
     'proso_mnemonics',

@@ -43,13 +43,6 @@ urlpatterns = patterns(
     url(r'^csv/(?P<model>\w*)', 'geography.views.csv_view', name='csv_view'),
     url(r'^question/(?P<map_code>\w+)/(?P<place_type_slug>\w*)', 'geography.views.question', name='question'),
 
-    url(r'^user/list/', 'geography.views.user_list_view', name='user_list_view'),
-    url(r'^user/logout/', 'geography.views.logout_view', name='logout_view'),
-    url(r'^user/save/', 'geography.views.user_save', name='user_save'),
-    url(r'^user/login/', 'geography.views.login_view', name='login_view'),
-    url(r'^user/signup/', 'geography.views.signup_view', name='signup_view'),
-    url(r'^user/(?P<username>[\w\.]*)', 'geography.views.user_view', name='user_view'),
-
     url(r'^favicon\.ico$', RedirectView.as_view(url='static/img/favicon.png')),
     url(r'^apple-touch-icon\.png$',
         RedirectView.as_view(url='static/img/apple-touch-icon.png')),
@@ -62,4 +55,5 @@ urlpatterns = patterns(
     url(r'^goal/', include('proso_goals.urls')),
     url(r'^feedback/', include('proso_feedback.urls')),
     url(r'^proso_mnemonics/', include('proso_mnemonics.urls')),
+    url(r'^user/', include('proso_auth.urls')),
 )

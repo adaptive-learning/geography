@@ -230,18 +230,6 @@
     };
   }])
 
-  .directive('loginButton', ['loginModal', 'signupModal', 'user',
-      function (loginModal, signupModal, user) {
-    return {
-      restrict: 'A',
-      link: function (scope, element) {
-        element.click(function(){
-          loginModal.open(user.getUser());
-        });
-      }
-    };
-  }])
-
   .directive('setPlaceTypeNames', ['places', function (places) {
     return {
       restrict : 'A',

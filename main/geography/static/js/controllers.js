@@ -203,38 +203,6 @@
     };
   }])
 
-  .controller('AppUser', ['$scope', 'user', '$routeParams', '$location', 
-      '$timeout', 'gettext',
-      function($scope, user, $routeParams, $location, $timeout, gettext) {
-
-    $scope.profileUrl = $location.absUrl();
-    $scope.user = {username: $routeParams.user};
-    user.getPromiseByName($routeParams.user).success(function(data){
-      $scope.user = data;
-      $scope.editRights = data.username == user.getUser().username;
-
-      if ($routeParams.edit !== undefined && $scope.editRights) {
-        $timeout(function() {
-          $scope.editableForm.$show();
-        },10);
-      }
-    });
-
-    $scope.saveUser = function() {
-      // $scope.user already updated!
-      return user.save($scope.user).error(function(err) {
-        if(err.field && err.msg) {
-          // err like {field: "name", msg: "Server-side error for this username!"} 
-          $scope.editableForm.$setError(err.field, err.msg);
-        } else { 
-          // unknown error
-          $scope.editableForm.$setError('name', gettext("V aplikaci bohužel nastala chyba."));
-        }
-      });
-    };
-
-  }])
-
   .controller('AppOverview', ['$scope', 'places', '$http', '$routeParams',
       function($scope, places, $http, $routeParams) {
 

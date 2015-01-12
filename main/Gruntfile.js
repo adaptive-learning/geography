@@ -23,6 +23,7 @@ module.exports = function(grunt) {
         src: [
           'geography/static/dist/js/hash.js',
           'geography/static/dist/js/bbox.js',
+          'proso_auth/static/js/app.js',
           'proso_feedback/static/js/app.js',
           'proso_goals/static/js/app.js',
           'proso_mnemonics/static/js/app.js',
@@ -33,6 +34,7 @@ module.exports = function(grunt) {
           'geography/static/js/map.js',
           'geography/static/js/directives.js',
           'geography/static/dist/js/templates.js',
+          'proso_auth/static/dist/js/templates.js',
           'proso_goals/static/dist/js/templates.js',
         ],
         dest: 'geography/static/dist/js/<%= pkg.name %>.min.js'
@@ -126,6 +128,16 @@ module.exports = function(grunt) {
         options:    {
           htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true }
         }
+      },
+      'proso.auth':          {
+        cwd: 'proso_auth',
+        src: [
+          'static/tpl/*.html',
+        ],
+        dest: 'proso_auth/static/dist/js/templates.js',
+        options:    {
+          htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true }
+        }
       }
     },
     uglify: {
@@ -137,6 +149,7 @@ module.exports = function(grunt) {
         src: [
           'geography/static/dist/js/hash.js',
           'geography/static/dist/js/bbox.js',
+          'proso_auth/static/js/app.js',
           'proso_feedback/static/js/app.js',
           'proso_goals/static/js/app.js',
           'proso_mnemonics/static/js/app.js',
@@ -147,6 +160,7 @@ module.exports = function(grunt) {
           'geography/static/js/map.js',
           'geography/static/js/directives.js',
           'geography/static/dist/js/templates.js',
+          'proso_auth/static/dist/js/templates.js',
           'proso_goals/static/dist/js/templates.js',
         ],
         dest: 'geography/static/dist/js/<%= pkg.name %>.min.js'
@@ -219,6 +233,7 @@ module.exports = function(grunt) {
       templates: {
         files: [
           'geography/static/tpl/*.html',
+          'proso_auth/static/tpl/*.html',
           'proso_goals/static/tpl/*.html',
         ],
         tasks: ['templates', 'concat:app'],
