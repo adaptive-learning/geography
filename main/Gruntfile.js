@@ -33,6 +33,7 @@ module.exports = function(grunt) {
           'geography/static/js/map.js',
           'geography/static/js/directives.js',
           'geography/static/dist/js/templates.js',
+          'proso_goals/static/dist/js/templates.js',
         ],
         dest: 'geography/static/dist/js/<%= pkg.name %>.min.js'
       },
@@ -72,8 +73,10 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'geography/static',
-          src: 'tpl/*',
+          src: [
+            'geography/static/tpl/*',
+            'proso_goals/static/tpl/*',
+          ],
           dest: 'geography/static/hack/',
           ext: '.js'
         }]
@@ -113,6 +116,16 @@ module.exports = function(grunt) {
         options:    {
           htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true }
         }
+      },
+      'proso.goals':          {
+        cwd: 'proso_goals',
+        src: [
+          'static/tpl/*.html',
+        ],
+        dest: 'proso_goals/static/dist/js/templates.js',
+        options:    {
+          htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true }
+        }
       }
     },
     uglify: {
@@ -134,6 +147,7 @@ module.exports = function(grunt) {
           'geography/static/js/map.js',
           'geography/static/js/directives.js',
           'geography/static/dist/js/templates.js',
+          'proso_goals/static/dist/js/templates.js',
         ],
         dest: 'geography/static/dist/js/<%= pkg.name %>.min.js'
       },
@@ -203,7 +217,10 @@ module.exports = function(grunt) {
         tasks: ['string-replace'],
       },
       templates: {
-        files: ['geography/static/tpl/*.html'],
+        files: [
+          'geography/static/tpl/*.html',
+          'proso_goals/static/tpl/*.html',
+        ],
         tasks: ['templates', 'concat:app'],
       },
       jsapp: {
