@@ -8,6 +8,7 @@ import geography.models.user
 from geography.models.user import UserProfile
 from django.utils.translation import ugettext as _
 from lazysignup.decorators import allow_lazy_user
+from django.views.decorators.http import require_POST
 
 
 def user_list_view(request):
@@ -52,6 +53,7 @@ def logout_view(request):
     return user_view(request)
 
 
+@require_POST
 def login_view(request):
     if request.raw_post_data:
         credentials = simplejson.loads(request.raw_post_data)
@@ -78,6 +80,7 @@ def login_view(request):
 
 
 @allow_lazy_user
+@require_POST
 def signup_view(request):
     if request.raw_post_data:
         credentials = simplejson.loads(request.raw_post_data)
@@ -106,6 +109,7 @@ def signup_view(request):
             return user_view(request)
 
 
+@require_POST
 def user_save(request):
     if request.raw_post_data:
         user = request.user
