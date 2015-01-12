@@ -94,6 +94,16 @@ def signup_view(request):
         elif ('passwordAgain' not in credentials
                 or credentials['password'] != credentials['passwordAgain']):
             msg = _(u"Hesla se neshodují.")
+        try:
+            User.objects.get(username=credentials['username'])
+            msg = _(u"Účet se zadaným uživatelským jménem už existuje.")
+        except User.DoesNotExist:
+            pass
+        try:
+            User.objects.get(email=credentials['email'])
+            msg = _(u"Účet se zadaným emailem už existuje.")
+        except User.DoesNotExist:
+            pass
         if msg is not None:
             response = {
                 'msg': msg,
