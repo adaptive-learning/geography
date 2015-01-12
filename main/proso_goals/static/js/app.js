@@ -49,7 +49,7 @@
           $scope.goal = {
             finish_date: new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 14),
           };
-          $scope.minFinish = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 7);
+          $scope.minFinish = new Date();
           $scope.alerts = [];
           $scope.datePopup = {};
 

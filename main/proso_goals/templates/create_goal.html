@@ -35,7 +35,8 @@
         <label>
           {% trans "Datum splnění cíle"%}
         </label>
-        <p class="input-group">
+        <p class="input-group"
+          ng-click="openDatePopup($event)">
           <input type="text" class="form-control"
             ng-model="goal.finish_date" 
             datepicker-popup="{{format}}" 
@@ -44,8 +45,7 @@
             show-button-bar="false"
             ng-required="true" />
           <span class="input-group-btn">
-            <button type="button" class="btn btn-default"
-              ng-click="openDatePopup($event)">
+            <button type="button" class="btn btn-default">
               <i class="glyphicon glyphicon-calendar"></i>
             </button>
           </span>
