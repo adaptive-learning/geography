@@ -51,6 +51,11 @@ urlpatterns = patterns(
     url(r'^user/(?P<username>[\w\.]*)', 'geography.views.user_view', name='user_view'),
 
     url(r'^favicon\.ico$', RedirectView.as_view(url='static/img/favicon.png')),
+    url(r'^apple-touch-icon\.png$',
+        RedirectView.as_view(url='static/img/apple-touch-icon.png')),
+    url(r'^apple-touch-icon-precomposed\.png$',
+        RedirectView.as_view(url='static/img/apple-touch-icon.png')),
+
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     url(r'^robots\.txt$', lambda r: HttpResponse(robots_txt, mimetype="text/plain")),
 
