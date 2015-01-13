@@ -19,4 +19,5 @@ main/templates/generated
 main/geography/static/css
 main/geography/static/hack/tpl
 main/geography/static/hack/proso_goals
+main/geography/static/hack/proso_feedback
 main/geography/static/hack/geography

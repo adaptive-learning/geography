@@ -77,6 +77,8 @@ module.exports = function(grunt) {
           expand: true,
           src: [
             'geography/static/tpl/*',
+            'proso_auth/static/tpl/*',
+            'proso_feedback/static/tpl/*',
             'proso_goals/static/tpl/*',
           ],
           dest: 'geography/static/hack/',
@@ -115,6 +117,16 @@ module.exports = function(grunt) {
           'static/tpl/*.html',
         ],
         dest: 'geography/static/dist/js/templates.js',
+        options:    {
+          htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true }
+        }
+      },
+      'proso.feedback':          {
+        cwd: 'proso_feedback',
+        src: [
+          'static/tpl/*.html',
+        ],
+        dest: 'proso_feedback/static/dist/js/templates.js',
         options:    {
           htmlmin:  { collapseWhitespace: true, collapseBooleanAttributes: true }
         }
@@ -161,6 +173,7 @@ module.exports = function(grunt) {
           'geography/static/js/directives.js',
           'geography/static/dist/js/templates.js',
           'proso_auth/static/dist/js/templates.js',
+          'proso_feedback/static/dist/js/templates.js',
           'proso_goals/static/dist/js/templates.js',
         ],
         dest: 'geography/static/dist/js/<%= pkg.name %>.min.js'
@@ -234,6 +247,7 @@ module.exports = function(grunt) {
         files: [
           'geography/static/tpl/*.html',
           'proso_auth/static/tpl/*.html',
+          'proso_feedback/static/tpl/*.html',
           'proso_goals/static/tpl/*.html',
         ],
         tasks: ['templates', 'concat:app'],

@@ -22,7 +22,7 @@
           }
 
           $modal.open({
-            templateUrl: 'feedback_modal.html',
+            templateUrl: 'static/tpl/feedback_modal.html',
             controller: ModalFeedbackCtrl,
             size: 'lg',
             resolve: {
@@ -113,7 +113,7 @@
 
         $scope.ratingPoll = function () {
           $modal.open({
-            templateUrl: 'rating_modal.html',
+            templateUrl: 'static/tpl/rating_modal.html',
             controller: ModalRatingCtrl,
           });
         };
