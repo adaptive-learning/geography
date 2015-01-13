@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-18 13:20+0100\n"
+"POT-Creation-Date: 2015-01-13 16:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,8 +21,8 @@ msgstr ""
 msgid "Neznámé"
 msgstr ""
 
-#: geography/models/place.py:175 geography/views/place.py:52
-#: templates/home.html:75
+#: geography/models/place.py:175 geography/views/place.py:49
+#: templates/home.html:76
 msgid "Státy"
 msgstr ""
 
@@ -30,12 +30,12 @@ msgstr ""
 msgid "Města"
 msgstr ""
 
-#: geography/models/place.py:177 templates/home.html:61
+#: geography/models/place.py:177 templates/home.html:62
 msgid "Svět"
 msgstr ""
 
-#: geography/models/place.py:178 geography/views/place.py:49
-#: templates/home.html:65
+#: geography/models/place.py:178 geography/views/place.py:46
+#: templates/home.html:66
 msgid "Kontinenty"
 msgstr ""
 
@@ -280,7 +280,7 @@ msgstr ""
 #: proso_goals/templates/emails/goal_reminder.html:6
 #: proso_goals/templates/emails/goal_reminder.html:55
 #: proso_goals/templates/emails/goal_reminder.plain.txt:2
-#: templates/home.html:57 templates/generated/homepage.html:19
+#: templates/home.html:58 templates/generated/homepage.html:19
 msgid "Slepé Mapy"
 msgstr "Slepé Mapy"
 
@@ -288,28 +288,36 @@ msgstr "Slepé Mapy"
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr ""
 
-#: geography/views/user.py:68
+#: proso_auth/views.py:67
 msgid "Heslo je správné, ale účet není aktivovaný."
 msgstr ""
 
-#: geography/views/user.py:74
+#: proso_auth/views.py:73
 msgid "Nesprávné jméno nebo heslo"
 msgstr ""
 
-#: geography/views/user.py:86
+#: proso_auth/views.py:103
 msgid "Je nutné vyplnit uživatelské jméno."
 msgstr ""
 
-#: geography/views/user.py:88
+#: proso_auth/views.py:105
 msgid "Je nutné vyplnit email."
 msgstr ""
 
-#: geography/views/user.py:90
+#: proso_auth/views.py:107
 msgid "Je nutné vyplnit heslo."
 msgstr ""
 
-#: geography/views/user.py:93
+#: proso_auth/views.py:110
 msgid "Hesla se neshodují."
+msgstr ""
+
+#: proso_auth/views.py:113
+msgid "Účet se zadaným uživatelským jménem už existuje."
+msgstr ""
+
+#: proso_auth/views.py:118
+msgid "Účet se zadaným emailem už existuje."
 msgstr ""
 
 #: proso_feedback/views.py:46
@@ -321,53 +329,12 @@ msgstr ""
 msgid "Děkujeme za hodnocení."
 msgstr ""
 
-#: proso_feedback/templates/feedback.html:4
-#: proso_feedback/templates/feedback.html:9 templates/home.html:181
+#: proso_feedback/templates/feedback.html:4 templates/home.html:182
 msgid "Napište nám"
 msgstr ""
 
-#: proso_feedback/templates/feedback.html:13
-msgid "Feedback text label"
-msgstr ""
-"Narazili jste na chybu v aplikaci? Máte nápad na vylepšení? Nebo jakýkoliv "
-"jiný postřeh či komentář? Zajímá nás všechno, co nám chcete sdělit."
-
-#: proso_feedback/templates/feedback.html:17
-msgid "Vaše emailová adresa (nepovinné)"
-msgstr ""
-
-#: proso_feedback/templates/feedback.html:28
-msgid "Odeslat"
-msgstr ""
-
-#: proso_feedback/templates/feedback.html:31
-#: proso_feedback/templates/feedback.html:65
-#: proso_goals/templates/create_goal.html:67
-msgid "Zavřít"
-msgstr ""
-
-#: proso_feedback/templates/feedback.html:39
-msgid "Jak těžké jsou kladené otázky?"
-msgstr ""
-
-#: proso_feedback/templates/feedback.html:40
-msgid "Svou odpovědí nám pomáháte přizpůsobovat obtížnost otázek."
-msgstr ""
-
-#: proso_feedback/templates/feedback.html:45
-msgid "Příliš lehké"
-msgstr ""
-
-#: proso_feedback/templates/feedback.html:48
-msgid "Tak akorát"
-msgstr ""
-
-#: proso_feedback/templates/feedback.html:51
-msgid "Příliš těžké"
-msgstr ""
-
-#: proso_feedback/templates/feedback.html:54
-msgid "Nevím / nechci odpovídat"
+#: proso_goals/management/commands/send_reminder_emails.py:47
+msgid "Je čas procvičovat slepé mapy"
 msgstr ""
 
 #: proso_goals/templates/create_goal.html:5
@@ -386,7 +353,11 @@ msgstr ""
 msgid "Vytrvořit"
 msgstr ""
 
-#: proso_goals/templates/emails/goal_reminder.html:7 templates/home.html:119
+#: proso_goals/templates/create_goal.html:67
+msgid "Zavřít"
+msgstr ""
+
+#: proso_goals/templates/emails/goal_reminder.html:7 templates/home.html:120
 msgid "Osobní cíle"
 msgstr ""
 
@@ -416,37 +387,37 @@ msgstr ""
 "slepá mapa, státy, města, čr, svět, evrovpa, amerika, afrika, asie, pohoří, "
 "řeky, zeměpis, usa, hry"
 
-#: templates/home.html:84
+#: templates/home.html:85
 msgid "Přehled map"
 msgstr ""
 
-#: templates/home.html:95
+#: templates/home.html:96
 msgid ""
 "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
 "znalosti pamatoval i příště."
 msgstr ""
 
-#: templates/home.html:98
+#: templates/home.html:99
 msgid "Přihlásit se"
 msgstr "Přihlásit se"
 
-#: templates/home.html:109
+#: templates/home.html:110
 msgid "Můj profil"
 msgstr ""
 
-#: templates/home.html:114
+#: templates/home.html:115
 msgid "Moje časté chyby"
 msgstr ""
 
-#: templates/home.html:124
+#: templates/home.html:125
 msgid "Nastavení"
 msgstr ""
 
-#: templates/home.html:129
+#: templates/home.html:130
 msgid "Odhlásit se"
 msgstr ""
 
-#: templates/home.html:176
+#: templates/home.html:177
 msgid "O projektu"
 msgstr ""
 

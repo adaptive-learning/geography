@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-18 13:20+0100\n"
+"POT-Creation-Date: 2015-01-13 16:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,8 +21,8 @@ msgstr ""
 msgid "Neznámé"
 msgstr "Desconocido"
 
-#: geography/models/place.py:175 geography/views/place.py:52
-#: templates/home.html:75
+#: geography/models/place.py:175 geography/views/place.py:49
+#: templates/home.html:76
 msgid "Státy"
 msgstr "Estados"
 
@@ -30,12 +30,12 @@ msgstr "Estados"
 msgid "Města"
 msgstr "Ciudades"
 
-#: geography/models/place.py:177 templates/home.html:61
+#: geography/models/place.py:177 templates/home.html:62
 msgid "Svět"
 msgstr "Mundo"
 
-#: geography/models/place.py:178 geography/views/place.py:49
-#: templates/home.html:65
+#: geography/models/place.py:178 geography/views/place.py:46
+#: templates/home.html:66
 msgid "Kontinenty"
 msgstr "Continentes"
 
@@ -264,9 +264,7 @@ msgstr "islas"
 #: geography/utils/model.py:209
 #, python-format
 msgid "Ze zvýrazněných %(place_plural)s na mapě vyber"
-msgstr ""
-"Selecciona de entre los %(place_plural)s en grís el que "
-"corresponda a"
+msgstr "Selecciona de entre los %(place_plural)s en grís el que corresponda a"
 
 #: geography/utils/model.py:212
 #, python-format
@@ -282,7 +280,7 @@ msgstr "¿Cuál es el nombre del %(place_singular)s %(highlighted)s en el mapa?"
 #: proso_goals/templates/emails/goal_reminder.html:6
 #: proso_goals/templates/emails/goal_reminder.html:55
 #: proso_goals/templates/emails/goal_reminder.plain.txt:2
-#: templates/home.html:57 templates/generated/homepage.html:19
+#: templates/home.html:58 templates/generated/homepage.html:19
 msgid "Slepé Mapy"
 msgstr "Contorno de Mapas"
 
@@ -290,29 +288,37 @@ msgstr "Contorno de Mapas"
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr "programa inteligente para practicar geografía"
 
-#: geography/views/user.py:68
+#: proso_auth/views.py:67
 msgid "Heslo je správné, ale účet není aktivovaný."
 msgstr "La contraseña es correcta pero no se ha activado la cuenta"
 
-#: geography/views/user.py:74
+#: proso_auth/views.py:73
 msgid "Nesprávné jméno nebo heslo"
 msgstr "El usuario o la contraseña son incorrectos"
 
-#: geography/views/user.py:86
+#: proso_auth/views.py:103
 msgid "Je nutné vyplnit uživatelské jméno."
 msgstr "Tienes que escribir un nombre de usuario."
 
-#: geography/views/user.py:88
+#: proso_auth/views.py:105
 msgid "Je nutné vyplnit email."
 msgstr "Tienes que escribir una dirección de email."
 
-#: geography/views/user.py:90
+#: proso_auth/views.py:107
 msgid "Je nutné vyplnit heslo."
 msgstr "Tienes que escribir una contraseña."
 
-#: geography/views/user.py:93
+#: proso_auth/views.py:110
 msgid "Hesla se neshodují."
 msgstr "Las contraseñas no son iguales."
+
+#: proso_auth/views.py:113
+msgid "Účet se zadaným uživatelským jménem už existuje."
+msgstr ""
+
+#: proso_auth/views.py:118
+msgid "Účet se zadaným emailem už existuje."
+msgstr ""
 
 #: proso_feedback/views.py:46
 msgid "Feedback confirmed"
@@ -322,55 +328,13 @@ msgstr "Gracias por tu mensaje. Tu opinión es muy importante para nosotros."
 msgid "Děkujeme za hodnocení."
 msgstr "Gracias por calificarnos."
 
-#: proso_feedback/templates/feedback.html:4
-#: proso_feedback/templates/feedback.html:9 templates/home.html:181
+#: proso_feedback/templates/feedback.html:4 templates/home.html:182
 msgid "Napište nám"
 msgstr "Sugerencias"
 
-#: proso_feedback/templates/feedback.html:13
-msgid "Feedback text label"
+#: proso_goals/management/commands/send_reminder_emails.py:47
+msgid "Je čas procvičovat slepé mapy"
 msgstr ""
-"¿Encontraste algún error en el programa? ¿Tienes alguna sugerencia sobre "
-"como podemos mejorar? ¿Quieres compartir tu opinión con nosotros? Nos "
-"gustaría escuchar lo que tengas que decir."
-
-#: proso_feedback/templates/feedback.html:17
-msgid "Vaše emailová adresa (nepovinné)"
-msgstr "Tu email (opcional)"
-
-#: proso_feedback/templates/feedback.html:28
-msgid "Odeslat"
-msgstr "Enviar"
-
-#: proso_feedback/templates/feedback.html:31
-#: proso_feedback/templates/feedback.html:65
-#: proso_goals/templates/create_goal.html:67
-msgid "Zavřít"
-msgstr "Cerrar"
-
-#: proso_feedback/templates/feedback.html:39
-msgid "Jak těžké jsou kladené otázky?"
-msgstr "¿Qué tan difíciles son estas preguntas?"
-
-#: proso_feedback/templates/feedback.html:40
-msgid "Svou odpovědí nám pomáháte přizpůsobovat obtížnost otázek."
-msgstr "Tu respuesta ayuda a ajustar la dificultad de las preguntas."
-
-#: proso_feedback/templates/feedback.html:45
-msgid "Příliš lehké"
-msgstr "Muy facil"
-
-#: proso_feedback/templates/feedback.html:48
-msgid "Tak akorát"
-msgstr "Adecuado"
-
-#: proso_feedback/templates/feedback.html:51
-msgid "Příliš těžké"
-msgstr "Muy dificil"
-
-#: proso_feedback/templates/feedback.html:54
-msgid "Nevím / nechci odpovídat"
-msgstr "No sé/No quiero calificar"
 
 #: proso_goals/templates/create_goal.html:5
 msgid "Vytvořit cíl"
@@ -388,7 +352,11 @@ msgstr "Fecha de cumplimiento de meta"
 msgid "Vytrvořit"
 msgstr "Crear"
 
-#: proso_goals/templates/emails/goal_reminder.html:7 templates/home.html:119
+#: proso_goals/templates/create_goal.html:67
+msgid "Zavřít"
+msgstr "Cerrar"
+
+#: proso_goals/templates/emails/goal_reminder.html:7 templates/home.html:120
 msgid "Osobní cíle"
 msgstr "Metas personales"
 
@@ -419,11 +387,11 @@ msgstr ""
 "juegos de geografía, contorno de mapas, mapas de contorno, países, estados, "
 "ciudades, mundo, europa, américa, áfrica, asia, montañas, ríos, eua"
 
-#: templates/home.html:84
+#: templates/home.html:85
 msgid "Přehled map"
 msgstr "Todos los mapas"
 
-#: templates/home.html:95
+#: templates/home.html:96
 msgid ""
 "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
 "znalosti pamatoval i příště."
@@ -431,27 +399,27 @@ msgstr ""
 "Entra con tu cuenta de Google o Facebook para que el sistema guarde tu "
 "progreso ."
 
-#: templates/home.html:98
+#: templates/home.html:99
 msgid "Přihlásit se"
 msgstr "Iniciar sesión"
 
-#: templates/home.html:109
+#: templates/home.html:110
 msgid "Můj profil"
 msgstr "Mi  perfil"
 
-#: templates/home.html:114
+#: templates/home.html:115
 msgid "Moje časté chyby"
 msgstr "Mis errores frecuentes"
 
-#: templates/home.html:124
+#: templates/home.html:125
 msgid "Nastavení"
 msgstr "Ajustes"
 
-#: templates/home.html:129
+#: templates/home.html:130
 msgid "Odhlásit se"
 msgstr "Terminar sesión"
 
-#: templates/home.html:176
+#: templates/home.html:177
 msgid "O projektu"
 msgstr "Sobre"
 
@@ -542,8 +510,8 @@ msgid "Vizualizace znalostí - text"
 msgstr ""
 "Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega "
 "en forma de mapa, el cuál te ayuda a visualizar de forma más fácil lo qué "
-"sabes. En verde están las áreas que dominas y en rojo las que te faltan"
-"practicar más."
+"sabes. En verde están las áreas que dominas y en rojo las que te "
+"faltanpracticar más."
 
 #: templates/generated/homepage.html:91
 msgid "Ukázka mapy znalostí"
