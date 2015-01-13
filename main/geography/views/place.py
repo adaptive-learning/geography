@@ -1,20 +1,17 @@
 # -*- coding: utf-8 -*-
 from django.contrib.auth.models import User
-from django.http import Http404, HttpResponseBadRequest
 from django.utils.translation import ugettext as _
 from geography.models import Place, PlaceRelation, MapSkill
 from geography.utils import JsonResponse
 from django.views.decorators.cache import cache_page
+from django.shortcuts import get_object_or_404
 
 
 def _places(request, map_code):
-    try:
-        map = PlaceRelation.objects.get(
-            place__code=map_code,
-            type=PlaceRelation.IS_ON_MAP)
-        map_places = map.related_places.all()
-    except PlaceRelation.DoesNotExist:
-        raise Http404("Unknown map name: {0}".format(map_code))
+    map = get_object_or_404(PlaceRelation,
+                            place__code=map_code,
+                            type=PlaceRelation.IS_ON_MAP)
+    map_places = map.related_places.all()
     try:
         too_small_places = PlaceRelation.objects.get(
             place__code=map_code,
@@ -61,9 +58,6 @@ def mapskill(request, user=None):
     if not user:
         user = request.user
     else:
-        try:
-            user = User.objects.get(username=user)
-        except User.DoesNotExist:
-            raise HttpResponseBadRequest("Invalid username: %s" % user)
+        user = get_object_or_404(User, username=user)
     maps_skills = MapSkill.objects.for_user(user)
     return JsonResponse([m.to_serializable() for m in maps_skills])

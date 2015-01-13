@@ -3,7 +3,7 @@ from geography.utils import JsonResponse
 from django.utils import simplejson
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.models import User
-from django.http import Http404
+from django.shortcuts import get_object_or_404
 import utils
 from models import UserProfile
 from django.utils.translation import ugettext as _
@@ -22,10 +22,7 @@ def get_user(request, username=None):
     if not username:
         user = request.user
     else:
-        try:
-            user = User.objects.get(username=username)
-        except User.DoesNotExist:
-            raise Http404(u"Invalid username: {0}".format(username))
+        user = get_object_or_404(User, username=username)
     if user and utils.is_lazy(user) and utils.is_named(user):
         utils.convert_lazy_user(request.user)
     username = user.username if user and not utils.is_lazy(user) else ''
@@ -84,26 +81,7 @@ def login_view(request):
 def signup_view(request):
     if request.raw_post_data:
         credentials = simplejson.loads(request.raw_post_data)
-        msg = None
-        if 'username' not in credentials:
-            msg = _(u"Je nutné vyplnit uživatelské jméno.")
-        elif 'email' not in credentials:
-            msg = _(u"Je nutné vyplnit email.")
-        elif 'password' not in credentials:
-            msg = _(u"Je nutné vyplnit heslo.")
-        elif ('passwordAgain' not in credentials
-                or credentials['password'] != credentials['passwordAgain']):
-            msg = _(u"Hesla se neshodují.")
-        try:
-            User.objects.get(username=credentials['username'])
-            msg = _(u"Účet se zadaným uživatelským jménem už existuje.")
-        except User.DoesNotExist:
-            pass
-        try:
-            User.objects.get(email=credentials['email'])
-            msg = _(u"Účet se zadaným emailem už existuje.")
-        except User.DoesNotExist:
-            pass
+        msg = check_credentials(credentials)
         if msg is not None:
             response = {
                 'msg': msg,
@@ -117,6 +95,30 @@ def signup_view(request):
             user.set_password(credentials['password'])
             user.save()
             return user_view(request)
+
+
+def check_credentials(credentials):
+    msg = None
+    if 'username' not in credentials:
+        msg = _(u"Je nutné vyplnit uživatelské jméno.")
+    elif 'email' not in credentials:
+        msg = _(u"Je nutné vyplnit email.")
+    elif 'password' not in credentials:
+        msg = _(u"Je nutné vyplnit heslo.")
+    elif ('passwordAgain' not in credentials
+            or credentials['password'] != credentials['passwordAgain']):
+        msg = _(u"Hesla se neshodují.")
+    try:
+        User.objects.get(username=credentials['username'])
+        msg = _(u"Účet se zadaným uživatelským jménem už existuje.")
+    except User.DoesNotExist:
+        pass
+    try:
+        User.objects.get(email=credentials['email'])
+        msg = _(u"Účet se zadaným emailem už existuje.")
+    except User.DoesNotExist:
+        pass
+    return msg
 
 
 @require_POST

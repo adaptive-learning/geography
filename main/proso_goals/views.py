@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 from geography.utils import JsonResponse
 from django.contrib.auth.models import User
-from django.http import Http404, HttpResponseBadRequest
+from django.http import HttpResponseBadRequest
 from django.utils import simplejson
 from geography.models import Place, PlaceRelation, MapSkill
 from proso_goals.models import Goal
 from proso_goals.utils import get_reminder_email
 from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
 
 
 def goals_delete(request, id):
@@ -16,14 +17,10 @@ def goals_delete(request, id):
 
 def goals_add(request, username=None):
     goal_dict = simplejson.loads(request.body)
-    try:
-        map_relation = PlaceRelation.objects.get(
-            place=Place.objects.get(code=goal_dict.get('map')),
-            type=PlaceRelation.IS_ON_MAP)
-    except Place.DoesNotExist:
-        return HttpResponseBadRequest("Invalid place code: {0}".format(goal_dict.get('map')))
-    except PlaceRelation.DoesNotExist:
-        return HttpResponseBadRequest("No map for place code: {0}".format(goal_dict.get('map')))
+    place = get_object_or_404(Place, code=goal_dict.get('map'))
+    map_relation = get_object_or_404(PlaceRelation,
+                                     place=place,
+                                     type=PlaceRelation.IS_ON_MAP)
     try:
         place_type = Place.PLACE_TYPE_SLUGS_LOWER_REVERSE[goal_dict['layer']]
     except KeyError:
@@ -51,10 +48,7 @@ def goals_view(request, username=None):
         if not username:
             user = request.user
         else:
-            try:
-                user = User.objects.get(username=username)
-            except User.DoesNotExist:
-                raise Http404("Invalid username: {0}".format(username))
+            user = get_object_or_404(User, username=username)
         response = Goal.objects.for_user(user)
         response = map((lambda x: x.to_serializable()), response)
         return JsonResponse(response)
@@ -64,10 +58,7 @@ def reminder_email(request, username=None):
     if not username:
         user = request.user
     else:
-        try:
-            user = User.objects.get(username=username)
-        except User.DoesNotExist:
-            raise Http404("Invalid username: {0}".format(username))
+        user = get_object_or_404(User, username=username)
     goals = [g.to_serializable() for g in
              Goal.objects.goals_behind_schedule(user)]
     email = get_reminder_email(goals, user)

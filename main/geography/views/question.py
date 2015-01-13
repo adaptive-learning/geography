@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from django.contrib.auth.models import User
-from django.http import Http404, HttpResponseBadRequest
 from django.utils import simplejson
 from django.utils.translation import ugettext as _
 from geography.models import Place, PlaceRelation, UserPlace, AveragePlace, ABEnvironment
@@ -10,6 +9,7 @@ from lazysignup.decorators import allow_lazy_user
 from logging import getLogger
 from ipware.ip import get_ip
 from time import time as time_fun
+from django.shortcuts import get_object_or_404
 
 LOGGER = getLogger(__name__)
 
@@ -17,12 +17,9 @@ LOGGER = getLogger(__name__)
 @allow_lazy_user
 def question(request, map_code, place_type_slug):
     start_time = time_fun()
-    try:
-        map = PlaceRelation.objects.get(
-            place__code=map_code,
-            type=PlaceRelation.IS_ON_MAP)
-    except PlaceRelation.DoesNotExist:
-        raise Http404
+    map = get_object_or_404(PlaceRelation,
+                            place__code=map_code,
+                            type=PlaceRelation.IS_ON_MAP)
     ABEnvironment.init_session(request.user, request.session)
     qs = QuestionService(user=request.user, map_place=map, ab_env=ABEnvironment(request))
     question_index = 0
@@ -56,13 +53,10 @@ def average_users_places(request, map_code):
 @allow_lazy_user
 def users_places(request, map_code, user=None):
 
-    try:
-        map = PlaceRelation.objects.get(
-            place__code=map_code,
-            type=PlaceRelation.IS_ON_MAP)
-        map_places = map.related_places.all()
-    except PlaceRelation.DoesNotExist:
-        raise Http404("Unknown map name: {0}".format(map_code))
+    map = get_object_or_404(PlaceRelation,
+                            place__code=map_code,
+                            type=PlaceRelation.IS_ON_MAP)
+    map_places = map.related_places.all()
     try:
         too_small_places = PlaceRelation.objects.get(
             place__code=map_code,
@@ -76,10 +70,7 @@ def users_places(request, map_code, user=None):
     elif user == "average":
         pass
     else:
-        try:
-            user = User.objects.get(username=user)
-        except User.DoesNotExist:
-            raise HttpResponseBadRequest("Invalid username: {0}" % user)
+        user = get_object_or_404(User, username=user)
 
     if user == "average":
         ps = AveragePlace.objects.for_map(map_places)
