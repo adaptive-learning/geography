@@ -247,5 +247,26 @@
                   gettext("V aplikaci bohužel nastala chyba.") + 
                 '</div>',
     };
+  }])
+
+  .directive('showAfterXAnswers', ['$timeout', 'events', function($timeout, events) {
+    return {
+      scope : true,
+      restrict : 'A',
+      link : function($scope, elem, attrs) {
+        var x = parseInt(attrs.showAfterXAnswers);
+        events.on('userUpdated', function(user) {
+          if (user.answered_count == x) {
+            $timeout(function() {
+              elem.tooltip({
+                placement: 'right',
+                title : elem.attr('tooltip'),
+              });
+              elem.tooltip('show');
+            }, 100);
+          }
+        });
+      }
+    };
   }]);
 }());

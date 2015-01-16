@@ -19,7 +19,11 @@
       <i class="glyphicon glyphicon-globe"></i>
     </a>
   </div>
-  <div class="btn-group zoom-btn" ng-show="!loading"> 
+  <div class="btn-group zoom-btn"
+    tooltip-placement="right"
+    tooltip="{{'Přiblížit mapu můžete i kolečkem myši nebo dotykovým gestem.' | trans }}"
+    show-after-x-answers="11"
+    ng-show="!loading"> 
     <a class="btn btn-default" id="zoom-out"> 
       <i class="glyphicon glyphicon-minus"></i></a> 
     <a class="btn btn-default" id="zoom-in"> 
