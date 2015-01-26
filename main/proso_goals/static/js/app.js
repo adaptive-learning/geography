@@ -21,10 +21,10 @@
     return {
       restrict: 'A',
       templateUrl : 'static/tpl/personal-goals_tpl.html',
-      link: function ($scope) {
+      link: function ($scope, elem, attrs) {
         $scope.deleteGoal = goal.remove;
         
-        goal.get().success(function(goals) {
+        goal.get(attrs.user).success(function(goals) {
           $scope.loaded = true;
           $scope.goals = goals;
         });
