@@ -50,7 +50,7 @@ def home(request, hack=None):
         'css_files': StaticFiles.add_hash(CSS_FILES),
         'js_files': StaticFiles.add_hash(JS_FILES),
         'continents': Place.objects.get_continents(),
-        'states': Place.objects.get_states_with_map(),
+        'states': Place.objects.get_states_with_map(request),
         'hashes': json.dumps(hashes),
         'user': user,
         'userJson': simplejson.dumps(user),
