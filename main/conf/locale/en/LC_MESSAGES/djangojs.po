@@ -382,7 +382,7 @@ msgstr "Cancel"
 #: geography/static/hack/geography/static/tpl/user_tpl.js:10
 #: geography/static/hack/tpl/user_tpl.js:10
 msgid "Přehled znalostí uživatele"
-msgstr "Knowladge overview of user"
+msgstr "Knowledge overview of user"
 
 #: geography/static/hack/geography/static/tpl/user_tpl.js:11
 #: geography/static/hack/tpl/user_tpl.js:11
@@ -477,8 +477,8 @@ msgid ""
 "Nastav si cíl a systém ti podle tvých aktuálních znalostí rozloží "
 "procvičování na jednotlivé dny."
 msgstr ""
-"Set up yourself a goal and the app will based on your current Knowladge "
-"split the practice to individual days."
+"Set up a goal for yourself and the app will split the practice into individual"
+"days, based on your current knowledge"
 
 #: geography/static/hack/proso_goals/static/tpl/personal-goals_tpl.js:4
 #: geography/static/hack/tpl/personal-goals_tpl.js:4

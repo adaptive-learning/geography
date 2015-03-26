@@ -393,7 +393,7 @@ msgstr ""
 
 #: templates/home.html:96
 msgid ""
-"Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
+"Přihlašte se jednoduše přes Google nebo Facebook, aby si systém vaše "
 "znalosti pamatoval i příště."
 msgstr ""
 
