@@ -124,8 +124,8 @@ class PlaceManager(models.Manager):
             options_flatten)
         return zip(targets_places, options_flatten_places)
 
-    def get_states_with_map(self, request):
-        language_code = request.LANGUAGE_CODE[:2]
+    def get_states_with_map(self, request=None):
+        language_code = request.LANGUAGE_CODE[:2] if request is not None else 'cs'
         return [pr.place for pr in PlaceRelation.objects.filter(
             place__type=Place.STATE,
             type=PlaceRelation.IS_ON_MAP,

@@ -47,7 +47,7 @@ def places_overview(request):
         'maps': Place.objects.get_continents(),
     }, {
         'name': _(u'Státy'),
-        'maps': Place.objects.get_states_with_map(),
+        'maps': Place.objects.get_states_with_map(request),
     }]
     for map_type in map_types:
         map_type['maps'] = [_places(request, m.code) for m in map_type['maps']]
