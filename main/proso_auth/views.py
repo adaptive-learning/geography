@@ -9,6 +9,8 @@ from models import UserProfile
 from django.utils.translation import ugettext as _
 from lazysignup.decorators import allow_lazy_user
 from django.views.decorators.http import require_POST
+from social_auth.models import UserSocialAuth
+from django.shortcuts import redirect
 
 
 def user_list_view(request):
@@ -25,6 +27,13 @@ def get_user(request, username=None):
         user = get_object_or_404(User, username=username)
     if user and utils.is_lazy(user) and utils.is_named(user):
         utils.convert_lazy_user(request.user)
+    # OpenID migration HACK
+    # https://developers.google.com/identity/protocols/OpenID2Migration
+    new_user = check_google_migration(request, user)
+    if user != new_user:
+        logout(request)
+        return redirect('/login/google-oauth2')
+    # end HACK
     username = user.username if user and not utils.is_lazy(user) else ''
     points = utils.get_points(user) if user else 0
     answered_count = utils.get_answered_count(user) if user else 0
@@ -38,6 +47,36 @@ def get_user(request, username=None):
         'send_emails': UserProfile.objects.get_profile(user).send_emails if username != '' else False,
     }
     return response
+
+
+def check_google_migration(request, user):
+    print 'start migrate'
+    if user and utils.is_lazy(user):
+        return user
+    try:
+        print 'start migrate try'
+        social_user = UserSocialAuth.objects.get(
+            user_id=user.id,
+            provider='google-oauth2')
+    except UserSocialAuth.DoesNotExist:
+        print 'migrate except'
+        return user
+    print social_user.provider
+    try:
+        old_social_user = UserSocialAuth.objects.get(
+            uid=user.email,
+            provider='google')
+        print '#####################'
+        print old_social_user.user.id
+        print social_user.user_id
+        social_user.user = old_social_user.user
+        social_user.save()
+        print '#####################'
+        # login(request, social_user.user)
+        return social_user.user
+    except UserSocialAuth.DoesNotExist:
+        pass
+    return user
 
 
 def user_view(request, username=None):

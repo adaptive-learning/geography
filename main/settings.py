@@ -272,7 +272,7 @@ if DEBUG:
 FACEBOOK_APP_ID = os.getenv('GEOGRAPHY_FACEBOOK_APP_ID', '')
 FACEBOOK_API_SECRET = os.getenv('GEOGRAPHY_FACEBOOK_API_SECRET', '')
 FACEBOOK_EXTENDED_PERMISSIONS = ['email']
-GOOGLE_OAUTH2_CLIENT_KEY = os.getenv('GEOGRAPHY_GOOGLE_OAUTH2_CLIENT_KEY', '')
+GOOGLE_OAUTH2_CLIENT_ID = os.getenv('GEOGRAPHY_GOOGLE_OAUTH2_CLIENT_ID', '')
 GOOGLE_OAUTH2_CLIENT_SECRET = os.getenv('GEOGRAPHY_GOOGLE_OAUTH2_CLIENT_SECRET', '')
 SOCIAL_AUTH_CREATE_USERS = True
 SOCIAL_AUTH_FORCE_RANDOM_USERNAME = False
@@ -286,6 +286,7 @@ AUTHENTICATION_BACKENDS = (
     'lazysignup.backends.LazySignupBackend',
     'social_auth.backends.facebook.FacebookBackend',
     'social_auth.backends.google.GoogleBackend',
+    'social_auth.backends.google.GoogleOAuth2Backend',
 )
 
 ALLOWED_HOSTS = [

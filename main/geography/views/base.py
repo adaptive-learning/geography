@@ -43,6 +43,11 @@ def home(request, hack=None):
                   if "/lib/" not in key and "/js/" not in key and "/sass/" not in key
                   )
     user = get_user(request)
+    # OpenID migration HACK
+    # https://developers.google.com/identity/protocols/OpenID2Migration
+    if user.__class__.__name__ == 'HttpResponseRedirect':
+        return user
+    # end HACK
     c = {
         'title': title,
         'map': get_map_from_url(hack),
