@@ -1,0 +1,2 @@
+svg .bg{stroke-width:1.5}svg .state,svg .province,svg .region,svg .region_cz,svg .region_it,svg .autonomous_comunity,svg .bundesland,svg .mountains,svg .island,svg .lake{cursor:pointer;fill-opacity:1}svg .state:hover,svg .province:hover,svg .region:hover,svg .region_cz:hover,svg .region_it:hover,svg .autonomous_comunity:hover,svg .bundesland:hover,svg .mountains:hover,svg .island:hover,svg .lake:hover{fill-opacity:0.8}svg .city,svg .river{cursor:pointer}svg .city{fill-opacity:1}svg .lake{stroke:#53a5df}
+/*# sourceMappingURL=map.css.map */

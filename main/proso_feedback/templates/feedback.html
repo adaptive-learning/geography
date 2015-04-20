@@ -1,7 +1,0 @@
- {% load i18n %}
-<div id="feedback" feedback email="{{user.email|default_if_none:''}}">
-  <a href="" ng-click="openFeedback()">
-    {% trans "Napište nám"%}
-  </a>
-</div>
-<div rating-modal ></div>

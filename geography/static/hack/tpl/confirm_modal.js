@@ -1,0 +1,3 @@
+gettext("Ne");
+gettext("Ano");
+

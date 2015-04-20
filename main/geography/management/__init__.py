@@ -1,1 +1,0 @@
-from mapupdater import MapUpdater
