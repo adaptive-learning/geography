@@ -2,13 +2,21 @@ default:
     proso_models:
         predictive_model:
             class: proso.models.prediction.PriorCurrentPredictiveModel
+        option_selector:
+            class: proso.models.option_selection.RandomOptionSelection
     proso_flashcards:
-        practice:
+        practice:       
             common:
                 set_length: 10
+                fc_queue_size_max: 1
+                fc_queue_size_min: 1
+                save_answer_immediately: false
+                cache_context: false
+                queue_length: 10
             intro:
                 set_length: 5
                 fc_queue_size_max: 5
                 fc_queue_size_min: 3
                 save_answer_immediately: true
+                cache_context: true
 

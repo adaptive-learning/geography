@@ -306,6 +306,41 @@
     return that;
   }])
 
+  .factory('categoryService', ["$http", function ($http) {
+    var categories = [];
+    var categoriesByIdentifier = {};
+    function init(){
+      $http.get('/flashcards/categorys').success(function(data) {
+        categories = data.data;
+        for (var i = 0; i < data.data.length; i++) {
+          categoriesByIdentifier[data.data[i].identifier] = data.data[i];
+        }
+      }).error(function(){
+        console.error("Something went wrong while loading categories from backend.");
+      });
+    }
+    init();
+    var that = {
+      getCategory: function (identifier) {
+        console.log(categoriesByIdentifier);
+        return categoriesByIdentifier[identifier];
+      },
+    };
+    return that;
+  }])
+
+  .factory('flashcardService', ["$http", "$location",
+      function ($http, $location) {
+    var that = {
+      getFlashcards: function (filter) {
+        var promise = $http.get('/flashcards/flashcards', {params: filter});
+        return promise;
+      },
+    };
+    return that;
+  }])
+
+
   .factory('confirmModal', ["$modal", function ($modal) {
     var ModalConfirmCtrl = ['$scope', '$modalInstance', 'question', 'confirm',
         function ($scope, $modalInstance, question, confirm) {

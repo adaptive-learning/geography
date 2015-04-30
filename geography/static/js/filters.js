@@ -56,8 +56,8 @@
 
   .filter('isAllowedOption', function() {
     return function(question, code) {
-      return !question.options || 1 == question.options.filter(function(place) {
-        return place.code == code;
+      return !question.options || 1 == question.options.filter(function(option) {
+        return option.description == code;
       }).length;
     };
   })

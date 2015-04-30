@@ -1,4 +1,4 @@
-<blind-map code="{{part}}" map="map" callback="mapCallback()" ></blind-map>
+<blind-map code="{{part}}" map="imageController" callback="mapCallback()" ></blind-map>
 <div class="progress quesions-progress">
   <div class="progress-bar" style="width: {{progress}}%;"></div>
 </div>
@@ -29,12 +29,13 @@
         </div>
       <span class="col-sm-7">
         <span ng-show="question|isPickNameOfType">
-          <button ng-repeat="place in question.options"
+          <button ng-repeat="option in question.options"
             class="btn btn-lg btn-default"
-            ng-click="checkAnswer(place.description)"
-            ng-class="{'btn-success': place.correct, 'btn-danger': place.selected && !place.correct }"
-            ng-disabled="place.disabled">
-             <i class="flag-{{place.description}}"></i> {{place.name}}
+            ng-click="checkAnswer(option.description)"
+            ng-class="{'btn-success': option.correct, 'btn-danger':
+            option.selected && !option.correct }"
+            ng-disabled="option.disabled">
+             <i class="flag-{{option.description}}"></i> {{option.term.name}}
           </button>
         </span>
       </span>

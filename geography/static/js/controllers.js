@@ -34,25 +34,35 @@
 
   }])
 
-  .controller('AppView', ['$scope', '$routeParams', '$filter', 'places', 'mapTitle',
-      function($scope, $routeParams, $filter, places, mapTitle) {
+  .controller('AppView', ['$scope', '$routeParams', '$filter', 'flashcardService', 'mapTitle',
+      function($scope, $routeParams, $filter, flashcardService, mapTitle) {
     $scope.part = $routeParams.part;
     var user = $routeParams.user || '';
-    $scope.typeCategories = places.getCategories($scope.part);
+    $scope.typeCategories = [{
+      types: ['state']
+      }
+    ]; // flashcardService.getCategories($scope.part);
     
 
-    places.get($scope.part, user, updatePlaces).
+    var filter = {
+      'part' : $scope.part,
+    };
+    flashcardService.getFlashcards(filter).
+      success(function(data){
+        console.log(data.data);
+        updatePlaces(data.data);
+      }).
       error(function(){
         $scope.error = true;
       });
 
     $scope.placeClick = function(place) {
-      $scope.map.highlightState(place.code);
+      $scope.imageController.highlightItem(place.code);
     };
     
     $scope.updateMap = function(type) {
       type.hidden = !type.hidden; 
-      $scope.map.updatePlaces($scope.placesTypes);
+      $scope.imageController.updateItems($scope.placesTypes);
     };
     
     $scope.updateCat = function(category) {
@@ -75,15 +85,15 @@
           type.hidden = category.hidden;
         });
       });
-      $scope.map.updatePlaces($scope.placesTypes);
+      $scope.imageController.updateItems($scope.placesTypes);
       $scope.name = mapTitle($scope.part, user);
     }
   }])
 
   .controller('AppPractice', ['$scope', '$routeParams', '$timeout', '$filter',
-      'practiceService', 'user', 'events', 'colors', 'places', '$', 'highlighted',
+      'practiceService', 'user', 'events', 'colors', 'places', '$', 'highlighted', 'categoryService',
       function($scope, $routeParams, $timeout, $filter,
-      practiceService, user, events, colors, places, $, highlighted) {
+      practiceService, user, events, colors, places, $, highlighted, categoryService) {
     $scope.part = $routeParams.part;
     $scope.placeType = $routeParams.place_type;
     $scope.progress = 0;
@@ -92,18 +102,18 @@
 
     $scope.highlight = function() {
       var active = $scope.question;
-      $scope.layer = $scope.map.getLayerContaining(active.description);
-      $scope.map.highLightLayer($scope.layer);
-      $scope.map.placeToFront(active.description);
+      $scope.layer = $scope.imageController.getLayerContaining(active.description);
+      $scope.imageController.highLightLayer($scope.layer);
+      $scope.imageController.placeToFront(active.description);
       if ($filter('isPickNameOfType')($scope.question)) {
-        $scope.map.highlightState(active.description, colors.NEUTRAL);
+        $scope.imageController.highlightItem(active.description, colors.NEUTRAL);
       }
       if ($filter('isFindOnMapType')($scope.question) && active.options) {
         var codes = active.options.map(function(option) {
           return option.code;
         });
         highlighted.setHighlighted(codes);
-        $scope.map.highlightStates(codes, colors.NEUTRAL);
+        $scope.imageController.highlightItems(codes, colors.NEUTRAL);
       }
     };
 
@@ -112,7 +122,7 @@
       highlightAnswer(asked, selected);
       $scope.question.answered_code = selected;
       // $scope.progress = 
-      practiceService.save_answer_to_current_fc(42, 1000);//TODO real params
+      practiceService.saveAnswerToCurrentFC(42, 1000);//TODO real params
       user.addAnswer(asked == selected);
       if (asked == selected) {
         $timeout(function() {
@@ -125,7 +135,7 @@
 
     $scope.next = function() {
       if ($scope.progress < 100) {
-        practiceService.get_flashcard().then(function(q) {
+        practiceService.getFlashcard().then(function(q) {
           console.log(q);
           setQuestion(q);
         }, function(){
@@ -138,9 +148,9 @@
 
     function highlightAnswer (asked, selected) {
       if ($filter('isFindOnMapType')($scope.question)) {
-        $scope.map.highlightState(asked, colors.GOOD);
+        $scope.imageController.highlightItem(asked, colors.GOOD);
       }
-      $scope.map.highlightState(selected, asked == selected ? colors.GOOD : colors.BAD);
+      $scope.imageController.highlightItem(selected, asked == selected ? colors.GOOD : colors.BAD);
       if ($filter('isPickNameOfType')($scope.question) && $scope.question.options) {
         highlightOptions(selected);
       }
@@ -152,13 +162,13 @@
       // prevents additional points gain. issue #38
       $scope.summary = practiceService.summary();
       $scope.showSummary = true;
-      $scope.map.clearHighlights();
-      $scope.map.hideLayers();
-      $scope.map.showSummaryTooltips($scope.summary.questions);
+      $scope.imageController.clearHighlights();
+      $scope.imageController.hideLayers();
+      $scope.imageController.showSummaryTooltips($scope.summary.questions);
       angular.forEach($scope.summary.questions, function(q) {
         var correct = q.description == q.answered_code;
-        $scope.map.showLayerContaining(q.description);
-        $scope.map.highlightState(q.description, correct ? colors.GOOD : colors.BAD, 1);
+        $scope.imageController.showLayerContaining(q.description);
+        $scope.imageController.highlightItem(q.description, correct ? colors.GOOD : colors.BAD, 1);
       });
       $("html, body").animate({ scrollTop: "0px" });
       events.emit('questionSetFinished', user.getUser().answered_count);
@@ -170,7 +180,7 @@
       }
       $scope.question = active;
       $scope.questions.push(active);
-      $scope.map.clearHighlights();
+      $scope.imageController.clearHighlights();
       $scope.highlight();
       $scope.canNext = false;
     }
@@ -185,22 +195,30 @@
     }
 
     function isInActiveLayer(code) {
-      return $scope.layer == $scope.map.getLayerContaining(code);
+      console.log($scope.layer);
+      return $scope.layer == $scope.imageController.getLayerContaining(code);
     }
     
     $scope.mapCallback = function() {
-      practiceService.init_set('common');
-      practiceService.set_filter({
-        types : [$routeParams.place_type],
-      });
-      practiceService.get_flashcard().then(function(q) {
+      practiceService.initSet('common');
+      var cat = categoryService.getCategory($scope.part);
+      var filter = {
+        // categories : [cat.id],
+        // TODO identifier missing in categoreis
+        contexts : [$routeParams.part],
+      };
+      if ($routeParams.place_type) {
+        filter.types = [$routeParams.place_type];
+      }
+      practiceService.setFilter(filter);
+      practiceService.getFlashcard().then(function(q) {
         $scope.questions = [];
         console.log(q);
         setQuestion(q);
       }, function(){
         $scope.error = true;
       });
-      $scope.map.onClick(function(code) {
+      $scope.imageController.onClick(function(code) {
         if ($filter('isFindOnMapType')($scope.question) && 
             !$scope.canNext && 
             $filter('isAllowedOption')($scope.question, code) &&

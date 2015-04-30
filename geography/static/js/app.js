@@ -20,7 +20,7 @@
     'proso.user',
     'proso_apps.services',
     //'proso.goals',
-    //'proso.mnemonics',
+    'proso.mnemonics',
   ])
 
   .value('gettext', gettext || function(x) {return x;})

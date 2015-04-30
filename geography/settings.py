@@ -115,6 +115,7 @@ STATICFILES_FINDERS = (
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'geography', 'static'),
+    os.path.join(BASE_DIR, 'proso_mnemonics', 'static'),
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -204,4 +205,3 @@ except ImportError:
     HASHES = {}
 except SyntaxError:
     HASHES = {}
-

@@ -421,7 +421,7 @@
             }
           };
         },
-        highlightStates : function(states, color, zoomRatio) {
+        highlightItems : function(states, color, zoomRatio) {
           var state = states.pop();
           var layer = this.getLayerContaining(state);
           var placePath = layer ? layer.getPaths({ code : state })[0] : undefined;
@@ -435,14 +435,14 @@
                 transform : '',
                 'stroke-width' : origStroke
               }, ANIMATION_TIME_MS / 2, '<');
-              myMap.highlightStates(states, color);
+              myMap.highlightItems(states, color);
             });
           } else if (states.length > 0) {
-            myMap.highlightStates(states, color);
+            myMap.highlightItems(states, color);
           }
         },
-        highlightState : function(state, color, zoomRatio) {
-          myMap.highlightStates([state], color, zoomRatio);
+        highlightItem : function(state, color, zoomRatio) {
+          myMap.highlightItems([state], color, zoomRatio);
         },
         clearHighlights : function() {
           highlighted.clear();
