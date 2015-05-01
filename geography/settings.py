@@ -75,7 +75,24 @@ WSGI_APPLICATION = 'geography.wsgi.application'
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default':
+        'ENGINE': os.environ.get('PROSO_DATABASE_ENGINE', 'django.db.backends.postgresql_psycopg2'),
+        'OPTIONS': {
+            'options': os.environ.get('PROSO_DATABASE_OPTIONS', '')
+        },
+        'NAME': os.environ.get('PROSO_DATABASE_NAME', 'geography'),
+        'USER': os.environ.get('PROSO_DATABASE_USER', 'geography'),
+        'PASSWORD': os.environ.get('PROSO_DATABASE_PASSWORD', 'geography'),
+        'HOST': os.environ.get('PROSO_DATABASE_HOST', 'localhost'),
+        'PORT': os.environ.get('PROSO_DATABASE_PORT', None),
+    'old': {
+        'ENGINE': os.environ.get('GEOGRAPHY_DATABASE_ENGINE', 'django.db.backends.mysql'),
+        'NAME': os.environ.get('GEOGRAPHY_DATABASE_NAME', 'geography'),
+        'USER': os.environ.get('GEOGRAPHY_DATABASE_USER', 'geography'),
+        'PASSWORD': os.environ.get('GEOGRAPHY_DATABASE_PASSWORD', 'geography'),
+        'HOST': os.environ.get('GEOGRAPHY_DATABASE_HOST', 'localhost'),
+        'PORT': os.environ.get('GEOGRAPHY_DATABASE_PORT', None),
+    }
 }
 
 # Internationalization
