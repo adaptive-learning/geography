@@ -4,8 +4,8 @@ import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-MEDIA_DIR = os.path.join(BASE_DIR, 'media')
-DATA_DIR = os.path.join(BASE_DIR, 'data')
+DATA_DIR = os.environ.get('PROSO_DATA_DIR', os.path.join(BASE_DIR, 'data'))
+MEDIA_DIR = os.environ.get('PROSO_MEDIA_DIR', DATA_DIR)
 MEDIA_URL = '/media/'
 
 SECRET_KEY = os.getenv('PROSO_SECRET_KEY', 'really secret key')
@@ -78,13 +78,13 @@ if ON_PRODUCTION or ON_STAGING:
         'default': {
             'ENGINE': os.environ.get('PROSO_DATABASE_ENGINE', 'django.db.backends.postgresql_psycopg2'),
             'OPTIONS': {
-                'options': os.environ.get('PROSO_DATABASE_OPTIONS', '')
+                'options': "-c search_path=%s" % os.environ.get('PROSO_DATABASE_SCHEMA', 'public')
             },
-            'NAME': os.environ.get('PROSO_DATABASE_NAME', 'geography'),
-            'USER': os.environ.get('PROSO_DATABASE_USER', 'geography'),
-            'PASSWORD': os.environ.get('PROSO_DATABASE_PASSWORD', 'geography'),
-            'HOST': os.environ.get('PROSO_DATABASE_HOST', 'localhost'),
-            'PORT': os.environ.get('PROSO_DATABASE_PORT', None),
+            'NAME': os.environ['PROSO_DATABASE_NAME'],
+            'USER': os.environ['PROSO_DATABASE_USER'],
+            'PASSWORD': os.environ['PROSO_DATABASE_PASSWORD'],
+            'HOST': os.environ['PROSO_DATABASE_HOST'],
+            'PORT': os.environ['PROSO_DATABASE_PORT'],
         },
         'old': {
             'ENGINE': os.environ.get('GEOGRAPHY_DATABASE_ENGINE', 'django.db.backends.mysql'),
