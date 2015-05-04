@@ -1,0 +1,519 @@
+#. extracted from django.po.csv
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-04 07:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.9.0\n"
+
+#: geography/models/place.py:174
+msgid "Neznámé"
+msgstr "unbekannt"
+
+#: geography%2Fmodels%2Fplace.py%3A175+geography%2Fviews%2Fplace.py%3A49+templates%2Fhome.html%3A76
+msgid "Státy"
+msgstr "Staaten"
+
+#: geography/models/place.py:176
+msgid "Města"
+msgstr "Städte"
+
+#: geography%2Fmodels%2Fplace.py%3A177+templates%2Fhome.html%3A62
+msgid "Svět"
+msgstr "Welt"
+
+#: geography%2Fmodels%2Fplace.py%3A178+geography%2Fviews%2Fplace.py%3A46+templates%2Fhome.html%3A66
+msgid "Kontinenty"
+msgstr "Kontinenten"
+
+#: geography/models/place.py:179
+msgid "Řeky"
+msgstr "Flüße"
+
+#: geography/models/place.py:180
+msgid "Jezera"
+msgstr "Seen"
+
+#: geography/models/place.py:181
+msgid "Kraje"
+msgstr "Regionen"
+
+#: geography/models/place.py:182
+msgid "Spolkové Země"
+msgstr "Bundesländer"
+
+#: geography/models/place.py:183
+msgid "Provincie"
+msgstr "Provinzen"
+
+#: geography/models/place.py:184
+msgid "Oblasti"
+msgstr "Gebiete"
+
+#: geography/models/place.py:185
+msgid "Regiony"
+msgstr "Regionen"
+
+#: geography/models/place.py:186
+msgid "Autonomní společenství"
+msgstr "Autonome Gesellschaft"
+
+#: geography/models/place.py:187
+msgid "Pohoří"
+msgstr "Gebirge"
+
+#: geography/models/place.py:188
+msgid "Ostrovy"
+msgstr "Inseln"
+
+#: geography/models/place.py:214
+msgid "Politická mapa"
+msgstr "Politische Karte"
+
+#: geography/models/place.py:215
+msgid "Vodstvo"
+msgstr "Gewässer"
+
+#: geography/models/place.py:216
+msgid "Povrch"
+msgstr "Oberfläche"
+
+#: geography/utils/model.py:130
+msgctxt "state"
+msgid "zvýrazněný"
+msgstr "markierte"
+
+#: geography/utils/model.py:131
+msgctxt "city"
+msgid "zvýrazněné"
+msgstr "markierte"
+
+#: geography/utils/model.py:134
+msgctxt "river"
+msgid "zvýrazněná"
+msgstr "markierte"
+
+#: geography/utils/model.py:135
+msgctxt "lake"
+msgid "zvýrazněné"
+msgstr "markierte"
+
+#: geography/utils/model.py:136
+msgctxt "region_cz"
+msgid "zvýrazněný"
+msgstr "markierte"
+
+#: geography/utils/model.py:137
+msgctxt "bundesland"
+msgid "zvýrazněná"
+msgstr "markierte"
+
+#: geography/utils/model.py:138
+msgctxt "province"
+msgid "zvýrazněná"
+msgstr "markierte"
+
+#: geography/utils/model.py:139
+msgctxt "region_it"
+msgid "zvýrazněná"
+msgstr "markierte"
+
+#: geography/utils/model.py:140
+msgctxt "region"
+msgid "zvýrazněný"
+msgstr "markierte"
+
+#: geography/utils/model.py:141
+msgctxt "autonomous_comunity"
+msgid "zvýrazněná"
+msgstr "markierte"
+
+#: geography/utils/model.py:142
+msgctxt "mountains"
+msgid "zvýrazněné"
+msgstr "markierte"
+
+#: geography/utils/model.py:143
+msgctxt "island"
+msgid "zvýrazněný"
+msgstr "markierte"
+
+#: geography%2Futils%2Fmodel.py%3A149+geography%2Futils%2Fmodel.py%3A177
+msgid "unknown"
+msgstr "unbekannt"
+
+#: geography/utils/model.py:150
+msgid "stát"
+msgstr "Staat"
+
+#: geography/utils/model.py:151
+msgid "město"
+msgstr "Stadt"
+
+#: geography/utils/model.py:154
+msgid "řeka"
+msgstr "Fluß"
+
+#: geography/utils/model.py:155
+msgid "jezero"
+msgstr "See"
+
+#: geography/utils/model.py:156
+msgid "kraj"
+msgstr "Kreis, Region"
+
+#: geography/utils/model.py:157
+msgid "spolková země"
+msgstr "Bundesland"
+
+#: geography/utils/model.py:158
+msgid "provincie"
+msgstr "Provinz"
+
+#: geography/utils/model.py:159
+msgid "oblast"
+msgstr "Gebiet"
+
+#: geography/utils/model.py:160
+msgid "region"
+msgstr "Region"
+
+#: geography/utils/model.py:161
+msgid "autonomní společenství"
+msgstr "Autonome Gesellschaft"
+
+#: geography/utils/model.py:162
+msgctxt "geography/utils/model.py:162"
+msgid "pohoří"
+msgstr "Gebirge"
+
+#: geography/utils/model.py:163
+msgid "ostrov"
+msgstr "Insel"
+
+#: geography/utils/model.py:169
+msgid "spolkovou zemi"
+msgstr "Bundesland"
+
+#: geography/utils/model.py:170
+msgid "provincii"
+msgstr "Provinz"
+
+#: geography/utils/model.py:171
+msgid "řeku"
+msgstr "Fluß"
+
+#: geography/utils/model.py:178
+msgid "států"
+msgstr "Staaten"
+
+#: geography/utils/model.py:179
+msgid "měst"
+msgstr "Städten"
+
+#: geography/utils/model.py:182
+msgid "řek"
+msgstr "Flüssen"
+
+#: geography/utils/model.py:183
+msgid "jezer"
+msgstr "Seen"
+
+#: geography%2Futils%2Fmodel.py%3A184+geography%2Futils%2Fmodel.py%3A188
+msgid "regionů"
+msgstr "Regionen"
+
+#: geography/utils/model.py:185
+msgid "spolkových zemí"
+msgstr "Bundesländern, Kantoten, Provinzen"
+
+#: geography/utils/model.py:186
+msgid "provincií"
+msgstr "Bundesländern, Kantoten, Provinzen"
+
+#: geography/utils/model.py:187
+msgid "oblastí"
+msgstr "Gebieten"
+
+#: geography/utils/model.py:189
+msgid "autonomních společenství"
+msgstr "Autonome Gesselschaft"
+
+#: geography/utils/model.py:190
+msgctxt "geography/utils/model.py:190"
+msgid "pohoří"
+msgstr "Gebirgen"
+
+#: geography/utils/model.py:191
+msgid "ostrovů"
+msgstr "Inseln"
+
+#: geography/utils/model.py:209
+msgid "Ze zvýrazněných %(place_plural)s na mapě vyber"
+msgstr "Aus der markierten %(place_plural)s auf der Karte wähle aus"
+
+#: geography/utils/model.py:212
+msgid "Vyber na mapě %(place_singular)s"
+msgstr "Wähle auf der Karte %(place_singular)s aus"
+
+#: geography/utils/model.py:215
+msgid "Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?"
+msgstr "Wie heißt %(place_singular)s %(highlighted)s auf der Karte?"
+
+#: geography%2Fviews%2Fbase.py%3A38+proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.html%3A6+proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.html%3A55+proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.plain.txt%3A2+templates%2Fhome.html%3A58+templates%2Fgenerated%2Fhomepage.html%3A19
+msgid "Slepé Mapy"
+msgstr "stumme Karten"
+
+#: geography/views/base.py:39
+msgid "inteligentní aplikace na procvičování zeměpisu"
+msgstr "intelligente App zum Geographie-Üben"
+
+#: proso_auth/views.py:67
+msgid "Heslo je správné, ale účet není aktivovaný."
+msgstr "Das Passwort stimmt zwar, aber das Benutzerkonto ist nocht nicht aktiv."
+
+#: proso_auth/views.py:73
+msgid "Nesprávné jméno nebo heslo"
+msgstr "Kein richtiger Benutzername oder Passwort"
+
+#: proso_auth/views.py:103
+msgid "Je nutné vyplnit uživatelské jméno."
+msgstr "Es ist nötig den Benutzernamen einzugeben"
+
+#: proso_auth/views.py:105
+msgid "Je nutné vyplnit email."
+msgstr "Es ist nötig die E-Mail einzugeben"
+
+#: proso_auth/views.py:107
+msgid "Je nutné vyplnit heslo."
+msgstr "Es ist nötig das Passwort einzugeben"
+
+#: proso_auth/views.py:110
+msgid "Hesla se neshodují."
+msgstr "Passwörter passen nicht zusammen."
+
+#: proso_auth/views.py:113
+msgid "Účet se zadaným uživatelským jménem už existuje."
+msgstr "Es existiert bereits ein Benutzerkonto mit dieser Benutzername."
+
+#: proso_auth/views.py:118
+msgid "Účet se zadaným emailem už existuje."
+msgstr "Es existiert bereits ein Benutzerkonto mit dieser E-Mail-Adresse"
+
+#: proso_feedback/views.py:46
+msgid "Feedback confirmed"
+msgstr ""
+"Vielen Dank für Ihre gesendeten Informationen. Feedback von der Benutzer ist "
+"unbezahlbar."
+
+#: proso_feedback/views.py:61
+msgid "Děkujeme za hodnocení."
+msgstr "Vielen dank für Ihre Einschätzung."
+
+#: proso_feedback%2Ftemplates%2Ffeedback.html%3A4+templates%2Fhome.html%3A182
+msgid "Napište nám"
+msgstr "Schreiben Sie uns"
+
+#: proso_goals/management/commands/send_reminder_emails.py:47
+msgid "Je čas procvičovat slepé mapy"
+msgstr "Es ist die Zeit stumme Karten zu üben"
+
+#: proso_goals/templates/create_goal.html:5
+msgid "Vytvořit cíl"
+msgstr "Ziel festsetzen"
+
+#: proso_goals/templates/create_goal.html:9
+msgid "Mapa"
+msgstr "Kartenübersicht"
+
+#: proso_goals/templates/create_goal.html:36
+msgid "Datum splnění cíle"
+msgstr "Datum der Zielerfüllung"
+
+#: proso_goals/templates/create_goal.html:64
+msgid "Vytrvořit"
+msgstr "Erstellen"
+
+#: proso_goals/templates/create_goal.html:67
+msgid "Zavřít"
+msgstr "Schließen"
+
+#: proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.html%3A7+templates%2Fhome.html%3A120
+msgid "Osobní cíle"
+msgstr "Persönliche Ziele"
+
+#: proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.html%3A61+proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.plain.txt%3A4
+msgid "Je nejvyšší čas pokračovat v plnění osobních cílů!"
+msgstr ""
+"Es ist die höchste Zeit in der Erfüllung der persönliche Zielen fortzusetzen"
+
+#: proso_goals/templates/emails/goal_reminder.html:70
+msgid "Procvičovat"
+msgstr "Zum Üben"
+
+#: proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.html%3A89+proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.plain.txt%3A11
+msgid "Změnit nastavení E-mailů"
+msgstr "E-Mail Einstellung ändern"
+
+#: templates/home.html:26
+msgid "meta content"
+msgstr ""
+"Intelligente Apps zum Üben von Staaten und Bundesländern, Städten, Gebirgen "
+"und Flüssen mithilfe der stummen Karten von der Welt, Europas, Asiens, "
+"Afrikas, Amerikas, Tschechiens, der USA und der weiteren Staaten"
+
+#: templates/home.html:27
+msgid "meta keywords"
+msgstr ""
+"stumme Karte, Staaten und Bundesländer, Tschechien, Welt, Europa, Amerika, "
+"Afrika, Asien, Gebirge, Flüsse, Geographie, USA, Spiele"
+
+#: templates/home.html:85
+msgid "Přehled map"
+msgstr "Kartenübersicht"
+
+#: templates/home.html:96
+msgid ""
+"Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
+"znalosti pamatoval i příště."
+msgstr ""
+"Melden Sie sich einfach via Google oder Facebook an,  damit das Spielsystem "
+"ihre Kennnisse auch das nächste Mal merkt."
+
+#: templates/home.html:99
+msgid "Přihlásit se"
+msgstr "Anmeldung"
+
+#: templates/home.html:110
+msgid "Můj profil"
+msgstr "Mein Profil"
+
+#: templates/home.html:115
+msgid "Moje časté chyby"
+msgstr "Meine häufigen Fehler"
+
+#: templates/home.html:125
+msgid "Nastavení"
+msgstr "Einstellung"
+
+#: templates/home.html:130
+msgid "Odhlásit se"
+msgstr "Abmeldung"
+
+#: templates/home.html:177
+msgid "O projektu"
+msgstr "Über das Projekt"
+
+#: templates/generated/homepage.html:21
+msgid "Vyberte si mapu k procvičování:"
+msgstr "Wählen Sie eine Landkarte zum Üben aus:"
+
+#: templates/generated/homepage.html:26
+msgid "Státy Evropy"
+msgstr "Staaten Europas"
+
+#: templates/generated/homepage.html:31
+msgid "Řeky ČR"
+msgstr "Flüsse Europas"
+
+#: templates/generated/homepage.html:36
+msgid "Státy USA"
+msgstr "Bundesstaaten der Vereinigten Staaten"
+
+#: templates/generated/homepage.html:41
+msgid "Pohoří ČR"
+msgstr "Tschechische Gebirge"
+
+#: templates/generated/homepage.html:46
+msgid "Státy Asie"
+msgstr "Staaten Asiens"
+
+#: templates/generated/homepage.html:51
+msgid "Řeky Afriky"
+msgstr "Flüsse Afrikas"
+
+#: templates/generated/homepage.html:54
+msgid "Chcete jinou? Podívejte se na"
+msgstr ""
+"Möchten Sie eine andere Landkarte? Schauen Sie die weiteren Landkarten an"
+
+#: templates/generated/homepage.html:57
+msgid "další mapy"
+msgstr "Weitere Landkarten"
+
+#: templates/generated/homepage.html:67
+msgid "Jak to funguje?"
+msgstr "Wie funktioniert das?"
+
+#: templates/generated/homepage.html:71
+msgid "Zeměpis hrou"
+msgstr "Erdkunde spielerisch"
+
+#: templates/generated/homepage.html:72
+msgid "Zeměpis hrou - text"
+msgstr ""
+"Testen Sie Ihre Kenntnisse in Geographie und lernen Sie mit Spiel und Spaß. "
+"In der aktuellen Version spielen Sie alleine, bzw. gegen das Spielsystem. "
+"Schaffen Sie die ganze Landkarte Europas? das ganze Tschechien? Und die "
+"ganze Welt? grün zu machen?"
+
+#: templates/generated/homepage.html:76
+msgid "Adaptabilní procvičování"
+msgstr "Anpassungsfähiges Üben"
+
+#: templates/generated/homepage.html:77
+msgid "Adaptabilní procvičování - text"
+msgstr ""
+"Jede stumme Karte bietet ein anpassungsfähiges Üben an - je nach dem Sie "
+"Kenntnisse haben, die Apps wählt die Fragekategorien (offen, Multi-Choise "
+"Fragen) und die Wiederholungsfrequenz. Die Apps legt uns dann die Staaten "
+"so vor, deren Üben ist es für Ihnen am efektivsten."
+
+#: templates/generated/homepage.html:79
+msgid "Ukázka procvičování"
+msgstr "Vorschau zum Üben"
+
+#: templates/generated/homepage.html:83
+msgid "Specializovaný systém"
+msgstr "Spezielisiertes System"
+
+#: templates/generated/homepage.html:84
+msgid "Specializovaný systém - text"
+msgstr ""
+"Stumme Karten zu üben, das bietet auch eine andere Reihe von "
+"Unterrichtssystemen an, die  beschäftigen sich jedoch  meistens  mit vielen "
+"Teilbereichen. Unser System konzetriert sich nur auf stumme Karten, aus "
+"diesem Grunde ist es zum Erlernen in diesem Bereich optimiert."
+
+#: templates/generated/homepage.html:88
+msgid "Vizualizace znalostí"
+msgstr ""
+
+#: templates/generated/homepage.html:89
+msgid "Vizualizace znalostí - text"
+msgstr ""
+"Aufgrund der Antworten schätzt das Spielsystem ein, wie gut Sie verschiedene "
+"Staaten und Bundesländer kennen, und es zeigt die Karte ihrer Kenntnisse, "
+"was  dazu hilft, Ihnen klar zu machen, was Sie eigentlich schon können."
+
+#: templates/generated/homepage.html:91
+msgid "Ukázka mapy znalostí"
+msgstr "Vorschau zur Karte der Kennnisse"
+
+#: templates/generated/homepage.html:95
+msgid "Učení z dat"
+msgstr "Erlernen aus Daten"
+
+#: templates/generated/homepage.html:96
+msgid "Učení z dat - text"
+msgstr ""
+"Die Apps zieht  aus Daten von allen Benutzer die Schlusfolgeungen. Die "
+"Fragenauswahl geht von diesen Daten, nicht von den Kenntnissen eines "
+"Experten in Geografie hervor, der \"weiß\", ob es schwieriger Kenia oder "
+"Nigerien zu erkennen ist."

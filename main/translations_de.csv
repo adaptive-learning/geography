@@ -1,0 +1,1260 @@
+world	Welt
+europe	Europa
+asia	Asien
+oceania	Australien und Oceanien
+samerica	Südamerika
+namerica	Nordamerika
+africa	Afrika
+af	Afganistan
+ao	Angola
+ar	Argentinien
+au	Australien
+bf	Burkina Faso
+bd	Bangladesch
+by	Weißrussland
+bo	Bolivien
+br	Brasilien
+bw	Botswana
+cf	Zentralafrikanische Republik
+ca	Kanada
+cl	Chile
+cn	China
+ci	Elfenbeinküste
+cm	Kamerun
+cd	Demokratische Republik Kongo
+cg	Kongo
+co	Kolumbien
+de	Deutschland
+dz	Algerien
+ec	Ecuador
+eg	Ägypten
+er	Eritrea
+es	Spanien
+et	Äthiopien
+fi	Finnland
+fr	Frankreich
+ga	Gabun
+gb	Vereinigtes Königreich
+gh	Ghana
+gn	Guinea
+gr	Griechenland
+gl	Grönland
+gy	Guyana
+hn	Honduras
+id	Indonesien
+in	Indien
+ir	Iran
+iq	Irak
+is	Island
+it	Italien
+jp	Japan
+kz	Kasachstan
+ke	Kenia
+kg	Kirgisistan
+kh	Kambodscha
+kr	Südkorea
+la	Laos
+ly	Libyen
+ma	Marokko
+mg	Madagaskar
+mx	Mexiko
+ml	Mali
+mm	Myanmar
+mn	Mongolei
+mz	Mosambik
+mr	Mauretanien
+mw	Malawi
+my	Malaysia
+na	Namibia
+ne	Niger
+ng	Nigeria
+ni	Nicaragua
+no	Norwegen
+np	Nepal
+nz	Neuseeland
+om	Oman
+pk	Pakistan
+pe	Peru
+ph	Philippinen
+pg	Papua-Neuguinea
+pl	Polen
+kp	Nordkorea
+py	Paraguay
+ro	Rumänien
+ru	Russland
+eh	Westsahara
+sa	Saudi-Arabien
+sd	Sudan
+ss	Südsudan
+sn	Senegal
+sb	Salomonen
+so	Somalia
+sr	Suriname
+se	Schweden
+sy	Syrien
+td	Tschad
+th	Thailand
+tj	Tadschikistan
+tm	Turkmenistan
+tt	Trinidad und Tobago
+tn	Tunesien
+tr	Türkei
+tz	Tansania
+ug	Uganda
+ua	Ukraine
+uy	Uruguay
+us	Vereinigte Staaten von Amerika
+uz	Usbekistan
+ve	Venezuela
+vn	Vietnam
+vu	Vanuatu
+ye	Jemen
+za	Südafrika
+zm	Sambia
+zw	Simbabwe
+TIERRA_DEL_FUEGO	Feuerland
+Nova_Scotia	Neuschottland
+Vancouver_Island	Vancouver
+VICTORIA_ISLAND	Victoria Island
+LABRADOR	Labrador
+ELLESMERE_ISLAND	Ellesmere Island
+BAFFIN_ISLAND	Baffin Island
+ISLAND_OF_NEWFOUNDLAND	Neufundland
+SULAWESI	Sulavesi
+JAVA	Java
+MINDANAO	Mindanao
+LUZON	Luzon
+TAIWAN	Taiwan
+KYUSHU	Kyushu
+SHIKOKU	Shikoku
+HOKKAIDO	Hokkaido
+SAKHALIN	Sakhalin
+Sardegna	Sardinien
+Corse	Korsika
+Sicilia	Sizilien
+SRI_LANKA	Ceylon
+TASMANIA	Tasmanien
+NEW_GUINEA	Neuguinea
+BORNEO	Borneo
+SUMATRA	Sumatra
+HONSHU	Honshu
+IRELAND	Island
+GREAT_BRITAIN	Großbritannien
+ICELAND	Island
+GREENLAND	Grönland
+MADAGASCAR	Madagaskar
+SOUTH_ISLAND	Südinsel (Neuseeland)
+NORTH_ISLAND	Nordinsel (Neuseeland)
+ETHIOPIAN_HIGHLANDS	Hochland von Äthiopien
+ZAGROS_MOUNTAINS	Zagros
+ALTAY_MOUNTAINS	Altai
+GREATER_KHINGAN_RANGE	Großes Hinggan-Gebirge
+STANOVOY_RANGE	Stanowoigebirge
+CHAINE_ANNAMITIQUE	Truong-Son-Gebirge, Annamitische Kordillere
+Siwalik_Hills	Siwaliks
+PAMIRS	Pamir
+HINDU_KUSH	Hindukusch
+KARAKORAM_RA.	Karakorum
+KUNLUN_MOUNTAINS	Kunlun Shan
+ATLAS_MOUNTAINS	Atlas
+APPALACHIAN_MTS.	Appalachen
+BROOKS_RANGE	Brookskette
+COAST_MOUNTAINS	Coast Mountains
+CASCADE_RANGE	Kaskadenkette
+ALASKA_RANGE	Alaskian Bergen
+GREAT_DIVIDING_RANGE	Australisches Bergland, Großes Australisches Scheidegebirge oder Australische Kordillere
+ALPS	Alpen
+TIAN_SHAN	Tian Shan
+URAL_MOUNTAINS	Ural
+CAUCASUS_MTS.	Kaukasus
+HIMALAYAS	Himalaya
+ANDES	Anden
+ROCKY_MOUNTAINS	Rocky Mountains
+Brahmaputra	Brahmaputra
+Mekong	Mekong
+Ob	Ob
+Danube	Donau
+Parana	Río Paraná
+Congo	Kongo
+Lena	Lena
+Chang_(Yangtze)	Jangtsekiang
+Nile	Nil
+Amazon	Amazonas
+Mississippi	Mississippi
+Indus	Indus
+Ganges	Ganges
+Amur	Amur
+Yenisey	Jenissei
+Missouri	Missouri River
+Yukon	Yukon River
+Orinoco	Orinoco
+Murray	Murray River
+Euphrates	Euphrat
+Niger	Niger
+Zambezi	Sambesi
+Rio_Grande	Rio Grande
+Mackenzie	Mackenzie River
+Huang	Gelber Fluss
+Darling	Darling River
+Orange	Orange River
+Tigris	Tigris
+Syr_Darya	Syrdarja
+Amu_Darya	Amudarja
+St._Lawrence	Sankt-Lorenz-Strom
+Senegal	Senegal
+Limpopo	Limpopo
+Okawango	Okavango
+Ubangi	Ubangi
+Chari	Schari
+Lake_Baikal	Baikalsee
+Lake_Winnipeg	Winnipegsee
+Great_Slave_Lake	Großer Sklavensee
+L._Ontario	Ontariosee
+L._Erie	Eriesee
+Lake_Superior	Oberer See
+Lake_Victoria	Victoriasee
+Lake_Ladoga	Ladogasee
+Balqash_Koli	Balchaschsee
+Lake_Tanganyika	Tanganjikasee
+Lake_Malawi	Malawisee
+Aral_Sea	Aralsee
+Vanern	Vänern
+Lago_de_Nicaragua	Nicaraguasee
+Lago_Titicaca	Titicacasee
+Lake_Winnipegosis	Winnipegosissee
+Lake_Onega	Onegasee
+Great_Bear_Lake	Großer Bärensee
+Reindeer_Lake	Reindeer Lake
+Lake_Huron	Huronsee
+Lake_Michigan	Michigansee
+Tunis	Tunis
+Baku	Baku
+Hanoi	Hanoi
+Ankara	Ankara
+Sanaa	Sanaa
+Damascus	Damaskus
+Lisbon	Lissabon
+Khartoum	Khartum
+Pyongyang	Pjöngjang
+Dar_es_Salaam	Daressalam
+Havana	Havanna
+Kuwait	Kuwait-Stadt
+Santo_Domingo	Santo Domingo
+Accra	Accra
+Tripoli	Tripolis
+Tel_Aviv-Yafo	Tel Aviv-Jaffa
+Abidjan	Abidjan
+Brasilia	Brasília
+Dhaka	Dhaka
+Luanda	Luanda
+Algiers	Algier
+Rangoon	Rangun
+San_Francisco	San Francisco
+Denver	Denver
+Houston	Houston
+Miami	Miami
+Atlanta	Atlanta
+Chicago	Chicago
+Caracas	Caracas
+Kiev	Kiew
+Tashkent	Taschkent
+Madrid	Madrid
+Bangkok	Bangkok
+Lima	Lima
+Dakar	Dakar
+Johannesburg	Johannesburg
+Casablanca	Casablanca
+Seoul	Seoul
+Manila	Manila
+Monterrey	Monterrey
+Berlin	Berlin
+Urumqi	Ürümqi
+Chengdu	Chengdu
+Osaka	Ōsaka
+Kinshasa	Kinshasa
+Bangalore	Bangalore
+Athens	Athen
+Baghdad	Bagdad
+Addis_Ababa	Addis Abeba
+Tehran	Teheran
+Vancouver	Vancouver
+Toronto	Toronto
+Buenos_Aires	Buenos Aires
+Kabul	Kabul
+Vienna	Wien
+Melbourne	Melbourne
+Taipei	Taipeh
+Los_Angeles	Los Angeles
+Washington	Washington, D.C.
+New_York	New York
+London	London
+Istanbul	Istanbul
+Riyadh	Riad
+Cape_Town	Kapstadt
+Moscow	Moskau
+Mexico_City	Mexiko-Stadt
+Lagos	Lagos
+Rome	Rom
+Beijing	Peking
+Nairobi	Nairobi
+Jakarta	Jakarta
+Bogota	Bogotá
+Cairo	Kairo
+Shanghai	Shanghai
+Tokyo	Tokio
+Mumbai	Mumbai
+Paris	Paris
+Santiago	Santiago del Estero
+Kolkata	Kalkutta
+Rio_de_Janeiro	Rio de Janeiro
+Sao_Paulo	São Paulo
+Sydney	Sydney
+Singapore	Singapur
+Hong_Kong	Hongkong
+bi	Burundi
+bj	Benin
+dj	Dschibuti
+gm	Gambia
+gw	Guinea-Bissau
+gq	Äquatorialguinea
+lr	Liberia
+ls	Lesotho
+rw	Ruanda
+sl	Sierra Leone
+xs	Somaliland
+sz	Swasiland
+tg	Togo
+Bir_Lehlou	Bir Lehlou
+Moroni	Moroni
+Kigali	Kigali
+Mbabane	Mbabane
+Juba	Juba
+Dodoma	Dodoma
+Laayoune	El Aaiún
+Djibouti	Dschibuti
+Banjul	Banjul
+Porto-Novo	Porto-Novo
+Bujumbura	Bujumbura
+Lome	Lomé
+Lusaka	Lusaka
+Harare	Harare
+Kampala	Kampala
+Niamey	Niamey
+Freetown	Freetown
+Bloemfontein	Bloemfontein
+Pretoria	Pretoria
+Rabat	Rabat
+Maputo	Maputo
+Mogadishu	Mogadischu
+Windhoek	Windhoek
+Abuja	Abuja
+Maseru	Maseru
+Antananarivo	Antananarivo
+Ndjamena	N’Djamena
+Malabo	Malabo
+Asmara	Asmara
+Lilongwe	Lilongwe
+Libreville	Libreville
+Nouakchott	Nouakchott
+Bamako	Bamako
+Conakry	Conakry
+Yamoussoukro	Yamoussoukro
+Bangui	Bangui
+Yaounde	Yaoundé
+Gaborone	Gaborone
+Ouagadougou	Ouagadougou
+Hargeysa	Hargeysa
+Sao_Tome	São Tomé
+Monrovia	Monrovia
+ae	Vereinigte Arabische Emirate
+am	Armenien
+az	Aserbaidschan
+bn	Brunei
+bt	Bhutan
+ge	Georgien
+il	Israel
+jo	Jordanien
+kw	Kuwait
+lb	Libanon
+lk	Sri Lanka
+ps	Palästinensische Autonomiebehörde
+qa	Katar
+tl	Osttimor
+tw	Taiwan
+HAINAN	Hainan
+TIMOR	Timor
+Palawan	Palawan
+Bohol	Bohol
+Negros	Negros
+Leyte	Leyte
+Samar	Samar
+Panay	Panay
+Mindoro	Mindoro
+Melekeok	Melekeok
+Doha	Doha
+Baguio_City	Baguio City
+Putrajaya	Putrajaya
+Manama	Manama
+Abu_Dhabi	Abu Dhabi
+Ashgabat	Aşgabat
+Dili	Dili
+Dushanbe	Duschanbe
+Islamabad	Islamabad
+Kathmandu	Kathmandu
+Muscat	Maskat
+Colombo	Colombo
+Ulaanbaatar	Ulaanbaatar
+Amman	Amman
+Bishkek	Bischkek
+Beirut	Beirut
+Tbilisi	Tiflis
+Astana	Astana
+Vientiane	Vientiane
+Bandar_Seri_Begawan	Bandar Seri Begawan
+Yerevan	Jerewan
+Phnom_Penh	Phnom Penh
+Thimphu	Thimphu
+Naypyidaw	Naypyidaw
+Male	Malé
+Jerusalem	Jerusalem
+Nicosia	Nicosia
+Kuala_Lumpur	Kuala Lumpur
+Dubai	Dubai
+New_Delhi	Neu-Delhi
+at-vo	Vorarlberg
+at-bu	Burgenland
+at-st	Steiermark
+at-ka	Kärnten
+at-oo	Oberösterreich
+at-sz	Land Salzburg
+at-tr	Tirol
+at-no	Niederösterreich
+at-wi	Wien
+Bregenz	Bregenz
+Eisenstadt	Eisenstadt
+Wiener_Neustadt	Wiener Neustadt
+Graz	Graz
+Klagenfurt	Klagenfurt am Wörthersee
+Linz	Linz
+Passau	Passau
+Salzburg	Salzburg
+Innsbruck	Innsbruck
+au-nt	Northern Territory
+au-wa	Western Australia
+au-ct	Australian Capital Territory
+au-ns	New South Wales
+au-sa	South Australia
+au-vi	Victoria
+au-ql	Queensland
+au-ts	Tasmanien
+Cranbourne	Casey City
+Gold_Coast	Gold Coast
+Canberra	Canberra
+Newcastle	Newcastle
+Adelaide	Adelaide
+Brisbane	Brisbane
+Perth	Perth
+ca-mb	Manitoba
+ca-sk	Saskatchewan
+ca-ab	Alberta
+ca-bc	British Columbia
+ca-nu	Nunavut
+ca-nt	Nordwest-Territorien
+ca-yt	Yukon
+ca-on	Ontario
+ca-qc	Québec
+ca-nb	New Brunswick
+ca-ns	Neuschottland
+ca-nl	Neufundland und Labrador
+ca-pe	Prince Edward Island
+London_Ca	London
+Windsor	Windsor
+Winnipeg	Winnipeg
+Calgary	Calgary
+Ottawa	Ottawa
+Quebec	Québec
+Halifax	Halifax
+Edmonton	Edmonton
+Montreal	Montréal
+cn-62	Gansu
+cn-63	Qinghai
+cn-45	Guangxi
+cn-52	Guizhou
+cn-50	Chongqing
+cn-11	Peking
+cn-35	Fujian
+cn-34	Anhui
+cn-44	Guangdong
+cn-54	Autonomes Gebiet Tibet
+cn-65	Xinjiang
+cn-46	Hainan
+cn-64	Ningxia
+cn-61	Shaanxi
+cn-14	Shanxi
+cn-42	Hubei
+cn-43	Hunan
+cn-51	Sichuan
+cn-53	Yunnan
+cn-13	Hebei
+cn-41	Henan
+cn-21	Liaoning
+cn-37	Shandong
+cn-12	Tianjin
+cn-36	Jiangxi
+cn-32	Jiangsu
+cn-31	Shanghai
+cn-33	Zhejiang
+cn-22	Jilin
+cn-15	Innere Mongolei
+cn-23	Heilongjiang
+cz-us	Aussiger Region
+cz-pl	Pilsner Region
+cz-jm	Südmährische Region
+cz-zl	Zliner Region
+cz-ol	Olmützer Region
+cz-pa	Pardubitzer Region
+cz-ka	Karlsbader Region
+cz-jc	Südböhmische Region
+cz-vy	Region Hochland
+cz-pr	Hauptstadt Prag
+cz-st	Mittelböhmische Region
+cz-li	Reichenberger Region
+cz-kr	Königgrätzer Region
+cz-mo	Mährisch-Schlesische Region
+Jihlava	Iglau
+Plzen	Pilsen
+Otrokovice	Otrokowitz
+Trinec	Trzynietz
+Klasterec_nad_Ohri	Klösterle an der Eger
+Pelhrimov	Pilgram
+Chrudim	Chrudim
+Pardubice	Pardubitz
+Hradec_Kralove	Königgrätz
+Havlickuv_Brod	Deutschbrod
+Zdar_nad_Sazavou	Saar
+Velke_Mezirici	Groß Meseritsch
+Svitavy	Zwittau
+Moravska_Trebova	Mährisch Trübau
+Ceska_Trebova	Böhmisch Trübau
+Usti_nad_Orlici	Wildenschwert
+Vysoke_Myto	Hohenmaut
+Trebic	Trebitsch
+Nachod	Nachod
+Jicin	Jitschin
+Vrchlabi	Hohenelbe
+Trutnov	Trautenau
+Dvur_Kralove_nad_Labem	Königinhof an der Elbe
+Rychnov_nad_Kneznou	Reichenau an der Knieschna
+Turnov	Turnau
+Liberec	Reichenberg
+Jablonec_nad_Nisou	Gablonz an der Neiße
+Ceska_Lipa	Böhmisch Leipa
+Novy_Bor	Haida
+Usti_nad_Labem	Aussig
+Teplice	Teplitz
+Bilina	Bilin
+Most	Brüx
+Litvinov	Leutensdorf
+Zatec	Saaz
+Louny	Laun
+Kadan	Kaaden
+Jirkov	Görkau
+Chomutov	Komotau
+Varnsdorf	Warnsdorf
+Rumburk	Rumburg
+Decin	Tetschen
+Roudnice_nad_Labem	Raudnitz an der Elbe
+Litomerice	Leitmeritz
+Kromeriz	Kremsier
+Holesov	Holleschau
+Uhersky_Brod	Ungarisch Brod
+Vsetin	Wsetin
+Valasske_Mezirici	Walachisch Meseritsch
+Roznov_pod_Radhostem	Rosenau unter dem Radhoscht
+Zlin	Zlin
+Marianske_Lazne	Marienbad
+Cheb	Eger
+As	Asch
+Ostrov	Ostrau
+Karlovy_Vary	Karlsbad
+Sokolov	Falkenau
+Chodov	Chodau
+Ceske_Budejovice	Budweis
+Cesky_Krumlov	Böhmisch Krumau
+Jindrichuv_Hradec	Neuhaus
+Pisek	Pisek
+Prachatice	Prachatitz
+Strakonice	Strakonitz
+Tabor	Tabor
+Jesenik	Freiwaldau
+Sternberk	Sternberg
+Unicov	Mährisch-Neustadt
+Olomouc	Olmütz
+Prostejov	Proßnitz in Mähren
+Prerov	Prerau
+Hranice	Mährisch Weißkirchen
+Sumperk	Mährisch Schönberg
+Zabreh	Hohenstadt
+Domazlice	Taus
+Susice	Schüttenhofen
+Klatovy	Klattau
+Rokycany	Rokitzan
+Tachov	Tachau
+Vlasim	Wlaschim
+Benesov	Beneschau
+Beroun	Beraun
+Slany	Schlan
+Kladno	Kladno
+Kolin	Kolin
+Kutna_Hora	Kuttenberg
+Neratovice	Neratowitz
+Melnik	Melnik
+Kralupy_nad_Vltavou	Kralup an der Moldau
+Mlada_Boleslav	Jungbunzlau
+Podebrady	Podiebrad
+Nymburk	Nimburg
+Brandys_nad_Labem-Stara_Boleslav	Brandeis a.d. Elbe-Altbunzlau
+Pribram	Pibrans
+Rakovnik	Rakonitz
+Krnov	Jägerndorf
+Bruntal	Freudenthal
+Frydek-Mistek	Friedeck-Mistek
+Cesky_Tesin	Tschechisch-Teschen
+Orlova	Orlau
+Karvina	Karwin
+Havirov	Hawirzow
+Bohumin	Oderberg
+Novy_Jicin	Neu Titschein
+Koprivnice	Nesselsdorf
+Frenstat_pod_Radhostem	Frankstadt unter dem Radhoscht
+Opava	Troppau
+Hlucin	Hultschin
+Ostrava	Ostrau
+Boskovice	Boskowitz
+Blansko	Blanz
+Brno	Brünn
+Breclav	Lundenburg
+Veseli_nad_Moravou	Wessely an der March
+Hodonin	Göding
+Kyjov	Gaya
+Vyskov	Wischau
+Znojmo	Znaim
+Praha	Prag
+Uherske_Hradiste	Ungarisch Hradisch
+Sumava	Böhmerwald
+Krusne_hory	Erzgebirge
+Ceske_Stredohori	Böhmisches Mittelgebirge
+Krkonose	Riesengebirge
+Jizerske_hory	Isergebirge
+Orlicke_hory	Adlergebirge
+Hruby_Jesenik	Altvatergebirge
+Beskydy	Beskiden
+Ceskomoravska_vrchovina	Böhmisch-Mährische Höhe
+Bile_Karpaty	Weiße Karpaten
+Cesky_les	Böhmischer Wald
+Drahanska_vrchovina	Drahaner Bergland
+Rychlebske_hory	Reichensteiner Gebirge
+Nizky_Jesenik	Niederes Gesenke
+Plzenska_pahorkatina	Pilsner Hügelland
+Novohradske_hory	Gratzener Bergland
+Chriby	Marsgebirge
+Doupovske_hory	Duppauer Gebirge
+Brdy	Bridy-Bergland
+Jestedsko-kozakovsky_hrbet	Jeschken-Kosakow-Kamm
+Luzicke_hory	Lausitzer Gebirge
+Javorniky	Javorník-Gebirge
+Stredoceska_pahorkatina	Mittelböhmisches Hügelland
+Labe	Elbe
+Vltava	Moldau
+Ohre	Eger
+Berounka	Beraun
+Sazava	Sasau
+Otava	Wottawa
+Luznice	Luschnitz
+Morava	March
+Orlice	Adler
+Odra	Oder
+Ostravice	Ostrawitza
+Dyje	Mühlfraun
+Svratka	Schwarza
+Svitava	Zwitta
+Jizera	Iser
+Uslava	Uslawa
+Uhlava	Angel
+Radbuza	Radbusa
+Mze	Mies, Miesa
+Becva	Betschwa
+de-nw	Nordrhein-Westfalen
+de-bw	Baden-Württemberg
+de-he	Hessen
+de-hb	Bremen
+de-ni	Niedersachsen
+de-th	Thüringen
+de-hh	Hamburg
+de-sh	Schleswig-Holstein
+de-rp	Rheinland-Pfalz
+de-sl	Saarland
+de-by	Bayern
+de-be	Berlin
+de-st	Sachsen-Anhalt
+de-sn	Sachsen
+de-bb	Brandenburg
+de-mv	Mecklenburg-Vorpommern
+Bielefeld	Bielefeld
+Dortmund	Dortmund
+Duisburg	Duisburg
+Wuppertal	Wuppertal
+Essen	Essen
+Karlsruhe	Karlsruhe
+Heidelberg	Heidelberg
+Augsburg	Augsburg
+Chemnitz	Chemnitz
+Bonn	Bonn
+Dusseldorf	Düsseldorf
+Mannheim	Mannheim
+Wiesbaden	Wiesbaden
+Hannover	Hannover
+Koblenz	Koblenz
+Saarbrucken	Saarbrücken
+Leipzig	Lipsko
+Stuttgart	Stuttgart
+Bremen	Bremen
+Nurnberg	Nürnberg
+Cologne	Köln
+Dresden	Dresden
+Frankfurt	Frankfurt
+Hamburg	Hamburg
+Munich	München
+es-an	Andalusien
+es-ar	Aragonien
+es-cb	Kantabrien
+es-cl	Kastilien und León
+es-cm	Kastilien-La Mancha
+es-ct	Katalonien
+es-md	Madrid
+es-na	Navarra
+es-vc	Valencia
+es-ex	Extremadura
+es-ga	Galicien
+es-pm	Balearen
+es-lo	La Rioja
+es-pv	Baskenland
+es-as	Asturien
+es-mu	Murcia
+Marbella	Marbella
+Mataro	Mataró
+Gijon	Gijón
+Vitoria	Vitoria
+Almeria	Almería
+Malaga	Málaga
+Albacete	Albacete
+Santander	Santander
+Salamanca	Salamanca
+Burgos	Burgos
+Cartagena	Cartagena
+Oviedo	Oviedo
+San_Sebastian	Donostia-San Sebastián
+Alicante	Alicante
+Castello	Castello
+Cadiz	Cádiz
+Granada	Granada
+Murcia	Murcia
+La_Coruna	A Coruña
+Pamplona	Pamplona
+Valladolid	Valladolid
+Palma	Palma de Mallorca
+Zaragoza	Saragossa
+Cordoba	Córdoba
+Vigo	Vigo
+Bilbao	Bilbao
+Seville	Sevilla
+Valencia	Valentz
+Barcelona	Barcelona
+al	Albanien
+at	Österreich
+be	Belgien
+bg	Bulgarien
+ba	Bosnien und Herzegowina
+ch	Spanien
+cz	Tschechien
+dk	Dänemark
+ee	Estland
+hr	Kroatien
+hu	Ungarn
+ie	Irland
+xk	Kosovo
+lt	Litauen
+lu	Luxemburg
+lv	Lettland
+md	Moldawien
+mk	Mazedonien
+me	Montenegro
+nl	Niederlande
+pt	Portugal
+rs	Serbien
+sk	Slowakei
+si	Slowenien
+Saaremaa	Saaremaa
+Aland	Åland
+Gotland	Gotland
+Zealand	Seeland
+Lofoten	Lofoten
+Vesteralen	Vesterålen
+Rhodes	Rhodos
+Crete	Kreta
+Malta	Malta
+Menorca	Menorca
+Mallorca	Mallorca
+Ibiza	Ibiza
+Lesbos	Lesbos
+Kolguyev_I.	Kolgujew
+Hardanger-vidda	Hardangervidda
+Bohmerwald	Böhmerwald
+Transylvanian_Alps	Transsilvanische Alpen
+Tatra_Mts.	Tatra
+Pindus_Mts.	Pindos
+Calabria	Kalabrien
+Harz	Harz
+Vosges	Vogesen
+Sudetes_Mts.	Sudeten
+Erzgebirge	Erzgebirge
+Ardennes	Ardennen
+Jura	Jura
+Grampian_Mts.	Grampian
+Cambrian_Mts.	Kambrien
+Balkan_Mts.	Balkangebirge
+Dinaric_Alps	Dinarisches Gebirge
+Cord._Cantabrica	Kantabrisches Gebirge
+S._Nevada	Sierra Nevada
+Sierra_Morena	Sierra Morena
+KJLEN_MOUNTAINS	Skandinavische Gebirge
+CARPATHIAN_MOUNTAINS	Karpaten
+APPENNINI	Apennin
+PYRENEES	Pyrenäen
+Daugava_(Zapadnaya_Dvina)	Düna
+Dniester	Dnister
+Drava	Drau
+Duero	Duero
+Ebro	Ebro
+Elbe	Elbe
+Garonne	Garonne
+Loire	Loire
+Oder	Oder
+Po	Po
+Seine	Seine
+Svernaya_Dvina	Düna
+Thames	Themse
+Vistula	Weichsel
+Vychegda	Wytschegda
+Rhine	Rhein
+Volga	Wolga
+Don	Don
+Dalalven	Dalälven
+Kama	Kama
+Tajo	Tajo
+Tisa	Theiß
+Dnepre	Dnepr
+Rhone	Rhone
+Glomma	Glomma
+Kemijoki	Kemijoki
+Sukhona	Suchona
+San_Marino	San Marino
+Vaduz	Vaduz
+Luxembourg	Luxemburg
+Monaco	Monaco
+Andorra	Andorra
+Ljubljana	Ljubljana
+Bratislava	Bratislava
+Podgorica	Podgorica
+Bern	Bern
+Pristina	Prishtina
+Skopje	Skopje
+Reykjavik	Reykjavík
+Chisinau	Chișinău
+Vilnius	Vilnius
+Riga	Riga
+Zagreb	Zagreb
+Tallinn	Tallinn
+Belgrade	Belgrad
+Tirana	Tirana
+Sofia	Sofia
+Minsk	Minsk
+Sarajevo	Sarajevo
+Valletta	Valletta
+Budapest	Budapest
+Bucharest	Bukarest
+Oslo	Oslo
+Warsaw	Warschau
+Dublin	Dublin
+Prague	Prag
+Helsinki	Helsinki
+Kobenhavn	Kopenhagen
+Brussels	Brüssel
+Stockholm	Stockholm
+Amsterdam	Amsterdam
+fr-a	Elsass
+fr-b	Aquitanien
+fr-c	Auvergne
+fr-p	Basse-Normandie
+fr-d	Burgund
+fr-e	Bretagne
+fr-f	Centre
+fr-g	Champagne-Ardenne
+fr-h	Korsika
+fr-i	Freigrafschaft
+fr-q	Haute-Normandie
+fr-j	Île-de-France
+fr-k	Languedoc-Roussillon
+fr-l	Limousin
+fr-m	Lothringen
+fr-n	Midi-Pyrénées
+fr-o	Nord-Pas-de-Calais
+fr-r	Länder der Loire
+fr-s	Picardie
+fr-t	Poitou-Charentes
+fr-u	Provence-Alpes-Côte d’Azur
+fr-v	Rhône-Alpes
+Angers	Angers
+Clermont-Ferrand	Clermont-Ferrand
+Melun	Melun
+Saint-Etienne	Saint-Etienne
+Grenoble	Grenoble
+Caen	Caen
+Nantes	Nantes
+Toulon	Toulon
+Montpellier	Montpellier
+Nimes	Nimes
+Dijon	Dijon
+Tours	Tours
+Orleans	Orleans
+Rouen	Rouen
+Reims	Reims
+Mulhouse	Mülhousen
+Nancy	Nancy
+Metz	Metz
+Rennes	Rennes
+Nice	Nizza
+Toulouse	Toulouse
+Limoges	Limoges
+Lille	Lille
+Strasbourg	Straßburg
+Bordeaux	Bordeaux
+Marseille	Marseille
+Le_Havre	La Havre
+Lyon	Lyon
+Sunderland	Sunderland
+Southampton	Southampton
+Bristol	Bristol
+Bournemouth	Bournemouth
+Southend	Southend on Sea
+Reading	Reading
+Leicester	Leicester
+Bradford	Bradford
+Sheffield	Sheffield
+Middlesbrough	Middlesbrough
+Coventry	Coventry
+Kingston_upon_Hull	Kingston upon Hull
+Brighton	Brighton
+Portsmouth	Portsmouth
+Nottingham	Nottingham
+Stoke	Stoke
+Edinburgh	Edinburg
+Liverpool	Liverpool
+Cardiff	Cardiff
+Leeds	Leeds
+Manchester	Manchester
+Birmingham	Birmingham
+Belfast	Belfast
+Glasgow	Glasgow
+-99	Republik Zypern
+in-dl	Delhi
+in-hp	Himachal Pradesh
+in-hr	Haryana
+in-jk	Jammu und Kashmir
+in-ap	Andhra Pradesh
+in-kl	Kerala
+in-or	Odisha
+in-ka	Karnataka
+in-mh	Maharashtra
+in-as	Assam
+in-mn	Manipur
+in-nl	Nagaland
+in-ml	Meghalaya
+in-pb	Punjab
+in-rj	Rajasthan
+in-up	Uttar Pradesh
+in-ut	Uttarakhand
+in-jh	Jharkhand
+in-wb	Westbengalen
+in-br	Bihar
+in-sk	Sikkim
+in-ct	Chhattisgarh
+in-mp	Madhya Pradesh
+in-tn	Tamil Nadu
+in-gj	Gujarat
+in-ga	Goa
+in-ar	Arunachal Pradesh
+in-mz	Mizoram
+in-tr	Tripura
+it-65	Abruzzen
+it-75	Apulien
+it-77	Basilikata
+it-78	Kalabrien
+it-72	Kampanien
+it-45	Emilia-Romagna
+it-36	Friaul-Julisch Venetien
+it-62	Latium
+it-42	Ligurien
+it-25	Lombardei
+it-57	Marken
+it-67	Molise
+it-21	Piemont
+it-88	Sardinien
+it-82	Sizilien
+it-52	Toskana
+it-32	Südtirol
+it-55	Umbrien
+it-23	Aostatal
+it-34	Venetien
+Modena	Modena
+Reggio_di_Calabria	Reggio Calabria
+Caserta	Caserta
+Como	Como
+Treviso	Treviso
+Parma	Parma
+Bologna	Bologna
+Cagliari	Cagliari
+Pisa	Pisa
+Livorno	Livorno
+Salerno	Salerno
+Bari	Bari
+Foggia	Foggia
+Lecce	Lecce
+Taranto	Tarent
+Messina	Messina
+Pescara	Pescara
+Bergamo	Bergamo
+Trieste	Triest
+Verona	Verona
+Turin	Turin
+Genoa	Genua
+Florence	Florencia
+Catania	Catania
+Venice	Venedig
+Palermo	Palermo
+Naples	Neapel
+Milan	Mailand
+bs	Bahamas
+bz	Belize
+cr	Costa Rica
+cu	Kuba
+do	Dominikanische Republik
+gt	Guatemala
+ht	Haiti
+jm	Jamaika
+pa	Panama
+pr	Portoriko
+sv	Salvador
+Port-of-Spain	Port-of-Spain
+Roseau	Roseau
+Bridgetown	Bridgetown
+Kingstown	Kingstown
+Castries	Castries
+Basseterre	Basseterre
+Saint_George's	Saint George's
+Saint_John's	Saint John's
+Tegucigalpa	Teguacigalpa
+Port-au-Prince	Port-au-Prince
+Managua	Managua
+Panama_City	Panama-Stadt
+San_Jose	San Jose
+San_Salvador	San Salvador
+Kingston	Kingston
+Guatemala	Guatemala
+Belmopan	Belmopan
+Nassau	Nassau
+fj	Fidschi
+nc	Neukaledonien
+Funafuti	Funafuti
+Tarawa	Tarawa
+Port-Vila	Port Vila
+Port_Moresby	Port Moresby
+Honiara	Honiara
+Wellington	Wellington
+Suva	Suwa
+Auckland	Auckland
+fk	Falkland
+Montevideo	Montevideo
+Georgetown	Georgetown
+Paramaribo	Paramaribo
+Asuncion	Asuncion
+Quito	Quito
+Sucre	Sucre
+La_Paz	La Paz
+sk-bl	Bratislavaer, Pressburger
+sk-bc	Neusohler
+sk-zi	Silleiner
+sk-ni	Neutraer
+sk-tc	Trentschiner
+sk-ta	Tyrnauer
+sk-ki	Kachauer
+sk-pv	Eperieser 
+Zvolen	Altsohl
+Handlova	Krickerhau
+Puchov	Puchau
+Surany	Schuran
+Galanta	Gallandau
+Povazska_Bystrica	Waagbistritz
+Martin	Martin
+Kezmarok	Käsmark
+Topolcany	Topoltschan
+Banska_Stiavnica	Schennitz
+Partizanske	Partizánske
+Hlohovec	Freistadt
+Levoca	Leutschau
+Myjava	Miawa
+Michalovce	Großmichel
+Samorin	Sommerein
+Humenne	Homenau
+Sabinov	Zeben
+Dubnica_nad_Vahom	Dubnitz an der Waag
+Snina	Snina
+Rimavska_Sobota	Großsteffelsdorf
+Malacky	Malatzka
+Dolny_Kubin	Unterkubin
+Roznava	Rosenau
+Kolarovo	Kolárovo
+Zilina	Sillein
+Kysucke_Nove_Mesto	Kischützeneustadt
+Holic	Holitsch
+Trencin	Trentschin
+Spisska_Nova_Ves	Zipser Neuendorf
+Trebisov	Trebischau
+Revuca	Großrauschenbach
+Banovce_nad_Bebravou	Banowitz
+Stara_Lubovna	Altlublau
+Zlate_Moravce	Goldmorawitz
+Komarno	Komorn
+Lucenec	Lizenz
+Bardejov	Bartfeld
+Skalica	Skalitz
+Velky_Krtis	Veľký Krtíš
+Piestany	Pistian
+Sturovo	Gockern
+Brezno	Bries
+Presov	Preschau
+Filakovo	Fileck
+Stropkov	Stroppkau
+Dunajska_Streda	Niedermarkt
+Nove_Mesto_nad_Vahom	Neustadt an deer Waag
+Cadca	Tschadsa
+Pezinok	Bösing
+Trnava	Tyrnau
+Ruzomberok	Rosenberg
+Liptovsky_Mikulas	Liptau-Sankt-Nikolaus
+Banska_Bystrica	Neusohl
+Nova_Dubnica	Neudubnitz
+Senec	Wartberg
+Detva	Gyetva
+Prievidza	Priwitz
+Nove_Zamky	Neuhäuse
+Svidnik	Oberswidnik
+Sered	Sered
+Vranov_nad_Toplou	Vronau an der Töpl
+Ziar_nad_Hronom	Heiligenkreuz an der Gran
+Poprad	Deutschendorf
+Nitra	Neutra
+Levice	Lewenz
+Bytca	Bitscha
+Moldava_nad_Bodvou	Moldau an der Bodwa
+Kosice	Kaschau
+Sala	Schelle
+Senica	Senitz
+us-ma	Massachusetts
+us-mn	Minnesota
+us-mt	Montana
+us-nd	Nord - Dakota
+us-id	Idaho
+us-wa	Washington
+us-az	Arizona
+us-ca	Kalifornien
+us-co	Colorado
+us-nv	Nevada
+us-nm	New Mexiko
+us-or	Oregon
+us-ut	Utah
+us-wy	Wyoming
+us-ar	Arkansas
+us-ia	Iowa
+us-ks	Kansas  
+us-mo	Missouri
+us-ne	Nebraska
+us-ok	Oklahoma
+us-sd	Süd - Dakota
+us-la	Louisiana
+us-tx	Texas
+us-ct	Connecticut
+us-nh	New Hampshire
+us-ri	Rhode Island
+us-vt	Vermont
+us-al	Alabama
+us-fl	Florida
+us-ga	Georgia
+us-ms	Mississippi
+us-sc	Süd - Karolina
+us-il	Illinois
+us-in	Indianapolis
+us-ky	Kentucky
+us-nc	Nord - Karolina
+us-oh	Ohio
+us-tn	Tennessee
+us-va	Virginia   
+us-wi	Wisconsin
+us-wv	West Virginia
+us-de	Delaware
+us-md	Maryland
+us-nj	New Jersey
+us-ny	New York
+us-pa	Pennsylvania
+us-me	Maine
+us-mi	Michigan
+Mesa	Mesa
+Irvine	Irvine
+Fort_Lauderdale	Fort Lauderdale
+Long_Beach	Long Beach
+Providence	Providence
+Virginia_Beach	Virginia Beach
+Oakland	Oakland
+West_Palm_Beach	West Palm Beach
+Columbus	Columbus
+San_Bernardino	San Bernardino
+Bridgeport	Bridgeport
+Kansas_City	Kansas City
+Ft._Worth	Fort Worth
+Austin	Austin
+Orlando	Orlando
+Indianapolis	Indianapolis
+Baltimore	Baltimore
+Sacramento	Sacramento
+Las_Vegas	Las Vegas
+Portland	Portland
+San_Antonio	San Antonio
+Raleigh	Raleigh
+Cleveland	Cleveland
+Cincinnati	Cincinnati
+Memphis	Memphis
+Norfolk	Norwolk
+Milwaukee	Milwaukee
+Buffalo	Buffalo
+Pittsburgh	Pittsburgh
+Minneapolis	Minneapolis
+Seattle	Seattle
+Phoenix	Phoenix
+San_Diego	San Diego
+St._Louis	Saint Louis
+Dallas	Dallas
+Boston	Boston
+Tampa	Tampa
+Philadelphia	Philadelphia
+Detroit	Detroit
+gf	Französisch - Guayana
