@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'proso_feedback',
     'proso_flashcards',
     'social_auth',
+    'geography',
 )
 
 MIDDLEWARE_CLASSES = (
