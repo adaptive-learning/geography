@@ -39,6 +39,9 @@
     }).when('/es/:somepath?', {
       controller : 'ReloadController',
       templateUrl : 'loading.html'
+    }).when('/de/:somepath?', {
+      controller : 'ReloadController',
+      templateUrl : 'loading.html'
     }).when('/cs/:somepath/:more?/:path?', {
       controller : 'ReloadController',
       templateUrl : 'loading.html'
@@ -46,6 +49,9 @@
       controller : 'ReloadController',
       templateUrl : 'loading.html'
     }).when('/es/:somepath/:more?/:path?', {
+      controller : 'ReloadController',
+      templateUrl : 'loading.html'
+    }).when('/de/:somepath/:more?/:path?', {
       controller : 'ReloadController',
       templateUrl : 'loading.html'
     }).when('/about', {
