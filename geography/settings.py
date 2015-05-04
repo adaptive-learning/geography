@@ -181,6 +181,7 @@ LOGGING = {
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
+            'filters': ['require_debug_true'],
             'formatter': 'simple'
         },
         'request': {
@@ -199,9 +200,19 @@ LOGGING = {
             'handlers': ['console', 'request'],
             'propagate': True,
             'level': 'DEBUG'
+        },
+        'django.db.backends': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
         }
-    }
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        }
+    },
 }
+
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
