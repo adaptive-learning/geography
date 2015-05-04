@@ -72,7 +72,7 @@ class Command(BaseCommand):
             if len(filtered) == 0:
                 raise FlashcardException("There is no flashcard: %s, %s, %s" % (place_code, map_code, lang))
             if len(filtered) == 1:
-                flashcards[place_code, map_code, lang] = flashcard
+                flashcards[place_code, map_code, lang] = filtered[0][1]
                 return mask(filtered[0][1])
             filtered_dict = dict(filtered)
             map_codes = ['world', 'europe', 'africa', 'asia', 'namerica', 'samerica', 'oceania']
