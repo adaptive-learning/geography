@@ -30,6 +30,11 @@ class Command(BaseCommand):
             default=1000000,
             type=int,
             help='Maximum number of loaded answer'),
+        make_option(
+            '--batch-size',
+            dest='batch_size',
+            default=100,
+            type=int),
     )
 
     LANGUAGES = {
@@ -47,7 +52,7 @@ class Command(BaseCommand):
         with transaction.atomic():
             with closing(connection.cursor()) as cursor:
                 cursor.execute('SET CONSTRAINTS ALL DEFERRED;')
-            self.migrate_answers(options['geography_database'], clean=options['clean'], limit=options['limit'])
+            self.migrate_answers(options['geography_database'], clean=options['clean'], limit=options['limit'], batch_size=options['batch_size'])
         print ' -- commit transaction'
 
     def load_flashcards(self):
@@ -56,8 +61,9 @@ class Command(BaseCommand):
     def get_flashcard(self, map_code, place_code, lang, flashcards, mask=lambda o: o.item_id if o else None):
         if place_code is None:
             return None
-        if place_code.startswith('us-'):
-            map_code = 'us'
+        place_code_split = place_code.split('-')
+        if len(place_code_split) > 1 and place_code_split[0] in ['cn', 'br', 'ar', 'mx', 'ca', 'gb', 'de', 'fr', 'es', 'at', 'in', 'au', 'sk', 'us', 'it', 'cz']:
+            map_code = place_code_split[0]
         if map_code is not None:
             place_code = '%s-%s' % (map_code, place_code)
         flashcard = flashcards.get((place_code, map_code, lang))
@@ -66,17 +72,20 @@ class Command(BaseCommand):
             if len(filtered) == 0:
                 raise FlashcardException("There is no flashcard: %s, %s, %s" % (place_code, map_code, lang))
             if len(filtered) == 1:
+                flashcards[place_code, map_code, lang] = flashcard
                 return mask(filtered[0][1])
             filtered_dict = dict(filtered)
             map_codes = ['world', 'europe', 'africa', 'asia', 'namerica', 'samerica', 'oceania']
-            for map_code in map_codes:
-                flashcard = filtered_dict.get((place_code, map_code, lang))
+            for mc in map_codes:
+                flashcard = filtered_dict.get((place_code, mc, lang))
                 if flashcard:
+                    flashcards[place_code, map_code, lang] = flashcard
                     return mask(flashcard)
+            flashcards[place_code, map_code, lang] = filtered[0][1]
             return mask(filtered[0][1])
         return mask(flashcard)
 
-    def migrate_answers(self, source_database, clean=True, limit=1000000):
+    def migrate_answers(self, source_database, clean=True, limit=1000000, batch_size=100):
         prev_max_answer = 0
         if clean:
             print ' -- delete answers'
@@ -125,15 +134,31 @@ class Command(BaseCommand):
                 ''', [prev_max_answer, limit])
             with closing(connection.cursor()) as cursor_dest:
                 progress_bar = progress.bar(cursor_source, every=max(1, cursor_source.rowcount / 100), expected_size=cursor_source.rowcount)
+                all_option_values = []
+                all_ab_values = []
                 for row in progress_bar:
+                    if len(all_option_values) >= batch_size:
+                        self.insert_batch(
+                            cursor_dest,
+                            'proso_flashcards_flashcardanswer_options',
+                            ['flashcardanswer_id', 'flashcard_id'],
+                            all_option_values)
+                        all_option_values = []
+                    if len(all_ab_values) >= batch_size:
+                        self.insert_batch(
+                            cursor_dest,
+                            'proso_models_answer_ab_values',
+                            ['answer_id', 'value_id'],
+                            all_ab_values)
+                        all_ab_values = []
                     try:
+                        general_answer_id = row[9]
                         lang = self.LANGUAGES[row[8]]
                         item_asked_id = self.get_flashcard(row[6], row[1], lang, flashcards)
                         item_id = item_asked_id
                         item_answered_id = self.get_flashcard(row[6], row[2], lang, flashcards)
                         guess = 0 if row[10] == 0 else 1.0 / row[10]
                         direction = self.DIRECTIONS[row[3]]
-                        general_answer_id = row[9]
                         cursor_dest.execute(
                             '''
                             INSERT INTO proso_models_answer
@@ -147,24 +172,36 @@ class Command(BaseCommand):
                             VALUES (%s, %s)
                             ''', [direction, general_answer_id])
                         options = geography_options.get_options(general_answer_id)
-                        for item_id in map(lambda i: self.get_flashcard(row[6], i, lang, flashcards, mask=lambda o: o.id if o else None), options):
-                            cursor_dest.execute(
-                                '''
-                                INSERT INTO proso_flashcards_flashcardanswer_options
-                                    (flashcardanswer_id, flashcard_id)
-                                VALUES (%s, %s)
-                                ''', [general_answer_id, item_id])
+                        if len(options) > 0:
+                            all_option_values.extend(map(
+                                lambda i: (general_answer_id, self.get_flashcard(row[6], i, lang, flashcards, mask=lambda o: o.id if o else None)),
+                                options))
                         ab_values = geography_ab_values.get_values(general_answer_id)
-                        for value_id in ab_values:
-                            cursor_dest.execute(
-                                '''
-                                INSERT INTO proso_models_answer_ab_values
-                                    (answer_id, value_id)
-                                VALUES (%s, %s)
-                                ''', [general_answer_id, value_id])
+                        if len(ab_values) > 0:
+                            all_ab_values.extend(map(lambda v: (general_answer_id, v), ab_values))
                     except FlashcardException as e:
                         print general_answer_id, '|', str(e)
+                if len(all_option_values) > 0:
+                    self.insert_batch(
+                        cursor_dest,
+                        'proso_flashcards_flashcardanswer_options',
+                        ['flashcardanswer_id', 'flashcard_id'],
+                        all_option_values)
+                if len(all_ab_values) > 0:
+                    self.insert_batch(
+                        cursor_dest,
+                        'proso_models_answer_ab_values',
+                        ['answer_id', 'value_id'],
+                        all_ab_values)
 
+    def insert_batch(self, cursor, table_name, columns, values_list):
+        pattern = '(' + ','.join(['{}' for i in columns]) + ')'
+        values = map(lambda vals: pattern.format(*vals), values_list)
+        cursor.execute('INSERT INTO {} ({}) VALUES {}'.format(
+            table_name,
+            ','.join(columns),
+            ','.join(values)
+        ))
 
 class FlashcardException(Exception):
     pass
@@ -193,6 +230,7 @@ class GeographyOptions:
                 WHERE answer_id >= %s AND answer_id <= %s
                 ''', [answer_id, answer_id + self._batch_size])
             result = defaultdict(list)
+            self._max_answer_id = self._max_answer_id + self._batch_size
             for row in cursor:
                 self._max_answer_id = max(self._max_answer_id, row[0])
                 result[row[0]].append(row[1])
@@ -247,6 +285,7 @@ class GeographyABValues:
                 WHERE answer_id >= %s AND answer_id <= %s
                 ''', [answer_id, answer_id + self._batch_size])
             result = defaultdict(list)
+            self._max_answer_id = self._max_answer_id + self._batch_size
             for row in cursor:
                 self._max_answer_id = max(self._max_answer_id, row[0])
                 result[row[0]].append(row[1])
