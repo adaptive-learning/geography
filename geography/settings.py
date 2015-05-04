@@ -13,9 +13,9 @@ SECRET_KEY = os.getenv('PROSO_SECRET_KEY', 'really secret key')
 ON_PRODUCTION = False
 ON_STAGING = False
 
-if 'PROSO_ON_PRODUCTION' in os.environ:
+if os.environ.get('PROSO_ON_PRODUCTION', False):
     ON_PRODUCTION = True
-if 'PROSO_ON_STAGING' in os.environ:
+if os.environ.get('PROSO_ON_STAGING', False):
     ON_STAGING = True
 
 if ON_PRODUCTION:
