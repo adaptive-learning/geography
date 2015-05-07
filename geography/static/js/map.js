@@ -65,7 +65,7 @@
           'fill' : function(d) {
             var state = config.places && config.places[d.code];
             return state && state.displayed ?
-              colorScale(state.probability).brighten((1 - state.certainty) * 80).hex() :
+              colorScale(state.prediction).hex() :
               '#fff';
           },
           'stroke-width' : STROKE_WIDTH,
@@ -89,7 +89,7 @@
           'stroke' : function(d) {
             var state = config.places && config.places[d.code];
             return state && state.displayed ?
-              colorScale(state.probability).brighten((1 - state.certainty) * 80).hex() :
+              colorScale(state.prediction).hex() :
               colors.WATER_COLOR;
           },
           'transform' : ''
@@ -262,7 +262,7 @@
         var name = ( place ?
           '<div class="label label-default">' +
             '<i class="flag-' + d.code + '"></i> ' +
-            place.name +
+            place.term.name +
             '</div>' :
           '');
         var description = (place && place.displayed ?
@@ -270,8 +270,8 @@
             gettext('Odhad znalosti') + ': ' + 
               '<span class="badge badge-default">' +
                 '<i class="color-indicator" style="background-color :' +
-                colorScale(place.probability).hex() + '"></i>' +
-                10 * place.probability + ' / 10 ' +
+                colorScale(place.prediction).hex() + '"></i>' +
+                Math.round(10 * place.prediction) + ' / 10 ' +
               '</span><br><br>' +
             (d.population ? gettext('Počet obyvatel') + ': ' +
               '<span class="badge badge-default">' +
@@ -451,7 +451,7 @@
             layers.showLayer(layer);
           });
         },
-        updatePlaces : function(placesByTypes) {
+        updateItems : function(placesByTypes) {
           if (layers === undefined) {
             _placesByTypes = placesByTypes;
             return;
@@ -466,6 +466,7 @@
           });
           
           var places = $filter('StatesFromPlaces')(placesByTypes);
+          console.log('pc', places);
           config.places = places;
           angular.forEach(layers.getAll(), function(layer) {
             var layerConfig = layers.getConfig(layer);
@@ -535,7 +536,7 @@
           highlighted.clear();
           layers = initLayers(myMap.map, config);
           if (_placesByTypes !== undefined) {
-            myMap.updatePlaces(_placesByTypes);
+            myMap.updateItems(_placesByTypes);
           }
           myMap.panZoom = mapFunctions.initMapZoom(myMap.map.paper);
           callback(myMap);

@@ -77,19 +77,19 @@
           return pt.places.length;
         });
         console.log(placeTypes);
-        updatePlaces(placeTypes);
+        updateItems(placeTypes);
       }).
       error(function(){
         $scope.error = true;
       });
 
     $scope.placeClick = function(place) {
-      $scope.imageController.highlightItem(place.code);
+      $scope.imageController.highlightItem(place.description);
     };
     
     $scope.updateMap = function(type) {
       type.hidden = !type.hidden; 
-      //$scope.imageController.updateItems($scope.placesTypes);
+      $scope.imageController.updateItems($scope.placesTypes);
     };
     
     $scope.updateCat = function(category) {
@@ -101,10 +101,10 @@
         type.hidden = true;
       });
       category.hidden = newHidden;
-      updatePlaces($scope.placesTypes);
+      updateItems($scope.placesTypes);
     };
 
-    function updatePlaces(data) {
+    function updateItems(data) {
       $scope.placesTypes = data;
       angular.forEach($scope.typeCategories, function(category) {
         var filteredTypes = $filter('isTypeCategory')($scope.placesTypes, category);
@@ -112,7 +112,7 @@
           type.hidden = category.hidden;
         });
       });
-      //$scope.imageController.updateItems($scope.placesTypes);
+      $scope.imageController.updateItems($scope.placesTypes);
       $scope.name = mapTitle($scope.part, user);
     }
   }])

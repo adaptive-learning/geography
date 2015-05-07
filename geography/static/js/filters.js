@@ -17,7 +17,7 @@
         angular.forEach(data, function(category) {
           if (!category.haveMaps && category.places) {
             angular.forEach(category.places, function(place) {
-              places[place.code] = place;
+              places[place.description] = place;
             });
           }
         });
