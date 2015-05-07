@@ -189,7 +189,7 @@ msgid "autonomní společenství"
 msgstr "Autonome Gesellschaft"
 
 #: geography/utils/model.py:162
-msgctxt "geography/utils/model.py:162"
+msgctxt "singular"
 msgid "pohoří"
 msgstr "Gebirge"
 
@@ -246,7 +246,7 @@ msgid "autonomních společenství"
 msgstr "Autonome Gesselschaft"
 
 #: geography/utils/model.py:190
-msgctxt "geography/utils/model.py:190"
+msgctxt "plural"
 msgid "pohoří"
 msgstr "Gebirgen"
 
@@ -268,7 +268,7 @@ msgstr "Wie heißt %(place_singular)s %(highlighted)s auf der Karte?"
 
 #: geography%2Fviews%2Fbase.py%3A38+proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.html%3A6+proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.html%3A55+proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.plain.txt%3A2+templates%2Fhome.html%3A58+templates%2Fgenerated%2Fhomepage.html%3A19
 msgid "Slepé Mapy"
-msgstr "stumme Karten"
+msgstr "Stumme Karten"
 
 #: geography/views/base.py:39
 msgid "inteligentní aplikace na procvičování zeměpisu"
