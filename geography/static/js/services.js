@@ -361,7 +361,7 @@
 
     var that = {
       getFlashcards: function (filter) {
-        filter.limit = 100;
+        filter.all = 'True';
         filter.stats = 'True';
         var promise = $http.get('/flashcards/flashcards', {params: filter});
         return promise;

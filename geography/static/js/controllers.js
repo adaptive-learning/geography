@@ -41,16 +41,41 @@
     $scope.typeCategories = flashcardService.getCategories($scope.part);
 
     var filter = {
-      contexts : [$routeParams.part],
+      contexts : JSON.stringify([$routeParams.part]),
     };
 
     flashcardService.getFlashcards(filter).
       success(function(data){
-        var placeTypes = [ {
-          name: 'Státy',
-          slug: 'state',
-          places : data.data,
-        }];
+        var placeTypes = [
+          'state',
+          'city',
+          'region',
+          'province',
+          'region_cz',
+          'region_it',
+          'autonomous_comunity',
+          'bundesland',
+          'river',
+          'lake',
+          'mountains',
+          'island',
+        ];
+        //TODO add all names
+        var placeTypeNames = {
+          'state' : 'Státy',
+          'city' : 'Města',
+        };
+        placeTypes = placeTypes.map(function(pt) {
+          return {
+            name : placeTypeNames[pt] || pt,
+            slug : pt,
+            places : data.data.filter(function(fc) {
+              return fc.term.type == pt;
+            }),
+          };
+        }).filter(function(pt) {
+          return pt.places.length;
+        });
         console.log(placeTypes);
         updatePlaces(placeTypes);
       }).
