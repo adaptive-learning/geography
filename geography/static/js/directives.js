@@ -6,7 +6,7 @@
   .directive('placeLabel', ['colorScale', 'gettext', function(colorScale, gettext) {
     return {
       restrict : 'A',
-      template : '<i class="flag-{{place.code}}"></i> {{place.name}}',
+      template : '<i class="flag-{{place.description}}"></i> {{place.term.name}}',
       link : function($scope, elem) {
         elem.addClass('label');
         elem.addClass('label-default');
@@ -18,8 +18,8 @@
                 gettext('Odhad znalosti') + 
                 ' <span class="badge badge-default">' +
                   '<i class="color-indicator" style="background-color :' +
-                  colorScale($scope.place.probability).hex() + '"></i>' +
-                  10 * $scope.place.probability + ' / 10 ' +
+                  colorScale($scope.place.prediction).hex() + '"></i>' +
+                  Math.round(10 * $scope.place.prediction) + ' / 10 ' +
                 '</span>' +
                '</div>'
         });

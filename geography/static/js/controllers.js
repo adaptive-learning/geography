@@ -38,19 +38,21 @@
       function($scope, $routeParams, $filter, flashcardService, mapTitle) {
     $scope.part = $routeParams.part;
     var user = $routeParams.user || '';
-    $scope.typeCategories = [{
-      types: ['state']
-      }
-    ]; // flashcardService.getCategories($scope.part);
-    
+    $scope.typeCategories = flashcardService.getCategories($scope.part);
 
     var filter = {
-      'part' : $scope.part,
+      contexts : [$routeParams.part],
     };
+
     flashcardService.getFlashcards(filter).
       success(function(data){
-        console.log(data.data);
-        updatePlaces(data.data);
+        var placeTypes = [ {
+          name: 'Státy',
+          slug: 'state',
+          places : data.data,
+        }];
+        console.log(placeTypes);
+        updatePlaces(placeTypes);
       }).
       error(function(){
         $scope.error = true;
@@ -62,7 +64,7 @@
     
     $scope.updateMap = function(type) {
       type.hidden = !type.hidden; 
-      $scope.imageController.updateItems($scope.placesTypes);
+      //$scope.imageController.updateItems($scope.placesTypes);
     };
     
     $scope.updateCat = function(category) {
@@ -85,7 +87,7 @@
           type.hidden = category.hidden;
         });
       });
-      $scope.imageController.updateItems($scope.placesTypes);
+      //$scope.imageController.updateItems($scope.placesTypes);
       $scope.name = mapTitle($scope.part, user);
     }
   }])

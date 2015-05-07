@@ -44,12 +44,12 @@
                learned:(type.places|filter:{learned:true}).length
              } }}"></div>
         <div class="view-places" collapse="type.hidden">
-          <div ng-hide="(type.places|filter:{displayed:true}).length" class="alert alert-info">
+          <div ng-hide="type.places.length" class="alert alert-info">
             {{'Zde zatím nebylo nic procvičováno.' | trans }}
           </div>
-          <span ng-repeat="place in type.places|filter:{displayed:true}"
+          <span ng-repeat="place in type.places"
                 ng-click="placeClick(place)"
-                style="border-bottom: 5px solid {{place.probability|probColor}};"
+                style="border-bottom: 5px solid {{place.prediction|probColor}};"
                 place-label>
           </span>
           <div class="clearfix"></div>
