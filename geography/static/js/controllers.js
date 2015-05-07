@@ -137,7 +137,7 @@
       }
       if ($filter('isFindOnMapType')($scope.question) && active.options) {
         var codes = active.options.map(function(option) {
-          return option.code;
+          return option.description;
         });
         highlighted.setHighlighted(codes);
         $scope.imageController.highlightItems(codes, colors.NEUTRAL);
@@ -148,8 +148,9 @@
       var asked = $scope.question.description;
       highlightAnswer(asked, selected);
       $scope.question.answered_code = selected;
-      // $scope.progress = 
-      practiceService.saveAnswerToCurrentFC(42, 1000);//TODO real params
+      $scope.question.responseTime += new Date().valueOf();
+      practiceService.saveAnswerToCurrentFC(42, $scope.question.responseTime);//TODO real params
+      $scope.progress = 100 * (practiceService.getSummary().count / practiceService.getConfig().set_length);
       user.addAnswer(asked == selected);
       if (asked == selected) {
         $timeout(function() {
@@ -163,7 +164,6 @@
     $scope.next = function() {
       if ($scope.progress < 100) {
         practiceService.getFlashcard().then(function(q) {
-          console.log(q);
           setQuestion(q);
         }, function(){
           $scope.error = true;
@@ -187,12 +187,13 @@
       $scope.question.slideOut = true;
       $scope.layer = undefined;
       // prevents additional points gain. issue #38
-      $scope.summary = practiceService.summary();
+      $scope.summary = practiceService.getSummary();
+      console.log($scope.summary);
       $scope.showSummary = true;
       $scope.imageController.clearHighlights();
       $scope.imageController.hideLayers();
-      $scope.imageController.showSummaryTooltips($scope.summary.questions);
-      angular.forEach($scope.summary.questions, function(q) {
+      //$scope.imageController.showSummaryTooltips($scope.summary.flashcards);
+      angular.forEach($scope.summary.flashcards, function(q) {
         var correct = q.description == q.answered_code;
         $scope.imageController.showLayerContaining(q.description);
         $scope.imageController.highlightItem(q.description, correct ? colors.GOOD : colors.BAD, 1);
@@ -202,10 +203,12 @@
     }
 
     function setQuestion(active) {
+      console.log(active);
       if ($scope.question) {
         $scope.question.slideOut = true;
       }
       $scope.question = active;
+      $scope.question.responseTime = - new Date().valueOf();
       $scope.questions.push(active);
       $scope.imageController.clearHighlights();
       $scope.highlight();
@@ -214,8 +217,8 @@
 
     function highlightOptions(selected) {
       $scope.question.options.map(function(o) {
-        o.correct = o.code == $scope.question.description;
-        o.selected = o.code == selected;
+        o.correct = o.description == $scope.question.description;
+        o.selected = o.description == selected;
         o.disabled = true;
         return o;
       });
@@ -240,7 +243,6 @@
       practiceService.setFilter(filter);
       practiceService.getFlashcard().then(function(q) {
         $scope.questions = [];
-        console.log(q);
         setQuestion(q);
       }, function(){
         $scope.error = true;

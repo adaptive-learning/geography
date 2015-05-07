@@ -62,12 +62,16 @@
     };
   })
 
-  .filter('questionText', function() {
+  .filter('questionText', function(gettext) {
     return function(question) {
       if (question && question.direction == "t2d") {
-        return "Vyber na mapě";
+        if (question.options) {
+          return gettext("Ze zvýrazněných položek na mapě vyber");
+        } else {
+          return gettext("Vyber na mapě");
+        }
       } else if (question && question.direction == "d2t") {
-        return "Jak se jmenuje položka zvýrazněná na mapě?";
+        return gettext("Jak se jmenuje položka zvýrazněná na mapě?");
       }
       return "Error";
     };
