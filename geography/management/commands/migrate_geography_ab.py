@@ -1,10 +1,7 @@
 from django.core.management.base import BaseCommand
-import json
 from django.db import connection, connections
-from django.core.management import call_command
 from contextlib import closing
 from django.db import transaction
-from collections import defaultdict
 from optparse import make_option
 
 
@@ -17,7 +14,7 @@ class Command(BaseCommand):
             type=str,
             default='default',
             help='Database where the data for geogaphy app is.'),
-        )
+    )
 
     def handle(self, *args, **options):
         with transaction.atomic():
@@ -75,8 +72,3 @@ class Command(BaseCommand):
                             (user_id, value_id)
                         VALUES (%s, %s)
                         ''', [uservalues[row[0]], row[1]])
-
-
-
-
-

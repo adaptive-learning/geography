@@ -203,6 +203,7 @@ class Command(BaseCommand):
             ','.join(values)
         ))
 
+
 class FlashcardException(Exception):
     pass
 

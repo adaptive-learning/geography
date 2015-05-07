@@ -15,6 +15,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "geography.settings")
 
 from django.core.wsgi import get_wsgi_application
 
+
 def application(environ, start_response):
     # pass the WSGI environment variables on through to os.environ
     for k, v in environ.iteritems():
