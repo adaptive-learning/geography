@@ -259,13 +259,14 @@
     };
   }])
 
-  .controller('AppOverview', ['$scope', 'places', '$http', '$routeParams',
-      function($scope, places, $http, $routeParams) {
+  .controller('AppOverview', ['$scope', 'places', '$http', '$routeParams', 'categoryService',
+      function($scope, places, $http, $routeParams, categoryService) {
 
     var mapSkills = {};
 
     $scope.user = $routeParams.user || '';
     $scope.places = places;
+    /*
     $http.get('/mapskill/' + $scope.user).success(function(data){
       angular.forEach(data, function(p){
         mapSkills[p.code] = mapSkills[p.code] || {};
@@ -273,9 +274,10 @@
       });
       $scope.mapSkillsLoaded = true;
     });
-    places.getOverview().success(function(data){
-      $scope.mapCategories = data;
-    });
+    */
+    categoryService.getAll().then(function(categories){
+      $scope.mapCategories = categories;
+    }, function(){});
 
     $scope.mapSkills = function(code, type) {
       if (!$scope.mapSkillsLoaded) {

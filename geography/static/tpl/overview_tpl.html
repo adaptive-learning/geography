@@ -4,23 +4,23 @@
   </div>
   <div class="map-categories" ng-repeat="c in mapCategories">
       <h2 class="col-md-offset-1" ng-hide="c.name == 'World'"> 
-        {{places.getPlaceTypeName(c.slug) || c.name}}
+        {{places.getPlaceTypeName(c.identifier) || c.name}}
       </h2>
       <ul>
         <li class="overview-row" ng-repeat="map in c.maps">
-          <h3 class="col-md-offset-1 col-sm-3"><a href="#/view/{{map.slug}}/{{user}}">{{map.name}}</a>
+          <h3 class="col-md-offset-1 col-sm-3"><a href="#/view/{{map.identifier}}/{{user}}">{{map.name}}</a>
             <div class="map-progress" count="{{map.placesTypes|sumCounts}}" 
-                 skills="{{mapSkills(map.slug)}}">
+                 skills="{{mapSkills(map.identifier)}}">
             </div>
           </h3>
           <ul class="col-sm-9 col-md-7 inline">
             <li class="inline-block" ng-repeat="layer in map.placesTypes" >
-              <a href="#/practice/{{map.slug}}/{{layer.slug}}" 
+              <a href="#/practice/{{map.identifier}}/{{layer.identifier}}" 
                  class="btn btn-primary"
                  tooltip="{{'Procvičovat'| trans}}">
-                 {{places.getPlaceTypeName(layer.slug) || layer.name}}</a>
+                 {{places.getPlaceTypeName(layer.identifier) || layer.name}}</a>
               <div class="map-progress" count="{{layer.count}}" 
-                   skills="{{mapSkills(map.slug, layer.slug)}}">
+                   skills="{{mapSkills(map.identifier, layer.identifier)}}">
               </div>
             </li>
           </ul>

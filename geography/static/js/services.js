@@ -306,24 +306,36 @@
     return that;
   }])
 
-  .factory('categoryService', ["$http", function ($http) {
+  .factory('categoryService', ["$http", "$q", function ($http, $q) {
     var categories = [];
     var categoriesByIdentifier = {};
+    var httpPromise;
+    var deferredCategory = $q.defer();
     function init(){
-      $http.get('/flashcards/categorys').success(function(data) {
+      var filter = {
+        all : 'True',
+      };
+      httpPromise = $http.get('/flashcards/categorys', {params: filter}).success(function(data) {
         categories = data.data;
         for (var i = 0; i < data.data.length; i++) {
           categoriesByIdentifier[data.data[i].identifier] = data.data[i];
         }
-      }).error(function(){
+        var allCategories = [ { 
+          maps : data.data,
+        }];
+        deferredCategory.resolve(allCategories);
+      }).error(function(error){
         console.error("Something went wrong while loading categories from backend.");
+        deferredCategory.reject(error);
       });
     }
     init();
     var that = {
       getCategory: function (identifier) {
-        console.log(categoriesByIdentifier);
         return categoriesByIdentifier[identifier];
+      },
+      getAll: function () {
+        return deferredCategory.promise;
       },
     };
     return that;
