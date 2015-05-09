@@ -41,11 +41,11 @@
     $scope.typeCategories = flashcardService.getCategories($scope.part);
 
     var filter = {
-      contexts : JSON.stringify([$routeParams.part]),
+      contexts : [$routeParams.part],
     };
 
     flashcardService.getFlashcards(filter).
-      success(function(data){
+      then(function(data){
         var placeTypes = [
           'state',
           'city',
@@ -69,7 +69,7 @@
           return {
             name : placeTypeNames[pt] || pt,
             slug : pt,
-            places : data.data.filter(function(fc) {
+            places : data.filter(function(fc) {
               return fc.term.type == pt;
             }),
           };
@@ -78,8 +78,7 @@
         });
         console.log(placeTypes);
         updateItems(placeTypes);
-      }).
-      error(function(){
+      }, function(){
         $scope.error = true;
       });
 
@@ -118,9 +117,11 @@
   }])
 
   .controller('AppPractice', ['$scope', '$routeParams', '$timeout', '$filter',
-      'practiceService', 'user', 'events', 'colors', '$', 'highlighted', 'categoryService',
+      'practiceService', 'user', 'events', 'colors', '$', 'highlighted', 
+      'categoryService', 'flashcardService',
       function($scope, $routeParams, $timeout, $filter,
-      practiceService, user, events, colors, $, highlighted, categoryService) {
+      practiceService, user, events, colors, $, highlighted, 
+      categoryService, flashcardService) {
     $scope.part = $routeParams.part;
     $scope.placeType = $routeParams.place_type;
     $scope.progress = 0;
@@ -149,7 +150,8 @@
       highlightAnswer(asked, selected);
       $scope.question.answered_code = selected;
       $scope.question.responseTime += new Date().valueOf();
-      practiceService.saveAnswerToCurrentFC(42, $scope.question.responseTime);//TODO real params
+      var selectedFC = flashcardService.getFlashcardByDescription(selected);
+      practiceService.saveAnswerToCurrentFC(selectedFC.id, $scope.question.responseTime);
       $scope.progress = 100 * (practiceService.getSummary().count / practiceService.getConfig().set_length);
       user.addAnswer(asked == selected);
       if (asked == selected) {
@@ -241,6 +243,7 @@
       if ($routeParams.place_type) {
         filter.types = [$routeParams.place_type];
       }
+      flashcardService.getFlashcards(filter);
       practiceService.setFilter(filter);
       practiceService.getFlashcard().then(function(q) {
         $scope.questions = [];

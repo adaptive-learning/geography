@@ -88,9 +88,10 @@
     };
   })
 
-  .filter('codeToName',['places', function(places) {
+  .filter('codeToName',['flashcardService', function(flashcardService) {
     return function(code) {
-      return places.getName(code) || "Neznámý";
+      var fc = flashcardService.getFlashcardByDescription(code);
+      return fc ? fc.term.name : "Neznámý";
     };
   }])
 

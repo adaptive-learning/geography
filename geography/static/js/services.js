@@ -344,8 +344,9 @@
     return that;
   }])
 
-  .factory('flashcardService', ["$http", "$location",
-      function ($http, $location) {
+  .factory('flashcardService', ["$http", "$q",
+      function ($http, $q) {
+    var flashcardCache = {};
     var categoriesCache = {};
     var categories = [
       {
@@ -374,12 +375,33 @@
       }
     ];
 
+    function updateFlashcardCache(flashcards) {
+      for (var i = 0; i < flashcards.length; i++) {
+        var fc = flashcards[i];
+        flashcardCache[fc.description] = fc;
+      }
+    }
+
     var that = {
       getFlashcards: function (filter) {
+        var deferredFlashcards = $q.defer();
+        for (var i in filter) {
+          filter[i] = angular.toJson(filter[i]);
+        }
         filter.all = 'True';
         filter.stats = 'True';
-        var promise = $http.get('/flashcards/flashcards', {params: filter});
-        return promise;
+        $http.get('/flashcards/flashcards', {
+          params: filter
+        }).success(function(data) {
+          deferredFlashcards.resolve(data.data);
+          updateFlashcardCache(data.data);
+        }).error(function(data) {
+          deferredFlashcards.reject(data);
+        });
+        return deferredFlashcards.promise;
+      },
+      getFlashcardByDescription : function (description) {
+        return flashcardCache[description];
       },
       getCategories : function(part) {
         if (!categoriesCache[part]) {
