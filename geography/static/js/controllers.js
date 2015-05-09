@@ -188,6 +188,7 @@
       $scope.layer = undefined;
       // prevents additional points gain. issue #38
       $scope.summary = practiceService.getSummary();
+      $scope.summary.correctlyAnsweredRatio = $scope.summary.correct / $scope.summary.count;
       console.log($scope.summary);
       $scope.showSummary = true;
       $scope.imageController.clearHighlights();

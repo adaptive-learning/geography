@@ -62,6 +62,7 @@
     }).otherwise({
       //redirectTo : '/'
     });
+
     var languages = ['cs', 'en', 'es'];
     for (var i = 0; i < languages.length; i++) {
       $routeProvider.when('/' + languages[i] + '/:somepath?', {

@@ -70,17 +70,19 @@
                  style="width: {{(1 - summary.correctlyAnsweredRatio) | percent }};">
             </div>
           </div>
-          <span ng-repeat="q in summary.questions" 
-                ng-click="map.highlightState(q.description)"
-                class="label {{q.description != q.answered_code &&
+          <span ng-repeat="fc in summary.flashcards" 
+                ng-click="map.highlightState(fc.description)"
+                class="label {{fc.description != fc.answered_code &&
                   'label-unlearned' || 'label-learned' }} ">
-            <i class="flag-{{q.description}}"></i> {{q.place}}
+            <i class="flag-{{fc.description}}"></i> {{fc.term.name}}
           </span>
         </div>
         <div class="col-sm-6" ng-if="user.username" >
           <div class="level-progress-bar"></div>
+          <!--
           <div goal-progress map="{{part}}" place-type="{{placeType}}">
         </div>
+          -->
         <h2 class="clearfix" ng-show="errorMessage != undefined" ng-bind="errorMessage"></h2>
         </div>
       </div>
