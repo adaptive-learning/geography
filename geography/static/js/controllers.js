@@ -118,14 +118,14 @@
   }])
 
   .controller('AppPractice', ['$scope', '$routeParams', '$timeout', '$filter',
-      'practiceService', 'user', 'events', 'colors', 'places', '$', 'highlighted', 'categoryService',
+      'practiceService', 'user', 'events', 'colors', '$', 'highlighted', 'categoryService',
       function($scope, $routeParams, $timeout, $filter,
-      practiceService, user, events, colors, places, $, highlighted, categoryService) {
+      practiceService, user, events, colors, $, highlighted, categoryService) {
     $scope.part = $routeParams.part;
     $scope.placeType = $routeParams.place_type;
     $scope.progress = 0;
     
-    places.practicing($scope.part, $scope.placeType);
+    //places.practicing($scope.part, $scope.placeType);
 
     $scope.highlight = function() {
       var active = $scope.question;
@@ -259,13 +259,12 @@
     };
   }])
 
-  .controller('AppOverview', ['$scope', 'places', '$http', '$routeParams', 'categoryService',
-      function($scope, places, $http, $routeParams, categoryService) {
+  .controller('AppOverview', ['$scope', '$http', '$routeParams', 'categoryService',
+      function($scope, $http, $routeParams, categoryService) {
 
     var mapSkills = {};
 
     $scope.user = $routeParams.user || '';
-    $scope.places = places;
     /*
     $http.get('/mapskill/' + $scope.user).success(function(data){
       angular.forEach(data, function(p){

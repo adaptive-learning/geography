@@ -131,6 +131,7 @@
         return placeTypeNames[slug];
       },
     };
+    /*
     that.getOverview().success(function(data){
       angular.forEach(data, function(category){
         angular.forEach(category.maps, function(map){
@@ -138,6 +139,7 @@
         });
       });
     });
+    */
     return that;
   }])
 
@@ -314,6 +316,7 @@
     function init(){
       var filter = {
         all : 'True',
+        db_orderby : 'name',
       };
       httpPromise = $http.get('/flashcards/categorys', {params: filter}).success(function(data) {
         categories = data.data;

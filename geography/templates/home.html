@@ -111,6 +111,7 @@
                         {% trans "Můj profil" %}
                       </a>
                     </li>
+                    <!--
                     <li>
                       <a href="#/mistakes/" >
                         {% trans "Moje časté chyby" %}
@@ -126,6 +127,7 @@
                         {% trans "Nastavení" %}
                       </a>
                     </li>
+                    -->
                     <li class="forgot-pwd">
                       <a href="#/" ng-click="logout()">
                         {% trans "Odhlásit se" %}
@@ -235,7 +237,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{% url 'geography.views.cached_javascript_catalog' %}"></script>
+    <script src="{% url 'geography.views.cached_javascript_catalog' %}?hack={{LANGUAGE_CODE}}"></script>
     {% for file in js_files %}
     <script src="{{ file }}"></script>
     {% endfor %}

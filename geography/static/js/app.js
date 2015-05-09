@@ -24,7 +24,7 @@
   ])
 
   .value('gettext', gettext || function(x) {return x;})
-  
+
   .constant('domain', window.domain || '')
 
   .config(['$routeProvider', '$locationProvider', 'googleExperimentsProvider',
@@ -32,30 +32,6 @@
     $routeProvider.when('/', {
       templateUrl : 'static/tpl/homepage.html'
     }).when('/login/:somepath/', {
-      controller : 'ReloadController',
-      templateUrl : 'loading.html'
-    }).when('/cs/:somepath?', {
-      controller : 'ReloadController',
-      templateUrl : 'loading.html'
-    }).when('/en/:somepath?', {
-      controller : 'ReloadController',
-      templateUrl : 'loading.html'
-    }).when('/es/:somepath?', {
-      controller : 'ReloadController',
-      templateUrl : 'loading.html'
-    }).when('/de/:somepath?', {
-      controller : 'ReloadController',
-      templateUrl : 'loading.html'
-    }).when('/cs/:somepath/:more?/:path?', {
-      controller : 'ReloadController',
-      templateUrl : 'loading.html'
-    }).when('/en/:somepath/:more?/:path?', {
-      controller : 'ReloadController',
-      templateUrl : 'loading.html'
-    }).when('/es/:somepath/:more?/:path?', {
-      controller : 'ReloadController',
-      templateUrl : 'loading.html'
-    }).when('/de/:somepath/:more?/:path?', {
       controller : 'ReloadController',
       templateUrl : 'loading.html'
     }).when('/about', {
@@ -77,7 +53,7 @@
       templateUrl : 'static/tpl/overview_tpl.html'
     }).when('/u/:user', {
       controller : 'AppUser',
-      templateUrl : 'static/tpl/user_tpl.html'
+      templateUrl : 'static/proso_user/tpl/user_tpl.html'
     }).when('/goals/', {
       templateUrl : 'static/tpl/personal-goals-page_tpl.html'
     }).when('/mistakes/', {
@@ -86,6 +62,16 @@
     }).otherwise({
       //redirectTo : '/'
     });
+    var languages = ['cs', 'en', 'es'];
+    for (var i = 0; i < languages.length; i++) {
+      $routeProvider.when('/' + languages[i] + '/:somepath?', {
+        controller : 'ReloadController',
+        templateUrl : 'loading.html'
+      }).when('/' + languages[i] + '/:somepath/:more?/:path?', {
+        controller : 'ReloadController',
+        templateUrl : 'loading.html'
+      });
+    }
 
     $locationProvider.html5Mode(true);
 
@@ -94,12 +80,12 @@
     });
   }])
 
-  .run(['$rootScope', '$', '$analytics', 'places', 'editableOptions',
-      function($rootScope, $, $analytics, places, editableOptions) {
+  .run(['$rootScope', '$', '$analytics', 'editableOptions',
+      function($rootScope, $, $analytics, editableOptions) {
     $analytics.settings.pageTracking.autoTrackFirstPage = false;
 
     editableOptions.theme = 'bs3';
-    
+
     $rootScope.$on("$routeChangeStart", function(event, next, current) {
       if (current && current.originalPath !== "" && $(window).width() < 770) {
         $("#nav-main").collapse();
@@ -107,10 +93,5 @@
       }
     });
 
-    $('.dropdown-menu a[href^="#/view/"]').each( function(i, link){
-      var code = $(link).attr('href').replace('#/view/', '').replace('/', '');
-      var name = $(link).text();
-      places.setName(code, name);
-    });
   }]);
 }());
