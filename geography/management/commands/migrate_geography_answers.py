@@ -242,6 +242,7 @@ class Sessions:
 
     def __init__(self):
         self._sessions = {}
+        self._locations = {}
 
     def get_session_id(self, user, ip_address, locale, time):
         if ip_address is None or ip_address == '':
@@ -257,9 +258,10 @@ class Sessions:
         return session.id
 
     def _new_session(self, user, locale, ip_address):
-        location = Location(ip_address=ip_address)
-        location.save()
-        session = Session(location=location, user_id=int(user), locale=locale)
+        if not in ip_address in self._locations:
+            location = Location.objects.from_ip_address(ip_address)
+            self._locations[ip_address] = location
+        session = Session(location=self._locations[ip_address], user_id=int(user), locale=locale)
         session.save()
         return session
 
