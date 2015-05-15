@@ -150,6 +150,7 @@ class Command(BaseCommand):
             for row in cursor:
                 category = {
                     'id': row[1],
+                    'type': self.PLACE_TYPES[row[3]],
                     'name-cs': row[4],
                     'name-en': row[5],
                     'name-es': row[6]
