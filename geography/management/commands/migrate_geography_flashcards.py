@@ -42,8 +42,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         categories = self.migrate_categories(options['geography_database'])
-        terms, categories = self.migrate_terms(categories, options['geography_database'])
-        flashcards, contexts = self.migrate_contexts(categories, terms, options['geography_database'])
+        terms, categories, flashcards_to_ignore = self.migrate_terms(categories, options['geography_database'])
+        flashcards, contexts = self.migrate_contexts(categories, terms, flashcards_to_ignore, options['geography_database'])
         with open('geography-flashcards.json', 'w') as f:
             json.dump({
                 'categories': categories.values(),
@@ -54,7 +54,7 @@ class Command(BaseCommand):
         if not options['dry']:
             call_command('load_flashcards', 'geography-flashcards.json')
 
-    def migrate_contexts(self, categories, terms, source_database):
+    def migrate_contexts(self, categories, terms, flashcards_to_ignore, source_database):
 
         def _category2context(c):
             return {
@@ -76,12 +76,16 @@ class Command(BaseCommand):
                     'description': term['id'],
                     'context': contexts[category]['id']
                 }
+                if (category, term['id']) in flashcards_to_ignore:
+                    flashcard['active'] = False
+                    print ' XXX deactivating flashcard', flashcard['id']
                 flashcards.append(flashcard)
         return flashcards, contexts
 
     def migrate_terms(self, categories, source_database):
         terms = {}
         used_categories = {}
+        flashcards_to_ignore = set()
         with closing(connections[source_database].cursor()) as cursor:
             cursor.execute(
                 '''
@@ -119,7 +123,8 @@ class Command(BaseCommand):
                 '''
                 SELECT
                     geography_placerelation.place_id AS map_id,
-                    geography_placerelation_related_places.place_id AS place_id
+                    geography_placerelation_related_places.place_id AS place_id,
+                    type
                 FROM geography_placerelation
                 INNER JOIN geography_placerelation_related_places ON
                     geography_placerelation.id = geography_placerelation_related_places.placerelation_id
@@ -128,7 +133,9 @@ class Command(BaseCommand):
             for row in cursor:
                 terms[row[1]]['categories'].append(categories[row[0]]['id'])
                 used_categories[row[0]] = categories[row[0]]
-        return terms, used_categories
+                if row[2] == 4:
+                    flashcards_to_ignore.add((categories[row[0]]['id'], terms[row[1]]['id']))
+        return terms, used_categories, flashcards_to_ignore
 
     def migrate_categories(self, source_database):
         categories = {}
