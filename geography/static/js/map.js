@@ -15,7 +15,7 @@
 
   .value('$', jQuery)
 
-  .value('$K', Kartograph)
+  .value('$K', window.kartograph())
 
   .value('bboxCache', bboxCache)
 
@@ -26,7 +26,7 @@
     'BRIGHT_GRAY' : '#ddd',
     'WATER_COLOR' : '#73c5ef'
   })
-  
+
   .value('stateAlternatives', [
     "region",
     "province",
@@ -47,7 +47,7 @@
     return scale;
   }])
 
-  .factory('getLayerConfig', ['$log', 'colors', 'colorScale', 'citySizeRatio', 
+  .factory('getLayerConfig', ['$log', 'colors', 'colorScale', 'citySizeRatio',
       'stateAlternatives', 'highlighted',
       function($log, colors, colorScale, citySizeRatio, stateAlternatives, highlighted) {
     return function(config) {
@@ -78,7 +78,7 @@
           }
         }
       };
-      
+
       angular.forEach(stateAlternatives.concat('island', 'mountains'), function(sa){
         layerConfig[sa] = angular.copy(layerConfig.state);
       });
@@ -137,7 +137,7 @@
       return layerConfig;
     };
   }])
-  
+
   .factory('initLayers', ['getLayerConfig', 'stateAlternatives', function(getLayerConfig, stateAlternatives) {
 
     function _hideLayer(layer){
@@ -197,8 +197,8 @@
       return that;
     };
   }])
-  
-  .factory('mapFunctions', ['$timeout', '$', 'stateAlternatives', 'bboxCache', 
+
+  .factory('mapFunctions', ['$timeout', '$', 'stateAlternatives', 'bboxCache',
       function($timeout, $, stateAlternatives, bboxCache){
     var that = {
       getZoomRatio : function(placePath) {
@@ -214,12 +214,12 @@
       initMapZoom : function(paper) {
         var panZoom = paper.panzoom({});
         panZoom.enable();
-  
+
         $('#zoom-in').click(function(e) {
           panZoom.zoomIn(1);
           e.preventDefault();
         });
-  
+
         $('#zoom-out').click(function(e) {
           panZoom.zoomOut(1);
           e.preventDefault();
@@ -248,15 +248,15 @@
             ret = alternative;
           }
         });
-        return ret;        
+        return ret;
       }
     };
     return that;
   }])
-  
+
   .factory('getTooltipGetter', ['$filter', 'colorScale', 'gettext',
       function($filter, colorScale, gettext){
-    return function(places) { 
+    return function(places) {
       return function(d) {
         var place = places && places[d.code];
         var name = ( place ?
@@ -267,7 +267,7 @@
           '');
         var description = (place && place.displayed ?
           '<div>' +
-            gettext('Odhad znalosti') + ': ' + 
+            gettext('Odhad znalosti') + ': ' +
               '<span class="badge badge-default">' +
                 '<i class="color-indicator" style="background-color :' +
                 colorScale(place.prediction).hex() + '"></i>' +
@@ -275,7 +275,7 @@
               '</span><br><br>' +
             (d.population ? gettext('Počet obyvatel') + ': ' +
               '<span class="badge badge-default">' +
-                $filter('number')(d.population) + 
+                $filter('number')(d.population) +
               '</span><br><br>' : '') +
           '</div>' :
             (place && place.summary ?
@@ -288,7 +288,7 @@
       };
     };
   }])
-  
+
   .service('citySizeRatio', function(){
     var min_pop_ratios = [
       [5000000, 1.8],
@@ -307,7 +307,7 @@
       }
     };
   })
-  
+
   .factory('highlighted', function(){
     var places = [];
     return {
@@ -322,7 +322,7 @@
       }
     };
   })
-  
+
   .service('getMapResizeFunction', ['$', 'citySizeRatio', '$window',
       function($, citySizeRatio, $window){
 
@@ -345,9 +345,9 @@
       }
       return newHeight;
     }
-    
+
     var initCitySizes = {};
-    
+
     function setCitiesSize(layer, currZoom) {
       if (!layer) {
         return;
@@ -367,7 +367,7 @@
       var panZoom = m.panZoom;
       var map = m.map;
       var mapAspectRatio = map.viewAB.height / map.viewAB.width;
-      
+
       return function () {
         var newHeight = getNewHeight(mapAspectRatio, practice, holderInitHeight);
         holder.height(newHeight);
@@ -386,7 +386,7 @@
       };
     };
   }])
-  
+
   .service('singleWindowResizeFn', ['$window', function($window){
     var fn = function(){};
     angular.element($window).bind('resize', function() {
@@ -397,7 +397,7 @@
     };
   }])
 
-  .factory('mapControler', ['$', '$K', 'mapFunctions', 'initLayers', '$filter', 
+  .factory('mapControler', ['$', '$K', 'mapFunctions', 'initLayers', '$filter',
       'getTooltipGetter', 'highlighted',
       function($, $K, mapFunctions, initLayers, $filter, getTooltipGetter, highlighted) {
     $.fn.qtip.defaults.style.classes = 'qtip-dark';
@@ -406,11 +406,11 @@
       var config = { state : [] };
       var layers;
       var _placesByTypes;
-      
+
       config.showTooltips = showTooltips;
       config.isPractise = !showTooltips;
       config.places = [];
-  
+
       var myMap = {
         map :  $K.map(holder),
         panZoom : undefined,
@@ -464,7 +464,7 @@
               layers.showLayer(l);
             }
           });
-          
+
           var places = $filter('StatesFromPlaces')(placesByTypes);
           console.log('pc', places);
           config.places = places;

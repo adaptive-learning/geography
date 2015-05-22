@@ -16,9 +16,7 @@
     'ui.bootstrap',
     'googleExperiments',
     'xeditable',
-    'proso.feedback',
-    'proso.user',
-    'proso_apps.services',
+    'proso.apps',
     //'proso.goals',
     'proso.mnemonics',
   ])

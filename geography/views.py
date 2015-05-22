@@ -13,8 +13,7 @@ from django.views.i18n import javascript_catalog
 
 def home(request, hack=None):
     JS_FILES = (
-        "/static/dist/js/fallbacks.min.js",
-        "/static/dist/js/libs.min.js",
+        "/static/bower-libs.js",
         "/static/dist/js/bbox.js",
         "/static/dist/js/hash.js",
         "/static/js/app.js",
@@ -23,12 +22,7 @@ def home(request, hack=None):
         "/static/js/directives.js",
         "/static/js/services.js",
         "/static/js/map.js",
-        "/static/proso_feedback/js/app.js",
-        "/static/proso_flashcards/js/practice_service.js",
-        "/static/proso_common/js/config_service.js",
         "/static/proso_mnemonics/js/app.js",
-        # "/static/proso_goals/js/app.js",
-        "/static/proso_user/js/app.js",
         "/static/lib/angular-1.2.9/i18n/angular-locale_cs.js",
         "/static/lib/js/googleExperiments.min.js",
     )
