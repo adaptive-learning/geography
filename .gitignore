@@ -15,9 +15,8 @@ Geography.egg-info
 .django_cache
 .ropeproject
 node_modules
-main/templates/generated
-main/geography/static/css
-main/geography/static/hack/tpl
-main/geography/static/hack/proso_goals
-main/geography/static/hack/proso_feedback
-main/geography/static/hack/geography
+static/hack/bboxcache.json
+bower
+bower_components
+bower-libs*.js
+bower-libs*.js.map
