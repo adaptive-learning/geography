@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         bboxcache: {
             default: {
                 files: {
-                    'static/hack/bboxcache.json': ['static/map/*.svg'],
+                    'static/dist/bboxcache.json': ['static/map/*.svg'],
                 },
             },
         },
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
                 options: {
                     replacements: [{
                         pattern: '{{bboxes}}',
-                        replacement: "<%= grunt.file.read('static/hack/bboxcache.json') %>"
+                        replacement: "<%= grunt.file.read('static/dist/bboxcache.json') %>"
                     }]
                 },
                 src: ['static/jstpl/bbox.js'],

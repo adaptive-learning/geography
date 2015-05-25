@@ -15,8 +15,8 @@ Geography.egg-info
 .django_cache
 .ropeproject
 node_modules
-static/hack/bboxcache.json
 bower
 bower_components
 bower-libs*.js
 bower-libs*.js.map
+geography/static/dist
