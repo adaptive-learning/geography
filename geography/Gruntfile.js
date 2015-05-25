@@ -108,6 +108,20 @@ module.exports = function(grunt) {
                 dest: 'static/dist/js/geography-tpls.min.js'
             },
 
+        },
+        watch: {
+            'geography-js': {
+                files: 'static/js/*.js',
+                tasks: ['concat:geography', 'uglify:geography']
+            },
+            'geography-css': {
+                files: 'static/sass/*.sass',
+                tasks: ['sass:geography', 'copy:above-fold']
+            },
+            'geography-tpls': {
+                files: 'static/tpl/*.html',
+                tasks: ['html2js:geography', 'concat:geography', 'uglify:geography']
+            }
         }
     });
 
@@ -116,6 +130,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-string-replace');
     grunt.loadNpmTasks('grunt-html2js');
