@@ -47,7 +47,6 @@ module.exports = function(grunt) {
         },
         sass: {
             options: {
-                sourcemap: "inline",
                 style: "compressed"
             },
             geography: {
