@@ -31,6 +31,12 @@ module.exports = function(grunt) {
             'above-fold': {
                 src: 'static/dist/css/above-fold.css',
                 dest: 'templates/dist/above-fold.css'
+            },
+            'images': {
+                expand: true,
+                cwd: 'static/img',
+                src: ['**'],
+                dest: 'static/dist/img/'
             }
         },
         html2js: {
@@ -138,7 +144,7 @@ module.exports = function(grunt) {
     grunt.registerTask('bboxcache-all', ['bboxcache', 'string-replace:bboxcache']);
     grunt.registerTask('collect-libs', ['bower_concat:all', 'uglify:libs']);
     grunt.registerTask('prepare-libs', ['shell:bower_install', 'collect-libs']);
-    grunt.registerTask('prepare', ['html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography', 'copy:above-fold']);
+    grunt.registerTask('prepare', ['html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography', 'copy']);
     grunt.registerTask('default', ['bboxcache-all', 'prepare-libs', 'prepare']);
 
     /* CUSTOM TASKS */
