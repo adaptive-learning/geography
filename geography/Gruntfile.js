@@ -27,6 +27,12 @@ module.exports = function(grunt) {
                 dest: 'static/dist/js/geography.js'
             }
         },
+        copy: {
+            'above-fold': {
+                src: 'static/dist/css/above-fold.css',
+                dest: 'templates/dist/above-fold.css'
+            }
+        },
         html2js: {
             options: {
                 base: '.',
@@ -108,6 +114,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-bower-concat');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-shell');
@@ -117,7 +124,7 @@ module.exports = function(grunt) {
     grunt.registerTask('bboxcache-all', ['bboxcache', 'string-replace:bboxcache']);
     grunt.registerTask('collect-libs', ['bower_concat:all', 'uglify:libs']);
     grunt.registerTask('prepare-libs', ['shell:bower_install', 'collect-libs']);
-    grunt.registerTask('prepare', ['html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography']);
+    grunt.registerTask('prepare', ['html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography', 'copy:above-fold']);
     grunt.registerTask('default', ['bboxcache-all', 'prepare-libs', 'prepare']);
 
     /* CUSTOM TASKS */

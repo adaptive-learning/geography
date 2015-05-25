@@ -1,4 +1,5 @@
- {% load i18n %}
+{% load i18n %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html data-ng-app="proso.geography" data-ng-controller="AppCtrl" lang="{{LANGUAGE_CODE}}">
   <head>
@@ -32,7 +33,7 @@
     <!-- Le styles -->
     <style>
         {% include "above-fold-bootstrap.css" %}
-        {% include "generated/above-fold.css" %}
+        {% include "dist/above-fold.css" %}
     </style>
     <base href="/">
 
@@ -216,10 +217,10 @@
         </span>
         <span class="col-sm-6">
           <a href="http://www.fi.muni.cz/adaptivelearning/" class="">
-            <img src="/static/img/al-logo-small.png" alt="Adaptive Learning logo"/>
+            <img src="{% static 'img/al-logo-small.png' %}" alt="Adaptive Learning logo"/>
           </a>
           <a href="http://www.fi.muni.cz/" class="">
-            <img src="/static/img/fi-logo.png" alt="FI MUNI logo"
+            <img src="{% static 'img/fi-logo.png' %}" alt="FI MUNI logo"
               height="80px"/>
           </a>
         </span>
@@ -239,11 +240,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="{% url 'geography.views.cached_javascript_catalog' %}?hack={{LANGUAGE_CODE}}"></script>
     {% for file in js_files %}
-    <script src="{{ file }}"></script>
+    <script src="{% static file %}"></script>
     {% endfor %}
 
     {% for file in css_files %}
-    <link href="{{ file }}" rel="stylesheet">
+    <link href="{% static file %}" rel="stylesheet">
     {% endfor %}
 
     <!-- Place this tag after the last +1 button tag. -->
