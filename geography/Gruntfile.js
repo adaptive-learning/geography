@@ -37,6 +37,12 @@ module.exports = function(grunt) {
                 cwd: 'static/img',
                 src: ['**'],
                 dest: 'static/dist/img/'
+            },
+            'fonts': {
+                expand: true,
+                cwd: 'bower_components/bootstrap/fonts/',
+                src: ['**'],
+                dest: 'static/dist/fonts/'
             }
         },
         html2js: {
@@ -142,9 +148,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-html2js');
 
     grunt.registerTask('bboxcache-all', ['bboxcache', 'string-replace:bboxcache']);
-    grunt.registerTask('collect-libs', ['bower_concat:all', 'uglify:libs']);
+    grunt.registerTask('collect-libs', ['bower_concat:all', 'uglify:libs', 'copy:fonts']);
     grunt.registerTask('prepare-libs', ['shell:bower_install', 'collect-libs']);
-    grunt.registerTask('prepare', ['html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography', 'copy']);
+    grunt.registerTask('prepare', ['html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography', 'copy:above-fold', 'copy:images']);
     grunt.registerTask('default', ['bboxcache-all', 'prepare-libs', 'prepare']);
 
     /* CUSTOM TASKS */
