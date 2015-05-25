@@ -11,23 +11,47 @@ module.exports = function(grunt) {
         },
         bower_concat: {
             all: {
-                dest: 'static/bower-libs.js',
+                dest: 'static/dist/js/bower-libs.js',
+                cssDest: 'static/dist/css/bower-libs.css',
                 dependencies: {
                     'kartograph.js': ['jquery']
+                },
+                mainFiles: {
+                    'angular-i18n': 'angular-locale_cs-cz.js'
                 }
             }
         },
         concat: {
-            libs: {
-                options: {
-                    separator: ';',
-                },
-                src: [
-                    'bower_components/dist/angular.js',
-                    'bower_components/dist/angular-*.js',
-                    'bower_components/dist/**/*.js'
-                ],
-                dest: 'static/bower-libs.js'
+            geography: {
+                src: ['static/js/*.js'],
+                dest: 'static/dist/js/geography.js'
+            }
+        },
+        html2js: {
+            options: {
+                base: '.',
+                module: 'proso.geography.templates',
+                singleModule: true,
+                useStric: true
+            },
+            geography: {
+                src: ['static/tpl/*.html'],
+                dest: 'static/dist/js/geography.html.js',
+            }
+        },
+        sass: {
+            options: {
+                sourcemap: "inline",
+                style: "compressed"
+            },
+            geography: {
+                files: [{
+                    expand: true,
+                    cwd: 'static/sass',
+                    src: ['*.sass'],
+                    dest: 'static/dist/css',
+                    ext: '.css'
+                }]
             }
         },
         shell: {
@@ -55,23 +79,46 @@ module.exports = function(grunt) {
                     },
                     sourceMap: true,
                     sourceMapIncludeSources: true,
-                    sourceMapName: 'static/bower-libs.min.js.map'
+                    sourceMapName: 'static/dist/js/bower-libs.min.js.map'
                 },
-                src: 'static/bower-libs.js',
-                dest: 'static/bower-libs.min.js'
-            }
+                src: 'static/dist/js/bower-libs.js',
+                dest: 'static/dist/js/bower-libs.min.js'
+            },
+            geography: {
+                options: {
+                    sourceMap: true,
+                    sourceMapIncludeSources: true,
+                    sourceMapName: 'static/dist/geography.min.js.map'
+                },
+                src: 'static/dist/js/geography.js',
+                dest: 'static/dist/js/geography.min.js'
+            },
+            'geography-tpls': {
+                options: {
+                    sourceMap: true,
+                    sourceMapIncludeSources: true,
+                    sourceMapName: 'static/dist/geography-tpls.min.js.map'
+                },
+                src: 'static/dist/js/geography-tpls.js',
+                dest: 'static/dist/js/geography-tpls.min.js'
+            },
+
         }
     });
 
     grunt.loadNpmTasks('grunt-bower-concat');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-string-replace');
+    grunt.loadNpmTasks('grunt-html2js');
 
     grunt.registerTask('bboxcache-all', ['bboxcache', 'string-replace:bboxcache']);
     grunt.registerTask('collect-libs', ['bower_concat:all', 'uglify:libs']);
     grunt.registerTask('prepare-libs', ['shell:bower_install', 'collect-libs']);
+    grunt.registerTask('prepare', ['html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography']);
+    grunt.registerTask('default', ['bboxcache-all', 'prepare-libs', 'prepare']);
 
     /* CUSTOM TASKS */
 

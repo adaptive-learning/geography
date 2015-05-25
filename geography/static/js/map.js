@@ -1,15 +1,14 @@
-(function() {
-  'use strict';
-  /* global hash  */
-  /* global jQuery  */
-  /* global chroma  */
-  /* global Kartograph */
-  /* global bboxCache */
-  var STROKE_WIDTH = 1.5;
-  var RIVER_WIDTH = STROKE_WIDTH * 2;
-  var ANIMATION_TIME_MS = 500;
+'use strict';
+/* global hash  */
+/* global jQuery  */
+/* global chroma  */
+/* global Kartograph */
+/* global bboxCache */
+var STROKE_WIDTH = 1.5;
+var RIVER_WIDTH = STROKE_WIDTH * 2;
+var ANIMATION_TIME_MS = 500;
 
-  angular.module('blindMaps.map', [])
+angular.module('proso.geography.map', [])
 
   .value('chroma', chroma)
 
@@ -545,4 +544,3 @@
       return myMap;
     };
   }]);
-}());

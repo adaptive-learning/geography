@@ -1,6 +1,6 @@
  {% load i18n %}
 <!DOCTYPE html>
-<html data-ng-app="blindMaps" data-ng-controller="AppCtrl" lang="{{LANGUAGE_CODE}}">
+<html data-ng-app="proso.geography" data-ng-controller="AppCtrl" lang="{{LANGUAGE_CODE}}">
   <head>
     <meta charset="utf-8">
     <title ng-bind="title" ng-init="initTitle('{{ title }}')">
@@ -83,15 +83,15 @@
                   </ul>
                 </li>
                 <li ng-class="'/overview/'|isActive">
-                  <a href="#/overview/">{% trans "Přehled map" %}</a> 
+                  <a href="#/overview/">{% trans "Přehled map" %}</a>
                 </li>
         </ul>
           ...
             <ul class="nav ng-cloak navbar-nav pull-right"
                 ng-init='initUser( {{ userJson | safe }} )'>
                 <li class="dropdown" ng-show="user.username === ''" >
-                  <a href="" 
-                     role="button" 
+                  <a href=""
+                     role="button"
                      track-click="login"
                      class="drop-login atooltip"
                      title="{% trans "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše znalosti pamatoval i příště." %}"
@@ -177,7 +177,7 @@
         <ul>
           {% if LANGUAGE_CODE == "cs" %}
           <li>
-              <a href="#/about"> {% trans "O projektu" %}</a> 
+              <a href="#/about"> {% trans "O projektu" %}</a>
           </li>
           {% endif %}
           <li>

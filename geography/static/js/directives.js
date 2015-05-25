@@ -1,7 +1,7 @@
-(function() {
-  'use strict';
-  /* Directives */
-  angular.module('blindMaps.directives', [])
+'use strict';
+
+/* Directives */
+angular.module('proso.geography.directives', ['proso.geography.templates'])
 
   .directive('placeLabel', ['colorScale', 'gettext', function(colorScale, gettext) {
     return {
@@ -15,7 +15,7 @@
           placement: 'bottom',
           container: 'body',
           title : '<div class="skill-tooltip">' +
-                gettext('Odhad znalosti') + 
+                gettext('Odhad znalosti') +
                 ' <span class="badge badge-default">' +
                   '<i class="color-indicator" style="background-color :' +
                   colorScale($scope.place.prediction).hex() + '"></i>' +
@@ -27,9 +27,9 @@
     };
   }])
 
-  .directive('blindMap', ['mapControler', 'places', 'singleWindowResizeFn', 
+  .directive('blindMap', ['mapControler', 'places', 'singleWindowResizeFn',
         'getMapResizeFunction', '$parse',
-      function(mapControler, places, singleWindowResizeFn, 
+      function(mapControler, places, singleWindowResizeFn,
         getMapResizeFunction, $parse) {
     return {
       restrict : 'E',
@@ -62,8 +62,8 @@
       compile : function(elem) {
         var emailAddress = elem.html();
         emailAddress = emailAddress.replace('{zavinac}', '@');
-        emailAddress = '<a href="mailto:' + emailAddress + 
-  '">' + emailAddress + 
+        emailAddress = '<a href="mailto:' + emailAddress +
+  '">' + emailAddress +
   '</a>';
         elem.html(emailAddress);
       }
@@ -74,7 +74,7 @@
     return {
       restrict : 'C',
       link : function($scope, elem, attrs) {
-        elem.tooltip({ 
+        elem.tooltip({
           'placement' : attrs.placement || 'bottom',
           'container' : attrs.container,
         });
@@ -150,7 +150,7 @@
                  '</span>' +
                  '<div class="progress level-progress" ' +
                      'tooltip-append-to-body="true" ' +
-                     'tooltip="{{level.points}} / {{level.range}} ' + 
+                     'tooltip="{{level.points}} / {{level.range}} ' +
                      gettext('bodů do příští úrovně') + '">' +
                    '<div class="progress-bar progress-bar-warning" ' +
                         'style="width: {{(level.points/level.range)|percent}};">' +
@@ -203,7 +203,7 @@
     };
   }])
 
-  .directive('locationAppend', ['$rootScope', '$location', 
+  .directive('locationAppend', ['$rootScope', '$location',
       function ($rootScope, $location) {
     return {
       restrict: 'A',
@@ -262,7 +262,7 @@
     return {
       restrict : 'A',
       template: '<div class="alert alert-danger">' +
-                  gettext("V aplikaci bohužel nastala chyba.") + 
+                  gettext("V aplikaci bohužel nastala chyba.") +
                 '</div>',
     };
   }])
@@ -287,4 +287,3 @@
       }
     };
   }]);
-}());

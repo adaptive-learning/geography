@@ -1,10 +1,7 @@
-(function() {
-  'use strict';
+'use strict';
 
-  /* Services */
-  angular.module('blindMaps.services', [
-    'ngCookies'
-  ])
+/* Services */
+angular.module('proso.geography.services', ['ngCookies'])
 
   .factory('places', ['$http', 'gettext', function($http, gettext) {
     var cache = {};
@@ -55,7 +52,7 @@
         });
       });
     }
-    
+
     var that = {
       get : function(part, user, fn) {
         var url = '/usersplaces/' + part + '/' + user;
@@ -87,8 +84,8 @@
       _setActiveCategory : function (part, active) {
         that.getCategories(part, active);
         angular.forEach(categoriesCache[part], function(cat) {
-          cat.hidden = cat.slug != active &&  
-            0 === cat.types.filter(function(t){ 
+          cat.hidden = cat.slug != active &&
+            0 === cat.types.filter(function(t){
               return t == active;
             }).length;
         });
@@ -104,7 +101,7 @@
           process(cache[url]);
         } else {
           that.get(part, '', process);
-        } 
+        }
       },
       getOverview : function () {
         return $http.get('/placesoverview/', {cache: true});
@@ -161,7 +158,7 @@
     var qIndex = 0;
     var url;
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-    
+
     function returnQuestion(fn) {
       var q = questions[qIndex++];
       if (q)
@@ -280,31 +277,31 @@
   .factory('params', ["$routeParams", "$location",
       function ($routeParams, $location) {
     var keys = ['limit'];
-    var params = {}; 
+    var params = {};
     var that =  {
       get: function (key) {
         if (params[key] && ! $routeParams[key]) {
           $location.search(key, params[key]);
-        }   
+        }
         if ($routeParams[key]) {
           params[key] = $routeParams[key];
-        }   
+        }
         return params[key];
-      },  
+      },
       all : function() {
         for (var i = 0; i < keys.length; i++) {
           that.get(keys[i]);
         }
         return params;
-      },  
+      },
       queryString : function() {
         that.all();
         var string = keys.map(function(key) {
-          return that.get(key) ? '&' + key + '=' + that.get(key) : ''; 
+          return that.get(key) ? '&' + key + '=' + that.get(key) : '';
         }).join('');
         return string;
-      }   
-    };  
+      }
+    };
     return that;
   }])
 
@@ -323,7 +320,7 @@
         for (var i = 0; i < data.data.length; i++) {
           categoriesByIdentifier[data.data[i].identifier] = data.data[i];
         }
-        var allCategories = [ { 
+        var allCategories = [ {
           maps : data.data,
         }];
         deferredCategory.resolve(allCategories);
@@ -418,8 +415,8 @@
       _setActiveCategory : function (part, active) {
         that.getCategories(part, active);
         angular.forEach(categoriesCache[part], function(cat) {
-          cat.hidden = cat.slug != active &&  
-            0 === cat.types.filter(function(t){ 
+          cat.hidden = cat.slug != active &&
+            0 === cat.types.filter(function(t){
               return t == active;
             }).length;
         });
@@ -456,4 +453,3 @@
       }
     };
   }]);
-}());

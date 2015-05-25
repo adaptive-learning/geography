@@ -13,24 +13,15 @@ from django.views.i18n import javascript_catalog
 
 def home(request, hack=None):
     JS_FILES = (
-        "/static/bower-libs.js",
+        "/static/dist/js/bower-libs.js",
         "/static/dist/js/bbox.js",
-        "/static/dist/js/hash.js",
-        "/static/js/app.js",
-        "/static/js/controllers.js",
-        "/static/js/filters.js",
-        "/static/js/directives.js",
-        "/static/js/services.js",
-        "/static/js/map.js",
-        "/static/proso_mnemonics/js/app.js",
-        "/static/lib/angular-1.2.9/i18n/angular-locale_cs.js",
-        "/static/lib/js/googleExperiments.min.js",
+        "/static/dist/js/geography.js",
+        "/static/dist/js/geography.html.js",
     )
     CSS_FILES = (
-        "/static/lib/css/bootstrap.min.css",
-        "/static/lib/css/xeditable.css",
-        "/static/css/app.css",
-        "/static/css/map.css"
+        "/static/dist/css/bower-libs.css",
+        "/static/dist/css/app.css",
+        "/static/dist/css/map.css"
     )
     request.META["CSRF_COOKIE_USED"] = True
     if settings.ON_PRODUCTION:
