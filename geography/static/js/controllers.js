@@ -4,8 +4,9 @@
 angular.module('proso.geography.controllers', [])
 
 .controller('AppCtrl', ['$scope', '$rootScope', 'userService', 'pageTitle', 'configService',
-    function($scope, $rootScope, user, pageTitle, configService) {
-        $rootScope.configService = configService;
+    function($scope, $rootScope, userService, pageTitle, configService) {
+        $scope.configService = configService;
+        $scope.user = userService;
 
         $rootScope.initTitle = function (title) {
             $rootScope.initialTitle = title;
@@ -16,19 +17,15 @@ angular.module('proso.geography.controllers', [])
             $rootScope.title = pageTitle(next) + $rootScope.initialTitle;
         });
 
-        var updateUser = function(data) {
-            $rootScope.user = data;
-        };
-
         $scope.initLanguageCode = function (code) {
             $rootScope.LANGUAGE_CODE = code;
         };
 
         $scope.initUser = function (data) {
-            $rootScope.user = user.initUser(data);
+            userService.processUser(data);
         };
 
-        $rootScope.logout = function() {
+        $scope.logout = function() {
             $rootScope.user = user.logout(updateUser);
         };
 

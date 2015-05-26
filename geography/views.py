@@ -3,7 +3,6 @@ from django.conf import settings
 from django.shortcuts import render_to_response
 import json
 from django.utils.translation import ugettext as _
-from proso_questions_client.utils import StaticFiles, get_user
 from django.utils.translation import get_language
 from proso.django.config import get_global_config
 from proso_flashcards.models import Category
@@ -23,26 +22,23 @@ def home(request, hack=None):
         "dist/css/app.css",
         "dist/css/map.css"
     )
-    user = get_user(request)
-    # OpenID migration HACK
-    # https://developers.google.com/identity/protocols/OpenID2Migration
-    if user.__class__.__name__ == 'HttpResponseRedirect':
-        return user
-    # end HACK
+    if not hasattr(request.user, "userprofile"):
+        user = ''
+    else:
+        user = json.dumps(request.user.userprofile.to_json())
     c = {
         'title': _(u'Slepé mapy') + ' - ' + _(u'inteligentní aplikace na procvičování zeměpisu'),
         'map': get_map_from_url(hack),
-        'isProduction': settings.ON_PRODUCTION,
+        'is_production': settings.ON_PRODUCTION,
         'css_files': CSS_FILES,
         'js_files': JS_FILES,
         'continents': Category.objects.filter(
             lang=get_language(), type='continent'),
         'states': Category.objects.filter(lang=get_language(), type='state'),
-        'user': user,
-        'userJson': json.dumps(user),
+        'user_json': json.dumps(user),
         'LANGUAGE_CODE': get_language(),
         'LANGUAGES': settings.LANGUAGES,
-        'isHomepage': hack is None,
+        'is_homepage': hack is None,
         'config_json': json.dumps(get_global_config()),
     }
     return render_to_response('home.html', c)
