@@ -57,11 +57,11 @@
       <span class="icon-bar"></span>
     </button>
 
-      <a class="navbar-brand" href="#">{% trans "Slepé mapy" %}</a>
+      <a class="navbar-brand" href="">{% trans "Slepé mapy" %}</a>
       <div id="nav-main" class="collapse navbar-collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav  pull-left">
                 <li ng-class="'/view/world/'|isActive">
-                  <a href="#/view/world/">{% trans "Svět" %}</a>
+                  <a href="/view/world/">{% trans "Svět" %}</a>
                 </li>
                 <li class="dropdown">
                   <a id="drop-continents" href=""  class="dropdown-toggle" data-toggle="dropdown">
@@ -69,7 +69,7 @@
                   </a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop-continents">
                     {% for continent in continents %}
-                    <li><a href="#/view/{{ continent.identifier }}/">{{ continent.name }}</a></li>
+                    <li><a href="/view/{{ continent.identifier }}/">{{ continent.name }}</a></li>
                     {% endfor %}
                   </ul>
                 </li>
@@ -79,12 +79,12 @@
                   </a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop-states">
                     {% for state in states %}
-                    <li><a href="#/view/{{ state.identifier }}/">{{ state.name }}</a></li>
+                    <li><a href="/view/{{ state.identifier }}/">{{ state.name }}</a></li>
                     {% endfor %}
                   </ul>
                 </li>
                 <li ng-class="'/overview/'|isActive">
-                  <a href="#/overview/">{% trans "Přehled map" %}</a>
+                  <a href="/overview/">{% trans "Přehled map" %}</a>
                 </li>
         </ul>
           ...
@@ -108,29 +108,29 @@
                   </a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                     <li>
-                      <a href="#/u/{{user.username}}" >
+                      <a href="/u/{{user.username}}" >
                         {% trans "Můj profil" %}
                       </a>
                     </li>
                     <!--
                     <li>
-                      <a href="#/mistakes/" >
+                      <a href="/mistakes/" >
                         {% trans "Moje časté chyby" %}
                       </a>
                     </li>
                     <li>
-                      <a href="#/goals/" >
+                      <a href="/goals/" >
                         {% trans "Osobní cíle" %}
                       </a>
                     </li>
                     <li>
-                      <a href="#/u/{{user.username}}?edit=true" >
+                      <a href="/u/{{user.username}}?edit=true" >
                         {% trans "Nastavení" %}
                       </a>
                     </li>
                     -->
                     <li class="forgot-pwd">
-                      <a href="#/" ng-click="logout()">
+                      <a href="/" ng-click="logout()">
                         {% trans "Odhlásit se" %}
                       </a>
                     </li>
@@ -178,7 +178,7 @@
         <ul>
           {% if LANGUAGE_CODE == "cs" %}
           <li>
-              <a href="#/about"> {% trans "O projektu" %}</a>
+              <a href="/about"> {% trans "O projektu" %}</a>
           </li>
           {% endif %}
           <li>

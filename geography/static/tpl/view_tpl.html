@@ -9,7 +9,7 @@
         ng-repeat="typeCat in typeCategories" 
         ng-hide="typeCat.empty = ((placesTypes|isTypeCategory:typeCat).length == 0)"
         ng-click="typeCat.hidden && updateCat(typeCat)">
-      <a href="#/practice/{{part}}/{{typeCat.slug}}" 
+      <a href="/practice/{{part}}/{{typeCat.slug}}" 
          class="btn btn-primary pull-right" 
          ng-hide="typeCat.hidden || filteredTypes.length == 1" >
         <i class="glyphicon glyphicon-check"></i> {{'Procvičovat' | trans }}
@@ -32,7 +32,7 @@
             <i class="glyphicon {{type.hidden && 'glyphicon-plus-sign' || 'glyphicon-minus-sign'}}"></i>
             {{type.name}}
           </h3>
-          <a href="#/practice/{{part}}/{{type.slug}}" 
+          <a href="/practice/{{part}}/{{type.slug}}" 
              class="btn btn-primary pull-right"  >
             <i class="glyphicon glyphicon-check"></i> {{'Procvičovat' | trans }}
           </a>

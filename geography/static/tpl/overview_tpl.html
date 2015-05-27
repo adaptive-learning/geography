@@ -8,14 +8,14 @@
       </h2>
       <ul>
         <li class="overview-row" ng-repeat="map in c.maps">
-          <h3 class="col-md-offset-1 col-sm-3"><a href="#/view/{{map.identifier}}/{{user}}">{{map.name}}</a>
+          <h3 class="col-md-offset-1 col-sm-3"><a href="/view/{{map.identifier}}/{{user}}">{{map.name}}</a>
             <div class="map-progress" count="{{map.placesTypes|sumCounts}}" 
                  skills="{{mapSkills(map.identifier)}}">
             </div>
           </h3>
           <ul class="col-sm-9 col-md-7 inline">
             <li class="inline-block" ng-repeat="layer in map.placesTypes" >
-              <a href="#/practice/{{map.identifier}}/{{layer.identifier}}" 
+              <a href="/practice/{{map.identifier}}/{{layer.identifier}}" 
                  class="btn btn-primary"
                  tooltip="{{'Procvičovat'| trans}}">
                  {{places.getPlaceTypeName(layer.identifier) || layer.name}}</a>
