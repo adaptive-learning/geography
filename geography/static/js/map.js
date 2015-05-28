@@ -62,9 +62,9 @@ angular.module('proso.geography.map', [])
       layerConfig.state = {
         'styles' : {
           'fill' : function(d) {
-            var state = config.places && config.places[d.code];
-            return state && state.displayed ?
-              colorScale(state.prediction).hex() :
+            var flashcard = config.places && config.places[d.code];
+            return flashcard && flashcard.practiced ?
+              colorScale(flashcard.prediction).hex() :
               '#fff';
           },
           'stroke-width' : STROKE_WIDTH,
@@ -86,9 +86,9 @@ angular.module('proso.geography.map', [])
         'styles' : {
           'stroke-width' : RIVER_WIDTH,
           'stroke' : function(d) {
-            var state = config.places && config.places[d.code];
-            return state && state.displayed ?
-              colorScale(state.prediction).hex() :
+            var flashcard = config.places && config.places[d.code];
+            return flashcard && flashcard.practiced ?
+              colorScale(flashcard.prediction).hex() :
               colors.WATER_COLOR;
           },
           'transform' : ''
@@ -264,7 +264,7 @@ angular.module('proso.geography.map', [])
             place.term.name +
             '</div>' :
           '');
-        var description = (place && place.displayed ?
+        var description = (place && place.practiced ?
           '<div>' +
             gettext('Odhad znalosti') + ': ' +
               '<span class="badge badge-default">' +
