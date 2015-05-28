@@ -14,7 +14,7 @@ angular.module('proso.geography.map', [])
 
   .value('$', jQuery)
 
-  .value('$K', window.kartograph())
+  .value('$K', window.kartograph)
 
   .value('bboxCache', bboxCache)
 
@@ -411,7 +411,7 @@ angular.module('proso.geography.map', [])
       config.places = [];
 
       var myMap = {
-        map :  $K.map(holder),
+        map :  $K(holder),
         panZoom : undefined,
         onClick : function(clickFn) {
           config.click = function(code) {

@@ -150,7 +150,7 @@ angular.module('proso.geography.controllers', [])
             var selectedFC = flashcardService.getFlashcardByDescription(selected);
             practiceService.saveAnswerToCurrentFC(selectedFC.id, $scope.question.responseTime);
             $scope.progress = 100 * (practiceService.getSummary().count / practiceService.getConfig().set_length);
-            user.addAnswer(asked == selected);
+            //user.addAnswer(asked == selected);
             if (asked == selected) {
                 $timeout(function() {
                     $scope.next();
