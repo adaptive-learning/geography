@@ -9,11 +9,13 @@
         ng-repeat="typeCat in typeCategories" 
         ng-hide="typeCat.empty = ((placesTypes|isTypeCategory:typeCat).length == 0)"
         ng-click="typeCat.hidden && updateCat(typeCat)">
+        <!-- TODO this practice doesn't work yet
       <a href="/practice/{{part}}/{{typeCat.slug}}" 
          class="btn btn-primary pull-right" 
          ng-hide="typeCat.hidden || filteredTypes.length == 1" >
         <i class="glyphicon glyphicon-check"></i> {{'Procvičovat' | trans }}
       </a>
+      -->
       <h2>
         {{typeCat.name}}
       </h2>
