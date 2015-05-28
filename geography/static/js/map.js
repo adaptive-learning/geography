@@ -1,5 +1,4 @@
 'use strict';
-/* global hash  */
 /* global jQuery  */
 /* global chroma  */
 /* global Kartograph */
@@ -7,6 +6,7 @@
 var STROKE_WIDTH = 1.5;
 var RIVER_WIDTH = STROKE_WIDTH * 2;
 var ANIMATION_TIME_MS = 500;
+var hash = function(x) {return x;};
 
 angular.module('proso.geography.map', [])
 
