@@ -241,3 +241,5 @@ except ImportError:
     HASHES = {}
 except SyntaxError:
     HASHES = {}
+
+PROSO_JS_FILES = ['dist/js/bower-libs.js']
