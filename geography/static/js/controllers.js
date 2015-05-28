@@ -31,8 +31,8 @@ angular.module('proso.geography.controllers', [])
 
 }])
 
-.controller('AppView', ['$scope', '$routeParams', '$filter', 'flashcardService', 'mapTitle',
-    function($scope, $routeParams, $filter, flashcardService, mapTitle) {
+.controller('AppView', ['$scope', '$routeParams', '$filter', 'flashcardService', 'mapTitle', 'gettext',
+    function($scope, $routeParams, $filter, flashcardService, mapTitle, gettext) {
         $scope.part = $routeParams.part;
         var user = $routeParams.user || '';
         $scope.typeCategories = flashcardService.getCategories($scope.part);
@@ -42,25 +42,24 @@ angular.module('proso.geography.controllers', [])
         };
 
         flashcardService.getFlashcards(filter).then(function(data) {
-            var placeTypes = [
-                'state',
-                'city',
-                'region',
-                'province',
-                'region_cz',
-                'region_it',
-                'autonomous_comunity',
-                'bundesland',
-                'river',
-                'lake',
-                'mountains',
-                'island',
-            ];
-            //TODO add all names
             var placeTypeNames = {
                 'state' : 'Státy',
-                'city' : 'Města',
+                'city' : gettext('Města'),
+                'region' : gettext('Regiony'),
+                'province' : gettext('Provincie'),
+                'region_cz' : gettext('Kraje'),
+                'region_it' : gettext('Oblasti'),
+                'autonomous_comunity' : gettext('Autonomní společenství'),
+                'bundesland' : gettext('Spolkové země'),
+                'river' : gettext('Řeky'),
+                'lake' : gettext('Jezera'),
+                'mountains' : gettext('Pohoří'),
+                'island' : gettext('Ostrovy'),
             };
+            var placeTypes = [];
+            for(var i in placeTypeNames) {
+              placeTypes.push(i);
+            }
             placeTypes = placeTypes.map(function(pt) {
                 return {
                     name : placeTypeNames[pt] || pt,
