@@ -259,9 +259,13 @@ angular.module('proso.geography.controllers', [])
               }
             }
 
-            userStatsService.getStats().success(processStats);
-            userStatsService.getStats(true).success(processStats);
+            userStatsService.getStats().success(function(data) {
+              processStats(data);
+              userStatsService.getStats(true).success(processStats);
+            });
+
             function processStats(data) {
+              console.log(data.data);
               $scope.userStats = data.data;
               angular.forEach(maps, function(map) {
                 map.placeTypes = [];
