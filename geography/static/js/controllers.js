@@ -259,9 +259,9 @@ angular.module('proso.geography.controllers', [])
               }
             }
 
-            userStatsService.getStats().success(function(data) {
+            userStatsService.getStatsPost().success(function(data) {
               processStats(data);
-              userStatsService.getStats(true).success(processStats);
+              userStatsService.getStatsPost(true).success(processStats);
             });
 
             function processStats(data) {
