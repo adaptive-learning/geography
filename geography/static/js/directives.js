@@ -105,13 +105,16 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
                         'width: {{100 * skills.number_of_mastered_flashcards / skills.number_of_flashcards}}%;">' +
                     '</div>' +
                     '<div class="progress-bar progress-bar-practiced" style="' +
-                        'width: {{100 * skills.number_of_practiced_flashcards / skills.number_of_flashcards}}%;">' +
+                        'width: {{100 * skills.number_of_nonmastered_practiced_flashcards / skills.number_of_flashcards}}%;">' +
                     '</div>' +
                   '</div>',
       link : function($scope, elem, attrs) {
         attrs.$observe('skills', function(skills) {
           if(skills !== '') {
             $scope.skills = angular.fromJson(skills);
+            $scope.skills.number_of_nonmastered_practiced_flashcards = 
+              $scope.skills.number_of_practiced_flashcards - 
+              $scope.skills.number_of_mastered_flashcards; 
             elem.tooltip({
               html : true,
               placement: 'bottom',
@@ -128,7 +131,7 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
                      gettext('Procvičováno') + ' ' +
                      '<span class="badge badge-default">' +
                        '<i class="color-indicator practiced"></i>' +
-                       ($scope.skills.number_of_practiced_flashcards || 0) + ' / ' +
+                       ($scope.skills.number_of_nonmastered_practiced_flashcards || 0) + ' / ' +
                        $scope.skills.number_of_flashcards +
                      '</span>' +
                    '</div>'
