@@ -68,6 +68,7 @@ angular.module('proso.geography.map', [])
               '#fff';
           },
           'stroke-width' : STROKE_WIDTH,
+          'stroke' : '#000',
           'transform' : ''
         },
         'click' : function(data) {
@@ -128,9 +129,9 @@ angular.module('proso.geography.map', [])
 
       layerConfig.lake = angular.copy(layerConfig.state, {});
       layerConfig.lake.styles.fill = function(d) {
-        var place = config.places && config.places[d.code];
-        return place ?
-          colorScale(place.probability).brighten((1 - place.certainty) * 80).hex() :
+        var flashcard = config.places && config.places[d.code];
+        return flashcard && flashcard.practiced ?
+          colorScale(flashcard.prediction).hex() :
           colors.WATER_COLOR;
       };
       return layerConfig;
@@ -459,7 +460,7 @@ angular.module('proso.geography.map', [])
             return;
           }
           angular.forEach(placesByTypes, function(type) {
-            var l = layers.getLayerBySlug(type.slug);
+            var l = layers.getLayerBySlug(type.identifier);
             if (type.hidden) {
               layers.hideLayer(l);
             } else {

@@ -51,7 +51,6 @@ angular.module('proso.geography.controllers', [])
             }).filter(function(pt) {
                 return pt.places.length;
             });
-            console.log(placeTypes);
             updateItems(placeTypes);
         }, function(){
             $scope.error = true;

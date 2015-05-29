@@ -80,7 +80,7 @@ angular.module('proso.geography.filters', [])
     return function(types, category) {
       types = types && types.filter(function(t){
         return category.types.filter(function(slug){
-          return slug == t.slug;
+          return slug == t.identifier;
         }).length == 1;
       });
       return types;
