@@ -6,7 +6,7 @@ angular.module('proso.geography.controllers', [])
 .controller('AppCtrl', ['$scope', '$rootScope', 'userService', 'pageTitle', 'configService',
     function($scope, $rootScope, userService, pageTitle, configService) {
         $scope.configService = configService;
-        $scope.user = userService;
+        $scope.userService = userService;
 
         $rootScope.initTitle = function (title) {
             $rootScope.initialTitle = title;

@@ -90,7 +90,7 @@
           ...
             <ul class="nav ng-cloak navbar-nav pull-right"
                 ng-init='initUser( {{ user_json | safe }} )'>
-                <li class="dropdown" ng-show="!user.status.logged && !user.status.loading" >
+                <li class="dropdown" ng-show="!userService.status.logged && !userService.status.loading" >
                   <a href=""
                      role="button"
                      track-click="login"
@@ -101,14 +101,14 @@
                     {% trans "Přihlásit se" %}
                   </a>
                 </li>
-                <li class="dropdown" ng-show="user.status.logged">
+                <li class="dropdown" ng-show="userService.status.logged">
                   <a id="drop1" href="" role="button" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="glyphicon glyphicon-user"></i>
-                    <span ng-bind="user.username"></span> <b class="caret"></b>
+                    <span ng-bind="userService.user.username"></span> <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                     <li>
-                      <a href="/u/{{user.username}}" >
+                      <a href="/u/{{userService.user.username}}" >
                         {% trans "Můj profil" %}
                       </a>
                     </li>
