@@ -99,7 +99,7 @@ module.exports = function(grunt) {
         },
         shell: {
             bower_install: {
-                command: 'bower install -f'
+                command: 'node_modules/bower/bin/bower install -f'
             }
         },
         'string-replace': {
