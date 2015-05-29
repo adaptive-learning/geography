@@ -40,10 +40,11 @@
           </a>
           <div class="clearfix"></div>
         </div>
-        <div class="map-progress" count="{{type.places.length}}"  
+        <div class="map-progress" 
              skills="{{ {
-               practiced:(type.places|filter:{practiced:true}).length,
-               learned:(type.places|filter:{learned:true}).length
+               number_of_flashcards: type.places.length,
+               number_of_practiced_flashcards: (type.places|filter:{practiced:true}).length,
+               number_of_mastered_flashcards: (type.places|filter:{mastered:true}).length
              } }}"></div>
         <div class="view-places" collapse="type.hidden">
           <div ng-hide="(type.places|filter:{practiced:true}).length" class="alert alert-info">
