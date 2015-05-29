@@ -177,7 +177,7 @@ module.exports = function(grunt) {
     grunt.registerTask('bboxcache-all', ['bboxcache', 'string-replace:bboxcache']);
     grunt.registerTask('collect-libs', ['bower_concat:all', 'uglify:libs', 'copy:fonts']);
     grunt.registerTask('prepare-libs', ['shell:bower_install', 'collect-libs']);
-    grunt.registerTask('prepare', ['jshit', 'html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography', 'copy:above-fold', 'copy:images']);
+    grunt.registerTask('prepare', ['jshint', 'html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography', 'copy:above-fold', 'copy:images']);
     grunt.registerTask('default', ['bboxcache-all', 'prepare-libs', 'prepare']);
 
     /* CUSTOM TASKS */
