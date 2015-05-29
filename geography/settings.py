@@ -65,6 +65,7 @@ MIDDLEWARE_CLASSES = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'geography.middleware.LanguageInPathMiddleware',
+    'geography.middleware.AuthAlreadyAssociatedMiddleware',
 )
 
 ROOT_URLCONF = 'geography.urls'
