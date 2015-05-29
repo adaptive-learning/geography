@@ -80,8 +80,8 @@ angular.module('proso.geography', [
     }
 ])
 
-.run(['$rootScope', '$', '$analytics', 'editableOptions',
-    function($rootScope, $, $analytics, editableOptions) {
+.run(['$rootScope', '$', '$analytics', 'editableOptions', 'places',
+    function($rootScope, $, $analytics, editableOptions, places) {
         'use strict';
         $analytics.settings.pageTracking.autoTrackFirstPage = false;
 
@@ -92,6 +92,12 @@ angular.module('proso.geography', [
                 $("#nav-main").collapse();
                 $("#nav-main").collapse('hide');
             }
+        });
+        
+        $('.dropdown-menu a[href^="/view/"]').each( function(i, link){
+            var code = $(link).attr('href').replace('/view/', '').replace('/', '');
+            var name = $(link).text();
+            places.setName(code, name);
         });
 
     }
