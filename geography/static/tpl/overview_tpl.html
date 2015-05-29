@@ -1,6 +1,6 @@
 <div class="overview">
   <h1>{{'Přehled map' | trans}} {{user}}</h1>
-  <div ng-hide="mapCategories" class="loading-indicator">
+  <div ng-hide="mapCategories && statsLoaded" class="loading-indicator">
   </div>
   <div class="map-categories" ng-repeat="c in mapCategories">
       <h2 class="col-md-offset-1" ng-hide="c.name == 'World'"> 
@@ -10,17 +10,17 @@
         <li class="overview-row" ng-repeat="map in c.maps">
           <h3 class="col-md-offset-1 col-sm-3"><a href="/view/{{map.identifier}}/{{user}}">{{map.name}}</a>
             <div class="map-progress" count="{{map.placesTypes|sumCounts}}" 
-                 skills="{{mapSkills(map.identifier)}}">
+                 skills="{{mapSkills(map)}}">
             </div>
           </h3>
           <ul class="col-sm-9 col-md-7 inline">
-            <li class="inline-block" ng-repeat="layer in map.placesTypes" >
+            <li class="inline-block" ng-repeat="layer in map.placeTypes">
               <a href="/practice/{{map.identifier}}/{{layer.identifier}}" 
                  class="btn btn-primary"
                  tooltip="{{'Procvičovat'| trans}}">
-                 {{places.getPlaceTypeName(layer.identifier) || layer.name}}</a>
-              <div class="map-progress" count="{{layer.count}}" 
-                   skills="{{mapSkills(map.identifier, layer.identifier)}}">
+                 {{layer.name}}</a>
+              <div class="map-progress" 
+                   skills="{{mapSkills(map, layer)}}">
               </div>
             </li>
           </ul>

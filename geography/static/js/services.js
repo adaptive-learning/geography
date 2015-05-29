@@ -426,6 +426,36 @@ angular.module('proso.geography.services', ['ngCookies'])
   }])
 
 
+  .service('placeTypeService', ["gettext", function (gettext) {
+    var self = this;
+    var placeTypeNames = {
+        'state' : 'Státy',
+        'city' : gettext('Města'),
+        'region' : gettext('Regiony'),
+        'province' : gettext('Provincie'),
+        'region_cz' : gettext('Kraje'),
+        'region_it' : gettext('Oblasti'),
+        'autonomous_comunity' : gettext('Autonomní společenství'),
+        'bundesland' : gettext('Spolkové země'),
+        'river' : gettext('Řeky'),
+        'lake' : gettext('Jezera'),
+        'mountains' : gettext('Pohoří'),
+        'island' : gettext('Ostrovy'),
+    };
+    var placeTypes = [];
+    for(var i in placeTypeNames) {
+      placeTypes.push({
+        name : placeTypeNames[i],
+        identifier : i,
+      });
+    }
+
+    self.getTypes = function () {
+      return placeTypes;
+    };
+  }])
+
+
   .factory('confirmModal', ["$modal", function ($modal) {
     var ModalConfirmCtrl = ['$scope', '$modalInstance', 'question', 'confirm',
         function ($scope, $modalInstance, question, confirm) {

@@ -26,13 +26,13 @@ angular.module('proso.geography.controllers', [])
         };
 
         $scope.logout = function() {
-            $rootScope.user = user.logout(updateUser);
+            $rootScope.user = userService.logout();
         };
 
 }])
 
-.controller('AppView', ['$scope', '$routeParams', '$filter', 'flashcardService', 'mapTitle', 'gettext',
-    function($scope, $routeParams, $filter, flashcardService, mapTitle, gettext) {
+.controller('AppView', ['$scope', '$routeParams', '$filter', 'flashcardService', 'mapTitle', 'placeTypeService',
+    function($scope, $routeParams, $filter, flashcardService, mapTitle, placeTypeService) {
         $scope.part = $routeParams.part;
         var user = $routeParams.user || '';
         $scope.typeCategories = flashcardService.getCategories($scope.part);
@@ -42,32 +42,12 @@ angular.module('proso.geography.controllers', [])
         };
 
         flashcardService.getFlashcards(filter).then(function(data) {
-            var placeTypeNames = {
-                'state' : 'Státy',
-                'city' : gettext('Města'),
-                'region' : gettext('Regiony'),
-                'province' : gettext('Provincie'),
-                'region_cz' : gettext('Kraje'),
-                'region_it' : gettext('Oblasti'),
-                'autonomous_comunity' : gettext('Autonomní společenství'),
-                'bundesland' : gettext('Spolkové země'),
-                'river' : gettext('Řeky'),
-                'lake' : gettext('Jezera'),
-                'mountains' : gettext('Pohoří'),
-                'island' : gettext('Ostrovy'),
-            };
-            var placeTypes = [];
-            for(var i in placeTypeNames) {
-              placeTypes.push(i);
-            }
+            var placeTypes = placeTypeService.getTypes();
             placeTypes = placeTypes.map(function(pt) {
-                return {
-                    name : placeTypeNames[pt] || pt,
-                    slug : pt,
-                    places : data.filter(function(fc) {
-                        return fc.term.type == pt;
-                    }),
-                };
+                pt.places = data.filter(function(fc) {
+                    return fc.term.type == pt.identifier;
+                });
+                return pt;
             }).filter(function(pt) {
                 return pt.places.length;
             });
@@ -117,7 +97,7 @@ angular.module('proso.geography.controllers', [])
     'categoryService', 'flashcardService',
 
     function($scope, $routeParams, $timeout, $filter,
-        practiceService, user, events, colors, $, highlighted,
+        practiceService, userService, events, colors, $, highlighted,
         categoryService, flashcardService) {
 
         $scope.part = $routeParams.part;
@@ -259,41 +239,67 @@ angular.module('proso.geography.controllers', [])
     };
   }])
 
-.controller('AppOverview', ['$scope', '$http', '$routeParams', 'categoryService',
-    function($scope, $http, $routeParams, categoryService) {
+.controller('AppOverview', ['$scope', '$routeParams', 'categoryService', 'userStatsService', 'placeTypeService',
+    function($scope, $routeParams, categoryService, userStatsService, placeTypeService) {
 
         var mapSkills = {};
 
         $scope.user = $routeParams.user || '';
         categoryService.getAll().then(function(categories){
             $scope.mapCategories = categories;
+            var maps = categories[0].maps;
+            var placeTypes = placeTypeService.getTypes();
+            for (var i = 0; i < maps.length; i++) {
+              var map = maps[i];
+              for (var j = 0; j < placeTypes.length; j++) {
+                var pt = placeTypes[j];
+                var id = map.identifier + '-' + pt.identifier;
+                userStatsService.addGroup(id, {});
+                userStatsService.addGroupParams(id, undefined, [map.identifier], [pt.identifier]);
+              }
+            }
+
+            userStatsService.getStats().success(processStats);
+            userStatsService.getStats(true).success(processStats);
+            function processStats(data) {
+              $scope.userStats = data.data;
+              angular.forEach(maps, function(map) {
+                map.placeTypes = [];
+                angular.forEach(angular.copy(placeTypes), function(pt) {
+                  var key = map.identifier + '-' + pt.identifier;
+                  pt.stats = data.data[key];
+                  if (pt.stats.number_of_flashcards > 0) {
+                    map.placeTypes.push(pt);
+                  }
+                });
+              });
+              $scope.statsLoaded = true;
+            }
         }, function(){});
 
-        $scope.mapSkills = function(code, type) {
-            if (!$scope.mapSkillsLoaded) {
+        $scope.mapSkills = function(map, type) {
+            if (!$scope.statsLoaded) {
                 return;
             }
             var defalut = {
                 count : 0
             };
             if (!type) {
-                return avgSkills(mapSkills[code]);
+                return avgSkills(map);
             }
-            return (mapSkills[code] && mapSkills[code][type]) || defalut;
+            return type.stats || defalut;
         };
 
-        function avgSkills(skills) {
-            var learned = 0;
-            var practiced = 0;
-            for (var i in skills){
-                var p = skills[i];
-                learned += p.learned;
-                practiced += p.practiced;
-            }
-            var avg = {
-                learned : learned,
-                practiced : practiced,
-            };
+        function avgSkills(map) {
+            var avg = {};
+            angular.forEach(map.placeTypes, function(pt) {
+              for (var i in pt.stats) {
+                if (!avg[i]) {
+                  avg[i] = 0;
+                }
+                avg[i] += pt.stats[i];
+              }
+            });
             return avg;
         }
     }

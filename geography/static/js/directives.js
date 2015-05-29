@@ -104,14 +104,13 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
       restrict : 'C',
       template : '<div class="progress overview-progress">' +
                     '<div class="progress-bar progress-bar-learned" style="' +
-                        'width: {{100 * skills.learned / count}}%;">' +
+                        'width: {{100 * skills.number_of_mastered_flashcards / skills.number_of_flashcards}}%;">' +
                     '</div>' +
                     '<div class="progress-bar progress-bar-practiced" style="' +
-                        'width: {{100 * skills.practiced / count}}%;">' +
+                        'width: {{100 * skills.number_of_practiced_flashcards / skills.number_of_flashcards}}%;">' +
                     '</div>' +
                   '</div>',
       link : function($scope, elem, attrs) {
-        $scope.count = attrs.count;
         attrs.$observe('skills', function(skills) {
           if(skills !== '') {
             $scope.skills = angular.fromJson(skills);
@@ -123,14 +122,16 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
                      gettext('Naučeno') + ' ' +
                      '<span class="badge badge-default">' +
                        '<i class="color-indicator learned"></i>' +
-                       ($scope.skills.learned || 0) + ' / ' + $scope.count +
+                       ($scope.skills.number_of_mastered_flashcards || 0) + ' / ' + 
+                       $scope.skills.number_of_flashcards +
                      '</span>' +
                    '</div>' +
                    '<div class="skill-tooltip">' +
                      gettext('Procvičováno') + ' ' +
                      '<span class="badge badge-default">' +
                        '<i class="color-indicator practiced"></i>' +
-                       ($scope.skills.practiced || 0) + ' / ' + $scope.count +
+                       ($scope.skills.number_of_practiced_flashcards || 0) + ' / ' +
+                       $scope.skills.number_of_flashcards +
                      '</span>' +
                    '</div>'
             });
