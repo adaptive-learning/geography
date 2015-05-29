@@ -35,7 +35,7 @@ def home(request, hack=None):
         'continents': Category.objects.filter(
             lang=get_language(), type='continent'),
         'states': Category.objects.filter(lang=get_language(), type='state'),
-        'user_json': json.dumps(user),
+        'user_json': user,
         'LANGUAGE_CODE': get_language(),
         'LANGUAGES': settings.LANGUAGES,
         'is_homepage': hack is None,

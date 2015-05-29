@@ -374,9 +374,12 @@ angular.module('proso.geography.map', [])
         if (panZoom) {
           panZoom.zoomIn(1);
           panZoom.zoomOut(1);
+          //TODO fix pan zoom dependency
+          /*
           panZoom.onZoomChange(function(currZoom) {
             setCitiesSize(map.getLayer("city"), currZoom);
           });
+          */
         }
         if (practice) {
           $("html, body").animate({ scrollTop: ($('.navbar').height() - 8) + "px" });
@@ -465,7 +468,6 @@ angular.module('proso.geography.map', [])
           });
 
           var places = $filter('StatesFromPlaces')(placesByTypes);
-          console.log('pc', places);
           config.places = places;
           angular.forEach(layers.getAll(), function(layer) {
             var layerConfig = layers.getConfig(layer);
