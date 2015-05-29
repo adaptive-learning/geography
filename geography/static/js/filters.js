@@ -1,4 +1,3 @@
-'use strict';
 /* Filters */
 angular.module('proso.geography.filters', [])
 

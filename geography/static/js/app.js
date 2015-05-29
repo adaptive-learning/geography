@@ -1,4 +1,3 @@
-'use strict';
 
 /* global gettext */
 window.gettext = window.gettext || function(x){return x;};
@@ -27,6 +26,7 @@ angular.module('proso.geography', [
 
 .config(['$routeProvider', '$locationProvider', 'googleExperimentsProvider',
     function($routeProvider, $locationProvider, googleExperimentsProvider) {
+        'use strict';
         $routeProvider.when('/', {
             templateUrl : 'static/tpl/homepage.html'
         }).when('/login/:somepath/', {
@@ -82,6 +82,7 @@ angular.module('proso.geography', [
 
 .run(['$rootScope', '$', '$analytics', 'editableOptions',
     function($rootScope, $, $analytics, editableOptions) {
+        'use strict';
         $analytics.settings.pageTracking.autoTrackFirstPage = false;
 
         editableOptions.theme = 'bs3';

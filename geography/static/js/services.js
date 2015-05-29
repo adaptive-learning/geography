@@ -1,9 +1,9 @@
-'use strict';
 
 /* Services */
 angular.module('proso.geography.services', ['ngCookies'])
 
   .factory('places', ['$http', 'gettext', function($http, gettext) {
+    'use strict';
     var cache = {};
     var mapCache = {};
     var categoriesCache = {};
@@ -141,6 +141,7 @@ angular.module('proso.geography.services', ['ngCookies'])
   }])
 
   .factory('mapTitle', ['places', function(places) {
+    'use strict';
     return function(part, user) {
       var name = places.getName(part);
       if (!name) {
@@ -155,6 +156,7 @@ angular.module('proso.geography.services', ['ngCookies'])
 
   .service('question', ['$http', '$log', '$cookies', '$analytics', 'params',
       function($http, $log, $cookies, $analytics, params) {
+    'use strict';
     var qIndex = 0;
     var url;
     $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
@@ -236,6 +238,7 @@ angular.module('proso.geography.services', ['ngCookies'])
   }])
 
   .factory('events', function() {
+    'use strict';
     var handlers = {};
     return {
       on : function(eventName, handler) {
@@ -252,6 +255,7 @@ angular.module('proso.geography.services', ['ngCookies'])
   })
 
   .factory('pageTitle',['places', 'gettext', function(places, gettext) {
+    'use strict';
 
     var titles = {
       'static/tpl/about.html' : gettext('O prjektu') + ' - ',
@@ -276,6 +280,7 @@ angular.module('proso.geography.services', ['ngCookies'])
 
   .factory('params', ["$routeParams", "$location",
       function ($routeParams, $location) {
+    'use strict';
     var keys = ['limit'];
     var params = {};
     var that =  {
@@ -306,6 +311,7 @@ angular.module('proso.geography.services', ['ngCookies'])
   }])
 
   .factory('categoryService', ["$http", "$q", function ($http, $q) {
+    'use strict';
     var categories = [];
     var categoriesByIdentifier = {};
     var httpPromise;
@@ -343,6 +349,7 @@ angular.module('proso.geography.services', ['ngCookies'])
 
   .factory('flashcardService', ["$http", "$q",
       function ($http, $q) {
+    'use strict';
     var flashcardCache = {};
     var categoriesCache = {};
     var categories = [
@@ -427,6 +434,7 @@ angular.module('proso.geography.services', ['ngCookies'])
 
 
   .service('placeTypeService', ["gettext", function (gettext) {
+    'use strict';
     var self = this;
     var placeTypeNames = {
         'state' : 'Státy',
@@ -457,6 +465,7 @@ angular.module('proso.geography.services', ['ngCookies'])
 
 
   .factory('confirmModal', ["$modal", function ($modal) {
+    'use strict';
     var ModalConfirmCtrl = ['$scope', '$modalInstance', 'question', 'confirm',
         function ($scope, $modalInstance, question, confirm) {
       $scope.cancel = function () {

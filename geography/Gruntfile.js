@@ -60,6 +60,29 @@ module.exports = function(grunt) {
                 dest: 'static/dist/js/geography.html.js',
             }
         },
+        jshint: {
+            options: {
+                "undef": true,
+                "unused": true,
+                "browser": true,
+                "globals": {
+                    "angular": false,
+                    "bboxCache": false,
+                    "chroma": false,
+                    "console": false,
+                    "gettext": false,
+                    "jQuery": false,
+                },
+                "maxcomplexity": 6,
+                "indent": 2,
+                "maxstatements": 12,
+                "maxdepth" : 3,
+                "maxparams": 12,
+            },
+            dist: {
+                src: 'static/js/',
+            }
+        },
         sass: {
             options: {
                 style: "compressed"
@@ -143,6 +166,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-bower-concat');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -153,7 +177,7 @@ module.exports = function(grunt) {
     grunt.registerTask('bboxcache-all', ['bboxcache', 'string-replace:bboxcache']);
     grunt.registerTask('collect-libs', ['bower_concat:all', 'uglify:libs', 'copy:fonts']);
     grunt.registerTask('prepare-libs', ['shell:bower_install', 'collect-libs']);
-    grunt.registerTask('prepare', ['html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography', 'copy:above-fold', 'copy:images']);
+    grunt.registerTask('prepare', ['jshit', 'html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography', 'copy:above-fold', 'copy:images']);
     grunt.registerTask('default', ['bboxcache-all', 'prepare-libs', 'prepare']);
 
     /* CUSTOM TASKS */

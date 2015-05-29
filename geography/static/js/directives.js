@@ -1,5 +1,3 @@
-'use strict';
-
 /* Directives */
 angular.module('proso.geography.directives', ['proso.geography.templates'])
 
@@ -122,7 +120,7 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
                      gettext('Naučeno') + ' ' +
                      '<span class="badge badge-default">' +
                        '<i class="color-indicator learned"></i>' +
-                       ($scope.skills.number_of_mastered_flashcards || 0) + ' / ' + 
+                       ($scope.skills.number_of_mastered_flashcards || 0) + ' / ' +
                        $scope.skills.number_of_flashcards +
                      '</span>' +
                    '</div>' +

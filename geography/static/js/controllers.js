@@ -1,10 +1,10 @@
-'use strict';
 
 /* Controllers */
 angular.module('proso.geography.controllers', [])
 
 .controller('AppCtrl', ['$scope', '$rootScope', 'userService', 'pageTitle', 'configService',
     function($scope, $rootScope, userService, pageTitle, configService) {
+        'use strict';
         $scope.configService = configService;
         $scope.userService = userService;
 
@@ -33,6 +33,7 @@ angular.module('proso.geography.controllers', [])
 
 .controller('AppView', ['$scope', '$routeParams', '$filter', 'flashcardService', 'mapTitle', 'placeTypeService',
     function($scope, $routeParams, $filter, flashcardService, mapTitle, placeTypeService) {
+        'use strict';
         $scope.part = $routeParams.part;
         var user = $routeParams.user || '';
         $scope.typeCategories = flashcardService.getCategories($scope.part);
@@ -98,6 +99,7 @@ angular.module('proso.geography.controllers', [])
     function($scope, $routeParams, $timeout, $filter,
         practiceService, userService, events, colors, $, highlighted,
         categoryService, flashcardService) {
+        'use strict';
 
         $scope.part = $routeParams.part;
         $scope.placeType = $routeParams.place_type;
@@ -177,7 +179,7 @@ angular.module('proso.geography.controllers', [])
                 $scope.imageController.highlightItem(q.description, correct ? colors.GOOD : colors.BAD, 1);
             });
             $("html, body").animate({ scrollTop: "0px" });
-            events.emit('questionSetFinished', user.getUser().answered_count);
+            events.emit('questionSetFinished', userService.getUser().answered_count);
         }
 
         function setQuestion(active) {
@@ -209,7 +211,7 @@ angular.module('proso.geography.controllers', [])
 
         $scope.mapCallback = function() {
             practiceService.initSet('common');
-            var cat = categoryService.getCategory($scope.part);
+            // var cat = categoryService.getCategory($scope.part);
             var filter = {
                 // TODO identifier missing in categoreis
                 contexts : [$routeParams.part],
@@ -240,8 +242,9 @@ angular.module('proso.geography.controllers', [])
 
 .controller('AppOverview', ['$scope', '$routeParams', 'categoryService', 'userStatsService', 'placeTypeService',
     function($scope, $routeParams, categoryService, userStatsService, placeTypeService) {
+        'use strict';
 
-        var mapSkills = {};
+        // var mapSkills = {};
 
         $scope.user = $routeParams.user || '';
         categoryService.getAll().then(function(categories){
@@ -310,6 +313,7 @@ angular.module('proso.geography.controllers', [])
 
 .controller('AppConfused', ['$scope', '$http',
     function($scope, $http){
+        'use strict';
         $http.get('/confused/').success(function(data){
             angular.forEach(data, function(p){
                 p.wrongRatio = p.mistake_count / p.asked_count;
@@ -324,6 +328,7 @@ angular.module('proso.geography.controllers', [])
 ])
 
 .controller('ReloadController', ['$window', function($window){
+    'use strict';
     $window.location.reload();
 }]);
 

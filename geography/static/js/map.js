@@ -1,8 +1,3 @@
-'use strict';
-/* global jQuery  */
-/* global chroma  */
-/* global Kartograph */
-/* global bboxCache */
 var STROKE_WIDTH = 1.5;
 var RIVER_WIDTH = STROKE_WIDTH * 2;
 var ANIMATION_TIME_MS = 500;
@@ -49,6 +44,7 @@ angular.module('proso.geography.map', [])
   .factory('getLayerConfig', ['$log', 'colors', 'colorScale', 'citySizeRatio',
       'stateAlternatives', 'highlighted',
       function($log, colors, colorScale, citySizeRatio, stateAlternatives, highlighted) {
+    'use strict';
     return function(config) {
       var layerConfig = {};
       layerConfig.bg = {
