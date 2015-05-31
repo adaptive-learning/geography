@@ -41,8 +41,16 @@ angular.module('proso.geography.controllers', [])
         var filter = {
             contexts : [$routeParams.part],
         };
+        if ($routeParams.user == 'average') {
+          filter.new_user_predictions = true;
+        }
 
         flashcardService.getFlashcards(filter).then(function(data) {
+            if (filter.new_user_predictions) {
+              angular.forEach(data, function(flashcard) {
+                flashcard.prediction = flashcard.new_user_prediction;
+              });
+            }
             var placeTypes = placeTypeService.getTypes();
             placeTypes = placeTypes.map(function(pt) {
                 pt.places = data.filter(function(fc) {
