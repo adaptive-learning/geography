@@ -256,12 +256,31 @@ angular.module('proso.geography.controllers', [])
         'use strict';
 
         // var mapSkills = {};
+        function addNamesAndSort(categories) {
+          var categoryNames = {
+            'state' : gettext('Státy'),
+            'continent' : gettext('Kontinenty'),
+          };
+          var categoriesByIdentifier = {};
+          for (var i = 0; i < categories.length; i++) {
+            categories[i].name = categoryNames[categories[i].identifier];
+            categoriesByIdentifier[categories[i].identifier] = categories[i];
+          }
+          var categoryTypes = ['world', 'continent', 'state'];
+          var ret = [];
+          for (i = 0; i < categoryTypes.length; i++) {
+            if (categoriesByIdentifier[categoryTypes[i]]) {
+              ret.push(categoriesByIdentifier[categoryTypes[i]]);
+            }
+          }
+          return ret;
+        }
 
         $scope.user = $routeParams.user || '';
         categoryService.getAll().then(function(categories){
-            $scope.mapCategories = categories;
+            $scope.mapCategories = addNamesAndSort(categories);
             var maps = [];
-            for (var i in categories) {
+            for (var i = 0; i < categories.length; i++) {
               maps = maps.concat(categories[i].maps);
             }
             var placeTypes = placeTypeService.getTypes();
@@ -281,7 +300,6 @@ angular.module('proso.geography.controllers', [])
             });
 
             function processStats(data) {
-              console.log(data.data);
               $scope.userStats = data.data;
               angular.forEach(maps, function(map) {
                 map.placeTypes = [];

@@ -332,15 +332,10 @@ angular.module('proso.geography.services', ['ngCookies'])
           categoriesByType[data.data[i].type].push(data.data[i]);
         }
         var allCategories = [];
-        var categoryNames = {
-          'state' : gettext('Státy'),
-          'continent' : gettext('Kontinenty'),
-        };
         for (i in categoriesByType) {
           allCategories.push({
             maps: categoriesByType[i],
             identifier: i,
-            name: categoryNames[i],
           });
         }
         deferredCategory.resolve(allCategories);
