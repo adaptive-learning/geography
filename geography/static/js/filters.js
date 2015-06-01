@@ -64,12 +64,12 @@ angular.module('proso.geography.filters', [])
     return function(question) {
       if (question && question.direction == "t2d") {
         if (question.options) {
-          return gettext("Ze zvýrazněných položek na mapě vyber");
+          return gettext("Ze zvýrazněných objektů na mapě vyber");
         } else {
           return gettext("Vyber na mapě");
         }
       } else if (question && question.direction == "d2t") {
-        return gettext("Jak se jmenuje položka zvýrazněná na mapě?");
+        return gettext("Jak se jmenuje objekt zvýrazněný na mapě?");
       }
       return "Error";
     };
