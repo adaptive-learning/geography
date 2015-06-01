@@ -189,7 +189,8 @@ angular.module('proso.geography.controllers', [])
                 $scope.imageController.highlightItem(q.description, correct ? colors.GOOD : colors.BAD, 1);
             });
             $("html, body").animate({ scrollTop: "0px" });
-            events.emit('questionSetFinished', userService.getUser().answered_count);
+            //TODO fix this when answered_count available
+            // events.emit('questionSetFinished', userService.getUser().answered_count);
         }
 
         function setQuestion(active) {
@@ -339,6 +340,43 @@ angular.module('proso.geography.controllers', [])
         });
     }
 ])
+
+.controller('AppUser', ['$scope', 'userService', '$routeParams', '$location', 
+    '$timeout', 'gettext',
+    function($scope, userService, $routeParams, $location, $timeout, gettext) {
+
+  $scope.profileUrl = $location.absUrl();
+  $scope.user = {username: $routeParams.user};
+  $scope.user = userService.user;
+  console.log(userService.loadUser());
+  /*
+  userService.loadUser($routeParams.user).success(function(data){
+    $scope.user = data;
+    $scope.editRights = data.username == userService.user.username;
+
+    if ($routeParams.edit !== undefined && $scope.editRights) {
+      $timeout(function() {
+        $scope.editableForm.$show();
+      },10);
+    }
+  });
+  */
+
+  $scope.saveUser = function() {
+    // $scope.user already updated!
+    return userService.save($scope.user).error(function(err) {
+      if(err.field && err.msg) {
+        // err like {field: "name", msg: "Server-side error for this username!"} 
+        $scope.editableForm.$setError(err.field, err.msg);
+      } else { 
+        // unknown error
+        $scope.editableForm.$setError('name', gettext("V aplikaci bohužel nastala chyba."));
+      }
+    });
+  };
+
+}])
+
 
 .controller('ReloadController', ['$window', function($window){
     'use strict';

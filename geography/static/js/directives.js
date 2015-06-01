@@ -142,8 +142,8 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
     };
   }])
 
-  .directive('levelProgressBar',['user', '$timeout', 'gettext',
-      function(user, $timeout, gettext) {
+  .directive('levelProgressBar',['userService', '$timeout', 'gettext',
+      function(userService, $timeout, gettext) {
     return {
       restrict : 'C',
       template : '<span class="badge level-start" ' +
@@ -165,9 +165,11 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
       link : function($scope, elem, attrs) {
         elem.addClass('level-wrapper');
         if (attrs.username) {
-          user.getPromiseByName(attrs.username).success(function(data){
+          /*
+          userService.loadUser(attrs.username).success(function(data){
             $scope.level = user.getLevelInfo(data);
           });
+          */
         } else {
           $scope.level = user.getUser().getLevelInfo();
         }
