@@ -371,12 +371,9 @@ angular.module('proso.geography.map', [])
         if (panZoom) {
           panZoom.zoomIn(1);
           panZoom.zoomOut(1);
-          //TODO fix pan zoom dependency
-          /*
           panZoom.onZoomChange(function(currZoom) {
             setCitiesSize(map.getLayer("city"), currZoom);
           });
-          */
         }
         if (practice) {
           $("html, body").animate({ scrollTop: ($('.navbar').height() - 8) + "px" });
