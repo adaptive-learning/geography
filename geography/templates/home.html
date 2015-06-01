@@ -172,7 +172,8 @@
      {% endif %}
     </div>
   </div>
-    {% include "feedback.html" %}
+    <div id="feedback-btn" feedback-comment email="{{user.user.email}}">
+    </div>
 
     <div class="" id="footer">
       <div class="col-md-offset-1 col-md-10 col-lg-offset-3 col-lg-6">
@@ -184,9 +185,8 @@
           </li>
           {% endif %}
           <li>
-            <a href="" ng-click="openFeedback()">
-              {% trans "Napište nám"%}
-            </a>
+            <span feedback-comment  email="{{user.user.email}}">
+            </span>
           </li>
           <li>
             <a href="https://plus.google.com/+SlepemapyCz/">Google+</a>
