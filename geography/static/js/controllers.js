@@ -259,7 +259,10 @@ angular.module('proso.geography.controllers', [])
         $scope.user = $routeParams.user || '';
         categoryService.getAll().then(function(categories){
             $scope.mapCategories = categories;
-            var maps = categories[0].maps;
+            var maps = [];
+            for (var i in categories) {
+              maps = maps.concat(categories[i].maps);
+            }
             var placeTypes = placeTypeService.getTypes();
             for (var i = 0; i < maps.length; i++) {
               var map = maps[i];

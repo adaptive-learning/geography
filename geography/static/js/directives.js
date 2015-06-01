@@ -114,7 +114,7 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
             $scope.skills = angular.fromJson(skills);
             $scope.skills.number_of_nonmastered_practiced_flashcards = 
               $scope.skills.number_of_practiced_flashcards - 
-              $scope.skills.number_of_mastered_flashcards; 
+              ($scope.skills.number_of_mastered_flashcards || 0); 
             elem.tooltip({
               html : true,
               placement: 'bottom',

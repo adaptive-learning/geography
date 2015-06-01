@@ -310,7 +310,7 @@ angular.module('proso.geography.services', ['ngCookies'])
     return that;
   }])
 
-  .factory('categoryService', ["$http", "$q", function ($http, $q) {
+  .factory('categoryService', ["$http", "$q", "gettext", function ($http, $q, gettext) {
     'use strict';
     var categories = [];
     var categoriesByIdentifier = {};
@@ -323,12 +323,26 @@ angular.module('proso.geography.services', ['ngCookies'])
       };
       httpPromise = $http.get('/flashcards/categorys', {params: filter}).success(function(data) {
         categories = data.data;
+        var categoriesByType = {};
         for (var i = 0; i < data.data.length; i++) {
           categoriesByIdentifier[data.data[i].identifier] = data.data[i];
+          if (!categoriesByType[data.data[i].type]) {
+            categoriesByType[data.data[i].type] = [];
+          }
+          categoriesByType[data.data[i].type].push(data.data[i]);
         }
-        var allCategories = [ {
-          maps : data.data,
-        }];
+        var allCategories = [];
+        var categoryNames = {
+          'state' : gettext('Státy'),
+          'continent' : gettext('Kontinenty'),
+        };
+        for (i in categoriesByType) {
+          allCategories.push({
+            maps: categoriesByType[i],
+            identifier: i,
+            name: categoryNames[i],
+          });
+        }
         deferredCategory.resolve(allCategories);
       }).error(function(error){
         console.error("Something went wrong while loading categories from backend.");
