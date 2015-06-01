@@ -17,7 +17,7 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
                 ' <span class="badge badge-default">' +
                   '<i class="color-indicator" style="background-color :' +
                   colorScale($scope.place.prediction).hex() + '"></i>' +
-                  Math.round(10 * $scope.place.prediction) + ' / 10 ' +
+                  (10 * $scope.place.prediction) + ' / 10 ' +
                 '</span>' +
                '</div>'
         });
