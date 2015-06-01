@@ -164,15 +164,15 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
                  '</span>',
       link : function($scope, elem, attrs) {
         elem.addClass('level-wrapper');
-        if (attrs.username) {
           /*
+        if (attrs.username) {
           userService.loadUser(attrs.username).success(function(data){
             $scope.level = user.getLevelInfo(data);
           });
-          */
         } else {
           $scope.level = user.getUser().getLevelInfo();
         }
+          */
       }
     };
   }])

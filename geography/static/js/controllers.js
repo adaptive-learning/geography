@@ -265,7 +265,7 @@ angular.module('proso.geography.controllers', [])
               maps = maps.concat(categories[i].maps);
             }
             var placeTypes = placeTypeService.getTypes();
-            for (var i = 0; i < maps.length; i++) {
+            for (i = 0; i < maps.length; i++) {
               var map = maps[i];
               for (var j = 0; j < placeTypes.length; j++) {
                 var pt = placeTypes[j];
@@ -288,7 +288,7 @@ angular.module('proso.geography.controllers', [])
                 angular.forEach(angular.copy(placeTypes), function(pt) {
                   var key = map.identifier + '-' + pt.identifier;
                   pt.stats = data.data[key];
-                  if (pt.stats.number_of_flashcards > 0) {
+                  if (pt.stats && pt.stats.number_of_flashcards > 0) {
                     map.placeTypes.push(pt);
                   }
                 });
