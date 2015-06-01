@@ -51,7 +51,7 @@ angular.module('proso.geography', [
             templateUrl : 'static/tpl/overview_tpl.html'
         }).when('/u/:user', {
             controller : 'AppUser',
-            templateUrl : 'static/proso_user/tpl/user_tpl.html'
+            templateUrl : 'static/tpl/user_tpl.html'
         }).when('/goals/', {
             templateUrl : 'static/tpl/personal-goals-page_tpl.html'
         }).when('/mistakes/', {
