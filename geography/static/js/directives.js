@@ -115,27 +115,29 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
             $scope.skills.number_of_nonmastered_practiced_flashcards = 
               Math.max(0, $scope.skills.number_of_practiced_flashcards - 
               ($scope.skills.number_of_mastered_flashcards || 0)); 
-            elem.tooltip({
-              html : true,
-              placement: 'bottom',
-              container: 'body',
-              title : '<div class="skill-tooltip">' +
-                     gettext('Naučeno') + ' ' +
-                     '<span class="badge badge-default">' +
-                       '<i class="color-indicator learned"></i>' +
-                       ($scope.skills.number_of_mastered_flashcards || 0) + ' / ' +
-                       $scope.skills.number_of_flashcards +
-                     '</span>' +
-                   '</div>' +
-                   '<div class="skill-tooltip">' +
-                     gettext('Procvičováno') + ' ' +
-                     '<span class="badge badge-default">' +
-                       '<i class="color-indicator practiced"></i>' +
-                       ($scope.skills.number_of_nonmastered_practiced_flashcards || 0) + ' / ' +
-                       $scope.skills.number_of_flashcards +
-                     '</span>' +
-                   '</div>'
-            });
+            if($scope.skills.number_of_mastered_flashcards !== undefined) {
+              elem.tooltip({
+                html : true,
+                placement: 'bottom',
+                container: 'body',
+                title : '<div class="skill-tooltip">' +
+                       gettext('Naučeno') + ' ' +
+                       '<span class="badge badge-default">' +
+                         '<i class="color-indicator learned"></i>' +
+                         $scope.skills.number_of_mastered_flashcards + ' / ' +
+                         $scope.skills.number_of_flashcards +
+                       '</span>' +
+                     '</div>' +
+                     '<div class="skill-tooltip">' +
+                       gettext('Procvičováno') + ' ' +
+                       '<span class="badge badge-default">' +
+                         '<i class="color-indicator practiced"></i>' +
+                         ($scope.skills.number_of_nonmastered_practiced_flashcards || 0) + ' / ' +
+                         $scope.skills.number_of_flashcards +
+                       '</span>' +
+                     '</div>'
+              });
+            }
           }
         });
       }
