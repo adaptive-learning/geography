@@ -36,7 +36,7 @@ def home(request, hack=None):
             lang=get_language(), type='continent'),
         'states': Category.objects.filter(lang=get_language(), type='state'),
         'user': user,
-        'user_json': json.dumps(user.to_json()),
+        'user_json': user if isinstance(user, str) else json.dumps(user.to_json()),
         'LANGUAGE_CODE': get_language(),
         'LANGUAGES': settings.LANGUAGES,
         'is_homepage': hack is None,
