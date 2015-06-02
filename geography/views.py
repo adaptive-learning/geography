@@ -22,10 +22,12 @@ def home(request, hack=None):
         "dist/css/app.css",
         "dist/css/map.css"
     )
-    if not hasattr(request.user, "userprofile"):
+    if not hasattr(request.user, "userprofile") or request.user.userprofile is None:
         user = ''
+        email = ''
     else:
-        user = request.user.userprofile
+        user = json.dumps(request.user.userprofile.to_json())
+        email = request.user.email
     c = {
         'title': _(u'Slepé mapy') + ' - ' + _(u'inteligentní aplikace na procvičování zeměpisu'),
         'map': get_map_from_url(hack),
@@ -35,8 +37,8 @@ def home(request, hack=None):
         'continents': Category.objects.filter(
             lang=get_language(), type='continent'),
         'states': Category.objects.filter(lang=get_language(), type='state'),
-        'user': user,
-        'user_json': user if isinstance(user, str) else json.dumps(user.to_json()),
+        'user_json': user,
+        'email': email,
         'LANGUAGE_CODE': get_language(),
         'LANGUAGES': settings.LANGUAGES,
         'is_homepage': hack is None,
