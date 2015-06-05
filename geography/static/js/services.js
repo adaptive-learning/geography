@@ -17,13 +17,13 @@ angular.module('proso.geography.services', ['ngCookies'])
         name : gettext('Politická mapa'),
         types : [
           'state',
-          'city',
           'region',
           'province',
           'region_cz',
           'region_it',
-          'autonomous_comunity',
-          'bundesland'
+          'autonomous_Comunity',
+          'bundesland',
+          'city',
         ]
       },{
         slug : 'water',
@@ -367,13 +367,13 @@ angular.module('proso.geography.services', ['ngCookies'])
         name : gettext('Politická mapa'),
         types : [
           'state',
-          'city',
           'region',
           'province',
           'region_cz',
           'region_it',
-          'autonomous_comunity',
-          'bundesland'
+          'autonomous_Comunity',
+          'bundesland',
+          'city',
         ]
       },{
         slug : 'water',
@@ -447,13 +447,13 @@ angular.module('proso.geography.services', ['ngCookies'])
     var self = this;
     var placeTypeNames = {
         'state' : 'Státy',
-        'city' : gettext('Města'),
         'region' : gettext('Regiony'),
         'province' : gettext('Provincie'),
         'region_cz' : gettext('Kraje'),
         'region_it' : gettext('Oblasti'),
-        'autonomous_comunity' : gettext('Autonomní společenství'),
+        'autonomous_Comunity' : gettext('Autonomní společenství'),
         'bundesland' : gettext('Spolkové země'),
+        'city' : gettext('Města'),
         'river' : gettext('Řeky'),
         'lake' : gettext('Jezera'),
         'mountains' : gettext('Pohoří'),
