@@ -14,6 +14,7 @@ def home(request, hack=None):
     JS_FILES = (
         "dist/js/bower-libs.js",
         "dist/js/bbox.js",
+        "dist/js/jquery.qtip.min.js",
         "dist/js/geography.js",
         "dist/js/geography.html.js",
     )
@@ -26,7 +27,7 @@ def home(request, hack=None):
         user = ''
         email = ''
     else:
-        user = json.dumps(request.user.userprofile.to_json())
+        user = json.dumps(request.user.userprofile.to_json(stats=True))
         email = request.user.email
     c = {
         'title': _(u'Slepé mapy') + ' - ' + _(u'inteligentní aplikace na procvičování zeměpisu'),

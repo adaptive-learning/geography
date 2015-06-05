@@ -364,25 +364,27 @@ angular.module('proso.geography.controllers', [])
     function($scope, userService, $routeParams, $location, $timeout, gettext) {
 
   $scope.profileUrl = $location.absUrl();
-  $scope.user = {username: $routeParams.user};
-  $scope.user = userService.user;
-  console.log(userService.loadUser());
-  /*
-  userService.loadUser($routeParams.user).success(function(data){
-    $scope.user = data;
-    $scope.editRights = data.username == userService.user.username;
-
+  if ($routeParams.user == userService.user.username) {
+    $scope.user = userService.user;
+    $scope.editRights = true; 
     if ($routeParams.edit !== undefined && $scope.editRights) {
       $timeout(function() {
         $scope.editableForm.$show();
       },10);
     }
-  });
-  */
+  } else {
+    $scope.user = {username: $routeParams.user};
+    userService.getUserProfile($routeParams.username, true).success(function(response){
+      $scope.user = response.data;
+    }).error(function(response) {
+      $scope.error = gettext("Hledaný profil neexistuje.");
+      console.error($scope.error);
+    });
+  }
 
   $scope.saveUser = function() {
     // $scope.user already updated!
-    return userService.save($scope.user).error(function(err) {
+    return userService.updateProfile($scope.user).error(function(err) {
       if(err.field && err.msg) {
         // err like {field: "name", msg: "Server-side error for this username!"} 
         $scope.editableForm.$setError(err.field, err.msg);

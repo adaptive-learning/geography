@@ -54,9 +54,10 @@
       </span>
     </div>
     </form>
-    <div ng-hide="editableForm.$visible">
+    <div ng-show="error" error-message ></div>
+    <div ng-hide="editableForm.$visible || error">
       <a href="/overview/{{user.username}}">
-        {{'Přehled znalostí uživatele' | trans}} {{ user.username}}
+        {{'Přehled znalostí uživatele' | trans}} {{ user.username && ' - ' + user.username }}
       </a>
       <div ng-show="editRights">
         <br>
