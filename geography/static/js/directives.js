@@ -146,6 +146,29 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
 
   .directive('levelProgressBar',['userService', '$timeout', 'gettext',
       function(userService, $timeout, gettext) {
+
+    function getLevelInfo(user) {
+      var points = user.number_of_correct_answers || 0;
+      console.log(user);
+      var levelEnd = 0;
+      var levelRange = 30;
+      var rangeIncrease = 0;
+      for (var i = 1; true; i++) {
+        levelEnd += levelRange;
+        if ((points || 0) < levelEnd) {
+          return {
+            level : i,
+            form : levelEnd - levelRange,
+            to : levelEnd,
+            range : levelRange,
+            points : points - (levelEnd - levelRange),
+          };
+        }
+        levelRange += rangeIncrease;
+        rangeIncrease += 10;
+      }
+      
+    }
     return {
       restrict : 'C',
       template : '<span class="badge level-start" ' +
@@ -166,15 +189,13 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
                  '</span>',
       link : function($scope, elem, attrs) {
         elem.addClass('level-wrapper');
-          /*
-        if (attrs.username) {
-          userService.loadUser(attrs.username).success(function(data){
-            $scope.level = user.getLevelInfo(data);
+        if (attrs.username != userService.user.username) {
+          userService.getUserProfile(attrs.username, true).success(function(data){
+            $scope.level = getLevelInfo(data);
           });
         } else {
-          $scope.level = user.getUser().getLevelInfo();
+          $scope.level = getLevelInfo(userService.user.profile);
         }
-          */
       }
     };
   }])
