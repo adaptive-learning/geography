@@ -18,6 +18,7 @@ angular.module('proso.geography', [
     'googleExperiments',
     'xeditable',
     'proso.apps',
+    'angularDjangoCsrf',
 ])
 
 .value('gettext', gettext || function(x) {return x;})
