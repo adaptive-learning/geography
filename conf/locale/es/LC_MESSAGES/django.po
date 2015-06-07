@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-13 16:23+0100\n"
+"POT-Creation-Date: 2015-06-07 11:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,411 +17,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: geography/models/place.py:174
-msgid "Neznámé"
-msgstr "Desconocido"
-
-#: geography/models/place.py:175 geography/views/place.py:49
-#: templates/home.html:76
-msgid "Státy"
-msgstr "Estados"
-
-#: geography/models/place.py:176
-msgid "Města"
-msgstr "Ciudades"
-
-#: geography/models/place.py:177 templates/home.html:62
-msgid "Svět"
-msgstr "Mundo"
-
-#: geography/models/place.py:178 geography/views/place.py:46
-#: templates/home.html:66
-msgid "Kontinenty"
-msgstr "Continentes"
-
-#: geography/models/place.py:179
-msgid "Řeky"
-msgstr "Ríos"
-
-#: geography/models/place.py:180
-msgid "Jezera"
-msgstr "Lagos"
-
-#: geography/models/place.py:181
-msgid "Kraje"
-msgstr "Regiones"
-
-#: geography/models/place.py:182
-msgid "Spolkové Země"
-msgstr "Estados"
-
-#: geography/models/place.py:183
-msgid "Provincie"
-msgstr "Provincias"
-
-#: geography/models/place.py:184
-msgid "Oblasti"
-msgstr "Provincias"
-
-#: geography/models/place.py:185
-msgid "Regiony"
-msgstr "Regiones"
-
-#: geography/models/place.py:186
-msgid "Autonomní společenství"
-msgstr "Comunidades Autónomas"
-
-#: geography/models/place.py:187
-msgid "Pohoří"
-msgstr "Montes"
-
-#: geography/models/place.py:188
-msgid "Ostrovy"
-msgstr "Islas"
-
-#: geography/models/place.py:214
-msgid "Politická mapa"
-msgstr "Mapa político"
-
-#: geography/models/place.py:215
-msgid "Vodstvo"
-msgstr "Agua"
-
-#: geography/models/place.py:216
-msgid "Povrch"
-msgstr "Superficie"
-
-#: geography/utils/model.py:130
-msgctxt "state"
-msgid "zvýrazněný"
-msgstr "en grís"
-
-#: geography/utils/model.py:131
-msgctxt "city"
-msgid "zvýrazněné"
-msgstr "en grís"
-
-#: geography/utils/model.py:134
-msgctxt "river"
-msgid "zvýrazněná"
-msgstr "en grís"
-
-#: geography/utils/model.py:135
-msgctxt "lake"
-msgid "zvýrazněné"
-msgstr "en grís"
-
-#: geography/utils/model.py:136
-msgctxt "region_cz"
-msgid "zvýrazněný"
-msgstr "en grís"
-
-#: geography/utils/model.py:137
-msgctxt "bundesland"
-msgid "zvýrazněná"
-msgstr "en grís"
-
-#: geography/utils/model.py:138
-msgctxt "province"
-msgid "zvýrazněná"
-msgstr "en grís"
-
-#: geography/utils/model.py:139
-msgctxt "region_it"
-msgid "zvýrazněná"
-msgstr "en grís"
-
-#: geography/utils/model.py:140
-msgctxt "region"
-msgid "zvýrazněný"
-msgstr "en grís"
-
-#: geography/utils/model.py:141
-msgctxt "autonomous_comunity"
-msgid "zvýrazněná"
-msgstr "en grís"
-
-#: geography/utils/model.py:142
-msgctxt "mountains"
-msgid "zvýrazněné"
-msgstr "en grís"
-
-#: geography/utils/model.py:143
-msgctxt "island"
-msgid "zvýrazněný"
-msgstr "en grís"
-
-#: geography/utils/model.py:149 geography/utils/model.py:177
-msgid "unknown"
-msgstr "desconocido"
-
-#: geography/utils/model.py:150
-msgid "stát"
-msgstr "estado"
-
-#: geography/utils/model.py:151
-msgid "město"
-msgstr "ciudad"
-
-#: geography/utils/model.py:154
-msgid "řeka"
-msgstr "río"
-
-#: geography/utils/model.py:155
-msgid "jezero"
-msgstr "lago"
-
-#: geography/utils/model.py:156
-msgid "kraj"
-msgstr "región"
-
-#: geography/utils/model.py:157
-msgid "spolková země"
-msgstr "estado"
-
-#: geography/utils/model.py:158
-msgid "provincie"
-msgstr "provincia"
-
-#: geography/utils/model.py:159
-msgid "oblast"
-msgstr "región"
-
-#: geography/utils/model.py:160
-msgid "region"
-msgstr "región"
-
-#: geography/utils/model.py:161
-msgid "autonomní společenství"
-msgstr "comunidad autónoma"
-
-#: geography/utils/model.py:162
-msgctxt "singular"
-msgid "pohoří"
-msgstr "monte"
-
-#: geography/utils/model.py:163
-msgid "ostrov"
-msgstr "isla"
-
-#: geography/utils/model.py:169
-msgid "spolkovou zemi"
-msgstr "estado"
-
-#: geography/utils/model.py:170
-msgid "provincii"
-msgstr "provincia"
-
-#: geography/utils/model.py:171
-msgid "řeku"
-msgstr "río"
-
-#: geography/utils/model.py:178
-msgid "států"
-msgstr "estados"
-
-#: geography/utils/model.py:179
-msgid "měst"
-msgstr "ciudades"
-
-#: geography/utils/model.py:182
-msgid "řek"
-msgstr "ríos"
-
-#: geography/utils/model.py:183
-msgid "jezer"
-msgstr "lagos"
-
-#: geography/utils/model.py:184 geography/utils/model.py:188
-msgid "regionů"
-msgstr "regiones"
-
-#: geography/utils/model.py:185
-msgid "spolkových zemí"
-msgstr "estados"
-
-#: geography/utils/model.py:186
-msgid "provincií"
-msgstr "provincias"
-
-#: geography/utils/model.py:187
-msgid "oblastí"
-msgstr "regiones"
-
-#: geography/utils/model.py:189
-msgid "autonomních společenství"
-msgstr "comunidades autónomas"
-
-#: geography/utils/model.py:190
-msgctxt "plural"
-msgid "pohoří"
-msgstr "montes"
-
-#: geography/utils/model.py:191
-msgid "ostrovů"
-msgstr "islas"
-
-#: geography/utils/model.py:209
-#, python-format
-msgid "Ze zvýrazněných %(place_plural)s na mapě vyber"
-msgstr "Selecciona de entre los %(place_plural)s en grís el que corresponda a"
-
-#: geography/utils/model.py:212
-#, python-format
-msgid "Vyber na mapě %(place_singular)s"
-msgstr "Selecciona en el mapa el %(place_singular)s"
-
-#: geography/utils/model.py:215
-#, python-format
-msgid "Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?"
-msgstr "¿Cuál es el nombre del %(place_singular)s %(highlighted)s en el mapa?"
-
-#: geography/views/base.py:38
-#: proso_goals/templates/emails/goal_reminder.html:6
-#: proso_goals/templates/emails/goal_reminder.html:55
-#: proso_goals/templates/emails/goal_reminder.plain.txt:2
-#: templates/home.html:58 templates/generated/homepage.html:19
-msgid "Slepé Mapy"
-msgstr "Contorno de Mapas"
-
-#: geography/views/base.py:39
-msgid "inteligentní aplikace na procvičování zeměpisu"
-msgstr "programa inteligente para practicar geografía"
-
-#: proso_auth/views.py:67
-msgid "Heslo je správné, ale účet není aktivovaný."
-msgstr "La contraseña es correcta pero no se ha activado la cuenta"
-
-#: proso_auth/views.py:73
-msgid "Nesprávné jméno nebo heslo"
-msgstr "El usuario o la contraseña son incorrectos"
-
-#: proso_auth/views.py:103
-msgid "Je nutné vyplnit uživatelské jméno."
-msgstr "Tienes que escribir un nombre de usuario."
-
-#: proso_auth/views.py:105
-msgid "Je nutné vyplnit email."
-msgstr "Tienes que escribir una dirección de email."
-
-#: proso_auth/views.py:107
-msgid "Je nutné vyplnit heslo."
-msgstr "Tienes que escribir una contraseña."
-
-#: proso_auth/views.py:110
-msgid "Hesla se neshodují."
-msgstr "Las contraseñas no son iguales."
-
-#: proso_auth/views.py:113
-msgid "Účet se zadaným uživatelským jménem už existuje."
-msgstr ""
-
-#: proso_auth/views.py:118
-msgid "Účet se zadaným emailem už existuje."
-msgstr ""
-
-#: proso_feedback/views.py:46
-msgid "Feedback confirmed"
-msgstr "Gracias por tu mensaje. Tu opinión es muy importante para nosotros."
-
-#: proso_feedback/views.py:61
-msgid "Děkujeme za hodnocení."
-msgstr "Gracias por calificarnos."
-
-#: proso_feedback/templates/feedback.html:4 templates/home.html:182
-msgid "Napište nám"
-msgstr "Sugerencias"
-
-#: proso_goals/management/commands/send_reminder_emails.py:47
-msgid "Je čas procvičovat slepé mapy"
-msgstr ""
-
-#: proso_goals/templates/create_goal.html:5
+#: templates/create_goal.html:5
 msgid "Vytvořit cíl"
 msgstr "Crear meta"
 
-#: proso_goals/templates/create_goal.html:9
+#: templates/create_goal.html:9
 msgid "Mapa"
 msgstr "Mapa"
 
-#: proso_goals/templates/create_goal.html:36
+#: templates/create_goal.html:36
 msgid "Datum splnění cíle"
 msgstr "Fecha de cumplimiento de meta"
 
-#: proso_goals/templates/create_goal.html:64
-msgid "Vytrvořit"
+#: templates/create_goal.html:64
+#, fuzzy
+#| msgid "Vytrvořit"
+msgid "Vytvořit"
 msgstr "Crear"
 
-#: proso_goals/templates/create_goal.html:67
+#: templates/create_goal.html:67
 msgid "Zavřít"
 msgstr "Cerrar"
 
-#: proso_goals/templates/emails/goal_reminder.html:7 templates/home.html:120
-msgid "Osobní cíle"
-msgstr "Metas personales"
-
-#: proso_goals/templates/emails/goal_reminder.html:61
-#: proso_goals/templates/emails/goal_reminder.plain.txt:4
-msgid "Je nejvyšší čas pokračovat v plnění osobních cílů!"
-msgstr "Es hora de continuar con tus metas personales!"
-
-#: proso_goals/templates/emails/goal_reminder.html:70
-msgid "Procvičovat"
-msgstr "Practica"
-
-#: proso_goals/templates/emails/goal_reminder.html:89
-#: proso_goals/templates/emails/goal_reminder.plain.txt:11
-msgid "Změnit nastavení E-mailů"
-msgstr "Ajusta tus opciones de email"
-
-#: templates/home.html:26
-msgid "meta content"
-msgstr ""
-"programa inteligente para practicar el aprendizaje de estados, ciudades, "
-"montañas y riós sobre mapas dibujados del mundo, Europa, Asia, África, "
-"América y Estados Unidos y entre otros países"
-
-#: templates/home.html:27
-msgid "meta keywords"
-msgstr ""
-"juegos de geografía, contorno de mapas, mapas de contorno, países, estados, "
-"ciudades, mundo, europa, américa, áfrica, asia, montañas, ríos, eua"
-
-#: templates/home.html:85
-msgid "Přehled map"
-msgstr "Todos los mapas"
-
-#: templates/home.html:96
-msgid ""
-"Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
-"znalosti pamatoval i příště."
-msgstr ""
-"Entra con tu cuenta de Google o Facebook para que el sistema guarde tu "
-"progreso ."
-
-#: templates/home.html:99
-msgid "Přihlásit se"
-msgstr "Iniciar sesión"
-
-#: templates/home.html:110
-msgid "Můj profil"
-msgstr "Mi  perfil"
-
-#: templates/home.html:115
-msgid "Moje časté chyby"
-msgstr "Mis errores frecuentes"
-
-#: templates/home.html:125
-msgid "Nastavení"
-msgstr "Ajustes"
-
-#: templates/home.html:130
-msgid "Odhlásit se"
-msgstr "Terminar sesión"
-
-#: templates/home.html:177
-msgid "O projektu"
-msgstr "Sobre"
+#: templates/generated/homepage.html:19
+msgid "Slepé Mapy"
+msgstr "Contorno de Mapas"
 
 #: templates/generated/homepage.html:21
 msgid "Vyberte si mapu k procvičování:"
@@ -530,6 +150,304 @@ msgstr ""
 "vez de que un experto dicte la dificultad, los usuarios definen el nivel con "
 "su desempeño. Así, cada quién ayuda a decidir qué es más fácil, sí las "
 "ciudades de Kenia o los ríos de Nigeria. "
+
+#: templates/home.html:27
+msgid "meta content"
+msgstr ""
+"programa inteligente para practicar el aprendizaje de estados, ciudades, "
+"montañas y riós sobre mapas dibujados del mundo, Europa, Asia, África, "
+"América y Estados Unidos y entre otros países"
+
+#: templates/home.html:28
+msgid "meta keywords"
+msgstr ""
+"juegos de geografía, contorno de mapas, mapas de contorno, países, estados, "
+"ciudades, mundo, europa, américa, áfrica, asia, montañas, ríos, eua"
+
+#: templates/home.html:60 views.py:33
+#, fuzzy
+#| msgid "Slepé Mapy"
+msgid "Slepé mapy"
+msgstr "Contorno de Mapas"
+
+#: templates/home.html:64
+msgid "Svět"
+msgstr "Mundo"
+
+#: templates/home.html:68
+msgid "Kontinenty"
+msgstr "Continentes"
+
+#: templates/home.html:78
+msgid "Státy"
+msgstr "Estados"
+
+#: templates/home.html:87
+msgid "Přehled map"
+msgstr "Todos los mapas"
+
+#: templates/home.html:98
+msgid ""
+"Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
+"znalosti pamatoval i příště."
+msgstr ""
+"Entra con tu cuenta de Google o Facebook para que el sistema guarde tu "
+"progreso ."
+
+#: templates/home.html:101
+msgid "Přihlásit se"
+msgstr "Iniciar sesión"
+
+#: templates/home.html:114
+msgid "Můj profil"
+msgstr "Mi  perfil"
+
+#: templates/home.html:120
+msgid "Moje časté chyby"
+msgstr "Mis errores frecuentes"
+
+#: templates/home.html:125
+msgid "Osobní cíle"
+msgstr "Metas personales"
+
+#: templates/home.html:130
+msgid "Nastavení"
+msgstr "Ajustes"
+
+#: templates/home.html:136
+msgid "Odhlásit se"
+msgstr "Terminar sesión"
+
+#: templates/home.html:184
+msgid "O projektu"
+msgstr "Sobre"
+
+#: views.py:33
+msgid "inteligentní aplikace na procvičování zeměpisu"
+msgstr "programa inteligente para practicar geografía"
+
+#~ msgid "Neznámé"
+#~ msgstr "Desconocido"
+
+#~ msgid "Města"
+#~ msgstr "Ciudades"
+
+#~ msgid "Řeky"
+#~ msgstr "Ríos"
+
+#~ msgid "Jezera"
+#~ msgstr "Lagos"
+
+#~ msgid "Kraje"
+#~ msgstr "Regiones"
+
+#~ msgid "Spolkové Země"
+#~ msgstr "Estados"
+
+#~ msgid "Provincie"
+#~ msgstr "Provincias"
+
+#~ msgid "Oblasti"
+#~ msgstr "Provincias"
+
+#~ msgid "Regiony"
+#~ msgstr "Regiones"
+
+#~ msgid "Autonomní společenství"
+#~ msgstr "Comunidades Autónomas"
+
+#~ msgid "Pohoří"
+#~ msgstr "Montes"
+
+#~ msgid "Ostrovy"
+#~ msgstr "Islas"
+
+#~ msgid "Politická mapa"
+#~ msgstr "Mapa político"
+
+#~ msgid "Vodstvo"
+#~ msgstr "Agua"
+
+#~ msgid "Povrch"
+#~ msgstr "Superficie"
+
+#~ msgctxt "state"
+#~ msgid "zvýrazněný"
+#~ msgstr "en grís"
+
+#~ msgctxt "city"
+#~ msgid "zvýrazněné"
+#~ msgstr "en grís"
+
+#~ msgctxt "river"
+#~ msgid "zvýrazněná"
+#~ msgstr "en grís"
+
+#~ msgctxt "lake"
+#~ msgid "zvýrazněné"
+#~ msgstr "en grís"
+
+#~ msgctxt "region_cz"
+#~ msgid "zvýrazněný"
+#~ msgstr "en grís"
+
+#~ msgctxt "bundesland"
+#~ msgid "zvýrazněná"
+#~ msgstr "en grís"
+
+#~ msgctxt "province"
+#~ msgid "zvýrazněná"
+#~ msgstr "en grís"
+
+#~ msgctxt "region_it"
+#~ msgid "zvýrazněná"
+#~ msgstr "en grís"
+
+#~ msgctxt "region"
+#~ msgid "zvýrazněný"
+#~ msgstr "en grís"
+
+#~ msgctxt "autonomous_comunity"
+#~ msgid "zvýrazněná"
+#~ msgstr "en grís"
+
+#~ msgctxt "mountains"
+#~ msgid "zvýrazněné"
+#~ msgstr "en grís"
+
+#~ msgctxt "island"
+#~ msgid "zvýrazněný"
+#~ msgstr "en grís"
+
+#~ msgid "unknown"
+#~ msgstr "desconocido"
+
+#~ msgid "stát"
+#~ msgstr "estado"
+
+#~ msgid "město"
+#~ msgstr "ciudad"
+
+#~ msgid "řeka"
+#~ msgstr "río"
+
+#~ msgid "jezero"
+#~ msgstr "lago"
+
+#~ msgid "kraj"
+#~ msgstr "región"
+
+#~ msgid "spolková země"
+#~ msgstr "estado"
+
+#~ msgid "provincie"
+#~ msgstr "provincia"
+
+#~ msgid "oblast"
+#~ msgstr "región"
+
+#~ msgid "region"
+#~ msgstr "región"
+
+#~ msgid "autonomní společenství"
+#~ msgstr "comunidad autónoma"
+
+#~ msgctxt "singular"
+#~ msgid "pohoří"
+#~ msgstr "monte"
+
+#~ msgid "ostrov"
+#~ msgstr "isla"
+
+#~ msgid "spolkovou zemi"
+#~ msgstr "estado"
+
+#~ msgid "provincii"
+#~ msgstr "provincia"
+
+#~ msgid "řeku"
+#~ msgstr "río"
+
+#~ msgid "států"
+#~ msgstr "estados"
+
+#~ msgid "měst"
+#~ msgstr "ciudades"
+
+#~ msgid "řek"
+#~ msgstr "ríos"
+
+#~ msgid "jezer"
+#~ msgstr "lagos"
+
+#~ msgid "regionů"
+#~ msgstr "regiones"
+
+#~ msgid "spolkových zemí"
+#~ msgstr "estados"
+
+#~ msgid "provincií"
+#~ msgstr "provincias"
+
+#~ msgid "oblastí"
+#~ msgstr "regiones"
+
+#~ msgid "autonomních společenství"
+#~ msgstr "comunidades autónomas"
+
+#~ msgctxt "plural"
+#~ msgid "pohoří"
+#~ msgstr "montes"
+
+#~ msgid "ostrovů"
+#~ msgstr "islas"
+
+#~ msgid "Ze zvýrazněných %(place_plural)s na mapě vyber"
+#~ msgstr ""
+#~ "Selecciona de entre los %(place_plural)s en grís el que corresponda a"
+
+#~ msgid "Vyber na mapě %(place_singular)s"
+#~ msgstr "Selecciona en el mapa el %(place_singular)s"
+
+#~ msgid "Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?"
+#~ msgstr ""
+#~ "¿Cuál es el nombre del %(place_singular)s %(highlighted)s en el mapa?"
+
+#~ msgid "Heslo je správné, ale účet není aktivovaný."
+#~ msgstr "La contraseña es correcta pero no se ha activado la cuenta"
+
+#~ msgid "Nesprávné jméno nebo heslo"
+#~ msgstr "El usuario o la contraseña son incorrectos"
+
+#~ msgid "Je nutné vyplnit uživatelské jméno."
+#~ msgstr "Tienes que escribir un nombre de usuario."
+
+#~ msgid "Je nutné vyplnit email."
+#~ msgstr "Tienes que escribir una dirección de email."
+
+#~ msgid "Je nutné vyplnit heslo."
+#~ msgstr "Tienes que escribir una contraseña."
+
+#~ msgid "Hesla se neshodují."
+#~ msgstr "Las contraseñas no son iguales."
+
+#~ msgid "Feedback confirmed"
+#~ msgstr "Gracias por tu mensaje. Tu opinión es muy importante para nosotros."
+
+#~ msgid "Děkujeme za hodnocení."
+#~ msgstr "Gracias por calificarnos."
+
+#~ msgid "Napište nám"
+#~ msgstr "Sugerencias"
+
+#~ msgid "Je nejvyšší čas pokračovat v plnění osobních cílů!"
+#~ msgstr "Es hora de continuar con tus metas personales!"
+
+#~ msgid "Procvičovat"
+#~ msgstr "Practica"
+
+#~ msgid "Změnit nastavení E-mailů"
+#~ msgstr "Ajusta tus opciones de email"
 
 #~ msgid "Cíl byl vytvořen"
 #~ msgstr "La meta ha sido establecida"
