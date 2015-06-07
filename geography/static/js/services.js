@@ -446,7 +446,7 @@ angular.module('proso.geography.services', ['ngCookies'])
     'use strict';
     var self = this;
     var placeTypeNames = {
-        'state' : 'Státy',
+        'state' : gettext('Státy'),
         'region' : gettext('Regiony'),
         'province' : gettext('Provincie'),
         'region_cz' : gettext('Kraje'),

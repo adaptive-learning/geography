@@ -60,7 +60,7 @@ angular.module('proso.geography.filters', [])
     };
   })
 
-  .filter('questionText', function(gettext) {
+  .filter('questionText', ['gettext', function(gettext) {
     return function(question) {
       if (question && question.direction == "t2d") {
         if (question.options) {
@@ -73,7 +73,7 @@ angular.module('proso.geography.filters', [])
       }
       return "Error";
     };
-  })
+  }])
 
   .filter('isTypeCategory', function() {
     return function(types, category) {
