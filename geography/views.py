@@ -14,7 +14,6 @@ def home(request, hack=None):
     JS_FILES = (
         "dist/js/bower-libs.js",
         "dist/js/bbox.js",
-        "dist/js/jquery.qtip.min.js",
         "dist/js/geography.js",
         "dist/js/geography.html.js",
     )
