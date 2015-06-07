@@ -100,6 +100,9 @@ module.exports = function(grunt) {
         shell: {
             bower_install: {
                 command: 'node_modules/bower/bin/bower install -f'
+            },
+            makemessages: {
+                command: '../manage.py makemessages --all --ignore=node_modules/*  && ../manage.py makemessages --all --domain djangojs --ignore=node_modules/* --ignore=bower_components/* --ignore=static/dist/*'
             }
         },
         'string-replace': {
@@ -175,6 +178,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-html2js');
 
     grunt.registerTask('bboxcache-all', ['bboxcache', 'string-replace:bboxcache']);
+    grunt.registerTask('makemessages', ['shell:makemessages']);
     grunt.registerTask('collect-libs', ['bower_concat:all', 'uglify:libs', 'copy:fonts']);
     grunt.registerTask('prepare-libs', ['shell:bower_install', 'collect-libs']);
     grunt.registerTask('prepare', ['jshint', 'html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography', 'copy:above-fold', 'copy:images']);
