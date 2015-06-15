@@ -25,7 +25,7 @@ else:
 
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = ['anatom.cz']
+ALLOWED_HOSTS = ['slepemapy.cz', 'production.slepemapy.cz', 'production-new.slepemapy.cz']
 
 
 # Application definition
