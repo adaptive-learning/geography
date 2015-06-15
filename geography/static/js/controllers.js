@@ -376,7 +376,7 @@ angular.module('proso.geography.controllers', [])
     $scope.user = {username: $routeParams.user};
     userService.getUserProfile($routeParams.username, true).success(function(response){
       $scope.user = response.data;
-    }).error(function(response) {
+    }).error(function() {
       $scope.error = gettext("Hledaný profil neexistuje.");
       console.error($scope.error);
     });

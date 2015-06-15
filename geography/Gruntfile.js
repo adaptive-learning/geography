@@ -75,9 +75,10 @@ module.exports = function(grunt) {
                 },
                 "maxcomplexity": 6,
                 "indent": 2,
-                "maxstatements": 12,
+                "maxstatements": 20,
                 "maxdepth" : 3,
                 "maxparams": 12,
+                "predef": ["Kartograph"],
             },
             dist: {
                 src: 'static/js/',
