@@ -359,14 +359,14 @@ angular.module('proso.geography.controllers', [])
     }
 ])
 
-.controller('AppUser', ['$scope', 'userService', '$routeParams', '$location', 
+.controller('AppUser', ['$scope', 'userService', '$routeParams', '$location',
     '$timeout', 'gettext',
     function($scope, userService, $routeParams, $location, $timeout, gettext) {
 
   $scope.profileUrl = $location.absUrl();
   if ($routeParams.user == userService.user.username) {
     $scope.user = userService.user;
-    $scope.editRights = true; 
+    $scope.editRights = true;
     if ($routeParams.edit !== undefined && $scope.editRights) {
       $timeout(function() {
         $scope.editableForm.$show();
@@ -386,9 +386,9 @@ angular.module('proso.geography.controllers', [])
     // $scope.user already updated!
     return userService.updateProfile($scope.user).error(function(err) {
       if(err.field && err.msg) {
-        // err like {field: "name", msg: "Server-side error for this username!"} 
+        // err like {field: "name", msg: "Server-side error for this username!"}
         $scope.editableForm.$setError(err.field, err.msg);
-      } else { 
+      } else {
         // unknown error
         $scope.editableForm.$setError('name', gettext("V aplikaci bohužel nastala chyba."));
       }
