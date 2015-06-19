@@ -1,9 +1,9 @@
-#. extracted from django.po.csv
+#. extracted from django.po2.csv
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-04 07:15+0200\n"
+"POT-Creation-Date: 2015-06-19 10:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,7 +62,7 @@ msgstr "Regionen"
 
 #: geography/models/place.py:186
 msgid "Autonomní společenství"
-msgstr "Autonome Gesellschaft"
+msgstr "Autonomiegebiete"
 
 #: geography/models/place.py:187
 msgid "Pohoří"
@@ -132,7 +132,7 @@ msgstr "markierte"
 #: geography/utils/model.py:141
 msgctxt "autonomous_comunity"
 msgid "zvýrazněná"
-msgstr "markierte"
+msgstr "markierten"
 
 #: geography/utils/model.py:142
 msgctxt "mountains"
@@ -186,7 +186,7 @@ msgstr "Region"
 
 #: geography/utils/model.py:161
 msgid "autonomní společenství"
-msgstr "Autonome Gesellschaft"
+msgstr "Autonomiegebiet"
 
 #: geography/utils/model.py:162
 msgctxt "singular"
@@ -207,7 +207,7 @@ msgstr "Provinz"
 
 #: geography/utils/model.py:171
 msgid "řeku"
-msgstr "Fluß"
+msgstr "Fluss"
 
 #: geography/utils/model.py:178
 msgid "států"
@@ -215,11 +215,11 @@ msgstr "Staaten"
 
 #: geography/utils/model.py:179
 msgid "měst"
-msgstr "Städten"
+msgstr "Städte"
 
 #: geography/utils/model.py:182
 msgid "řek"
-msgstr "Flüssen"
+msgstr "Flüsse"
 
 #: geography/utils/model.py:183
 msgid "jezer"
@@ -231,7 +231,7 @@ msgstr "Regionen"
 
 #: geography/utils/model.py:185
 msgid "spolkových zemí"
-msgstr "Bundesländern, Kantoten, Provinzen"
+msgstr "Bundesländer"
 
 #: geography/utils/model.py:186
 msgid "provincií"
@@ -256,7 +256,7 @@ msgstr "Inseln"
 
 #: geography/utils/model.py:209
 msgid "Ze zvýrazněných %(place_plural)s na mapě vyber"
-msgstr "Aus der markierten %(place_plural)s auf der Karte wähle aus"
+msgstr "Aus den markierten %(place_plural)s wähle auf der Karte aus"
 
 #: geography/utils/model.py:212
 msgid "Vyber na mapě %(place_singular)s"
@@ -272,15 +272,15 @@ msgstr "Stumme Karten"
 
 #: geography/views/base.py:39
 msgid "inteligentní aplikace na procvičování zeměpisu"
-msgstr "intelligente App zum Geographie-Üben"
+msgstr "intelligente App zum Geographie lernen"
 
 #: proso_auth/views.py:67
 msgid "Heslo je správné, ale účet není aktivovaný."
-msgstr "Das Passwort stimmt zwar, aber das Benutzerkonto ist nocht nicht aktiv."
+msgstr "Das Passwort stimmt, aber das Benutzerkonto ist nocht nicht aktiviert."
 
 #: proso_auth/views.py:73
 msgid "Nesprávné jméno nebo heslo"
-msgstr "Kein richtiger Benutzername oder Passwort"
+msgstr "Die eingegebene E-Mail-Adresse oder das Passwort ist falsch"
 
 #: proso_auth/views.py:103
 msgid "Je nutné vyplnit uživatelské jméno."
@@ -296,11 +296,11 @@ msgstr "Es ist nötig das Passwort einzugeben"
 
 #: proso_auth/views.py:110
 msgid "Hesla se neshodují."
-msgstr "Passwörter passen nicht zusammen."
+msgstr "Passwörter stimmen nicht überein"
 
 #: proso_auth/views.py:113
 msgid "Účet se zadaným uživatelským jménem už existuje."
-msgstr "Es existiert bereits ein Benutzerkonto mit dieser Benutzername."
+msgstr "Es existiert bereits ein Benutzerkonto mit diesem Benutzernamen."
 
 #: proso_auth/views.py:118
 msgid "Účet se zadaným emailem už existuje."
@@ -309,12 +309,12 @@ msgstr "Es existiert bereits ein Benutzerkonto mit dieser E-Mail-Adresse"
 #: proso_feedback/views.py:46
 msgid "Feedback confirmed"
 msgstr ""
-"Vielen Dank für Ihre gesendeten Informationen. Feedback von der Benutzer ist "
-"unbezahlbar."
+"Vielen Dank für Ihre gesendeten Informationen. Feedback der Benutzer ist für "
+"uns unbezahlbar."
 
 #: proso_feedback/views.py:61
 msgid "Děkujeme za hodnocení."
-msgstr "Vielen dank für Ihre Einschätzung."
+msgstr "Vielen Dank für Ihre Einschätzung."
 
 #: proso_feedback%2Ftemplates%2Ffeedback.html%3A4+templates%2Fhome.html%3A182
 msgid "Napište nám"
@@ -322,7 +322,7 @@ msgstr "Schreiben Sie uns"
 
 #: proso_goals/management/commands/send_reminder_emails.py:47
 msgid "Je čas procvičovat slepé mapy"
-msgstr "Es ist die Zeit stumme Karten zu üben"
+msgstr "Es ist Zeit stumme Karten zu üben"
 
 #: proso_goals/templates/create_goal.html:5
 msgid "Vytvořit cíl"
@@ -334,7 +334,7 @@ msgstr "Kartenübersicht"
 
 #: proso_goals/templates/create_goal.html:36
 msgid "Datum splnění cíle"
-msgstr "Datum der Zielerfüllung"
+msgstr "Datum des gesetzten Zieles"
 
 #: proso_goals/templates/create_goal.html:64
 msgid "Vytrvořit"
@@ -351,22 +351,23 @@ msgstr "Persönliche Ziele"
 #: proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.html%3A61+proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.plain.txt%3A4
 msgid "Je nejvyšší čas pokračovat v plnění osobních cílů!"
 msgstr ""
-"Es ist die höchste Zeit in der Erfüllung der persönliche Zielen fortzusetzen"
+"Es ist die höchste Zeit die Verwirklichung der persönliche Zielen "
+"fortzusetzen"
 
 #: proso_goals/templates/emails/goal_reminder.html:70
 msgid "Procvičovat"
-msgstr "Zum Üben"
+msgstr "Üben"
 
 #: proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.html%3A89+proso_goals%2Ftemplates%2Femails%2Fgoal_reminder.plain.txt%3A11
 msgid "Změnit nastavení E-mailů"
-msgstr "E-Mail Einstellung ändern"
+msgstr "E-Mail-Einstellungen ändern"
 
 #: templates/home.html:26
 msgid "meta content"
 msgstr ""
-"Intelligente Apps zum Üben von Staaten und Bundesländern, Städten, Gebirgen "
-"und Flüssen mithilfe der stummen Karten von der Welt, Europas, Asiens, "
-"Afrikas, Amerikas, Tschechiens, der USA und der weiteren Staaten"
+"Intelligente App zum Üben von Staaten und Bundesländern, Städten, Gebirgen "
+"und Flüssen mithilfe stummer Karten der Welt, Europas, Asiens, Afrikas, "
+"Amerikas, Tschechiens, der USA und weiterer Staaten"
 
 #: templates/home.html:27
 msgid "meta keywords"
@@ -383,8 +384,8 @@ msgid ""
 "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
 "znalosti pamatoval i příště."
 msgstr ""
-"Melden Sie sich einfach via Google oder Facebook an,  damit das Spielsystem "
-"ihre Kennnisse auch das nächste Mal merkt."
+"Melden Sie sich einfach via Google oder Facebook an, damit das Spielsystem "
+"ihren Fortschritt speichert."
 
 #: templates/home.html:99
 msgid "Přihlásit se"
@@ -396,7 +397,7 @@ msgstr "Mein Profil"
 
 #: templates/home.html:115
 msgid "Moje časté chyby"
-msgstr "Meine häufigen Fehler"
+msgstr "Häufige Fehler"
 
 #: templates/home.html:125
 msgid "Nastavení"
@@ -404,7 +405,7 @@ msgstr "Einstellung"
 
 #: templates/home.html:130
 msgid "Odhlásit se"
-msgstr "Abmeldung"
+msgstr "Abmelden"
 
 #: templates/home.html:177
 msgid "O projektu"
@@ -440,8 +441,7 @@ msgstr "Flüsse Afrikas"
 
 #: templates/generated/homepage.html:54
 msgid "Chcete jinou? Podívejte se na"
-msgstr ""
-"Möchten Sie eine andere Landkarte? Schauen Sie die weiteren Landkarten an"
+msgstr "Möchten Sie eine andere? Schauen Sie sich weiteren Landkarten an"
 
 #: templates/generated/homepage.html:57
 msgid "další mapy"
@@ -453,54 +453,55 @@ msgstr "Wie funktioniert das?"
 
 #: templates/generated/homepage.html:71
 msgid "Zeměpis hrou"
-msgstr "Erdkunde spielerisch"
+msgstr "Geograpie spielerisch lernen"
 
 #: templates/generated/homepage.html:72
 msgid "Zeměpis hrou - text"
 msgstr ""
 "Testen Sie Ihre Kenntnisse in Geographie und lernen Sie mit Spiel und Spaß. "
 "In der aktuellen Version spielen Sie alleine, bzw. gegen das Spielsystem. "
-"Schaffen Sie die ganze Landkarte Europas? das ganze Tschechien? Und die "
-"ganze Welt? grün zu machen?"
+"Schaffen Sie es ganz Tschechien, Europa oder sogar die ganze Welt grün zu "
+"färben?"
 
 #: templates/generated/homepage.html:76
 msgid "Adaptabilní procvičování"
-msgstr "Anpassungsfähiges Üben"
+msgstr "Adaptives Üben"
 
 #: templates/generated/homepage.html:77
 msgid "Adaptabilní procvičování - text"
 msgstr ""
-"Jede stumme Karte bietet ein anpassungsfähiges Üben an - je nach dem Sie "
-"Kenntnisse haben, die Apps wählt die Fragekategorien (offen, Multi-Choise "
-"Fragen) und die Wiederholungsfrequenz. Die Apps legt uns dann die Staaten "
-"so vor, deren Üben ist es für Ihnen am efektivsten."
+"Jede stumme Karte bietet adaptives Üben an - je nach dem welche Kenntnisse "
+"sie schon besitzen, wählt die App die für sie am besten geeigneste "
+"Fragekategorie und Wiederholungsfrequenz aus. Die App stellt ihnen dann die "
+"Fragen, die für sie am effektivsten sind."
 
 #: templates/generated/homepage.html:79
 msgid "Ukázka procvičování"
-msgstr "Vorschau zum Üben"
+msgstr "Vorschau der Übungen"
 
 #: templates/generated/homepage.html:83
 msgid "Specializovaný systém"
-msgstr "Spezielisiertes System"
+msgstr "Spezialisiertes System"
 
 #: templates/generated/homepage.html:84
 msgid "Specializovaný systém - text"
 msgstr ""
-"Stumme Karten zu üben, das bietet auch eine andere Reihe von "
-"Unterrichtssystemen an, die  beschäftigen sich jedoch  meistens  mit vielen "
-"Teilbereichen. Unser System konzetriert sich nur auf stumme Karten, aus "
-"diesem Grunde ist es zum Erlernen in diesem Bereich optimiert."
+"Die Möglichkeit stumme Karten zu üben bieten auch andere Lernwebsiten an. "
+"Unser System konzentriert sich aber nur auf stumme Karten und ist aus diesem "
+"Grunde besonders auf diese optimiert. Damit wir ihnen die beste "
+"Nutzerehrfahrung bieten können und das lernen für sie ein Kinderspiel wird."
 
 #: templates/generated/homepage.html:88
 msgid "Vizualizace znalostí"
-msgstr ""
+msgstr "Visualisierung ihrer Kenntnisse"
 
 #: templates/generated/homepage.html:89
 msgid "Vizualizace znalostí - text"
 msgstr ""
-"Aufgrund der Antworten schätzt das Spielsystem ein, wie gut Sie verschiedene "
-"Staaten und Bundesländer kennen, und es zeigt die Karte ihrer Kenntnisse, "
-"was  dazu hilft, Ihnen klar zu machen, was Sie eigentlich schon können."
+"Aufgrund der Antworten, schätzt das Spielsystem ihre Kenntnisse über die "
+"verschiedene Staaten und Bundesländer ein, und veranschaulicht es auf Karte "
+"der Kenntnisse. Dies soll ihnen helfen sich darüber im Klaren zu sein, "
+"welches Wissen Sie bereits besitzen."
 
 #: templates/generated/homepage.html:91
 msgid "Ukázka mapy znalostí"
@@ -508,12 +509,12 @@ msgstr "Vorschau zur Karte der Kennnisse"
 
 #: templates/generated/homepage.html:95
 msgid "Učení z dat"
-msgstr "Erlernen aus Daten"
+msgstr "Lernen aus Daten"
 
 #: templates/generated/homepage.html:96
 msgid "Učení z dat - text"
 msgstr ""
-"Die Apps zieht  aus Daten von allen Benutzer die Schlusfolgeungen. Die "
-"Fragenauswahl geht von diesen Daten, nicht von den Kenntnissen eines "
-"Experten in Geografie hervor, der \"weiß\", ob es schwieriger Kenia oder "
-"Nigerien zu erkennen ist."
+"Die App lernt aus den Daten aller Benutzer. Die Auswahl der Fragen basiert "
+"auf diesen Daten und nicht auf den Kenntnissen eines Geographieexperten. Es "
+"erkennt ob es allgemein schwieriger ist Kenia oder Nigerien zu erkennen, und "
+"passt die Fragen dazu an."
