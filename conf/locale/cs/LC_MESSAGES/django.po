@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-07 11:08+0000\n"
+"POT-Creation-Date: 2015-07-02 15:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Zavřít"
 msgstr ""
 
-#: templates/generated/homepage.html:19
+#: templates/generated/homepage.html:19 templates/home.html:60 views.py:35
 msgid "Slepé Mapy"
 msgstr "Slepé Mapy"
 
@@ -156,12 +156,6 @@ msgstr ""
 "slepá mapa, státy, města, čr, svět, evrovpa, amerika, afrika, asie, pohoří, "
 "řeky, zeměpis, usa, hry"
 
-#: templates/home.html:60 views.py:33
-#, fuzzy
-#| msgid "Slepé Mapy"
-msgid "Slepé mapy"
-msgstr "Slepé Mapy"
-
 #: templates/home.html:64
 msgid "Svět"
 msgstr ""
@@ -208,11 +202,15 @@ msgstr ""
 msgid "Odhlásit se"
 msgstr ""
 
-#: templates/home.html:184
+#: templates/home.html:177 templates/home.html.py:192
+msgid "Napište nám"
+msgstr ""
+
+#: templates/home.html:187
 msgid "O projektu"
 msgstr ""
 
-#: views.py:33
+#: views.py:35
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr ""
 

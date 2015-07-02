@@ -57,7 +57,7 @@
       <span class="icon-bar"></span>
     </button>
 
-      <a class="navbar-brand" href="/">{% trans "Slepé mapy" %}</a>
+      <a class="navbar-brand" href="/">{% trans "Slepé Mapy" %}</a>
       <div id="nav-main" class="collapse navbar-collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav  pull-left">
                 <li ng-class="'/view/world/'|isActive">
@@ -172,7 +172,10 @@
      {% endif %}
     </div>
   </div>
-    <div id="feedback-btn" feedback-comment email="{{email}}">
+    <div id="feedback-btn">
+      <a feedback-comment email="{{email}}" href="">
+       {% trans "Napište nám" %}
+     </a>
     </div>
 
     <div class="" id="footer">
@@ -185,8 +188,9 @@
           </li>
           {% endif %}
           <li>
-            <span feedback-comment  email="{{email}}">
-            </span>
+            <a feedback-comment  email="{{email}}" href="">
+               {% trans "Napište nám" %}
+            </a>
           </li>
           <li>
             <a href="https://plus.google.com/+SlepemapyCz/">Google+</a>

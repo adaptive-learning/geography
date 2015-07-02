@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-07 11:08+0000\n"
+"POT-Creation-Date: 2015-07-02 15:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,8 +30,6 @@ msgid "Datum splnění cíle"
 msgstr "Fecha de cumplimiento de meta"
 
 #: templates/create_goal.html:64
-#, fuzzy
-#| msgid "Vytrvořit"
 msgid "Vytvořit"
 msgstr "Crear"
 
@@ -39,7 +37,7 @@ msgstr "Crear"
 msgid "Zavřít"
 msgstr "Cerrar"
 
-#: templates/generated/homepage.html:19
+#: templates/generated/homepage.html:19 templates/home.html:60 views.py:35
 msgid "Slepé Mapy"
 msgstr "Contorno de Mapas"
 
@@ -164,12 +162,6 @@ msgstr ""
 "juegos de geografía, contorno de mapas, mapas de contorno, países, estados, "
 "ciudades, mundo, europa, américa, áfrica, asia, montañas, ríos, eua"
 
-#: templates/home.html:60 views.py:33
-#, fuzzy
-#| msgid "Slepé Mapy"
-msgid "Slepé mapy"
-msgstr "Contorno de Mapas"
-
 #: templates/home.html:64
 msgid "Svět"
 msgstr "Mundo"
@@ -218,11 +210,15 @@ msgstr "Ajustes"
 msgid "Odhlásit se"
 msgstr "Terminar sesión"
 
-#: templates/home.html:184
+#: templates/home.html:177 templates/home.html.py:192
+msgid "Napište nám"
+msgstr "Sugerencias"
+
+#: templates/home.html:187
 msgid "O projektu"
 msgstr "Sobre"
 
-#: views.py:33
+#: views.py:35
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr "programa inteligente para practicar geografía"
 
@@ -436,9 +432,6 @@ msgstr "programa inteligente para practicar geografía"
 
 #~ msgid "Děkujeme za hodnocení."
 #~ msgstr "Gracias por calificarnos."
-
-#~ msgid "Napište nám"
-#~ msgstr "Sugerencias"
 
 #~ msgid "Je nejvyšší čas pokračovat v plnění osobních cílů!"
 #~ msgstr "Es hora de continuar con tus metas personales!"
