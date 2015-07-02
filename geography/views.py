@@ -16,6 +16,7 @@ def home(request, hack=None):
     JS_FILES = (
         "dist/js/bower-libs.js",
         "dist/js/bbox.js",
+        "dist/js/translations.js",
         "dist/js/geography.js",
         "dist/js/geography.html.js",
     )

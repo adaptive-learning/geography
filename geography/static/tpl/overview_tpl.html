@@ -1,5 +1,5 @@
 <div class="overview">
-  <h1>{{'Přehled map' | trans}} {{user}}</h1>
+  <h1>{{'Přehled map' | translate }} {{user}}</h1>
   <div ng-hide="mapCategories && statsLoaded" class="loading-indicator">
   </div>
   <div class="map-categories" ng-repeat="c in mapCategories">
@@ -17,7 +17,7 @@
             <li class="inline-block" ng-repeat="type in map.placeTypes">
               <a href="/practice/{{map.identifier}}/{{type.identifier}}" 
                  class="btn btn-primary"
-                 tooltip="{{'Procvičovat'| trans}}">
+                 tooltip="{{'Procvičovat'| translate }}">
                  {{type.name}}</a>
               <div class="map-progress" 
                    skills="{{mapSkills(map, type)}}">

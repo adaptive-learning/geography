@@ -2,8 +2,10 @@
 /* Controllers */
 angular.module('proso.geography.controllers', [])
 
-.controller('AppCtrl', ['$scope', '$rootScope', 'userService', 'pageTitle', 'configService',
-    function($scope, $rootScope, userService, pageTitle, configService) {
+.controller('AppCtrl', ['$scope', '$rootScope', 'userService', 'pageTitle',
+      'configService', 'gettextCatalog',
+    function($scope, $rootScope, userService, pageTitle, 
+      configService, gettextCatalog) {
         'use strict';
         $scope.configService = configService;
         $scope.userService = userService;
@@ -18,6 +20,7 @@ angular.module('proso.geography.controllers', [])
         });
 
         $scope.initLanguageCode = function (code) {
+            gettextCatalog.setCurrentLanguage(code);
             $rootScope.LANGUAGE_CODE = code;
         };
 
@@ -251,15 +254,15 @@ angular.module('proso.geography.controllers', [])
     };
   }])
 
-.controller('AppOverview', ['$scope', '$routeParams', 'categoryService', 'userStatsService', 'placeTypeService',
-    function($scope, $routeParams, categoryService, userStatsService, placeTypeService) {
+.controller('AppOverview', ['$scope', '$routeParams', 'categoryService', 'userStatsService', 'placeTypeService', 'gettextCatalog',
+    function($scope, $routeParams, categoryService, userStatsService, placeTypeService, gettextCatalog) {
         'use strict';
 
         // var mapSkills = {};
         function addNamesAndSort(categories) {
           var categoryNames = {
-            'state' : gettext('Státy'),
-            'continent' : gettext('Kontinenty'),
+            'state' : gettextCatalog.getString('Státy'),
+            'continent' : gettextCatalog.getString('Kontinenty'),
           };
           var categoriesByIdentifier = {};
           for (var i = 0; i < categories.length; i++) {
@@ -359,9 +362,9 @@ angular.module('proso.geography.controllers', [])
     }
 ])
 
-.controller('AppUser', ['$scope', 'userService', '$routeParams', '$location',
-    '$timeout', 'gettext',
-    function($scope, userService, $routeParams, $location, $timeout, gettext) {
+.controller('AppUser', ['$scope', 'userService', '$routeParams', '$location', 
+    '$timeout', 'gettextCatalog',
+    function($scope, userService, $routeParams, $location, $timeout, gettextCatalog) {
 
   $scope.profileUrl = $location.absUrl();
   if ($routeParams.user == userService.user.username) {
@@ -377,7 +380,7 @@ angular.module('proso.geography.controllers', [])
     userService.getUserProfile($routeParams.username, true).success(function(response){
       $scope.user = response.data;
     }).error(function() {
-      $scope.error = gettext("Hledaný profil neexistuje.");
+      $scope.error = gettextCatalog.getString("Hledaný profil neexistuje.");
       console.error($scope.error);
     });
   }
@@ -390,7 +393,7 @@ angular.module('proso.geography.controllers', [])
         $scope.editableForm.$setError(err.field, err.msg);
       } else {
         // unknown error
-        $scope.editableForm.$setError('name', gettext("V aplikaci bohužel nastala chyba."));
+        $scope.editableForm.$setError('name', gettextCatalog.getString("V aplikaci bohužel nastala chyba."));
       }
     });
   };

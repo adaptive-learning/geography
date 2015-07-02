@@ -1,5 +1,4 @@
 
-/* global gettext */
 window.gettext = window.gettext || function(x){return x;};
 
 // Declare app level module which depends on filters, and services
@@ -19,9 +18,8 @@ angular.module('proso.geography', [
     'xeditable',
     'proso.apps',
     'angularDjangoCsrf',
+    'gettext',
 ])
-
-.value('gettext', gettext || function(x) {return x;})
 
 .constant('domain', window.domain || '')
 

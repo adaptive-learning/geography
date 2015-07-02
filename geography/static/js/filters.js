@@ -60,16 +60,16 @@ angular.module('proso.geography.filters', [])
     };
   })
 
-  .filter('questionText', ['gettext', function(gettext) {
+  .filter('questionText', ['gettextCatalog', function(gettextCatalog) {
     return function(question) {
       if (question && question.direction == "t2d") {
         if (question.options) {
-          return gettext("Ze zvýrazněných objektů na mapě vyber");
+          return gettextCatalog.getString("Ze zvýrazněných objektů na mapě vyber");
         } else {
-          return gettext("Vyber na mapě");
+          return gettextCatalog.getString("Vyber na mapě");
         }
       } else if (question && question.direction == "d2t") {
-        return gettext("Jak se jmenuje objekt zvýrazněný na mapě?");
+        return gettextCatalog.getString("Jak se jmenuje objekt zvýrazněný na mapě?");
       }
       return "Error";
     };
@@ -90,12 +90,6 @@ angular.module('proso.geography.filters', [])
     return function(code) {
       var fc = flashcardService.getFlashcardByDescription(code);
       return fc ? fc.term.name : "Neznámý";
-    };
-  }])
-
-  .filter('trans',['gettext', function(gettext) {
-    return function(msgid) {
-      return gettext(msgid);
     };
   }])
 

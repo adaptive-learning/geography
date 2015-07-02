@@ -74,7 +74,6 @@ module.exports = function(grunt) {
                     "jQuery": false,
                 },
                 "maxcomplexity": 6,
-                "indent": 2,
                 "maxstatements": 20,
                 "maxdepth" : 3,
                 "maxparams": 12,
@@ -83,6 +82,20 @@ module.exports = function(grunt) {
             dist: {
                 src: 'static/js/',
             }
+        },
+        nggettext_compile: {
+            all: {
+                files: {
+                    'static/dist/js/translations.js': ['static/po/*.po']
+                }
+            },
+        },
+        nggettext_extract: {
+            pot: {
+                files: {
+                    'static/po/template.pot': ['static/tpl/*.html']
+                }
+            },
         },
         sass: {
             options: {
@@ -177,6 +190,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-shell');
     grunt.loadNpmTasks('grunt-string-replace');
     grunt.loadNpmTasks('grunt-html2js');
+    grunt.loadNpmTasks('grunt-angular-gettext');
 
     grunt.registerTask('bboxcache-all', ['bboxcache', 'string-replace:bboxcache']);
     grunt.registerTask('makemessages', ['shell:makemessages']);
