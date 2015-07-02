@@ -8,8 +8,10 @@ from proso.django.config import get_global_config
 from proso_flashcards.models import Category
 from django.views.decorators.cache import cache_page
 from django.views.i18n import javascript_catalog
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 
+@ensure_csrf_cookie
 def home(request, hack=None):
     JS_FILES = (
         "dist/js/bower-libs.js",
