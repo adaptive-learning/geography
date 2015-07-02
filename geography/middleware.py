@@ -36,7 +36,7 @@ class LanguageInPathMiddleware(object):
             translation.activate(language_code)
             request.LANGUAGE_CODE = translation.get_language()
             request.COOKIES[settings.LANGUAGE_COOKIE_NAME] = language_code
-            request.session['django_language'] = language_code
+            request.session['_language'] = language_code
             url = request.path
             url = url.replace('/' + language_code, '')
             return HttpResponseRedirect(url)
