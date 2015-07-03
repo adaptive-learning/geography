@@ -41,7 +41,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         self.dump_load('auth', options, exclude=['auth.Permission', 'contenttypes'])
         self.dump_load('lazysignup', options)
-        self.dump_load('proso_feedback', options)
+        self.dump_load('proso_feedback', options, exclude=['proso_feedback.Comment'])
         self.dump_load('social_auth', options)
 
     def dump_load(self, app, options, exclude=None):
