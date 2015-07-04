@@ -7,8 +7,6 @@ from django.utils.translation import get_language
 from proso.django.config import get_global_config
 from proso_flashcards.models import Category
 from django.views.decorators.cache import cache_page
-from django.views.i18n import javascript_catalog
-from django.views.decorators.csrf import ensure_csrf_cookie
 
 
 @ensure_csrf_cookie
@@ -64,8 +62,3 @@ def get_map_from_url(hack):
             except Category.DoesNotExist:
                 pass
     return map_string
-
-
-@cache_page(86400)
-def cached_javascript_catalog(request, domain='djangojs', packages=None):
-    return javascript_catalog(request, domain, packages)
