@@ -310,7 +310,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
     return that;
   }])
 
-  .factory('categoryService', ["$http", "$q", "gettextCatalog", function ($http, $q, gettextCatalog) {
+  .factory('categoryService', ["$http", "$q", function ($http, $q) {
     'use strict';
     var categories = [];
     var categoriesByIdentifier = {};
