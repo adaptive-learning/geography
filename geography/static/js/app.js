@@ -1,6 +1,3 @@
-
-window.gettext = window.gettext || function(x){return x;};
-
 // Declare app level module which depends on filters, and services
 angular.module('proso.geography', [
     'proso.geography.filters',

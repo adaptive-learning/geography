@@ -250,8 +250,8 @@ angular.module('proso.geography.map', [])
     return that;
   }])
 
-  .factory('getTooltipGetter', ['$filter', 'colorScale', 'gettext',
-      function($filter, colorScale, gettext){
+  .factory('getTooltipGetter', ['$filter', 'colorScale', 'gettextCatalog',
+      function($filter, colorScale, gettextCatalog){
     return function(places) {
       return function(d) {
         var place = places && places[d.code];
@@ -263,20 +263,20 @@ angular.module('proso.geography.map', [])
           '');
         var description = (place && place.practiced ?
           '<div>' +
-            gettext('Odhad znalosti') + ': ' +
+            gettextCatalog.getString('Odhad znalosti') + ': ' +
               '<span class="badge badge-default">' +
                 '<i class="color-indicator" style="background-color :' +
                 colorScale(place.prediction).hex() + '"></i>' +
                 Math.round(10 * place.prediction) + ' / 10 ' +
               '</span><br><br>' +
-            (d.population ? gettext('Počet obyvatel') + ': ' +
+            (d.population ? gettextCatalog.getString('Počet obyvatel') + ': ' +
               '<span class="badge badge-default">' +
                 $filter('number')(d.population) +
               '</span><br><br>' : '') +
           '</div>' :
             (place && place.summary ?
             '' :
-            '<br>' + gettext('Neprocvičováno') + '<br><br>'));
+            '<br>' + gettextCatalog.getString('Neprocvičováno') + '<br><br>'));
         return [
           name + description,
           place ? place.name : ''
