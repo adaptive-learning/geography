@@ -189,11 +189,23 @@ LOGGING = {
             'filters': ['require_debug_true'],
             'formatter': 'simple'
         },
+	'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        },
         'request': {
             'level': 'DEBUG',
             'class': 'proso.django.log.RequestHandler',
             'formatter': 'simple'
-        }
+        },
+	'geography_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filters': ['require_debug_false'],
+            'filename': os.path.join(DATA_DIR, 'geography.log'),
+            'formatter': 'simple',
+	}
     },
     'formatters': {
         'simple': {
@@ -202,7 +214,7 @@ LOGGING = {
     },
     'loggers': {
         'django.request': {
-            'handlers': ['console', 'request'],
+            'handlers': ['console', 'request', 'mail_admins', 'geography_file'],
             'propagate': True,
             'level': 'DEBUG'
         },
@@ -214,6 +226,9 @@ LOGGING = {
     'filters': {
         'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
         }
     },
 }
