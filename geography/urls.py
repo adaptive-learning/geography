@@ -22,7 +22,6 @@ urlpatterns = patterns(
     url(r'^$', 'geography.views.home', name='home'),
     url(r'^(about|overview|mistakes|goals|view/\w+|u/\w+|practice/\w+/\w*)',
         'geography.views.home', name='home'),
-    url(r'^jsi18n/$', 'geography.views.cached_javascript_catalog', js_info_dict),
 
     url(r'^user/', include('proso_user.urls')),
     url(r'^questions/', include('proso_questions.urls')),
