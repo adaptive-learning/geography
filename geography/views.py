@@ -7,6 +7,7 @@ from django.utils.translation import get_language
 from proso.django.config import get_global_config
 from proso_flashcards.models import Category
 from django.views.decorators.cache import cache_page
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 
 @ensure_csrf_cookie
