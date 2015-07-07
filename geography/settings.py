@@ -194,7 +194,7 @@ LOGGING = {
             'filters': ['require_debug_true'],
             'formatter': 'simple'
         },
-	'mail_admins': {
+        'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
@@ -204,13 +204,13 @@ LOGGING = {
             'class': 'proso.django.log.RequestHandler',
             'formatter': 'simple'
         },
-	'geography_file': {
+        'geography_file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
             'filters': ['require_debug_false'],
             'filename': os.path.join(DATA_DIR, 'geography.log'),
             'formatter': 'simple',
-	}
+        }
     },
     'formatters': {
         'simple': {
