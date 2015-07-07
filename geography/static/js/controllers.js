@@ -4,7 +4,7 @@ angular.module('proso.geography.controllers', [])
 
 .controller('AppCtrl', ['$scope', '$rootScope', 'userService', 'pageTitle',
       'configService', 'gettextCatalog',
-    function($scope, $rootScope, userService, pageTitle, 
+    function($scope, $rootScope, userService, pageTitle,
       configService, gettextCatalog) {
         'use strict';
         $scope.configService = configService;
@@ -362,7 +362,7 @@ angular.module('proso.geography.controllers', [])
     }
 ])
 
-.controller('AppUser', ['$scope', 'userService', '$routeParams', '$location', 
+.controller('AppUser', ['$scope', 'userService', '$routeParams', '$location',
     '$timeout', 'gettextCatalog',
     function($scope, userService, $routeParams, $location, $timeout, gettextCatalog) {
 
