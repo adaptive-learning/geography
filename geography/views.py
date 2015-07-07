@@ -36,8 +36,9 @@ def home(request, hack=None):
         'css_files': CSS_FILES,
         'js_files': JS_FILES,
         'continents': Category.objects.filter(
-            lang=get_language(), type='continent'),
-        'states': Category.objects.filter(lang=get_language(), type='state'),
+            lang=get_language(), type='continent').order_by('name'),
+        'states': Category.objects.filter(
+            lang=get_language(), type='state').order_by('name'),
         'user_json': user,
         'email': email,
         'LANGUAGE_CODE': get_language(),
