@@ -207,7 +207,6 @@ LOGGING = {
         'geography_file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filters': ['require_debug_false'],
             'filename': os.path.join(DATA_DIR, 'geography.log'),
             'formatter': 'simple',
         }
