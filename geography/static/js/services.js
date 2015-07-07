@@ -401,6 +401,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
         for (var i in filter) {
           filter[i] = angular.toJson(filter[i]);
         }
+        filter = angular.copy(filter);
         filter.all = 'True';
         filter.stats = 'True';
         $http.get('/flashcards/flashcards', {
