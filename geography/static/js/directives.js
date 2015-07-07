@@ -191,7 +191,7 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
         elem.addClass('level-wrapper');
         if (attrs.username != userService.user.username) {
           userService.getUserProfile(attrs.username, true).success(function(data){
-            $scope.level = getLevelInfo(data);
+            $scope.level = getLevelInfo(data.data);
           });
         } else {
           $scope.level = getLevelInfo(userService.user.profile);

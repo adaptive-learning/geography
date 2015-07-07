@@ -6,7 +6,6 @@ from django.utils.translation import ugettext as _
 from django.utils.translation import get_language
 from proso.django.config import get_global_config
 from proso_flashcards.models import Category
-from django.views.decorators.cache import cache_page
 from django.views.decorators.csrf import ensure_csrf_cookie
 
 
@@ -31,7 +30,7 @@ def home(request, hack=None):
         user = json.dumps(request.user.userprofile.to_json(stats=True))
         email = request.user.email
     c = {
-        'title': _(u'Slepé Mapy') + ' - ' + _(u'inteligentní aplikace na procvičování zeměpisu'),
+        'title': _(u'Slepé mapy') + ' - ' + _(u'inteligentní aplikace na procvičování zeměpisu'),
         'map': get_map_from_url(hack),
         'is_production': settings.ON_PRODUCTION,
         'css_files': CSS_FILES,
