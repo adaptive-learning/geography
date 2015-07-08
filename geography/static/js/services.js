@@ -471,34 +471,4 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
     self.getTypes = function () {
       return placeTypes;
     };
-  }])
-
-
-  .factory('confirmModal', ["$modal", function ($modal) {
-    'use strict';
-    var ModalConfirmCtrl = ['$scope', '$modalInstance', 'question', 'confirm',
-        function ($scope, $modalInstance, question, confirm) {
-      $scope.cancel = function () {
-        $modalInstance.dismiss('cancel');
-      };
-      $scope.confirm = confirm;
-      $scope.question = question;
-    }];
-
-    return {
-      open : function(question, callback) {
-        $modal.open({
-          templateUrl: 'static/tpl/confirm_modal.html',
-          controller: ModalConfirmCtrl,
-          resolve: {
-            confirm: function () {
-              return  callback;
-            },
-            question: function () {
-              return  question;
-            },
-          },
-        });
-      }
-    };
   }]);
