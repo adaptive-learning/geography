@@ -136,6 +136,10 @@ angular.module('proso.geography.controllers', [])
         };
 
         $scope.checkAnswer = function(selected) {
+            if ($scope.checking) {
+                return;
+            }
+            $scope.checking = true;
             var asked = $scope.question.description;
             highlightAnswer(asked, selected);
             $scope.question.answered_code = selected;
@@ -147,8 +151,10 @@ angular.module('proso.geography.controllers', [])
             if (asked == selected) {
                 $timeout(function() {
                     $scope.next();
+                    $scope.checking = false;
                 }, 700);
             } else {
+                $scope.checking = false;
                 $scope.canNext = true;
             }
         };

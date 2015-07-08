@@ -40,19 +40,19 @@
         </span>
       </span>
       <span class="col-sm-5" >
-        <button class="btn btn-lg btn-default dont-know" 
-                ng-click="checkAnswer()" 
-                ng-disabled="canNext" >
+        <button class="btn btn-lg btn-default dont-know"
+                ng-click="checkAnswer()"
+                ng-disabled="canNext || checking" >
             <i class="glyphicon glyphicon-question-sign"></i> {{'Nevím' | translate }}
         </button>
-        <button class="btn btn-lg btn-default next {{!canNext || 'btn-primary'}}" 
-                ng-click="next()" 
-                ng-disabled="!canNext" >
+        <button class="btn btn-lg btn-default next {{!canNext || 'btn-primary'}}"
+                ng-click="next()"
+                ng-disabled="!canNext || checking " >
             <i class="glyphicon glyphicon-arrow-right"></i> {{'Pokračovat' | translate }}
         </button>
-        <button class="btn btn-lg btn-default" 
-                ng-click="highlight()" 
-                ng-disabled="canNext"  
+        <button class="btn btn-lg btn-default"
+                ng-click="highlight()"
+                ng-disabled="canNext || checking"
                 ng-show="question.options != undefined" >
             <i class="glyphicon glyphicon-repeat"></i> {{'Znovu zvýraznit' | translate }}
         </button>
