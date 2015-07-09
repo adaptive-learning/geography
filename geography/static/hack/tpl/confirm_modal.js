@@ -1,3 +1,0 @@
-gettext("Ne");
-gettext("Ano");
-
