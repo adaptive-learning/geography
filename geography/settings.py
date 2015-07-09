@@ -70,8 +70,8 @@ MIDDLEWARE_CLASSES = (
     'proso.django.log.RequestLogMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'geography.middleware.LanguageInPathMiddleware',
-    'geography.middleware.AuthAlreadyAssociatedMiddleware',
+    'proso_common.middleware.LanguageInPathMiddleware',
+    'proso_common.middleware.AuthAlreadyAssociatedMiddleware',
 )
 
 ROOT_URLCONF = 'geography.urls'
