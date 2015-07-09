@@ -21,12 +21,17 @@ module.exports = function(grunt) {
                 mainFiles: {
                     'raphael-pan-zoom': 'src/raphael.pan-zoom.js',
                     'angular-i18n': 'angular-locale_cs-cz.js'
-                }
+                },
+                exclude: ['proso-apps-js']
             }
         },
         concat: {
             geography: {
-                src: ['static/js/*.js'],
+                src: [
+                  'static/dist/js/bbox.js',
+                  'static/js/*.js',
+                  'static/dist/js/translations.js'
+                ],
                 dest: 'static/dist/js/geography.js'
             }
         },
@@ -46,6 +51,10 @@ module.exports = function(grunt) {
                 cwd: 'bower_components/bootstrap/fonts/',
                 src: ['**'],
                 dest: 'static/dist/fonts/'
+            },
+            'proso-apps-js': {
+                src: 'bower_components/proso-apps-js/proso-apps-all.js',
+                dest: 'static/dist/js/proso-apps-all.js'
             }
         },
         html2js: {
@@ -135,7 +144,7 @@ module.exports = function(grunt) {
             libs: {
                 options: {
                     mangle: {
-                        except: ['Kartograph', 'Raphael']
+                        except: ['Kartograph', 'Raphael', 'gettextCatalog']
                     },
                     sourceMap: true,
                     sourceMapIncludeSources: true,
@@ -194,7 +203,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('bboxcache-all', ['bboxcache', 'string-replace:bboxcache']);
     grunt.registerTask('makemessages', ['shell:makemessages']);
-    grunt.registerTask('collect-libs', ['bower_concat:all', 'uglify:libs', 'copy:fonts']);
+    grunt.registerTask('collect-libs', ['bower_concat:all', 'uglify:libs', 'copy:fonts', 'copy:proso-apps-js']);
     grunt.registerTask('prepare-libs', ['shell:bower_install', 'collect-libs']);
     grunt.registerTask('prepare', ['jshint', 'html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography', 'copy:above-fold', 'copy:images']);
     grunt.registerTask('default', ['bboxcache-all', 'nggettext_compile', 'prepare-libs', 'prepare']);
@@ -275,4 +284,4 @@ module.exports = function(grunt) {
             grunt.log.writeln('File "' + f.dest + '" created.');
         });
     });
-}
+};

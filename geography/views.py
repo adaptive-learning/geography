@@ -12,10 +12,9 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 @ensure_csrf_cookie
 def home(request, hack=None):
     JS_FILES = (
-        "dist/js/bower-libs.js",
-        "dist/js/bbox.js",
-        "dist/js/translations.js",
-        "dist/js/geography.js",
+        "dist/js/bower-libs.min.js",
+        "dist/js/proso-apps-all.js",
+        "dist/js/geography.min.js",
         "dist/js/geography.html.js",
     )
     CSS_FILES = (
