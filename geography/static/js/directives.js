@@ -80,23 +80,6 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
     };
   })
 
-  .directive('points', ['$timeout', 'events', function($timeout, events) {
-    return {
-      scope : true,
-      restrict : 'C',
-      link : function($scope, elem) {
-        events.on('userUpdated', function(user) {
-          $scope.user = user;
-          if (user.points == 1) {
-            $timeout(function() {
-              elem.tooltip('show');
-            }, 0);
-          }
-        });
-      }
-    };
-  }])
-
   .directive('mapProgress', ['gettextCatalog', function(gettextCatalog) {
     return {
       restrict : 'C',
