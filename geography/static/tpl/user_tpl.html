@@ -34,8 +34,8 @@
       <span ng-show="editableForm.$visible">
       <div class="checkbox">
         <label>
-          <input type="checkbox" ng-model="user.send_emails">
-            {{'Poslat mi email při neplnění cílů' | trans}}
+          <input type="checkbox" ng-model="user.profile.public">
+            {{'Můj profil je veřejný' | trans}}
         </label>
       </div>
         <br>
@@ -62,6 +62,13 @@
       <div ng-show="editRights">
         <br>
         <h4>{{'Sdílej svůj profil' | translate }}</h4>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="user.profile.public" ng-change="saveUser()">
+              {{'Můj profil je veřejný' | trans}}
+          </label>
+        </div>
+        <div ng-show="user.profile.public">
         <div my-fb-share="" data-type="button" data-href="{{profileUrl}}"></div>
         <!-- Place this tag where you want the share button to render. -->
         <span class="g-plus-wrapper">
@@ -72,6 +79,7 @@
         <input type="text" value="{{profileUrl}}" class="share-input"
           tooltip-placement="right"
           tooltip="{{'Adresa profilu' | trans}}"/>
+        </div>
 
       </div>
       <div personal-goals user="{{user.username}}"></div>
