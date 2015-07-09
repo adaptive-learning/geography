@@ -38,4 +38,4 @@ class Command(BaseCommand):
                 WHERE lazysignup_lazyuser.id IS NULL
                ''')
             for user_id, in progress.bar(cursor, every=max(1, cursor.rowcount / 100), expected_size=cursor.rowcount):
-                profile = UserProfile.objects.get_or_create(user_id=user_id, public=True)
+                UserProfile.objects.get_or_create(user_id=user_id, public=True)
