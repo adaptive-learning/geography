@@ -327,7 +327,7 @@ angular.module('proso.geography.map', [])
       var newHeight;
       if (isPractise) {
         var screenAspectRatio = $window.innerHeight / $window.innerWidth;
-        if (screenAspectRatio - mapAspectRatio < -0.2) {
+        if (screenAspectRatio < mapAspectRatio) {
           angular.element('#ng-view').addClass('horizontal');
           newHeight = $window.innerHeight;
         } else {
