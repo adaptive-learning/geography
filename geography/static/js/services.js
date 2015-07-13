@@ -12,30 +12,6 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
         'world' : gettextCatalog.getString('Svět')
       };
     var categories = [
-      {
-        slug :'political',
-        name : gettextCatalog.getString('Politická mapa'),
-        types : [
-          'state',
-          'region',
-          'province',
-          'region_cz',
-          'region_it',
-          'autonomous_Comunity',
-          'bundesland',
-          'city',
-        ]
-      },{
-        slug : 'water',
-        name : gettextCatalog.getString('Vodstvo'),
-        types : ['river', 'lake'],
-        hidden:true
-      },{
-        slug : 'surface',
-        name : gettextCatalog.getString('Povrch'),
-        types : ['mountains', 'island'],
-        hidden:true
-      }
     ];
     var placeTypeNames = {};
 
