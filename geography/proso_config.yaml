@@ -15,12 +15,6 @@ default:
                 save_answer_immediately: false
                 cache_context: false
                 queue_length: 10
-            intro:
-                set_length: 5
-                fc_queue_size_max: 5
-                fc_queue_size_min: 3
-                save_answer_immediately: true
-                cache_context: true
     proso_feedback:
         domain: slepemapy.cz
         to: [slepemapy@googlegroups.com]
