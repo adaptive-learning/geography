@@ -7,7 +7,9 @@ grunt
 $WORKSPACE/manage.py collectstatic --noinput
 
 # install python dependencies
-pip install -r $WORKSPACE/requirements.txt
+# pip install -r $WORKSPACE/requirements.txt
+
+$WORKSPACE/manage.py migrate
 
 # reload http server
 sudo service apache2 reload
