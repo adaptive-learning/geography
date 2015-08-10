@@ -54,16 +54,18 @@ angular.module('proso.geography.filters', [])
 
   .filter('isAllowedOption', function() {
     return function(question, code) {
-      return !question.options || 1 == question.options.filter(function(option) {
-        return option.description == code;
-      }).length;
+      return !question.options ||
+        0 === question.options.length || 
+        1 === question.options.filter(function(option) {
+          return option.description == code;
+        }).length;
     };
   })
 
   .filter('questionText', ['gettextCatalog', function(gettextCatalog) {
     return function(question) {
       if (question && question.direction == "t2d") {
-        if (question.options) {
+        if (question.options && question.options.length > 0) {
           return gettextCatalog.getString("Ze zvýrazněných objektů na mapě vyber");
         } else {
           return gettextCatalog.getString("Vyber na mapě");
