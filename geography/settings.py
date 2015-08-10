@@ -67,7 +67,7 @@ MIDDLEWARE_CLASSES = (
     'proso_common.middleware.ToolbarMiddleware',
     'proso_common.models.CommonMiddleware',
     'proso.django.request.RequestMiddleware',
-    'proso_ab.models.ABMiddleware',
+    'proso_configab.models.ABConfigMiddleware',
     'proso.django.cache.RequestCacheMiddleware',
     'proso.django.log.RequestLogMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
