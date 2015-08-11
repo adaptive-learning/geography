@@ -13,5 +13,7 @@ $WORKSPACE/manage.py collectstatic --noinput
 
 $WORKSPACE/manage.py migrate
 
+$WORKSPACE/manage.py load_configab_experiments $WORKSPACE/ab_experiments.json
+
 # reload http server
 sudo service apache2 reload
