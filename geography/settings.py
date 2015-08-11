@@ -44,7 +44,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'flatblocks',
     'lazysignup',
-    'proso_ab',
     'proso_common',
     'proso_configab',
     'proso_models',
