@@ -35,15 +35,15 @@
       <div class="checkbox">
         <label>
           <input type="checkbox" ng-model="user.profile.public">
-            {{'Můj profil je veřejný' | trans}}
+            {{'Můj profil je veřejný' | translate }}
         </label>
       </div>
         <br>
         <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
-          {{'Uložit' | trans}}
+          {{'Uložit' | translate }}
         </button>
         <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
-          {{'Zrušit' | trans}}
+          {{'Zrušit' | translate }}
         </button>
         <br>
         <br>
@@ -57,7 +57,7 @@
     <div ng-show="error" error-message ></div>
     <div ng-hide="editableForm.$visible || error">
       <a href="/overview/{{user.username}}">
-        {{'Přehled znalostí uživatele' | trans}} {{ user.username && ' - ' + user.username }}
+        {{'Přehled znalostí uživatele' | translate }} {{ user.username && ' - ' + user.username }}
       </a>
       <div ng-show="editRights">
         <br>
@@ -65,7 +65,7 @@
         <div class="checkbox">
           <label>
             <input type="checkbox" ng-model="user.profile.public" ng-change="saveUser()">
-              {{'Můj profil je veřejný' | trans}}
+              {{'Můj profil je veřejný' | translate }}
           </label>
         </div>
         <div ng-show="user.profile.public">
@@ -78,7 +78,7 @@
         </span>
         <input type="text" value="{{profileUrl}}" class="share-input"
           tooltip-placement="right"
-          tooltip="{{'Adresa profilu' | trans}}"/>
+          tooltip="{{'Adresa profilu' | translate }}"/>
         </div>
 
       </div>
