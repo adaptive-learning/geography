@@ -68,7 +68,7 @@
                   <a id="drop-continents" href=""  class="dropdown-toggle" data-toggle="dropdown">
                     {% trans "Kontinenty" %} <b class="caret"></b>
                   </a>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="drop-continents">
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="drop-continents" id="menu-list-contents">
                     {% for continent in continents %}
                     <li><a href="/view/{{ continent.identifier }}/">{{ continent.name }}</a></li>
                     {% endfor %}
@@ -78,7 +78,7 @@
                   <a id="drop-states" href=""  class="dropdown-toggle" data-toggle="dropdown">
                     {% trans "Státy" %} <b class="caret"></b>
                   </a>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="drop-states">
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="drop-states" id="menu-list-states">
                     {% for state in states %}
                     <li><a href="/view/{{ state.identifier }}/">{{ state.name }}</a></li>
                     {% endfor %}
@@ -144,7 +144,7 @@
                   <i class="flag-{{ LANGUAGE_CODE}}"></i> <b class="caret"></b>
                   <input type="hidden" ng-init="initLanguageCode('{{ LANGUAGE_CODE }}')"/>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" id="menu-list-languages">
                     {% for lang in LANGUAGES %}
                     <li>
                       <a class="menu-link" location-append href="/{{ lang.0 }}/">
