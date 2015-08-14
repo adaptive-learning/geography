@@ -106,11 +106,11 @@ angular.module('proso.geography.controllers', [])
 ])
 
 .controller('AppPractice', ['$scope', '$routeParams', '$timeout', '$filter',
-    'practiceService', 'userService', 'events', 'colors', '$', 'highlighted',
+    'practiceService', 'userService', '$rootScope', 'colors', '$', 'highlighted',
     'categoryService', 'flashcardService',
 
     function($scope, $routeParams, $timeout, $filter,
-        practiceService, userService, events, colors, $, highlighted,
+        practiceService, userService, $rootScope, colors, $, highlighted,
         categoryService, flashcardService) {
         'use strict';
 
@@ -147,6 +147,7 @@ angular.module('proso.geography.controllers', [])
             var selectedFC = flashcardService.getFlashcardByDescription(selected);
             practiceService.saveAnswerToCurrentFC(selectedFC ? selectedFC.id : null, $scope.question.responseTime);
             $scope.progress = 100 * (practiceService.getSummary().count / practiceService.getConfig().set_length);
+            addAnswerToUser(asked == selected);
             //user.addAnswer(asked == selected);
             if (asked == selected) {
                 $timeout(function() {
@@ -170,6 +171,13 @@ angular.module('proso.geography.controllers', [])
                 setupSummary();
             }
         };
+
+        function addAnswerToUser(isCorrect) {
+          userService.user.profile.number_of_answers++;
+          if (isCorrect) {
+            userService.user.profile.number_of_correct_answers++;
+          }
+        }
 
         function highlightAnswer (asked, selected) {
             if ($filter('isFindOnMapType')($scope.question)) {
@@ -197,8 +205,7 @@ angular.module('proso.geography.controllers', [])
                 $scope.imageController.highlightItem(q.description, correct ? colors.GOOD : colors.BAD, 1);
             });
             $("html, body").animate({ scrollTop: "0px" });
-            //TODO fix this when answered_count available
-            // events.emit('questionSetFinished', userService.getUser().answered_count);
+            $rootScope.$emit('questionSetFinished');
         }
 
         function setQuestion(active) {

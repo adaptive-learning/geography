@@ -20,3 +20,4 @@ default:
     proso_feedback:
         domain: slepemapy.cz
         to: [slepemapy@googlegroups.com]
+        evaluation_checkpoints: [30, 70, 120, 200]

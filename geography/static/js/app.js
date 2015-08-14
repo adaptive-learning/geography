@@ -76,8 +76,8 @@ angular.module('proso.geography', [
     }
 ])
 
-.run(['$rootScope', '$', '$analytics', 'editableOptions', 'places',
-    function($rootScope, $, $analytics, editableOptions, places) {
+.run(['$rootScope', '$', '$analytics', 'editableOptions', 'places', 'userService', 'configService',
+    function($rootScope, $, $analytics, editableOptions, places, userService, configService) {
         'use strict';
         $analytics.settings.pageTracking.autoTrackFirstPage = false;
 
@@ -88,6 +88,19 @@ angular.module('proso.geography', [
                 $("#nav-main").collapse();
                 $("#nav-main").collapse('hide');
             }
+        });
+
+        $rootScope.$on('questionSetFinished', function() {
+          var checkPoints = configService.getConfig(
+            'proso_feedback', 'evaluation_checkpoints', []);
+          var answered_count = userService.user.profile.number_of_answers;
+          var setLength = configService('proso_flashcards', 'practice.common.set_length', 10);
+
+          angular.forEach(checkPoints, function(checkPoint) {
+            if (checkPoint - setLength < answered_count && answered_count <= checkPoint) {
+              $rootScope.$emit("openRatingModal");
+            }
+          });
         });
         
         $('.dropdown-menu a[href^="/view/"]').each( function(i, link){

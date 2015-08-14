@@ -7,6 +7,7 @@ from django.utils.translation import get_language
 from proso.django.config import get_global_config
 from proso_flashcards.models import Category
 from django.views.decorators.csrf import ensure_csrf_cookie
+from proso_models.models import get_environment
 
 
 @ensure_csrf_cookie
@@ -23,7 +24,12 @@ def home(request, hack=None):
         "dist/css/map.css"
     )
     if not hasattr(request.user, "userprofile") or request.user.userprofile is None:
-        user = ''
+        environment = get_environment()
+        user = json.dumps({
+            'user': {},
+            'number_of_answers': environment.number_of_answers(user=request.user.id),
+            'number_of_correct_answers': environment.number_of_correct_answers(user=request.user.id),
+        })
         email = ''
     else:
         user = json.dumps(request.user.userprofile.to_json(stats=True))
