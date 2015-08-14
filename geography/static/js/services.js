@@ -296,7 +296,6 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
         }
         filter = angular.copy(filter);
         filter.all = 'True';
-        filter.stats = 'True';
         $http.get('/flashcards/flashcards', {
           params: filter
         }).success(function(data) {

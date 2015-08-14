@@ -43,6 +43,7 @@ angular.module('proso.geography.controllers', [])
 
         var filter = {
             contexts : [$routeParams.part],
+            stats : true,
         };
         if ($routeParams.user == 'average') {
           filter.new_user_predictions = true;
