@@ -8,6 +8,10 @@ from proso.django.config import get_global_config
 from proso_flashcards.models import Category
 from django.views.decorators.csrf import ensure_csrf_cookie
 from proso_models.models import get_environment
+from proso.django.config import get_config
+from proso_user.models import migrate_google_openid_user
+import django.contrib.auth as auth
+from proso.django.request import is_user_id_overridden
 
 
 @ensure_csrf_cookie
@@ -32,6 +36,12 @@ def home(request, hack=None):
         })
         email = ''
     else:
+        if get_config('proso_user', 'google.openid.migration', default=True) and not is_user_id_overridden(request):
+            migrated_user = migrate_google_openid_user(request.user)
+            if migrated_user is not None:
+                auth.logout(request)
+                migrated_user.backend = 'social_auth.backends.google.GoogleOAuth2Backend'
+                auth.login(request, migrated_user)
         user = json.dumps(request.user.userprofile.to_json(stats=True))
         email = request.user.email
     c = {
