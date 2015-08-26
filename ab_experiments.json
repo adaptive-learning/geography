@@ -32,7 +32,7 @@
         }
       ],
       "id": "random-parts-2",
-      "disable": true
+      "disabled": true
     },
     {
       "variables": [
