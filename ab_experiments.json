@@ -31,7 +31,41 @@
           "app_name": "proso_models"
         }
       ],
-      "id": "random-parts-2"
+      "id": "random-parts-2",
+      "disable": true
+    },
+    {
+      "variables": [
+        {
+          "values": [
+            {
+              "probability": 50,
+              "value": "proso.models.item_selection.ScoreItemSelection"
+            },
+            {
+              "probability": 50,
+              "value": "proso.models.item_selection.RandomItemSelection"
+            }
+          ],
+          "name": "item_selector.class",
+          "app_name": "proso_models"
+        },
+        {
+          "values": [
+            {
+              "probability": 50,
+              "value": "proso.models.option_selection.ConfusingOptionSelection"
+            },
+            {
+              "probability": 50,
+              "value": "proso.models.option_selection.RandomOptionSelection"
+            }
+          ],
+          "name": "option_selector.class",
+          "app_name": "proso_models"
+        }
+      ],
+      "id": "random-parts-3"
     }
   ]
 }
