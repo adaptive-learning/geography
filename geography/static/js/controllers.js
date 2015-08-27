@@ -236,10 +236,9 @@ angular.module('proso.geography.controllers', [])
 
         $scope.mapCallback = function() {
             practiceService.initSet('common');
-            // var cat = categoryService.getCategory($scope.part);
             var filter = {
-                // TODO identifier missing in categoreis
                 contexts : [$routeParams.part],
+                categories : ['-too_small'],
             };
             if ($routeParams.place_type) {
                 filter.types = [$routeParams.place_type];
