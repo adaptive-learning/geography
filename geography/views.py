@@ -31,8 +31,8 @@ def home(request, hack=None):
         environment = get_environment()
         user = json.dumps({
             'user': {},
-            'number_of_answers': environment.number_of_answers(user=request.user.id),
-            'number_of_correct_answers': environment.number_of_correct_answers(user=request.user.id),
+            'number_of_answers': environment.number_of_answers(user=request.user.id) if request.user.id is not None else 0,
+            'number_of_correct_answers': environment.number_of_correct_answers(user=request.user.id) if request.user.id is not None else 0,
         })
         email = ''
     else:
