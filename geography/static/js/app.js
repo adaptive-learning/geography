@@ -102,7 +102,7 @@ angular.module('proso.geography', [
             }
           });
         });
-        
+
         $('.dropdown-menu a[href^="/view/"]').each( function(i, link){
             var code = $(link).attr('href').replace('/view/', '').replace('/', '');
             var name = $(link).text();
