@@ -94,16 +94,17 @@ module.exports = function(grunt) {
         },
         nggettext_compile: {
             all: {
-                files: {
-                    'static/dist/js/translations.js': ['static/po/*.po']
-                }
+                src: ['static/po/*.po'],
+                dest:'static/dist/js/translations.js',
             },
         },
         nggettext_extract: {
             pot: {
-                files: {
-                    'static/po/template.pot': ['static/tpl/*.html']
-                }
+                src: [
+                    'static/js/*.js',
+                    'static/tpl/*.html'
+                ],
+                dest: 'static/po/client.pot',
             },
         },
         sass: {
@@ -185,6 +186,14 @@ module.exports = function(grunt) {
             'geography-tpls': {
                 files: 'static/tpl/*.html',
                 tasks: ['html2js:geography', 'concat:geography', 'uglify:geography']
+            },
+            'geography-nggettext_compile': {
+                files: '<%= nggettext_compile.all.src %>',
+                tasks: ['nggettext_compile']
+            },
+            'geography-nggettext_extract': {
+                files: '<%= nggettext_extract.pot.src %>',
+                tasks: ['nggettext_extract']
             }
         }
     });
