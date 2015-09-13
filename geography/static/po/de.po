@@ -1,0 +1,370 @@
+# 
+# Translators:
+# Vít Stanislav <slaweet@seznam.cz>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: slepemapy.cz\n"
+"PO-Revision-Date: 2015-09-13 11:41+0000\n"
+"Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
+"Language-Team: German (http://www.transifex.com/adaptive-learning/slepemapycz/language/de/)\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: static/tpl/homepage.html:76
+msgid "Adaptabilní procvičování"
+msgstr "Adaptives Üben"
+
+#: static/tpl/homepage.html:77
+msgid "Adaptabilní procvičování - text"
+msgstr "Jede stumme Karte bietet adaptives Üben an - je nach dem welche Kenntnisse sie schon besitzen, wählt die App die für sie am besten geeigneste Fragekategorie und Wiederholungsfrequenz aus. Die App stellt ihnen dann die Fragen, die für sie am effektivsten sind."
+
+#: static/tpl/user_tpl.html:81
+msgid "Adresa profilu"
+msgstr "Profiladresse"
+
+#: static/js/directives.js:159
+msgid "Aktuální úroveň"
+msgstr "Aktuelles Level"
+
+#: static/js/services.js:347
+msgid "Autonomní společenství"
+msgstr "Autonomiegebiete"
+
+#: static/tpl/user_tpl.html:15
+msgid "Body"
+msgstr "Punkte"
+
+#: static/tpl/homepage.html:54
+msgid "Chcete jinou? Podívejte se na"
+msgstr "Möchten Sie eine andere? Schauen Sie sich weiteren Landkarten an"
+
+#: static/tpl/confused_tpl.html:33
+msgid "Chybné odpovědi"
+msgstr "Falsche Antworten"
+
+#: static/tpl/user_tpl.html:30
+msgid "E-mail"
+msgstr "E-Mail"
+
+#: static/js/controllers.js:393
+msgid "Hledaný profil neexistuje."
+msgstr ""
+
+#: static/js/filters.js:74
+msgid "Jak se jmenuje objekt zvýrazněný na mapě?"
+msgstr "Wie heißt das markierte Objekt auf der Karte?"
+
+#: static/tpl/homepage.html:67
+msgid "Jak to funguje?"
+msgstr "Wie funktioniert das?"
+
+#: static/js/services.js:351
+msgid "Jezera"
+msgstr "Seen"
+
+#: static/tpl/user_tpl.html:22
+msgid "Jméno"
+msgstr "Vorname"
+
+#: static/js/controllers.js:275
+msgid "Kontinenty"
+msgstr "Kontinenten"
+
+#: static/js/services.js:345
+msgid "Kraje"
+msgstr "Regionen"
+
+#: static/tpl/practice_tpl.html:104
+msgid "Mapa znalostí"
+msgstr "Karte der Kenntnisse"
+
+#: static/tpl/map_tpl.html:11
+msgid "Moje znalosti"
+msgstr "Meine Kenntnisse"
+
+#: static/tpl/confused_tpl.html:3
+msgid "Moje časté chyby"
+msgstr "Häufige Fehler"
+
+#: static/js/services.js:349
+msgid "Města"
+msgstr "Städte"
+
+#: static/tpl/user_tpl.html:38 static/tpl/user_tpl.html:68
+msgid "Můj profil je veřejný"
+msgstr ""
+
+#: static/js/directives.js:107
+msgid "Naučeno"
+msgstr "erlernt"
+
+#: static/js/map.js:279
+msgid "Neprocvičováno"
+msgstr "nicht geübt"
+
+#: static/tpl/practice_tpl.html:46
+msgid "Nevím"
+msgstr "Ich weiß nicht"
+
+#: static/js/services.js:154
+msgid "O prjektu"
+msgstr "Über das Projekt"
+
+#: static/js/services.js:346
+msgid "Oblasti"
+msgstr "Gebiete"
+
+#: static/js/directives.js:16 static/js/map.js:266
+msgid "Odhad znalosti"
+msgstr "Einschätzung der Kennnisse"
+
+#: static/tpl/practice_tpl.html:95
+msgid "Osobní cíle"
+msgstr "Persönliche Ziele"
+
+#: static/js/services.js:353
+msgid "Ostrovy"
+msgstr "Inseln"
+
+#: static/js/services.js:352
+msgid "Pohoří"
+msgstr "Gebirge"
+
+#: static/tpl/homepage.html:41
+msgid "Pohoří ČR"
+msgstr "Tschechische Gebirge"
+
+#: static/tpl/practice_tpl.html:51
+msgid "Pokračovat"
+msgstr "fortfahren"
+
+#: static/js/directives.js:285
+msgid "Pokud problém přetrval zkuste to znovu později nebo"
+msgstr ""
+
+#: static/js/services.js:260
+msgid "Politická mapa"
+msgstr "Politische Karte"
+
+#: static/js/services.js:278
+msgid "Povrch"
+msgstr "Oberfläche"
+
+#: static/js/map.js:272
+msgid "Počet obyvatel"
+msgstr "Einwohnerzahl"
+
+#: static/js/directives.js:279
+msgid "Pro vyřešení problému zkuste"
+msgstr ""
+
+#: static/tpl/confused_tpl.html:23 static/tpl/overview_tpl.html:20
+#: static/tpl/view_tpl.html:16 static/tpl/view_tpl.html:39
+msgid "Procvičovat"
+msgstr "Üben"
+
+#: static/js/directives.js:115
+msgid "Procvičováno"
+msgstr "geübt"
+
+#: static/js/services.js:344
+msgid "Provincie"
+msgstr "Provinzen"
+
+#: static/tpl/map_tpl.html:18
+msgid "Průměrný nový uživatel"
+msgstr "durschnittlicher neuer Benutzer"
+
+#: static/js/services.js:155 static/tpl/overview_tpl.html:2
+msgid "Přehled map"
+msgstr "Kartenübersicht"
+
+#: static/tpl/user_tpl.html:60
+msgid "Přehled znalostí uživatele"
+msgstr "Übersicht über die Kenntnisse des Benutzers"
+
+#: static/tpl/map_tpl.html:24
+msgid "Přiblížit mapu můžete i kolečkem myši nebo dotykovým gestem."
+msgstr ""
+
+#: static/tpl/user_tpl.html:26
+msgid "Příjmení"
+msgstr "Name"
+
+#: static/js/directives.js:171
+msgid "Příští úroveň"
+msgstr "Nächstes Level"
+
+#: static/js/services.js:343
+msgid "Regiony"
+msgstr "Regionen"
+
+#: static/tpl/user_tpl.html:64
+msgid "Sdílej svůj profil"
+msgstr "Teilen Sie Ihr Profil mit"
+
+#: static/tpl/homepage.html:19
+msgid "Slepé Mapy"
+msgstr "Stumme Karten"
+
+#: static/tpl/homepage.html:83
+msgid "Specializovaný systém"
+msgstr "Spezialisiertes System"
+
+#: static/tpl/homepage.html:84
+msgid "Specializovaný systém - text"
+msgstr "Die Möglichkeit stumme Karten zu üben bieten auch andere Lernwebsiten an. Unser System konzentriert sich aber nur auf stumme Karten und ist aus diesem Grunde besonders auf diese optimiert. Damit wir ihnen die beste Nutzerehrfahrung bieten können und das lernen für sie ein Kinderspiel wird."
+
+#: static/js/services.js:348
+msgid "Spolkové země"
+msgstr "Bundesländer"
+
+#: static/tpl/confused_tpl.html:27
+msgid "Správné odpovědi"
+msgstr "Richtige Antworten"
+
+#: static/js/controllers.js:274 static/js/services.js:342
+msgid "Státy"
+msgstr "Staaten"
+
+#: static/tpl/homepage.html:46
+msgid "Státy Asie"
+msgstr "Staaten Asiens"
+
+#: static/tpl/homepage.html:26
+msgid "Státy Evropy"
+msgstr "Staaten Europas"
+
+#: static/tpl/homepage.html:36
+msgid "Státy USA"
+msgstr "Bundesstaaten der Vereinigten Staaten"
+
+#: static/js/services.js:12
+msgid "Svět"
+msgstr "Welt"
+
+#: static/js/services.js:11
+msgid "USA"
+msgstr "USA"
+
+#: static/tpl/homepage.html:91
+msgid "Ukázka mapy znalostí"
+msgstr "Vorschau zur Karte der Kennnisse"
+
+#: static/tpl/homepage.html:79
+msgid "Ukázka procvičování"
+msgstr "Vorschau der Übungen"
+
+#: static/tpl/user_tpl.html:43
+msgid "Uložit"
+msgstr "Speichern"
+
+#: static/tpl/user_tpl.html:5
+msgid "Upravit profil"
+msgstr "Profil bearbeiten"
+
+#: static/tpl/homepage.html:95
+msgid "Učení z dat"
+msgstr "Lernen aus Daten"
+
+#: static/tpl/homepage.html:96
+msgid "Učení z dat - text"
+msgstr "Die App lernt aus den Daten aller Benutzer. Die Auswahl der Fragen basiert auf diesen Daten und nicht auf den Kenntnissen eines Geographieexperten. Es erkennt ob es allgemein schwieriger ist Kenia oder Nigerien zu erkennen, und passt die Fragen dazu an."
+
+#: static/js/controllers.js:406 static/js/directives.js:276
+msgid "V aplikaci bohužel nastala chyba."
+msgstr "Leider ist ein Fehler aufgetreten"
+
+#: static/tpl/homepage.html:88
+msgid "Vizualizace znalostí"
+msgstr "Visualisierung ihrer Kenntnisse"
+
+#: static/tpl/homepage.html:89
+msgid "Vizualizace znalostí - text"
+msgstr "Aufgrund der Antworten, schätzt das Spielsystem ihre Kenntnisse über die verschiedene Staaten und Bundesländer ein, und veranschaulicht es auf Karte der Kenntnisse. Dies soll ihnen helfen sich darüber im Klaren zu sein, welches Wissen Sie bereits besitzen."
+
+#: static/js/services.js:273
+msgid "Vodstvo"
+msgstr "Gewässer"
+
+#: static/js/filters.js:71
+msgid "Vyber na mapě"
+msgstr "Wähle auf der Karte aus"
+
+#: static/tpl/homepage.html:21
+msgid "Vyberte si mapu k procvičování:"
+msgstr "Wählen Sie eine Landkarte zum Üben aus:"
+
+#: static/tpl/practice_tpl.html:20
+msgid "Vybráno"
+msgstr "Ausgewählt"
+
+#: static/tpl/view_tpl.html:51
+msgid "Zde zatím nebylo nic procvičováno."
+msgstr "Hier wurde bis jetzt noch nicht geübt."
+
+#: static/js/filters.js:69
+msgid "Ze zvýrazněných objektů na mapě vyber"
+msgstr "Aus den markierten Objekten wähle auf der Karte aus"
+
+#: static/tpl/homepage.html:71
+msgid "Zeměpis hrou"
+msgstr "Geograpie spielerisch lernen"
+
+#: static/tpl/homepage.html:72
+msgid "Zeměpis hrou - text"
+msgstr "Testen Sie Ihre Kenntnisse in Geographie und lernen Sie mit Spiel und Spaß. In der aktuellen Version spielen Sie alleine, bzw. gegen das Spielsystem. Schaffen Sie es ganz Tschechien, Europa oder sogar die ganze Welt grün zu färben?"
+
+#: static/tpl/practice_tpl.html:100
+msgid "Znovu procvičovat"
+msgstr "erneut üben"
+
+#: static/tpl/practice_tpl.html:57
+msgid "Znovu zvýraznit"
+msgstr "erneut anzeigen"
+
+#: static/tpl/user_tpl.html:46
+msgid "Zrušit"
+msgstr "Abbrechen"
+
+#: static/js/directives.js:164
+msgid "bodů do příští úrovně"
+msgstr "Punkte bis zum nächsten Level"
+
+#: static/tpl/homepage.html:57
+msgid "další mapy"
+msgstr "Weitere Landkarten"
+
+#: static/js/directives.js:287
+msgid "nám napiště"
+msgstr ""
+
+#: static/js/directives.js:282
+msgid "obnovit stránku"
+msgstr ""
+
+#: static/tpl/user_tpl.html:17
+msgid "přibývají za každou správnou odpověď"
+msgstr "ändern sich mit jeder richtigen Antwort"
+
+#: static/tpl/practice_tpl.html:67
+msgid "Úspěšnost"
+msgstr "Erfolge"
+
+#: static/js/services.js:350
+msgid "Řeky"
+msgstr "Flüße"
+
+#: static/tpl/homepage.html:51
+msgid "Řeky Afriky"
+msgstr "Flüsse Afrikas"
+
+#: static/tpl/homepage.html:31
+msgid "Řeky ČR"
+msgstr "Flüsse Europas"
+
+#: static/tpl/confused_tpl.html:8
+msgid "Žádné časté chyby nebyly nalezeny"
+msgstr "Keine häufigen Fehler wurden gefunden"

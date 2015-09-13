@@ -57,7 +57,7 @@ angular.module('proso.geography', [
           //redirectTo : '/'
         });
 
-        var languages = ['cs', 'en', 'es'];
+        var languages = ['cs', 'en', 'es', 'de'];
         for (var i = 0; i < languages.length; i++) {
             $routeProvider.when('/' + languages[i] + '/:somepath?', {
                 controller : 'ReloadController',

@@ -124,6 +124,7 @@ LANGUAGES = (
     ('cs', 'Česky'),
     ('en', 'English'),
     ('es', 'Español'),
+    ('de', 'Deutsch'),
 )
 
 LOCALE_PATHS = (
