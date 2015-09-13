@@ -176,7 +176,7 @@ module.exports = function(grunt) {
         },
         watch: {
             'geography-js': {
-                files: 'static/js/*.js',
+                files: '<%= concat.geography.src %>',
                 tasks: ['concat:geography', 'uglify:geography']
             },
             'geography-css': {
