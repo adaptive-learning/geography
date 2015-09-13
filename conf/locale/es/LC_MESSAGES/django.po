@@ -1,21 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: slepemapy.cz\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-02 15:15+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2015-09-12 17:34+0000\n"
+"Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
+"Language-Team: Spanish (http://www.transifex.com/adaptive-learning/slepemapycz/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: templates/create_goal.html:5
 msgid "Vytvořit cíl"
@@ -87,9 +87,7 @@ msgstr "Juego de Geografía"
 
 #: templates/generated/homepage.html:72
 msgid "Zeměpis hrou - text"
-msgstr ""
-"Practica tus conocimientos de geografía de una forma divertida.¡Coloréa los "
-"países de Europa, los estados de Norte América o el mundo completo!"
+msgstr "Practica tus conocimientos de geografía de una forma divertida.¡Coloréa los países de Europa, los estados de Norte América o el mundo completo!"
 
 #: templates/generated/homepage.html:76
 msgid "Adaptabilní procvičování"
@@ -97,11 +95,7 @@ msgstr "Práctica adaptativa"
 
 #: templates/generated/homepage.html:77
 msgid "Adaptabilní procvičování - text"
-msgstr ""
-"El programa analiza tus conocimientos sobre mapas para adaptarse a tí.Usa "
-"factores como el tipo de preguntas que contestas y la frecuencia con la que "
-"aciertas para escoger preguntas sobre países que te ayuden a practicar mejor "
-"y al mismo tiempo te sigas divirtiendo."
+msgstr "El programa analiza tus conocimientos sobre mapas para adaptarse a tí.Usa factores como el tipo de preguntas que contestas y la frecuencia con la que aciertas para escoger preguntas sobre países que te ayuden a practicar mejor y al mismo tiempo te sigas divirtiendo."
 
 #: templates/generated/homepage.html:79
 msgid "Ukázka procvičování"
@@ -113,11 +107,7 @@ msgstr "Sistema Especializado"
 
 #: templates/generated/homepage.html:84
 msgid "Specializovaný systém - text"
-msgstr ""
-"Hay muchos otros sistemas para el aprendizaje que incluyen el dibujo de "
-"mapas para practicar, pero usualmente son más dispersos y cubren muchas "
-"áreas. Nuestro sistema se enfoca exclusivamenteen el delineado de mapas, lo "
-"que nos permite optimizar nuestro sistema para esta área."
+msgstr "Hay muchos otros sistemas para el aprendizaje que incluyen el dibujo de mapas para practicar, pero usualmente son más dispersos y cubren muchas áreas. Nuestro sistema se enfoca exclusivamenteen el delineado de mapas, lo que nos permite optimizar nuestro sistema para esta área."
 
 #: templates/generated/homepage.html:88
 msgid "Vizualizace znalostí"
@@ -125,11 +115,7 @@ msgstr "Visualización del Conocimiento"
 
 #: templates/generated/homepage.html:89
 msgid "Vizualizace znalostí - text"
-msgstr ""
-"Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega "
-"en forma de mapa, el cuál te ayuda a visualizar de forma más fácil lo qué "
-"sabes. En verde están las áreas que dominas y en rojo las que te "
-"faltanpracticar más."
+msgstr "Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega en forma de mapa, el cuál te ayuda a visualizar de forma más fácil lo qué sabes. En verde están las áreas que dominas y en rojo las que te faltanpracticar más."
 
 #: templates/generated/homepage.html:91
 msgid "Ukázka mapy znalostí"
@@ -141,26 +127,15 @@ msgstr "Minería de Datos"
 
 #: templates/generated/homepage.html:96
 msgid "Učení z dat - text"
-msgstr ""
-"El programa aprende de todas las personas que lo usan. La elección de "
-"preguntas que el programa presenta se basan en esta información. De esta "
-"forma, se tiene mejores estimados de dificultad para los usuarios, ya que en "
-"vez de que un experto dicte la dificultad, los usuarios definen el nivel con "
-"su desempeño. Así, cada quién ayuda a decidir qué es más fácil, sí las "
-"ciudades de Kenia o los ríos de Nigeria. "
+msgstr "El programa aprende de todas las personas que lo usan. La elección de preguntas que el programa presenta se basan en esta información. De esta forma, se tiene mejores estimados de dificultad para los usuarios, ya que en vez de que un experto dicte la dificultad, los usuarios definen el nivel con su desempeño. Así, cada quién ayuda a decidir qué es más fácil, sí las ciudades de Kenia o los ríos de Nigeria. "
 
 #: templates/home.html:27
 msgid "meta content"
-msgstr ""
-"programa inteligente para practicar el aprendizaje de estados, ciudades, "
-"montañas y riós sobre mapas dibujados del mundo, Europa, Asia, África, "
-"América y Estados Unidos y entre otros países"
+msgstr "programa inteligente para practicar el aprendizaje de estados, ciudades, montañas y riós sobre mapas dibujados del mundo, Europa, Asia, África, América y Estados Unidos y entre otros países"
 
 #: templates/home.html:28
 msgid "meta keywords"
-msgstr ""
-"juegos de geografía, contorno de mapas, mapas de contorno, países, estados, "
-"ciudades, mundo, europa, américa, áfrica, asia, montañas, ríos, eua"
+msgstr "juegos de geografía, contorno de mapas, mapas de contorno, países, estados, ciudades, mundo, europa, américa, áfrica, asia, montañas, ríos, eua"
 
 #: templates/home.html:64
 msgid "Svět"
@@ -182,9 +157,7 @@ msgstr "Todos los mapas"
 msgid ""
 "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
 "znalosti pamatoval i příště."
-msgstr ""
-"Entra con tu cuenta de Google o Facebook para que el sistema guarde tu "
-"progreso ."
+msgstr "Entra con tu cuenta de Google o Facebook para que el sistema guarde tu progreso ."
 
 #: templates/home.html:101
 msgid "Přihlásit se"
@@ -222,240 +195,6 @@ msgstr "Sobre"
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr "programa inteligente para practicar geografía"
 
-#~ msgid "Neznámé"
-#~ msgstr "Desconocido"
-
-#~ msgid "Města"
-#~ msgstr "Ciudades"
-
-#~ msgid "Řeky"
-#~ msgstr "Ríos"
-
-#~ msgid "Jezera"
-#~ msgstr "Lagos"
-
-#~ msgid "Kraje"
-#~ msgstr "Regiones"
-
-#~ msgid "Spolkové Země"
-#~ msgstr "Estados"
-
-#~ msgid "Provincie"
-#~ msgstr "Provincias"
-
-#~ msgid "Oblasti"
-#~ msgstr "Provincias"
-
-#~ msgid "Regiony"
-#~ msgstr "Regiones"
-
-#~ msgid "Autonomní společenství"
-#~ msgstr "Comunidades Autónomas"
-
-#~ msgid "Pohoří"
-#~ msgstr "Montes"
-
-#~ msgid "Ostrovy"
-#~ msgstr "Islas"
-
-#~ msgid "Politická mapa"
-#~ msgstr "Mapa político"
-
-#~ msgid "Vodstvo"
-#~ msgstr "Agua"
-
-#~ msgid "Povrch"
-#~ msgstr "Superficie"
-
-#~ msgctxt "state"
-#~ msgid "zvýrazněný"
-#~ msgstr "en grís"
-
-#~ msgctxt "city"
-#~ msgid "zvýrazněné"
-#~ msgstr "en grís"
-
-#~ msgctxt "river"
-#~ msgid "zvýrazněná"
-#~ msgstr "en grís"
-
-#~ msgctxt "lake"
-#~ msgid "zvýrazněné"
-#~ msgstr "en grís"
-
-#~ msgctxt "region_cz"
-#~ msgid "zvýrazněný"
-#~ msgstr "en grís"
-
-#~ msgctxt "bundesland"
-#~ msgid "zvýrazněná"
-#~ msgstr "en grís"
-
-#~ msgctxt "province"
-#~ msgid "zvýrazněná"
-#~ msgstr "en grís"
-
-#~ msgctxt "region_it"
-#~ msgid "zvýrazněná"
-#~ msgstr "en grís"
-
-#~ msgctxt "region"
-#~ msgid "zvýrazněný"
-#~ msgstr "en grís"
-
-#~ msgctxt "autonomous_comunity"
-#~ msgid "zvýrazněná"
-#~ msgstr "en grís"
-
-#~ msgctxt "mountains"
-#~ msgid "zvýrazněné"
-#~ msgstr "en grís"
-
-#~ msgctxt "island"
-#~ msgid "zvýrazněný"
-#~ msgstr "en grís"
-
-#~ msgid "unknown"
-#~ msgstr "desconocido"
-
-#~ msgid "stát"
-#~ msgstr "estado"
-
-#~ msgid "město"
-#~ msgstr "ciudad"
-
-#~ msgid "řeka"
-#~ msgstr "río"
-
-#~ msgid "jezero"
-#~ msgstr "lago"
-
-#~ msgid "kraj"
-#~ msgstr "región"
-
-#~ msgid "spolková země"
-#~ msgstr "estado"
-
-#~ msgid "provincie"
-#~ msgstr "provincia"
-
-#~ msgid "oblast"
-#~ msgstr "región"
-
-#~ msgid "region"
-#~ msgstr "región"
-
-#~ msgid "autonomní společenství"
-#~ msgstr "comunidad autónoma"
-
-#~ msgctxt "singular"
-#~ msgid "pohoří"
-#~ msgstr "monte"
-
-#~ msgid "ostrov"
-#~ msgstr "isla"
-
-#~ msgid "spolkovou zemi"
-#~ msgstr "estado"
-
-#~ msgid "provincii"
-#~ msgstr "provincia"
-
-#~ msgid "řeku"
-#~ msgstr "río"
-
-#~ msgid "států"
-#~ msgstr "estados"
-
-#~ msgid "měst"
-#~ msgstr "ciudades"
-
-#~ msgid "řek"
-#~ msgstr "ríos"
-
-#~ msgid "jezer"
-#~ msgstr "lagos"
-
-#~ msgid "regionů"
-#~ msgstr "regiones"
-
-#~ msgid "spolkových zemí"
-#~ msgstr "estados"
-
-#~ msgid "provincií"
-#~ msgstr "provincias"
-
-#~ msgid "oblastí"
-#~ msgstr "regiones"
-
-#~ msgid "autonomních společenství"
-#~ msgstr "comunidades autónomas"
-
-#~ msgctxt "plural"
-#~ msgid "pohoří"
-#~ msgstr "montes"
-
-#~ msgid "ostrovů"
-#~ msgstr "islas"
-
-#~ msgid "Ze zvýrazněných %(place_plural)s na mapě vyber"
-#~ msgstr ""
-#~ "Selecciona de entre los %(place_plural)s en grís el que corresponda a"
-
-#~ msgid "Vyber na mapě %(place_singular)s"
-#~ msgstr "Selecciona en el mapa el %(place_singular)s"
-
-#~ msgid "Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?"
-#~ msgstr ""
-#~ "¿Cuál es el nombre del %(place_singular)s %(highlighted)s en el mapa?"
-
-#~ msgid "Heslo je správné, ale účet není aktivovaný."
-#~ msgstr "La contraseña es correcta pero no se ha activado la cuenta"
-
-#~ msgid "Nesprávné jméno nebo heslo"
-#~ msgstr "El usuario o la contraseña son incorrectos"
-
-#~ msgid "Je nutné vyplnit uživatelské jméno."
-#~ msgstr "Tienes que escribir un nombre de usuario."
-
-#~ msgid "Je nutné vyplnit email."
-#~ msgstr "Tienes que escribir una dirección de email."
-
-#~ msgid "Je nutné vyplnit heslo."
-#~ msgstr "Tienes que escribir una contraseña."
-
-#~ msgid "Hesla se neshodují."
-#~ msgstr "Las contraseñas no son iguales."
-
 #~ msgid "Feedback confirmed"
-#~ msgstr "Gracias por tu mensaje. Tu opinión es muy importante para nosotros."
-
-#~ msgid "Děkujeme za hodnocení."
-#~ msgstr "Gracias por calificarnos."
-
-#~ msgid "Je nejvyšší čas pokračovat v plnění osobních cílů!"
-#~ msgstr "Es hora de continuar con tus metas personales!"
-
-#~ msgid "Procvičovat"
-#~ msgstr "Practica"
-
-#~ msgid "Změnit nastavení E-mailů"
-#~ msgstr "Ajusta tus opciones de email"
-
-#~ msgid "Cíl byl vytvořen"
-#~ msgstr "La meta ha sido establecida"
-
-#~ msgid "Státy světa"
-#~ msgstr "Países del mundo"
-
-#~ msgid "Kraje ČR"
-#~ msgstr "Regiones Checas"
-
-#~ msgid "Města ČR"
-#~ msgstr "Ciudades Checas"
-
-#~ msgid "Pohoří Evropy"
-#~ msgstr "Montes Europeas"
-
-#~ msgid "Body - přibývají za každou správnou odpověď"
-#~ msgstr "Puntos - ganados por cada respuesta correcta"
+#~ msgstr ""
+#~ "Děkujeme Vám za zaslané informace. Feedback od uživatelů je k nezaplacení."

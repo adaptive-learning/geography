@@ -1,673 +1,369 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-07 11:08+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: es\n"
-"MIME-Version: 1.0\n"
+"Project-Id-Version: slepemapy.cz\n"
+"PO-Revision-Date: 2015-09-12 17:32+0000\n"
+"Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
+"Language-Team: Spanish (http://www.transifex.com/adaptive-learning/slepemapycz/language/es/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: geography.js:441 geography.js.c:1123 static/js/directives.js:16
-#: static/js/map.js:266
-msgid "Odhad znalosti"
-msgstr "Estimación de conocimiento"
-
-#: geography.js:546 static/js/directives.js:124
-msgid "Naučeno"
-msgstr "Aprendido"
-
-#: geography.js:553 static/js/directives.js:132
-msgid "Procvičováno"
-msgstr "Practicado"
-
-#: geography.js:572 static/js/directives.js:176
-msgid "Aktuální úroveň"
-msgstr "Nivel actual"
-
-#: geography.js:577 static/js/directives.js:181
-msgid "bodů do příští úrovně"
-msgstr "puntos para alcanzar el siguiente nivel"
-
-#: geography.js:584 static/js/directives.js:188
-msgid "Příští úroveň"
-msgstr "Siguiente nivel"
-
-#: geography.js:688 static/js/controllers.js:393 static/js/directives.js:292
-msgid "V aplikaci bohužel nastala chyba."
-msgstr "Unfortunately there has been an error in the app."
-
-#: geography.js:781
-msgid "Ze zvýrazněných položek na mapě vyber"
-msgstr "Selecciona de entre los objetos en grís el que corresponda a"
-
-#: geography.js:783 static/js/filters.js:69
-msgid "Vyber na mapě"
-msgstr "Selecciona en el mapa"
-
-#: geography.js:1129 static/js/map.js:272
-msgid "Počet obyvatel"
-msgstr "Población"
-
-#: geography.js:1136 static/js/map.js:279
-msgid "Neprocvičováno"
-msgstr "Sin Practicar"
-
-#: geography.js:1412 static/js/services.js:11
-msgid "USA"
-msgstr "E.U.A."
-
-#: geography.js:1413 static/js/services.js:12
-msgid "Svět"
-msgstr "Mundo"
-
-#: geography.js:1418 geography.js.c:1752 static/js/services.js:17
-#: static/js/services.js.c:367
-msgid "Politická mapa"
-msgstr "Mapa Político"
-
-#: geography.js:1431 geography.js.c:1765 static/js/services.js:30
-#: static/js/services.js.c:380
-msgid "Vodstvo"
-msgstr "Agua"
-
-#: geography.js:1436 geography.js.c:1770 static/js/services.js:35
-#: static/js/services.js.c:385
-msgid "Povrch"
-msgstr "Superficie"
-
-#: geography.js:1658 static/js/services.js:261
-msgid "O prjektu"
-msgstr "Sobre"
-
-#: geography.js:1659 static/hack/geography/static/tpl/overview_tpl.js:1
-#: static/hack/tpl/overview_tpl.js:1 static/js/services.js:262
-msgid "Přehled map"
-msgstr "Todos los mapas"
-
-#: static/hack/geography/static/tpl/confirm_modal.js:1
-#: static/hack/tpl/confirm_modal.js:1
-msgid "Ne"
-msgstr "No"
-
-#: static/hack/geography/static/tpl/confirm_modal.js:2
-#: static/hack/tpl/confirm_modal.js:2
-msgid "Ano"
-msgstr "Sí"
-
-#: static/hack/geography/static/tpl/confused_tpl.js:1
-#: static/hack/tpl/confused_tpl.js:1
-msgid "Moje časté chyby"
-msgstr "Mis errores frecuentes"
-
-#: static/hack/geography/static/tpl/confused_tpl.js:2
-#: static/hack/tpl/confused_tpl.js:2
-msgid "Žádné časté chyby nebyly nalezeny"
-msgstr "No se han encontrado errores frecuentes"
-
-#: static/hack/geography/static/tpl/confused_tpl.js:3
-#: static/hack/geography/static/tpl/overview_tpl.js:2
-#: static/hack/geography/static/tpl/view_tpl.js:1
-#: static/hack/geography/static/tpl/view_tpl.js:2
-#: static/hack/proso_goals/static/tpl/personal-goals_tpl.js:7
-#: static/hack/tpl/confused_tpl.js:3 static/hack/tpl/overview_tpl.js:2
-#: static/hack/tpl/personal-goals_tpl.js:7 static/hack/tpl/view_tpl.js:1
-#: static/hack/tpl/view_tpl.js.c:2
-msgid "Procvičovat"
-msgstr "Práctica"
-
-#: static/hack/geography/static/tpl/confused_tpl.js:4
-#: static/hack/tpl/confused_tpl.js:4
-msgid "Správné odpovědi"
-msgstr "Respuestas correctas"
-
-#: static/hack/geography/static/tpl/confused_tpl.js:5
-#: static/hack/tpl/confused_tpl.js:5
-msgid "Chybné odpovědi"
-msgstr "Respuestas incorrectas"
-
-#: static/hack/geography/static/tpl/homepage.js:1
-#: static/hack/tpl/homepage.js:1
-msgid "Slepé Mapy"
-msgstr "Contorno de Mapas"
-
-#: static/hack/geography/static/tpl/homepage.js:2
-#: static/hack/tpl/homepage.js:2
-msgid "Vyberte si mapu k procvičování:"
-msgstr "Selecciona un mapa para practicar:"
-
-#: static/hack/geography/static/tpl/homepage.js:3
-#: static/hack/tpl/homepage.js:3
-msgid "Státy Evropy"
-msgstr "Países Europeos"
-
-#: static/hack/geography/static/tpl/homepage.js:4
-#: static/hack/tpl/homepage.js:4
-msgid "Řeky ČR"
-msgstr "Ríos de Rep. Ch."
-
-#: static/hack/geography/static/tpl/homepage.js:5
-#: static/hack/tpl/homepage.js:5
-msgid "Státy USA"
-msgstr "Estados de E.U.A."
-
-#: static/hack/geography/static/tpl/homepage.js:6
-#: static/hack/tpl/homepage.js:6
-msgid "Pohoří ČR"
-msgstr "Montes de Rep Ch"
-
-#: static/hack/geography/static/tpl/homepage.js:7
-#: static/hack/tpl/homepage.js:7
-msgid "Státy Asie"
-msgstr "Países de Asia"
-
-#: static/hack/geography/static/tpl/homepage.js:8
-#: static/hack/tpl/homepage.js:8
-msgid "Řeky Afriky"
-msgstr "Ríos de África"
-
-#: static/hack/geography/static/tpl/homepage.js:9
-#: static/hack/tpl/homepage.js:9
-msgid "Chcete jinou? Podívejte se na"
-msgstr "¿Quieres ver otros? ver "
-
-#: static/hack/geography/static/tpl/homepage.js:10
-#: static/hack/tpl/homepage.js:10
-msgid "další mapy"
-msgstr "más mapas"
-
-#: static/hack/geography/static/tpl/homepage.js:12
-#: static/hack/tpl/homepage.js:12
-msgid "Jak to funguje?"
-msgstr "¿Cómo funciona?"
-
-#: static/hack/geography/static/tpl/homepage.js:14
-#: static/hack/tpl/homepage.js:14
-msgid "Zeměpis hrou"
-msgstr "Juego de Geografía"
-
-#: static/hack/geography/static/tpl/homepage.js:16
-#: static/hack/tpl/homepage.js:16
-msgid "Zeměpis hrou - text"
-msgstr ""
-"Practica tus conocimientos de geografía de una forma divertida.¡Coloréa los "
-"países de Europa, los estados de Norte América o el mundo completo!"
-
-#: static/hack/geography/static/tpl/homepage.js:18
-#: static/hack/tpl/homepage.js:18
+#: static/tpl/homepage.html:76
 msgid "Adaptabilní procvičování"
 msgstr "Práctica adaptativa"
 
-#: static/hack/geography/static/tpl/homepage.js:20
-#: static/hack/tpl/homepage.js:20
+#: static/tpl/homepage.html:77
 msgid "Adaptabilní procvičování - text"
-msgstr ""
-"El programa analiza tus conocimientos sobre mapas para adaptarse a tí.Usa "
-"factores como el tipo de preguntas que contestas y la frecuencia con la que "
-"aciertas para escoger preguntas sobre países que te ayuden a practicar mejor "
-"y al mismo tiempo te sigas divirtiendo."
+msgstr "El programa analiza tus conocimientos sobre mapas para adaptarse a tí.Usa factores como el tipo de preguntas que contestas y la frecuencia con la que aciertas para escoger preguntas sobre países que te ayuden a practicar mejor y al mismo tiempo te sigas divirtiendo."
 
-#: static/hack/geography/static/tpl/homepage.js:21
-#: static/hack/tpl/homepage.js:21
-msgid "Ukázka procvičování"
-msgstr "Ejemplo de práctica"
-
-#: static/hack/geography/static/tpl/homepage.js:23
-#: static/hack/tpl/homepage.js:23
-msgid "Specializovaný systém"
-msgstr "Sistema Especializado"
-
-#: static/hack/geography/static/tpl/homepage.js:25
-#: static/hack/tpl/homepage.js:25
-msgid "Specializovaný systém - text"
-msgstr ""
-"Hay muchos otros sistemas para el aprendizaje que incluyen el dibujo de "
-"mapas para practicar, pero usualmente son más dispersos y cubren muchas "
-"áreas. Nuestro sistema se enfoca exclusivamenteen el delineado de mapas, lo "
-"que nos permite optimizar nuestro sistema para esta área."
-
-#: static/hack/geography/static/tpl/homepage.js:27
-#: static/hack/tpl/homepage.js:27
-msgid "Vizualizace znalostí"
-msgstr "Visualización del Conocimiento"
-
-#: static/hack/geography/static/tpl/homepage.js:28
-#: static/hack/tpl/homepage.js:28
-msgid "Vizualizace znalostí - text"
-msgstr ""
-"Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega "
-"en forma de mapa, el cuál te ayuda a visualizar de forma más fácil lo qué "
-"sabes. En verde están las áreas que dominas y en rojo las que te "
-"faltanpracticar más."
-
-#: static/hack/geography/static/tpl/homepage.js:29
-#: static/hack/tpl/homepage.js:29
-msgid "Ukázka mapy znalostí"
-msgstr "Ejemplo de visualización de conocimiento"
-
-#: static/hack/geography/static/tpl/homepage.js:31
-#: static/hack/tpl/homepage.js:31
-msgid "Učení z dat"
-msgstr "Minería de Datos"
-
-#: static/hack/geography/static/tpl/homepage.js:33
-#: static/hack/tpl/homepage.js:33
-msgid "Učení z dat - text"
-msgstr ""
-"El programa aprende de todas las personas que lo usan. La elección de "
-"preguntas que el programa presenta se basan en esta información. De esta "
-"forma, se tiene mejores estimados de dificultad para los usuarios, ya que en "
-"vez de que un experto dicte la dificultad, los usuarios definen el nivel con "
-"su desempeño. Así, cada quién ayuda a decidir qué es más fácil, sí las "
-"ciudades de Kenia o los ríos de Nigeria. "
-
-#: static/hack/geography/static/tpl/login_modal.js:1
-#: static/hack/geography/static/tpl/login_modal.js:8
-#: static/hack/proso_auth/static/tpl/login_modal.js:1
-#: static/hack/proso_auth/static/tpl/login_modal.js:8
-#: static/hack/tpl/login_modal.js:1 static/hack/tpl/login_modal.js.c:8
-msgid "Přihlásit se"
-msgstr "Iniciar sesión"
-
-#: static/hack/geography/static/tpl/login_modal.js:2
-#: static/hack/geography/static/tpl/signup_modal.js:4
-#: static/hack/proso_auth/static/tpl/login_modal.js:2
-#: static/hack/proso_auth/static/tpl/signup_modal.js:4
-#: static/hack/tpl/login_modal.js:2 static/hack/tpl/signin_modal.js:5
-#: static/hack/tpl/signup_modal.js:4
-msgid "přes Google"
-msgstr "con Google"
-
-#: static/hack/geography/static/tpl/login_modal.js:3
-#: static/hack/geography/static/tpl/signup_modal.js:5
-#: static/hack/proso_auth/static/tpl/login_modal.js:3
-#: static/hack/proso_auth/static/tpl/signup_modal.js:5
-#: static/hack/tpl/login_modal.js:3 static/hack/tpl/signin_modal.js:6
-#: static/hack/tpl/signup_modal.js:5
-msgid "přes Facebook"
-msgstr "con Facebook"
-
-#: static/hack/geography/static/tpl/login_modal.js:6
-#: static/hack/geography/static/tpl/signup_modal.js:9
-#: static/hack/proso_auth/static/tpl/login_modal.js:6
-#: static/hack/proso_auth/static/tpl/signup_modal.js:9
-#: static/hack/tpl/login_modal.js:6 static/hack/tpl/signin_modal.js:10
-#: static/hack/tpl/signup_modal.js:9
-msgid "Uživatelské jméno"
-msgstr "Nombre de usuario"
-
-#: static/hack/geography/static/tpl/login_modal.js:7
-#: static/hack/geography/static/tpl/signup_modal.js:10
-#: static/hack/proso_auth/static/tpl/login_modal.js:7
-#: static/hack/proso_auth/static/tpl/signup_modal.js:10
-#: static/hack/tpl/login_modal.js:7 static/hack/tpl/signin_modal.js:11
-#: static/hack/tpl/signup_modal.js:10
-msgid "Heslo"
-msgstr "Contraseña"
-
-#: static/hack/geography/static/tpl/login_modal.js:10
-#: static/hack/geography/static/tpl/signup_modal.js:12
-#: static/hack/proso_auth/static/tpl/login_modal.js:10
-#: static/hack/proso_auth/static/tpl/signup_modal.js:12
-#: static/hack/tpl/login_modal.js:10 static/hack/tpl/signup_modal.js:12
-msgid "Registrovat se"
-msgstr "Registrarse"
-
-#: static/hack/geography/static/tpl/map_tpl.js:1 static/hack/tpl/map_tpl.js:1
-msgid "Moje znalosti"
-msgstr "Mi Conocimiento"
-
-#: static/hack/geography/static/tpl/map_tpl.js:2 static/hack/tpl/map_tpl.js:2
-msgid "Průměrný nový uživatel"
-msgstr "Nuevo usuario promedio"
-
-#: static/hack/geography/static/tpl/map_tpl.js:3
-msgid "Přiblížit mapu můžete i kolečkem myši nebo dotykovým gestem."
-msgstr ""
-
-#: static/hack/geography/static/tpl/practice_tpl.js:1
-#: static/hack/tpl/practice_tpl.js:1
-msgid "Vybráno"
-msgstr "Seleccionado"
-
-#: static/hack/geography/static/tpl/practice_tpl.js:2
-#: static/hack/tpl/practice_tpl.js:2
-msgid "Nevím"
-msgstr "No sé"
-
-#: static/hack/geography/static/tpl/practice_tpl.js:3
-#: static/hack/tpl/practice_tpl.js:3
-msgid "Pokračovat"
-msgstr "Continuar"
-
-#: static/hack/geography/static/tpl/practice_tpl.js:4
-#: static/hack/tpl/practice_tpl.js:4
-msgid "Znovu zvýraznit"
-msgstr "Resaltar de nuevo"
-
-#: static/hack/geography/static/tpl/practice_tpl.js:5
-#: static/hack/tpl/practice_tpl.js:5
-msgid "Úspěšnost"
-msgstr "Tasa de éxito"
-
-#: static/hack/geography/static/tpl/practice_tpl.js:6
-#: static/hack/proso_goals/static/tpl/personal-goals_tpl.js:1
-#: static/hack/tpl/personal-goals_tpl.js:1 static/hack/tpl/practice_tpl.js:6
-msgid "Osobní cíle"
-msgstr "Metas personales"
-
-#: static/hack/geography/static/tpl/practice_tpl.js:7
-#: static/hack/tpl/practice_tpl.js:7
-msgid "Znovu procvičovat"
-msgstr "Practicar de nuevo"
-
-#: static/hack/geography/static/tpl/practice_tpl.js:8
-#: static/hack/tpl/practice_tpl.js:8
-msgid "Mapa znalostí"
-msgstr "Mapa de conocimiento"
-
-#: static/hack/geography/static/tpl/signup_modal.js:1
-#: static/hack/proso_auth/static/tpl/signup_modal.js:1
-#: static/hack/tpl/signin_modal.js:1 static/hack/tpl/signup_modal.js:1
-msgid "Registrujte se"
-msgstr "Registrarse"
-
-#: static/hack/geography/static/tpl/signup_modal.js:2
-#: static/hack/proso_auth/static/tpl/signup_modal.js:2
-#: static/hack/tpl/signin_modal.js:2 static/hack/tpl/signup_modal.js:2
-msgid " a získejte všechny výhody registrovaných uživatelů."
-msgstr "y accede a todos los benecifios de un usuario registrado."
-
-#: static/hack/geography/static/tpl/signup_modal.js:3
-#: static/hack/proso_auth/static/tpl/signup_modal.js:3
-#: static/hack/tpl/signin_modal.js:3 static/hack/tpl/signup_modal.js:3
-msgid "Co získám?"
-msgstr "¿Qué obtengo?"
-
-#: static/hack/geography/static/tpl/signup_modal.js:6
-#: static/hack/proso_auth/static/tpl/signup_modal.js:6
-#: static/hack/tpl/signin_modal.js:7 static/hack/tpl/signup_modal.js:6
-msgid "přes E-mail"
-msgstr "con E-mail"
-
-#: static/hack/geography/static/tpl/signup_modal.js:8
-#: static/hack/geography/static/tpl/user_tpl.js:6
-#: static/hack/proso_auth/static/tpl/signup_modal.js:8
-#: static/hack/proso_auth/static/tpl/user_tpl.js:6
-#: static/hack/tpl/edit-profile_tpl.js:3 static/hack/tpl/signin_modal.js:9
-#: static/hack/tpl/signup_modal.js:8 static/hack/tpl/user_tpl.js:6
-msgid "E-mail"
-msgstr "correo electrónico"
-
-#: static/hack/geography/static/tpl/signup_modal.js:11
-#: static/hack/proso_auth/static/tpl/signup_modal.js:11
-#: static/hack/tpl/signin_modal.js:12 static/hack/tpl/signup_modal.js:11
-msgid "Heslo znovu"
-msgstr "Contraseña de nuevo"
-
-#: static/hack/geography/static/tpl/signup_modal.js:13
-#: static/hack/proso_auth/static/tpl/signup_modal.js:13
-#: static/hack/tpl/signup_modal.js:13
-msgid "Registrace proběhla úspěšně. Můžete pokračovat v používání aplikace."
-msgstr "Registro exitoso. Puedes continuar usando la aplicación."
-
-#: static/hack/geography/static/tpl/user_tpl.js:1
-#: static/hack/proso_auth/static/tpl/user_tpl.js:1
-#: static/hack/tpl/user_tpl.js:1
-msgid "Upravit profil"
-msgstr "Editar perfil"
-
-#: static/hack/geography/static/tpl/user_tpl.js:2
-#: static/hack/proso_auth/static/tpl/user_tpl.js:2
-#: static/hack/tpl/user_tpl.js:2
-msgid "Body"
-msgstr "Puntos"
-
-#: static/hack/geography/static/tpl/user_tpl.js:3
-#: static/hack/proso_auth/static/tpl/user_tpl.js:3
-#: static/hack/tpl/user_tpl.js:3
-msgid "přibývají za každou správnou odpověď"
-msgstr "por respuestas correctas"
-
-#: static/hack/geography/static/tpl/user_tpl.js:4
-#: static/hack/proso_auth/static/tpl/user_tpl.js:4
-#: static/hack/tpl/edit-profile_tpl.js:1 static/hack/tpl/user_tpl.js:4
-msgid "Jméno"
-msgstr "Nombre"
-
-#: static/hack/geography/static/tpl/user_tpl.js:5
-#: static/hack/proso_auth/static/tpl/user_tpl.js:5
-#: static/hack/tpl/edit-profile_tpl.js:2 static/hack/tpl/user_tpl.js:5
-msgid "Příjmení"
-msgstr "Apellido"
-
-#: static/hack/geography/static/tpl/user_tpl.js:7
-#: static/hack/proso_auth/static/tpl/user_tpl.js:7
-#: static/hack/tpl/user_tpl.js:7
-msgid "Poslat mi email při neplnění cílů"
-msgstr "Enviarme un correo si estoy atrasado con mis metas"
-
-#: static/hack/geography/static/tpl/user_tpl.js:8
-#: static/hack/proso_auth/static/tpl/user_tpl.js:8
-#: static/hack/tpl/user_tpl.js:8
-msgid "Uložit"
-msgstr "Salvar"
-
-#: static/hack/geography/static/tpl/user_tpl.js:9
-#: static/hack/proso_auth/static/tpl/user_tpl.js:9
-#: static/hack/tpl/user_tpl.js:9
-msgid "Zrušit"
-msgstr "Cancel"
-
-#: static/hack/geography/static/tpl/user_tpl.js:10
-#: static/hack/proso_auth/static/tpl/user_tpl.js:10
-#: static/hack/tpl/user_tpl.js:10
-msgid "Přehled znalostí uživatele"
-msgstr "Visión general del conocimiento del usuario"
-
-#: static/hack/geography/static/tpl/user_tpl.js:11
-#: static/hack/proso_auth/static/tpl/user_tpl.js:11
-#: static/hack/tpl/user_tpl.js:11
-msgid "Sdílej svůj profil"
-msgstr "Comparte tu perfil"
-
-#: static/hack/geography/static/tpl/user_tpl.js:12
-#: static/hack/proso_auth/static/tpl/user_tpl.js:12
-#: static/hack/tpl/user_tpl.js:12
+#: static/tpl/user_tpl.html:81
 msgid "Adresa profilu"
 msgstr "Dirección de perfil"
 
-#: static/hack/geography/static/tpl/view_tpl.js:3
-#: static/hack/tpl/view_tpl.js:3
-msgid "Zde zatím nebylo nic procvičováno."
-msgstr "No se ha practido aquí."
+#: static/js/directives.js:159
+msgid "Aktuální úroveň"
+msgstr "Nivel actual"
 
-#: static/hack/proso_feedback/static/tpl/feedback_modal.js:1
-msgid "Napište nám"
-msgstr "Sugerencias"
-
-#: static/hack/proso_feedback/static/tpl/feedback_modal.js:2
-msgid "Feedback text label"
-msgstr ""
-"¿Encontraste algún error en el programa? ¿Tienes alguna sugerencia sobre "
-"como podemos mejorar? ¿Quieres compartir tu opinión con nosotros? Nos "
-"gustaría escuchar lo que tengas que decir."
-
-#: static/hack/proso_feedback/static/tpl/feedback_modal.js:3
-msgid "Vaše emailová adresa (nepovinné)"
-msgstr "Tu email (opcional)"
-
-#: static/hack/proso_feedback/static/tpl/feedback_modal.js:4
-msgid "Odeslat"
-msgstr "Enviar"
-
-#: static/hack/proso_feedback/static/tpl/feedback_modal.js:5
-msgid "Zavřít"
-msgstr "Cerrar"
-
-#: static/hack/proso_goals/static/tpl/goal-progress_tpl.js:1
-#: static/hack/tpl/goal-progress_tpl.js:1
-msgid "Postup plnění cíle"
-msgstr "Progreso de metas"
-
-#: static/hack/proso_goals/static/tpl/goal-progress_tpl.js:2
-#: static/hack/tpl/goal-progress_tpl.js:2
-msgid "Splněno"
-msgstr "Logrado"
-
-#: static/hack/proso_goals/static/tpl/goal-progress_tpl.js:3
-#: static/hack/tpl/goal-progress_tpl.js:3
-msgid "Dnešní nesplněné procvičování"
-msgstr "Prácticas a realizar"
-
-#: static/hack/proso_goals/static/tpl/goal-progress_tpl.js:4
-#: static/hack/tpl/goal-progress_tpl.js:4
-msgid "Více než den nesplněného procvičování"
-msgstr "Práctica para más de un día"
-
-#: static/hack/proso_goals/static/tpl/personal-goals_tpl.js:2
-#: static/hack/tpl/personal-goals_tpl.js:2
-msgid "Chceš se naučit některou mapu do určitého data?"
-msgstr "¿Deseas aprender un mapa hasta cierta fecha?"
-
-#: static/hack/proso_goals/static/tpl/personal-goals_tpl.js:3
-#: static/hack/tpl/personal-goals_tpl.js:3
-msgid ""
-"Nastav si cíl a systém ti podle tvých aktuálních znalostí rozloží "
-"procvičování na jednotlivé dny."
-msgstr ""
-"Planteate una meta y el programa usará tu conocimiento actualpara crear "
-"pequeñas prácticas para cada día."
-
-#: static/hack/proso_goals/static/tpl/personal-goals_tpl.js:4
-#: static/hack/tpl/personal-goals_tpl.js:4
-msgid "Vytvořit cíl"
-msgstr "Crear meta"
-
-#: static/hack/proso_goals/static/tpl/personal-goals_tpl.js:5
-#: static/hack/tpl/personal-goals_tpl.js:5
-msgid "Žádné cíle zatím nebyly stanoveny"
-msgstr "No hay metas planteadas"
-
-#: static/hack/proso_goals/static/tpl/personal-goals_tpl.js:6
-#: static/hack/tpl/personal-goals_tpl.js:6
-msgid "Dnes již není třeba procvičovat"
-msgstr "Hemos terminado de prácticar por hoy"
-
-#: static/hack/proso_goals/static/tpl/personal-goals_tpl.js:8
-#: static/hack/tpl/personal-goals_tpl.js:8
-msgid "Odstranit cíl"
-msgstr "Eliminar meta"
-
-#: static/js/controllers.js:261
-msgid "Státy"
-msgstr "Estados"
-
-#: static/js/controllers.js:262
-msgid "Kontinenty"
-msgstr "Continentes"
-
-#: static/js/controllers.js:380
-msgid "Hledaný profil neexistuje."
-msgstr ""
-
-#: static/js/filters.js:67
-msgid "Ze zvýrazněných objektů na mapě vyber"
-msgstr "Selecciona de entre los objetos en grís el que corresponda a"
-
-#: static/js/filters.js:72
-msgid "Jak se jmenuje objekt zvýrazněný na mapě?"
-msgstr "¿Cuál es el nombre del objeto resaltado en el mapa?"
-
-#: static/js/services.js:450
-msgid "Regiony"
-msgstr "Regiones"
-
-#: static/js/services.js:451
-msgid "Provincie"
-msgstr "Provincias"
-
-#: static/js/services.js:452
-msgid "Kraje"
-msgstr "Regiones"
-
-#: static/js/services.js:453
-msgid "Oblasti"
-msgstr "Provincias"
-
-#: static/js/services.js:454
+#: static/js/services.js:347
 msgid "Autonomní společenství"
 msgstr "Comunidades Autónomas"
 
-#: static/js/services.js:455
-msgid "Spolkové země"
-msgstr "Estados"
+#: static/tpl/user_tpl.html:15
+msgid "Body"
+msgstr "Puntos"
 
-#: static/js/services.js:456
-msgid "Města"
-msgstr "Ciudades"
+#: static/tpl/homepage.html:54
+msgid "Chcete jinou? Podívejte se na"
+msgstr "¿Quieres ver otros? ver "
 
-#: static/js/services.js:457
-msgid "Řeky"
-msgstr "Ríos"
+#: static/tpl/confused_tpl.html:33
+msgid "Chybné odpovědi"
+msgstr "Respuestas incorrectas"
 
-#: static/js/services.js:458
+#: static/tpl/user_tpl.html:30
+msgid "E-mail"
+msgstr "correo electrónico"
+
+#: static/js/controllers.js:393
+msgid "Hledaný profil neexistuje."
+msgstr ""
+
+#: static/js/filters.js:74
+msgid "Jak se jmenuje objekt zvýrazněný na mapě?"
+msgstr "¿Cuál es el nombre del objeto resaltado en el mapa?"
+
+#: static/tpl/homepage.html:67
+msgid "Jak to funguje?"
+msgstr "¿Cómo funciona?"
+
+#: static/js/services.js:351
 msgid "Jezera"
 msgstr "Lagos"
 
-#: static/js/services.js:459
-msgid "Pohoří"
-msgstr "Montes"
+#: static/tpl/user_tpl.html:22
+msgid "Jméno"
+msgstr "Nombre"
 
-#: static/js/services.js:460
+#: static/js/controllers.js:275
+msgid "Kontinenty"
+msgstr "Continentes"
+
+#: static/js/services.js:345
+msgid "Kraje"
+msgstr "Regiones"
+
+#: static/tpl/practice_tpl.html:104
+msgid "Mapa znalostí"
+msgstr "Mapa de conocimiento"
+
+#: static/tpl/map_tpl.html:11
+msgid "Moje znalosti"
+msgstr "Mi Conocimiento"
+
+#: static/tpl/confused_tpl.html:3
+msgid "Moje časté chyby"
+msgstr "Mis errores frecuentes"
+
+#: static/js/services.js:349
+msgid "Města"
+msgstr "Ciudades"
+
+#: static/tpl/user_tpl.html:38 static/tpl/user_tpl.html:68
+msgid "Můj profil je veřejný"
+msgstr ""
+
+#: static/js/directives.js:107
+msgid "Naučeno"
+msgstr "Aprendido"
+
+#: static/js/map.js:279
+msgid "Neprocvičováno"
+msgstr "Sin Practicar"
+
+#: static/tpl/practice_tpl.html:46
+msgid "Nevím"
+msgstr "No sé"
+
+#: static/js/services.js:154
+msgid "O prjektu"
+msgstr "Sobre"
+
+#: static/js/services.js:346
+msgid "Oblasti"
+msgstr "Provincias"
+
+#: static/js/directives.js:16 static/js/map.js:266
+msgid "Odhad znalosti"
+msgstr "Estimación de conocimiento"
+
+#: static/tpl/practice_tpl.html:95
+msgid "Osobní cíle"
+msgstr "Metas personales"
+
+#: static/js/services.js:353
 msgid "Ostrovy"
 msgstr "Islas"
 
-#~ msgid "Jak těžké jsou kladené otázky?"
-#~ msgstr "¿Qué tan difíciles son estas preguntas?"
+#: static/js/services.js:352
+msgid "Pohoří"
+msgstr "Montes"
 
-#~ msgid "Svou odpovědí nám pomáháte přizpůsobovat obtížnost otázek."
-#~ msgstr "Tu respuesta ayuda a ajustar la dificultad de las preguntas."
+#: static/tpl/homepage.html:41
+msgid "Pohoří ČR"
+msgstr "Montes de Rep Ch"
 
-#~ msgid "Příliš lehké"
-#~ msgstr "Muy facil"
+#: static/tpl/practice_tpl.html:51
+msgid "Pokračovat"
+msgstr "Continuar"
 
-#~ msgid "Tak akorát"
-#~ msgstr "Adecuado"
+#: static/js/directives.js:285
+msgid "Pokud problém přetrval zkuste to znovu později nebo"
+msgstr ""
 
-#~ msgid "Příliš těžké"
-#~ msgstr "Muy dificil"
+#: static/js/services.js:260
+msgid "Politická mapa"
+msgstr "Mapa Político"
 
-#~ msgid "Nevím / nechci odpovídat"
-#~ msgstr "No sé/No quiero calificar"
+#: static/js/services.js:278
+msgid "Povrch"
+msgstr "Superficie"
 
-#~ msgid "Opravdu chcete cíl smazat?"
-#~ msgstr "¿Estás seguro que deseas borrar la meta?"
+#: static/js/map.js:272
+msgid "Počet obyvatel"
+msgstr "Población"
 
-#~ msgid "Cíl byl vytvořen"
-#~ msgstr "La meta ha sido creada"
+#: static/js/directives.js:279
+msgid "Pro vyřešení problému zkuste"
+msgstr ""
 
-#~ msgid "Státy světa"
-#~ msgstr "Países del mundo"
+#: static/tpl/confused_tpl.html:23 static/tpl/overview_tpl.html:20
+#: static/tpl/view_tpl.html:16 static/tpl/view_tpl.html:39
+msgid "Procvičovat"
+msgstr "Práctica"
 
-#~ msgid "Kraje ČR"
-#~ msgstr "Regiones de República Checa"
+#: static/js/directives.js:115
+msgid "Procvičováno"
+msgstr "Practicado"
 
-#~ msgid "Města ČR"
-#~ msgstr "Ciudades de República Checa"
+#: static/js/services.js:344
+msgid "Provincie"
+msgstr "Provincias"
 
-#~ msgid "Vyber na mapě %(place_singular)s"
-#~ msgstr "Selecciona en el mapa el %(place_singular)s"
+#: static/tpl/map_tpl.html:18
+msgid "Průměrný nový uživatel"
+msgstr "Nuevo usuario promedio"
 
-#~ msgid "Jak se jmenuje %(place_singular)s %(highlighted)s na mapě?"
-#~ msgstr ""
-#~ "¿Cuál es el nombre del %(place_singular)s %(highlighted)s en el mapa?"
+#: static/js/services.js:155 static/tpl/overview_tpl.html:2
+msgid "Přehled map"
+msgstr "Todos los mapas"
+
+#: static/tpl/user_tpl.html:60
+msgid "Přehled znalostí uživatele"
+msgstr "Visión general del conocimiento del usuario"
+
+#: static/tpl/map_tpl.html:24
+msgid "Přiblížit mapu můžete i kolečkem myši nebo dotykovým gestem."
+msgstr ""
+
+#: static/tpl/user_tpl.html:26
+msgid "Příjmení"
+msgstr "Apellido"
+
+#: static/js/directives.js:171
+msgid "Příští úroveň"
+msgstr "Siguiente nivel"
+
+#: static/js/services.js:343
+msgid "Regiony"
+msgstr "Regiones"
+
+#: static/tpl/user_tpl.html:64
+msgid "Sdílej svůj profil"
+msgstr "Comparte tu perfil"
+
+#: static/tpl/homepage.html:19
+msgid "Slepé Mapy"
+msgstr "Contorno de Mapas"
+
+#: static/tpl/homepage.html:83
+msgid "Specializovaný systém"
+msgstr "Sistema Especializado"
+
+#: static/tpl/homepage.html:84
+msgid "Specializovaný systém - text"
+msgstr "Hay muchos otros sistemas para el aprendizaje que incluyen el dibujo de mapas para practicar, pero usualmente son más dispersos y cubren muchas áreas. Nuestro sistema se enfoca exclusivamenteen el delineado de mapas, lo que nos permite optimizar nuestro sistema para esta área."
+
+#: static/js/services.js:348
+msgid "Spolkové země"
+msgstr "Estados"
+
+#: static/tpl/confused_tpl.html:27
+msgid "Správné odpovědi"
+msgstr "Respuestas correctas"
+
+#: static/js/controllers.js:274 static/js/services.js:342
+msgid "Státy"
+msgstr "Estados"
+
+#: static/tpl/homepage.html:46
+msgid "Státy Asie"
+msgstr "Países de Asia"
+
+#: static/tpl/homepage.html:26
+msgid "Státy Evropy"
+msgstr "Países Europeos"
+
+#: static/tpl/homepage.html:36
+msgid "Státy USA"
+msgstr "Estados de E.U.A."
+
+#: static/js/services.js:12
+msgid "Svět"
+msgstr "Mundo"
+
+#: static/js/services.js:11
+msgid "USA"
+msgstr "E.U.A."
+
+#: static/tpl/homepage.html:91
+msgid "Ukázka mapy znalostí"
+msgstr "Ejemplo de visualización de conocimiento"
+
+#: static/tpl/homepage.html:79
+msgid "Ukázka procvičování"
+msgstr "Ejemplo de práctica"
+
+#: static/tpl/user_tpl.html:43
+msgid "Uložit"
+msgstr "Salvar"
+
+#: static/tpl/user_tpl.html:5
+msgid "Upravit profil"
+msgstr "Editar perfil"
+
+#: static/tpl/homepage.html:95
+msgid "Učení z dat"
+msgstr "Minería de Datos"
+
+#: static/tpl/homepage.html:96
+msgid "Učení z dat - text"
+msgstr "El programa aprende de todas las personas que lo usan. La elección de preguntas que el programa presenta se basan en esta información. De esta forma, se tiene mejores estimados de dificultad para los usuarios, ya que en vez de que un experto dicte la dificultad, los usuarios definen el nivel con su desempeño. Así, cada quién ayuda a decidir qué es más fácil, sí las ciudades de Kenia o los ríos de Nigeria. "
+
+#: static/js/controllers.js:406 static/js/directives.js:276
+msgid "V aplikaci bohužel nastala chyba."
+msgstr "Unfortunately there has been an error in the app."
+
+#: static/tpl/homepage.html:88
+msgid "Vizualizace znalostí"
+msgstr "Visualización del Conocimiento"
+
+#: static/tpl/homepage.html:89
+msgid "Vizualizace znalostí - text"
+msgstr "Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega en forma de mapa, el cuál te ayuda a visualizar de forma más fácil lo qué sabes. En verde están las áreas que dominas y en rojo las que te faltanpracticar más."
+
+#: static/js/services.js:273
+msgid "Vodstvo"
+msgstr "Agua"
+
+#: static/js/filters.js:71
+msgid "Vyber na mapě"
+msgstr "Selecciona en el mapa"
+
+#: static/tpl/homepage.html:21
+msgid "Vyberte si mapu k procvičování:"
+msgstr "Selecciona un mapa para practicar:"
+
+#: static/tpl/practice_tpl.html:20
+msgid "Vybráno"
+msgstr "Seleccionado"
+
+#: static/tpl/view_tpl.html:51
+msgid "Zde zatím nebylo nic procvičováno."
+msgstr "No se ha practido aquí."
+
+#: static/js/filters.js:69
+msgid "Ze zvýrazněných objektů na mapě vyber"
+msgstr "Selecciona de entre los objetos en grís el que corresponda a"
+
+#: static/tpl/homepage.html:71
+msgid "Zeměpis hrou"
+msgstr "Juego de Geografía"
+
+#: static/tpl/homepage.html:72
+msgid "Zeměpis hrou - text"
+msgstr "Practica tus conocimientos de geografía de una forma divertida.¡Coloréa los países de Europa, los estados de Norte América o el mundo completo!"
+
+#: static/tpl/practice_tpl.html:100
+msgid "Znovu procvičovat"
+msgstr "Practicar de nuevo"
+
+#: static/tpl/practice_tpl.html:57
+msgid "Znovu zvýraznit"
+msgstr "Resaltar de nuevo"
+
+#: static/tpl/user_tpl.html:46
+msgid "Zrušit"
+msgstr "Cancel"
+
+#: static/js/directives.js:164
+msgid "bodů do příští úrovně"
+msgstr "puntos para alcanzar el siguiente nivel"
+
+#: static/tpl/homepage.html:57
+msgid "další mapy"
+msgstr "más mapas"
+
+#: static/js/directives.js:287
+msgid "nám napiště"
+msgstr ""
+
+#: static/js/directives.js:282
+msgid "obnovit stránku"
+msgstr ""
+
+#: static/tpl/user_tpl.html:17
+msgid "přibývají za každou správnou odpověď"
+msgstr "por respuestas correctas"
+
+#: static/tpl/practice_tpl.html:67
+msgid "Úspěšnost"
+msgstr "Tasa de éxito"
+
+#: static/js/services.js:350
+msgid "Řeky"
+msgstr "Ríos"
+
+#: static/tpl/homepage.html:51
+msgid "Řeky Afriky"
+msgstr "Ríos de África"
+
+#: static/tpl/homepage.html:31
+msgid "Řeky ČR"
+msgstr "Ríos de Rep. Ch."
+
+#: static/tpl/confused_tpl.html:8
+msgid "Žádné časté chyby nebyly nalezeny"
+msgstr "No se han encontrado errores frecuentes"
