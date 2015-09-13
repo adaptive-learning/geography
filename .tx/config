@@ -1,0 +1,15 @@
+[main]
+host = https://www.transifex.com
+
+[slepemapycz.clientpot]
+file_filter = geography/static/po/<lang>.po
+source_file = geography/static/dist/client.pot
+source_lang = cs
+type = PO
+
+[slepemapycz.djangopo]
+file_filter = conf/locale/<lang>/LC_MESSAGES/django.po
+source_file = conf/locale/cs/LC_MESSAGES/django.po
+source_lang = cs
+type = PO
+

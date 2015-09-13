@@ -1,3 +1,4 @@
 mysql-python==1.2.5
 dj-database-url==0.3.0
 proso-apps==1.1.0
+transifex-client==0.10
