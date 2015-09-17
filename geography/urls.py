@@ -34,6 +34,10 @@ urlpatterns = patterns(
     url(r'^convert/', include('lazysignup.urls')),
     url(r'^feedback/', include('proso_feedback.urls')),
     url(r'^flashcards/', include('proso_flashcards.urls')),
+
+    # legacy hack
+    url(r'^login/google/$', RedirectView.as_view(url='/login/google-oauth2/')),
+
     url(r'', include('social_auth.urls')),
 )
 urlpatterns += staticfiles_urlpatterns()
