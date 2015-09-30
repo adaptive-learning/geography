@@ -2,14 +2,14 @@
 
 WORKSPACE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# install python dependencies
+pip install -r $WORKSPACE/requirements.txt
+
 # install client's code
 cd $WORKSPACE/geography
 npm install
 grunt
 $WORKSPACE/manage.py collectstatic --noinput
-
-# install python dependencies
-# pip install -r $WORKSPACE/requirements.txt
 
 $WORKSPACE/manage.py migrate
 
