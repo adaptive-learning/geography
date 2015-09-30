@@ -243,11 +243,14 @@ angular.module('proso.geography.controllers', [])
             if ($routeParams.place_type) {
                 filter.types = [$routeParams.place_type];
             }
-            flashcardService.getFlashcards(filter);
-            practiceService.setFilter(filter);
-            practiceService.getFlashcard().then(function(q) {
-                $scope.questions = [];
-                setQuestion(q);
+            flashcardService.getFlashcards(filter).then(function() {
+              practiceService.setFilter(filter);
+              practiceService.getFlashcard().then(function(q) {
+                  $scope.questions = [];
+                  setQuestion(q);
+              }, function(){
+                  $scope.error = true;
+              });
             }, function(){
                 $scope.error = true;
             });
