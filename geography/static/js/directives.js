@@ -284,7 +284,7 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
                   '</li><li>' +
                     gettextCatalog.getString("Pokud problém přetrval zkuste to znovu později nebo") +
                     ' <a feedback-comment class="btn btn-default" email="{{email}}" href=""> ' +
-                       gettextCatalog.getString('nám napiště')  +
+                       gettextCatalog.getString('nám napište')  +
                     '</a>' +
                   '</li></ul>' +
                 '</div>',
