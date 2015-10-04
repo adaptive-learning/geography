@@ -152,8 +152,9 @@ angular.module('proso.geography.controllers', [])
             //user.addAnswer(asked == selected);
             if (asked == selected) {
                 $timeout(function() {
-                    $scope.next();
-                    $scope.checking = false;
+                    $scope.next(function() {
+                      $scope.checking = false;
+                    });
                 }, 700);
             } else {
                 $scope.checking = false;
@@ -161,15 +162,17 @@ angular.module('proso.geography.controllers', [])
             }
         };
 
-        $scope.next = function() {
+        $scope.next = function(callback) {
             if ($scope.progress < 100) {
                 practiceService.getFlashcard().then(function(q) {
                     setQuestion(q);
+                    if (callback) callback();
                 }, function(){
                     $scope.error = true;
                 });
             } else {
                 setupSummary();
+                if (callback) callback();
             }
         };
 
