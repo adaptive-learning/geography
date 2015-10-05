@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2015-10-04 19:20+0000\n"
+"PO-Revision-Date: 2015-10-05 04:27+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: English (http://www.transifex.com/adaptive-learning/slepemapycz/language/en/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,17 +38,17 @@ msgstr "- the source of most maps (world, continents,\nmost states)"
 msgid ""
 "<i class=\"flag-cs\"></i> Česká a <i class=\"flag-en\"></i> Anglická verze\n"
 "        systému je dílem výše uvedených vývojářů."
-msgstr "<i class = \"flag-en\"> </ i> Czech and <i class = \"flag-en\"> </ i>    English version is work of the above mentioned developers."
+msgstr "<i class = \"flag-cs\"></i> Czech and <i class = \"flag-en\"></i>    English version is work of the above mentioned developers."
 
 #: static/tpl/about.html:62
 msgid ""
 "<i class=\"flag-de\"></i> Německý překlad vytvořila Petra Moskva a její\n"
 "        studentky z Gymnázia a Obchodní Akdemie Orlová."
-msgstr "<i class = \"de-flag\"> </ i> The German translation is created by Petra Moskva and her students from Gymnázium a Obchodní Akdemie Orlová."
+msgstr "<i class = \"flag-de\"></i> German translation has been created by Petra Moskva and her students from Gymnázium a Obchodní Akdemie Orlová."
 
 #: static/tpl/about.html:59
 msgid "<i class=\"flag-es\"></i> Španělský překlad vytvořil Benjamin Valdes."
-msgstr "<i class = \"flag-es\"> </ i> Spanish translation created Benjamin Valdes."
+msgstr "<i class = \"flag-es\"></i> Spanish translation created Benjamin Valdes."
 
 #: static/tpl/homepage.html:76
 msgid "Adaptabilní procvičování"
