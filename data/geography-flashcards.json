@@ -6318,6 +6318,7 @@
       "description": "Barcelona"
     }, 
     {
+      "active": false, 
       "term": "-99", 
       "id": "in--99", 
       "context": "in", 
@@ -14203,7 +14204,7 @@
     {
       "name-en": "Chhattisgarh", 
       "name-de": "Chhattisgarh", 
-      "name-cs": "\u010cand\u00edgarh", 
+      "name-cs": "\u010chattisgarh", 
       "name-es": "Chhattisgarh", 
       "type": "state", 
       "id": "in-ct", 
