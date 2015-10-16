@@ -1,10 +1,11 @@
 # 
 # Translators:
+# Jan Papousek <jan.papousek@gmail.com>, 2015
 # Vít Stanislav <slaweet@seznam.cz>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2015-10-05 04:27+0000\n"
+"PO-Revision-Date: 2015-10-16 05:07+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: English (http://www.transifex.com/adaptive-learning/slepemapycz/language/en/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,7 +103,7 @@ msgstr "Data on responses are stored and are used to select appropriate question
 msgid "E-mail"
 msgstr "E-mail"
 
-#: static/js/controllers.js:400
+#: static/js/controllers.js:399
 msgid "Hledaný profil neexistuje."
 msgstr "The profile does not exist."
 
@@ -126,7 +127,7 @@ msgstr "First name"
 msgid "Kdo za tím stojí"
 msgstr "Who's behind it"
 
-#: static/js/controllers.js:282
+#: static/js/controllers.js:281
 msgid "Kontinenty"
 msgstr "Continents"
 
@@ -154,6 +155,10 @@ msgstr "My frequent mistakes"
 msgid "Města"
 msgstr "Cities"
 
+#: static/tpl/homepage.html:46
+msgid "Města Evropy"
+msgstr "European cities"
+
 #: static/tpl/user_tpl.html:38 static/tpl/user_tpl.html:68
 msgid "Můj profil je veřejný"
 msgstr "My profile is public"
@@ -161,7 +166,7 @@ msgstr "My profile is public"
 #: static/tpl/about.html:37
 msgid ""
 "Na vývoji Slepých map se podílí především Vít Stanislav a Jan Papoušek."
-msgstr "This app is developed mainly by Vit Stanislav and John Parrot."
+msgstr "This app is developed mainly by Vit Stanislav and Jan Papoušek."
 
 #: static/js/directives.js:107
 msgid "Naučeno"
@@ -212,10 +217,6 @@ msgstr "Islands"
 #: static/js/services.js:352
 msgid "Pohoří"
 msgstr "Mountains"
-
-#: static/tpl/homepage.html:41
-msgid "Pohoří ČR"
-msgstr "Czech mountains"
 
 #: static/tpl/practice_tpl.html:51
 msgid "Pokračovat"
@@ -335,17 +336,21 @@ msgstr "Federal states"
 msgid "Správné odpovědi"
 msgstr "Correct answers"
 
-#: static/js/controllers.js:281 static/js/services.js:342
+#: static/js/controllers.js:280 static/js/services.js:342
 msgid "Státy"
 msgstr "States"
 
-#: static/tpl/homepage.html:46
-msgid "Státy Asie"
-msgstr "Asian states"
+#: static/tpl/homepage.html:41
+msgid "Státy Afriky"
+msgstr "African countries"
 
 #: static/tpl/homepage.html:26
 msgid "Státy Evropy"
 msgstr "Europe states"
+
+#: static/tpl/homepage.html:51
+msgid "Státy Světa"
+msgstr "World countries"
 
 #: static/tpl/homepage.html:36
 msgid "Státy USA"
@@ -383,7 +388,7 @@ msgstr "Data mining"
 msgid "Učení z dat - text"
 msgstr "The application learns from data of all users. Question choice is based on this data, instead of being based on knowledge of an geography expert who \"knows\" whether it's generally more difficult to know Kenya or Nigeria."
 
-#: static/js/controllers.js:413 static/js/directives.js:276
+#: static/js/controllers.js:412 static/js/directives.js:276
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Unfortunately there has been an error in the app."
 
@@ -470,10 +475,6 @@ msgstr "Success rate"
 #: static/js/services.js:350
 msgid "Řeky"
 msgstr "Rivers"
-
-#: static/tpl/homepage.html:51
-msgid "Řeky Afriky"
-msgstr "African rivers"
 
 #: static/tpl/homepage.html:31
 msgid "Řeky ČR"

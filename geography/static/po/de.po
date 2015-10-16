@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2015-10-04 19:20+0000\n"
+"PO-Revision-Date: 2015-10-16 05:01+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: German (http://www.transifex.com/adaptive-learning/slepemapycz/language/de/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,7 +102,7 @@ msgstr ""
 msgid "E-mail"
 msgstr "E-Mail"
 
-#: static/js/controllers.js:400
+#: static/js/controllers.js:399
 msgid "Hledaný profil neexistuje."
 msgstr ""
 
@@ -126,7 +126,7 @@ msgstr "Vorname"
 msgid "Kdo za tím stojí"
 msgstr ""
 
-#: static/js/controllers.js:282
+#: static/js/controllers.js:281
 msgid "Kontinenty"
 msgstr "Kontinenten"
 
@@ -153,6 +153,10 @@ msgstr "Häufige Fehler"
 #: static/js/services.js:349
 msgid "Města"
 msgstr "Städte"
+
+#: static/tpl/homepage.html:46
+msgid "Města Evropy"
+msgstr "Städte Europas"
 
 #: static/tpl/user_tpl.html:38 static/tpl/user_tpl.html:68
 msgid "Můj profil je veřejný"
@@ -212,10 +216,6 @@ msgstr "Inseln"
 #: static/js/services.js:352
 msgid "Pohoří"
 msgstr "Gebirge"
-
-#: static/tpl/homepage.html:41
-msgid "Pohoří ČR"
-msgstr "Tschechische Gebirge"
 
 #: static/tpl/practice_tpl.html:51
 msgid "Pokračovat"
@@ -335,17 +335,21 @@ msgstr "Bundesländer"
 msgid "Správné odpovědi"
 msgstr "Richtige Antworten"
 
-#: static/js/controllers.js:281 static/js/services.js:342
+#: static/js/controllers.js:280 static/js/services.js:342
 msgid "Státy"
 msgstr "Staaten"
 
-#: static/tpl/homepage.html:46
-msgid "Státy Asie"
-msgstr "Staaten Asiens"
+#: static/tpl/homepage.html:41
+msgid "Státy Afriky"
+msgstr " Staaten Afrikas"
 
 #: static/tpl/homepage.html:26
 msgid "Státy Evropy"
 msgstr "Staaten Europas"
+
+#: static/tpl/homepage.html:51
+msgid "Státy Světa"
+msgstr "Staaten der Welt"
 
 #: static/tpl/homepage.html:36
 msgid "Státy USA"
@@ -383,7 +387,7 @@ msgstr "Lernen aus Daten"
 msgid "Učení z dat - text"
 msgstr "Die App lernt aus den Daten aller Benutzer. Die Auswahl der Fragen basiert auf diesen Daten und nicht auf den Kenntnissen eines Geographieexperten. Es erkennt ob es allgemein schwieriger ist Kenia oder Nigerien zu erkennen, und passt die Fragen dazu an."
 
-#: static/js/controllers.js:413 static/js/directives.js:276
+#: static/js/controllers.js:412 static/js/directives.js:276
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Leider ist ein Fehler aufgetreten"
 
@@ -471,13 +475,9 @@ msgstr "Erfolge"
 msgid "Řeky"
 msgstr "Flüße"
 
-#: static/tpl/homepage.html:51
-msgid "Řeky Afriky"
-msgstr "Flüsse Afrikas"
-
 #: static/tpl/homepage.html:31
 msgid "Řeky ČR"
-msgstr "Flüsse Europas"
+msgstr "Tschechische Flüsse"
 
 #: static/tpl/confused_tpl.html:8
 msgid "Žádné časté chyby nebyly nalezeny"

@@ -1,9 +1,10 @@
 # 
 # Translators:
+# Vít Stanislav <slaweet@seznam.cz>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2015-10-04 19:20+0000\n"
+"PO-Revision-Date: 2015-10-16 05:04+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Spanish (http://www.transifex.com/adaptive-learning/slepemapycz/language/es/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,7 +102,7 @@ msgstr ""
 msgid "E-mail"
 msgstr "correo electrónico"
 
-#: static/js/controllers.js:400
+#: static/js/controllers.js:399
 msgid "Hledaný profil neexistuje."
 msgstr ""
 
@@ -125,7 +126,7 @@ msgstr "Nombre"
 msgid "Kdo za tím stojí"
 msgstr ""
 
-#: static/js/controllers.js:282
+#: static/js/controllers.js:281
 msgid "Kontinenty"
 msgstr "Continentes"
 
@@ -152,6 +153,10 @@ msgstr "Mis errores frecuentes"
 #: static/js/services.js:349
 msgid "Města"
 msgstr "Ciudades"
+
+#: static/tpl/homepage.html:46
+msgid "Města Evropy"
+msgstr "Ciudades de Europa"
 
 #: static/tpl/user_tpl.html:38 static/tpl/user_tpl.html:68
 msgid "Můj profil je veřejný"
@@ -211,10 +216,6 @@ msgstr "Islas"
 #: static/js/services.js:352
 msgid "Pohoří"
 msgstr "Montes"
-
-#: static/tpl/homepage.html:41
-msgid "Pohoří ČR"
-msgstr "Montes de Rep Ch"
 
 #: static/tpl/practice_tpl.html:51
 msgid "Pokračovat"
@@ -334,17 +335,21 @@ msgstr "Estados"
 msgid "Správné odpovědi"
 msgstr "Respuestas correctas"
 
-#: static/js/controllers.js:281 static/js/services.js:342
+#: static/js/controllers.js:280 static/js/services.js:342
 msgid "Státy"
 msgstr "Estados"
 
-#: static/tpl/homepage.html:46
-msgid "Státy Asie"
-msgstr "Países de Asia"
+#: static/tpl/homepage.html:41
+msgid "Státy Afriky"
+msgstr "Países de África"
 
 #: static/tpl/homepage.html:26
 msgid "Státy Evropy"
 msgstr "Países Europeos"
+
+#: static/tpl/homepage.html:51
+msgid "Státy Světa"
+msgstr "Países del mundo"
 
 #: static/tpl/homepage.html:36
 msgid "Státy USA"
@@ -382,7 +387,7 @@ msgstr "Minería de Datos"
 msgid "Učení z dat - text"
 msgstr "El programa aprende de todas las personas que lo usan. La elección de preguntas que el programa presenta se basan en esta información. De esta forma, se tiene mejores estimados de dificultad para los usuarios, ya que en vez de que un experto dicte la dificultad, los usuarios definen el nivel con su desempeño. Así, cada quién ayuda a decidir qué es más fácil, sí las ciudades de Kenia o los ríos de Nigeria. "
 
-#: static/js/controllers.js:413 static/js/directives.js:276
+#: static/js/controllers.js:412 static/js/directives.js:276
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Unfortunately there has been an error in the app."
 
@@ -469,10 +474,6 @@ msgstr "Tasa de éxito"
 #: static/js/services.js:350
 msgid "Řeky"
 msgstr "Ríos"
-
-#: static/tpl/homepage.html:51
-msgid "Řeky Afriky"
-msgstr "Ríos de África"
 
 #: static/tpl/homepage.html:31
 msgid "Řeky ČR"
