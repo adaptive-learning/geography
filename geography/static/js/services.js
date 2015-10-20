@@ -147,7 +147,8 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
     };
   })
 
-  .factory('pageTitle',['places', 'gettextCatalog', function(places, gettextCatalog) {
+  .factory('pageTitle',['places', 'gettextCatalog', 'placeTypeService',
+      function(places, gettextCatalog, placeTypeService) {
     'use strict';
 
     var titles = {
@@ -158,7 +159,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
       var title;
       if (route.controller == "AppView" || route.controller == "AppPractice") {
         title = places.getName(route.params.part) + ' - ';
-        var typeName = places.getPlaceTypeName(route.params.place_type);
+        var typeName = placeTypeService.getBySlug(route.params.place_type);
         if (typeName) {
           title += typeName + ' - ';
         }
@@ -338,29 +339,39 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
   .service('placeTypeService', ["gettextCatalog", function (gettextCatalog) {
     'use strict';
     var self = this;
-    var placeTypeNames = {
-        'state' : gettextCatalog.getString('Státy'),
-        'region' : gettextCatalog.getString('Regiony'),
-        'province' : gettextCatalog.getString('Provincie'),
-        'region_cz' : gettextCatalog.getString('Kraje'),
-        'region_it' : gettextCatalog.getString('Oblasti'),
-        'autonomous_Comunity' : gettextCatalog.getString('Autonomní společenství'),
-        'bundesland' : gettextCatalog.getString('Spolkové země'),
-        'city' : gettextCatalog.getString('Města'),
-        'river' : gettextCatalog.getString('Řeky'),
-        'lake' : gettextCatalog.getString('Jezera'),
-        'mountains' : gettextCatalog.getString('Pohoří'),
-        'island' : gettextCatalog.getString('Ostrovy'),
-    };
+    
+    var placeTypeNames = {};
     var placeTypes = [];
-    for(var i in placeTypeNames) {
-      placeTypes.push({
-        name : placeTypeNames[i],
-        identifier : i,
-      });
+    function hackForCorrectLanguage() {
+      placeTypeNames = {
+          'state' : gettextCatalog.getString('Státy'),
+          'region' : gettextCatalog.getString('Regiony'),
+          'province' : gettextCatalog.getString('Provincie'),
+          'region_cz' : gettextCatalog.getString('Kraje'),
+          'region_it' : gettextCatalog.getString('Oblasti'),
+          'autonomous_Comunity' : gettextCatalog.getString('Autonomní společenství'),
+          'bundesland' : gettextCatalog.getString('Spolkové země'),
+          'city' : gettextCatalog.getString('Města'),
+          'river' : gettextCatalog.getString('Řeky'),
+          'lake' : gettextCatalog.getString('Jezera'),
+          'mountains' : gettextCatalog.getString('Pohoří'),
+          'island' : gettextCatalog.getString('Ostrovy'),
+      };
+      placeTypes = [];
+      for(var i in placeTypeNames) {
+        placeTypes.push({
+          name : placeTypeNames[i],
+          identifier : i,
+        });
+      }
     }
 
     self.getTypes = function () {
+      hackForCorrectLanguage();
       return placeTypes;
+    };
+    self.getBySlug = function (slug) {
+      hackForCorrectLanguage();
+      return placeTypeNames[slug];
     };
   }]);
