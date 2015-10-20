@@ -101,6 +101,10 @@ angular.module('proso.geography', [
               $rootScope.$emit("openRatingModal");
             }
           });
+          $analytics.eventTrack('eventName', {
+            category: 'practice',
+            action: 'finished'
+          });
         });
 
         $('.dropdown-menu a[href^="/view/"]').each( function(i, link){
