@@ -26,7 +26,7 @@ urlpatterns = patterns(
         'geography.views.home', name='home'),
     url(r'^favicon\.ico$', RedirectView.as_view(url='static/img/favicon.png')),
     url(r'^robots.txt$', lambda r: HttpResponse(
-        "User-agent: *\nDisallow: ", mimetype="text/plain")),
+        "User-agent: *\nDisallow: ", content_type="text/plain")),
 
 
     url(r'^user/', include('proso_user.urls')),
