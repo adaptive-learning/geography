@@ -60,6 +60,7 @@ def home(request, hack=None):
         'LANGUAGES': settings.LANGUAGES,
         'is_homepage': hack is None,
         'config_json': json.dumps(get_global_config()),
+        'DOMAIN': request.build_absolute_uri('/')[:-1],
     }
     return render_to_response('home.html', c)
 
