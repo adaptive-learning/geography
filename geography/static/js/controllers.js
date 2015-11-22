@@ -144,7 +144,7 @@ angular.module('proso.geography.controllers', [])
             var asked = $scope.question.description;
             highlightAnswer(asked, selected);
             $scope.question.answered_code = selected;
-            $scope.question.responseTime += new Date().valueOf();
+            $scope.question.responseTime = new Date().valueOf() - $scope.question.startTime;
             var selectedFC = flashcardService.getFlashcardByDescription(selected);
             practiceService.saveAnswerToCurrentFC(selectedFC ? selectedFC.id : null, $scope.question.responseTime);
             $scope.progress = 100 * (practiceService.getSummary().count / practiceService.getConfig().set_length);
@@ -217,7 +217,7 @@ angular.module('proso.geography.controllers', [])
                 $scope.question.slideOut = true;
             }
             $scope.question = active;
-            $scope.question.responseTime = - new Date().valueOf();
+            $scope.question.startTime = new Date().valueOf();
             $scope.questions.push(active);
             $scope.imageController.clearHighlights();
             $scope.highlight();
