@@ -17778,17 +17778,6 @@
       ]
     }, 
     {
-      "name-en": "Passau", 
-      "name-de": "Passau", 
-      "name-cs": "Pasov", 
-      "name-es": "Passau", 
-      "type": "city", 
-      "id": "Passau", 
-      "categories": [
-        "at"
-      ]
-    }, 
-    {
       "name-en": "Salzburg", 
       "name-de": "Salzburg", 
       "name-cs": "Salzburg", 
