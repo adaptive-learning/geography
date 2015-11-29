@@ -1,0 +1,14 @@
+<div class="bottom-alert text-center alert alert-info" 
+  ng-if="!('offer'|cookieExists)">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+      set-cookie-on-click="offer"
+      track-click="close content admin banner">
+    <span aria-hidden="true">&times;</span>
+    <span class="sr-only" translate>Zavřít</span>
+  </button>
+  <b>Hledáme dobrovolníky</b> se znalostí nějakého GIS software a zájmem
+  zapojit se do rozšíření nabídky map této aplikace.
+  <a href="/offer"
+     class="btn btn-primary"
+    >Zjistit více informací</a>
+</div>
