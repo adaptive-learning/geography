@@ -128,6 +128,32 @@ h1, h2, h3
   margin-top: 30px
   margin-bottom: 60px
 
+@-webkit-keyframes slideUp 
+  from 
+    bottom: -100px
+  to  
+    bottom: 0px
+@-moz-keyframes slideUp 
+  from 
+    bottom: -100px
+  to  
+    bottom: 0px
+@keyframes slideUp 
+  from 
+    bottom: -100px
+  to  
+    bottom: 0px
+
+.bottom-alert
+  margin-bottom: 0
+  position: fixed
+  bottom: 0px
+  width: 100%
+  z-index: 20
+  -webkit-animation: slideUp 1s ease-out
+  -moz-animation: slideUp 1s ease-out
+  animation: slideUp 1s ease-out
+
 
 @media (min-width: 467px)
   .btn-huge

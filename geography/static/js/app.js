@@ -30,6 +30,8 @@ angular.module('proso.geography', [
             templateUrl : 'loading.html'
         }).when('/about', {
             templateUrl : 'static/tpl/about.html'
+        }).when('/offer', {
+            templateUrl : 'static/tpl/content-admin-offer.html'
         }).when('/view/', {
             redirectTo : '/view/world/'
         }).when('/view/:part/:user?', {

@@ -132,4 +132,10 @@ angular.module('proso.geography.filters', [])
       };
       return style;
     };
+  }])
+
+  .filter('cookieExists', ["$cookies", function ($cookies) {
+      return function(name) {
+        return $cookies[name];
+      };
   }]);

@@ -310,4 +310,22 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
         });
       }
     };
+  }])
+
+  .directive('contentAdminBanner', [function() {
+    return {
+      restrict: 'A',
+      templateUrl : '/static/tpl/content_admin_banner.html',
+    };
+  }])
+
+  .directive('setCookieOnClick', ['$cookies', function($cookies) {
+    return {
+      restrict: 'A',
+      link: function ($scope, element, attrs) {
+        element.click(function() {
+          $cookies[attrs.setCookieOnClick] = 'true';
+        });
+      }
+    };
   }]);
