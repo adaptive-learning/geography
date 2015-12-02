@@ -8,6 +8,7 @@ CREATE TABLE tmp_answer AS (
     INNER JOIN proso_flashcards_flashcardanswer
         ON proso_models_answer.id = answer_ptr_id
     WHERE experiment_setup_id IN (14, 15, 16, 17)
+    ORDER BY proso_models_answer.id
 );
 \copy tmp_answer TO '/tmp/answers.csv' DELIMITER ',' CSV HEADER;
 DROP TABLE tmp_answer;
@@ -22,6 +23,7 @@ CREATE TABLE tmp_rating AS (
             ON proso_models_answer.id = answer_id
         WHERE experiment_setup_id IN (14, 15, 16, 17)
     )
+    ORDER BY id
 );
 
 \copy tmp_rating TO '/tmp/ratings.csv' DELIMITER ',' CSV HEADER;
