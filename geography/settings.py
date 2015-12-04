@@ -37,6 +37,8 @@ ALLOWED_HOSTS = [
     'production.slepemapy.cz',
     'production-new.slepemapy.cz',
     'outlinemaps.org',
+    'es.outlinemaps.org',
+    'de.outlinemaps.org',
 ]
 
 
