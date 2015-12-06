@@ -3,9 +3,9 @@
 angular.module('proso.geography.controllers', [])
 
 .controller('AppCtrl', ['$scope', '$rootScope', 'userService', 'pageTitle',
-      'configService', 'gettextCatalog',
+      'configService', 'gettextCatalog', '$location',
     function($scope, $rootScope, userService, pageTitle,
-      configService, gettextCatalog) {
+      configService, gettextCatalog, $location) {
         'use strict';
         $scope.configService = configService;
         $scope.userService = userService;
@@ -24,9 +24,14 @@ angular.module('proso.geography.controllers', [])
             $rootScope.LANGUAGE_CODE = code;
         };
 
-        $scope.initUser = function (data) {
-            userService.processUser(data);
-        };
+        if ($location.search().sessionid) {
+          userService.loadUser();
+          $location.search('sessionid', undefined);
+        } else {
+          $scope.initUser = function (data) {
+              userService.processUser(data);
+          };
+        }
 
         $scope.logout = function() {
             $rootScope.user = userService.logout();

@@ -83,7 +83,8 @@ MIDDLEWARE_CLASSES = (
     'proso.django.log.RequestLogMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'proso_common.middleware.LanguageInPathMiddleware',
+    'proso_common.middleware.LanguageInDomainMiddleware',
+    'proso_common.middleware.GoogleAuthChangeDomain',
     'proso_common.middleware.AuthAlreadyAssociatedMiddleware',
 )
 
@@ -133,6 +134,31 @@ LANGUAGES = (
     ('es', 'Español'),
     ('de', 'Deutsch'),
 )
+
+if ON_PRODUCTION:
+    LANGUAGE_DOMAINS = {
+        'cs': 'slepemapy.cz',
+        'en': 'outlinemaps.org',
+        'es': 'es.outlinemaps.org',
+        'de': 'de.outlinemaps.org',
+    }
+    AUTH_DOMAIN = 'slepemapy.cz'
+elif ON_STAGING:
+    LANGUAGE_DOMAINS = {
+        'cs': 'staging.slepemapy.cz',
+        'en': 'staging.outlinemaps.org',
+        'es': 'es.staging.outlinemaps.org',
+        'de': 'de.staging.outlinemaps.org',
+    }
+    AUTH_DOMAIN = 'staging.slepemapy.cz'
+else:
+    LANGUAGE_DOMAINS = {
+        'cs': 'localhost:8000',
+        'en': 'en.localhost:8000',
+        'es': 'es.localhost:8000',
+        'de': 'de.localhost:8000',
+    }
+    AUTH_DOMAIN = 'localhost:8000'
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'conf', 'locale'),
