@@ -34,6 +34,7 @@ EMAIL_SUBJECT_PREFIX = '[slepemapy.cz] '
 
 ALLOWED_HOSTS = [
     'slepemapy.cz',
+    'new.slepemapy.cz',
     'production.slepemapy.cz',
     'production-new.slepemapy.cz',
     'outlinemaps.org',
