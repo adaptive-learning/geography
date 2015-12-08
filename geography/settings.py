@@ -265,7 +265,7 @@ LOGGING = {
             'level': 'DEBUG'
         },
         'django.db.backends': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'handlers': ['console'],
         }
     },
