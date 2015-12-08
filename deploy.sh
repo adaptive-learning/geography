@@ -8,7 +8,7 @@ pip install -r $WORKSPACE/requirements.txt
 # install client's code
 cd $WORKSPACE/geography
 npm install
-grunt
+$WORKSPACE/geography/node_modules/grunt-cli/bin/grunt
 $WORKSPACE/manage.py collectstatic --noinput
 
 $WORKSPACE/manage.py migrate
