@@ -16,6 +16,3 @@ $WORKSPACE/manage.py migrate
 $WORKSPACE/manage.py compilemessages
 
 $WORKSPACE/manage.py load_configab_experiments $WORKSPACE/ab_experiments.json
-
-# reload http server
-sudo apachectl -k graceful
