@@ -58,6 +58,8 @@
         </button>
       </span>
     </div>
+    <div ng-show="loadingNextQuestion" class="loading-indicator overlay">
+    </div>
     <div ng-if="showSummary" class="inner-practice summary col-lg-12">
       <div class="row">
         <div class="col-sm-{{userService.user.username ? 6 : 12 }}">

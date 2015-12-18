@@ -169,10 +169,13 @@ angular.module('proso.geography.controllers', [])
 
         $scope.next = function(callback) {
             if ($scope.progress < 100) {
+                $scope.loadingNextQuestion = true;
                 practiceService.getFlashcard().then(function(q) {
+                    $scope.loadingNextQuestion = false;
                     setQuestion(q);
                     if (callback) callback();
                 }, function(){
+                    $scope.loadingNextQuestion = false;
                     $scope.error = true;
                 });
             } else {
