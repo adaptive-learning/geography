@@ -16,7 +16,7 @@ angular.module('proso.geography.map', [])
   .value('colors', {
     'GOOD': '#0d0',
     'BAD': '#e23',
-    'NEUTRAL': '#bbb',
+    'NEUTRAL': '#777',
     'BRIGHT_GRAY' : '#ddd',
     'WATER_COLOR' : '#73c5ef'
   })
