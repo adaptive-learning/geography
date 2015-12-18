@@ -97,13 +97,17 @@
           <i class="glyphicon glyphicon-screenshot"></i> {{'Osobní cíle' | translate }}
         </a>
         -->
-        <a class="btn btn-lg btn-default"
+        <a class="btn btn-lg btn-default {{!showSummary || 'btn-primary'}}"
            href="/refreshpractice/{{part}}/{{placeType}}" >
-          <i class="glyphicon glyphicon-repeat"></i> {{'Znovu procvičovat' | translate }}
+          <i class="glyphicon glyphicon-arrow-right"></i> {{'Pokračovat v procvičování' | translate }}
         </a>
-        <a class="btn-continue btn btn-lg btn-default {{!showSummary || 'btn-primary'}}"
+        <a class="btn-continue btn btn-lg btn-default"
            href="/view/{{part}}/" >
           <i class="glyphicon glyphicon-globe"></i> {{'Mapa znalostí' | translate }}
+        </a>
+        <a class="btn-continue btn btn-lg btn-default"
+           href="/overview/" >
+          <i class="glyphicon glyphicon-list"></i> {{'Vybrat jinou mapu' | translate }}
         </a>
       </span>
     </div>

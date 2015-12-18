@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2015-10-16 05:04+0000\n"
+"PO-Revision-Date: 2015-12-18 18:54+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Spanish (http://www.transifex.com/adaptive-learning/slepemapycz/language/es/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -12,41 +12,41 @@ msgstr ""
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: static/tpl/about.html:93
+#: static/tpl/about.html:100
 msgid "- administrativní členění Itálie, Francie a Španělska"
 msgstr ""
 
-#: static/tpl/about.html:98
+#: static/tpl/about.html:105
 msgid "- města České republiky a Slovenska"
 msgstr ""
 
-#: static/tpl/about.html:109
+#: static/tpl/about.html:116
 msgid "- vlaječky ostatních administrativních celků"
 msgstr ""
 
-#: static/tpl/about.html:105
+#: static/tpl/about.html:112
 msgid "- vlaječky států světa a USA"
 msgstr ""
 
-#: static/tpl/about.html:88
+#: static/tpl/about.html:95
 msgid ""
 "- zdroj většiny mapových podkladů (svět, kontinenty,\n"
 "        většina států)"
 msgstr ""
 
-#: static/tpl/about.html:55
+#: static/tpl/about.html:62
 msgid ""
 "<i class=\"flag-cs\"></i> Česká a <i class=\"flag-en\"></i> Anglická verze\n"
 "        systému je dílem výše uvedených vývojářů."
 msgstr ""
 
-#: static/tpl/about.html:62
+#: static/tpl/about.html:69
 msgid ""
 "<i class=\"flag-de\"></i> Německý překlad vytvořila Petra Moskva a její\n"
 "        studentky z Gymnázia a Obchodní Akdemie Orlová."
 msgstr ""
 
-#: static/tpl/about.html:59
+#: static/tpl/about.html:66
 msgid "<i class=\"flag-es\"></i> Španělský překlad vytvořil Benjamin Valdes."
 msgstr ""
 
@@ -66,7 +66,7 @@ msgstr "Dirección de perfil"
 msgid "Aktuální úroveň"
 msgstr "Nivel actual"
 
-#: static/tpl/about.html:115
+#: static/tpl/about.html:122
 msgid ""
 "Aplikace byla oceněna v Soutěži \n"
 "      <a href=\"http://www.otevrenadata.cz/\">Společně otevíráme data</a>,\n"
@@ -74,7 +74,7 @@ msgid ""
 "      <a href=\"http://www.motejl.cz/\">Fondem Otakara Motejla</a>."
 msgstr ""
 
-#: static/js/services.js:347
+#: static/js/services.js:352
 msgid "Autonomní společenství"
 msgstr "Comunidades Autónomas"
 
@@ -90,7 +90,7 @@ msgstr "¿Quieres ver otros? ver "
 msgid "Chybné odpovědi"
 msgstr "Respuestas incorrectas"
 
-#: static/tpl/about.html:77
+#: static/tpl/about.html:84
 msgid ""
 "Data o odpovědích jsou ukládána a jsou využívána pro výběr vhodných otázek a"
 " pro výzkumné účely. Všechna tato data jsou zpracovávána anonymně. "
@@ -102,7 +102,7 @@ msgstr ""
 msgid "E-mail"
 msgstr "correo electrónico"
 
-#: static/js/controllers.js:399
+#: static/js/controllers.js:407
 msgid "Hledaný profil neexistuje."
 msgstr ""
 
@@ -114,7 +114,7 @@ msgstr "¿Cuál es el nombre del objeto resaltado en el mapa?"
 msgid "Jak to funguje?"
 msgstr "¿Cómo funciona?"
 
-#: static/js/services.js:351
+#: static/js/services.js:356
 msgid "Jezera"
 msgstr "Lagos"
 
@@ -126,15 +126,15 @@ msgstr "Nombre"
 msgid "Kdo za tím stojí"
 msgstr ""
 
-#: static/js/controllers.js:281
+#: static/js/controllers.js:289
 msgid "Kontinenty"
 msgstr "Continentes"
 
-#: static/js/services.js:345
+#: static/js/services.js:350
 msgid "Kraje"
 msgstr "Regiones"
 
-#: static/tpl/practice_tpl.html:104
+#: static/tpl/practice_tpl.html:106
 msgid "Mapa znalostí"
 msgstr "Mapa de conocimiento"
 
@@ -150,7 +150,7 @@ msgstr "Mi Conocimiento"
 msgid "Moje časté chyby"
 msgstr "Mis errores frecuentes"
 
-#: static/js/services.js:349
+#: static/js/services.js:354
 msgid "Města"
 msgstr "Ciudades"
 
@@ -162,7 +162,7 @@ msgstr "Ciudades de Europa"
 msgid "Můj profil je veřejný"
 msgstr ""
 
-#: static/tpl/about.html:37
+#: static/tpl/about.html:44
 msgid ""
 "Na vývoji Slepých map se podílí především Vít Stanislav a Jan Papoušek."
 msgstr ""
@@ -179,13 +179,13 @@ msgstr "Sin Practicar"
 msgid "Nevím"
 msgstr "No sé"
 
-#: static/tpl/about.html:47
+#: static/tpl/about.html:54
 msgid ""
 "Náměty k rozvoji systému zasílejte na \n"
 "    <span class=\"email contact\">slepemapy{zavinac}googlegroups.com</span>."
 msgstr ""
 
-#: static/js/services.js:154
+#: static/js/services.js:155
 msgid "O prjektu"
 msgstr "Sobre"
 
@@ -193,11 +193,11 @@ msgstr "Sobre"
 msgid "O projektu"
 msgstr ""
 
-#: static/js/services.js:346
+#: static/js/services.js:351
 msgid "Oblasti"
 msgstr "Provincias"
 
-#: static/tpl/about.html:114
+#: static/tpl/about.html:121
 msgid "Ocenění"
 msgstr ""
 
@@ -205,15 +205,15 @@ msgstr ""
 msgid "Odhad znalosti"
 msgstr "Estimación de conocimiento"
 
-#: static/tpl/practice_tpl.html:95
+#: static/tpl/practice_tpl.html:97
 msgid "Osobní cíle"
 msgstr "Metas personales"
 
-#: static/js/services.js:353
+#: static/js/services.js:358
 msgid "Ostrovy"
 msgstr "Islas"
 
-#: static/js/services.js:352
+#: static/js/services.js:357
 msgid "Pohoří"
 msgstr "Montes"
 
@@ -221,29 +221,33 @@ msgstr "Montes"
 msgid "Pokračovat"
 msgstr "Continuar"
 
+#: static/tpl/practice_tpl.html:102
+msgid "Pokračovat v procvičování"
+msgstr "Continúe practicando"
+
 #: static/js/directives.js:285
 msgid "Pokud problém přetrval zkuste to znovu později nebo"
 msgstr ""
 
-#: static/tpl/about.html:68
+#: static/tpl/about.html:75
 msgid ""
 "Pokud se chcete zapojit do překládání Slepých map, můžete tak učinit na \n"
 "      <a href=\"https://www.transifex.com/adaptive-learning/slepemapycz/\">\n"
 "      Transifex.com stránce projektu</a>."
 msgstr ""
 
-#: static/tpl/about.html:41
+#: static/tpl/about.html:48
 msgid ""
 "Pokud studujete na FI a máte zájem se zapojit do vývoje podobného typu systémů,\n"
 "    případně pokud máte zájem o výzkumnou spolupráci, kontaktujte\n"
 "    <a href=\"http://www.muni.cz/people/4297\">Radka Pelánka</a>."
 msgstr ""
 
-#: static/js/services.js:260
+#: static/js/services.js:261
 msgid "Politická mapa"
 msgstr "Mapa Político"
 
-#: static/js/services.js:278
+#: static/js/services.js:279
 msgid "Povrch"
 msgstr "Superficie"
 
@@ -256,7 +260,7 @@ msgid "Pro vyřešení problému zkuste"
 msgstr ""
 
 #: static/tpl/confused_tpl.html:23 static/tpl/overview_tpl.html:20
-#: static/tpl/view_tpl.html:16 static/tpl/view_tpl.html:39
+#: static/tpl/view_tpl.html:15 static/tpl/view_tpl.html:37
 msgid "Procvičovat"
 msgstr "Práctica"
 
@@ -264,7 +268,7 @@ msgstr "Práctica"
 msgid "Procvičováno"
 msgstr "Practicado"
 
-#: static/js/services.js:344
+#: static/js/services.js:349
 msgid "Provincie"
 msgstr "Provincias"
 
@@ -272,7 +276,7 @@ msgstr "Provincias"
 msgid "Průměrný nový uživatel"
 msgstr "Nuevo usuario promedio"
 
-#: static/js/services.js:155 static/tpl/overview_tpl.html:2
+#: static/js/services.js:156 static/tpl/overview_tpl.html:2
 msgid "Přehled map"
 msgstr "Todos los mapas"
 
@@ -280,7 +284,7 @@ msgstr "Todos los mapas"
 msgid "Přehled znalostí uživatele"
 msgstr "Visión general del conocimiento del usuario"
 
-#: static/tpl/about.html:53
+#: static/tpl/about.html:60
 msgid "Překlady"
 msgstr ""
 
@@ -296,7 +300,7 @@ msgstr "Apellido"
 msgid "Příští úroveň"
 msgstr "Siguiente nivel"
 
-#: static/js/services.js:343
+#: static/js/services.js:348
 msgid "Regiony"
 msgstr "Regiones"
 
@@ -315,7 +319,7 @@ msgid ""
 "    konkrétně v rámci skupiny <a href=\"http://www.fi.muni.cz/adaptivelearning/\">Adaptive Learning</a>."
 msgstr ""
 
-#: static/tpl/about.html:76
+#: static/tpl/about.html:83
 msgid "Soukromí"
 msgstr ""
 
@@ -327,7 +331,7 @@ msgstr "Sistema Especializado"
 msgid "Specializovaný systém - text"
 msgstr "Hay muchos otros sistemas para el aprendizaje que incluyen el dibujo de mapas para practicar, pero usualmente son más dispersos y cubren muchas áreas. Nuestro sistema se enfoca exclusivamenteen el delineado de mapas, lo que nos permite optimizar nuestro sistema para esta área."
 
-#: static/js/services.js:348
+#: static/js/services.js:353
 msgid "Spolkové země"
 msgstr "Estados"
 
@@ -335,7 +339,7 @@ msgstr "Estados"
 msgid "Správné odpovědi"
 msgstr "Respuestas correctas"
 
-#: static/js/controllers.js:280 static/js/services.js:342
+#: static/js/controllers.js:288 static/js/services.js:347
 msgid "Státy"
 msgstr "Estados"
 
@@ -387,7 +391,7 @@ msgstr "Minería de Datos"
 msgid "Učení z dat - text"
 msgstr "El programa aprende de todas las personas que lo usan. La elección de preguntas que el programa presenta se basan en esta información. De esta forma, se tiene mejores estimados de dificultad para los usuarios, ya que en vez de que un experto dicte la dificultad, los usuarios definen el nivel con su desempeño. Así, cada quién ayuda a decidir qué es más fácil, sí las ciudades de Kenia o los ríos de Nigeria. "
 
-#: static/js/controllers.js:412 static/js/directives.js:276
+#: static/js/controllers.js:420 static/js/directives.js:276
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Unfortunately there has been an error in the app."
 
@@ -399,7 +403,7 @@ msgstr "Visualización del Conocimiento"
 msgid "Vizualizace znalostí - text"
 msgstr "Basándose en tu respuestas el sistema estima tu conocimiento y lo despliega en forma de mapa, el cuál te ayuda a visualizar de forma más fácil lo qué sabes. En verde están las áreas que dominas y en rojo las que te faltanpracticar más."
 
-#: static/js/services.js:273
+#: static/js/services.js:274
 msgid "Vodstvo"
 msgstr "Agua"
 
@@ -411,15 +415,23 @@ msgstr "Selecciona en el mapa"
 msgid "Vyberte si mapu k procvičování:"
 msgstr "Selecciona un mapa para practicar:"
 
+#: static/tpl/practice_tpl.html:110
+msgid "Vybrat jinou mapu"
+msgstr "Seleccionar otro mapa"
+
 #: static/tpl/practice_tpl.html:20
 msgid "Vybráno"
 msgstr "Seleccionado"
 
-#: static/tpl/view_tpl.html:51
+#: static/tpl/content_admin_banner.html:7
+msgid "Zavřít"
+msgstr "Cerrar"
+
+#: static/tpl/view_tpl.html:49
 msgid "Zde zatím nebylo nic procvičováno."
 msgstr "No se ha practido aquí."
 
-#: static/tpl/about.html:83
+#: static/tpl/about.html:90
 msgid "Zdroje"
 msgstr ""
 
@@ -434,10 +446,6 @@ msgstr "Juego de Geografía"
 #: static/tpl/homepage.html:72
 msgid "Zeměpis hrou - text"
 msgstr "Practica tus conocimientos de geografía de una forma divertida.¡Coloréa los países de Europa, los estados de Norte América o el mundo completo!"
-
-#: static/tpl/practice_tpl.html:100
-msgid "Znovu procvičovat"
-msgstr "Practicar de nuevo"
 
 #: static/tpl/practice_tpl.html:57
 msgid "Znovu zvýraznit"
@@ -467,11 +475,11 @@ msgstr ""
 msgid "přibývají za každou správnou odpověď"
 msgstr "por respuestas correctas"
 
-#: static/tpl/practice_tpl.html:67
+#: static/tpl/practice_tpl.html:69
 msgid "Úspěšnost"
 msgstr "Tasa de éxito"
 
-#: static/js/services.js:350
+#: static/js/services.js:355
 msgid "Řeky"
 msgstr "Ríos"
 
