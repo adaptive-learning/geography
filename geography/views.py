@@ -61,7 +61,7 @@ def home(request, hack=None):
         'LANGUAGE_DOMAINS': settings.LANGUAGE_DOMAINS if hasattr(
             settings, 'LANGUAGE_DOMAINS') else {},
         'is_homepage': hack is None,
-        'hack': hack,
+        'hack': hack or '',
         'config_json': json.dumps(get_global_config()),
         'DOMAIN': request.build_absolute_uri('/')[:-1],
     }
