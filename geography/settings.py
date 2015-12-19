@@ -18,7 +18,7 @@ if os.environ.get('PROSO_ON_PRODUCTION', False):
 if os.environ.get('PROSO_ON_STAGING', False):
     ON_STAGING = True
 
-if ON_PRODUCTION:
+if ON_PRODUCTION or ON_STAGING:
     DEBUG = False
 else:
     DEBUG = True
