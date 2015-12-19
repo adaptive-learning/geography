@@ -58,7 +58,8 @@ def home(request, hack=None):
         'email': email,
         'LANGUAGE_CODE': get_language(),
         'LANGUAGES': settings.LANGUAGES,
-        'LANGUAGE_DOMAINS': settings.LANGUAGE_DOMAINS,
+        'LANGUAGE_DOMAINS': settings.LANGUAGE_DOMAINS if hasattr(
+            settings, 'LANGUAGE_DOMAINS') else {},
         'is_homepage': hack is None,
         'hack': hack,
         'config_json': json.dumps(get_global_config()),
