@@ -25,6 +25,8 @@ angular.module('proso.geography', [
         'use strict';
         $routeProvider.when('/', {
             templateUrl : 'static/tpl/homepage.html'
+        }).when('/_=_', {
+          redirectTo : '/overview/'
         }).when('/login/:somepath/', {
             controller : 'ReloadController',
             templateUrl : 'loading.html'
