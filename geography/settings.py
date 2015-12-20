@@ -33,8 +33,13 @@ ADMINS = (
 EMAIL_SUBJECT_PREFIX = '[slepemapy.cz] '
 
 ALLOWED_HOSTS = [
-    '.slepemapy.cz',
-    '.outlinemaps.org',
+    'slepemapy.cz',
+    'new.slepemapy.cz',
+    'production.slepemapy.cz',
+    'production-new.slepemapy.cz',
+    'outlinemaps.org',
+    'es.outlinemaps.org',
+    'de.outlinemaps.org',
 ]
 
 
