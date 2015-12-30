@@ -241,6 +241,11 @@ LOGGING = {
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
+        'mail_admins_javascript': {
+            'level': 'WARNING',
+            'filters': ['require_debug_false'],
+            'class': 'proso.django.log.AdminJavascriptEmailHandler'
+        },
         'request': {
             'level': 'DEBUG',
             'class': 'proso.django.log.RequestHandler',
