@@ -153,7 +153,6 @@ angular.module('proso.geography.controllers', [])
             var selectedFC = flashcardService.getFlashcardByDescription(selected);
             practiceService.saveAnswerToCurrentFC(selectedFC ? selectedFC.id : null, $scope.question.responseTime);
             $scope.progress = 100 * (practiceService.getSummary().count / practiceService.getConfig().set_length);
-            addAnswerToUser(asked == selected);
             //user.addAnswer(asked == selected);
             if (asked == selected) {
                 $timeout(function() {
@@ -165,6 +164,7 @@ angular.module('proso.geography.controllers', [])
                 $scope.checking = false;
                 $scope.canNext = true;
             }
+            addAnswerToUser(asked == selected);
         };
 
         $scope.next = function(callback) {
@@ -185,9 +185,11 @@ angular.module('proso.geography.controllers', [])
         };
 
         function addAnswerToUser(isCorrect) {
-          userService.user.profile.number_of_answers++;
-          if (isCorrect) {
-            userService.user.profile.number_of_correct_answers++;
+          if (userService.user.profile) {
+            userService.user.profile.number_of_answers++;
+            if (isCorrect) {
+              userService.user.profile.number_of_correct_answers++;
+            }
           }
         }
 
