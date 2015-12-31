@@ -270,7 +270,7 @@ LOGGING = {
             'level': 'DEBUG'
         },
         'javascript': {
-            'handlers': ['console', 'mail_admins_javascript', 'anatomy_file'],
+            'handlers': ['console', 'mail_admins_javascript', 'geography_file'],
             'propagate': True,
             'level': 'INFO',
         },
