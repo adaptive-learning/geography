@@ -269,6 +269,11 @@ LOGGING = {
             'propagate': True,
             'level': 'DEBUG'
         },
+        'javascript': {
+            'handlers': ['console', 'mail_admins_javascript', 'anatomy_file'],
+            'propagate': True,
+            'level': 'INFO',
+        },
         'django.db.backends': {
             'level': 'INFO',
             'handlers': ['console'],
