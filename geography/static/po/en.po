@@ -1,11 +1,11 @@
 # 
 # Translators:
 # Jan Papousek <jan.papousek@gmail.com>, 2015
-# Vít Stanislav <slaweet@seznam.cz>, 2015
+# Vít Stanislav <slaweet@seznam.cz>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2015-12-18 18:52+0000\n"
+"PO-Revision-Date: 2016-01-08 15:36+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: English (http://www.transifex.com/adaptive-learning/slepemapycz/language/en/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -103,7 +103,7 @@ msgstr "Data on responses are stored and are used to select appropriate question
 msgid "E-mail"
 msgstr "E-mail"
 
-#: static/js/controllers.js:407
+#: static/js/controllers.js:409
 msgid "Hledaný profil neexistuje."
 msgstr "The profile does not exist."
 
@@ -127,7 +127,7 @@ msgstr "First name"
 msgid "Kdo za tím stojí"
 msgstr "Who's behind it"
 
-#: static/js/controllers.js:289
+#: static/js/controllers.js:291
 msgid "Kontinenty"
 msgstr "Continents"
 
@@ -151,6 +151,10 @@ msgstr "My knowledge"
 msgid "Moje časté chyby"
 msgstr "My frequent mistakes"
 
+#: static/js/services.js:357
+msgid "Moře"
+msgstr "Seas"
+
 #: static/js/services.js:354
 msgid "Města"
 msgstr "Cities"
@@ -172,7 +176,7 @@ msgstr "This app is developed mainly by Vit Stanislav and Jan Papoušek."
 msgid "Naučeno"
 msgstr "Learned"
 
-#: static/js/map.js:279
+#: static/js/map.js:280
 msgid "Neprocvičováno"
 msgstr "Unpracticed"
 
@@ -202,7 +206,7 @@ msgstr "Provinces"
 msgid "Ocenění"
 msgstr "Avards"
 
-#: static/js/directives.js:16 static/js/map.js:266
+#: static/js/directives.js:16 static/js/map.js:267
 msgid "Odhad znalosti"
 msgstr "Knowledge estimate"
 
@@ -210,11 +214,11 @@ msgstr "Knowledge estimate"
 msgid "Osobní cíle"
 msgstr "Personal goals"
 
-#: static/js/services.js:358
+#: static/js/services.js:359
 msgid "Ostrovy"
 msgstr "Islands"
 
-#: static/js/services.js:357
+#: static/js/services.js:358
 msgid "Pohoří"
 msgstr "Mountains"
 
@@ -252,7 +256,7 @@ msgstr "Political map"
 msgid "Povrch"
 msgstr "Surface"
 
-#: static/js/map.js:272
+#: static/js/map.js:273
 msgid "Počet obyvatel"
 msgstr "Population"
 
@@ -261,7 +265,7 @@ msgid "Pro vyřešení problému zkuste"
 msgstr "To resolve the problem try to"
 
 #: static/tpl/confused_tpl.html:23 static/tpl/overview_tpl.html:20
-#: static/tpl/view_tpl.html:15 static/tpl/view_tpl.html:37
+#: static/tpl/view_tpl.html:16 static/tpl/view_tpl.html:39
 msgid "Procvičovat"
 msgstr "Practice"
 
@@ -340,7 +344,7 @@ msgstr "Federal states"
 msgid "Správné odpovědi"
 msgstr "Correct answers"
 
-#: static/js/controllers.js:288 static/js/services.js:347
+#: static/js/controllers.js:290 static/js/services.js:347
 msgid "Státy"
 msgstr "States"
 
@@ -392,7 +396,7 @@ msgstr "Data mining"
 msgid "Učení z dat - text"
 msgstr "The application learns from data of all users. Question choice is based on this data, instead of being based on knowledge of an geography expert who \"knows\" whether it's generally more difficult to know Kenya or Nigeria."
 
-#: static/js/controllers.js:420 static/js/directives.js:276
+#: static/js/controllers.js:422 static/js/directives.js:276
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Unfortunately there has been an error in the app."
 
@@ -428,7 +432,7 @@ msgstr "Selected"
 msgid "Zavřít"
 msgstr "Close"
 
-#: static/tpl/view_tpl.html:49
+#: static/tpl/view_tpl.html:51
 msgid "Zde zatím nebylo nic procvičováno."
 msgstr "Nothing has been practiced here."
 

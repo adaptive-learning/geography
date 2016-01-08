@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2015-12-18 18:54+0000\n"
+"PO-Revision-Date: 2016-01-08 15:36+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Spanish (http://www.transifex.com/adaptive-learning/slepemapycz/language/es/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,7 +102,7 @@ msgstr ""
 msgid "E-mail"
 msgstr "correo electrónico"
 
-#: static/js/controllers.js:407
+#: static/js/controllers.js:409
 msgid "Hledaný profil neexistuje."
 msgstr ""
 
@@ -126,7 +126,7 @@ msgstr "Nombre"
 msgid "Kdo za tím stojí"
 msgstr ""
 
-#: static/js/controllers.js:289
+#: static/js/controllers.js:291
 msgid "Kontinenty"
 msgstr "Continentes"
 
@@ -150,6 +150,10 @@ msgstr "Mi Conocimiento"
 msgid "Moje časté chyby"
 msgstr "Mis errores frecuentes"
 
+#: static/js/services.js:357
+msgid "Moře"
+msgstr ""
+
 #: static/js/services.js:354
 msgid "Města"
 msgstr "Ciudades"
@@ -171,7 +175,7 @@ msgstr ""
 msgid "Naučeno"
 msgstr "Aprendido"
 
-#: static/js/map.js:279
+#: static/js/map.js:280
 msgid "Neprocvičováno"
 msgstr "Sin Practicar"
 
@@ -201,7 +205,7 @@ msgstr "Provincias"
 msgid "Ocenění"
 msgstr ""
 
-#: static/js/directives.js:16 static/js/map.js:266
+#: static/js/directives.js:16 static/js/map.js:267
 msgid "Odhad znalosti"
 msgstr "Estimación de conocimiento"
 
@@ -209,11 +213,11 @@ msgstr "Estimación de conocimiento"
 msgid "Osobní cíle"
 msgstr "Metas personales"
 
-#: static/js/services.js:358
+#: static/js/services.js:359
 msgid "Ostrovy"
 msgstr "Islas"
 
-#: static/js/services.js:357
+#: static/js/services.js:358
 msgid "Pohoří"
 msgstr "Montes"
 
@@ -251,7 +255,7 @@ msgstr "Mapa Político"
 msgid "Povrch"
 msgstr "Superficie"
 
-#: static/js/map.js:272
+#: static/js/map.js:273
 msgid "Počet obyvatel"
 msgstr "Población"
 
@@ -260,7 +264,7 @@ msgid "Pro vyřešení problému zkuste"
 msgstr ""
 
 #: static/tpl/confused_tpl.html:23 static/tpl/overview_tpl.html:20
-#: static/tpl/view_tpl.html:15 static/tpl/view_tpl.html:37
+#: static/tpl/view_tpl.html:16 static/tpl/view_tpl.html:39
 msgid "Procvičovat"
 msgstr "Práctica"
 
@@ -339,7 +343,7 @@ msgstr "Estados"
 msgid "Správné odpovědi"
 msgstr "Respuestas correctas"
 
-#: static/js/controllers.js:288 static/js/services.js:347
+#: static/js/controllers.js:290 static/js/services.js:347
 msgid "Státy"
 msgstr "Estados"
 
@@ -391,7 +395,7 @@ msgstr "Minería de Datos"
 msgid "Učení z dat - text"
 msgstr "El programa aprende de todas las personas que lo usan. La elección de preguntas que el programa presenta se basan en esta información. De esta forma, se tiene mejores estimados de dificultad para los usuarios, ya que en vez de que un experto dicte la dificultad, los usuarios definen el nivel con su desempeño. Así, cada quién ayuda a decidir qué es más fácil, sí las ciudades de Kenia o los ríos de Nigeria. "
 
-#: static/js/controllers.js:420 static/js/directives.js:276
+#: static/js/controllers.js:422 static/js/directives.js:276
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Unfortunately there has been an error in the app."
 
@@ -427,7 +431,7 @@ msgstr "Seleccionado"
 msgid "Zavřít"
 msgstr "Cerrar"
 
-#: static/tpl/view_tpl.html:49
+#: static/tpl/view_tpl.html:51
 msgid "Zde zatím nebylo nic procvičováno."
 msgstr "No se ha practido aquí."
 

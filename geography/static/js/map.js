@@ -130,6 +130,7 @@ angular.module('proso.geography.map', [])
           colorScale(flashcard.prediction).hex() :
           colors.WATER_COLOR;
       };
+      layerConfig.sea = angular.copy(layerConfig.lake, {});
       return layerConfig;
     };
   }])

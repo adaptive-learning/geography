@@ -272,7 +272,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
       },{
         slug : 'water',
         name : gettextCatalog.getString('Vodstvo'),
-        types : ['river', 'lake'],
+        types : ['river', 'lake', 'sea'],
         hidden:true
       },{
         slug : 'surface',
@@ -354,6 +354,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
           'city' : gettextCatalog.getString('Města'),
           'river' : gettextCatalog.getString('Řeky'),
           'lake' : gettextCatalog.getString('Jezera'),
+          'sea' : gettextCatalog.getString('Moře'),
           'mountains' : gettextCatalog.getString('Pohoří'),
           'island' : gettextCatalog.getString('Ostrovy'),
       };
