@@ -60,4 +60,16 @@ CREATE TABLE tmp_context AS (
 \copy tmp_context TO '/tmp/flashcards.csv' DELIMITER ',' CSV HEADER;
 DROP TABLE tmp_context;
 
-
+CREATE TABLE tmp_difficulty AS (
+    SELECT
+        item_primary_id AS item_id,
+        value AS difficulty
+    FROM proso_models_variable
+    WHERE key = 'difficulty' AND info_id = (
+        SELECT MAX(id)
+        FROM proso_models_environmentinfo
+        WHERE status = 3
+    )
+);
+\copy tmp_difficulty TO '/tmp/difficulty.csv' DELIMITER ',' CSV HEADER;
+DROP TABLE tmp_difficulty;
