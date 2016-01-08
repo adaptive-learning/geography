@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Vít Stanislav <slaweet@seznam.cz>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-02 15:15+0000\n"
-"PO-Revision-Date: 2015-09-12 17:44+0000\n"
+"PO-Revision-Date: 2016-01-08 17:13+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: German (http://www.transifex.com/adaptive-learning/slepemapycz/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +39,7 @@ msgid "Zavřít"
 msgstr "Schließen"
 
 #: templates/generated/homepage.html:19 templates/home.html:60 views.py:35
-msgid "Slepé Mapy"
+msgid "Slepé mapy"
 msgstr "Stumme Karten"
 
 #: templates/generated/homepage.html:21

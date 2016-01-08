@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-01-08 15:36+0000\n"
+"PO-Revision-Date: 2016-01-08 17:10+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: English (http://www.transifex.com/adaptive-learning/slepemapycz/language/en/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -314,8 +314,8 @@ msgid "Sdílej svůj profil"
 msgstr "Share your profile"
 
 #: static/tpl/homepage.html:19
-msgid "Slepé Mapy"
-msgstr "Outline maps"
+msgid "Slepé mapy"
+msgstr "Outline Maps"
 
 #: static/tpl/about.html:11
 msgid ""

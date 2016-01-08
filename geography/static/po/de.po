@@ -1,10 +1,10 @@
 # 
 # Translators:
-# Vít Stanislav <slaweet@seznam.cz>, 2015
+# Vít Stanislav <slaweet@seznam.cz>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-01-08 15:36+0000\n"
+"PO-Revision-Date: 2016-01-08 17:11+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: German (http://www.transifex.com/adaptive-learning/slepemapycz/language/de/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -313,7 +313,7 @@ msgid "Sdílej svůj profil"
 msgstr "Teilen Sie Ihr Profil mit"
 
 #: static/tpl/homepage.html:19
-msgid "Slepé Mapy"
+msgid "Slepé mapy"
 msgstr "Stumme Karten"
 
 #: static/tpl/about.html:11

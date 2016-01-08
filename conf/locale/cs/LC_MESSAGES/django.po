@@ -38,8 +38,8 @@ msgid "Zavřít"
 msgstr ""
 
 #: templates/generated/homepage.html:19 templates/home.html:60 views.py:35
-msgid "Slepé Mapy"
-msgstr "Slepé Mapy"
+msgid "Slepé mapy"
+msgstr "Slepé mapy"
 
 #: templates/generated/homepage.html:21
 msgid "Vyberte si mapu k procvičování:"
