@@ -13,3 +13,9 @@ source_file = conf/locale/cs/LC_MESSAGES/django.po
 source_lang = cs
 type = PO
 
+[slepemapycz.translations_cscsv]
+file_filter = data/translations_<lang>.csv
+source_file = data/translations_cs.csv
+source_lang = cs
+type = MAGENTO
+
