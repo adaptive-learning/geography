@@ -100,22 +100,26 @@ class Command(BaseCommand):
                 for path in paths:
                     code = unicode(path.attributes['data-code'].value).encode("utf-8")
                     name = unicode(path.attributes['data-name'].value).encode("utf-8")
-                    if code not in terms_by_id:
-                        if code != '':
-                            term = {
-                                'id': code,
-                                'name-cs': name,
-                                'type': group_id,
-                                'categories': [map_code],
-                            }
-                            data['terms'].append(term)
-                            flashcard = {
-                                'id': map_code + '-' + code,
-                                'term': code,
-                                'context': map_code,
-                                'description': code,
-                            }
-                            data['flashcards'].append(flashcard)
-                            print 'Flashcard added: ' + name + ' ' + code
-                    elif map_code not in terms_by_id[code]['categories']:
+                    if code != '' and code not in terms_by_id:
+                        term = {
+                            'id': code,
+                            'name-cs': name,
+                            'type': group_id,
+                            'categories': [map_code],
+                        }
+                        data['terms'].append(term)
+                        terms_by_id[code] = term
+                        print 'Term added: ' + name + ' ' + code
+                    flashcard_id = map_code + '-' + code
+                    if code != '' and flashcard_id not in flashcards_by_id:
+                        flashcard = {
+                            'id': flashcard_id,
+                            'term': code,
+                            'context': map_code,
+                            'description': code,
+                        }
+                        data['flashcards'].append(flashcard)
+                        flashcards_by_id[flashcard_id] = flashcard
+                        print 'Flashcard added: ' + name + ' ' + code
+                    if code != '' and map_code not in terms_by_id[code]['categories']:
                         terms_by_id[code]['categories'].append(map_code)
