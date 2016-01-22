@@ -109,7 +109,26 @@ def get_map_from_url(hack):
                 map_category = Category.objects.get(lang=get_language(), identifier=map_code)
                 map_string = map_category.name
                 if len(url) >= 3 and url[2] != '':
-                    map_string = map_string  # + ' - ' + resolve_map_type(url[2])
+                    map_string = map_string + ' - ' + resolve_map_type(url[2])
             except Category.DoesNotExist:
                 pass
     return map_string
+
+
+def resolve_map_type(code):
+    types = {
+        'state': _(u'Státy'),
+        'region': _(u'Regiony'),
+        'province': _(u'Provincie'),
+        'region_cz': _(u'Kraje'),
+        'region_it': _(u'Oblasti'),
+        'autonomous_Comunity': _(u'Autonomní společenství'),
+        'bundesland': _(u'Spolkové země'),
+        'city': _(u'Města'),
+        'river': _(u'Řeky'),
+        'lake': _(u'Jezera'),
+        'sea': _(u'Moře'),
+        'mountains': _(u'Pohoří'),
+        'island': _(u'Ostrovy'),
+    }
+    return types.get(code, '')
