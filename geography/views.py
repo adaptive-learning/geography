@@ -12,6 +12,8 @@ from proso.django.config import get_config
 from proso_user.models import migrate_google_openid_user
 import django.contrib.auth as auth
 from proso.django.request import is_user_id_overridden
+import os
+import random
 
 
 @ensure_csrf_cookie
@@ -64,8 +66,36 @@ def home(request, hack=None):
         'hack': hack or '',
         'config_json': json.dumps(get_global_config()),
         'DOMAIN': request.build_absolute_uri('/')[:-1],
+        'screenshot_files': get_screenshot_files(request, hack),
     }
     return render_to_response('home.html', c)
+
+
+def get_screenshot_files(request, hack):
+    screenshot_files = [
+        "/static/img/practice-example-" + get_language() + ".png",
+        "/static/img/knowledge-map.png",
+        "/static/img/knowledge-map-africa.png",
+        "/static/img/knowledge-map-asia.png",
+        "/static/img/knowledge-map-cz-mountains.png",
+    ]
+
+    path = os.path.join(settings.STATICFILES_DIRS[0], 'img', 'thumb')
+    dirs = os.listdir(path)
+
+    for file in dirs:
+        if get_language() + '.png' in file:
+            screenshot_files.append('/static/img/thumb/' + file)
+    random.shuffle(screenshot_files)
+
+    thumb_file_name = hack.replace('/', '-') + '-' + get_language() +'.png'
+    thumb_file = os.path.join(settings.STATICFILES_DIRS[0], 'img', 'thumb', thumb_file_name)
+
+    if os.path.exists(thumb_file):
+        screenshot_files[0] = "/static/img/thumb/" + thumb_file_name
+    if request.GET.get('thumb', None) is not None:
+        screenshot_files[0] = "/static/img/thumb/" + request.GET['thumb'] + "-" + get_language() + ".png"
+    return screenshot_files[:5]
 
 
 def get_map_from_url(hack):

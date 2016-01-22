@@ -26,12 +26,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{% trans 'meta content' %}">
     <meta name="keywords" content="{% trans 'meta keywords' %}" />
-    <meta property="og:image" content="{{DOMAIN}}/static/img/practice-example-{{LANGUAGE_CODE}}.png"/>
-    <meta property="og:image" content="{{DOMAIN}}/static/img/knowledge-map.png"/>
-    <meta property="og:image" content="{{DOMAIN}}/static/img/knowledge-map-africa.png"/>
-    <meta property="og:image" content="{{DOMAIN}}/static/img/knowledge-map-asia.png"/>
-    <meta property="og:image" content="{{DOMAIN}}/static/img/knowledge-map-cz-mountains.png"/>
-    <meta property="og:image" content="{{DOMAIN}}/static/img/map-cz-rivers.png"/>
+    {% for file in screenshot_files %}
+    <meta property="og:image" content="{{DOMAIN}}{{file}}"/>
+    {% endfor %}
+
     <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
     <link rel="apple-touch-icon" sizes="57x57" href="/static/img/icons/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/static/img/icons/apple-touch-icon-60x60.png">
