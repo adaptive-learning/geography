@@ -527,7 +527,7 @@ angular.module('proso.geography.map', [])
         }
       };
 
-      myMap.map.loadCSS(hash('/static/css/map.css'), function() {
+      myMap.map.loadCSS(hash('/static/dist/css/map.css'), function() {
         myMap.map.loadMap(hash('/static/map/' + mapCode + '.svg'), function() {
           highlighted.clear();
           layers = initLayers(myMap.map, config);
