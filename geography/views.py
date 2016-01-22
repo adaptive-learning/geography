@@ -88,11 +88,12 @@ def get_screenshot_files(request, hack):
             screenshot_files.append('/static/img/thumb/' + file)
     random.shuffle(screenshot_files)
 
-    thumb_file_name = hack.replace('/', '-') + '-' + get_language() +'.png'
-    thumb_file = os.path.join(settings.STATICFILES_DIRS[0], 'img', 'thumb', thumb_file_name)
+    if hack is not None:
+        thumb_file_name = hack.replace('/', '-') + '-' + get_language() +'.png'
+        thumb_file = os.path.join(settings.STATICFILES_DIRS[0], 'img', 'thumb', thumb_file_name)
+        if os.path.exists(thumb_file):
+            screenshot_files[0] = "/static/img/thumb/" + thumb_file_name
 
-    if os.path.exists(thumb_file):
-        screenshot_files[0] = "/static/img/thumb/" + thumb_file_name
     if request.GET.get('thumb', None) is not None:
         screenshot_files[0] = "/static/img/thumb/" + request.GET['thumb'] + "-" + get_language() + ".png"
     return screenshot_files[:5]
