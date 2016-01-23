@@ -10836,6 +10836,252 @@
       "id": "samerica-gf", 
       "context": "samerica", 
       "description": "gf"
+    }, 
+    {
+      "term": "Bebrava", 
+      "id": "sk-Bebrava", 
+      "context": "sk", 
+      "description": "Bebrava"
+    }, 
+    {
+      "term": "Biela_Orava", 
+      "id": "sk-Biela_Orava", 
+      "context": "sk", 
+      "description": "Biela_Orava"
+    }, 
+    {
+      "term": "Biela_Voda", 
+      "id": "sk-Biela_Voda", 
+      "context": "sk", 
+      "description": "Biela_Voda"
+    }, 
+    {
+      "term": "Biely_Vah", 
+      "id": "sk-Biely_Vah", 
+      "context": "sk", 
+      "description": "Biely_Vah"
+    }, 
+    {
+      "term": "Blh", 
+      "id": "sk-Blh", 
+      "context": "sk", 
+      "description": "Blh"
+    }, 
+    {
+      "term": "Bodrog", 
+      "id": "sk-Bodrog", 
+      "context": "sk", 
+      "description": "Bodrog"
+    }, 
+    {
+      "term": "Bodva", 
+      "id": "sk-Bodva", 
+      "context": "sk", 
+      "description": "Bodva"
+    }, 
+    {
+      "term": "Cirocha", 
+      "id": "sk-Cirocha", 
+      "context": "sk", 
+      "description": "Cirocha"
+    }, 
+    {
+      "term": "Cierna_Voda", 
+      "id": "sk-Cierna_Voda", 
+      "context": "sk", 
+      "description": "Cierna_Voda"
+    }, 
+    {
+      "term": "Cierny_Vah", 
+      "id": "sk-Cierny_Vah", 
+      "context": "sk", 
+      "description": "Cierny_Vah"
+    }, 
+    {
+      "term": "Dudvah", 
+      "id": "sk-Dudvah", 
+      "context": "sk", 
+      "description": "Dudvah"
+    }, 
+    {
+      "term": "Dunaj", 
+      "id": "sk-Dunaj", 
+      "context": "sk", 
+      "description": "Dunaj"
+    }, 
+    {
+      "term": "Dunajec", 
+      "id": "sk-Dunajec", 
+      "context": "sk", 
+      "description": "Dunajec"
+    }, 
+    {
+      "term": "Hnilec", 
+      "id": "sk-Hnilec", 
+      "context": "sk", 
+      "description": "Hnilec"
+    }, 
+    {
+      "term": "Hornad", 
+      "id": "sk-Hornad", 
+      "context": "sk", 
+      "description": "Hornad"
+    }, 
+    {
+      "term": "Hron", 
+      "id": "sk-Hron", 
+      "context": "sk", 
+      "description": "Hron"
+    }, 
+    {
+      "term": "Ida", 
+      "id": "sk-Ida", 
+      "context": "sk", 
+      "description": "Ida"
+    }, 
+    {
+      "term": "Ipel", 
+      "id": "sk-Ipel", 
+      "context": "sk", 
+      "description": "Ipel"
+    }, 
+    {
+      "term": "Krupinica", 
+      "id": "sk-Krupinica", 
+      "context": "sk", 
+      "description": "Krupinica"
+    }, 
+    {
+      "term": "Kysuca", 
+      "id": "sk-Kysuca", 
+      "context": "sk", 
+      "description": "Kysuca"
+    }, 
+    {
+      "term": "Laborec", 
+      "id": "sk-Laborec", 
+      "context": "sk", 
+      "description": "Laborec"
+    }, 
+    {
+      "term": "Latorica", 
+      "id": "sk-Latorica", 
+      "context": "sk", 
+      "description": "Latorica"
+    }, 
+    {
+      "term": "Maly_Dunaj", 
+      "id": "sk-Maly_Dunaj", 
+      "context": "sk", 
+      "description": "Maly_Dunaj"
+    }, 
+    {
+      "term": "Morava", 
+      "id": "sk-Morava", 
+      "context": "sk", 
+      "description": "Morava"
+    }, 
+    {
+      "term": "Nitrica", 
+      "id": "sk-Nitrica", 
+      "context": "sk", 
+      "description": "Nitrica"
+    }, 
+    {
+      "term": "Ondava", 
+      "id": "sk-Ondava", 
+      "context": "sk", 
+      "description": "Ondava"
+    }, 
+    {
+      "term": "Orava", 
+      "id": "sk-Orava", 
+      "context": "sk", 
+      "description": "Orava"
+    }, 
+    {
+      "term": "Rajcanka", 
+      "id": "sk-Rajcanka", 
+      "context": "sk", 
+      "description": "Rajcanka"
+    }, 
+    {
+      "term": "Rimava", 
+      "id": "sk-Rimava", 
+      "context": "sk", 
+      "description": "Rimava"
+    }, 
+    {
+      "term": "Rudava", 
+      "id": "sk-Rudava", 
+      "context": "sk", 
+      "description": "Rudava"
+    }, 
+    {
+      "term": "Sikenica", 
+      "id": "sk-Sikenica", 
+      "context": "sk", 
+      "description": "Sikenica"
+    }, 
+    {
+      "term": "Slana", 
+      "id": "sk-Slana", 
+      "context": "sk", 
+      "description": "Slana"
+    }, 
+    {
+      "term": "Stara_Nitra", 
+      "id": "sk-Stara_Nitra", 
+      "context": "sk", 
+      "description": "Stara_Nitra"
+    }, 
+    {
+      "term": "Topla", 
+      "id": "sk-Topla", 
+      "context": "sk", 
+      "description": "Topla"
+    }, 
+    {
+      "term": "Torysa", 
+      "id": "sk-Torysa", 
+      "context": "sk", 
+      "description": "Torysa"
+    }, 
+    {
+      "term": "Trnavka", 
+      "id": "sk-Trnavka", 
+      "context": "sk", 
+      "description": "Trnavka"
+    }, 
+    {
+      "term": "Turiec", 
+      "id": "sk-Turiec", 
+      "context": "sk", 
+      "description": "Turiec"
+    }, 
+    {
+      "term": "Uh", 
+      "id": "sk-Uh", 
+      "context": "sk", 
+      "description": "Uh"
+    }, 
+    {
+      "term": "Vah", 
+      "id": "sk-Vah", 
+      "context": "sk", 
+      "description": "Vah"
+    }, 
+    {
+      "term": "Vlara", 
+      "id": "sk-Vlara", 
+      "context": "sk", 
+      "description": "Vlara"
+    }, 
+    {
+      "term": "Zitava", 
+      "id": "sk-Zitava", 
+      "context": "sk", 
+      "description": "Zitava"
     }
   ], 
   "terms": [
@@ -24738,7 +24984,8 @@
       "type": "river", 
       "id": "Morava", 
       "categories": [
-        "cz"
+        "cz", 
+        "sk"
       ]
     }, 
     {
@@ -27182,6 +27429,326 @@
       "categories": [
         "samerica"
       ]
+    }, 
+    {
+      "type": "river", 
+      "id": "Bebrava", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Bebrava"
+    }, 
+    {
+      "type": "river", 
+      "id": "Biela_Orava", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Biela Orava"
+    }, 
+    {
+      "type": "river", 
+      "id": "Biela_Voda", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Biela Voda"
+    }, 
+    {
+      "type": "river", 
+      "id": "Biely_Vah", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Biely V\u00e1h"
+    }, 
+    {
+      "type": "river", 
+      "id": "Blh", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Blh"
+    }, 
+    {
+      "type": "river", 
+      "id": "Bodrog", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Bodrog"
+    }, 
+    {
+      "type": "river", 
+      "id": "Bodva", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Bodva"
+    }, 
+    {
+      "type": "river", 
+      "id": "Cirocha", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Cirocha"
+    }, 
+    {
+      "type": "river", 
+      "id": "Cierna_Voda", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "\u010cierna Voda"
+    }, 
+    {
+      "type": "river", 
+      "id": "Cierny_Vah", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "\u010cierny V\u00e1h"
+    }, 
+    {
+      "type": "river", 
+      "id": "Dudvah", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Dudv\u00e1h"
+    }, 
+    {
+      "type": "river", 
+      "id": "Dunaj", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Dunaj"
+    }, 
+    {
+      "type": "river", 
+      "id": "Dunajec", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Dunajec"
+    }, 
+    {
+      "type": "river", 
+      "id": "Hnilec", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Hnilec"
+    }, 
+    {
+      "type": "river", 
+      "id": "Hornad", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Horn\u00e1d"
+    }, 
+    {
+      "type": "river", 
+      "id": "Hron", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Hron"
+    }, 
+    {
+      "type": "river", 
+      "id": "Ida", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Ida"
+    }, 
+    {
+      "type": "river", 
+      "id": "Ipel", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Ipe\u013e"
+    }, 
+    {
+      "type": "river", 
+      "id": "Krupinica", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Krupinica"
+    }, 
+    {
+      "type": "river", 
+      "id": "Kysuca", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Kysuca"
+    }, 
+    {
+      "type": "river", 
+      "id": "Laborec", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Laborec"
+    }, 
+    {
+      "type": "river", 
+      "id": "Latorica", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Latorica"
+    }, 
+    {
+      "type": "river", 
+      "id": "Maly_Dunaj", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Mal\u00fd Dunaj"
+    }, 
+    {
+      "type": "river", 
+      "id": "Nitrica", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Nitrica"
+    }, 
+    {
+      "type": "river", 
+      "id": "Ondava", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Ondava"
+    }, 
+    {
+      "type": "river", 
+      "id": "Orava", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Orava"
+    }, 
+    {
+      "type": "river", 
+      "id": "Rajcanka", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Raj\u010danka"
+    }, 
+    {
+      "type": "river", 
+      "id": "Rimava", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Rimava"
+    }, 
+    {
+      "type": "river", 
+      "id": "Rudava", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Rudava"
+    }, 
+    {
+      "type": "river", 
+      "id": "Sikenica", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Sikenica"
+    }, 
+    {
+      "type": "river", 
+      "id": "Slana", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Slan\u00e1"
+    }, 
+    {
+      "type": "river", 
+      "id": "Stara_Nitra", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Star\u00e1 Nitra"
+    }, 
+    {
+      "type": "river", 
+      "id": "Topla", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Top\u013ea"
+    }, 
+    {
+      "type": "river", 
+      "id": "Torysa", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Torysa"
+    }, 
+    {
+      "type": "river", 
+      "id": "Trnavka", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Trn\u00e1vka"
+    }, 
+    {
+      "type": "river", 
+      "id": "Turiec", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Turiec"
+    }, 
+    {
+      "type": "river", 
+      "id": "Uh", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Uh"
+    }, 
+    {
+      "type": "river", 
+      "id": "Vah", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "V\u00e1h"
+    }, 
+    {
+      "type": "river", 
+      "id": "Vlara", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "Vl\u00e1ra"
+    }, 
+    {
+      "type": "river", 
+      "id": "Zitava", 
+      "categories": [
+        "sk"
+      ], 
+      "name-cs": "\u017ditava"
     }
   ], 
   "categories": [
