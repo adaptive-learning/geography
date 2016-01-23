@@ -153,7 +153,7 @@ msgstr ""
 #: templates/home.html:28
 msgid "meta keywords"
 msgstr ""
-"slepá mapa, státy, města, čr, svět, evrovpa, amerika, afrika, asie, pohoří, "
+"slepá mapa, státy, města, čr, svět, evropa, amerika, afrika, asie, pohoří, "
 "řeky, zeměpis, usa, hry"
 
 #: templates/home.html:64
