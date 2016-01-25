@@ -27,7 +27,6 @@ TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('Vít Stanislav', 'slaweet@gmail.com'),
-    ('Jan Papoušek', 'jan.papousek@gmail.com'),
 )
 
 EMAIL_SUBJECT_PREFIX = '[slepemapy.cz] '
