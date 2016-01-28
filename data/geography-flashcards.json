@@ -11082,6 +11082,132 @@
       "id": "sk-Zitava", 
       "context": "sk", 
       "description": "Zitava"
+    }, 
+    {
+      "term": "Dunaj", 
+      "id": "at-Dunaj", 
+      "context": "at", 
+      "description": "Dunaj"
+    }, 
+    {
+      "term": "Ryn", 
+      "id": "at-Ryn", 
+      "context": "at", 
+      "description": "Ryn"
+    }, 
+    {
+      "term": "Lech", 
+      "id": "at-Lech", 
+      "context": "at", 
+      "description": "Lech"
+    }, 
+    {
+      "term": "Inn", 
+      "id": "at-Inn", 
+      "context": "at", 
+      "description": "Inn"
+    }, 
+    {
+      "term": "Ill", 
+      "id": "at-Ill", 
+      "context": "at", 
+      "description": "Ill"
+    }, 
+    {
+      "term": "Salzach", 
+      "id": "at-Salzach", 
+      "context": "at", 
+      "description": "Salzach"
+    }, 
+    {
+      "term": "Pinka", 
+      "id": "at-Pinka", 
+      "context": "at", 
+      "description": "Pinka"
+    }, 
+    {
+      "term": "Litava", 
+      "id": "at-Litava", 
+      "context": "at", 
+      "description": "Litava"
+    }, 
+    {
+      "term": "Dyje", 
+      "id": "at-Dyje", 
+      "context": "at", 
+      "description": "Dyje"
+    }, 
+    {
+      "term": "Morava", 
+      "id": "at-Morava", 
+      "context": "at", 
+      "description": "Morava"
+    }, 
+    {
+      "term": "Malse", 
+      "id": "at-Malse", 
+      "context": "at", 
+      "description": "Malse"
+    }, 
+    {
+      "term": "Travna", 
+      "id": "at-Travna", 
+      "context": "at", 
+      "description": "Travna"
+    }, 
+    {
+      "term": "Kremze", 
+      "id": "at-Kremze", 
+      "context": "at", 
+      "description": "Kremze"
+    }, 
+    {
+      "term": "Enze", 
+      "id": "at-Enze", 
+      "context": "at", 
+      "description": "Enze"
+    }, 
+    {
+      "term": "Salza", 
+      "id": "at-Salza", 
+      "context": "at", 
+      "description": "Salza"
+    }, 
+    {
+      "term": "Lavant", 
+      "id": "at-Lavant", 
+      "context": "at", 
+      "description": "Lavant"
+    }, 
+    {
+      "term": "Drava", 
+      "id": "at-Drava", 
+      "context": "at", 
+      "description": "Drava"
+    }, 
+    {
+      "term": "Gail", 
+      "id": "at-Gail", 
+      "context": "at", 
+      "description": "Gail"
+    }, 
+    {
+      "term": "Mura", 
+      "id": "at-Mura", 
+      "context": "at", 
+      "description": "Mura"
+    }, 
+    {
+      "term": "Murz", 
+      "id": "at-Murz", 
+      "context": "at", 
+      "description": "Murz"
+    }, 
+    {
+      "term": "Raba", 
+      "id": "at-Raba", 
+      "context": "at", 
+      "description": "Raba"
     }
   ], 
   "terms": [
@@ -24985,7 +25111,8 @@
       "id": "Morava", 
       "categories": [
         "cz", 
-        "sk"
+        "sk", 
+        "at"
       ]
     }, 
     {
@@ -25029,7 +25156,8 @@
       "type": "river", 
       "id": "Dyje", 
       "categories": [
-        "cz"
+        "cz", 
+        "at"
       ]
     }, 
     {
@@ -25150,7 +25278,8 @@
       "type": "river", 
       "id": "Drava", 
       "categories": [
-        "europe"
+        "europe", 
+        "at"
       ]
     }, 
     {
@@ -27522,7 +27651,8 @@
       "type": "river", 
       "id": "Dunaj", 
       "categories": [
-        "sk"
+        "sk", 
+        "at"
       ], 
       "name-cs": "Dunaj"
     }, 
@@ -27749,6 +27879,150 @@
         "sk"
       ], 
       "name-cs": "\u017ditava"
+    }, 
+    {
+      "type": "city", 
+      "id": "Passau", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Passau"
+    }, 
+    {
+      "type": "river", 
+      "id": "Ryn", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "R\u00fdn"
+    }, 
+    {
+      "type": "river", 
+      "id": "Lech", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Lech"
+    }, 
+    {
+      "type": "river", 
+      "id": "Inn", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Inn"
+    }, 
+    {
+      "type": "river", 
+      "id": "Ill", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Ill"
+    }, 
+    {
+      "type": "river", 
+      "id": "Salzach", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Salzach"
+    }, 
+    {
+      "type": "river", 
+      "id": "Pinka", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Pinka"
+    }, 
+    {
+      "type": "river", 
+      "id": "Litava", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Litava"
+    }, 
+    {
+      "type": "river", 
+      "id": "Malse", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Mal\u0161e"
+    }, 
+    {
+      "type": "river", 
+      "id": "Travna", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Travna"
+    }, 
+    {
+      "type": "river", 
+      "id": "Kremze", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Krem\u017ee"
+    }, 
+    {
+      "type": "river", 
+      "id": "Enze", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "En\u017ee"
+    }, 
+    {
+      "type": "river", 
+      "id": "Salza", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Salza"
+    }, 
+    {
+      "type": "river", 
+      "id": "Lavant", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Lavant"
+    }, 
+    {
+      "type": "river", 
+      "id": "Gail", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Gail"
+    }, 
+    {
+      "type": "river", 
+      "id": "Mura", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "Mura"
+    }, 
+    {
+      "type": "river", 
+      "id": "Murz", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "M\u00fcrz"
+    }, 
+    {
+      "type": "river", 
+      "id": "Raba", 
+      "categories": [
+        "at"
+      ], 
+      "name-cs": "R\u00e1ba"
     }
   ], 
   "categories": [
