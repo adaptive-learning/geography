@@ -46,10 +46,10 @@ DROP TABLE tmp_ip_address;
 
 CREATE TABLE tmp_context AS (
     SELECT
-    	proso_flashcards_flashcard.item_id AS item_id,
-    	proso_flashcards_term.type AS term_type,
-    	proso_flashcards_term.name AS term_name,
-    	proso_flashcards_context.name AS context_name
+        proso_flashcards_flashcard.item_id AS item_id,
+        proso_flashcards_term.type AS term_type,
+        proso_flashcards_term.name AS term_name,
+        proso_flashcards_context.name AS context_name
     FROM proso_flashcards_flashcard
     INNER JOIN proso_flashcards_term ON term_id = proso_flashcards_term.id
     INNER JOIN proso_flashcards_context ON context_id = proso_flashcards_context.id
