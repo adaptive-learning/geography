@@ -265,12 +265,12 @@ LOGGING = {
     },
     'loggers': {
         'django.request': {
-            'handlers': ['console', 'request', 'geography_file'],
+            'handlers': ['console', 'request', 'mail_admins', 'geography_file'],
             'propagate': True,
             'level': 'DEBUG'
         },
         'javascript': {
-            'handlers': ['console', 'geography_file'],
+            'handlers': ['console', 'mail_admins_javascript', 'geography_file'],
             'propagate': True,
             'level': 'INFO',
         },
