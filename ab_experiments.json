@@ -141,7 +141,8 @@
           "app_name": "proso_models"
         }
       ],
-      "id": "target-difficulty-2"
+      "id": "target-difficulty-2",
+      "disabled": true
     }
   ]
 }
