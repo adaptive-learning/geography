@@ -136,12 +136,12 @@ if ON_PRODUCTION:
     AUTH_DOMAIN = 'slepemapy.cz'
 elif ON_STAGING:
     LANGUAGE_DOMAINS = {
-        'cs': 'staging.slepemapy.cz',
-        'en': 'staging.outlinemaps.org',
-        'es': 'es.staging.outlinemaps.org',
-        'de': 'de.staging.outlinemaps.org',
+        'cs': 'devel.slepemapy.cz',
+        'en': 'devel.outlinemaps.org',
+        'es': 'es.devel.outlinemaps.org',
+        'de': 'de.devel.outlinemaps.org',
     }
-    AUTH_DOMAIN = 'staging.slepemapy.cz'
+    AUTH_DOMAIN = 'devel.slepemapy.cz'
 else:
     LANGUAGE_DOMAINS = {
         'cs': 'localhost:8000',
