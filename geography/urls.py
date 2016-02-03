@@ -29,7 +29,6 @@ urlpatterns = patterns(
         "User-agent: *\nDisallow:", content_type="text/plain")),
 
     url(r'^user/', include('proso_user.urls')),
-    url(r'^questions/', include('proso_questions.urls')),
     url(r'^models/', include('proso_models.urls')),
     url(r'^configab/', include('proso_configab.urls')),
     url(r'^common/', include('proso_common.urls')),
@@ -41,6 +40,6 @@ urlpatterns = patterns(
     # legacy hack
     url(r'^login/google/$', RedirectView.as_view(url='/login/google-oauth2/')),
 
-    url(r'', include('social_auth.urls')),
+    url('', include('social.apps.django_app.urls', namespace='social')),
 )
 urlpatterns += staticfiles_urlpatterns()
