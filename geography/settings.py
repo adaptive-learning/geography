@@ -115,15 +115,6 @@ else:
         'default': dj_database_url.config(),
     }
 
-DATABASES['old'] = {
-    'ENGINE': os.environ.get('GEOGRAPHY_DATABASE_ENGINE', 'django.db.backends.mysql'),
-    'NAME': os.environ.get('GEOGRAPHY_DATABASE_NAME', 'geography'),
-    'USER': os.environ.get('GEOGRAPHY_DATABASE_USER', 'geography'),
-    'PASSWORD': os.environ.get('GEOGRAPHY_DATABASE_PASSWORD', 'geography'),
-    'HOST': os.environ.get('GEOGRAPHY_DATABASE_HOST', 'localhost'),
-    'PORT': os.environ.get('GEOGRAPHY_DATABASE_PORT', None),
-}
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
