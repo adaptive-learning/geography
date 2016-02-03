@@ -15,4 +15,6 @@ $WORKSPACE/manage.py migrate
 
 $WORKSPACE/manage.py compilemessages
 
+$WORKSPACE/manage.py load_flashcards --skip-language-check $WORKSPACE/data/geography-flashcards.json
+
 $WORKSPACE/manage.py load_configab_experiments $WORKSPACE/ab_experiments.json
