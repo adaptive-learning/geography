@@ -8,7 +8,7 @@ import os.path
 
 
 class Command(BaseCommand):
-    help = u"""Add new places"""
+    help = """Add new places"""
 
     def handle(self, *args, **options):
         for lang in settings.LANGUAGES:
@@ -20,7 +20,7 @@ class Command(BaseCommand):
             try:
                 place = Place.objects.get(code=code)
             except Place.DoesNotExist:
-                print "Warning: bad place code: " + code
+                print("Warning: bad place code: " + code)
                 continue
             try:
                 m = Mnemonic.objects.get(
@@ -46,5 +46,5 @@ class Command(BaseCommand):
                     if len(row) == 2 and row[1] != '':
                         mnemonics.append(row)
         else:
-            print "Warning: file not found: '%s'" % fname
+            print("Warning: file not found: '%s'" % fname)
         return mnemonics

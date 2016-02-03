@@ -47,7 +47,7 @@ def home(request, hack=None):
         user = json.dumps(request.user.userprofile.to_json(stats=True))
         email = request.user.email
     c = {
-        'title': _(u'Slepé mapy') + ' - ' + _(u'inteligentní aplikace na procvičování zeměpisu'),
+        'title': _('Slepé mapy') + ' - ' + _('inteligentní aplikace na procvičování zeměpisu'),
         'map': get_map_from_url(hack),
         'is_production': settings.ON_PRODUCTION,
         'css_files': CSS_FILES,
@@ -103,7 +103,7 @@ def get_map_from_url(hack):
     map_string = ""
     if hack:
         url = hack.split('/')
-        if url[0] == u'view' or url[0] == u'practice':
+        if url[0] == 'view' or url[0] == 'practice':
             map_code = url[1]
             try:
                 map_category = Category.objects.get(lang=get_language(), identifier=map_code)
@@ -117,18 +117,18 @@ def get_map_from_url(hack):
 
 def resolve_map_type(code):
     types = {
-        'state': _(u'Státy'),
-        'region': _(u'Regiony'),
-        'province': _(u'Provincie'),
-        'region_cz': _(u'Kraje'),
-        'region_it': _(u'Oblasti'),
-        'autonomous_Comunity': _(u'Autonomní společenství'),
-        'bundesland': _(u'Spolkové země'),
-        'city': _(u'Města'),
-        'river': _(u'Řeky'),
-        'lake': _(u'Jezera'),
-        'sea': _(u'Moře'),
-        'mountains': _(u'Pohoří'),
-        'island': _(u'Ostrovy'),
+        'state': _('Státy'),
+        'region': _('Regiony'),
+        'province': _('Provincie'),
+        'region_cz': _('Kraje'),
+        'region_it': _('Oblasti'),
+        'autonomous_Comunity': _('Autonomní společenství'),
+        'bundesland': _('Spolkové země'),
+        'city': _('Města'),
+        'river': _('Řeky'),
+        'lake': _('Jezera'),
+        'sea': _('Moře'),
+        'mountains': _('Pohoří'),
+        'island': _('Ostrovy'),
     }
     return types.get(code, '')

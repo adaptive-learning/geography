@@ -9,7 +9,7 @@ from django.core.wsgi import get_wsgi_application
 
 def application(environ, start_response):
     # pass the WSGI environment variables on through to os.environ
-    for k, v in environ.iteritems():
+    for k, v in environ.items():
         if isinstance(k, str) and (k.startswith('GEOGRAPHY') or k.startswith('PROSO')):
             os.environ[k] = v
     return get_wsgi_application()(environ, start_response)
