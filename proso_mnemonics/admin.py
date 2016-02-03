@@ -1,4 +1,4 @@
-from models import Mnemonic
+from proso_mnemonics.models import Mnemonic
 from django.contrib import admin
 
 

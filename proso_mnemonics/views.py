@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from geography.utils import JsonResponse
 from logging import getLogger
-from models import Mnemonic
+from proso_mnemonics.models import Mnemonic
 from django.views.decorators.cache import cache_page
 
 

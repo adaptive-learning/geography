@@ -45,31 +45,31 @@ class Command(BaseCommand):
         else:
             self.add_map(map_code, data, terms_by_id)
             if map_code not in contexts_by_id:
-                print "missing map: %s" % map_code
+                print("missing map: %s" % map_code)
 
         self.update_translations(data, terms_by_id, categories_by_id)
         # self.generate_translations_file(data)
 
         with open(options['output'], 'w') as f:
             json.dump(data, f, indent=2)
-            print ('Updated flashcards written to file: \'%s\'' %
-                   options['output'])
+            print(('Updated flashcards written to file: \'%s\'' %
+                   options['output']))
 
     def update_all_maps(self, data, terms_by_id):
         for f in sorted(os.listdir(os.path.join(settings.BASE_DIR, self.MAPS_DIR))):
             if f.endswith('.svg'):
-                print 'updating map: ' + f
+                print('updating map: ' + f)
                 self.add_map(f[:-4], data, terms_by_id)
 
     def generate_translations_file(self, data):
         for lang in settings.LANGUAGES:
             with codecs.open('data/translations_%s.csv' % lang[0], 'w', encoding='utf-8') as f:
                 for category in data['categories']:
-                    print category['name-' + lang[0]]
-                    f.write(u'"%s","%s"\n' %
+                    print(category['name-' + lang[0]])
+                    f.write('"%s","%s"\n' %
                             (category['id'], category.get('name-' + lang[0], '')))
                 for term in data['terms']:
-                    f.write(u'"%s","%s"\n' %
+                    f.write('"%s","%s"\n' %
                             (term['id'], term.get('name-' + lang[0], '')))
 
     def update_translations(self, data, terms_by_id, categories_by_id):
@@ -98,8 +98,8 @@ class Command(BaseCommand):
             if group_id != 'bg':
                 # print ('## ' + group_id + ':')
                 for path in paths:
-                    code = unicode(path.attributes['data-code'].value).encode("utf-8")
-                    name = unicode(path.attributes['data-name'].value).encode("utf-8")
+                    code = str(path.attributes['data-code'].value).encode("utf-8")
+                    name = str(path.attributes['data-name'].value).encode("utf-8")
                     if code != '' and code not in terms_by_id:
                         term = {
                             'id': code,
@@ -109,7 +109,7 @@ class Command(BaseCommand):
                         }
                         data['terms'].append(term)
                         terms_by_id[code] = term
-                        print 'Term added: ' + name + ' ' + code
+                        print('Term added: ' + name + ' ' + code)
                     flashcard_id = map_code + '-' + code
                     if code != '' and flashcard_id not in flashcards_by_id:
                         flashcard = {
@@ -120,6 +120,6 @@ class Command(BaseCommand):
                         }
                         data['flashcards'].append(flashcard)
                         flashcards_by_id[flashcard_id] = flashcard
-                        print 'Flashcard added: ' + name + ' ' + code
+                        print('Flashcard added: ' + name + ' ' + code)
                     if code != '' and map_code not in terms_by_id[code]['categories']:
                         terms_by_id[code]['categories'].append(map_code)

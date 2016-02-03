@@ -27,25 +27,25 @@ class Command(BaseCommand):
                     c['name-' + lang] = translations[c['id']]
                     c['content-' + lang] = c['content-en']
                 else:
-                    print ('Warning: missing translation for context %s' %
-                           c['name-en'])
+                    print(('Warning: missing translation for context %s' %
+                           c['name-en']))
             for t in data['terms']:
                 if t['id'] in translations:
                     t['name-' + lang] = translations[t['id']]
                 else:
                     t['name-' + lang] = t['name-en']
-                    print ('Warning: missing translation for term ' +
-                           '\'%s\', id: \'%s\'' % (t['name-en'], t['id']))
+                    print(('Warning: missing translation for term ' +
+                           '\'%s\', id: \'%s\'' % (t['name-en'], t['id'])))
             for c in data['categories']:
                 if c['id'] in translations:
                     c['name-' + lang] = translations[c['id']]
                 else:
-                    print ('Warning: missing translation for category ' +
-                           '\'%s\', id: \'%s\'' % (c['name-en'], c['id']))
+                    print(('Warning: missing translation for category ' +
+                           '\'%s\', id: \'%s\'' % (c['name-en'], c['id'])))
         with open(options['output'], 'w') as f:
             json.dump(data, f, indent=2)
-            print ('Updated flashcards written to file: \'%s\'' %
-                   options['output'])
+            print(('Updated flashcards written to file: \'%s\'' %
+                   options['output']))
 
     def get_translations(self, filename):
         translations = {}
