@@ -5064,12 +5064,6 @@
       "description": "Linz"
     }, 
     {
-      "term": "Passau", 
-      "id": "at-Passau", 
-      "context": "at", 
-      "description": "Passau"
-    }, 
-    {
       "term": "Salzburg", 
       "id": "at-Salzburg", 
       "context": "at", 
@@ -28337,14 +28331,6 @@
         "sk"
       ], 
       "name-cs": "\u017ditava"
-    }, 
-    {
-      "type": "city", 
-      "id": "Passau", 
-      "categories": [
-        "at"
-      ], 
-      "name-cs": "Passau"
     }, 
     {
       "type": "river", 
