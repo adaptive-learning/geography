@@ -252,6 +252,39 @@
       "name-es": "Reino Unido", 
       "content-de": "gb.svg", 
       "id": "gb"
+    }, 
+    {
+      "name-en": "Sweden", 
+      "name-de": "Schweden", 
+      "content-es": "se.svg", 
+      "name-cs": "\u0160v\u00e9dsko", 
+      "content-cs": "se.svg", 
+      "content-en": "se.svg", 
+      "name-es": "Suecia", 
+      "content-de": "se.svg", 
+      "id": "se"
+    }, 
+    {
+      "name-en": "Norway", 
+      "name-de": "Norwegen", 
+      "content-es": "no.svg", 
+      "name-cs": "Norsko", 
+      "content-cs": "no.svg", 
+      "content-en": "no.svg", 
+      "name-es": "Noruega", 
+      "content-de": "no.svg", 
+      "id": "no"
+    }, 
+    {
+      "name-en": "Finland", 
+      "name-de": "Finnland", 
+      "content-es": "fi.svg", 
+      "name-cs": "Finsko", 
+      "content-cs": "fi.svg", 
+      "content-en": "fi.svg", 
+      "name-es": "Finlandia", 
+      "content-de": "fi.svg", 
+      "id": "fi"
     }
   ], 
   "flashcards": [
@@ -11658,6 +11691,258 @@
       "id": "cz-Zirovnice", 
       "context": "cz", 
       "description": "Zirovnice"
+    }, 
+    {
+      "term": "Helsingborg", 
+      "id": "se-Helsingborg", 
+      "context": "se", 
+      "description": "Helsingborg"
+    }, 
+    {
+      "term": "Uppsala", 
+      "id": "se-Uppsala", 
+      "context": "se", 
+      "description": "Uppsala"
+    }, 
+    {
+      "term": "Stockholm", 
+      "id": "se-Stockholm", 
+      "context": "se", 
+      "description": "Stockholm"
+    }, 
+    {
+      "term": "Goteborg", 
+      "id": "se-Goteborg", 
+      "context": "se", 
+      "description": "Goteborg"
+    }, 
+    {
+      "term": "Karlstad", 
+      "id": "se-Karlstad", 
+      "context": "se", 
+      "description": "Karlstad"
+    }, 
+    {
+      "term": "Malmo", 
+      "id": "se-Malmo", 
+      "context": "se", 
+      "description": "Malmo"
+    }, 
+    {
+      "term": "Lund", 
+      "id": "se-Lund", 
+      "context": "se", 
+      "description": "Lund"
+    }, 
+    {
+      "term": "Norrkoping", 
+      "id": "se-Norrkoping", 
+      "context": "se", 
+      "description": "Norrkoping"
+    }, 
+    {
+      "term": "Gavle", 
+      "id": "se-Gavle", 
+      "context": "se", 
+      "description": "Gavle"
+    }, 
+    {
+      "term": "Vasteras", 
+      "id": "se-Vasteras", 
+      "context": "se", 
+      "description": "Vasteras"
+    }, 
+    {
+      "term": "Orebro", 
+      "id": "se-Orebro", 
+      "context": "se", 
+      "description": "Orebro"
+    }, 
+    {
+      "term": "Jonkoping", 
+      "id": "se-Jonkoping", 
+      "context": "se", 
+      "description": "Jonkoping"
+    }, 
+    {
+      "term": "Huddinge", 
+      "id": "se-Huddinge", 
+      "context": "se", 
+      "description": "Huddinge"
+    }, 
+    {
+      "term": "Linkoping", 
+      "id": "se-Linkoping", 
+      "context": "se", 
+      "description": "Linkoping"
+    }, 
+    {
+      "term": "Oslo", 
+      "id": "no-Oslo", 
+      "context": "no", 
+      "description": "Oslo"
+    }, 
+    {
+      "term": "Narvik", 
+      "id": "no-Narvik", 
+      "context": "no", 
+      "description": "Narvik"
+    }, 
+    {
+      "term": "Bergen", 
+      "id": "no-Bergen", 
+      "context": "no", 
+      "description": "Bergen"
+    }, 
+    {
+      "term": "Stavanger", 
+      "id": "no-Stavanger", 
+      "context": "no", 
+      "description": "Stavanger"
+    }, 
+    {
+      "term": "Drammen", 
+      "id": "no-Drammen", 
+      "context": "no", 
+      "description": "Drammen"
+    }, 
+    {
+      "term": "Fredrikstad", 
+      "id": "no-Fredrikstad", 
+      "context": "no", 
+      "description": "Fredrikstad"
+    }, 
+    {
+      "term": "Kristiansand", 
+      "id": "no-Kristiansand", 
+      "context": "no", 
+      "description": "Kristiansand"
+    }, 
+    {
+      "term": "Lillehammer", 
+      "id": "no-Lillehammer", 
+      "context": "no", 
+      "description": "Lillehammer"
+    }, 
+    {
+      "term": "Molde", 
+      "id": "no-Molde", 
+      "context": "no", 
+      "description": "Molde"
+    }, 
+    {
+      "term": "Skien", 
+      "id": "no-Skien", 
+      "context": "no", 
+      "description": "Skien"
+    }, 
+    {
+      "term": "Trondheim", 
+      "id": "no-Trondheim", 
+      "context": "no", 
+      "description": "Trondheim"
+    }, 
+    {
+      "term": "Asker", 
+      "id": "no-Asker", 
+      "context": "no", 
+      "description": "Asker"
+    }, 
+    {
+      "term": "Bodo", 
+      "id": "no-Bodo", 
+      "context": "no", 
+      "description": "Bodo"
+    }, 
+    {
+      "term": "Tromso", 
+      "id": "no-Tromso", 
+      "context": "no", 
+      "description": "Tromso"
+    }, 
+    {
+      "term": "Pori", 
+      "id": "fi-Pori", 
+      "context": "fi", 
+      "description": "Pori"
+    }, 
+    {
+      "term": "Turku", 
+      "id": "fi-Turku", 
+      "context": "fi", 
+      "description": "Turku"
+    }, 
+    {
+      "term": "Espoo", 
+      "id": "fi-Espoo", 
+      "context": "fi", 
+      "description": "Espoo"
+    }, 
+    {
+      "term": "Oulu", 
+      "id": "fi-Oulu", 
+      "context": "fi", 
+      "description": "Oulu"
+    }, 
+    {
+      "term": "Vantaa", 
+      "id": "fi-Vantaa", 
+      "context": "fi", 
+      "description": "Vantaa"
+    }, 
+    {
+      "term": "Tampere", 
+      "id": "fi-Tampere", 
+      "context": "fi", 
+      "description": "Tampere"
+    }, 
+    {
+      "term": "Kuopio", 
+      "id": "fi-Kuopio", 
+      "context": "fi", 
+      "description": "Kuopio"
+    }, 
+    {
+      "term": "Lahti", 
+      "id": "fi-Lahti", 
+      "context": "fi", 
+      "description": "Lahti"
+    }, 
+    {
+      "term": "Joensuu", 
+      "id": "fi-Joensuu", 
+      "context": "fi", 
+      "description": "Joensuu"
+    }, 
+    {
+      "term": "Kouvola", 
+      "id": "fi-Kouvola", 
+      "context": "fi", 
+      "description": "Kouvola"
+    }, 
+    {
+      "term": "Lappeenranta", 
+      "id": "fi-Lappeenranta", 
+      "context": "fi", 
+      "description": "Lappeenranta"
+    }, 
+    {
+      "term": "Hameenlinna", 
+      "id": "fi-Hameenlinna", 
+      "context": "fi", 
+      "description": "Hameenlinna"
+    }, 
+    {
+      "term": "Jyvaskyla", 
+      "id": "fi-Jyvaskyla", 
+      "context": "fi", 
+      "description": "Jyvaskyla"
+    }, 
+    {
+      "term": "Helsinki", 
+      "id": "fi-Helsinki", 
+      "context": "fi", 
+      "description": "Helsinki"
     }
   ], 
   "terms": [
@@ -15755,7 +16040,8 @@
       "type": "city", 
       "id": "Oslo", 
       "categories": [
-        "europe"
+        "europe", 
+        "no"
       ]
     }, 
     {
@@ -15799,7 +16085,8 @@
       "type": "city", 
       "id": "Helsinki", 
       "categories": [
-        "europe"
+        "europe", 
+        "fi"
       ]
     }, 
     {
@@ -15866,7 +16153,8 @@
       "type": "city", 
       "id": "Stockholm", 
       "categories": [
-        "europe"
+        "europe", 
+        "se"
       ]
     }, 
     {
@@ -29045,6 +29333,435 @@
         "cz"
       ], 
       "name-cs": "\u017dirovnice"
+    }, 
+    {
+      "name-en": "Helsingborg", 
+      "name-de": "Helsingborg", 
+      "name-cs": "Helsingborg", 
+      "name-es": "Helsingborg", 
+      "type": "city", 
+      "id": "Helsingborg", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "Uppsala", 
+      "name-de": "Uppsala", 
+      "name-cs": "Uppsala", 
+      "name-es": "Uppsala", 
+      "type": "city", 
+      "id": "Uppsala", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "G\u00f6teborg", 
+      "name-de": "G\u00f6teborg", 
+      "name-cs": "G\u00f6teborg", 
+      "name-es": "G\u00f6teborg", 
+      "type": "city", 
+      "id": "Goteborg", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "Karlstad", 
+      "name-de": "Karlstad", 
+      "name-cs": "Karlstad", 
+      "name-es": "Karlstad", 
+      "type": "city", 
+      "id": "Karlstad", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "Malm\u00f6", 
+      "name-de": "Malm\u00f6", 
+      "name-cs": "Malm\u00f6", 
+      "name-es": "Malm\u00f6", 
+      "type": "city", 
+      "id": "Malmo", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "Lund", 
+      "name-de": "Lund", 
+      "name-cs": "Lund", 
+      "name-es": "Lund", 
+      "type": "city", 
+      "id": "Lund", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "Norrk\u00f6ping", 
+      "name-de": "Norrk\u00f6ping", 
+      "name-cs": "Norrk\u00f6ping", 
+      "name-es": "Norrk\u00f6ping", 
+      "type": "city", 
+      "id": "Norrkoping", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "G\u00e4vle", 
+      "name-de": "G\u00e4vle", 
+      "name-cs": "G\u00e4vle", 
+      "name-es": "G\u00e4vle", 
+      "type": "city", 
+      "id": "Gavle", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "V\u00e4steras", 
+      "name-de": "V\u00e4steras", 
+      "name-cs": "V\u00e4steras", 
+      "name-es": "V\u00e4steras", 
+      "type": "city", 
+      "id": "Vasteras", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "\u00d6rebro", 
+      "name-de": "\u00d6rebro", 
+      "name-cs": "\u00d6rebro", 
+      "name-es": "\u00d6rebro", 
+      "type": "city", 
+      "id": "Orebro", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "J\u00f6nk\u00f6ping", 
+      "name-de": "J\u00f6nk\u00f6ping", 
+      "name-cs": "J\u00f6nk\u00f6ping", 
+      "name-es": "J\u00f6nk\u00f6ping", 
+      "type": "city", 
+      "id": "Jonkoping", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "Huddinge", 
+      "name-de": "Huddinge", 
+      "name-cs": "Huddinge", 
+      "name-es": "Huddinge", 
+      "type": "city", 
+      "id": "Huddinge", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "Link\u00f6ping", 
+      "name-de": "Link\u00f6ping", 
+      "name-cs": "Link\u00f6ping", 
+      "name-es": "Link\u00f6ping", 
+      "type": "city", 
+      "id": "Linkoping", 
+      "categories": [
+        "se"
+      ]
+    }, 
+    {
+      "name-en": "Narvik", 
+      "name-de": "Narvik", 
+      "name-cs": "Narvik", 
+      "name-es": "Narvik", 
+      "type": "city", 
+      "id": "Narvik", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Bergen", 
+      "name-de": "Bergen", 
+      "name-cs": "Bergen", 
+      "name-es": "Bergen", 
+      "type": "city", 
+      "id": "Bergen", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Stavanger", 
+      "name-de": "Stavanger", 
+      "name-cs": "Stavanger", 
+      "name-es": "Stavanger", 
+      "type": "city", 
+      "id": "Stavanger", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Drammen", 
+      "name-de": "Drammen", 
+      "name-cs": "Drammen", 
+      "name-es": "Drammen", 
+      "type": "city", 
+      "id": "Drammen", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Fredrikstad", 
+      "name-de": "Fredrikstad", 
+      "name-cs": "Fredrikstad", 
+      "name-es": "Fredrikstad", 
+      "type": "city", 
+      "id": "Fredrikstad", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Kristiansand", 
+      "name-de": "Kristiansand", 
+      "name-cs": "Kristiansand", 
+      "name-es": "Kristiansand", 
+      "type": "city", 
+      "id": "Kristiansand", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Lillehammer", 
+      "name-de": "Lillehammer", 
+      "name-cs": "Lillehammer", 
+      "name-es": "Lillehammer", 
+      "type": "city", 
+      "id": "Lillehammer", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Molde", 
+      "name-de": "Molde", 
+      "name-cs": "Molde", 
+      "name-es": "Molde", 
+      "type": "city", 
+      "id": "Molde", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Skien", 
+      "name-de": "Skien", 
+      "name-cs": "Skien", 
+      "name-es": "Skien", 
+      "type": "city", 
+      "id": "Skien", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Trondheim", 
+      "name-de": "Trondheim", 
+      "name-cs": "Trondheim", 
+      "name-es": "Trondheim", 
+      "type": "city", 
+      "id": "Trondheim", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Asker", 
+      "name-de": "Asker", 
+      "name-cs": "Asker", 
+      "name-es": "Asker", 
+      "type": "city", 
+      "id": "Asker", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Bodo", 
+      "name-de": "Bodo", 
+      "name-cs": "Bodo", 
+      "name-es": "Bodo", 
+      "type": "city", 
+      "id": "Bodo", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Tromso", 
+      "name-de": "Tromso", 
+      "name-cs": "Tromso", 
+      "name-es": "Tromso", 
+      "type": "city", 
+      "id": "Tromso", 
+      "categories": [
+        "no"
+      ]
+    }, 
+    {
+      "name-en": "Pori", 
+      "name-de": "Pori", 
+      "name-cs": "Pori", 
+      "name-es": "Pori", 
+      "type": "city", 
+      "id": "Pori", 
+      "categories": [
+        "fi"
+      ]
+    }, 
+    {
+      "name-en": "Turku", 
+      "name-de": "Turku", 
+      "name-cs": "Turku", 
+      "name-es": "Turku", 
+      "type": "city", 
+      "id": "Turku", 
+      "categories": [
+        "fi"
+      ]
+    }, 
+    {
+      "name-en": "Espoo", 
+      "name-de": "Espoo", 
+      "name-cs": "Espoo", 
+      "name-es": "Espoo", 
+      "type": "city", 
+      "id": "Espoo", 
+      "categories": [
+        "fi"
+      ]
+    }, 
+    {
+      "name-en": "Oulu", 
+      "name-de": "Oulu", 
+      "name-cs": "Oulu", 
+      "name-es": "Oulu", 
+      "type": "city", 
+      "id": "Oulu", 
+      "categories": [
+        "fi"
+      ]
+    }, 
+    {
+      "name-en": "Vantaa", 
+      "name-de": "Vantaa", 
+      "name-cs": "Vantaa", 
+      "name-es": "Vantaa", 
+      "type": "city", 
+      "id": "Vantaa", 
+      "categories": [
+        "fi"
+      ]
+    }, 
+    {
+      "name-en": "Tampere", 
+      "name-de": "Tampere", 
+      "name-cs": "Tampere", 
+      "name-es": "Tampere", 
+      "type": "city", 
+      "id": "Tampere", 
+      "categories": [
+        "fi"
+      ]
+    }, 
+    {
+      "name-en": "Kuopio", 
+      "name-de": "Kuopio", 
+      "name-cs": "Kuopio", 
+      "name-es": "Kuopio", 
+      "type": "city", 
+      "id": "Kuopio", 
+      "categories": [
+        "fi"
+      ]
+    }, 
+    {
+      "name-en": "Lahti", 
+      "name-de": "Lahti", 
+      "name-cs": "Lahti", 
+      "name-es": "Lahti", 
+      "type": "city", 
+      "id": "Lahti", 
+      "categories": [
+        "fi"
+      ]
+    }, 
+    {
+      "name-en": "Joensuu", 
+      "name-de": "Joensuu", 
+      "name-cs": "Joensuu", 
+      "name-es": "Joensuu", 
+      "type": "city", 
+      "id": "Joensuu", 
+      "categories": [
+        "fi"
+      ]
+    }, 
+    {
+      "name-en": "Kouvola", 
+      "name-de": "Kouvola", 
+      "name-cs": "Kouvola", 
+      "name-es": "Kouvola", 
+      "type": "city", 
+      "id": "Kouvola", 
+      "categories": [
+        "fi"
+      ]
+    }, 
+    {
+      "name-en": "Lappeenranta", 
+      "name-de": "Lappeenranta", 
+      "name-cs": "Lappeenranta", 
+      "name-es": "Lappeenranta", 
+      "type": "city", 
+      "id": "Lappeenranta", 
+      "categories": [
+        "fi"
+      ]
+    }, 
+    {
+      "name-en": "H\u00e4meenlinna", 
+      "name-de": "H\u00e4meenlinna", 
+      "name-cs": "H\u00e4meenlinna", 
+      "name-es": "H\u00e4meenlinna", 
+      "type": "city", 
+      "id": "Hameenlinna", 
+      "categories": [
+        "fi"
+      ]
+    }, 
+    {
+      "name-en": "Jyv\u00e4skyl\u00e4", 
+      "name-de": "Jyv\u00e4skyl\u00e4", 
+      "name-cs": "Jyv\u00e4skyl\u00e4", 
+      "name-es": "Jyv\u00e4skyl\u00e4", 
+      "type": "city", 
+      "id": "Jyvaskyla", 
+      "categories": [
+        "fi"
+      ]
     }
   ], 
   "categories": [
@@ -29231,6 +29948,30 @@
       "name-es": "Canad\u00e1", 
       "type": "state", 
       "id": "ca"
+    }, 
+    {
+      "name-en": "Sweden", 
+      "name-de": "Schweden", 
+      "name-cs": "\u0160v\u00e9dsko", 
+      "name-es": "Suecia", 
+      "type": "state", 
+      "id": "se"
+    }, 
+    {
+      "name-en": "Norway", 
+      "name-de": "Norwegen", 
+      "name-cs": "Norsko", 
+      "name-es": "Noruega", 
+      "type": "state", 
+      "id": "no"
+    }, 
+    {
+      "name-en": "Finland", 
+      "name-de": "Finnland", 
+      "name-cs": "Finsko", 
+      "name-es": "Finlandia", 
+      "type": "state", 
+      "id": "fi"
     }
   ]
 }
