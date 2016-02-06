@@ -55,6 +55,14 @@ angular.module('proso.geography.map', [])
         }
       };
 
+      layerConfig.border = {
+        'styles' : {
+          'fill' : colors.BRIGHT_GRAY,
+          'stroke-width' : STROKE_WIDTH,
+          'transform' : ''
+        }
+      };
+
       layerConfig.state = {
         'styles' : {
           'fill' : function(d) {
@@ -150,7 +158,7 @@ angular.module('proso.geography.map', [])
       for (var i in layersConfig) {
         map.addLayer(i, layersConfig[i]);
         var l = map.getLayer(i);
-        if (l && l.id != 'bg') {
+        if (l && l.id != 'bg' && l.id != 'border') {
           layersArray.push(l);
           _hideLayer(l);
         }
@@ -302,6 +310,7 @@ angular.module('proso.geography.map', [])
           return min_pop_ratios[i][1];
         }
       }
+      return min_pop_ratios[2][1];
     };
   })
 

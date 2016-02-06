@@ -95,7 +95,7 @@ class Command(BaseCommand):
         for g in groups:
             paths = g.getElementsByTagName('path') + g.getElementsByTagName('circle')
             group_id = g.attributes['id'].value
-            if group_id != 'bg':
+            if group_id != 'bg' and group_id != 'border':
                 # print ('## ' + group_id + ':')
                 for path in paths:
                     code = unicode(path.attributes['data-code'].value).encode("utf-8")
