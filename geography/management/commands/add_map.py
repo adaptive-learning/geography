@@ -22,12 +22,16 @@ class Command(BaseCommand):
         if len(args) < 1:
             raise CommandError(
                 "Not enough arguments. Two arguments required: " +
-                " <flashcards-file> [<map-code>]")
+                " <flashcards-file> [<map-code>] [<lang-code>]")
         map_code = None
-        if len(args) == 2:
+        if len(args) > 1:
             map_code = args[1]
         with open(args[0], 'r') as json_file:
             data = json.load(json_file, 'utf-8')
+        if len(args) > 2:
+            self.lang = args[2]
+        else:
+            self.lang = 'all'
 
         contexts_by_id = {}
         for c in data['contexts']:
@@ -45,7 +49,7 @@ class Command(BaseCommand):
         else:
             self.add_map(map_code, data, terms_by_id)
             if map_code not in contexts_by_id:
-                print "missing map: %s" % map_code
+                self.add_context(data, map_code)
 
         self.update_translations(data, terms_by_id, categories_by_id)
         # self.generate_translations_file(data)
@@ -54,6 +58,37 @@ class Command(BaseCommand):
             json.dump(data, f, indent=2)
             print ('Updated flashcards written to file: \'%s\'' %
                    options['output'])
+
+    def add_context(self, data, map_code):
+        names = {}
+        for lang in settings.LANGUAGES:
+            names[lang[0]] = self.get_translation(map_code, lang[0])
+        context = {
+            'id': map_code,
+        }
+        category = {
+            'id': map_code,
+            'type': 'state',  # TODO migh be not true in future
+        }
+        for lang in names.keys():
+            context.update({
+                'content-' + lang: map_code + '.svg',
+                'name-' + lang: names[lang],
+            })
+            category.update({
+                'name-' + lang: names[lang],
+            })
+        data['contexts'].append(context)
+        data['categories'].append(category)
+        print "missing map added: %s" % map_code
+
+    def get_translation(self, id, lang):
+        with open('data/translations_%s.csv' % lang, 'r') as csvfile:
+            translations_reader = csv.reader(csvfile, delimiter=',')
+            for row in translations_reader:
+                code, name = row
+                if code == id:
+                    return name
 
     def update_all_maps(self, data, terms_by_id):
         for f in sorted(os.listdir(os.path.join(settings.BASE_DIR, self.MAPS_DIR))):
@@ -103,10 +138,17 @@ class Command(BaseCommand):
                     if code != '' and code not in terms_by_id:
                         term = {
                             'id': code,
-                            'name-cs': name,
                             'type': group_id,
                             'categories': [map_code],
                         }
+                        if self.lang == 'all':
+                            languages = [l[0] for l in settings.LANGUAGES]
+                        else:
+                            languages = [self.lang]
+                        for lang in languages:
+                            term.update({
+                                'name-' + lang: name,
+                            })
                         data['terms'].append(term)
                         terms_by_id[code] = term
                         print 'Term added: ' + name + ' ' + code
