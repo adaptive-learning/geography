@@ -476,9 +476,9 @@ angular.module('proso.geography.map', [])
         showSummaryTooltips : function(questions) {
           var places = {};
           questions.map(function(q){
-            places[q.asked_code] = {
-              'code' : q.asked_code,
-              'name' : q.place,
+            places[q.description] = {
+              'code' : q.description,
+              'term' : q.term,
               'summary' : true,
             };
           });

@@ -212,7 +212,7 @@ angular.module('proso.geography.controllers', [])
             $scope.showSummary = true;
             $scope.imageController.clearHighlights();
             $scope.imageController.hideLayers();
-            //$scope.imageController.showSummaryTooltips($scope.summary.flashcards);
+            $scope.imageController.showSummaryTooltips($scope.questions);
             angular.forEach($scope.summary.flashcards, function(q) {
                 var correct = q.description == q.answered_code;
                 $scope.imageController.showLayerContaining(q.description);
