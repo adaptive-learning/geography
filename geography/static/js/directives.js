@@ -328,4 +328,18 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
         });
       }
     };
+  }])
+
+  .directive('signInBanner', ['userService', 'signupModal',
+      function(userService, signupModal) {
+    return {
+      restrict: 'A',
+      templateUrl : '/static/tpl/sign_in_banner.html',
+      link: function ($scope) {
+        $scope.userService = userService;
+        $scope.openSignupModal = function() {
+            signupModal.open();
+        };
+      }
+    };
   }]);
