@@ -11943,6 +11943,474 @@
       "id": "fi-Helsinki", 
       "context": "fi", 
       "description": "Helsinki"
+    }, 
+    {
+      "term": "al-by-city", 
+      "id": "europe-al-by-city", 
+      "context": "europe", 
+      "description": "al"
+    }, 
+    {
+      "term": "be-by-city", 
+      "id": "europe-be-by-city", 
+      "context": "europe", 
+      "description": "be"
+    }, 
+    {
+      "term": "by-by-city", 
+      "id": "europe-by-by-city", 
+      "context": "europe", 
+      "description": "by"
+    }, 
+    {
+      "term": "ba-by-city", 
+      "id": "europe-ba-by-city", 
+      "context": "europe", 
+      "description": "ba"
+    }, 
+    {
+      "term": "bg-by-city", 
+      "id": "europe-bg-by-city", 
+      "context": "europe", 
+      "description": "bg"
+    }, 
+    {
+      "term": "me-by-city", 
+      "id": "europe-me-by-city", 
+      "context": "europe", 
+      "description": "me"
+    }, 
+    {
+      "term": "cz-by-city", 
+      "id": "europe-cz-by-city", 
+      "context": "europe", 
+      "description": "cz"
+    }, 
+    {
+      "term": "dk-by-city", 
+      "id": "europe-dk-by-city", 
+      "context": "europe", 
+      "description": "dk"
+    }, 
+    {
+      "term": "ee-by-city", 
+      "id": "europe-ee-by-city", 
+      "context": "europe", 
+      "description": "ee"
+    }, 
+    {
+      "term": "fi-by-city", 
+      "id": "europe-fi-by-city", 
+      "context": "europe", 
+      "description": "fi"
+    }, 
+    {
+      "term": "fr-by-city", 
+      "id": "europe-fr-by-city", 
+      "context": "europe", 
+      "description": "fr"
+    }, 
+    {
+      "term": "hr-by-city", 
+      "id": "europe-hr-by-city", 
+      "context": "europe", 
+      "description": "hr"
+    }, 
+    {
+      "term": "ie-by-city", 
+      "id": "europe-ie-by-city", 
+      "context": "europe", 
+      "description": "ie"
+    }, 
+    {
+      "term": "is-by-city", 
+      "id": "europe-is-by-city", 
+      "context": "europe", 
+      "description": "is"
+    }, 
+    {
+      "term": "it-by-city", 
+      "id": "europe-it-by-city", 
+      "context": "europe", 
+      "description": "it"
+    }, 
+    {
+      "term": "lt-by-city", 
+      "id": "europe-lt-by-city", 
+      "context": "europe", 
+      "description": "lt"
+    }, 
+    {
+      "term": "lv-by-city", 
+      "id": "europe-lv-by-city", 
+      "context": "europe", 
+      "description": "lv"
+    }, 
+    {
+      "term": "lu-by-city", 
+      "id": "europe-lu-by-city", 
+      "context": "europe", 
+      "description": "lu"
+    }, 
+    {
+      "term": "hu-by-city", 
+      "id": "europe-hu-by-city", 
+      "context": "europe", 
+      "description": "hu"
+    }, 
+    {
+      "term": "mk-by-city", 
+      "id": "europe-mk-by-city", 
+      "context": "europe", 
+      "description": "mk"
+    }, 
+    {
+      "term": "md-by-city", 
+      "id": "europe-md-by-city", 
+      "context": "europe", 
+      "description": "md"
+    }, 
+    {
+      "term": "de-by-city", 
+      "id": "europe-de-by-city", 
+      "context": "europe", 
+      "description": "de"
+    }, 
+    {
+      "term": "nl-by-city", 
+      "id": "europe-nl-by-city", 
+      "context": "europe", 
+      "description": "nl"
+    }, 
+    {
+      "term": "no-by-city", 
+      "id": "europe-no-by-city", 
+      "context": "europe", 
+      "description": "no"
+    }, 
+    {
+      "term": "pl-by-city", 
+      "id": "europe-pl-by-city", 
+      "context": "europe", 
+      "description": "pl"
+    }, 
+    {
+      "term": "pt-by-city", 
+      "id": "europe-pt-by-city", 
+      "context": "europe", 
+      "description": "pt"
+    }, 
+    {
+      "term": "at-by-city", 
+      "id": "europe-at-by-city", 
+      "context": "europe", 
+      "description": "at"
+    }, 
+    {
+      "term": "ro-by-city", 
+      "id": "europe-ro-by-city", 
+      "context": "europe", 
+      "description": "ro"
+    }, 
+    {
+      "term": "ru-by-city", 
+      "id": "europe-ru-by-city", 
+      "context": "europe", 
+      "description": "ru"
+    }, 
+    {
+      "term": "gr-by-city", 
+      "id": "europe-gr-by-city", 
+      "context": "europe", 
+      "description": "gr"
+    }, 
+    {
+      "term": "sk-by-city", 
+      "id": "europe-sk-by-city", 
+      "context": "europe", 
+      "description": "sk"
+    }, 
+    {
+      "term": "si-by-city", 
+      "id": "europe-si-by-city", 
+      "context": "europe", 
+      "description": "si"
+    }, 
+    {
+      "term": "gb-by-city", 
+      "id": "europe-gb-by-city", 
+      "context": "europe", 
+      "description": "gb"
+    }, 
+    {
+      "term": "rs-by-city", 
+      "id": "europe-rs-by-city", 
+      "context": "europe", 
+      "description": "rs"
+    }, 
+    {
+      "term": "es-by-city", 
+      "id": "europe-es-by-city", 
+      "context": "europe", 
+      "description": "es"
+    }, 
+    {
+      "term": "se-by-city", 
+      "id": "europe-se-by-city", 
+      "context": "europe", 
+      "description": "se"
+    }, 
+    {
+      "term": "ch-by-city", 
+      "id": "europe-ch-by-city", 
+      "context": "europe", 
+      "description": "ch"
+    }, 
+    {
+      "term": "ua-by-city", 
+      "id": "europe-ua-by-city", 
+      "context": "europe", 
+      "description": "ua"
+    }, 
+    {
+      "term": "xk-by-city", 
+      "id": "europe-xk-by-city", 
+      "context": "europe", 
+      "description": "xk"
+    }, 
+    {
+      "term": "Luxembourg-by-state", 
+      "id": "europe-Luxembourg-by-state", 
+      "context": "europe", 
+      "description": "Luxembourg"
+    }, 
+    {
+      "term": "Ljubljana-by-state", 
+      "id": "europe-Ljubljana-by-state", 
+      "context": "europe", 
+      "description": "Ljubljana"
+    }, 
+    {
+      "term": "Bratislava-by-state", 
+      "id": "europe-Bratislava-by-state", 
+      "context": "europe", 
+      "description": "Bratislava"
+    }, 
+    {
+      "term": "Podgorica-by-state", 
+      "id": "europe-Podgorica-by-state", 
+      "context": "europe", 
+      "description": "Podgorica"
+    }, 
+    {
+      "term": "Bern-by-state", 
+      "id": "europe-Bern-by-state", 
+      "context": "europe", 
+      "description": "Bern"
+    }, 
+    {
+      "term": "Pristina-by-state", 
+      "id": "europe-Pristina-by-state", 
+      "context": "europe", 
+      "description": "Pristina"
+    }, 
+    {
+      "term": "Skopje-by-state", 
+      "id": "europe-Skopje-by-state", 
+      "context": "europe", 
+      "description": "Skopje"
+    }, 
+    {
+      "term": "Reykjavik-by-state", 
+      "id": "europe-Reykjavik-by-state", 
+      "context": "europe", 
+      "description": "Reykjavik"
+    }, 
+    {
+      "term": "Chisinau-by-state", 
+      "id": "europe-Chisinau-by-state", 
+      "context": "europe", 
+      "description": "Chisinau"
+    }, 
+    {
+      "term": "Vilnius-by-state", 
+      "id": "europe-Vilnius-by-state", 
+      "context": "europe", 
+      "description": "Vilnius"
+    }, 
+    {
+      "term": "Riga-by-state", 
+      "id": "europe-Riga-by-state", 
+      "context": "europe", 
+      "description": "Riga"
+    }, 
+    {
+      "term": "Zagreb-by-state", 
+      "id": "europe-Zagreb-by-state", 
+      "context": "europe", 
+      "description": "Zagreb"
+    }, 
+    {
+      "term": "Tallinn-by-state", 
+      "id": "europe-Tallinn-by-state", 
+      "context": "europe", 
+      "description": "Tallinn"
+    }, 
+    {
+      "term": "Belgrade-by-state", 
+      "id": "europe-Belgrade-by-state", 
+      "context": "europe", 
+      "description": "Belgrade"
+    }, 
+    {
+      "term": "Tirana-by-state", 
+      "id": "europe-Tirana-by-state", 
+      "context": "europe", 
+      "description": "Tirana"
+    }, 
+    {
+      "term": "Sofia-by-state", 
+      "id": "europe-Sofia-by-state", 
+      "context": "europe", 
+      "description": "Sofia"
+    }, 
+    {
+      "term": "Minsk-by-state", 
+      "id": "europe-Minsk-by-state", 
+      "context": "europe", 
+      "description": "Minsk"
+    }, 
+    {
+      "term": "Sarajevo-by-state", 
+      "id": "europe-Sarajevo-by-state", 
+      "context": "europe", 
+      "description": "Sarajevo"
+    }, 
+    {
+      "term": "Budapest-by-state", 
+      "id": "europe-Budapest-by-state", 
+      "context": "europe", 
+      "description": "Budapest"
+    }, 
+    {
+      "term": "Bucharest-by-state", 
+      "id": "europe-Bucharest-by-state", 
+      "context": "europe", 
+      "description": "Bucharest"
+    }, 
+    {
+      "term": "Lisbon-by-state", 
+      "id": "europe-Lisbon-by-state", 
+      "context": "europe", 
+      "description": "Lisbon"
+    }, 
+    {
+      "term": "Oslo-by-state", 
+      "id": "europe-Oslo-by-state", 
+      "context": "europe", 
+      "description": "Oslo"
+    }, 
+    {
+      "term": "Warsaw-by-state", 
+      "id": "europe-Warsaw-by-state", 
+      "context": "europe", 
+      "description": "Warsaw"
+    }, 
+    {
+      "term": "Dublin-by-state", 
+      "id": "europe-Dublin-by-state", 
+      "context": "europe", 
+      "description": "Dublin"
+    }, 
+    {
+      "term": "Prague-by-state", 
+      "id": "europe-Prague-by-state", 
+      "context": "europe", 
+      "description": "Prague"
+    }, 
+    {
+      "term": "Helsinki-by-state", 
+      "id": "europe-Helsinki-by-state", 
+      "context": "europe", 
+      "description": "Helsinki"
+    }, 
+    {
+      "term": "Kobenhavn-by-state", 
+      "id": "europe-Kobenhavn-by-state", 
+      "context": "europe", 
+      "description": "Kobenhavn"
+    }, 
+    {
+      "term": "Brussels-by-state", 
+      "id": "europe-Brussels-by-state", 
+      "context": "europe", 
+      "description": "Brussels"
+    }, 
+    {
+      "term": "Kiev-by-state", 
+      "id": "europe-Kiev-by-state", 
+      "context": "europe", 
+      "description": "Kiev"
+    }, 
+    {
+      "term": "Madrid-by-state", 
+      "id": "europe-Madrid-by-state", 
+      "context": "europe", 
+      "description": "Madrid"
+    }, 
+    {
+      "term": "Stockholm-by-state", 
+      "id": "europe-Stockholm-by-state", 
+      "context": "europe", 
+      "description": "Stockholm"
+    }, 
+    {
+      "term": "Amsterdam-by-state", 
+      "id": "europe-Amsterdam-by-state", 
+      "context": "europe", 
+      "description": "Amsterdam"
+    }, 
+    {
+      "term": "Berlin-by-state", 
+      "id": "europe-Berlin-by-state", 
+      "context": "europe", 
+      "description": "Berlin"
+    }, 
+    {
+      "term": "Athens-by-state", 
+      "id": "europe-Athens-by-state", 
+      "context": "europe", 
+      "description": "Athens"
+    }, 
+    {
+      "term": "Vienna-by-state", 
+      "id": "europe-Vienna-by-state", 
+      "context": "europe", 
+      "description": "Vienna"
+    }, 
+    {
+      "term": "London-by-state", 
+      "id": "europe-London-by-state", 
+      "context": "europe", 
+      "description": "London"
+    }, 
+    {
+      "term": "Moscow-by-state", 
+      "id": "europe-Moscow-by-state", 
+      "context": "europe", 
+      "description": "Moscow"
+    }, 
+    {
+      "term": "Rome-by-state", 
+      "id": "europe-Rome-by-state", 
+      "context": "europe", 
+      "description": "Rome"
+    }, 
+    {
+      "term": "Paris-by-state", 
+      "id": "europe-Paris-by-state", 
+      "context": "europe", 
+      "description": "Paris"
     }
   ], 
   "terms": [
@@ -29762,6 +30230,708 @@
       "categories": [
         "fi"
       ]
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Tirana", 
+      "id": "al-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Tirana"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Brussels", 
+      "id": "be-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Brusel"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Minsk", 
+      "id": "by-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Minsk"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Sarajevo", 
+      "id": "ba-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Sarajevo"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Sofia", 
+      "id": "bg-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Sofie"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Podgorica", 
+      "id": "me-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Podgorica"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Prague", 
+      "id": "cz-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Praha"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "K\u00f8benhavn", 
+      "id": "dk-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Koda\u0148"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Tallinn", 
+      "id": "ee-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Talinn"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Helsinki", 
+      "id": "fi-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Helsinki"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Paris", 
+      "id": "fr-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Pa\u0159\u00ed\u017e"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Zagreb", 
+      "id": "hr-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Z\u00e1h\u0159eb"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Dublin", 
+      "id": "ie-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Dublin"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Reykjav\u00edk", 
+      "id": "is-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Reykjav\u00edk"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Rome", 
+      "id": "it-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "\u0158\u00edm"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Vilnius", 
+      "id": "lt-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Vilnius"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Riga", 
+      "id": "lv-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Riga"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Luxembourg", 
+      "id": "lu-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Lucemburk"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Budapest", 
+      "id": "hu-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Budape\u0161\u0165"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Skopje", 
+      "id": "mk-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Skopje"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Chisinau", 
+      "id": "md-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Ki\u0161in\u011bv"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Berlin", 
+      "id": "de-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Berl\u00edn"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Amsterdam", 
+      "id": "nl-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Amsterdam"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Oslo", 
+      "id": "no-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Oslo"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Warsaw", 
+      "id": "pl-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Var\u0161ava"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Lisbon", 
+      "id": "pt-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Lisabon"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Vienna", 
+      "id": "at-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "V\u00edde\u0148"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Bucharest", 
+      "id": "ro-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Bukure\u0161\u0165"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Moscow", 
+      "id": "ru-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Moskva"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Athens", 
+      "id": "gr-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Ath\u00e9ny"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Bratislava", 
+      "id": "sk-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Bratislava"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Ljubljana", 
+      "id": "si-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Lubla\u0148"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "London", 
+      "id": "gb-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Lond\u00fdn"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Belgrade", 
+      "id": "rs-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "B\u011blehrad"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Madrid", 
+      "id": "es-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Madrid"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Stockholm", 
+      "id": "se-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Stockholm"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Bern", 
+      "id": "ch-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Bern"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Kiev", 
+      "id": "ua-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Kyjev"
+    }, 
+    {
+      "type": "state-by-city", 
+      "name-en": "Pristina", 
+      "id": "xk-by-city", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Pri\u0161tina"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Luxembourg", 
+      "id": "Luxembourg-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Lucembursko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Slovenia", 
+      "id": "Ljubljana-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Slovinsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Slovakia", 
+      "id": "Bratislava-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Slovensko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Montenegro", 
+      "id": "Podgorica-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "\u010cern\u00e1 Hora"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Switzerland", 
+      "id": "Bern-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "\u0160v\u00fdcarsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Kosovo", 
+      "id": "Pristina-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Kosovo"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Macedonia", 
+      "id": "Skopje-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Makedonie"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Iceland", 
+      "id": "Reykjavik-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Island"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Moldova", 
+      "id": "Chisinau-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Moldavsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Lithuania", 
+      "id": "Vilnius-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Litva"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Latvia", 
+      "id": "Riga-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Loty\u0161sko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Croatia", 
+      "id": "Zagreb-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Chorvatsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Estonia", 
+      "id": "Tallinn-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Estonsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Serbia", 
+      "id": "Belgrade-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Srbsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Albania", 
+      "id": "Tirana-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Alb\u00e1nie"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Bulgaria", 
+      "id": "Sofia-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Bulharsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Belarus", 
+      "id": "Minsk-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "B\u011blorusko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Bosnia and Herz.", 
+      "id": "Sarajevo-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Bosna a Hercegovina"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Hungary", 
+      "id": "Budapest-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Ma\u010farsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Romania", 
+      "id": "Bucharest-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Rumunsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Portugal", 
+      "id": "Lisbon-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Portugalsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Norway", 
+      "id": "Oslo-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Norsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Poland", 
+      "id": "Warsaw-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Polsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Ireland", 
+      "id": "Dublin-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Irsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Czech Rep.", 
+      "id": "Prague-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "\u010cesk\u00e1 republika"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Finland", 
+      "id": "Helsinki-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Finsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Denmark", 
+      "id": "Kobenhavn-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "D\u00e1nsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Belgium", 
+      "id": "Brussels-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Belgie"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Ukraine", 
+      "id": "Kiev-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Ukrajina"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Spain", 
+      "id": "Madrid-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "\u0160pan\u011blsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Sweden", 
+      "id": "Stockholm-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "\u0160v\u00e9dsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Netherlands", 
+      "id": "Amsterdam-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Nizozemsko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Germany", 
+      "id": "Berlin-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "N\u011bmecko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Greece", 
+      "id": "Athens-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "\u0158ecko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Austria", 
+      "id": "Vienna-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Rakousko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "United Kingdom", 
+      "id": "London-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Spojen\u00e9 kr\u00e1lovstv\u00ed"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Russia", 
+      "id": "Moscow-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Rusko"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "Italy", 
+      "id": "Rome-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "It\u00e1lie"
+    }, 
+    {
+      "type": "city-by-state", 
+      "name-en": "France", 
+      "id": "Paris-by-state", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Francie"
     }
   ], 
   "categories": [
