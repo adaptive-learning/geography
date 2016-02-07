@@ -18,6 +18,7 @@ angular.module('proso.geography.map', [])
     'BAD': '#e23',
     'NEUTRAL': '#777',
     'BRIGHT_GRAY' : '#ddd',
+    'BRIGHTER_GRAY' : '#eee',
     'WATER_COLOR' : '#73c5ef'
   })
 
@@ -57,7 +58,7 @@ angular.module('proso.geography.map', [])
 
       layerConfig.border = {
         'styles' : {
-          'fill' : colors.BRIGHT_GRAY,
+          'fill' : colors.BRIGHTER_GRAY,
           'stroke-width' : STROKE_WIDTH,
           'transform' : ''
         }
