@@ -266,7 +266,7 @@ angular.module('proso.geography.map', [])
       return function(d) {
         var place = places && places[d.code];
         var name = ( place ?
-          '<div class="label label-default">' +
+          '<div class="label label-default label-title">' +
             '<i class="flag-' + d.code + '"></i> ' +
             place.term.name +
             '</div>' :
@@ -282,6 +282,14 @@ angular.module('proso.geography.map', [])
             (d.population ? gettextCatalog.getString('Počet obyvatel') + ': ' +
               '<span class="badge badge-default">' +
                 $filter('number')(d.population) +
+              '</span><br><br>' : '') +
+            (place['state-by-city'] ? gettextCatalog.getString('Hlavní město') + ': ' +
+              '<span class="label label-default">' +
+               place['state-by-city']  +
+              '</span><br><br>' : '') +
+            (place['city-by-state'] ? gettextCatalog.getString('Stát') + ': ' +
+              '<span class="label label-default">' +
+               place['city-by-state']  +
               '</span><br><br>' : '') +
           '</div>' :
             (place && place.summary ?

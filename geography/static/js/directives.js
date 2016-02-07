@@ -13,12 +13,24 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
           placement: 'bottom',
           container: 'body',
           title : '<div class="skill-tooltip">' +
-                gettextCatalog.getString('Odhad znalosti') +
-                ' <span class="badge badge-default">' +
-                  '<i class="color-indicator" style="background-color :' +
-                  colorScale($scope.place.prediction).hex() + '"></i>' +
-                  (10 * $scope.place.prediction) + ' / 10 ' +
-                '</span>' +
+                '<div>' +
+                  gettextCatalog.getString('Odhad znalosti') +
+                  ' <span class="badge badge-default">' +
+                    '<i class="color-indicator" style="background-color :' +
+                    colorScale($scope.place.prediction).hex() + '"></i>' +
+                    (10 * $scope.place.prediction) + ' / 10 ' +
+                  '</span>' +
+                '</div>' +
+                ($scope.place['state-by-city'] ? '<div>' +
+                  gettextCatalog.getString('Hlavní město') + ': ' +
+                  ' <span class="label label-default">' +
+                   $scope.place['state-by-city']  +
+                  '</span></div>' : '') +
+                ($scope.place['city-by-state'] ? '<div>' +
+                  gettextCatalog.getString('Stát') + ': ' +
+                  ' <span class="label label-default">' +
+                   $scope.place['city-by-state']  +
+                  '</span></div>' : '') +
                '</div>'
         });
       }

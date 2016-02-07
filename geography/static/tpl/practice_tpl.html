@@ -76,7 +76,7 @@
                 ng-click="map.highlightState(fc.description)"
                 class="label {{fc.description != fc.answered_code &&
                   'label-unlearned' || 'label-learned' }} ">
-            <i class="flag-{{fc.description}}"></i> {{fc.term.name}}
+            <span term-label="{{fc.term}}"></span>
           </span>
         </div>
         <div class="col-sm-6" ng-if="userService.user.username" >
