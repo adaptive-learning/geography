@@ -67,6 +67,16 @@ angular.module('proso.geography.controllers', [])
                 pt.places = data.filter(function(fc) {
                     return fc.term.type == pt.identifier;
                 });
+                pt.subtypes = pt.subtypes || [];
+                pt.subtypes = pt.subtypes.map(function(st) {
+                    st.places = data.filter(function(fc) {
+                        return fc.term.type == st.identifier;
+                    });
+                    return st;
+                }).filter(function(pt) {
+                    return pt.places.length;
+                });
+                pt.subtypes = pt.subtypes.length ? pt.subtypes : undefined;
                 return pt;
             }).filter(function(pt) {
                 return pt.places.length;
@@ -80,7 +90,15 @@ angular.module('proso.geography.controllers', [])
             $scope.imageController.highlightItem(place.description);
         };
 
+        $scope.setClickHack = function(type) {
+          $scope.clickHack = true;
+        };
+
         $scope.updateMap = function(type) {
+            if ($scope.clickHack) {
+              $scope.clickHack = false;
+              return;
+            }
             type.hidden = !type.hidden;
             $scope.imageController.updateItems($scope.placesTypes);
         };

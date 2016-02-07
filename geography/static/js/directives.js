@@ -25,6 +25,28 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
     };
   }])
 
+  .directive('termLabel', ['gettextCatalog', function(gettextCatalog) {
+    return {
+      restrict : 'A',
+      template : '<i class="flag-{{code}}"></i> {{name}}',
+      link : function($scope, elem, attrs) {
+        var term = angular.fromJson(attrs.termLabel);
+        $scope.code = term.description;
+        $scope.name = term.name;
+        if (term.type == 'state-by-city') {
+          $scope.code = 'none';
+          $scope.name = gettextCatalog.getString(
+            'stát s hl. městem') + ' ' + term.name;
+        }
+        if (term.type == 'city-by-state') {
+          $scope.code = 'none';
+          $scope.name = gettextCatalog.getString(
+            'hl. město státu') + ' ' + term.name;
+        }
+      }
+    };
+  }])
+
   .directive('blindMap', ['mapControler', 'places', 'singleWindowResizeFn',
         'getMapResizeFunction', '$parse',
       function(mapControler, places, singleWindowResizeFn,
