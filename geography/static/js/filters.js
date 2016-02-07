@@ -88,10 +88,13 @@ angular.module('proso.geography.filters', [])
     };
   })
 
-  .filter('codeToName',['flashcardService', function(flashcardService) {
+  .filter('codeToTerm',['flashcardService', 'gettextCatalog',
+      function(flashcardService, gettextCatalog) {
     return function(code) {
       var fc = flashcardService.getFlashcardByDescription(code);
-      return fc ? fc.term.name : "Neznámý";
+      return fc ? fc.term : {
+        name: gettextCatalog.getString("Neznámý"),
+      };
     };
   }])
 
