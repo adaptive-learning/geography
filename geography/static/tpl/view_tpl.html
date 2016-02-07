@@ -26,7 +26,7 @@
       class="thumbnails fade-show-hide"
       ng-repeat="typeCat in typeCategories">
     <div collapse="typeCat.hidden">
-      <li class="col-sm-{{filteredTypes.length|colNum}}" 
+      <li class="col-sm-{{filteredTypes.length|colNum}} long-background" 
           ng-repeat="type in filteredTypes">
         <div ng-click="updateMap(type)"
             class="collapse-control">
@@ -35,9 +35,33 @@
             {{type.name}}
           </h3>
           <a href="/practice/{{part}}/{{type.identifier}}" 
-             class="btn btn-primary pull-right"  >
+              ng-if="!type.subtypes || part != 'europe'"
+              ng-click="setClickHack()"
+              class="btn btn-primary pull-right"  >
             <i class="glyphicon glyphicon-check"></i> {{'Procvičovat' | translate }}
           </a>
+          <span class="dropdown pull-right"
+              ng-if="type.subtypes && part == 'europe'"
+              ng-click="setClickHack()">
+            <a id="drop-{{type.identifier}}" href=""
+                class="btn btn-primary dropdown-toggle pull-right" data-toggle="dropdown">
+              <i class="glyphicon glyphicon-check"></i> {{'Procvičovat' | translate }}
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu"
+                aria-labelledby="drop-continents" id="menu-list-contents">
+              <li>
+                <a href="/practice/{{part}}/{{type.identifier}}" >
+                  {{type.name}}
+                </a>
+              </li>
+              <li ng-repeat="subtype in type.subtypes">
+                <a href="/practice/{{part}}/{{subtype.identifier}}" >
+                  {{subtype.name}}
+                </a>
+              </li>
+            </ul>
+          </span>
           <div class="clearfix"></div>
         </div>
         <div class="map-progress" 
