@@ -345,6 +345,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
     function hackForCorrectLanguage() {
       placeTypeNames = {
           'state' : gettextCatalog.getString('Státy'),
+          'state-by-city' : gettextCatalog.getString('Státy skrze hlavní města'),
           'region' : gettextCatalog.getString('Regiony'),
           'province' : gettextCatalog.getString('Provincie'),
           'region_cz' : gettextCatalog.getString('Kraje'),
@@ -352,6 +353,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
           'autonomous_Comunity' : gettextCatalog.getString('Autonomní společenství'),
           'bundesland' : gettextCatalog.getString('Spolkové země'),
           'city' : gettextCatalog.getString('Města'),
+          'city-by-state' : gettextCatalog.getString('Hlavní města skrze státy'),
           'river' : gettextCatalog.getString('Řeky'),
           'lake' : gettextCatalog.getString('Jezera'),
           'sea' : gettextCatalog.getString('Moře'),
@@ -360,10 +362,19 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
       };
       placeTypes = [];
       for(var i in placeTypeNames) {
-        placeTypes.push({
-          name : placeTypeNames[i],
-          identifier : i,
-        });
+        if (i.indexOf('-by-') == -1) {
+          placeTypes.push({
+            name : placeTypeNames[i],
+            identifier : i,
+          });
+        } else {
+          placeTypes[placeTypes.length - 1].subtypes = 
+            placeTypes[placeTypes.length - 1].subtypes || [];
+          placeTypes[placeTypes.length - 1].subtypes.push({
+            name : placeTypeNames[i],
+            identifier : i,
+          });
+        }
       }
     }
 

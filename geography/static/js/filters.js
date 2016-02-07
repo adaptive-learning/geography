@@ -65,13 +65,9 @@ angular.module('proso.geography.filters', [])
   .filter('questionText', ['gettextCatalog', function(gettextCatalog) {
     return function(question) {
       if (question && question.direction == "t2d") {
-        if (question.options && question.options.length > 0) {
-          return gettextCatalog.getString("Ze zvýrazněných objektů na mapě vyber");
-        } else {
-          return gettextCatalog.getString("Vyber na mapě");
-        }
+        return gettextCatalog.getString("Vyber na mapě");
       } else if (question && question.direction == "d2t") {
-        return gettextCatalog.getString("Jak se jmenuje objekt zvýrazněný na mapě?");
+        return gettextCatalog.getString("Co je zvýrazněno?");
       }
       return "Error";
     };
