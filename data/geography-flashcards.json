@@ -11898,7 +11898,8 @@
       "term": "Asker", 
       "id": "no-Asker", 
       "context": "no", 
-      "description": "Asker"
+      "description": "Asker",
+      "active": false
     }, 
     {
       "term": "Bodo", 
