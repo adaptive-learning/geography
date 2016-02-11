@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-02-07 07:02+0000\n"
+"PO-Revision-Date: 2016-02-09 13:59+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Spanish (http://www.transifex.com/adaptive-learning/slepemapycz/language/es/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,7 +70,7 @@ msgstr "El programa analiza tus conocimientos sobre mapas para adaptarse a tí.U
 msgid "Adresa profilu"
 msgstr "Dirección de perfil"
 
-#: static/js/directives.js:181
+#: static/js/directives.js:193
 msgid "Aktuální úroveň"
 msgstr "Nivel actual"
 
@@ -118,7 +118,11 @@ msgstr "correo electrónico"
 msgid "Hlavní města skrze státy"
 msgstr ""
 
-#: static/js/controllers.js:438
+#: static/js/directives.js:25 static/js/map.js:286
+msgid "Hlavní město"
+msgstr ""
+
+#: static/js/controllers.js:444
 msgid "Hledaný profil neexistuje."
 msgstr ""
 
@@ -130,6 +134,12 @@ msgstr "¿Cómo funciona?"
 msgid "Jezera"
 msgstr "Lagos"
 
+#: static/tpl/sign_in_banner.html:8
+msgid ""
+"Již máš odpovězených <b>{{userService.user.profile.number_of_answers}}</b>\n"
+"  odpovědí. Ulož si svůj postup, aby aplikace mohla dlouhodobě přizpůsobovat otázky Tvým znalostem."
+msgstr ""
+
 #: static/tpl/user_tpl.html:22
 msgid "Jméno"
 msgstr "Nombre"
@@ -138,7 +148,7 @@ msgstr "Nombre"
 msgid "Kdo za tím stojí"
 msgstr ""
 
-#: static/js/controllers.js:320
+#: static/js/controllers.js:326
 msgid "Kontinenty"
 msgstr "Continentes"
 
@@ -183,17 +193,21 @@ msgid ""
 "Na vývoji Slepých map se podílí především Vít Stanislav a Jan Papoušek."
 msgstr ""
 
-#: static/js/directives.js:129
+#: static/js/directives.js:141
 msgid "Naučeno"
 msgstr "Aprendido"
 
-#: static/js/map.js:289
+#: static/js/map.js:297
 msgid "Neprocvičováno"
 msgstr "Sin Practicar"
 
 #: static/tpl/practice_tpl.html:46
 msgid "Nevím"
 msgstr "No sé"
+
+#: static/js/filters.js:92
+msgid "Neznámý"
+msgstr ""
 
 #: static/tpl/about.html:54
 msgid ""
@@ -217,7 +231,7 @@ msgstr "Provincias"
 msgid "Ocenění"
 msgstr ""
 
-#: static/js/directives.js:16 static/js/map.js:276
+#: static/js/directives.js:17 static/js/map.js:276
 msgid "Odhad znalosti"
 msgstr "Estimación de conocimiento"
 
@@ -245,7 +259,7 @@ msgstr "Continuar"
 msgid "Pokračovat v procvičování"
 msgstr "Continúe practicando"
 
-#: static/js/directives.js:307
+#: static/js/directives.js:319
 msgid "Pokud problém přetrval zkuste to znovu později nebo"
 msgstr ""
 
@@ -275,7 +289,7 @@ msgstr "Superficie"
 msgid "Počet obyvatel"
 msgstr "Población"
 
-#: static/js/directives.js:301
+#: static/js/directives.js:313
 msgid "Pro vyřešení problému zkuste"
 msgstr ""
 
@@ -285,7 +299,7 @@ msgstr ""
 msgid "Procvičovat"
 msgstr "Práctica"
 
-#: static/js/directives.js:137
+#: static/js/directives.js:149
 msgid "Procvičováno"
 msgstr "Practicado"
 
@@ -321,7 +335,7 @@ msgstr "Apellido"
 msgid "Příprava map"
 msgstr ""
 
-#: static/js/directives.js:193
+#: static/js/directives.js:205
 msgid "Příští úroveň"
 msgstr "Siguiente nivel"
 
@@ -333,6 +347,10 @@ msgstr ""
 #: static/js/services.js:339
 msgid "Regiony"
 msgstr "Regiones"
+
+#: static/tpl/sign_in_banner.html:12
+msgid "Registrovat se"
+msgstr ""
 
 #: static/tpl/user_tpl.html:64
 msgid "Sdílej svůj profil"
@@ -369,7 +387,11 @@ msgstr "Estados"
 msgid "Správné odpovědi"
 msgstr "Respuestas correctas"
 
-#: static/js/controllers.js:319 static/js/services.js:337
+#: static/js/directives.js:30 static/js/map.js:290
+msgid "Stát"
+msgstr ""
+
+#: static/js/controllers.js:325 static/js/services.js:337
 msgid "Státy"
 msgstr "Estados"
 
@@ -425,7 +447,7 @@ msgstr "Minería de Datos"
 msgid "Učení z dat - text"
 msgstr "El programa aprende de todas las personas que lo usan. La elección de preguntas que el programa presenta se basan en esta información. De esta forma, se tiene mejores estimados de dificultad para los usuarios, ya que en vez de que un experto dicte la dificultad, los usuarios definen el nivel con su desempeño. Así, cada quién ayuda a decidir qué es más fácil, sí las ciudades de Kenia o los ríos de Nigeria. "
 
-#: static/js/controllers.js:451 static/js/directives.js:298
+#: static/js/controllers.js:457 static/js/directives.js:310
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Unfortunately there has been an error in the app."
 
@@ -457,7 +479,7 @@ msgstr "Seleccionar otro mapa"
 msgid "Vybráno"
 msgstr "Seleccionado"
 
-#: static/tpl/content_admin_banner.html:7
+#: static/tpl/content_admin_banner.html:7 static/tpl/sign_in_banner.html:6
 msgid "Zavřít"
 msgstr "Cerrar"
 
@@ -485,7 +507,7 @@ msgstr "Resaltar de nuevo"
 msgid "Zrušit"
 msgstr "Cancel"
 
-#: static/js/directives.js:186
+#: static/js/directives.js:198
 msgid "bodů do příští úrovně"
 msgstr "puntos para alcanzar el siguiente nivel"
 
@@ -493,15 +515,15 @@ msgstr "puntos para alcanzar el siguiente nivel"
 msgid "další mapy"
 msgstr "más mapas"
 
-#: static/js/directives.js:43
+#: static/js/directives.js:55
 msgid "hl. město státu"
 msgstr ""
 
-#: static/js/directives.js:309
+#: static/js/directives.js:321
 msgid "nám napište"
 msgstr ""
 
-#: static/js/directives.js:304
+#: static/js/directives.js:316
 msgid "obnovit stránku"
 msgstr ""
 
@@ -509,7 +531,7 @@ msgstr ""
 msgid "přibývají za každou správnou odpověď"
 msgstr "por respuestas correctas"
 
-#: static/js/directives.js:38
+#: static/js/directives.js:50
 msgid "stát s hl. městem"
 msgstr ""
 
