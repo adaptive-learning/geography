@@ -152,7 +152,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
     'use strict';
 
     var titles = {
-      'static/tpl/about.html' : gettextCatalog.getString('O prjektu') + ' - ',
+      'static/tpl/about.html' : gettextCatalog.getString('O projektu') + ' - ',
       'static/tpl/overview_tpl.html' : gettextCatalog.getString('Přehled map') + ' - ',
     };
     return function (route) {
