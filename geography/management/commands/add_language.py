@@ -32,10 +32,13 @@ class Command(BaseCommand):
             for t in data['terms']:
                 if t['id'] in translations:
                     t['name-' + lang] = translations[t['id']]
-                else:
+                elif 'name-en' in t:
                     t['name-' + lang] = t['name-en']
                     print ('Warning: missing translation for term ' +
                            '\'%s\', id: \'%s\'' % (t['name-en'], t['id']))
+                else:
+                    print ('Warning: missing "name-en" for term with ' +
+                           'id: \'%s\'' % (t['id']))
             for c in data['categories']:
                 if c['id'] in translations:
                     c['name-' + lang] = translations[c['id']]
@@ -50,7 +53,7 @@ class Command(BaseCommand):
     def get_translations(self, filename):
         translations = {}
         with open(filename, 'r') as csvfile:
-            translations_reader = csv.reader(csvfile, delimiter='\t')
+            translations_reader = csv.reader(csvfile, delimiter=',')
             for row in translations_reader:
                 if len(row) == 2:
                     translations[row[0]] = row[1]
