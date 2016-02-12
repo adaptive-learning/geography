@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Ondřej Pavelek <ond.pavelek@gmail.com>, 2016
 # Дарья Пожидаева <dasha.anime@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-02 15:15+0000\n"
-"PO-Revision-Date: 2016-02-05 15:47+0000\n"
+"PO-Revision-Date: 2016-02-09 15:21+0000\n"
 "Last-Translator: Дарья Пожидаева <dasha.anime@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/adaptive-learning/slepemapycz/language/ru/)\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +29,7 @@ msgstr "Карта"
 
 #: templates/create_goal.html:36
 msgid "Datum splnění cíle"
-msgstr ""
+msgstr "Дата выполнения цели"
 
 #: templates/create_goal.html:64
 msgid "Vytvořit"
@@ -40,11 +41,11 @@ msgstr "Закрыть"
 
 #: templates/generated/homepage.html:19 templates/home.html:60 views.py:35
 msgid "Slepé mapy"
-msgstr ""
+msgstr "Контурные карты"
 
 #: templates/generated/homepage.html:21
 msgid "Vyberte si mapu k procvičování:"
-msgstr ""
+msgstr "Выберите карту для тренировки:"
 
 #: templates/generated/homepage.html:26
 msgid "Státy Evropy"
@@ -56,7 +57,7 @@ msgstr "Реки Чешской Республики"
 
 #: templates/generated/homepage.html:36
 msgid "Státy USA"
-msgstr "Штаты США"
+msgstr "Штаты Америки"
 
 #: templates/generated/homepage.html:41
 msgid "Pohoří ČR"
@@ -72,11 +73,11 @@ msgstr "Реки Африки"
 
 #: templates/generated/homepage.html:54
 msgid "Chcete jinou? Podívejte se na"
-msgstr ""
+msgstr "Хотите другую? Поглядите на:"
 
 #: templates/generated/homepage.html:57
 msgid "další mapy"
-msgstr "Остальные карты"
+msgstr "Следующие карты"
 
 #: templates/generated/homepage.html:67
 msgid "Jak to funguje?"
@@ -84,59 +85,59 @@ msgstr "Как это работает?"
 
 #: templates/generated/homepage.html:71
 msgid "Zeměpis hrou"
-msgstr ""
+msgstr "География в игровой форме"
 
 #: templates/generated/homepage.html:72
 msgid "Zeměpis hrou - text"
-msgstr ""
+msgstr "Тренируйте свои знания географии в игровой форме. В последней версии программы вы можете посоревноваться с собой или с компьютером. Сумеете ли вы окрасить в зеленый целую карту Европы? Чехии? А что насчет целого мира?"
 
 #: templates/generated/homepage.html:76
 msgid "Adaptabilní procvičování"
-msgstr ""
+msgstr "Адаптируемые тренировки"
 
 #: templates/generated/homepage.html:77
 msgid "Adaptabilní procvičování - text"
-msgstr ""
+msgstr "Каждая контурная карта предлагает адаптированную тренировку: в соответствии с вашими знаниями, приложение выбирает вид вопросов (открытые, выбор варианта ответа) и  частоту повторения. Приложение предлагает вам государства, изучения которых для вас  наиболее плодотворное."
 
 #: templates/generated/homepage.html:79
 msgid "Ukázka procvičování"
-msgstr ""
+msgstr "Демонстрация тренировок"
 
 #: templates/generated/homepage.html:83
 msgid "Specializovaný systém"
-msgstr ""
+msgstr "Специализированная система"
 
 #: templates/generated/homepage.html:84
 msgid "Specializovaný systém - text"
-msgstr ""
+msgstr "Изучение контурных карт предлагает и ряд других обучающих систем, однако большинство из них охватывает много других, частных областей. Наша же система нацелена только на контурные карты, благодаря чему она обучение проходит самым оптимальным способом. "
 
 #: templates/generated/homepage.html:88
 msgid "Vizualizace znalostí"
-msgstr ""
+msgstr "Визуализация знаний"
 
 #: templates/generated/homepage.html:89
 msgid "Vizualizace znalostí - text"
-msgstr ""
+msgstr "На основе ваших ответов система распознает, насколько хорошо вы знаете различные государства, а также составит вашу личную карту знаний, которая покажет вам, что вы уже умеете. "
 
 #: templates/generated/homepage.html:91
 msgid "Ukázka mapy znalostí"
-msgstr ""
+msgstr "Демонстрация карты знаний"
 
 #: templates/generated/homepage.html:95
 msgid "Učení z dat"
-msgstr ""
+msgstr "Обучение с базой данных"
 
 #: templates/generated/homepage.html:96
 msgid "Učení z dat - text"
-msgstr ""
+msgstr "Приложение обучается, используя данные от всех пользователей. Выбор вопросов основан именно на этих данных, а не на знаниях \"эксперта\" по географии, который \"знает\", что тяжелее различить - Кению или Нигерию."
 
 #: templates/home.html:27
 msgid "meta content"
-msgstr ""
+msgstr "Умная программа для изучения стран, городов, гор и рек на контурных картах мира, Европы, Азии, Америки, Чехии, США и других стран."
 
 #: templates/home.html:28
 msgid "meta keywords"
-msgstr ""
+msgstr "Контурная карта, страны, города, ЧР, мир, Европа, Америка, Африка, Азия, горы, реки, география, США, игры"
 
 #: templates/home.html:64
 msgid "Svět"
@@ -158,7 +159,7 @@ msgstr "Просмотр карт"
 msgid ""
 "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
 "znalosti pamatoval i příště."
-msgstr ""
+msgstr "Войдите с помощью Google или Facebook, чтобы система запомнила ваши результаты."
 
 #: templates/home.html:101
 msgid "Přihlásit se"
@@ -194,7 +195,7 @@ msgstr "О проекте"
 
 #: views.py:35
 msgid "inteligentní aplikace na procvičování zeměpisu"
-msgstr ""
+msgstr "Умное приложение для изучения географии"
 
 #~ msgid "Feedback confirmed"
 #~ msgstr ""
