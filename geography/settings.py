@@ -226,6 +226,7 @@ SOCIAL_AUTH_ASSOCIATION_HANDLE_LENGTH = 125
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 25
+SERVER_EMAIL = 'info@slepemapy.cz'
 
 LOGGING = {
     'version': 1,
@@ -239,7 +240,8 @@ LOGGING = {
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True,
         },
         'mail_admins_javascript': {
             'level': 'ERROR',
