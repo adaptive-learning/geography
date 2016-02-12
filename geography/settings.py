@@ -130,10 +130,11 @@ DATABASES['old'] = {
 LANGUAGE_CODE = 'cs'
 
 LANGUAGES = (
-    ('cs', 'Česky'),
-    ('en', 'English'),
-    ('es', 'Español'),
+    ('cs', u'Česky'),
     ('de', 'Deutsch'),
+    ('en', 'English'),
+    ('es', u'Español'),
+    ('ru', u'Русский'),
 )
 
 if ON_PRODUCTION:
@@ -142,6 +143,7 @@ if ON_PRODUCTION:
         'en': 'outlinemaps.org',
         'es': 'es.outlinemaps.org',
         'de': 'de.outlinemaps.org',
+        'ru': 'ru.outlinemaps.org',
     }
     AUTH_DOMAIN = 'slepemapy.cz'
 elif ON_STAGING:
@@ -150,6 +152,7 @@ elif ON_STAGING:
         'en': 'staging.outlinemaps.org',
         'es': 'es.staging.outlinemaps.org',
         'de': 'de.staging.outlinemaps.org',
+        'ru': 'ru.staging.outlinemaps.org',
     }
     AUTH_DOMAIN = 'staging.slepemapy.cz'
 else:
@@ -158,6 +161,7 @@ else:
         'en': 'en.localhost:8000',
         'es': 'es.localhost:8000',
         'de': 'de.localhost:8000',
+        'ru': 'ru.localhost:8000',
     }
     AUTH_DOMAIN = 'localhost:8000'
 

@@ -1,10 +1,11 @@
 # 
 # Translators:
+# Vít Stanislav <slaweet@seznam.cz>, 2016
 # Дарья Пожидаева <dasha.anime@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-02-12 11:21+0000\n"
+"PO-Revision-Date: 2016-02-12 12:22+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Russian (http://www.transifex.com/adaptive-learning/slepemapycz/language/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -64,7 +65,7 @@ msgstr "Адаптируемые тренировки"
 
 #: static/tpl/homepage.html:77
 msgid "Adaptabilní procvičování - text"
-msgstr "Адаптируемые тренировки - текст"
+msgstr "Каждая контурная карта предлагает адаптированную тренировку: в соответствии с вашими знаниями, приложение выбирает вид вопросов (открытые, выбор варианта ответа) и  частоту повторения. Приложение предлагает вам государства, изучения которых для вас  наиболее плодотворное."
 
 #: static/tpl/user_tpl.html:81
 msgid "Adresa profilu"
@@ -373,7 +374,7 @@ msgstr "Специализированная система"
 
 #: static/tpl/homepage.html:84
 msgid "Specializovaný systém - text"
-msgstr "Специализированная система - текст"
+msgstr "Изучение контурных карт предлагает и ряд других обучающих систем, однако большинство из них охватывает много других, частных областей. Наша же система нацелена только на контурные карты, благодаря чему она обучение проходит самым оптимальным способом. "
 
 #: static/js/services.js:344
 msgid "Spolkové země"
@@ -441,7 +442,7 @@ msgstr "Обучение с базой данных"
 
 #: static/tpl/homepage.html:96
 msgid "Učení z dat - text"
-msgstr "Обучение с базой данных - текст"
+msgstr "Приложение обучается, используя данные от всех пользователей. Выбор вопросов основан именно на этих данных, а не на знаниях \"эксперта\" по географии, который \"знает\", что тяжелее различить - Кению или Нигерию."
 
 #: static/js/controllers.js:457 static/js/directives.js:310
 msgid "V aplikaci bohužel nastala chyba."
@@ -453,7 +454,7 @@ msgstr "Визуализация знаний"
 
 #: static/tpl/homepage.html:89
 msgid "Vizualizace znalostí - text"
-msgstr "Визуализация знаний"
+msgstr "На основе ваших ответов система распознает, насколько хорошо вы знаете различные государства, а также составит вашу личную карту знаний, которая покажет вам, что вы уже умеете. "
 
 #: static/js/services.js:264
 msgid "Vodstvo"
@@ -493,7 +494,7 @@ msgstr "География в игровой форме"
 
 #: static/tpl/homepage.html:72
 msgid "Zeměpis hrou - text"
-msgstr "География в игровой форме - текст"
+msgstr "Тренируйте свои знания географии в игровой форме. В последней версии программы вы можете посоревноваться с собой или с компьютером. Сумеете ли вы окрасить в зеленый целую карту Европы? Чехии? А что насчет целого мира?"
 
 #: static/tpl/practice_tpl.html:57
 msgid "Znovu zvýraznit"
