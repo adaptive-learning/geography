@@ -40,6 +40,8 @@ ALLOWED_HOSTS = [
     'outlinemaps.org',
     'es.outlinemaps.org',
     'de.outlinemaps.org',
+    '.outlinemaps.org',
+    '.slepemapy.cz',
 ]
 
 
