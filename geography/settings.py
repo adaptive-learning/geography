@@ -60,11 +60,10 @@ INSTALLED_APPS = (
     'proso_ab',
     'proso_configab',
     'proso_models',
-    'proso_questions',
     'proso_user',
     'proso_feedback',
     'proso_flashcards',
-    'social_auth',
+    'social.apps.django_app.default',
     'geography',
 )
 
@@ -116,15 +115,6 @@ else:
     DATABASES = {
         'default': dj_database_url.config(),
     }
-
-DATABASES['old'] = {
-    'ENGINE': os.environ.get('GEOGRAPHY_DATABASE_ENGINE', 'django.db.backends.mysql'),
-    'NAME': os.environ.get('GEOGRAPHY_DATABASE_NAME', 'geography'),
-    'USER': os.environ.get('GEOGRAPHY_DATABASE_USER', 'geography'),
-    'PASSWORD': os.environ.get('GEOGRAPHY_DATABASE_PASSWORD', 'geography'),
-    'HOST': os.environ.get('GEOGRAPHY_DATABASE_HOST', 'localhost'),
-    'PORT': os.environ.get('GEOGRAPHY_DATABASE_PORT', None),
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
@@ -200,8 +190,8 @@ STATICFILES_DIRS = (
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'lazysignup.backends.LazySignupBackend',
-    'social_auth.backends.facebook.FacebookBackend',
-    'social_auth.backends.google.GoogleOAuth2Backend',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.google.GoogleOAuth2',
 )
 
 FACEBOOK_APP_ID = os.getenv('PROSO_FACEBOOK_APP_ID', '')

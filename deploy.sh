@@ -7,7 +7,7 @@ pip install -r $WORKSPACE/requirements.txt
 
 # install client's code
 cd $WORKSPACE/geography
-npm install
+npm install --python=/usr/bin/python2.7
 $WORKSPACE/geography/node_modules/grunt-cli/bin/grunt -v --force
 $WORKSPACE/manage.py collectstatic --noinput
 
