@@ -197,14 +197,16 @@
   </div>
     <div id="feedback-btn" ng-hide="hideFeedback">
       <span class="rotate">
-        <a class='main-btn' feedback-comment email="{{email}}" href="">
-          {% trans "Napište nám" %}
-        </a>
-        <a href="" title="{% trans "Skrýt tlačítko" %}"
-            class="hide-btn btn btn-xs btn-primary"
-            ng-click="hideFeedback=true">
-          <i class="glyphicon glyphicon-remove-sign"></i>
-        </a>
+        <span class="placer">
+          <a class='main-btn' feedback-comment email="{{email}}" href="">
+            {% trans "Napište nám" %}
+          </a>
+          <a href="" title="{% trans "Skrýt tlačítko" %}"
+              class="hide-btn btn btn-xs btn-primary"
+              ng-click="hideFeedback=true">
+            <i class="glyphicon glyphicon-remove-sign"></i>
+          </a>
+        </span>
       </span>
     </div>
     <rating-modal></rating-modal>
