@@ -35,10 +35,10 @@ class Command(BaseCommand):
                 elif 'name-en' in t:
                     t['name-' + lang] = t['name-en']
                     print('Warning: missing translation for term ' +
-                           '\'%s\', id: \'%s\'' % (t['name-en'], t['id']))
+                          '\'%s\', id: \'%s\'' % (t['name-en'], t['id']))
                 else:
                     print('Warning: missing "name-en" for term with ' +
-                           'id: \'%s\'' % (t['id']))
+                          'id: \'%s\'' % (t['id']))
             for c in data['categories']:
                 if c['id'] in translations:
                     c['name-' + lang] = translations[c['id']]
