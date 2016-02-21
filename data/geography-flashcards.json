@@ -11995,6 +11995,216 @@
       "id": "fi-Helsinki", 
       "context": "fi", 
       "description": "Helsinki"
+    }, 
+    {
+      "term": "Yukon", 
+      "id": "namerica-Yukon", 
+      "context": "namerica", 
+      "description": "Yukon"
+    }, 
+    {
+      "term": "Rio_Grande", 
+      "id": "namerica-Rio_Grande", 
+      "context": "namerica", 
+      "description": "Rio_Grande"
+    }, 
+    {
+      "term": "Colorado", 
+      "id": "namerica-Colorado", 
+      "context": "namerica", 
+      "description": "Colorado"
+    }, 
+    {
+      "term": "Green", 
+      "id": "namerica-Green", 
+      "context": "namerica", 
+      "description": "Green"
+    }, 
+    {
+      "term": "Brazos", 
+      "id": "namerica-Brazos", 
+      "context": "namerica", 
+      "description": "Brazos"
+    }, 
+    {
+      "term": "Red", 
+      "id": "namerica-Red", 
+      "context": "namerica", 
+      "description": "Red"
+    }, 
+    {
+      "term": "Arkansas", 
+      "id": "namerica-Arkansas", 
+      "context": "namerica", 
+      "description": "Arkansas"
+    }, 
+    {
+      "term": "Sacramento", 
+      "id": "namerica-Sacramento", 
+      "context": "namerica", 
+      "description": "Sacramento"
+    }, 
+    {
+      "term": "Yellowstone", 
+      "id": "namerica-Yellowstone", 
+      "context": "namerica", 
+      "description": "Yellowstone"
+    }, 
+    {
+      "term": "James", 
+      "id": "namerica-James", 
+      "context": "namerica", 
+      "description": "James"
+    }, 
+    {
+      "term": "Platte", 
+      "id": "namerica-Platte", 
+      "context": "namerica", 
+      "description": "Platte"
+    }, 
+    {
+      "term": "Saint_Johns", 
+      "id": "namerica-Saint_Johns", 
+      "context": "namerica", 
+      "description": "Saint_Johns"
+    }, 
+    {
+      "term": "Missouri", 
+      "id": "namerica-Missouri", 
+      "context": "namerica", 
+      "description": "Missouri"
+    }, 
+    {
+      "term": "Illinois", 
+      "id": "namerica-Illinois", 
+      "context": "namerica", 
+      "description": "Illinois"
+    }, 
+    {
+      "term": "Mississippi", 
+      "id": "namerica-Mississippi", 
+      "context": "namerica", 
+      "description": "Mississippi"
+    }, 
+    {
+      "term": "Wisconsin", 
+      "id": "namerica-Wisconsin", 
+      "context": "namerica", 
+      "description": "Wisconsin"
+    }, 
+    {
+      "term": "Ohio", 
+      "id": "namerica-Ohio", 
+      "context": "namerica", 
+      "description": "Ohio"
+    }, 
+    {
+      "term": "Fraser", 
+      "id": "namerica-Fraser", 
+      "context": "namerica", 
+      "description": "Fraser"
+    }, 
+    {
+      "term": "Snake", 
+      "id": "namerica-Snake", 
+      "context": "namerica", 
+      "description": "Snake"
+    }, 
+    {
+      "term": "Columbia", 
+      "id": "namerica-Columbia", 
+      "context": "namerica", 
+      "description": "Columbia"
+    }, 
+    {
+      "term": "Liard", 
+      "id": "namerica-Liard", 
+      "context": "namerica", 
+      "description": "Liard"
+    }, 
+    {
+      "term": "Peace", 
+      "id": "namerica-Peace", 
+      "context": "namerica", 
+      "description": "Peace"
+    }, 
+    {
+      "term": "Athabasca", 
+      "id": "namerica-Athabasca", 
+      "context": "namerica", 
+      "description": "Athabasca"
+    }, 
+    {
+      "term": "Mackenzie", 
+      "id": "namerica-Mackenzie", 
+      "context": "namerica", 
+      "description": "Mackenzie"
+    }, 
+    {
+      "term": "Slave", 
+      "id": "namerica-Slave", 
+      "context": "namerica", 
+      "description": "Slave"
+    }, 
+    {
+      "term": "Thelon", 
+      "id": "namerica-Thelon", 
+      "context": "namerica", 
+      "description": "Thelon"
+    }, 
+    {
+      "term": "Churchill", 
+      "id": "namerica-Churchill", 
+      "context": "namerica", 
+      "description": "Churchill"
+    }, 
+    {
+      "term": "Nelson", 
+      "id": "namerica-Nelson", 
+      "context": "namerica", 
+      "description": "Nelson"
+    }, 
+    {
+      "term": "Saskatchewan", 
+      "id": "namerica-Saskatchewan", 
+      "context": "namerica", 
+      "description": "Saskatchewan"
+    }, 
+    {
+      "term": "Potomac", 
+      "id": "namerica-Potomac", 
+      "context": "namerica", 
+      "description": "Potomac"
+    }, 
+    {
+      "term": "Hudson", 
+      "id": "namerica-Hudson", 
+      "context": "namerica", 
+      "description": "Hudson"
+    }, 
+    {
+      "term": "Connecticut", 
+      "id": "namerica-Connecticut", 
+      "context": "namerica", 
+      "description": "Connecticut"
+    }, 
+    {
+      "term": "Albany", 
+      "id": "namerica-Albany", 
+      "context": "namerica", 
+      "description": "Albany"
+    }, 
+    {
+      "term": "George", 
+      "id": "namerica-George", 
+      "context": "namerica", 
+      "description": "George"
+    }, 
+    {
+      "term": "Reka_sv._Vavrince", 
+      "id": "namerica-Reka_sv._Vavrince", 
+      "context": "namerica", 
+      "description": "Reka_sv._Vavrince"
     }
   ], 
   "terms": [
@@ -18287,7 +18497,9 @@
       "name-ru": "\u041e\u043b\u0431\u0430\u043d\u0438", 
       "type": "city", 
       "id": "Albany", 
-      "categories": []
+      "categories": [
+        "namerica"
+      ]
     }, 
     {
       "name-en": "Harrisburg", 
@@ -18505,7 +18717,8 @@
       "type": "city", 
       "id": "Sacramento", 
       "categories": [
-        "us"
+        "us", 
+        "namerica"
       ]
     }, 
     {
@@ -24368,7 +24581,8 @@
       "type": "river", 
       "id": "Mississippi", 
       "categories": [
-        "world"
+        "world", 
+        "namerica"
       ]
     }, 
     {
@@ -27668,7 +27882,8 @@
       "type": "river", 
       "id": "Missouri", 
       "categories": [
-        "world"
+        "world", 
+        "namerica"
       ]
     }, 
     {
@@ -27680,7 +27895,8 @@
       "type": "river", 
       "id": "Yukon", 
       "categories": [
-        "world"
+        "world", 
+        "namerica"
       ]
     }, 
     {
@@ -27730,7 +27946,8 @@
       "type": "river", 
       "id": "Rio_Grande", 
       "categories": [
-        "world"
+        "world", 
+        "namerica"
       ]
     }, 
     {
@@ -27742,7 +27959,8 @@
       "type": "river", 
       "id": "Mackenzie", 
       "categories": [
-        "world"
+        "world", 
+        "namerica"
       ]
     }, 
     {
@@ -29636,10 +29854,10 @@
       ]
     }, 
     {
-      "name-en": "Sdo Lu1s", 
-      "name-de": "Sdo Lu1s", 
+      "name-en": "Sao Luis", 
+      "name-de": "Sao Luis", 
       "name-cs": "Sdo Lu1s", 
-      "name-es": "Sdo Lu1s", 
+      "name-es": "Sao Luis", 
       "name-ru": "\u0421\u0430\u043d-\u041b\u0443\u0438\u0441", 
       "type": "city", 
       "id": "Sao_Luis", 
@@ -31318,6 +31536,342 @@
       "categories": [
         "fi"
       ]
+    }, 
+    {
+      "name-en": "Colorado", 
+      "name-de": "Colorado", 
+      "name-es": "Colorado", 
+      "name-ru": "Colorado", 
+      "type": "river", 
+      "id": "Colorado", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Colorado"
+    }, 
+    {
+      "name-en": "Green", 
+      "name-de": "Green", 
+      "name-es": "Green", 
+      "name-ru": "Green", 
+      "type": "river", 
+      "id": "Green", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Green"
+    }, 
+    {
+      "name-en": "Brazos", 
+      "name-de": "Brazos", 
+      "name-es": "Brazos", 
+      "name-ru": "Brazos", 
+      "type": "river", 
+      "id": "Brazos", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Brazos"
+    }, 
+    {
+      "name-en": "Red", 
+      "name-de": "Red", 
+      "name-es": "Red", 
+      "name-ru": "Red", 
+      "type": "river", 
+      "id": "Red", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Red"
+    }, 
+    {
+      "name-en": "Arkansas", 
+      "name-de": "Arkansas", 
+      "name-es": "Arkansas", 
+      "name-ru": "Arkansas", 
+      "type": "river", 
+      "id": "Arkansas", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Arkansas"
+    }, 
+    {
+      "name-en": "Yellowstone", 
+      "name-de": "Yellowstone", 
+      "name-es": "Yellowstone", 
+      "name-ru": "Yellowstone", 
+      "type": "river", 
+      "id": "Yellowstone", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Yellowstone"
+    }, 
+    {
+      "name-en": "James", 
+      "name-de": "James", 
+      "name-es": "James", 
+      "name-ru": "James", 
+      "type": "river", 
+      "id": "James", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "James"
+    }, 
+    {
+      "name-en": "Platte", 
+      "name-de": "Platte", 
+      "name-es": "Platte", 
+      "name-ru": "Platte", 
+      "type": "river", 
+      "id": "Platte", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Platte"
+    }, 
+    {
+      "name-en": "Saint Johns", 
+      "name-de": "Saint Johns", 
+      "name-es": "Saint Johns", 
+      "name-ru": "Saint Johns", 
+      "type": "river", 
+      "id": "Saint_Johns", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Saint Johns"
+    }, 
+    {
+      "name-en": "Illinois", 
+      "name-de": "Illinois", 
+      "name-es": "Illinois", 
+      "name-ru": "Illinois", 
+      "type": "river", 
+      "id": "Illinois", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Illinois"
+    }, 
+    {
+      "name-en": "Wisconsin", 
+      "name-de": "Wisconsin", 
+      "name-es": "Wisconsin", 
+      "name-ru": "Wisconsin", 
+      "type": "river", 
+      "id": "Wisconsin", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Wisconsin"
+    }, 
+    {
+      "name-en": "Ohio", 
+      "name-de": "Ohio", 
+      "name-es": "Ohio", 
+      "name-ru": "Ohio", 
+      "type": "river", 
+      "id": "Ohio", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Ohio"
+    }, 
+    {
+      "name-en": "Fraser", 
+      "name-de": "Fraser", 
+      "name-es": "Fraser", 
+      "name-ru": "Fraser", 
+      "type": "river", 
+      "id": "Fraser", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Fraser"
+    }, 
+    {
+      "name-en": "Snake", 
+      "name-de": "Snake", 
+      "name-es": "Snake", 
+      "name-ru": "Snake", 
+      "type": "river", 
+      "id": "Snake", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Snake"
+    }, 
+    {
+      "name-en": "Columbia", 
+      "name-de": "Columbia", 
+      "name-es": "Columbia", 
+      "name-ru": "Columbia", 
+      "type": "river", 
+      "id": "Columbia", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Columbia"
+    }, 
+    {
+      "name-en": "Liard", 
+      "name-de": "Liard", 
+      "name-es": "Liard", 
+      "name-ru": "Liard", 
+      "type": "river", 
+      "id": "Liard", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Liard"
+    }, 
+    {
+      "name-en": "Peace", 
+      "name-de": "Peace", 
+      "name-es": "Peace", 
+      "name-ru": "Peace", 
+      "type": "river", 
+      "id": "Peace", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Peace"
+    }, 
+    {
+      "name-en": "Athabasca", 
+      "name-de": "Athabasca", 
+      "name-es": "Athabasca", 
+      "name-ru": "Athabasca", 
+      "type": "river", 
+      "id": "Athabasca", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Athabasca"
+    }, 
+    {
+      "name-en": "Slave", 
+      "name-de": "Slave", 
+      "name-es": "Slave", 
+      "name-ru": "Slave", 
+      "type": "river", 
+      "id": "Slave", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Slave"
+    }, 
+    {
+      "name-en": "Thelon", 
+      "name-de": "Thelon", 
+      "name-es": "Thelon", 
+      "name-ru": "Thelon", 
+      "type": "river", 
+      "id": "Thelon", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Thelon"
+    }, 
+    {
+      "name-en": "Churchill", 
+      "name-de": "Churchill", 
+      "name-es": "Churchill", 
+      "name-ru": "Churchill", 
+      "type": "river", 
+      "id": "Churchill", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Churchill"
+    }, 
+    {
+      "name-en": "Nelson", 
+      "name-de": "Nelson", 
+      "name-es": "Nelson", 
+      "name-ru": "Nelson", 
+      "type": "river", 
+      "id": "Nelson", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Nelson"
+    }, 
+    {
+      "name-en": "Saskatchewan", 
+      "name-de": "Saskatchewan", 
+      "name-es": "Saskatchewan", 
+      "name-ru": "Saskatchewan", 
+      "type": "river", 
+      "id": "Saskatchewan", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Saskatchewan"
+    }, 
+    {
+      "name-en": "Potomac", 
+      "name-de": "Potomac", 
+      "name-es": "Potomac", 
+      "name-ru": "Potomac", 
+      "type": "river", 
+      "id": "Potomac", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Potomac"
+    }, 
+    {
+      "name-en": "Hudson", 
+      "name-de": "Hudson", 
+      "name-es": "Hudson", 
+      "name-ru": "Hudson", 
+      "type": "river", 
+      "id": "Hudson", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Hudson"
+    }, 
+    {
+      "name-en": "Connecticut", 
+      "name-de": "Connecticut", 
+      "name-es": "Connecticut", 
+      "name-ru": "Connecticut", 
+      "type": "river", 
+      "id": "Connecticut", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "Connecticut"
+    }, 
+    {
+      "name-en": "George", 
+      "name-de": "George", 
+      "name-es": "George", 
+      "name-ru": "George", 
+      "type": "river", 
+      "id": "George", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "George"
+    }, 
+    {
+      "name-en": "\u0158eka sv. Vav\u0159ince", 
+      "name-de": "\u0158eka sv. Vav\u0159ince", 
+      "name-es": "\u0158eka sv. Vav\u0159ince", 
+      "name-ru": "\u0158eka sv. Vav\u0159ince", 
+      "type": "river", 
+      "id": "Reka_sv._Vavrince", 
+      "categories": [
+        "namerica"
+      ], 
+      "name-cs": "\u0158eka sv. Vav\u0159ince"
     }
   ], 
   "categories": [
