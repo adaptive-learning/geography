@@ -133,8 +133,8 @@ class Command(BaseCommand):
             if group_id != 'bg' and group_id != 'border':
                 # print ('## ' + group_id + ':')
                 for path in paths:
-                    code = str(path.attributes['data-code'].value).encode("utf-8")
-                    name = str(path.attributes['data-name'].value).encode("utf-8")
+                    code = unicode(path.attributes['data-code'].value).encode("utf-8")
+                    name = unicode(path.attributes['data-name'].value).encode("utf-8")
                     if code != '' and code not in terms_by_id:
                         term = {
                             'id': code,
