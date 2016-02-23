@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-02-07 06:57+0000\n"
+"PO-Revision-Date: 2016-02-23 10:19+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: English (http://www.transifex.com/adaptive-learning/slepemapycz/language/en/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,19 +59,19 @@ msgstr "<i class = \"flag-de\"></i> German translation has been created by Petra
 msgid "<i class=\"flag-es\"></i> Španělský překlad vytvořil Benjamin Valdes."
 msgstr "<i class = \"flag-es\"></i> Spanish translation created Benjamin Valdes."
 
-#: static/tpl/homepage.html:76
+#: static/tpl/homepage.html:72
 msgid "Adaptabilní procvičování"
 msgstr "Adaptive practice"
 
-#: static/tpl/homepage.html:77
+#: static/tpl/homepage.html:73
 msgid "Adaptabilní procvičování - text"
 msgstr "The application examines your knowledge of maps adaptively - type of questions (how many options etc.) and repeat frequency is chosen based on your previousanswers. Thus it asks you about the countries that you need to practice the most."
 
-#: static/tpl/user_tpl.html:81
+#: static/tpl/user_tpl.html:74
 msgid "Adresa profilu"
 msgstr "Profile address"
 
-#: static/js/directives.js:181
+#: static/js/directives.js:193
 msgid "Aktuální úroveň"
 msgstr "Current level"
 
@@ -117,13 +117,17 @@ msgstr "E-mail"
 
 #: static/js/services.js:346
 msgid "Hlavní města skrze státy"
-msgstr "Capitals through states"
+msgstr ""
 
-#: static/js/controllers.js:438
+#: static/js/directives.js:25 static/js/map.js:286
+msgid "Hlavní město"
+msgstr ""
+
+#: static/js/controllers.js:444
 msgid "Hledaný profil neexistuje."
 msgstr "The profile does not exist."
 
-#: static/tpl/homepage.html:67
+#: static/tpl/homepage.html:63
 msgid "Jak to funguje?"
 msgstr "How does it work?"
 
@@ -145,7 +149,7 @@ msgstr "First name"
 msgid "Kdo za tím stojí"
 msgstr "Who's behind it"
 
-#: static/js/controllers.js:320
+#: static/js/controllers.js:326
 msgid "Kontinenty"
 msgstr "Continents"
 
@@ -190,11 +194,11 @@ msgid ""
 "Na vývoji Slepých map se podílí především Vít Stanislav a Jan Papoušek."
 msgstr "This app is developed mainly by Vit Stanislav and Jan Papoušek."
 
-#: static/js/directives.js:129
+#: static/js/directives.js:141
 msgid "Naučeno"
 msgstr "Learned"
 
-#: static/js/map.js:289
+#: static/js/map.js:297
 msgid "Neprocvičováno"
 msgstr "Unpracticed"
 
@@ -212,11 +216,7 @@ msgid ""
 "    <span class=\"email contact\">slepemapy{zavinac}googlegroups.com</span>."
 msgstr "Suggestions for the development of the system should be sent to\n<span class = \"email contact\"> slepemapy{at}googlegroups.com </ span>."
 
-#: static/js/services.js:145
-msgid "O prjektu"
-msgstr "About"
-
-#: static/tpl/about.html:2
+#: static/js/services.js:145 static/tpl/about.html:2
 msgid "O projektu"
 msgstr "About"
 
@@ -228,7 +228,7 @@ msgstr "Provinces"
 msgid "Ocenění"
 msgstr "Avards"
 
-#: static/js/directives.js:16 static/js/map.js:276
+#: static/js/directives.js:17 static/js/map.js:276
 msgid "Odhad znalosti"
 msgstr "Knowledge estimate"
 
@@ -256,7 +256,7 @@ msgstr "Continue"
 msgid "Pokračovat v procvičování"
 msgstr "Continue practicing"
 
-#: static/js/directives.js:307
+#: static/js/directives.js:319
 msgid "Pokud problém přetrval zkuste to znovu později nebo"
 msgstr "If the problem persists try again later or"
 
@@ -286,7 +286,7 @@ msgstr "Surface"
 msgid "Počet obyvatel"
 msgstr "Population"
 
-#: static/js/directives.js:301
+#: static/js/directives.js:313
 msgid "Pro vyřešení problému zkuste"
 msgstr "To resolve the problem try to"
 
@@ -296,7 +296,7 @@ msgstr "To resolve the problem try to"
 msgid "Procvičovat"
 msgstr "Practice"
 
-#: static/js/directives.js:137
+#: static/js/directives.js:149
 msgid "Procvičováno"
 msgstr "Practiced"
 
@@ -332,7 +332,7 @@ msgstr "Surname"
 msgid "Příprava map"
 msgstr "Map creation"
 
-#: static/js/directives.js:193
+#: static/js/directives.js:205
 msgid "Příští úroveň"
 msgstr "Next level"
 
@@ -368,11 +368,11 @@ msgstr "Outline Maps are developed at <a href=\"http://www.fi.muni.cz/\">\nFacul
 msgid "Soukromí"
 msgstr "Privacy"
 
-#: static/tpl/homepage.html:83
+#: static/tpl/homepage.html:79
 msgid "Specializovaný systém"
 msgstr "Specialized system"
 
-#: static/tpl/homepage.html:84
+#: static/tpl/homepage.html:80
 msgid "Specializovaný systém - text"
 msgstr "There are many other learning systems that provide outline maps practice, but they usually cover also many other areas. Our system focuses exclusively on outline maps, which allows it to be optimized for this area."
 
@@ -384,7 +384,11 @@ msgstr "Federal states"
 msgid "Správné odpovědi"
 msgstr "Correct answers"
 
-#: static/js/controllers.js:319 static/js/services.js:337
+#: static/js/directives.js:30 static/js/map.js:290
+msgid "Stát"
+msgstr ""
+
+#: static/js/controllers.js:325 static/js/services.js:337
 msgid "Státy"
 msgstr "States"
 
@@ -406,7 +410,7 @@ msgstr "US states"
 
 #: static/js/services.js:338
 msgid "Státy skrze hlavní města"
-msgstr "States through capitals"
+msgstr ""
 
 #: static/js/services.js:12
 msgid "Svět"
@@ -416,11 +420,11 @@ msgstr "World"
 msgid "USA"
 msgstr "U.S."
 
-#: static/tpl/homepage.html:91
+#: static/tpl/homepage.html:87
 msgid "Ukázka mapy znalostí"
 msgstr "Knowledge map illustration"
 
-#: static/tpl/homepage.html:79
+#: static/tpl/homepage.html:75
 msgid "Ukázka procvičování"
 msgstr "Practice illustration"
 
@@ -432,23 +436,23 @@ msgstr "Save"
 msgid "Upravit profil"
 msgstr "Edit profile"
 
-#: static/tpl/homepage.html:95
+#: static/tpl/homepage.html:91
 msgid "Učení z dat"
 msgstr "Data mining"
 
-#: static/tpl/homepage.html:96
+#: static/tpl/homepage.html:92
 msgid "Učení z dat - text"
 msgstr "The application learns from data of all users. Question choice is based on this data, instead of being based on knowledge of an geography expert who \"knows\" whether it's generally more difficult to know Kenya or Nigeria."
 
-#: static/js/controllers.js:451 static/js/directives.js:298
+#: static/js/controllers.js:457 static/js/directives.js:310
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Unfortunately there has been an error in the app."
 
-#: static/tpl/homepage.html:88
+#: static/tpl/homepage.html:84
 msgid "Vizualizace znalostí"
 msgstr "Knowledge visualization"
 
-#: static/tpl/homepage.html:89
+#: static/tpl/homepage.html:85
 msgid "Vizualizace znalostí - text"
 msgstr "Based on your answers the system estimates your knowledge and displays it is a form of map, which can help you to realize what you actually know."
 
@@ -484,11 +488,11 @@ msgstr "Nothing has been practiced here."
 msgid "Zdroje"
 msgstr "Sources"
 
-#: static/tpl/homepage.html:71
+#: static/tpl/homepage.html:67
 msgid "Zeměpis hrou"
 msgstr "Geography game"
 
-#: static/tpl/homepage.html:72
+#: static/tpl/homepage.html:68
 msgid "Zeměpis hrou - text"
 msgstr "Practice your geography knowledge in a playful way. Can you colour green the map of Europe? Or map of the US? And what about the whole world?"
 
@@ -500,7 +504,7 @@ msgstr "Highlight again"
 msgid "Zrušit"
 msgstr "Cancel"
 
-#: static/js/directives.js:186
+#: static/js/directives.js:198
 msgid "bodů do příští úrovně"
 msgstr "points to the next level"
 
@@ -508,15 +512,15 @@ msgstr "points to the next level"
 msgid "další mapy"
 msgstr "more maps"
 
-#: static/js/directives.js:43
+#: static/js/directives.js:55
 msgid "hl. město státu"
-msgstr "capital of state"
+msgstr ""
 
-#: static/js/directives.js:309
+#: static/js/directives.js:321
 msgid "nám napište"
 msgstr "write to us"
 
-#: static/js/directives.js:304
+#: static/js/directives.js:316
 msgid "obnovit stránku"
 msgstr "refresh the page"
 
@@ -524,9 +528,9 @@ msgstr "refresh the page"
 msgid "přibývají za každou správnou odpověď"
 msgstr "for corrects answers"
 
-#: static/js/directives.js:38
+#: static/js/directives.js:50
 msgid "stát s hl. městem"
-msgstr "state with capital"
+msgstr ""
 
 #: static/tpl/practice_tpl.html:69
 msgid "Úspěšnost"

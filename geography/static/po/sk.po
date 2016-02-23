@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-02-07 06:57+0000\n"
+"PO-Revision-Date: 2016-02-23 10:16+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Slovak (http://www.transifex.com/adaptive-learning/slepemapycz/language/sk/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,19 +57,19 @@ msgstr ""
 msgid "<i class=\"flag-es\"></i> Španělský překlad vytvořil Benjamin Valdes."
 msgstr ""
 
-#: static/tpl/homepage.html:76
+#: static/tpl/homepage.html:72
 msgid "Adaptabilní procvičování"
 msgstr ""
 
-#: static/tpl/homepage.html:77
+#: static/tpl/homepage.html:73
 msgid "Adaptabilní procvičování - text"
 msgstr ""
 
-#: static/tpl/user_tpl.html:81
+#: static/tpl/user_tpl.html:74
 msgid "Adresa profilu"
 msgstr ""
 
-#: static/js/directives.js:181
+#: static/js/directives.js:193
 msgid "Aktuální úroveň"
 msgstr ""
 
@@ -117,11 +117,15 @@ msgstr ""
 msgid "Hlavní města skrze státy"
 msgstr ""
 
-#: static/js/controllers.js:438
+#: static/js/directives.js:25 static/js/map.js:286
+msgid "Hlavní město"
+msgstr ""
+
+#: static/js/controllers.js:444
 msgid "Hledaný profil neexistuje."
 msgstr ""
 
-#: static/tpl/homepage.html:67
+#: static/tpl/homepage.html:63
 msgid "Jak to funguje?"
 msgstr ""
 
@@ -143,7 +147,7 @@ msgstr ""
 msgid "Kdo za tím stojí"
 msgstr ""
 
-#: static/js/controllers.js:320
+#: static/js/controllers.js:326
 msgid "Kontinenty"
 msgstr ""
 
@@ -188,11 +192,11 @@ msgid ""
 "Na vývoji Slepých map se podílí především Vít Stanislav a Jan Papoušek."
 msgstr ""
 
-#: static/js/directives.js:129
+#: static/js/directives.js:141
 msgid "Naučeno"
 msgstr ""
 
-#: static/js/map.js:289
+#: static/js/map.js:297
 msgid "Neprocvičováno"
 msgstr ""
 
@@ -210,11 +214,7 @@ msgid ""
 "    <span class=\"email contact\">slepemapy{zavinac}googlegroups.com</span>."
 msgstr ""
 
-#: static/js/services.js:145
-msgid "O prjektu"
-msgstr ""
-
-#: static/tpl/about.html:2
+#: static/js/services.js:145 static/tpl/about.html:2
 msgid "O projektu"
 msgstr ""
 
@@ -226,7 +226,7 @@ msgstr ""
 msgid "Ocenění"
 msgstr ""
 
-#: static/js/directives.js:16 static/js/map.js:276
+#: static/js/directives.js:17 static/js/map.js:276
 msgid "Odhad znalosti"
 msgstr ""
 
@@ -254,7 +254,7 @@ msgstr ""
 msgid "Pokračovat v procvičování"
 msgstr ""
 
-#: static/js/directives.js:307
+#: static/js/directives.js:319
 msgid "Pokud problém přetrval zkuste to znovu později nebo"
 msgstr ""
 
@@ -284,7 +284,7 @@ msgstr ""
 msgid "Počet obyvatel"
 msgstr ""
 
-#: static/js/directives.js:301
+#: static/js/directives.js:313
 msgid "Pro vyřešení problému zkuste"
 msgstr ""
 
@@ -294,7 +294,7 @@ msgstr ""
 msgid "Procvičovat"
 msgstr ""
 
-#: static/js/directives.js:137
+#: static/js/directives.js:149
 msgid "Procvičováno"
 msgstr ""
 
@@ -330,7 +330,7 @@ msgstr ""
 msgid "Příprava map"
 msgstr ""
 
-#: static/js/directives.js:193
+#: static/js/directives.js:205
 msgid "Příští úroveň"
 msgstr ""
 
@@ -366,11 +366,11 @@ msgstr ""
 msgid "Soukromí"
 msgstr ""
 
-#: static/tpl/homepage.html:83
+#: static/tpl/homepage.html:79
 msgid "Specializovaný systém"
 msgstr ""
 
-#: static/tpl/homepage.html:84
+#: static/tpl/homepage.html:80
 msgid "Specializovaný systém - text"
 msgstr ""
 
@@ -382,7 +382,11 @@ msgstr ""
 msgid "Správné odpovědi"
 msgstr ""
 
-#: static/js/controllers.js:319 static/js/services.js:337
+#: static/js/directives.js:30 static/js/map.js:290
+msgid "Stát"
+msgstr ""
+
+#: static/js/controllers.js:325 static/js/services.js:337
 msgid "Státy"
 msgstr ""
 
@@ -408,17 +412,17 @@ msgstr ""
 
 #: static/js/services.js:12
 msgid "Svět"
-msgstr ""
+msgstr "Svet"
 
 #: static/js/services.js:11
 msgid "USA"
 msgstr ""
 
-#: static/tpl/homepage.html:91
+#: static/tpl/homepage.html:87
 msgid "Ukázka mapy znalostí"
 msgstr ""
 
-#: static/tpl/homepage.html:79
+#: static/tpl/homepage.html:75
 msgid "Ukázka procvičování"
 msgstr ""
 
@@ -430,23 +434,23 @@ msgstr ""
 msgid "Upravit profil"
 msgstr ""
 
-#: static/tpl/homepage.html:95
+#: static/tpl/homepage.html:91
 msgid "Učení z dat"
 msgstr ""
 
-#: static/tpl/homepage.html:96
+#: static/tpl/homepage.html:92
 msgid "Učení z dat - text"
 msgstr ""
 
-#: static/js/controllers.js:451 static/js/directives.js:298
+#: static/js/controllers.js:457 static/js/directives.js:310
 msgid "V aplikaci bohužel nastala chyba."
 msgstr ""
 
-#: static/tpl/homepage.html:88
+#: static/tpl/homepage.html:84
 msgid "Vizualizace znalostí"
 msgstr ""
 
-#: static/tpl/homepage.html:89
+#: static/tpl/homepage.html:85
 msgid "Vizualizace znalostí - text"
 msgstr ""
 
@@ -482,11 +486,11 @@ msgstr ""
 msgid "Zdroje"
 msgstr ""
 
-#: static/tpl/homepage.html:71
+#: static/tpl/homepage.html:67
 msgid "Zeměpis hrou"
 msgstr ""
 
-#: static/tpl/homepage.html:72
+#: static/tpl/homepage.html:68
 msgid "Zeměpis hrou - text"
 msgstr ""
 
@@ -498,7 +502,7 @@ msgstr ""
 msgid "Zrušit"
 msgstr ""
 
-#: static/js/directives.js:186
+#: static/js/directives.js:198
 msgid "bodů do příští úrovně"
 msgstr ""
 
@@ -506,15 +510,15 @@ msgstr ""
 msgid "další mapy"
 msgstr ""
 
-#: static/js/directives.js:43
+#: static/js/directives.js:55
 msgid "hl. město státu"
 msgstr ""
 
-#: static/js/directives.js:309
+#: static/js/directives.js:321
 msgid "nám napište"
 msgstr ""
 
-#: static/js/directives.js:304
+#: static/js/directives.js:316
 msgid "obnovit stránku"
 msgstr ""
 
@@ -522,7 +526,7 @@ msgstr ""
 msgid "přibývají za každou správnou odpověď"
 msgstr ""
 
-#: static/js/directives.js:38
+#: static/js/directives.js:50
 msgid "stát s hl. městem"
 msgstr ""
 

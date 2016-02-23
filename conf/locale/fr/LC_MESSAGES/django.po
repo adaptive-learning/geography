@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-02 15:15+0000\n"
-"PO-Revision-Date: 2016-02-07 06:26+0000\n"
+"PO-Revision-Date: 2016-02-21 22:42+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: French (http://www.transifex.com/adaptive-learning/slepemapycz/language/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -35,27 +36,27 @@ msgstr ""
 
 #: templates/create_goal.html:67
 msgid "Zavřít"
-msgstr ""
+msgstr "Fermer"
 
 #: templates/generated/homepage.html:19 templates/home.html:60 views.py:35
 msgid "Slepé mapy"
-msgstr ""
+msgstr "Cartes muettes"
 
 #: templates/generated/homepage.html:21
 msgid "Vyberte si mapu k procvičování:"
-msgstr ""
+msgstr "Choisi la carte à entraîner"
 
 #: templates/generated/homepage.html:26
 msgid "Státy Evropy"
-msgstr ""
+msgstr "États d'Europe"
 
 #: templates/generated/homepage.html:31
 msgid "Řeky ČR"
-msgstr ""
+msgstr "Les rivières et les fleuves de la République Tchèque"
 
 #: templates/generated/homepage.html:36
 msgid "Státy USA"
-msgstr ""
+msgstr "États d'États-Unis"
 
 #: templates/generated/homepage.html:41
 msgid "Pohoří ČR"
@@ -71,19 +72,19 @@ msgstr ""
 
 #: templates/generated/homepage.html:54
 msgid "Chcete jinou? Podívejte se na"
-msgstr ""
+msgstr "Voules-Vous un autre? Regardez"
 
 #: templates/generated/homepage.html:57
 msgid "další mapy"
-msgstr ""
+msgstr "d'autres cartes"
 
 #: templates/generated/homepage.html:67
 msgid "Jak to funguje?"
-msgstr ""
+msgstr "Comment ça marche?"
 
 #: templates/generated/homepage.html:71
 msgid "Zeměpis hrou"
-msgstr ""
+msgstr "Géo en s’amusant"
 
 #: templates/generated/homepage.html:72
 msgid "Zeměpis hrou - text"
@@ -91,7 +92,7 @@ msgstr ""
 
 #: templates/generated/homepage.html:76
 msgid "Adaptabilní procvičování"
-msgstr ""
+msgstr "Entraînement adaptable"
 
 #: templates/generated/homepage.html:77
 msgid "Adaptabilní procvičování - text"
@@ -99,11 +100,11 @@ msgstr ""
 
 #: templates/generated/homepage.html:79
 msgid "Ukázka procvičování"
-msgstr ""
+msgstr "Extrait d'entraînement"
 
 #: templates/generated/homepage.html:83
 msgid "Specializovaný systém"
-msgstr ""
+msgstr "Système specialisé"
 
 #: templates/generated/homepage.html:84
 msgid "Specializovaný systém - text"
@@ -111,7 +112,7 @@ msgstr ""
 
 #: templates/generated/homepage.html:88
 msgid "Vizualizace znalostí"
-msgstr ""
+msgstr "Visualisation de connaissances"
 
 #: templates/generated/homepage.html:89
 msgid "Vizualizace znalostí - text"
@@ -119,11 +120,11 @@ msgstr ""
 
 #: templates/generated/homepage.html:91
 msgid "Ukázka mapy znalostí"
-msgstr ""
+msgstr "Extrait de la carte de connaissances"
 
 #: templates/generated/homepage.html:95
 msgid "Učení z dat"
-msgstr ""
+msgstr "Étudiér en utilisant les données"
 
 #: templates/generated/homepage.html:96
 msgid "Učení z dat - text"
@@ -139,19 +140,19 @@ msgstr ""
 
 #: templates/home.html:64
 msgid "Svět"
-msgstr ""
+msgstr "Le monde"
 
 #: templates/home.html:68
 msgid "Kontinenty"
-msgstr ""
+msgstr "Les continents"
 
 #: templates/home.html:78
 msgid "Státy"
-msgstr ""
+msgstr "États"
 
 #: templates/home.html:87
 msgid "Přehled map"
-msgstr ""
+msgstr "Tableau de cartes récapitulatif "
 
 #: templates/home.html:98
 msgid ""
@@ -169,11 +170,11 @@ msgstr ""
 
 #: templates/home.html:120
 msgid "Moje časté chyby"
-msgstr ""
+msgstr "Mes fautes courantes"
 
 #: templates/home.html:125
 msgid "Osobní cíle"
-msgstr ""
+msgstr "Buts personells"
 
 #: templates/home.html:130
 msgid "Nastavení"
@@ -189,7 +190,7 @@ msgstr ""
 
 #: templates/home.html:187
 msgid "O projektu"
-msgstr ""
+msgstr "À propos de projet"
 
 #: views.py:35
 msgid "inteligentní aplikace na procvičování zeměpisu"

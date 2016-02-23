@@ -1,9 +1,10 @@
 # 
 # Translators:
+# Eliška Hradilová <eliska.hradilova@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-02-07 06:57+0000\n"
+"PO-Revision-Date: 2016-02-23 10:16+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: French (http://www.transifex.com/adaptive-learning/slepemapycz/language/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,65 +14,65 @@ msgstr ""
 
 #: static/tpl/about.html:114
 msgid "- administrativní členění Itálie, Francie a Španělska"
-msgstr ""
+msgstr "- division administrative de l'Italie, de la France et de l'Espagne"
 
 #: static/tpl/about.html:119
 msgid "- města České republiky a Slovenska"
-msgstr ""
+msgstr "- villes de la République Tchèque et de la Slovaquie"
 
 #: static/tpl/about.html:138
 msgid "- vlaječky ostatních administrativních celků"
-msgstr ""
+msgstr "- drapeaux d'autres ensembles administratifs"
 
 #: static/tpl/about.html:134
 msgid "- vlaječky států světa a USA"
-msgstr ""
+msgstr "- drapeaux d'états du monde et d'États-Unis"
 
 #: static/tpl/about.html:109
 msgid ""
 "- zdroj většiny mapových podkladů (svět, kontinenty,\n"
 "        většina států)"
-msgstr ""
+msgstr "- source de la majorité de dossiers de carte (le monde, les continents,\nla majorité d'états)"
 
 #: static/tpl/about.html:127
 msgid "- řeky Rakouska"
-msgstr ""
+msgstr "- les rivières et fleuves d'Autriche"
 
 #: static/tpl/about.html:123
 msgid "- řeky České republiky"
-msgstr ""
+msgstr "- les rivières et fleuves de la République Tchèque"
 
 #: static/tpl/about.html:76
 msgid ""
 "<i class=\"flag-cs\"></i> Česká a <i class=\"flag-en\"></i> Anglická verze\n"
 "        systému je dílem výše uvedených vývojářů."
-msgstr ""
+msgstr "La version tchèque <i class=\"flag-cs\"></i> et anglais <i class=\"flag-en\"></i>\ndu système est un travail de développeurs nommés plus haut."
 
 #: static/tpl/about.html:83
 msgid ""
 "<i class=\"flag-de\"></i> Německý překlad vytvořila Petra Moskva a její\n"
 "        studentky z Gymnázia a Obchodní Akdemie Orlová."
-msgstr ""
+msgstr "La traduction allemande <i class=\"flag-de\"></i> est créée par Petra Moskva et ses étudiantes du Lycée et École supérieure de commerce Orlová."
 
 #: static/tpl/about.html:80
 msgid "<i class=\"flag-es\"></i> Španělský překlad vytvořil Benjamin Valdes."
-msgstr ""
+msgstr "La traduction espagnole <i class=\"flag-es\"></i> est créée par Benjamin Valdes."
 
-#: static/tpl/homepage.html:76
+#: static/tpl/homepage.html:72
 msgid "Adaptabilní procvičování"
-msgstr ""
+msgstr "Entraînement adaptable"
 
-#: static/tpl/homepage.html:77
+#: static/tpl/homepage.html:73
 msgid "Adaptabilní procvičování - text"
-msgstr ""
+msgstr "Entraînement adaptable - texte"
 
-#: static/tpl/user_tpl.html:81
+#: static/tpl/user_tpl.html:74
 msgid "Adresa profilu"
-msgstr ""
+msgstr "L'adresse de profil"
 
-#: static/js/directives.js:181
+#: static/js/directives.js:193
 msgid "Aktuální úroveň"
-msgstr ""
+msgstr "Niveau actuel"
 
 #: static/tpl/about.html:144
 msgid ""
@@ -79,23 +80,23 @@ msgid ""
 "      <a href=\"http://www.otevrenadata.cz/\">Společně otevíráme data</a>,\n"
 "       pořádané \n"
 "      <a href=\"http://www.motejl.cz/\">Fondem Otakara Motejla</a>."
-msgstr ""
+msgstr "L'application a été attribué dans la Competition\n<a href=\"http://www.otevrenadata.cz/\">Nous ouvrons les données ensemble</a>,\norganisé par\n<a href=\"http://www.motejl.cz/\">Le fonds d'Otakar Motejl</a>."
 
 #: static/js/services.js:343
 msgid "Autonomní společenství"
-msgstr ""
+msgstr "Communautés autonomes"
 
 #: static/tpl/user_tpl.html:15
 msgid "Body"
-msgstr ""
+msgstr "Points"
 
 #: static/tpl/homepage.html:54
 msgid "Chcete jinou? Podívejte se na"
-msgstr ""
+msgstr "Voules-Vous un autre? Regardez"
 
 #: static/tpl/confused_tpl.html:33
 msgid "Chybné odpovědi"
-msgstr ""
+msgstr "Réponses incorrectes"
 
 #: static/js/filters.js:70
 msgid "Co je zvýrazněno?"
@@ -107,300 +108,304 @@ msgid ""
 " pro výzkumné účely. Všechna tato data jsou zpracovávána anonymně. "
 "Přihlašovací údaje (Facebook, Google) jsou použity pouze pro určení identity"
 " při opakovaných návštěvách, jinak se s nimi nepracuje."
-msgstr ""
+msgstr "Les données de réponses sont sauvegardées et utilisées pour choix de questions convenables et pour les buts de recherche. Tout les données sont traîtés anonyme. L'état civil (Facebook, Google) est utilisé seulement à une détermination d'identité pendant des visites répétitives, il n'y a pas un autre usage."
 
 #: static/tpl/user_tpl.html:30
 msgid "E-mail"
-msgstr ""
+msgstr "L'adresse électronique"
 
 #: static/js/services.js:346
 msgid "Hlavní města skrze státy"
 msgstr ""
 
-#: static/js/controllers.js:438
-msgid "Hledaný profil neexistuje."
+#: static/js/directives.js:25 static/js/map.js:286
+msgid "Hlavní město"
 msgstr ""
 
-#: static/tpl/homepage.html:67
+#: static/js/controllers.js:444
+msgid "Hledaný profil neexistuje."
+msgstr "Le profil cherché n'existe pas."
+
+#: static/tpl/homepage.html:63
 msgid "Jak to funguje?"
-msgstr ""
+msgstr "Comment ça marche?"
 
 #: static/js/services.js:348
 msgid "Jezera"
-msgstr ""
+msgstr "Lacs"
 
 #: static/tpl/sign_in_banner.html:8
 msgid ""
 "Již máš odpovězených <b>{{userService.user.profile.number_of_answers}}</b>\n"
 "  odpovědí. Ulož si svůj postup, aby aplikace mohla dlouhodobě přizpůsobovat otázky Tvým znalostem."
-msgstr ""
+msgstr "Tu as déjà répondu aux <b> {{userService.user.profile.number_of_answers}}</b>\nquestions. Sauvegarde ta progression pourque l'application peuve adapter des questions à Tes connaissances à long terme."
 
 #: static/tpl/user_tpl.html:22
 msgid "Jméno"
-msgstr ""
+msgstr "Prénom"
 
 #: static/tpl/about.html:6
 msgid "Kdo za tím stojí"
-msgstr ""
+msgstr "Qui a fait ça"
 
-#: static/js/controllers.js:320
+#: static/js/controllers.js:326
 msgid "Kontinenty"
-msgstr ""
+msgstr "Continents"
 
 #: static/js/services.js:341
 msgid "Kraje"
-msgstr ""
+msgstr "Régions"
 
 #: static/tpl/practice_tpl.html:106
 msgid "Mapa znalostí"
-msgstr ""
+msgstr "Carte de connaissance"
 
 #: static/tpl/about.html:16
 msgid "Mezi další projekty této skupiny patří:"
-msgstr ""
+msgstr "Autres produits de ce groupe:"
 
 #: static/tpl/map_tpl.html:11
 msgid "Moje znalosti"
-msgstr ""
+msgstr "Mes connaissances"
 
 #: static/tpl/confused_tpl.html:3
 msgid "Moje časté chyby"
-msgstr ""
+msgstr "Mes fautes courantes"
 
 #: static/js/services.js:349
 msgid "Moře"
-msgstr ""
+msgstr "Mers"
 
 #: static/js/services.js:345
 msgid "Města"
-msgstr ""
+msgstr "Villes"
 
 #: static/tpl/homepage.html:46
 msgid "Města Evropy"
-msgstr ""
+msgstr "Villes d'Europe"
 
 #: static/tpl/user_tpl.html:38 static/tpl/user_tpl.html:68
 msgid "Můj profil je veřejný"
-msgstr ""
+msgstr "Mon profil est public"
 
 #: static/tpl/about.html:44
 msgid ""
 "Na vývoji Slepých map se podílí především Vít Stanislav a Jan Papoušek."
-msgstr ""
+msgstr "C'est principalement Vít Stanislav et Jan Papoušek qui participent au développement de Cartes muettes."
 
-#: static/js/directives.js:129
+#: static/js/directives.js:141
 msgid "Naučeno"
-msgstr ""
+msgstr "Appris"
 
-#: static/js/map.js:289
+#: static/js/map.js:297
 msgid "Neprocvičováno"
-msgstr ""
+msgstr "Pas entraîné"
 
 #: static/tpl/practice_tpl.html:46
 msgid "Nevím"
-msgstr ""
+msgstr "Je ne sais pas"
 
 #: static/js/filters.js:92
 msgid "Neznámý"
-msgstr ""
+msgstr "Inconnu"
 
 #: static/tpl/about.html:54
 msgid ""
 "Náměty k rozvoji systému zasílejte na \n"
 "    <span class=\"email contact\">slepemapy{zavinac}googlegroups.com</span>."
-msgstr ""
+msgstr "Vous pouvez nous envoyer Votre suggestions à \n<span class=\"email contact\">slepemapy{zavinac}googlegroups.com</span>."
 
-#: static/js/services.js:145
-msgid "O prjektu"
-msgstr ""
-
-#: static/tpl/about.html:2
+#: static/js/services.js:145 static/tpl/about.html:2
 msgid "O projektu"
-msgstr ""
+msgstr "À propos de projet"
 
 #: static/js/services.js:342
 msgid "Oblasti"
-msgstr ""
+msgstr "Zones"
 
 #: static/tpl/about.html:143
 msgid "Ocenění"
-msgstr ""
+msgstr "Appréciations"
 
-#: static/js/directives.js:16 static/js/map.js:276
+#: static/js/directives.js:17 static/js/map.js:276
 msgid "Odhad znalosti"
-msgstr ""
+msgstr "Estimation de connaissance"
 
 #: static/tpl/practice_tpl.html:97
 msgid "Osobní cíle"
-msgstr ""
+msgstr "Buts personells"
 
 #: static/tpl/about.html:68
 msgid "Ostatní mapy připravil Vít Stanislav."
-msgstr ""
+msgstr "D'autres cartes sont préparés par Vít Stanislav."
 
 #: static/js/services.js:351
 msgid "Ostrovy"
-msgstr ""
+msgstr "Îles"
 
 #: static/js/services.js:350
 msgid "Pohoří"
-msgstr ""
+msgstr "Chaînes de montagnes"
 
 #: static/tpl/practice_tpl.html:51
 msgid "Pokračovat"
-msgstr ""
+msgstr "Continuer"
 
 #: static/tpl/practice_tpl.html:102
 msgid "Pokračovat v procvičování"
-msgstr ""
+msgstr "Continuer à entraîner"
 
-#: static/js/directives.js:307
+#: static/js/directives.js:319
 msgid "Pokud problém přetrval zkuste to znovu později nebo"
-msgstr ""
+msgstr "Si le problème persiste, essayez plus tard ou"
 
 #: static/tpl/about.html:89
 msgid ""
 "Pokud se chcete zapojit do překládání Slepých map, můžete tak učinit na \n"
 "      <a href=\"https://www.transifex.com/adaptive-learning/slepemapycz/\">\n"
 "      Transifex.com stránce projektu</a>."
-msgstr ""
+msgstr "Si Vous voulez partager à la traduction de Cartes muettes, Vous pouvez le fait sur \n<a href=\"https://www.transifex.com/adaptive-learning/slepemapycz/\">\nTransifex.com site de projet</a>."
 
 #: static/tpl/about.html:48
 msgid ""
 "Pokud studujete na FI a máte zájem se zapojit do vývoje podobného typu systémů,\n"
 "    případně pokud máte zájem o výzkumnou spolupráci, kontaktujte\n"
 "    <a href=\"http://www.muni.cz/people/4297\">Radka Pelánka</a>."
-msgstr ""
+msgstr "Si Vous étudiez à la Faculte d'informatique et Vous vous intéressez au développement du type de systèmes similaires,\néventuellement si Vous vous intéressez à la collaboration de recherche, contactez\n<a href=\"http://www.muni.cz/people/4297\">Radek Pelánek</a>."
 
 #: static/js/services.js:251
 msgid "Politická mapa"
-msgstr ""
+msgstr "Carte politique"
 
 #: static/js/services.js:269
 msgid "Povrch"
-msgstr ""
+msgstr "Surface"
 
 #: static/js/map.js:282
 msgid "Počet obyvatel"
-msgstr ""
+msgstr "Nombre d'habitants"
 
-#: static/js/directives.js:301
+#: static/js/directives.js:313
 msgid "Pro vyřešení problému zkuste"
-msgstr ""
+msgstr "Pour résoudre un problème, essayez"
 
 #: static/tpl/confused_tpl.html:23 static/tpl/overview_tpl.html:20
 #: static/tpl/view_tpl.html:16 static/tpl/view_tpl.html:41
 #: static/tpl/view_tpl.html:48
 msgid "Procvičovat"
-msgstr ""
+msgstr "Entraîner"
 
-#: static/js/directives.js:137
+#: static/js/directives.js:149
 msgid "Procvičováno"
-msgstr ""
+msgstr "Entraîné"
 
 #: static/js/services.js:340
 msgid "Provincie"
-msgstr ""
+msgstr "Province"
 
 #: static/tpl/map_tpl.html:18
 msgid "Průměrný nový uživatel"
-msgstr ""
+msgstr "Nouvel utilisateur moyen"
 
 #: static/js/services.js:146 static/tpl/overview_tpl.html:2
 msgid "Přehled map"
-msgstr ""
+msgstr "Tableau de cartes récapitulatif"
 
 #: static/tpl/user_tpl.html:60
 msgid "Přehled znalostí uživatele"
-msgstr ""
+msgstr "Tableau de connaissances d'utilisateur"
 
 #: static/tpl/about.html:74
 msgid "Překlady"
-msgstr ""
+msgstr "Traductions"
 
 #: static/tpl/map_tpl.html:24
 msgid "Přiblížit mapu můžete i kolečkem myši nebo dotykovým gestem."
-msgstr ""
+msgstr "Vous pouvez approcher la carte avec la molette de souris ou avec un geste tactile."
 
 #: static/tpl/user_tpl.html:26
 msgid "Příjmení"
-msgstr ""
+msgstr "Nom"
 
 #: static/tpl/about.html:60
 msgid "Příprava map"
-msgstr ""
+msgstr "Préparation de cartes"
 
-#: static/js/directives.js:193
+#: static/js/directives.js:205
 msgid "Příští úroveň"
-msgstr ""
+msgstr "Niveau suivant"
 
 #: static/tpl/about.html:65
 msgid ""
 "Rakouské řeky a města Finska, Švédska a Norska zpracoval Martin Spáčil."
-msgstr ""
+msgstr "Les riviers, fleuves et villes du Finlande, Suède et Norwège sont créés par Martin Spáčil."
 
 #: static/js/services.js:339
 msgid "Regiony"
-msgstr ""
+msgstr "Zones géographiques"
 
 #: static/tpl/sign_in_banner.html:12
 msgid "Registrovat se"
-msgstr ""
+msgstr "Enregistrer"
 
 #: static/tpl/user_tpl.html:64
 msgid "Sdílej svůj profil"
-msgstr ""
+msgstr "Partager son profil"
 
 #: static/tpl/homepage.html:19
 msgid "Slepé mapy"
-msgstr ""
+msgstr "Cartes muettes"
 
 #: static/tpl/about.html:8
 msgid ""
 "Slepé mapy jsou vyvíjeny na <a href=\"http://www.fi.muni.cz/\">\n"
 "    Fakultě informatiky Masarykovy univerzity</a>, \n"
 "    konkrétně v rámci skupiny <a href=\"http://www.fi.muni.cz/adaptivelearning/\">Adaptive Learning</a>."
-msgstr ""
+msgstr "Les Cartes muettes sont dévéloppées sur <a href=\"http://www.fi.muni.cz/\">\nla Faculté d'informatique de l'Université de Masaryk</a>,\nconcrètement dans le cadre de la groupe <a href=\"http://www.fi.muni.cz/adaptivelearning/\">Adaptive Learning</a>."
 
 #: static/tpl/about.html:97
 msgid "Soukromí"
-msgstr ""
+msgstr "Vie privée"
 
-#: static/tpl/homepage.html:83
+#: static/tpl/homepage.html:79
 msgid "Specializovaný systém"
-msgstr ""
+msgstr "Système specialisé"
 
-#: static/tpl/homepage.html:84
+#: static/tpl/homepage.html:80
 msgid "Specializovaný systém - text"
-msgstr ""
+msgstr "Système specialisé - texte"
 
 #: static/js/services.js:344
 msgid "Spolkové země"
-msgstr ""
+msgstr "États fédérés"
 
 #: static/tpl/confused_tpl.html:27
 msgid "Správné odpovědi"
+msgstr "Réponses correctes"
+
+#: static/js/directives.js:30 static/js/map.js:290
+msgid "Stát"
 msgstr ""
 
-#: static/js/controllers.js:319 static/js/services.js:337
+#: static/js/controllers.js:325 static/js/services.js:337
 msgid "Státy"
-msgstr ""
+msgstr "États"
 
 #: static/tpl/homepage.html:41
 msgid "Státy Afriky"
-msgstr ""
+msgstr "États d'Afrique"
 
 #: static/tpl/homepage.html:26
 msgid "Státy Evropy"
-msgstr ""
+msgstr "États d'Europe"
 
 #: static/tpl/homepage.html:51
 msgid "Státy Světa"
-msgstr ""
+msgstr "États du monde"
 
 #: static/tpl/homepage.html:36
 msgid "Státy USA"
-msgstr ""
+msgstr "États d'États-Unis"
 
 #: static/js/services.js:338
 msgid "Státy skrze hlavní města"
@@ -408,140 +413,140 @@ msgstr ""
 
 #: static/js/services.js:12
 msgid "Svět"
-msgstr ""
+msgstr "Le monde"
 
 #: static/js/services.js:11
 msgid "USA"
-msgstr ""
+msgstr "États-Unis"
 
-#: static/tpl/homepage.html:91
+#: static/tpl/homepage.html:87
 msgid "Ukázka mapy znalostí"
-msgstr ""
+msgstr "Extrait de la carte de connaissances"
 
-#: static/tpl/homepage.html:79
+#: static/tpl/homepage.html:75
 msgid "Ukázka procvičování"
-msgstr ""
+msgstr "Extrait d'entraînement"
 
 #: static/tpl/user_tpl.html:43
 msgid "Uložit"
-msgstr ""
+msgstr "Sauvgarder"
 
 #: static/tpl/user_tpl.html:5
 msgid "Upravit profil"
-msgstr ""
+msgstr "Arranger profil"
 
-#: static/tpl/homepage.html:95
+#: static/tpl/homepage.html:91
 msgid "Učení z dat"
-msgstr ""
+msgstr "Étudiér en utilisant les données"
 
-#: static/tpl/homepage.html:96
+#: static/tpl/homepage.html:92
 msgid "Učení z dat - text"
-msgstr ""
+msgstr "Étudiér en utilisant les données - texte"
 
-#: static/js/controllers.js:451 static/js/directives.js:298
+#: static/js/controllers.js:457 static/js/directives.js:310
 msgid "V aplikaci bohužel nastala chyba."
-msgstr ""
+msgstr "Malheureusement une erreur s'est produite dans l'application."
 
-#: static/tpl/homepage.html:88
+#: static/tpl/homepage.html:84
 msgid "Vizualizace znalostí"
-msgstr ""
+msgstr "Visualisation de connaissances"
 
-#: static/tpl/homepage.html:89
+#: static/tpl/homepage.html:85
 msgid "Vizualizace znalostí - text"
-msgstr ""
+msgstr "Visualisation de connaissances - texte"
 
 #: static/js/services.js:264
 msgid "Vodstvo"
-msgstr ""
+msgstr "Cours d'eau"
 
 #: static/js/filters.js:68
 msgid "Vyber na mapě"
-msgstr ""
+msgstr "Choisi dans la carte"
 
 #: static/tpl/homepage.html:21
 msgid "Vyberte si mapu k procvičování:"
-msgstr ""
+msgstr "Choisi la carte à entraîner"
 
 #: static/tpl/practice_tpl.html:110
 msgid "Vybrat jinou mapu"
-msgstr ""
+msgstr "Choisir une carte différente"
 
 #: static/tpl/practice_tpl.html:20
 msgid "Vybráno"
-msgstr ""
+msgstr "Choisi"
 
 #: static/tpl/content_admin_banner.html:7 static/tpl/sign_in_banner.html:6
 msgid "Zavřít"
-msgstr ""
+msgstr "Fermer"
 
 #: static/tpl/view_tpl.html:75
 msgid "Zde zatím nebylo nic procvičováno."
-msgstr ""
+msgstr "Rien n'était entraîné ici."
 
 #: static/tpl/about.html:104
 msgid "Zdroje"
-msgstr ""
+msgstr "Sources"
 
-#: static/tpl/homepage.html:71
+#: static/tpl/homepage.html:67
 msgid "Zeměpis hrou"
-msgstr ""
+msgstr "Géo en s’amusant"
 
-#: static/tpl/homepage.html:72
+#: static/tpl/homepage.html:68
 msgid "Zeměpis hrou - text"
-msgstr ""
+msgstr "Géo en s'amusant - texte"
 
 #: static/tpl/practice_tpl.html:57
 msgid "Znovu zvýraznit"
-msgstr ""
+msgstr "Accentuer de nouveau"
 
 #: static/tpl/user_tpl.html:46
 msgid "Zrušit"
-msgstr ""
+msgstr "Annuler"
 
-#: static/js/directives.js:186
+#: static/js/directives.js:198
 msgid "bodů do příští úrovně"
-msgstr ""
+msgstr "de points pour le niveau suivant"
 
 #: static/tpl/homepage.html:57
 msgid "další mapy"
-msgstr ""
+msgstr "d'autres cartes"
 
-#: static/js/directives.js:43
+#: static/js/directives.js:55
 msgid "hl. město státu"
 msgstr ""
 
-#: static/js/directives.js:309
+#: static/js/directives.js:321
 msgid "nám napište"
-msgstr ""
+msgstr "écrivez-nous"
 
-#: static/js/directives.js:304
+#: static/js/directives.js:316
 msgid "obnovit stránku"
-msgstr ""
+msgstr "rafraîchir la site d'internet"
 
 #: static/tpl/user_tpl.html:17
 msgid "přibývají za každou správnou odpověď"
-msgstr ""
+msgstr "augmentent avec chaque réponse correcte"
 
-#: static/js/directives.js:38
+#: static/js/directives.js:50
 msgid "stát s hl. městem"
 msgstr ""
 
 #: static/tpl/practice_tpl.html:69
 msgid "Úspěšnost"
-msgstr ""
+msgstr "Taux de succès"
 
 #: static/js/services.js:347
 msgid "Řeky"
-msgstr ""
+msgstr "Des rivières et des fleuves"
 
 #: static/tpl/about.html:62
 msgid "Řeky Slovenska a České republiky připravil Radim Krchňáček."
-msgstr ""
+msgstr "C'était Radim Krchňáček qui a préparé Les rivières et les fleuves de la Slovaquie et de la République Tchèque."
 
 #: static/tpl/homepage.html:31
 msgid "Řeky ČR"
-msgstr ""
+msgstr "Les rivières et les fleuves de la République Tchèque"
 
 #: static/tpl/confused_tpl.html:8
 msgid "Žádné časté chyby nebyly nalezeny"
-msgstr ""
+msgstr "Pas d'erreurs courantes ont été trouvés."

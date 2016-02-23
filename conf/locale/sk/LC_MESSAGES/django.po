@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-02 15:15+0000\n"
-"PO-Revision-Date: 2016-02-07 06:26+0000\n"
+"PO-Revision-Date: 2016-02-14 19:01+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Slovak (http://www.transifex.com/adaptive-learning/slepemapycz/language/sk/)\n"
 "MIME-Version: 1.0\n"
@@ -139,7 +140,7 @@ msgstr ""
 
 #: templates/home.html:64
 msgid "Svět"
-msgstr ""
+msgstr "Svet"
 
 #: templates/home.html:68
 msgid "Kontinenty"
