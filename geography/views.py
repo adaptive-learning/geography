@@ -47,7 +47,7 @@ def home(request, hack=None):
         user = json.dumps(request.user.userprofile.to_json(stats=True))
         email = request.user.email
     c = {
-        'title': _('Slepé mapy') + ' - ' + _('inteligentní aplikace na procvičování zeměpisu'),
+        'title': _(u'Slepé mapy') + ' - ' + _(u'inteligentní aplikace na procvičování zeměpisu'),
         'map': get_map_from_url(hack),
         'is_production': settings.ON_PRODUCTION,
         'css_files': CSS_FILES,
@@ -117,18 +117,18 @@ def get_map_from_url(hack):
 
 def resolve_map_type(code):
     types = {
-        'state': _('Státy'),
+        'state': _(u'Státy'),
         'region': _('Regiony'),
         'province': _('Provincie'),
         'region_cz': _('Kraje'),
         'region_it': _('Oblasti'),
-        'autonomous_Comunity': _('Autonomní společenství'),
-        'bundesland': _('Spolkové země'),
-        'city': _('Města'),
-        'river': _('Řeky'),
+        'autonomous_Comunity': _(u'Autonomní společenství'),
+        'bundesland': _(u'Spolkové země'),
+        'city': _(u'Města'),
+        'river': _(u'Řeky'),
         'lake': _('Jezera'),
-        'sea': _('Moře'),
-        'mountains': _('Pohoří'),
+        'sea': _(u'Moře'),
+        'mountains': _(u'Pohoří'),
         'island': _('Ostrovy'),
     }
     return types.get(code, '')
