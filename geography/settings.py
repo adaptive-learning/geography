@@ -42,6 +42,8 @@ ALLOWED_HOSTS = [
     'de.outlinemaps.org',
     '.outlinemaps.org',
     '.slepemapy.cz',
+    'staging.slepemapy.cz',
+    'staging.outlinemaps.org',
 ]
 
 
