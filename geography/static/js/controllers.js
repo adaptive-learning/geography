@@ -90,7 +90,7 @@ angular.module('proso.geography.controllers', [])
             $scope.imageController.highlightItem(place.description);
         };
 
-        $scope.setClickHack = function(type) {
+        $scope.setClickHack = function() {
           $scope.clickHack = true;
         };
 

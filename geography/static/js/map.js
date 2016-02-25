@@ -262,6 +262,22 @@ angular.module('proso.geography.map', [])
 
   .factory('getTooltipGetter', ['$filter', 'colorScale', 'gettextCatalog',
       function($filter, colorScale, gettextCatalog){
+
+    function getAttributes(d, place) {
+        return (d.population ? gettextCatalog.getString('Počet obyvatel') + ': ' +
+          '<span class="badge badge-default">' +
+            $filter('number')(d.population) +
+          '</span><br><br>' : '') +
+        (place['state-by-city'] ? gettextCatalog.getString('Hlavní město') + ': ' +
+          '<span class="label label-default">' +
+           place['state-by-city']  +
+          '</span><br><br>' : '') +
+        (place['city-by-state'] ? gettextCatalog.getString('Stát') + ': ' +
+          '<span class="label label-default">' +
+           place['city-by-state']  +
+          '</span><br><br>' : '');
+    }
+
     return function(places) {
       return function(d) {
         var place = places && places[d.code];
@@ -279,18 +295,7 @@ angular.module('proso.geography.map', [])
                 colorScale(place.prediction).hex() + '"></i>' +
                 Math.round(10 * place.prediction) + ' / 10 ' +
               '</span><br><br>' +
-            (d.population ? gettextCatalog.getString('Počet obyvatel') + ': ' +
-              '<span class="badge badge-default">' +
-                $filter('number')(d.population) +
-              '</span><br><br>' : '') +
-            (place['state-by-city'] ? gettextCatalog.getString('Hlavní město') + ': ' +
-              '<span class="label label-default">' +
-               place['state-by-city']  +
-              '</span><br><br>' : '') +
-            (place['city-by-state'] ? gettextCatalog.getString('Stát') + ': ' +
-              '<span class="label label-default">' +
-               place['city-by-state']  +
-              '</span><br><br>' : '') +
+            getAttributes(d, place) +
           '</div>' :
             (place && place.summary ?
             '' :
