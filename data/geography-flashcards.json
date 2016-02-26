@@ -12206,7 +12206,9 @@
       "id": "europe-es-by-city", 
       "context": "europe", 
       "description": "es"
-    }, 
+    }
+  ], 
+  "terms": [
     {
       "term": "se-by-city", 
       "id": "europe-se-by-city", 
@@ -28659,6 +28661,7 @@
       "name-de": "Sdo Lu1s", 
       "name-cs": "Sdo Lu1s", 
       "name-es": "Sdo Lu1s", 
+      "name-ru": "\u0421\u0430\u043d-\u041b\u0443\u0438\u0441", 
       "type": "city", 
       "id": "Sao_Luis", 
       "categories": [
