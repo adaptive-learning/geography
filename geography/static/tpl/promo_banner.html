@@ -1,0 +1,27 @@
+<div class="bottom-alert text-center alert alert-info" 
+  ng-if="!('promo1'|cookieExists)">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+      set-cookie-on-click="promo1"
+      track-click="close promo1 banner">
+    <span aria-hidden="true">&times;</span>
+    <span class="sr-only" translate>Zavřít</span>
+  </button>
+  Už jste vyzkoušeli naše další systémy
+  <a href="http://www.umimecesky.cz/"
+     track-click="umimecesky banner"
+     target="_blank"
+     class="btn btn-primary"
+    >
+    Umíme Česky
+    </a>
+  a
+  <a href="http://www.poznavackaprirody.cz/"
+     track-click="poznavackaprirody banner"
+     target="_blank"
+     class="btn btn-primary"
+    >
+  Poznávačka přírody
+    </a>
+    ?
+</div>
+
