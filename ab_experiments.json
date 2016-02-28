@@ -143,6 +143,54 @@
       ],
       "id": "target-difficulty-2",
       "disabled": true
+    },
+    {
+      "variables": [
+        {
+          "values": [
+            {
+              "probability": 50,
+              "value": "proso.models.option_selection.CompetitiveOptionSelection"
+            },
+            {
+              "probability": 50,
+              "value": "proso.models.option_selection.AdjustedOptionSelection"
+            }
+          ],
+          "name": "option_selector.class",
+          "app_name": "proso_models"
+        },
+        {
+          "values": [
+            {
+              "probability": 33,
+              "value": "proso.models.option_selection.PartiallyRandomOptionsNumber"
+            },
+            {
+              "probability": 34,
+              "value": "proso.models.option_selection.AdjustedOptionsNumber"
+            },
+            {
+              "probability": 33,
+              "value": "geography.option_selection.PartialyFourOptionsNumber"
+            }
+          ],
+          "name": "options_count.class",
+          "app_name": "proso_models"
+        },
+        {
+          "values": [
+            {
+              "probability": 100,
+              "value": "false"
+            }
+          ],
+          "name": "item_selector.parameters.history_adjustment",
+          "app_name": "proso_models"
+        }
+      ],
+      "id": "options-construction",
+      "disabled": false
     }
   ]
 }
