@@ -30320,6 +30320,7 @@
       ]
     }, 
     {
+      "name-en": "Bebrava", 
       "type": "river", 
       "id": "Bebrava", 
       "categories": [
@@ -30328,6 +30329,7 @@
       "name-cs": "Bebrava"
     }, 
     {
+      "name-en": "Biela Orava", 
       "type": "river", 
       "id": "Biela_Orava", 
       "categories": [
@@ -30336,6 +30338,7 @@
       "name-cs": "Biela Orava"
     }, 
     {
+      "name-en": "Biela Voda", 
       "type": "river", 
       "id": "Biela_Voda", 
       "categories": [
@@ -30344,6 +30347,7 @@
       "name-cs": "Biela Voda"
     }, 
     {
+      "name-en": "Biely V\u00e1h", 
       "type": "river", 
       "id": "Biely_Vah", 
       "categories": [
@@ -30352,6 +30356,7 @@
       "name-cs": "Biely V\u00e1h"
     }, 
     {
+      "name-en": "Blh", 
       "type": "river", 
       "id": "Blh", 
       "categories": [
@@ -30360,6 +30365,7 @@
       "name-cs": "Blh"
     }, 
     {
+      "name-en": "Bodrog", 
       "type": "river", 
       "id": "Bodrog", 
       "categories": [
@@ -30368,6 +30374,7 @@
       "name-cs": "Bodrog"
     }, 
     {
+      "name-en": "Bodva", 
       "type": "river", 
       "id": "Bodva", 
       "categories": [
@@ -30376,6 +30383,7 @@
       "name-cs": "Bodva"
     }, 
     {
+      "name-en": "Cirocha", 
       "type": "river", 
       "id": "Cirocha", 
       "categories": [
@@ -30384,6 +30392,7 @@
       "name-cs": "Cirocha"
     }, 
     {
+      "name-en": "\u010cierna Voda", 
       "type": "river", 
       "id": "Cierna_Voda", 
       "categories": [
@@ -30392,6 +30401,7 @@
       "name-cs": "\u010cierna Voda"
     }, 
     {
+      "name-en": "\u010cierny V\u00e1h", 
       "type": "river", 
       "id": "Cierny_Vah", 
       "categories": [
@@ -30400,6 +30410,7 @@
       "name-cs": "\u010cierny V\u00e1h"
     }, 
     {
+      "name-en": "Dudv\u00e1h", 
       "type": "river", 
       "id": "Dudvah", 
       "categories": [
@@ -30408,6 +30419,7 @@
       "name-cs": "Dudv\u00e1h"
     }, 
     {
+      "name-en": "Dunaj", 
       "type": "river", 
       "id": "Dunaj", 
       "categories": [
@@ -30417,6 +30429,7 @@
       "name-cs": "Dunaj"
     }, 
     {
+      "name-en": "Dunajec", 
       "type": "river", 
       "id": "Dunajec", 
       "categories": [
@@ -30425,6 +30438,7 @@
       "name-cs": "Dunajec"
     }, 
     {
+      "name-en": "Hnilec", 
       "type": "river", 
       "id": "Hnilec", 
       "categories": [
@@ -30433,6 +30447,7 @@
       "name-cs": "Hnilec"
     }, 
     {
+      "name-en": "Horn\u00e1d", 
       "type": "river", 
       "id": "Hornad", 
       "categories": [
@@ -30441,6 +30456,7 @@
       "name-cs": "Horn\u00e1d"
     }, 
     {
+      "name-en": "Hron", 
       "type": "river", 
       "id": "Hron", 
       "categories": [
@@ -30449,6 +30465,7 @@
       "name-cs": "Hron"
     }, 
     {
+      "name-en": "Ida", 
       "type": "river", 
       "id": "Ida", 
       "categories": [
@@ -30457,6 +30474,7 @@
       "name-cs": "Ida"
     }, 
     {
+      "name-en": "Ipe\u013e", 
       "type": "river", 
       "id": "Ipel", 
       "categories": [
@@ -30465,6 +30483,7 @@
       "name-cs": "Ipe\u013e"
     }, 
     {
+      "name-en": "Krupinica", 
       "type": "river", 
       "id": "Krupinica", 
       "categories": [
@@ -30473,6 +30492,7 @@
       "name-cs": "Krupinica"
     }, 
     {
+      "name-en": "Kysuca", 
       "type": "river", 
       "id": "Kysuca", 
       "categories": [
@@ -30481,6 +30501,7 @@
       "name-cs": "Kysuca"
     }, 
     {
+      "name-en": "Laborec", 
       "type": "river", 
       "id": "Laborec", 
       "categories": [
@@ -30489,6 +30510,7 @@
       "name-cs": "Laborec"
     }, 
     {
+      "name-en": "Latorica", 
       "type": "river", 
       "id": "Latorica", 
       "categories": [
@@ -30497,6 +30519,7 @@
       "name-cs": "Latorica"
     }, 
     {
+      "name-en": "Mal\u00fd Dunaj", 
       "type": "river", 
       "id": "Maly_Dunaj", 
       "categories": [
@@ -30505,6 +30528,7 @@
       "name-cs": "Mal\u00fd Dunaj"
     }, 
     {
+      "name-en": "Nitrica", 
       "type": "river", 
       "id": "Nitrica", 
       "categories": [
@@ -30513,6 +30537,7 @@
       "name-cs": "Nitrica"
     }, 
     {
+      "name-en": "Ondava", 
       "type": "river", 
       "id": "Ondava", 
       "categories": [
@@ -30521,6 +30546,7 @@
       "name-cs": "Ondava"
     }, 
     {
+      "name-en": "Orava", 
       "type": "river", 
       "id": "Orava", 
       "categories": [
@@ -30529,6 +30555,7 @@
       "name-cs": "Orava"
     }, 
     {
+      "name-en": "Raj\u010danka", 
       "type": "river", 
       "id": "Rajcanka", 
       "categories": [
@@ -30537,6 +30564,7 @@
       "name-cs": "Raj\u010danka"
     }, 
     {
+      "name-en": "Rimava", 
       "type": "river", 
       "id": "Rimava", 
       "categories": [
@@ -30545,6 +30573,7 @@
       "name-cs": "Rimava"
     }, 
     {
+      "name-en": "Rudava", 
       "type": "river", 
       "id": "Rudava", 
       "categories": [
@@ -30553,6 +30582,7 @@
       "name-cs": "Rudava"
     }, 
     {
+      "name-en": "Sikenica", 
       "type": "river", 
       "id": "Sikenica", 
       "categories": [
@@ -30561,6 +30591,7 @@
       "name-cs": "Sikenica"
     }, 
     {
+      "name-en": "Slan\u00e1", 
       "type": "river", 
       "id": "Slana", 
       "categories": [
@@ -30569,6 +30600,7 @@
       "name-cs": "Slan\u00e1"
     }, 
     {
+      "name-en": "Star\u00e1 Nitra", 
       "type": "river", 
       "id": "Stara_Nitra", 
       "categories": [
@@ -30577,6 +30609,7 @@
       "name-cs": "Star\u00e1 Nitra"
     }, 
     {
+      "name-en": "Top\u013ea", 
       "type": "river", 
       "id": "Topla", 
       "categories": [
@@ -30585,6 +30618,7 @@
       "name-cs": "Top\u013ea"
     }, 
     {
+      "name-en": "Torysa", 
       "type": "river", 
       "id": "Torysa", 
       "categories": [
@@ -30593,6 +30627,7 @@
       "name-cs": "Torysa"
     }, 
     {
+      "name-en": "Trn\u00e1vka", 
       "type": "river", 
       "id": "Trnavka", 
       "categories": [
@@ -30601,6 +30636,7 @@
       "name-cs": "Trn\u00e1vka"
     }, 
     {
+      "name-en": "Turiec", 
       "type": "river", 
       "id": "Turiec", 
       "categories": [
@@ -30609,6 +30645,7 @@
       "name-cs": "Turiec"
     }, 
     {
+      "name-en": "Uh", 
       "type": "river", 
       "id": "Uh", 
       "categories": [
@@ -30617,6 +30654,7 @@
       "name-cs": "Uh"
     }, 
     {
+      "name-en": "V\u00e1h", 
       "type": "river", 
       "id": "Vah", 
       "categories": [
@@ -30625,6 +30663,7 @@
       "name-cs": "V\u00e1h"
     }, 
     {
+      "name-en": "Vl\u00e1ra", 
       "type": "river", 
       "id": "Vlara", 
       "categories": [
@@ -30634,6 +30673,7 @@
       "name-cs": "Vl\u00e1ra"
     }, 
     {
+      "name-en": "\u017ditava", 
       "type": "river", 
       "id": "Zitava", 
       "categories": [
@@ -30642,6 +30682,7 @@
       "name-cs": "\u017ditava"
     }, 
     {
+      "name-en": "R\u00fdn", 
       "type": "river", 
       "id": "Ryn", 
       "categories": [
@@ -30650,6 +30691,7 @@
       "name-cs": "R\u00fdn"
     }, 
     {
+      "name-en": "Lech", 
       "type": "river", 
       "id": "Lech", 
       "categories": [
@@ -30658,6 +30700,7 @@
       "name-cs": "Lech"
     }, 
     {
+      "name-en": "Inn", 
       "type": "river", 
       "id": "Inn", 
       "categories": [
@@ -30666,6 +30709,7 @@
       "name-cs": "Inn"
     }, 
     {
+      "name-en": "Ill", 
       "type": "river", 
       "id": "Ill", 
       "categories": [
@@ -30674,6 +30718,7 @@
       "name-cs": "Ill"
     }, 
     {
+      "name-en": "Salzach", 
       "type": "river", 
       "id": "Salzach", 
       "categories": [
@@ -30682,6 +30727,7 @@
       "name-cs": "Salzach"
     }, 
     {
+      "name-en": "Pinka", 
       "type": "river", 
       "id": "Pinka", 
       "categories": [
@@ -30690,6 +30736,7 @@
       "name-cs": "Pinka"
     }, 
     {
+      "name-en": "Litava", 
       "type": "river", 
       "id": "Litava", 
       "categories": [
@@ -30699,6 +30746,7 @@
       "name-cs": "Litava"
     }, 
     {
+      "name-en": "Mal\u0161e", 
       "type": "river", 
       "id": "Malse", 
       "categories": [
@@ -30708,6 +30756,7 @@
       "name-cs": "Mal\u0161e"
     }, 
     {
+      "name-en": "Travna", 
       "type": "river", 
       "id": "Travna", 
       "categories": [
@@ -30716,6 +30765,7 @@
       "name-cs": "Travna"
     }, 
     {
+      "name-en": "Krem\u017ee", 
       "type": "river", 
       "id": "Kremze", 
       "categories": [
@@ -30724,6 +30774,7 @@
       "name-cs": "Krem\u017ee"
     }, 
     {
+      "name-en": "En\u017ee", 
       "type": "river", 
       "id": "Enze", 
       "categories": [
@@ -30732,6 +30783,7 @@
       "name-cs": "En\u017ee"
     }, 
     {
+      "name-en": "Salza", 
       "type": "river", 
       "id": "Salza", 
       "categories": [
@@ -30740,6 +30792,7 @@
       "name-cs": "Salza"
     }, 
     {
+      "name-en": "Lavant", 
       "type": "river", 
       "id": "Lavant", 
       "categories": [
@@ -30748,6 +30801,7 @@
       "name-cs": "Lavant"
     }, 
     {
+      "name-en": "Gail", 
       "type": "river", 
       "id": "Gail", 
       "categories": [
@@ -30756,6 +30810,7 @@
       "name-cs": "Gail"
     }, 
     {
+      "name-en": "Mura", 
       "type": "river", 
       "id": "Mura", 
       "categories": [
@@ -30764,6 +30819,7 @@
       "name-cs": "Mura"
     }, 
     {
+      "name-en": "M\u00fcrz", 
       "type": "river", 
       "id": "Murz", 
       "categories": [
@@ -30772,6 +30828,7 @@
       "name-cs": "M\u00fcrz"
     }, 
     {
+      "name-en": "R\u00e1ba", 
       "type": "river", 
       "id": "Raba", 
       "categories": [
@@ -30780,6 +30837,7 @@
       "name-cs": "R\u00e1ba"
     }, 
     {
+      "name-en": "B\u011bl\u00e1 (\u010cechy)", 
       "type": "river", 
       "id": "Bela_(Cechy)", 
       "categories": [
@@ -30788,6 +30846,7 @@
       "name-cs": "B\u011bl\u00e1 (\u010cechy)"
     }, 
     {
+      "name-en": "B\u011bl\u00e1 (Morava)", 
       "type": "river", 
       "id": "Bela_(Morava)", 
       "categories": [
@@ -30796,6 +30855,7 @@
       "name-cs": "B\u011bl\u00e1 (Morava)"
     }, 
     {
+      "name-en": "Blanice (J. \u010cechy)", 
       "type": "river", 
       "id": "Blanice_(J._Cechy)", 
       "categories": [
@@ -30804,6 +30864,7 @@
       "name-cs": "Blanice (J. \u010cechy)"
     }, 
     {
+      "name-en": "Blanice (S\u00e1zava)", 
       "type": "river", 
       "id": "Blanice_(Sazava)", 
       "categories": [
@@ -30812,6 +30873,7 @@
       "name-cs": "Blanice (S\u00e1zava)"
     }, 
     {
+      "name-en": "Blata", 
       "type": "river", 
       "id": "Blata", 
       "categories": [
@@ -30820,6 +30882,7 @@
       "name-cs": "Blata"
     }, 
     {
+      "name-en": "Bl\u0161anka", 
       "type": "river", 
       "id": "Blsanka", 
       "categories": [
@@ -30828,6 +30891,7 @@
       "name-cs": "Bl\u0161anka"
     }, 
     {
+      "name-en": "Bobr\u016fvka", 
       "type": "river", 
       "id": "Bobruvka", 
       "categories": [
@@ -30836,6 +30900,7 @@
       "name-cs": "Bobr\u016fvka"
     }, 
     {
+      "name-en": "Brann\u00e1", 
       "type": "river", 
       "id": "Branna", 
       "categories": [
@@ -30844,6 +30909,7 @@
       "name-cs": "Brann\u00e1"
     }, 
     {
+      "name-en": "Byst\u0159ice (\u010cechy)", 
       "type": "river", 
       "id": "Bystrice_(Cechy)", 
       "categories": [
@@ -30852,6 +30918,7 @@
       "name-cs": "Byst\u0159ice (\u010cechy)"
     }, 
     {
+      "name-en": "Byst\u0159ice (Morava)", 
       "type": "river", 
       "id": "Bystrice_(Morava)", 
       "categories": [
@@ -30860,6 +30927,7 @@
       "name-cs": "Byst\u0159ice (Morava)"
     }, 
     {
+      "name-en": "Cidlina", 
       "type": "river", 
       "id": "Cidlina", 
       "categories": [
@@ -30868,6 +30936,7 @@
       "name-cs": "Cidlina"
     }, 
     {
+      "name-en": "Desn\u00e1", 
       "type": "river", 
       "id": "Desna", 
       "categories": [
@@ -30876,6 +30945,7 @@
       "name-cs": "Desn\u00e1"
     }, 
     {
+      "name-en": "Divok\u00e1 Orlice", 
       "type": "river", 
       "id": "Divoka_Orlice", 
       "categories": [
@@ -30884,6 +30954,7 @@
       "name-cs": "Divok\u00e1 Orlice"
     }, 
     {
+      "name-en": "Doubrava", 
       "type": "river", 
       "id": "Doubrava", 
       "categories": [
@@ -30892,6 +30963,7 @@
       "name-cs": "Doubrava"
     }, 
     {
+      "name-en": "D\u0159evnice", 
       "type": "river", 
       "id": "Drevnice", 
       "categories": [
@@ -30900,6 +30972,7 @@
       "name-cs": "D\u0159evnice"
     }, 
     {
+      "name-en": "Han\u00e1", 
       "type": "river", 
       "id": "Hana", 
       "categories": [
@@ -30908,6 +30981,7 @@
       "name-cs": "Han\u00e1"
     }, 
     {
+      "name-en": "Chomutovka", 
       "type": "river", 
       "id": "Chomutovka", 
       "categories": [
@@ -30916,6 +30990,7 @@
       "name-cs": "Chomutovka"
     }, 
     {
+      "name-en": "Chrudimka", 
       "type": "river", 
       "id": "Chrudimka", 
       "categories": [
@@ -30924,6 +30999,7 @@
       "name-cs": "Chrudimka"
     }, 
     {
+      "name-en": "Jevi\u0161ovka", 
       "type": "river", 
       "id": "Jevisovka", 
       "categories": [
@@ -30932,6 +31008,7 @@
       "name-cs": "Jevi\u0161ovka"
     }, 
     {
+      "name-en": "Kamenice (J. \u010cechy)", 
       "type": "river", 
       "id": "Kamenice_(J._Cechy)", 
       "categories": [
@@ -30940,6 +31017,7 @@
       "name-cs": "Kamenice (J. \u010cechy)"
     }, 
     {
+      "name-en": "Kamenice (S. \u010cechy)", 
       "type": "river", 
       "id": "Kamenice_(S._Cechy)", 
       "categories": [
@@ -30948,6 +31026,7 @@
       "name-cs": "Kamenice (S. \u010cechy)"
     }, 
     {
+      "name-en": "Klabava", 
       "type": "river", 
       "id": "Klabava", 
       "categories": [
@@ -30956,6 +31035,7 @@
       "name-cs": "Klabava"
     }, 
     {
+      "name-en": "Koc\u00e1ba", 
       "type": "river", 
       "id": "Kocaba", 
       "categories": [
@@ -30964,6 +31044,7 @@
       "name-cs": "Koc\u00e1ba"
     }, 
     {
+      "name-en": "Krup\u00e1", 
       "type": "river", 
       "id": "Krupa", 
       "categories": [
@@ -30972,6 +31053,7 @@
       "name-cs": "Krup\u00e1"
     }, 
     {
+      "name-en": "K\u0159emeln\u00e1", 
       "type": "river", 
       "id": "Kremelna", 
       "categories": [
@@ -30980,6 +31062,7 @@
       "name-cs": "K\u0159emeln\u00e1"
     }, 
     {
+      "name-en": "Kyjovka", 
       "type": "river", 
       "id": "Kyjovka", 
       "categories": [
@@ -30988,6 +31071,7 @@
       "name-cs": "Kyjovka"
     }, 
     {
+      "name-en": "Litavka", 
       "type": "river", 
       "id": "Litavka", 
       "categories": [
@@ -30996,6 +31080,7 @@
       "name-cs": "Litavka"
     }, 
     {
+      "name-en": "Lod\u011bnice", 
       "type": "river", 
       "id": "Lodenice", 
       "categories": [
@@ -31004,6 +31089,7 @@
       "name-cs": "Lod\u011bnice"
     }, 
     {
+      "name-en": "Lomnice", 
       "type": "river", 
       "id": "Lomnice", 
       "categories": [
@@ -31012,6 +31098,7 @@
       "name-cs": "Lomnice"
     }, 
     {
+      "name-en": "Lou\u010dn\u00e1", 
       "type": "river", 
       "id": "Loucna", 
       "categories": [
@@ -31020,6 +31107,7 @@
       "name-cs": "Lou\u010dn\u00e1"
     }, 
     {
+      "name-en": "Lu\u017eick\u00e1 Nisa", 
       "type": "river", 
       "id": "Luzicka_Nisa", 
       "categories": [
@@ -31028,6 +31116,7 @@
       "name-cs": "Lu\u017eick\u00e1 Nisa"
     }, 
     {
+      "name-en": "Metuje", 
       "type": "river", 
       "id": "Metuje", 
       "categories": [
@@ -31036,6 +31125,7 @@
       "name-cs": "Metuje"
     }, 
     {
+      "name-en": "Moravice", 
       "type": "river", 
       "id": "Moravice", 
       "categories": [
@@ -31044,6 +31134,7 @@
       "name-cs": "Moravice"
     }, 
     {
+      "name-en": "Moravsk\u00e1 Dyje", 
       "type": "river", 
       "id": "Moravska_Dyje", 
       "categories": [
@@ -31052,6 +31143,7 @@
       "name-cs": "Moravsk\u00e1 Dyje"
     }, 
     {
+      "name-en": "Moravsk\u00e1 S\u00e1zava", 
       "type": "river", 
       "id": "Moravska_Sazava", 
       "categories": [
@@ -31060,6 +31152,7 @@
       "name-cs": "Moravsk\u00e1 S\u00e1zava"
     }, 
     {
+      "name-en": "Mo\u0161t\u011bnka", 
       "type": "river", 
       "id": "Mostenka", 
       "categories": [
@@ -31068,6 +31161,7 @@
       "name-cs": "Mo\u0161t\u011bnka"
     }, 
     {
+      "name-en": "Mrlina", 
       "type": "river", 
       "id": "Mrlina", 
       "categories": [
@@ -31076,6 +31170,7 @@
       "name-cs": "Mrlina"
     }, 
     {
+      "name-en": "Ne\u017e\u00e1rka", 
       "type": "river", 
       "id": "Nezarka", 
       "categories": [
@@ -31084,6 +31179,7 @@
       "name-cs": "Ne\u017e\u00e1rka"
     }, 
     {
+      "name-en": "Novohradka", 
       "type": "river", 
       "id": "Novohradka", 
       "categories": [
@@ -31092,6 +31188,7 @@
       "name-cs": "Novohradka"
     }, 
     {
+      "name-en": "Ol\u0161ava", 
       "type": "river", 
       "id": "Olsava", 
       "categories": [
@@ -31100,6 +31197,7 @@
       "name-cs": "Ol\u0161ava"
     }, 
     {
+      "name-en": "Ol\u0161e", 
       "type": "river", 
       "id": "Olse", 
       "categories": [
@@ -31108,6 +31206,7 @@
       "name-cs": "Ol\u0161e"
     }, 
     {
+      "name-en": "Opavice", 
       "type": "river", 
       "id": "Opavice", 
       "categories": [
@@ -31116,6 +31215,7 @@
       "name-cs": "Opavice"
     }, 
     {
+      "name-en": "Oskava", 
       "type": "river", 
       "id": "Oskava", 
       "categories": [
@@ -31124,6 +31224,7 @@
       "name-cs": "Oskava"
     }, 
     {
+      "name-en": "Oslava", 
       "type": "river", 
       "id": "Oslava", 
       "categories": [
@@ -31132,6 +31233,7 @@
       "name-cs": "Oslava"
     }, 
     {
+      "name-en": "Plou\u010dnice", 
       "type": "river", 
       "id": "Ploucnice", 
       "categories": [
@@ -31140,6 +31242,7 @@
       "name-cs": "Plou\u010dnice"
     }, 
     {
+      "name-en": "Punkva", 
       "type": "river", 
       "id": "Punkva", 
       "categories": [
@@ -31148,6 +31251,7 @@
       "name-cs": "Punkva"
     }, 
     {
+      "name-en": "Rokytn\u00e1", 
       "type": "river", 
       "id": "Rokytna", 
       "categories": [
@@ -31156,6 +31260,7 @@
       "name-cs": "Rokytn\u00e1"
     }, 
     {
+      "name-en": "Rolava", 
       "type": "river", 
       "id": "Rolava", 
       "categories": [
@@ -31164,6 +31269,7 @@
       "name-cs": "Rolava"
     }, 
     {
+      "name-en": "Rom\u017ee", 
       "type": "river", 
       "id": "Romze", 
       "categories": [
@@ -31172,6 +31278,7 @@
       "name-cs": "Rom\u017ee"
     }, 
     {
+      "name-en": "Ro\u017enovsk\u00e1 Be\u010dva", 
       "type": "river", 
       "id": "Roznovska_Becva", 
       "categories": [
@@ -31180,6 +31287,7 @@
       "name-cs": "Ro\u017enovsk\u00e1 Be\u010dva"
     }, 
     {
+      "name-en": "Skalice", 
       "type": "river", 
       "id": "Skalice", 
       "categories": [
@@ -31188,6 +31296,7 @@
       "name-cs": "Skalice"
     }, 
     {
+      "name-en": "Sm\u011bd\u00e1", 
       "type": "river", 
       "id": "Smeda", 
       "categories": [
@@ -31196,6 +31305,7 @@
       "name-cs": "Sm\u011bd\u00e1"
     }, 
     {
+      "name-en": "St\u011bnava", 
       "type": "river", 
       "id": "Stenava", 
       "categories": [
@@ -31204,6 +31314,7 @@
       "name-cs": "St\u011bnava"
     }, 
     {
+      "name-en": "Stropnice", 
       "type": "river", 
       "id": "Stropnice", 
       "categories": [
@@ -31212,6 +31323,7 @@
       "name-cs": "Stropnice"
     }, 
     {
+      "name-en": "St\u0159ela", 
       "type": "river", 
       "id": "Strela", 
       "categories": [
@@ -31220,6 +31332,7 @@
       "name-cs": "St\u0159ela"
     }, 
     {
+      "name-en": "Svatava", 
       "type": "river", 
       "id": "Svatava", 
       "categories": [
@@ -31228,6 +31341,7 @@
       "name-cs": "Svatava"
     }, 
     {
+      "name-en": "Tepl\u00e1", 
       "type": "river", 
       "id": "Tepla", 
       "categories": [
@@ -31236,6 +31350,7 @@
       "name-cs": "Tepl\u00e1"
     }, 
     {
+      "name-en": "Tich\u00e1 Orlice", 
       "type": "river", 
       "id": "Ticha_Orlice", 
       "categories": [
@@ -31244,6 +31359,7 @@
       "name-cs": "Tich\u00e1 Orlice"
     }, 
     {
+      "name-en": "Trkmanka", 
       "type": "river", 
       "id": "Trkmanka", 
       "categories": [
@@ -31252,6 +31368,7 @@
       "name-cs": "Trkmanka"
     }, 
     {
+      "name-en": "T\u0159eb\u016fvka", 
       "type": "river", 
       "id": "Trebuvka", 
       "categories": [
@@ -31260,6 +31377,7 @@
       "name-cs": "T\u0159eb\u016fvka"
     }, 
     {
+      "name-en": "T\u0159emo\u0161n\u00e1", 
       "type": "river", 
       "id": "Tremosna", 
       "categories": [
@@ -31268,6 +31386,7 @@
       "name-cs": "T\u0159emo\u0161n\u00e1"
     }, 
     {
+      "name-en": "\u00dapa", 
       "type": "river", 
       "id": "Upa", 
       "categories": [
@@ -31276,6 +31395,7 @@
       "name-cs": "\u00dapa"
     }, 
     {
+      "name-en": "Veli\u010dka", 
       "type": "river", 
       "id": "Velicka", 
       "categories": [
@@ -31284,6 +31404,7 @@
       "name-cs": "Veli\u010dka"
     }, 
     {
+      "name-en": "Vidnavka", 
       "type": "river", 
       "id": "Vidnavka", 
       "categories": [
@@ -31292,6 +31413,7 @@
       "name-cs": "Vidnavka"
     }, 
     {
+      "name-en": "Voly\u0148ka", 
       "type": "river", 
       "id": "Volynka", 
       "categories": [
@@ -31300,6 +31422,7 @@
       "name-cs": "Voly\u0148ka"
     }, 
     {
+      "name-en": "Vset\u00ednsk\u00e1 Be\u010dva", 
       "type": "river", 
       "id": "Vsetinska_Becva", 
       "categories": [
@@ -31308,6 +31431,7 @@
       "name-cs": "Vset\u00ednsk\u00e1 Be\u010dva"
     }, 
     {
+      "name-en": "Vydra", 
       "type": "river", 
       "id": "Vydra", 
       "categories": [
@@ -31316,6 +31440,7 @@
       "name-cs": "Vydra"
     }, 
     {
+      "name-en": "V\u00fdrovka", 
       "type": "river", 
       "id": "Vyrovka", 
       "categories": [
@@ -31324,6 +31449,7 @@
       "name-cs": "V\u00fdrovka"
     }, 
     {
+      "name-en": "Zlat\u00e1 stoka", 
       "type": "river", 
       "id": "Zlata_stoka", 
       "categories": [
@@ -31332,6 +31458,7 @@
       "name-cs": "Zlat\u00e1 stoka"
     }, 
     {
+      "name-en": "\u017deletavka", 
       "type": "river", 
       "id": "Zeletavka", 
       "categories": [
@@ -31340,6 +31467,7 @@
       "name-cs": "\u017deletavka"
     }, 
     {
+      "name-en": "\u017delivka", 
       "type": "river", 
       "id": "Zelivka", 
       "categories": [
@@ -31348,6 +31476,7 @@
       "name-cs": "\u017delivka"
     }, 
     {
+      "name-en": "\u017dirovnice", 
       "type": "river", 
       "id": "Zirovnice", 
       "categories": [
@@ -31785,8 +31914,8 @@
       ]
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Tirana", 
+      "type": "state-by-city", 
       "id": "al-by-city", 
       "categories": [
         "europe"
@@ -31794,8 +31923,8 @@
       "name-cs": "Tirana"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Brussels", 
+      "type": "state-by-city", 
       "id": "be-by-city", 
       "categories": [
         "europe"
@@ -31803,8 +31932,8 @@
       "name-cs": "Brusel"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Minsk", 
+      "type": "state-by-city", 
       "id": "by-by-city", 
       "categories": [
         "europe"
@@ -31812,8 +31941,8 @@
       "name-cs": "Minsk"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Sarajevo", 
+      "type": "state-by-city", 
       "id": "ba-by-city", 
       "categories": [
         "europe"
@@ -31821,8 +31950,8 @@
       "name-cs": "Sarajevo"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Sofia", 
+      "type": "state-by-city", 
       "id": "bg-by-city", 
       "categories": [
         "europe"
@@ -31830,8 +31959,8 @@
       "name-cs": "Sofie"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Podgorica", 
+      "type": "state-by-city", 
       "id": "me-by-city", 
       "categories": [
         "europe"
@@ -31839,8 +31968,8 @@
       "name-cs": "Podgorica"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Prague", 
+      "type": "state-by-city", 
       "id": "cz-by-city", 
       "categories": [
         "europe"
@@ -31848,8 +31977,8 @@
       "name-cs": "Praha"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "K\u00f8benhavn", 
+      "type": "state-by-city", 
       "id": "dk-by-city", 
       "categories": [
         "europe"
@@ -31857,8 +31986,8 @@
       "name-cs": "Koda\u0148"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Tallinn", 
+      "type": "state-by-city", 
       "id": "ee-by-city", 
       "categories": [
         "europe"
@@ -31866,8 +31995,8 @@
       "name-cs": "Talinn"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Helsinki", 
+      "type": "state-by-city", 
       "id": "fi-by-city", 
       "categories": [
         "europe"
@@ -31875,8 +32004,8 @@
       "name-cs": "Helsinki"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Paris", 
+      "type": "state-by-city", 
       "id": "fr-by-city", 
       "categories": [
         "europe"
@@ -31884,8 +32013,8 @@
       "name-cs": "Pa\u0159\u00ed\u017e"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Zagreb", 
+      "type": "state-by-city", 
       "id": "hr-by-city", 
       "categories": [
         "europe"
@@ -31893,8 +32022,8 @@
       "name-cs": "Z\u00e1h\u0159eb"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Dublin", 
+      "type": "state-by-city", 
       "id": "ie-by-city", 
       "categories": [
         "europe"
@@ -31902,8 +32031,8 @@
       "name-cs": "Dublin"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Reykjav\u00edk", 
+      "type": "state-by-city", 
       "id": "is-by-city", 
       "categories": [
         "europe"
@@ -31911,8 +32040,8 @@
       "name-cs": "Reykjav\u00edk"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Rome", 
+      "type": "state-by-city", 
       "id": "it-by-city", 
       "categories": [
         "europe"
@@ -31920,8 +32049,8 @@
       "name-cs": "\u0158\u00edm"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Vilnius", 
+      "type": "state-by-city", 
       "id": "lt-by-city", 
       "categories": [
         "europe"
@@ -31929,8 +32058,8 @@
       "name-cs": "Vilnius"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Riga", 
+      "type": "state-by-city", 
       "id": "lv-by-city", 
       "categories": [
         "europe"
@@ -31938,8 +32067,8 @@
       "name-cs": "Riga"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Luxembourg", 
+      "type": "state-by-city", 
       "id": "lu-by-city", 
       "categories": [
         "europe"
@@ -31947,8 +32076,8 @@
       "name-cs": "Lucemburk"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Budapest", 
+      "type": "state-by-city", 
       "id": "hu-by-city", 
       "categories": [
         "europe"
@@ -31956,8 +32085,8 @@
       "name-cs": "Budape\u0161\u0165"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Skopje", 
+      "type": "state-by-city", 
       "id": "mk-by-city", 
       "categories": [
         "europe"
@@ -31965,8 +32094,8 @@
       "name-cs": "Skopje"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Chisinau", 
+      "type": "state-by-city", 
       "id": "md-by-city", 
       "categories": [
         "europe"
@@ -31974,8 +32103,8 @@
       "name-cs": "Ki\u0161in\u011bv"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Berlin", 
+      "type": "state-by-city", 
       "id": "de-by-city", 
       "categories": [
         "europe"
@@ -31983,8 +32112,8 @@
       "name-cs": "Berl\u00edn"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Amsterdam", 
+      "type": "state-by-city", 
       "id": "nl-by-city", 
       "categories": [
         "europe"
@@ -31992,8 +32121,8 @@
       "name-cs": "Amsterdam"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Oslo", 
+      "type": "state-by-city", 
       "id": "no-by-city", 
       "categories": [
         "europe"
@@ -32001,8 +32130,8 @@
       "name-cs": "Oslo"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Warsaw", 
+      "type": "state-by-city", 
       "id": "pl-by-city", 
       "categories": [
         "europe"
@@ -32010,8 +32139,8 @@
       "name-cs": "Var\u0161ava"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Lisbon", 
+      "type": "state-by-city", 
       "id": "pt-by-city", 
       "categories": [
         "europe"
@@ -32019,8 +32148,8 @@
       "name-cs": "Lisabon"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Vienna", 
+      "type": "state-by-city", 
       "id": "at-by-city", 
       "categories": [
         "europe"
@@ -32028,8 +32157,8 @@
       "name-cs": "V\u00edde\u0148"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Bucharest", 
+      "type": "state-by-city", 
       "id": "ro-by-city", 
       "categories": [
         "europe"
@@ -32037,8 +32166,8 @@
       "name-cs": "Bukure\u0161\u0165"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Moscow", 
+      "type": "state-by-city", 
       "id": "ru-by-city", 
       "categories": [
         "europe"
@@ -32046,8 +32175,8 @@
       "name-cs": "Moskva"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Athens", 
+      "type": "state-by-city", 
       "id": "gr-by-city", 
       "categories": [
         "europe"
@@ -32055,8 +32184,8 @@
       "name-cs": "Ath\u00e9ny"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Bratislava", 
+      "type": "state-by-city", 
       "id": "sk-by-city", 
       "categories": [
         "europe"
@@ -32064,8 +32193,8 @@
       "name-cs": "Bratislava"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Ljubljana", 
+      "type": "state-by-city", 
       "id": "si-by-city", 
       "categories": [
         "europe"
@@ -32073,8 +32202,8 @@
       "name-cs": "Lubla\u0148"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "London", 
+      "type": "state-by-city", 
       "id": "gb-by-city", 
       "categories": [
         "europe"
@@ -32082,8 +32211,8 @@
       "name-cs": "Lond\u00fdn"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Belgrade", 
+      "type": "state-by-city", 
       "id": "rs-by-city", 
       "categories": [
         "europe"
@@ -32091,8 +32220,8 @@
       "name-cs": "B\u011blehrad"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Madrid", 
+      "type": "state-by-city", 
       "id": "es-by-city", 
       "categories": [
         "europe"
@@ -32100,8 +32229,8 @@
       "name-cs": "Madrid"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Stockholm", 
+      "type": "state-by-city", 
       "id": "se-by-city", 
       "categories": [
         "europe"
@@ -32109,8 +32238,8 @@
       "name-cs": "Stockholm"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Bern", 
+      "type": "state-by-city", 
       "id": "ch-by-city", 
       "categories": [
         "europe"
@@ -32118,8 +32247,8 @@
       "name-cs": "Bern"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Kiev", 
+      "type": "state-by-city", 
       "id": "ua-by-city", 
       "categories": [
         "europe"
@@ -32127,8 +32256,8 @@
       "name-cs": "Kyjev"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Pristina", 
+      "type": "state-by-city", 
       "id": "xk-by-city", 
       "categories": [
         "europe"
@@ -32136,8 +32265,8 @@
       "name-cs": "Pri\u0161tina"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Luxembourg", 
+      "type": "city-by-state", 
       "id": "Luxembourg-by-state", 
       "categories": [
         "europe"
@@ -32145,8 +32274,8 @@
       "name-cs": "Lucembursko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Slovenia", 
+      "type": "city-by-state", 
       "id": "Ljubljana-by-state", 
       "categories": [
         "europe"
@@ -32154,8 +32283,8 @@
       "name-cs": "Slovinsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Slovakia", 
+      "type": "city-by-state", 
       "id": "Bratislava-by-state", 
       "categories": [
         "europe"
@@ -32163,8 +32292,8 @@
       "name-cs": "Slovensko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Montenegro", 
+      "type": "city-by-state", 
       "id": "Podgorica-by-state", 
       "categories": [
         "europe"
@@ -32172,8 +32301,8 @@
       "name-cs": "\u010cern\u00e1 Hora"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Switzerland", 
+      "type": "city-by-state", 
       "id": "Bern-by-state", 
       "categories": [
         "europe"
@@ -32181,8 +32310,8 @@
       "name-cs": "\u0160v\u00fdcarsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Kosovo", 
+      "type": "city-by-state", 
       "id": "Pristina-by-state", 
       "categories": [
         "europe"
@@ -32190,8 +32319,8 @@
       "name-cs": "Kosovo"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Macedonia", 
+      "type": "city-by-state", 
       "id": "Skopje-by-state", 
       "categories": [
         "europe"
@@ -32199,8 +32328,8 @@
       "name-cs": "Makedonie"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Iceland", 
+      "type": "city-by-state", 
       "id": "Reykjavik-by-state", 
       "categories": [
         "europe"
@@ -32208,8 +32337,8 @@
       "name-cs": "Island"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Moldova", 
+      "type": "city-by-state", 
       "id": "Chisinau-by-state", 
       "categories": [
         "europe"
@@ -32217,8 +32346,8 @@
       "name-cs": "Moldavsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Lithuania", 
+      "type": "city-by-state", 
       "id": "Vilnius-by-state", 
       "categories": [
         "europe"
@@ -32226,8 +32355,8 @@
       "name-cs": "Litva"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Latvia", 
+      "type": "city-by-state", 
       "id": "Riga-by-state", 
       "categories": [
         "europe"
@@ -32235,8 +32364,8 @@
       "name-cs": "Loty\u0161sko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Croatia", 
+      "type": "city-by-state", 
       "id": "Zagreb-by-state", 
       "categories": [
         "europe"
@@ -32244,8 +32373,8 @@
       "name-cs": "Chorvatsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Estonia", 
+      "type": "city-by-state", 
       "id": "Tallinn-by-state", 
       "categories": [
         "europe"
@@ -32253,8 +32382,8 @@
       "name-cs": "Estonsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Serbia", 
+      "type": "city-by-state", 
       "id": "Belgrade-by-state", 
       "categories": [
         "europe"
@@ -32262,8 +32391,8 @@
       "name-cs": "Srbsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Albania", 
+      "type": "city-by-state", 
       "id": "Tirana-by-state", 
       "categories": [
         "europe"
@@ -32271,8 +32400,8 @@
       "name-cs": "Alb\u00e1nie"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Bulgaria", 
+      "type": "city-by-state", 
       "id": "Sofia-by-state", 
       "categories": [
         "europe"
@@ -32280,8 +32409,8 @@
       "name-cs": "Bulharsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Belarus", 
+      "type": "city-by-state", 
       "id": "Minsk-by-state", 
       "categories": [
         "europe"
@@ -32289,8 +32418,8 @@
       "name-cs": "B\u011blorusko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Bosnia and Herz.", 
+      "type": "city-by-state", 
       "id": "Sarajevo-by-state", 
       "categories": [
         "europe"
@@ -32298,8 +32427,8 @@
       "name-cs": "Bosna a Hercegovina"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Hungary", 
+      "type": "city-by-state", 
       "id": "Budapest-by-state", 
       "categories": [
         "europe"
@@ -32307,8 +32436,8 @@
       "name-cs": "Ma\u010farsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Romania", 
+      "type": "city-by-state", 
       "id": "Bucharest-by-state", 
       "categories": [
         "europe"
@@ -32316,8 +32445,8 @@
       "name-cs": "Rumunsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Portugal", 
+      "type": "city-by-state", 
       "id": "Lisbon-by-state", 
       "categories": [
         "europe"
@@ -32325,8 +32454,8 @@
       "name-cs": "Portugalsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Norway", 
+      "type": "city-by-state", 
       "id": "Oslo-by-state", 
       "categories": [
         "europe"
@@ -32334,8 +32463,8 @@
       "name-cs": "Norsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Poland", 
+      "type": "city-by-state", 
       "id": "Warsaw-by-state", 
       "categories": [
         "europe"
@@ -32343,8 +32472,8 @@
       "name-cs": "Polsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Ireland", 
+      "type": "city-by-state", 
       "id": "Dublin-by-state", 
       "categories": [
         "europe"
@@ -32352,8 +32481,8 @@
       "name-cs": "Irsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Czech Rep.", 
+      "type": "city-by-state", 
       "id": "Prague-by-state", 
       "categories": [
         "europe"
@@ -32361,8 +32490,8 @@
       "name-cs": "\u010cesk\u00e1 republika"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Finland", 
+      "type": "city-by-state", 
       "id": "Helsinki-by-state", 
       "categories": [
         "europe"
@@ -32370,8 +32499,8 @@
       "name-cs": "Finsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Denmark", 
+      "type": "city-by-state", 
       "id": "Kobenhavn-by-state", 
       "categories": [
         "europe"
@@ -32379,8 +32508,8 @@
       "name-cs": "D\u00e1nsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Belgium", 
+      "type": "city-by-state", 
       "id": "Brussels-by-state", 
       "categories": [
         "europe"
@@ -32388,8 +32517,8 @@
       "name-cs": "Belgie"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Ukraine", 
+      "type": "city-by-state", 
       "id": "Kiev-by-state", 
       "categories": [
         "europe"
@@ -32397,8 +32526,8 @@
       "name-cs": "Ukrajina"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Spain", 
+      "type": "city-by-state", 
       "id": "Madrid-by-state", 
       "categories": [
         "europe"
@@ -32406,8 +32535,8 @@
       "name-cs": "\u0160pan\u011blsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Sweden", 
+      "type": "city-by-state", 
       "id": "Stockholm-by-state", 
       "categories": [
         "europe"
@@ -32415,8 +32544,8 @@
       "name-cs": "\u0160v\u00e9dsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Netherlands", 
+      "type": "city-by-state", 
       "id": "Amsterdam-by-state", 
       "categories": [
         "europe"
@@ -32424,8 +32553,8 @@
       "name-cs": "Nizozemsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Germany", 
+      "type": "city-by-state", 
       "id": "Berlin-by-state", 
       "categories": [
         "europe"
@@ -32433,8 +32562,8 @@
       "name-cs": "N\u011bmecko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Greece", 
+      "type": "city-by-state", 
       "id": "Athens-by-state", 
       "categories": [
         "europe"
@@ -32442,8 +32571,8 @@
       "name-cs": "\u0158ecko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Austria", 
+      "type": "city-by-state", 
       "id": "Vienna-by-state", 
       "categories": [
         "europe"
@@ -32451,8 +32580,8 @@
       "name-cs": "Rakousko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "United Kingdom", 
+      "type": "city-by-state", 
       "id": "London-by-state", 
       "categories": [
         "europe"
@@ -32460,8 +32589,8 @@
       "name-cs": "Spojen\u00e9 kr\u00e1lovstv\u00ed"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Russia", 
+      "type": "city-by-state", 
       "id": "Moscow-by-state", 
       "categories": [
         "europe"
@@ -32469,8 +32598,8 @@
       "name-cs": "Rusko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Italy", 
+      "type": "city-by-state", 
       "id": "Rome-by-state", 
       "categories": [
         "europe"
@@ -32478,8 +32607,8 @@
       "name-cs": "It\u00e1lie"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "France", 
+      "type": "city-by-state", 
       "id": "Paris-by-state", 
       "categories": [
         "europe"
@@ -32487,6 +32616,7 @@
       "name-cs": "Francie"
     }, 
     {
+      "name-en": "Colorado", 
       "type": "river", 
       "id": "Colorado", 
       "categories": [
@@ -32495,6 +32625,7 @@
       "name-cs": "Colorado"
     }, 
     {
+      "name-en": "Red", 
       "type": "river", 
       "id": "Red", 
       "categories": [
@@ -32503,6 +32634,7 @@
       "name-cs": "Red"
     }, 
     {
+      "name-en": "Arkansas", 
       "type": "river", 
       "id": "Arkansas", 
       "categories": [
@@ -32511,6 +32643,7 @@
       "name-cs": "Arkansas"
     }, 
     {
+      "name-en": "Yellowstone", 
       "type": "river", 
       "id": "Yellowstone", 
       "categories": [
@@ -32519,6 +32652,7 @@
       "name-cs": "Yellowstone"
     }, 
     {
+      "name-en": "Platte", 
       "type": "river", 
       "id": "Platte", 
       "categories": [
@@ -32527,6 +32661,7 @@
       "name-cs": "Platte"
     }, 
     {
+      "name-en": "Ohio", 
       "type": "river", 
       "id": "Ohio", 
       "categories": [
@@ -32535,6 +32670,7 @@
       "name-cs": "Ohio"
     }, 
     {
+      "name-en": "Snake", 
       "type": "river", 
       "id": "Snake", 
       "categories": [
@@ -32543,6 +32679,7 @@
       "name-cs": "Snake"
     }, 
     {
+      "name-en": "Columbia", 
       "type": "river", 
       "id": "Columbia", 
       "categories": [
@@ -32551,6 +32688,7 @@
       "name-cs": "Columbia"
     }, 
     {
+      "name-en": "Liard", 
       "type": "river", 
       "id": "Liard", 
       "categories": [
@@ -32559,6 +32697,7 @@
       "name-cs": "Liard"
     }, 
     {
+      "name-en": "Peace", 
       "type": "river", 
       "id": "Peace", 
       "categories": [
@@ -32567,6 +32706,7 @@
       "name-cs": "Peace"
     }, 
     {
+      "name-en": "Athabasca", 
       "type": "river", 
       "id": "Athabasca", 
       "categories": [
@@ -32575,6 +32715,7 @@
       "name-cs": "Athabasca"
     }, 
     {
+      "name-en": "Thelon", 
       "type": "river", 
       "id": "Thelon", 
       "categories": [
@@ -32583,6 +32724,7 @@
       "name-cs": "Thelon"
     }, 
     {
+      "name-en": "Churchill", 
       "type": "river", 
       "id": "Churchill", 
       "categories": [
@@ -32591,6 +32733,7 @@
       "name-cs": "Churchill"
     }, 
     {
+      "name-en": "Nelson", 
       "type": "river", 
       "id": "Nelson", 
       "categories": [
@@ -32599,6 +32742,7 @@
       "name-cs": "Nelson"
     }, 
     {
+      "name-en": "Saskatchewan", 
       "type": "river", 
       "id": "Saskatchewan", 
       "categories": [
@@ -32607,6 +32751,7 @@
       "name-cs": "Saskatchewan"
     }, 
     {
+      "name-en": "Hudson", 
       "type": "river", 
       "id": "Hudson", 
       "categories": [
@@ -32615,6 +32760,7 @@
       "name-cs": "Hudson"
     }, 
     {
+      "name-en": "St. Lawrence", 
       "type": "river", 
       "id": "Reka_sv._Vavrince", 
       "categories": [
