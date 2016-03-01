@@ -4,13 +4,14 @@
 # 
 # Translators:
 # Translators:
+# Miroslav Fic <mirko.fic@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-02 15:15+0000\n"
-"PO-Revision-Date: 2016-02-14 19:01+0000\n"
-"Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
+"PO-Revision-Date: 2016-02-27 08:16+0000\n"
+"Last-Translator: Miroslav Fic <mirko.fic@gmail.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/adaptive-learning/slepemapycz/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,123 +21,123 @@ msgstr ""
 
 #: templates/create_goal.html:5
 msgid "Vytvořit cíl"
-msgstr ""
+msgstr "Vytvoriť cieľ"
 
 #: templates/create_goal.html:9
 msgid "Mapa"
-msgstr ""
+msgstr "Mapa"
 
 #: templates/create_goal.html:36
 msgid "Datum splnění cíle"
-msgstr ""
+msgstr "Dátum splnenia cieľa"
 
 #: templates/create_goal.html:64
 msgid "Vytvořit"
-msgstr ""
+msgstr "Vytvoriť"
 
 #: templates/create_goal.html:67
 msgid "Zavřít"
-msgstr ""
+msgstr "Zavrieť"
 
 #: templates/generated/homepage.html:19 templates/home.html:60 views.py:35
 msgid "Slepé mapy"
-msgstr ""
+msgstr "Slepé mapy"
 
 #: templates/generated/homepage.html:21
 msgid "Vyberte si mapu k procvičování:"
-msgstr ""
+msgstr "Vyberte si mapu k precvičovaniu:"
 
 #: templates/generated/homepage.html:26
 msgid "Státy Evropy"
-msgstr ""
+msgstr "Státy Európy"
 
 #: templates/generated/homepage.html:31
 msgid "Řeky ČR"
-msgstr ""
+msgstr "Rieky ČR"
 
 #: templates/generated/homepage.html:36
 msgid "Státy USA"
-msgstr ""
+msgstr "Štáty USA"
 
 #: templates/generated/homepage.html:41
 msgid "Pohoří ČR"
-msgstr ""
+msgstr "Pohoria ČR"
 
 #: templates/generated/homepage.html:46
 msgid "Státy Asie"
-msgstr ""
+msgstr "Štáty Ázie"
 
 #: templates/generated/homepage.html:51
 msgid "Řeky Afriky"
-msgstr ""
+msgstr "Rieky Afriky"
 
 #: templates/generated/homepage.html:54
 msgid "Chcete jinou? Podívejte se na"
-msgstr ""
+msgstr "Chcete inú? Pozrite sa na"
 
 #: templates/generated/homepage.html:57
 msgid "další mapy"
-msgstr ""
+msgstr "ďalšie mapy"
 
 #: templates/generated/homepage.html:67
 msgid "Jak to funguje?"
-msgstr ""
+msgstr "Ako to funguje?"
 
 #: templates/generated/homepage.html:71
 msgid "Zeměpis hrou"
-msgstr ""
+msgstr "Zemepis hrou"
 
 #: templates/generated/homepage.html:72
 msgid "Zeměpis hrou - text"
-msgstr ""
+msgstr "Precvičte si svoje vedomosti zemepisu hravou formou. V aktuálnej verzii zatiaľ súťažíte len sami so sebou, respektíve proti systému. Dokážete zafarbiť na zeleno celú mapu Európy? Celú ČR? A čo celý svet?"
 
 #: templates/generated/homepage.html:76
 msgid "Adaptabilní procvičování"
-msgstr ""
+msgstr "Adaptabilné precvičovanie"
 
 #: templates/generated/homepage.html:77
 msgid "Adaptabilní procvičování - text"
-msgstr ""
+msgstr "Každá slepá mapa ponúka adaptabilné precvičovanie - podľa toho, aké máte vedomosti, aplikácia volí podobu otázok (otvorená, výber z možností) a frekvenciu opakovania. Aplikácia vám tak predkladá štáty, ktorých precvičenie je pre vás najužitočnejšie."
 
 #: templates/generated/homepage.html:79
 msgid "Ukázka procvičování"
-msgstr ""
+msgstr "Ukážka precvičovania"
 
 #: templates/generated/homepage.html:83
 msgid "Specializovaný systém"
-msgstr ""
+msgstr "Špecializovaný systém"
 
 #: templates/generated/homepage.html:84
 msgid "Specializovaný systém - text"
-msgstr ""
+msgstr "Precvičovanie slepých máp ponúka aj rad iných výukových systémov, tie však väčšinou pokrývajú veľa čiastkových oblastí. Náš systém sa sústreďuje iba na slepé mapy, vďaka čomu je pre učenie v tejto oblasti optimalizovaný."
 
 #: templates/generated/homepage.html:88
 msgid "Vizualizace znalostí"
-msgstr ""
+msgstr "Vizualizácia vedomostí"
 
 #: templates/generated/homepage.html:89
 msgid "Vizualizace znalostí - text"
-msgstr ""
+msgstr "Na základe odpovedí systém odhadne ako dobre poznáte rôzne štáty a znázorní vám mapu vašich vedomostí, čo vám pomôže ujasniť si, čo vlastne viete."
 
 #: templates/generated/homepage.html:91
 msgid "Ukázka mapy znalostí"
-msgstr ""
+msgstr "Ukážka mapy vedomostí"
 
 #: templates/generated/homepage.html:95
 msgid "Učení z dat"
-msgstr ""
+msgstr "Učenie z dát"
 
 #: templates/generated/homepage.html:96
 msgid "Učení z dat - text"
-msgstr ""
+msgstr "Aplikácia sa učí z dát od všetkých užívateľov. Výber otázok je založený na týchto dátach, nie na vedomostiach experta na zemepis, ktorý \"vie\", či je ťažšie poznať Keňu alebo Nigériu."
 
 #: templates/home.html:27
 msgid "meta content"
-msgstr ""
+msgstr "Inteligentná aplikácia na precvičovanie štátov, miest, pohorí a riek na slepej mape sveta, Európy, Ázie, Afriky, Amerika, ČR, USA a ďalšich štátov"
 
 #: templates/home.html:28
 msgid "meta keywords"
-msgstr ""
+msgstr "slepá mapa, štáty, mestá, čr, svet, európa, amerika, afrika, ázia, pohoria, rieky, zemepis, usa, hry"
 
 #: templates/home.html:64
 msgid "Svět"
@@ -144,57 +145,57 @@ msgstr "Svet"
 
 #: templates/home.html:68
 msgid "Kontinenty"
-msgstr ""
+msgstr "Kontinenty"
 
 #: templates/home.html:78
 msgid "Státy"
-msgstr ""
+msgstr "Štáty"
 
 #: templates/home.html:87
 msgid "Přehled map"
-msgstr ""
+msgstr "Prehľad máp"
 
 #: templates/home.html:98
 msgid ""
 "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
 "znalosti pamatoval i příště."
-msgstr ""
+msgstr "Prihláste sa jednoducho cez Google alebo Facebook, aby si systém vaše vedomosti pamätal aj nabudúce."
 
 #: templates/home.html:101
 msgid "Přihlásit se"
-msgstr ""
+msgstr "Prihlásiť sa"
 
 #: templates/home.html:114
 msgid "Můj profil"
-msgstr ""
+msgstr "Môj profil"
 
 #: templates/home.html:120
 msgid "Moje časté chyby"
-msgstr ""
+msgstr "Moje časté chyby"
 
 #: templates/home.html:125
 msgid "Osobní cíle"
-msgstr ""
+msgstr "Osobné ciele"
 
 #: templates/home.html:130
 msgid "Nastavení"
-msgstr ""
+msgstr "Nastavenia"
 
 #: templates/home.html:136
 msgid "Odhlásit se"
-msgstr ""
+msgstr "Odhlásiť sa"
 
 #: templates/home.html:177 templates/home.html.py:192
 msgid "Napište nám"
-msgstr ""
+msgstr "Napíšte nám"
 
 #: templates/home.html:187
 msgid "O projektu"
-msgstr ""
+msgstr "O projekte"
 
 #: views.py:35
 msgid "inteligentní aplikace na procvičování zeměpisu"
-msgstr ""
+msgstr "Inteligentná aplikácia na precvičovanie zemepisu"
 
 #~ msgid "Feedback confirmed"
 #~ msgstr ""
