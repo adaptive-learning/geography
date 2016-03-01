@@ -12338,6 +12338,162 @@
       "id": "namerica-Reka_sv._Vavrince", 
       "context": "namerica", 
       "description": "Reka_sv._Vavrince"
+    }, 
+    {
+      "term": "Kaspicke_more", 
+      "id": "europe-Kaspicke_more", 
+      "context": "europe", 
+      "description": "Kaspicke_more"
+    }, 
+    {
+      "term": "Azovske_more", 
+      "id": "europe-Azovske_more", 
+      "context": "europe", 
+      "description": "Azovske_more"
+    }, 
+    {
+      "term": "Cerne_more", 
+      "id": "europe-Cerne_more", 
+      "context": "europe", 
+      "description": "Cerne_more"
+    }, 
+    {
+      "term": "Bospor", 
+      "id": "europe-Bospor", 
+      "context": "europe", 
+      "description": "Bospor"
+    }, 
+    {
+      "term": "Dardanely", 
+      "id": "europe-Dardanely", 
+      "context": "europe", 
+      "description": "Dardanely"
+    }, 
+    {
+      "term": "Marmanske_more", 
+      "id": "europe-Marmanske_more", 
+      "context": "europe", 
+      "description": "Marmanske_more"
+    }, 
+    {
+      "term": "Egejske_more", 
+      "id": "europe-Egejske_more", 
+      "context": "europe", 
+      "description": "Egejske_more"
+    }, 
+    {
+      "term": "Jonske_more", 
+      "id": "europe-Jonske_more", 
+      "context": "europe", 
+      "description": "Jonske_more"
+    }, 
+    {
+      "term": "Tyrhenske_more", 
+      "id": "europe-Tyrhenske_more", 
+      "context": "europe", 
+      "description": "Tyrhenske_more"
+    }, 
+    {
+      "term": "Jaderske_more", 
+      "id": "europe-Jaderske_more", 
+      "context": "europe", 
+      "description": "Jaderske_more"
+    }, 
+    {
+      "term": "Stredozemni_more", 
+      "id": "europe-Stredozemni_more", 
+      "context": "europe", 
+      "description": "Stredozemni_more"
+    }, 
+    {
+      "term": "Lvi_zaliv", 
+      "id": "europe-Lvi_zaliv", 
+      "context": "europe", 
+      "description": "Lvi_zaliv"
+    }, 
+    {
+      "term": "Balearske_more", 
+      "id": "europe-Balearske_more", 
+      "context": "europe", 
+      "description": "Balearske_more"
+    }, 
+    {
+      "term": "Ligurske_more", 
+      "id": "europe-Ligurske_more", 
+      "context": "europe", 
+      "description": "Ligurske_more"
+    }, 
+    {
+      "term": "Gibraltarsky_pruliv", 
+      "id": "europe-Gibraltarsky_pruliv", 
+      "context": "europe", 
+      "description": "Gibraltarsky_pruliv"
+    }, 
+    {
+      "term": "Biskajsky_zaliv", 
+      "id": "europe-Biskajsky_zaliv", 
+      "context": "europe", 
+      "description": "Biskajsky_zaliv"
+    }, 
+    {
+      "term": "Lamanssky_pruliv", 
+      "id": "europe-Lamanssky_pruliv", 
+      "context": "europe", 
+      "description": "Lamanssky_pruliv"
+    }, 
+    {
+      "term": "Doverska_uzina", 
+      "id": "europe-Doverska_uzina", 
+      "context": "europe", 
+      "description": "Doverska_uzina"
+    }, 
+    {
+      "term": "Irske_more", 
+      "id": "europe-Irske_more", 
+      "context": "europe", 
+      "description": "Irske_more"
+    }, 
+    {
+      "term": "Severni_more", 
+      "id": "europe-Severni_more", 
+      "context": "europe", 
+      "description": "Severni_more"
+    }, 
+    {
+      "term": "Norske_more", 
+      "id": "europe-Norske_more", 
+      "context": "europe", 
+      "description": "Norske_more"
+    }, 
+    {
+      "term": "Barentsovo_more", 
+      "id": "europe-Barentsovo_more", 
+      "context": "europe", 
+      "description": "Barentsovo_more"
+    }, 
+    {
+      "term": "Bile_more", 
+      "id": "europe-Bile_more", 
+      "context": "europe", 
+      "description": "Bile_more"
+    }, 
+    {
+      "term": "Finsky_zaliv", 
+      "id": "europe-Finsky_zaliv", 
+      "context": "europe", 
+      "description": "Finsky_zaliv"
+    }, 
+    {
+      "term": "Botnicky_zaliv", 
+      "id": "europe-Botnicky_zaliv", 
+      "context": "europe", 
+      "description": "Botnicky_zaliv"
+    }, 
+    {
+      "term": "Baltske_more", 
+      "id": "europe-Baltske_more", 
+      "context": "europe", 
+      "description": "Baltske_more"
     }
   ], 
   "terms": [
@@ -32465,6 +32621,214 @@
         "namerica"
       ], 
       "name-cs": "\u0158eka sv. Vav\u0159ince"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Kaspicke_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Kaspick\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Azovske_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Azovsk\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Cerne_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "\u010cern\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Bospor", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Bospor"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Dardanely", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Dardanely"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Marmanske_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Marmansk\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Egejske_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Egejsk\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Jonske_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "J\u00f3nsk\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Tyrhenske_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Tyrh\u00e9nsk\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Jaderske_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Jadersk\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Stredozemni_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "St\u0159edozemn\u00ed mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Lvi_zaliv", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Lv\u00ed z\u00e1liv"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Balearske_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Bale\u00e1rsk\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Ligurske_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Ligursk\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Gibraltarsky_pruliv", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Gibraltarsk\u00fd pr\u016fliv"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Biskajsky_zaliv", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Biskajsk\u00fd z\u00e1liv"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Lamanssky_pruliv", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Laman\u0161sk\u00fd pr\u016fliv"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Doverska_uzina", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Doversk\u00e1 \u00fa\u017eina"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Irske_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Irsk\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Severni_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Severn\u00ed mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Norske_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Norsk\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Barentsovo_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Barentsovo mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Bile_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "B\u00edl\u00e9 mo\u0159e"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Finsky_zaliv", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Finsk\u00fd z\u00e1liv"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Botnicky_zaliv", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Botnick\u00fd z\u00e1liv"
+    }, 
+    {
+      "type": "sea", 
+      "id": "Baltske_more", 
+      "categories": [
+        "europe"
+      ], 
+      "name-cs": "Baltsk\u00e9 mo\u0159e"
     }
   ], 
   "categories": [
