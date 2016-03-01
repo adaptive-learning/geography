@@ -130,11 +130,13 @@ LANGUAGES = (
     ('en', 'English'),
     ('es', u'Español'),
     ('ru', u'Русский'),
+    ('sk', u'Slovensky'),
 )
 
 if ON_PRODUCTION:
     LANGUAGE_DOMAINS = {
         'cs': 'slepemapy.cz',
+        'sk': 'sk.slepemapy.cz',
         'en': 'outlinemaps.org',
         'es': 'es.outlinemaps.org',
         'de': 'de.outlinemaps.org',
@@ -144,6 +146,7 @@ if ON_PRODUCTION:
 elif ON_STAGING:
     LANGUAGE_DOMAINS = {
         'cs': 'staging.slepemapy.cz',
+        'sk': 'sk.staging.slepemapy.cz',
         'en': 'staging.outlinemaps.org',
         'es': 'es.staging.outlinemaps.org',
         'de': 'de.staging.outlinemaps.org',
@@ -153,6 +156,7 @@ elif ON_STAGING:
 else:
     LANGUAGE_DOMAINS = {
         'cs': 'localhost:8000',
+        'sk': 'sk.localhost:8000',
         'en': 'en.localhost:8000',
         'es': 'es.localhost:8000',
         'de': 'de.localhost:8000',
