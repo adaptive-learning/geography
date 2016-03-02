@@ -299,6 +299,9 @@ CACHES = {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
         'LOCATION': os.path.join(DATA_DIR, '.django_cache'),
         'TIMEOUT': 60 * 60 * 24 * 7,
+        'OPTIONS': {
+            'MAX_ENTRIES': 30000,
+        },
     }
 }
 
