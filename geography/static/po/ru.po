@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-02-23 10:16+0000\n"
+"PO-Revision-Date: 2016-03-05 20:43+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Russian (http://www.transifex.com/adaptive-learning/slepemapycz/language/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,57 +13,66 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: static/tpl/about.html:114
+#: static/tpl/about.html:123
 msgid "- administrativní členění Itálie, Francie a Španělska"
 msgstr "административное деление Италии, Франции и Испании"
 
-#: static/tpl/about.html:119
+#: static/tpl/about.html:128
 msgid "- města České republiky a Slovenska"
 msgstr "города Чешской Республики и Словакии"
 
-#: static/tpl/about.html:138
+#: static/tpl/about.html:147
 msgid "- vlaječky ostatních administrativních celků"
 msgstr "флаги остальных административных единиц"
 
-#: static/tpl/about.html:134
+#: static/tpl/about.html:143
 msgid "- vlaječky států světa a USA"
 msgstr "флаги стран мира и США"
 
-#: static/tpl/about.html:109
+#: static/tpl/about.html:118
 msgid ""
 "- zdroj většiny mapových podkladů (svět, kontinenty,\n"
 "        většina států)"
 msgstr "- источник большей части карт (мир, континенты,\nбольшинство государств)"
 
-#: static/tpl/about.html:127
+#: static/tpl/about.html:136
 msgid "- řeky Rakouska"
 msgstr "- реки Австрии"
 
-#: static/tpl/about.html:123
+#: static/tpl/about.html:132
 msgid "- řeky České republiky"
 msgstr "- реки Чешской Республики"
 
-#: static/tpl/about.html:76
+#: static/tpl/about.html:79
 msgid ""
 "<i class=\"flag-cs\"></i> Česká a <i class=\"flag-en\"></i> Anglická verze\n"
 "        systému je dílem výše uvedených vývojářů."
 msgstr "<i class=\"flag-cs\"></i> Чешская и <i class=\"flag-en\"></i> английская версии\nсистемы - работа вышеуказанных девелоперов."
 
-#: static/tpl/about.html:83
+#: static/tpl/about.html:86
 msgid ""
 "<i class=\"flag-de\"></i> Německý překlad vytvořila Petra Moskva a její\n"
 "        studentky z Gymnázia a Obchodní Akdemie Orlová."
 msgstr "<i class=\"flag-de\"></i> На немецкий язык перевела Петра Москва и ее\nстудентки из Гимназии и Коммерческой Академии Орлова"
 
-#: static/tpl/about.html:80
+#: static/tpl/about.html:83
 msgid "<i class=\"flag-es\"></i> Španělský překlad vytvořil Benjamin Valdes."
 msgstr "<i class=\"flag-es\"></i>  На испанский язык перевел Бенджамин Вальдес"
 
-#: static/tpl/homepage.html:72
+#: static/tpl/about.html:90
+msgid "<i class=\"flag-ru\"></i> Ruský překlad vytvořila Daria Pozhidaeva."
+msgstr ""
+
+#: static/tpl/about.html:93
+msgid ""
+"<i class=\"flag-sk\"></i> Slovenský překlad vytvořil především Miroslav Fic."
+msgstr ""
+
+#: static/tpl/homepage.html:74
 msgid "Adaptabilní procvičování"
 msgstr "Адаптируемые тренировки"
 
-#: static/tpl/homepage.html:73
+#: static/tpl/homepage.html:75
 msgid "Adaptabilní procvičování - text"
 msgstr "Каждая контурная карта предлагает адаптированную тренировку: в соответствии с вашими знаниями, приложение выбирает вид вопросов (открытые, выбор варианта ответа) и  частоту повторения. Приложение предлагает вам государства, изучения которых для вас  наиболее плодотворное."
 
@@ -75,7 +84,7 @@ msgstr "Адрес профиля"
 msgid "Aktuální úroveň"
 msgstr "Актуальный уровень"
 
-#: static/tpl/about.html:144
+#: static/tpl/about.html:153
 msgid ""
 "Aplikace byla oceněna v Soutěži \n"
 "      <a href=\"http://www.otevrenadata.cz/\">Společně otevíráme data</a>,\n"
@@ -103,7 +112,7 @@ msgstr "Неверные ответы"
 msgid "Co je zvýrazněno?"
 msgstr ""
 
-#: static/tpl/about.html:98
+#: static/tpl/about.html:107
 msgid ""
 "Data o odpovědích jsou ukládána a jsou využívána pro výběr vhodných otázek a"
 " pro výzkumné účely. Všechna tato data jsou zpracovávána anonymně. "
@@ -119,7 +128,7 @@ msgstr "E-mail"
 msgid "Hlavní města skrze státy"
 msgstr ""
 
-#: static/js/directives.js:25 static/js/map.js:286
+#: static/js/directives.js:25 static/js/map.js:271
 msgid "Hlavní město"
 msgstr ""
 
@@ -127,7 +136,7 @@ msgstr ""
 msgid "Hledaný profil neexistuje."
 msgstr "Искомый профиль несуществует"
 
-#: static/tpl/homepage.html:63
+#: static/tpl/homepage.html:65
 msgid "Jak to funguje?"
 msgstr "Как это работает?"
 
@@ -177,6 +186,10 @@ msgstr "Мои частые ошибки"
 msgid "Moře"
 msgstr "Моря"
 
+#: static/tpl/about.html:68
+msgid "Moře Evropy připravil Jakub Kohn."
+msgstr ""
+
 #: static/js/services.js:345
 msgid "Města"
 msgstr "Города"
@@ -198,7 +211,7 @@ msgstr "Большой вклад в развитие данного проек�
 msgid "Naučeno"
 msgstr "Изучено"
 
-#: static/js/map.js:297
+#: static/js/map.js:302
 msgid "Neprocvičováno"
 msgstr "Неизучено"
 
@@ -224,11 +237,11 @@ msgstr "О проекте"
 msgid "Oblasti"
 msgstr "Области"
 
-#: static/tpl/about.html:143
+#: static/tpl/about.html:152
 msgid "Ocenění"
 msgstr "Награды"
 
-#: static/js/directives.js:17 static/js/map.js:276
+#: static/js/directives.js:17 static/js/map.js:292
 msgid "Odhad znalosti"
 msgstr "Определение уровня знаний"
 
@@ -236,7 +249,7 @@ msgstr "Определение уровня знаний"
 msgid "Osobní cíle"
 msgstr "Личные цели"
 
-#: static/tpl/about.html:68
+#: static/tpl/about.html:71
 msgid "Ostatní mapy připravil Vít Stanislav."
 msgstr "Другие карты подготовил Станислав Вит"
 
@@ -260,7 +273,7 @@ msgstr "Продолжить тренировку"
 msgid "Pokud problém přetrval zkuste to znovu později nebo"
 msgstr "Если проблема не решена, попробуйте позже или"
 
-#: static/tpl/about.html:89
+#: static/tpl/about.html:98
 msgid ""
 "Pokud se chcete zapojit do překládání Slepých map, můžete tak učinit na \n"
 "      <a href=\"https://www.transifex.com/adaptive-learning/slepemapycz/\">\n"
@@ -282,7 +295,7 @@ msgstr "Политическая карта"
 msgid "Povrch"
 msgstr "Рельеф"
 
-#: static/js/map.js:282
+#: static/js/map.js:267
 msgid "Počet obyvatel"
 msgstr "Население"
 
@@ -316,7 +329,7 @@ msgstr "Просмотр карт"
 msgid "Přehled znalostí uživatele"
 msgstr "Обзор знаний пользователя"
 
-#: static/tpl/about.html:74
+#: static/tpl/about.html:77
 msgid "Překlady"
 msgstr "Переводы"
 
@@ -335,11 +348,6 @@ msgstr "Подготовка карт"
 #: static/js/directives.js:205
 msgid "Příští úroveň"
 msgstr "Следующий уровень"
-
-#: static/tpl/about.html:65
-msgid ""
-"Rakouské řeky a města Finska, Švédska a Norska zpracoval Martin Spáčil."
-msgstr "Реки Австрии и города Финляндии, Швеции и Норвегии подготовил Мартин Шпачил"
 
 #: static/js/services.js:339
 msgid "Regiony"
@@ -364,15 +372,15 @@ msgid ""
 "    konkrétně v rámci skupiny <a href=\"http://www.fi.muni.cz/adaptivelearning/\">Adaptive Learning</a>."
 msgstr "Контурные карты разработаны на <a href=\"http://www.fi.muni.cz/\">\nФакультете информатики Масарикова университета,\nа именно в рамках группы <a href=\"http://www.fi.muni.cz/adaptivelearning/\">Adaptive Learning</a>."
 
-#: static/tpl/about.html:97
+#: static/tpl/about.html:106
 msgid "Soukromí"
 msgstr "Личные данные"
 
-#: static/tpl/homepage.html:79
+#: static/tpl/homepage.html:81
 msgid "Specializovaný systém"
 msgstr "Специализированная система"
 
-#: static/tpl/homepage.html:80
+#: static/tpl/homepage.html:82
 msgid "Specializovaný systém - text"
 msgstr "Изучение контурных карт предлагает и ряд других обучающих систем, однако большинство из них охватывает много других, частных областей. Наша же система нацелена только на контурные карты, благодаря чему она обучение проходит самым оптимальным способом. "
 
@@ -384,7 +392,7 @@ msgstr "Федеральные земли"
 msgid "Správné odpovědi"
 msgstr "Правильные ответы"
 
-#: static/js/directives.js:30 static/js/map.js:290
+#: static/js/directives.js:30 static/js/map.js:275
 msgid "Stát"
 msgstr ""
 
@@ -420,11 +428,11 @@ msgstr "Мир"
 msgid "USA"
 msgstr "США"
 
-#: static/tpl/homepage.html:87
+#: static/tpl/homepage.html:89
 msgid "Ukázka mapy znalostí"
 msgstr "Демонстрация карты знаний"
 
-#: static/tpl/homepage.html:75
+#: static/tpl/homepage.html:77
 msgid "Ukázka procvičování"
 msgstr "Демонстрация тренировок"
 
@@ -436,11 +444,11 @@ msgstr "Сохранить"
 msgid "Upravit profil"
 msgstr "Изменить профиль"
 
-#: static/tpl/homepage.html:91
+#: static/tpl/homepage.html:93
 msgid "Učení z dat"
 msgstr "Обучение с базой данных"
 
-#: static/tpl/homepage.html:92
+#: static/tpl/homepage.html:94
 msgid "Učení z dat - text"
 msgstr "Приложение обучается, используя данные от всех пользователей. Выбор вопросов основан именно на этих данных, а не на знаниях \"эксперта\" по географии, который \"знает\", что тяжелее различить - Кению или Нигерию."
 
@@ -448,11 +456,11 @@ msgstr "Приложение обучается, используя данные
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "К сожалению, произошла ошибка в приложении"
 
-#: static/tpl/homepage.html:84
+#: static/tpl/homepage.html:86
 msgid "Vizualizace znalostí"
 msgstr "Визуализация знаний"
 
-#: static/tpl/homepage.html:85
+#: static/tpl/homepage.html:87
 msgid "Vizualizace znalostí - text"
 msgstr "На основе ваших ответов система распознает, насколько хорошо вы знаете различные государства, а также составит вашу личную карту знаний, которая покажет вам, что вы уже умеете. "
 
@@ -476,7 +484,8 @@ msgstr "Выбрать другую карту"
 msgid "Vybráno"
 msgstr "Выбрано"
 
-#: static/tpl/content_admin_banner.html:7 static/tpl/sign_in_banner.html:6
+#: static/tpl/content_admin_banner.html:7 static/tpl/promo_banner.html:7
+#: static/tpl/sign_in_banner.html:6
 msgid "Zavřít"
 msgstr "Закрыть"
 
@@ -484,15 +493,15 @@ msgstr "Закрыть"
 msgid "Zde zatím nebylo nic procvičováno."
 msgstr "Здесь пока еще ничего неизучено"
 
-#: static/tpl/about.html:104
+#: static/tpl/about.html:113
 msgid "Zdroje"
 msgstr "Источники"
 
-#: static/tpl/homepage.html:67
+#: static/tpl/homepage.html:69
 msgid "Zeměpis hrou"
 msgstr "География в игровой форме"
 
-#: static/tpl/homepage.html:68
+#: static/tpl/homepage.html:70
 msgid "Zeměpis hrou - text"
 msgstr "Тренируйте свои знания географии в игровой форме. В последней версии программы вы можете посоревноваться с собой или с компьютером. Сумеете ли вы окрасить в зеленый целую карту Европы? Чехии? А что насчет целого мира?"
 
@@ -508,7 +517,7 @@ msgstr "Отменить"
 msgid "bodů do příští úrovně"
 msgstr "очки до следующего уровня"
 
-#: static/tpl/homepage.html:57
+#: static/tpl/homepage.html:59
 msgid "další mapy"
 msgstr "Остальные карты"
 
@@ -539,6 +548,12 @@ msgstr "Успешность"
 #: static/js/services.js:347
 msgid "Řeky"
 msgstr "Реки"
+
+#: static/tpl/about.html:65
+msgid ""
+"Řeky Severní Ameriky, rakouské řeky, města Finska, Švédska a Norska "
+"zpracoval Martin Spáčil."
+msgstr ""
 
 #: static/tpl/about.html:62
 msgid "Řeky Slovenska a České republiky připravil Radim Krchňáček."
