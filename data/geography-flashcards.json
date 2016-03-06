@@ -30683,158 +30683,175 @@
     }, 
     {
       "name-en": "R\u00fdn", 
+      "name-de": "Rhein", 
+      "name-cs": "R\u00fdn", 
       "type": "river", 
       "id": "Ryn", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "R\u00fdn"
+      ]
     }, 
     {
       "name-en": "Lech", 
+      "name-de": "Lech", 
+      "name-cs": "Lech", 
       "type": "river", 
       "id": "Lech", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "Lech"
+      ]
     }, 
     {
       "name-en": "Inn", 
+      "name-de": "Inn", 
+      "name-cs": "Inn", 
       "type": "river", 
       "id": "Inn", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "Inn"
+      ]
     }, 
     {
       "name-en": "Ill", 
+      "name-de": "Ill", 
+      "name-cs": "Ill", 
       "type": "river", 
       "id": "Ill", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "Ill"
+      ]
     }, 
     {
       "name-en": "Salzach", 
+      "name-de": "Salzach", 
+      "name-cs": "Salzach", 
       "type": "river", 
       "id": "Salzach", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "Salzach"
+      ]
     }, 
     {
       "name-en": "Pinka", 
+      "name-de": "Pinka", 
+      "name-cs": "Pinka", 
       "type": "river", 
       "id": "Pinka", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "Pinka"
+      ]
     }, 
     {
       "name-en": "Litava", 
+      "name-de": "Leitha", 
+      "name-cs": "Litava", 
       "type": "river", 
       "id": "Litava", 
       "categories": [
         "at", 
         "cz"
-      ], 
-      "name-cs": "Litava"
+      ]
     }, 
     {
       "name-en": "Mal\u0161e", 
+      "name-de": "Maltsch", 
+      "name-cs": "Mal\u0161e", 
       "type": "river", 
       "id": "Malse", 
       "categories": [
         "at", 
         "cz"
-      ], 
-      "name-cs": "Mal\u0161e"
+      ]
     }, 
     {
       "name-en": "Travna", 
+      "name-de": "Traun", 
+      "name-cs": "Travna", 
       "type": "river", 
       "id": "Travna", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "Travna"
+      ]
     }, 
     {
       "name-en": "Krem\u017ee", 
+      "name-de": "Krems", 
+      "name-cs": "Krem\u017ee", 
       "type": "river", 
       "id": "Kremze", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "Krem\u017ee"
+      ]
     }, 
     {
       "name-en": "En\u017ee", 
+      "name-de": "Enns", 
+      "name-cs": "En\u017ee", 
       "type": "river", 
       "id": "Enze", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "En\u017ee"
+      ]
     }, 
     {
       "name-en": "Salza", 
+      "name-de": "Salza", 
+      "name-cs": "Salza", 
       "type": "river", 
       "id": "Salza", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "Salza"
+      ]
     }, 
     {
       "name-en": "Lavant", 
+      "name-de": "Lavant", 
+      "name-cs": "Lavant", 
       "type": "river", 
       "id": "Lavant", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "Lavant"
+      ]
     }, 
     {
       "name-en": "Gail", 
+      "name-de": "Gail", 
+      "name-cs": "Gail", 
       "type": "river", 
       "id": "Gail", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "Gail"
+      ]
     }, 
     {
       "name-en": "Mura", 
+      "name-de": "Mur", 
+      "name-cs": "Mura", 
       "type": "river", 
       "id": "Mura", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "Mura"
+      ]
     }, 
     {
       "name-en": "M\u00fcrz", 
+      "name-de": "M\u00fcrz", 
+      "name-cs": "M\u00fcrz", 
       "type": "river", 
       "id": "Murz", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "M\u00fcrz"
+      ]
     }, 
     {
       "name-en": "R\u00e1ba", 
+      "name-de": "Raab", 
+      "name-cs": "R\u00e1ba", 
       "type": "river", 
       "id": "Raba", 
       "categories": [
         "at"
-      ], 
-      "name-cs": "R\u00e1ba"
+      ]
     }, 
     {
       "name-en": "B\u011bl\u00e1 (\u010cechy)", 
@@ -32769,6 +32786,7 @@
       "name-cs": "\u0158eka sv. Vav\u0159ince"
     }, 
     {
+      "name-en": "Caspian Sea", 
       "type": "sea", 
       "id": "Kaspicke_more", 
       "categories": [
@@ -32777,6 +32795,7 @@
       "name-cs": "Kaspick\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "Sea of Azov", 
       "type": "sea", 
       "id": "Azovske_more", 
       "categories": [
@@ -32785,6 +32804,7 @@
       "name-cs": "Azovsk\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "Black Sea", 
       "type": "sea", 
       "id": "Cerne_more", 
       "categories": [
@@ -32793,6 +32813,7 @@
       "name-cs": "\u010cern\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "Bosphorus", 
       "type": "sea", 
       "id": "Bospor", 
       "categories": [
@@ -32801,6 +32822,7 @@
       "name-cs": "Bospor"
     }, 
     {
+      "name-en": "Dardanelles", 
       "type": "sea", 
       "id": "Dardanely", 
       "categories": [
@@ -32809,6 +32831,7 @@
       "name-cs": "Dardanely"
     }, 
     {
+      "name-en": "Sea of Marmara", 
       "type": "sea", 
       "id": "Marmanske_more", 
       "categories": [
@@ -32817,6 +32840,7 @@
       "name-cs": "Marmansk\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "Aegean Sea", 
       "type": "sea", 
       "id": "Egejske_more", 
       "categories": [
@@ -32825,6 +32849,7 @@
       "name-cs": "Egejsk\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "Ionian Sea", 
       "type": "sea", 
       "id": "Jonske_more", 
       "categories": [
@@ -32833,6 +32858,7 @@
       "name-cs": "J\u00f3nsk\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "Tyrrhenian Sea", 
       "type": "sea", 
       "id": "Tyrhenske_more", 
       "categories": [
@@ -32841,6 +32867,7 @@
       "name-cs": "Tyrh\u00e9nsk\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "Adriatic Sea", 
       "type": "sea", 
       "id": "Jaderske_more", 
       "categories": [
@@ -32849,6 +32876,7 @@
       "name-cs": "Jadersk\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "Mediterranean Sea", 
       "type": "sea", 
       "id": "Stredozemni_more", 
       "categories": [
@@ -32857,6 +32885,7 @@
       "name-cs": "St\u0159edozemn\u00ed mo\u0159e"
     }, 
     {
+      "name-en": "Gulf of Lion", 
       "type": "sea", 
       "id": "Lvi_zaliv", 
       "categories": [
@@ -32865,6 +32894,7 @@
       "name-cs": "Lv\u00ed z\u00e1liv"
     }, 
     {
+      "name-en": "Balearic Sea", 
       "type": "sea", 
       "id": "Balearske_more", 
       "categories": [
@@ -32873,6 +32903,7 @@
       "name-cs": "Bale\u00e1rsk\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "Ligurian Sea", 
       "type": "sea", 
       "id": "Ligurske_more", 
       "categories": [
@@ -32881,6 +32912,7 @@
       "name-cs": "Ligursk\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "Strait of Gibraltar", 
       "type": "sea", 
       "id": "Gibraltarsky_pruliv", 
       "categories": [
@@ -32889,6 +32921,7 @@
       "name-cs": "Gibraltarsk\u00fd pr\u016fliv"
     }, 
     {
+      "name-en": "Bay of Biscay", 
       "type": "sea", 
       "id": "Biskajsky_zaliv", 
       "categories": [
@@ -32897,6 +32930,7 @@
       "name-cs": "Biskajsk\u00fd z\u00e1liv"
     }, 
     {
+      "name-en": "English Channel", 
       "type": "sea", 
       "id": "Lamanssky_pruliv", 
       "categories": [
@@ -32905,6 +32939,7 @@
       "name-cs": "Laman\u0161sk\u00fd pr\u016fliv"
     }, 
     {
+      "name-en": "Strait of Dover", 
       "type": "sea", 
       "id": "Doverska_uzina", 
       "categories": [
@@ -32913,6 +32948,7 @@
       "name-cs": "Doversk\u00e1 \u00fa\u017eina"
     }, 
     {
+      "name-en": "Irish Sea", 
       "type": "sea", 
       "id": "Irske_more", 
       "categories": [
@@ -32921,6 +32957,7 @@
       "name-cs": "Irsk\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "North Sea", 
       "type": "sea", 
       "id": "Severni_more", 
       "categories": [
@@ -32929,6 +32966,7 @@
       "name-cs": "Severn\u00ed mo\u0159e"
     }, 
     {
+      "name-en": "Norwegian Sea", 
       "type": "sea", 
       "id": "Norske_more", 
       "categories": [
@@ -32937,6 +32975,7 @@
       "name-cs": "Norsk\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "Barents Sea", 
       "type": "sea", 
       "id": "Barentsovo_more", 
       "categories": [
@@ -32945,6 +32984,7 @@
       "name-cs": "Barentsovo mo\u0159e"
     }, 
     {
+      "name-en": "White Sea", 
       "type": "sea", 
       "id": "Bile_more", 
       "categories": [
@@ -32953,6 +32993,7 @@
       "name-cs": "B\u00edl\u00e9 mo\u0159e"
     }, 
     {
+      "name-en": "Gulf of Finland", 
       "type": "sea", 
       "id": "Finsky_zaliv", 
       "categories": [
@@ -32961,6 +33002,7 @@
       "name-cs": "Finsk\u00fd z\u00e1liv"
     }, 
     {
+      "name-en": "Gulf of Bothnia", 
       "type": "sea", 
       "id": "Botnicky_zaliv", 
       "categories": [
@@ -32969,6 +33011,7 @@
       "name-cs": "Botnick\u00fd z\u00e1liv"
     }, 
     {
+      "name-en": "Baltic Sea", 
       "type": "sea", 
       "id": "Baltske_more", 
       "categories": [
