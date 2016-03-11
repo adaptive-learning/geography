@@ -30,12 +30,8 @@ class Command(BaseCommand):
                     print(('Warning: missing translation for context %s' %
                            c['name-en']))
             for t in data['terms']:
-                if t['id'] in translations:
+                if t['id'] in translations and translations[t['id']] != '':
                     t['name-' + lang] = translations[t['id']]
-                elif 'name-en' in t:
-                    t['name-' + lang] = t['name-en']
-                    print('Warning: missing translation for term ' +
-                          '\'%s\', id: \'%s\'' % (t['name-en'], t['id']))
                 else:
                     print('Warning: missing "name-en" for term with ' +
                           'id: \'%s\'' % (t['id']))
