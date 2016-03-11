@@ -34488,238 +34488,264 @@
       ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Caspian Sea", 
+      "name-sk": "Kaspick\u00e9 more", 
+      "name-cs": "Kaspick\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Kaspicke_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Kaspick\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Sea of Azov", 
+      "name-sk": "Azovsk\u00e9 more", 
+      "name-cs": "Azovsk\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Azovske_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Azovsk\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Black Sea", 
+      "name-sk": "\u010cierne more", 
+      "name-cs": "\u010cern\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Cerne_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "\u010cern\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Bosphorus", 
+      "name-sk": "Bospor", 
+      "name-cs": "Bospor", 
+      "type": "sea", 
       "id": "Bospor", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Bospor"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Dardanelles", 
+      "name-sk": "Dardanely", 
+      "name-cs": "Dardanely", 
+      "type": "sea", 
       "id": "Dardanely", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Dardanely"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Sea of Marmara", 
+      "name-sk": "Marmarsk\u00e9 more", 
+      "name-cs": "Marmansk\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Marmanske_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Marmansk\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Aegean Sea", 
+      "name-sk": "Egejsk\u00e9 more", 
+      "name-cs": "Egejsk\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Egejske_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Egejsk\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Ionian Sea", 
+      "name-sk": "I\u00f3nske more", 
+      "name-cs": "J\u00f3nsk\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Jonske_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "J\u00f3nsk\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Tyrrhenian Sea", 
+      "name-sk": "Tyrrhensk\u00e9 more", 
+      "name-cs": "Tyrh\u00e9nsk\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Tyrhenske_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Tyrh\u00e9nsk\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Adriatic Sea", 
+      "name-sk": "Jadransk\u00e9 more", 
+      "name-cs": "Jadersk\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Jaderske_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Jadersk\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Mediterranean Sea", 
+      "name-sk": "Stredozemn\u00e9 more", 
+      "name-cs": "St\u0159edozemn\u00ed mo\u0159e", 
+      "type": "sea", 
       "id": "Stredozemni_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "St\u0159edozemn\u00ed mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Gulf of Lion", 
+      "name-sk": "Lionsk\u00fd z\u00e1liv", 
+      "name-cs": "Lv\u00ed z\u00e1liv", 
+      "type": "sea", 
       "id": "Lvi_zaliv", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Lv\u00ed z\u00e1liv"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Balearic Sea", 
+      "name-sk": "Bale\u00e1rske more", 
+      "name-cs": "Bale\u00e1rsk\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Balearske_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Bale\u00e1rsk\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Ligurian Sea", 
+      "name-sk": "Lig\u00farske more", 
+      "name-cs": "Ligursk\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Ligurske_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Ligursk\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Strait of Gibraltar", 
+      "name-sk": "Gibralt\u00e1rsky prieliv", 
+      "name-cs": "Gibraltarsk\u00fd pr\u016fliv", 
+      "type": "sea", 
       "id": "Gibraltarsky_pruliv", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Gibraltarsk\u00fd pr\u016fliv"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Bay of Biscay", 
+      "name-sk": "Biskajsk\u00fd z\u00e1liv", 
+      "name-cs": "Biskajsk\u00fd z\u00e1liv", 
+      "type": "sea", 
       "id": "Biskajsky_zaliv", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Biskajsk\u00fd z\u00e1liv"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "English Channel", 
+      "name-sk": "Laman\u0161sk\u00fd prieliv", 
+      "name-cs": "Laman\u0161sk\u00fd pr\u016fliv", 
+      "type": "sea", 
       "id": "Lamanssky_pruliv", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Laman\u0161sk\u00fd pr\u016fliv"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Strait of Dover", 
+      "name-sk": "Doversk\u00e1 \u00fa\u017eina", 
+      "name-cs": "Doversk\u00e1 \u00fa\u017eina", 
+      "type": "sea", 
       "id": "Doverska_uzina", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Doversk\u00e1 \u00fa\u017eina"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Irish Sea", 
+      "name-sk": "\u00cdrske more", 
+      "name-cs": "Irsk\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Irske_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Irsk\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "North Sea", 
+      "name-sk": "Severn\u00e9 more", 
+      "name-cs": "Severn\u00ed mo\u0159e", 
+      "type": "sea", 
       "id": "Severni_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Severn\u00ed mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Norwegian Sea", 
+      "name-sk": "N\u00f3rske more", 
+      "name-cs": "Norsk\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Norske_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Norsk\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Barents Sea", 
+      "name-sk": "Barentsovo more", 
+      "name-cs": "Barentsovo mo\u0159e", 
+      "type": "sea", 
       "id": "Barentsovo_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Barentsovo mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "White Sea", 
+      "name-sk": "Biele more", 
+      "name-cs": "B\u00edl\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Bile_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "B\u00edl\u00e9 mo\u0159e"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Gulf of Finland", 
+      "name-sk": "F\u00ednsky z\u00e1liv", 
+      "name-cs": "Finsk\u00fd z\u00e1liv", 
+      "type": "sea", 
       "id": "Finsky_zaliv", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Finsk\u00fd z\u00e1liv"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Gulf of Bothnia", 
+      "name-sk": "Botnick\u00fd z\u00e1liv", 
+      "name-cs": "Botnick\u00fd z\u00e1liv", 
+      "type": "sea", 
       "id": "Botnicky_zaliv", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Botnick\u00fd z\u00e1liv"
+      ]
     }, 
     {
-      "type": "sea", 
       "name-en": "Baltic Sea", 
+      "name-sk": "Baltsk\u00e9 more", 
+      "name-cs": "Baltsk\u00e9 mo\u0159e", 
+      "type": "sea", 
       "id": "Baltske_more", 
       "categories": [
         "europe"
-      ], 
-      "name-cs": "Baltsk\u00e9 mo\u0159e"
+      ]
     }
   ], 
   "categories": [

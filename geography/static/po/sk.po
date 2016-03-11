@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-03-05 20:43+0000\n"
-"Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
+"PO-Revision-Date: 2016-03-06 10:26+0000\n"
+"Last-Translator: Miroslav Fic <mirko.fic@gmail.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/adaptive-learning/slepemapycz/language/sk/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,12 +61,12 @@ msgstr "<i class=\"flag-es\"></i> Španielsky preklad vytvoril Benjamin Valdes."
 
 #: static/tpl/about.html:90
 msgid "<i class=\"flag-ru\"></i> Ruský překlad vytvořila Daria Pozhidaeva."
-msgstr ""
+msgstr "<i class=\"flag-ru\"></i> Ruský preklad vytvorila Daria Pozhidaeva."
 
 #: static/tpl/about.html:93
 msgid ""
 "<i class=\"flag-sk\"></i> Slovenský překlad vytvořil především Miroslav Fic."
-msgstr ""
+msgstr "<i class=\"flag-sk\"></i> Slovenský preklad vytvoril predovšetkým Miroslav Fic."
 
 #: static/tpl/homepage.html:74
 msgid "Adaptabilní procvičování"
@@ -156,7 +156,7 @@ msgstr "Meno"
 
 #: static/tpl/about.html:6
 msgid "Kdo za tím stojí"
-msgstr "Kto za tím stojí"
+msgstr "Kto za tým stojí"
 
 #: static/js/controllers.js:326
 msgid "Kontinenty"
@@ -188,7 +188,7 @@ msgstr "Moria"
 
 #: static/tpl/about.html:68
 msgid "Moře Evropy připravil Jakub Kohn."
-msgstr ""
+msgstr "Moria Európy pripravil Jakub Kohn."
 
 #: static/js/services.js:345
 msgid "Města"
@@ -553,7 +553,7 @@ msgstr "Rieky"
 msgid ""
 "Řeky Severní Ameriky, rakouské řeky, města Finska, Švédska a Norska "
 "zpracoval Martin Spáčil."
-msgstr ""
+msgstr "Rieky Severnej Ameriky, rakúske rieky, mestá Fínska, Švédska a Nórska spracoval Martin Spáčil."
 
 #: static/tpl/about.html:62
 msgid "Řeky Slovenska a České republiky připravil Radim Krchňáček."

@@ -1,12 +1,13 @@
 # 
 # Translators:
 # Jan Papousek <jan.papousek@gmail.com>, 2015
+# Miroslav Fic <mirko.fic@gmail.com>, 2016
 # Vít Stanislav <slaweet@seznam.cz>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-03-05 20:43+0000\n"
-"Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
+"PO-Revision-Date: 2016-03-07 13:13+0000\n"
+"Last-Translator: Miroslav Fic <mirko.fic@gmail.com>\n"
 "Language-Team: English (http://www.transifex.com/adaptive-learning/slepemapycz/language/en/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -61,12 +62,12 @@ msgstr "<i class = \"flag-es\"></i> Spanish translation created Benjamin Valdes.
 
 #: static/tpl/about.html:90
 msgid "<i class=\"flag-ru\"></i> Ruský překlad vytvořila Daria Pozhidaeva."
-msgstr ""
+msgstr "<i class=\"flag-ru\"></i> Russian translation has been created by Daria Pozhidaeva."
 
 #: static/tpl/about.html:93
 msgid ""
 "<i class=\"flag-sk\"></i> Slovenský překlad vytvořil především Miroslav Fic."
-msgstr ""
+msgstr "<i class=\"flag-sk\"></i> Slovak translation has been created by Miroslav Fic."
 
 #: static/tpl/homepage.html:74
 msgid "Adaptabilní procvičování"
@@ -188,7 +189,7 @@ msgstr "Seas"
 
 #: static/tpl/about.html:68
 msgid "Moře Evropy připravil Jakub Kohn."
-msgstr ""
+msgstr "European seas have been created by Jakub Kohn."
 
 #: static/js/services.js:345
 msgid "Města"
@@ -553,7 +554,7 @@ msgstr "Rivers"
 msgid ""
 "Řeky Severní Ameriky, rakouské řeky, města Finska, Švédska a Norska "
 "zpracoval Martin Spáčil."
-msgstr ""
+msgstr "Rivers in North America, austrian rivers, cities of Finland, Sweden and Norway processed by Martin Spáčil."
 
 #: static/tpl/about.html:62
 msgid "Řeky Slovenska a České republiky připravil Radim Krchňáček."
