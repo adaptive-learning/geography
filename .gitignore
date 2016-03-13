@@ -20,3 +20,4 @@ bower_components
 bower-libs*.js
 bower-libs*.js.map
 geography/static/dist
+geography/templates/generated
