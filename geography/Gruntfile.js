@@ -139,6 +139,18 @@ module.exports = function(grunt) {
                 },
                 src: ['static/jstpl/bbox.js'],
                 dest: 'static/dist/js/bbox.js',
+            },
+            homepage: {
+              options: {
+                replacements: [
+                  {
+                      pattern: /\{\{\s*(("[^"]+")|('[^']+'))\s*\|\s*trans(late)?\s*\}\}/g,
+                      replacement: '{% trans $1 %}'
+                  }
+                ]
+              },
+              src: ['static/tpl/homepage.html'],
+              dest: '../geography/templates/generated/homepage.html',
             }
         },
         uglify: {
@@ -177,7 +189,7 @@ module.exports = function(grunt) {
         watch: {
             'geography-js': {
                 files: '<%= concat.geography.src %>',
-                tasks: ['concat:geography', 'uglify:geography']
+                tasks: ['process-javascript']
             },
             'geography-css': {
                 files: 'static/sass/*.sass',
@@ -185,7 +197,7 @@ module.exports = function(grunt) {
             },
             'geography-tpls': {
                 files: 'static/tpl/*.html',
-                tasks: ['html2js:geography', 'concat:geography', 'uglify:geography']
+                tasks: ['process-templates', 'process-javascript']
             },
             'geography-nggettext_compile': {
                 files: '<%= nggettext_compile.all.src %>',
@@ -214,7 +226,9 @@ module.exports = function(grunt) {
     grunt.registerTask('makemessages', ['shell:makemessages']);
     grunt.registerTask('collect-libs', ['bower_concat:all', 'uglify:libs', 'copy:fonts', 'copy:proso-apps-js']);
     grunt.registerTask('prepare-libs', ['shell:bower_install', 'collect-libs']);
-    grunt.registerTask('prepare', ['jshint', 'html2js:geography', 'concat:geography', 'uglify:geography', 'sass:geography', 'copy:above-fold', 'copy:images']);
+    grunt.registerTask('process-templates', ['html2js:geography', 'string-replace:homepage']);
+    grunt.registerTask('process-javascript', ['concat:geography', 'uglify:geography']);
+    grunt.registerTask('prepare', ['jshint', 'process-templates', 'process-javascript', 'sass:geography', 'copy:above-fold', 'copy:images', 'string-replace:homepage']);
     grunt.registerTask('default', ['bboxcache-all', 'nggettext_compile', 'prepare-libs', 'prepare']);
 
     /* CUSTOM TASKS */
