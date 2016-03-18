@@ -12546,6 +12546,162 @@
       "id": "europe-Baltske_more", 
       "context": "europe", 
       "description": "Baltske_more"
+    }, 
+    {
+      "term": "v.n.Rozkos", 
+      "id": "cz-v.n.Rozkos", 
+      "context": "cz", 
+      "description": "v.n.Rozkos"
+    }, 
+    {
+      "term": "v.n.Dalesice", 
+      "id": "cz-v.n.Dalesice", 
+      "context": "cz", 
+      "description": "v.n.Dalesice"
+    }, 
+    {
+      "term": "v.n.Nove_Mlyny", 
+      "id": "cz-v.n.Nove_Mlyny", 
+      "context": "cz", 
+      "description": "v.n.Nove_Mlyny"
+    }, 
+    {
+      "term": "v.n.Terlicko", 
+      "id": "cz-v.n.Terlicko", 
+      "context": "cz", 
+      "description": "v.n.Terlicko"
+    }, 
+    {
+      "term": "Dehtar", 
+      "id": "cz-Dehtar", 
+      "context": "cz", 
+      "description": "Dehtar"
+    }, 
+    {
+      "term": "Bezdrev", 
+      "id": "cz-Bezdrev", 
+      "context": "cz", 
+      "description": "Bezdrev"
+    }, 
+    {
+      "term": "v.n.Slapy", 
+      "id": "cz-v.n.Slapy", 
+      "context": "cz", 
+      "description": "v.n.Slapy"
+    }, 
+    {
+      "term": "v.n._Kamyk", 
+      "id": "cz-v.n._Kamyk", 
+      "context": "cz", 
+      "description": "v.n._Kamyk"
+    }, 
+    {
+      "term": "Dvoriste", 
+      "id": "cz-Dvoriste", 
+      "context": "cz", 
+      "description": "Dvoriste"
+    }, 
+    {
+      "term": "v.n.Vranov", 
+      "id": "cz-v.n.Vranov", 
+      "context": "cz", 
+      "description": "v.n.Vranov"
+    }, 
+    {
+      "term": "Rozmberk", 
+      "id": "cz-Rozmberk", 
+      "context": "cz", 
+      "description": "Rozmberk"
+    }, 
+    {
+      "term": "Velke_Darko", 
+      "id": "cz-Velke_Darko", 
+      "context": "cz", 
+      "description": "Velke_Darko"
+    }, 
+    {
+      "term": "v.n.Slezska_Harta", 
+      "id": "cz-v.n.Slezska_Harta", 
+      "context": "cz", 
+      "description": "v.n.Slezska_Harta"
+    }, 
+    {
+      "term": "v.n._Jesenice", 
+      "id": "cz-v.n._Jesenice", 
+      "context": "cz", 
+      "description": "v.n._Jesenice"
+    }, 
+    {
+      "term": "Horusicky_rybnik", 
+      "id": "cz-Horusicky_rybnik", 
+      "context": "cz", 
+      "description": "Horusicky_rybnik"
+    }, 
+    {
+      "term": "v.n.Zermanice", 
+      "id": "cz-v.n.Zermanice", 
+      "context": "cz", 
+      "description": "v.n.Zermanice"
+    }, 
+    {
+      "term": "v.n._Nechranice", 
+      "id": "cz-v.n._Nechranice", 
+      "context": "cz", 
+      "description": "v.n._Nechranice"
+    }, 
+    {
+      "term": "v.n.Orlik", 
+      "id": "cz-v.n.Orlik", 
+      "context": "cz", 
+      "description": "v.n.Orlik"
+    }, 
+    {
+      "term": "v.n.Sance", 
+      "id": "cz-v.n.Sance", 
+      "context": "cz", 
+      "description": "v.n.Sance"
+    }, 
+    {
+      "term": "Nesyt", 
+      "id": "cz-Nesyt", 
+      "context": "cz", 
+      "description": "Nesyt"
+    }, 
+    {
+      "term": "Machovo_jezero", 
+      "id": "cz-Machovo_jezero", 
+      "context": "cz", 
+      "description": "Machovo_jezero"
+    }, 
+    {
+      "term": "v.n.Vir_I", 
+      "id": "cz-v.n.Vir_I", 
+      "context": "cz", 
+      "description": "v.n.Vir_I"
+    }, 
+    {
+      "term": "v.n._Lipno_I", 
+      "id": "cz-v.n._Lipno_I", 
+      "context": "cz", 
+      "description": "v.n._Lipno_I"
+    }, 
+    {
+      "term": "v.n.Svihov", 
+      "id": "cz-v.n.Svihov", 
+      "context": "cz", 
+      "description": "v.n.Svihov"
+    }, 
+    {
+      "term": "v.n._Hracholusky", 
+      "id": "cz-v.n._Hracholusky", 
+      "context": "cz", 
+      "description": "v.n._Hracholusky"
+    }, 
+    {
+      "term": "v.n.Dlouhe_strane", 
+      "id": "cz-v.n.Dlouhe_strane", 
+      "context": "cz", 
+      "description": "v.n.Dlouhe_strane"
     }
   ], 
   "terms": [
@@ -34746,6 +34902,214 @@
       "categories": [
         "europe"
       ]
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Rozkos", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.Rozko\u0161"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Dalesice", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.Dale\u0161ice"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Nove_Mlyny", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.Nov\u00e9 Ml\u00fdny"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Terlicko", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.T\u011brlicko"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "Dehtar", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Deht\u00e1\u0159"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "Bezdrev", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Bezdrev"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Slapy", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.Slapy"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n._Kamyk", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n. Kam\u00fdk"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "Dvoriste", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Dvo\u0159i\u0161t\u011b"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Vranov", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.Vranov"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "Rozmberk", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Ro\u017emberk"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "Velke_Darko", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Velk\u00e9 D\u00e1\u0159ko"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Slezska_Harta", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.Slezsk\u00e1 Harta"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n._Jesenice", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n. Jesenice"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "Horusicky_rybnik", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Horusick\u00fd rybn\u00edk"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Zermanice", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.\u017dermanice"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n._Nechranice", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n. Nechranice"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Orlik", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.Orl\u00edk"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Sance", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.\u0160ance"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "Nesyt", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Nesyt"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "Machovo_jezero", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "M\u00e1chovo jezero"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Vir_I", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.V\u00edr I"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n._Lipno_I", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n. Lipno I"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Svihov", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.\u0160vihov"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n._Hracholusky", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n. Hracholusky"
+    }, 
+    {
+      "type": "reservoir", 
+      "id": "v.n.Dlouhe_strane", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "v.n.Dlouh\u00e9 str\u00e1n\u011b"
     }
   ], 
   "categories": [
