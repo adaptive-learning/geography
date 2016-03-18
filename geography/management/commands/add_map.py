@@ -28,6 +28,10 @@ class Command(BaseCommand):
             map_code = args[1]
         with open(args[0], 'r') as json_file:
             data = json.load(json_file, 'utf-8')
+            data['contexts'] = data.get('contexts', [])
+            data['terms'] = data.get('terms', [])
+            data['categories'] = data.get('categories', [])
+            data['flashcards'] = data.get('flashcards', [])
         if len(args) > 2:
             self.lang = args[2]
         else:
