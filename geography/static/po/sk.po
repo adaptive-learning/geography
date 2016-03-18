@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-03-06 10:26+0000\n"
-"Last-Translator: Miroslav Fic <mirko.fic@gmail.com>\n"
+"PO-Revision-Date: 2016-03-18 16:21+0000\n"
+"Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Slovak (http://www.transifex.com/adaptive-learning/slepemapycz/language/sk/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -128,7 +128,7 @@ msgstr "E-mail"
 msgid "Hlavní města skrze státy"
 msgstr "Hlavné mestá cez štáty"
 
-#: static/js/directives.js:25 static/js/map.js:271
+#: static/js/directives.js:25 static/js/map.js:281
 msgid "Hlavní město"
 msgstr "Hlavné mesto"
 
@@ -140,7 +140,7 @@ msgstr "Hľadaný profil neexistuje."
 msgid "Jak to funguje?"
 msgstr "Ako to funguje?"
 
-#: static/js/services.js:348
+#: static/js/services.js:349
 msgid "Jezera"
 msgstr "Jazerá"
 
@@ -182,7 +182,7 @@ msgstr "Moje vedomosti"
 msgid "Moje časté chyby"
 msgstr "Moje časté chyby"
 
-#: static/js/services.js:349
+#: static/js/services.js:350
 msgid "Moře"
 msgstr "Moria"
 
@@ -211,7 +211,7 @@ msgstr "Na vývoji Slepých máp sa podieľa predovšetkým Vít Stanislav a Jan
 msgid "Naučeno"
 msgstr "Naučené"
 
-#: static/js/map.js:302
+#: static/js/map.js:312
 msgid "Neprocvičováno"
 msgstr "Neprecvičované"
 
@@ -241,7 +241,7 @@ msgstr "Oblasti"
 msgid "Ocenění"
 msgstr "Ocenenia"
 
-#: static/js/directives.js:17 static/js/map.js:292
+#: static/js/directives.js:17 static/js/map.js:302
 msgid "Odhad znalosti"
 msgstr "Odhad vedomosti"
 
@@ -253,11 +253,11 @@ msgstr "Osobné ciele"
 msgid "Ostatní mapy připravil Vít Stanislav."
 msgstr "Ostatné mapy pripravil Vít Stanislav."
 
-#: static/js/services.js:351
+#: static/js/services.js:353
 msgid "Ostrovy"
 msgstr "Ostrovy"
 
-#: static/js/services.js:350
+#: static/js/services.js:351
 msgid "Pohoří"
 msgstr "Pohoria"
 
@@ -291,11 +291,11 @@ msgstr "Pokiaľ študujete na FI a máte záujem sa zapojiť do vývoja podobné
 msgid "Politická mapa"
 msgstr "Politická mapa"
 
-#: static/js/services.js:269
+#: static/js/services.js:352
 msgid "Povrch"
 msgstr "Povrch"
 
-#: static/js/map.js:267
+#: static/js/map.js:277
 msgid "Počet obyvatel"
 msgstr "Počet obyvateľov"
 
@@ -376,6 +376,10 @@ msgstr "Slepé mapy sú vyvíjané na <a href=\"http://www.fi.muni.cz/\">\nFakul
 msgid "Soukromí"
 msgstr "Súkromie"
 
+#: static/js/services.js:269
+msgid "Souš"
+msgstr ""
+
 #: static/tpl/homepage.html:81
 msgid "Specializovaný systém"
 msgstr "Špecializovaný systém"
@@ -392,7 +396,7 @@ msgstr "Spolkové krajiny"
 msgid "Správné odpovědi"
 msgstr "Správne odpovede"
 
-#: static/js/directives.js:30 static/js/map.js:275
+#: static/js/directives.js:30 static/js/map.js:285
 msgid "Stát"
 msgstr "Štát"
 
@@ -463,6 +467,10 @@ msgstr "Vizualizácia vedomostí"
 #: static/tpl/homepage.html:87
 msgid "Vizualizace znalostí - text"
 msgstr "Na základe odpovedí systém odhadne ako dobre poznáte rôzne štáty a znázorní vám mapu vašich vedomostí, čo vám pomôže ujasniť si, čo vlastne viete."
+
+#: static/js/services.js:348
+msgid "Vodní nádrže"
+msgstr ""
 
 #: static/js/services.js:264
 msgid "Vodstvo"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-03-05 20:43+0000\n"
+"PO-Revision-Date: 2016-03-18 16:21+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Russian (http://www.transifex.com/adaptive-learning/slepemapycz/language/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -128,7 +128,7 @@ msgstr "E-mail"
 msgid "Hlavní města skrze státy"
 msgstr ""
 
-#: static/js/directives.js:25 static/js/map.js:271
+#: static/js/directives.js:25 static/js/map.js:281
 msgid "Hlavní město"
 msgstr ""
 
@@ -140,7 +140,7 @@ msgstr "Искомый профиль несуществует"
 msgid "Jak to funguje?"
 msgstr "Как это работает?"
 
-#: static/js/services.js:348
+#: static/js/services.js:349
 msgid "Jezera"
 msgstr "Озера"
 
@@ -182,7 +182,7 @@ msgstr "Мои знания"
 msgid "Moje časté chyby"
 msgstr "Мои частые ошибки"
 
-#: static/js/services.js:349
+#: static/js/services.js:350
 msgid "Moře"
 msgstr "Моря"
 
@@ -211,7 +211,7 @@ msgstr "Большой вклад в развитие данного проек�
 msgid "Naučeno"
 msgstr "Изучено"
 
-#: static/js/map.js:302
+#: static/js/map.js:312
 msgid "Neprocvičováno"
 msgstr "Неизучено"
 
@@ -241,7 +241,7 @@ msgstr "Области"
 msgid "Ocenění"
 msgstr "Награды"
 
-#: static/js/directives.js:17 static/js/map.js:292
+#: static/js/directives.js:17 static/js/map.js:302
 msgid "Odhad znalosti"
 msgstr "Определение уровня знаний"
 
@@ -253,11 +253,11 @@ msgstr "Личные цели"
 msgid "Ostatní mapy připravil Vít Stanislav."
 msgstr "Другие карты подготовил Станислав Вит"
 
-#: static/js/services.js:351
+#: static/js/services.js:353
 msgid "Ostrovy"
 msgstr "Острова"
 
-#: static/js/services.js:350
+#: static/js/services.js:351
 msgid "Pohoří"
 msgstr "Горы"
 
@@ -291,11 +291,11 @@ msgstr "Если вы обучаетесь на Факультете Инфор�
 msgid "Politická mapa"
 msgstr "Политическая карта"
 
-#: static/js/services.js:269
+#: static/js/services.js:352
 msgid "Povrch"
 msgstr "Рельеф"
 
-#: static/js/map.js:267
+#: static/js/map.js:277
 msgid "Počet obyvatel"
 msgstr "Население"
 
@@ -376,6 +376,10 @@ msgstr "Контурные карты разработаны на <a href=\"http
 msgid "Soukromí"
 msgstr "Личные данные"
 
+#: static/js/services.js:269
+msgid "Souš"
+msgstr ""
+
 #: static/tpl/homepage.html:81
 msgid "Specializovaný systém"
 msgstr "Специализированная система"
@@ -392,7 +396,7 @@ msgstr "Федеральные земли"
 msgid "Správné odpovědi"
 msgstr "Правильные ответы"
 
-#: static/js/directives.js:30 static/js/map.js:275
+#: static/js/directives.js:30 static/js/map.js:285
 msgid "Stát"
 msgstr ""
 
@@ -463,6 +467,10 @@ msgstr "Визуализация знаний"
 #: static/tpl/homepage.html:87
 msgid "Vizualizace znalostí - text"
 msgstr "На основе ваших ответов система распознает, насколько хорошо вы знаете различные государства, а также составит вашу личную карту знаний, которая покажет вам, что вы уже умеете. "
+
+#: static/js/services.js:348
+msgid "Vodní nádrže"
+msgstr ""
 
 #: static/js/services.js:264
 msgid "Vodstvo"

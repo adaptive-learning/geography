@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-03-05 20:43+0000\n"
+"PO-Revision-Date: 2016-03-18 16:21+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: German (http://www.transifex.com/adaptive-learning/slepemapycz/language/de/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -127,7 +127,7 @@ msgstr "E-Mail"
 msgid "Hlavní města skrze státy"
 msgstr ""
 
-#: static/js/directives.js:25 static/js/map.js:271
+#: static/js/directives.js:25 static/js/map.js:281
 msgid "Hlavní město"
 msgstr ""
 
@@ -139,7 +139,7 @@ msgstr ""
 msgid "Jak to funguje?"
 msgstr "Wie funktioniert das?"
 
-#: static/js/services.js:348
+#: static/js/services.js:349
 msgid "Jezera"
 msgstr "Seen"
 
@@ -181,7 +181,7 @@ msgstr "Meine Kenntnisse"
 msgid "Moje časté chyby"
 msgstr "Häufige Fehler"
 
-#: static/js/services.js:349
+#: static/js/services.js:350
 msgid "Moře"
 msgstr ""
 
@@ -210,7 +210,7 @@ msgstr ""
 msgid "Naučeno"
 msgstr "erlernt"
 
-#: static/js/map.js:302
+#: static/js/map.js:312
 msgid "Neprocvičováno"
 msgstr "nicht geübt"
 
@@ -240,7 +240,7 @@ msgstr "Gebiete"
 msgid "Ocenění"
 msgstr ""
 
-#: static/js/directives.js:17 static/js/map.js:292
+#: static/js/directives.js:17 static/js/map.js:302
 msgid "Odhad znalosti"
 msgstr "Einschätzung der Kennnisse"
 
@@ -252,11 +252,11 @@ msgstr "Persönliche Ziele"
 msgid "Ostatní mapy připravil Vít Stanislav."
 msgstr ""
 
-#: static/js/services.js:351
+#: static/js/services.js:353
 msgid "Ostrovy"
 msgstr "Inseln"
 
-#: static/js/services.js:350
+#: static/js/services.js:351
 msgid "Pohoří"
 msgstr "Gebirge"
 
@@ -290,11 +290,11 @@ msgstr ""
 msgid "Politická mapa"
 msgstr "Politische Karte"
 
-#: static/js/services.js:269
+#: static/js/services.js:352
 msgid "Povrch"
 msgstr "Oberfläche"
 
-#: static/js/map.js:267
+#: static/js/map.js:277
 msgid "Počet obyvatel"
 msgstr "Einwohnerzahl"
 
@@ -375,6 +375,10 @@ msgstr ""
 msgid "Soukromí"
 msgstr ""
 
+#: static/js/services.js:269
+msgid "Souš"
+msgstr ""
+
 #: static/tpl/homepage.html:81
 msgid "Specializovaný systém"
 msgstr "Spezialisiertes System"
@@ -391,7 +395,7 @@ msgstr "Bundesländer"
 msgid "Správné odpovědi"
 msgstr "Richtige Antworten"
 
-#: static/js/directives.js:30 static/js/map.js:275
+#: static/js/directives.js:30 static/js/map.js:285
 msgid "Stát"
 msgstr ""
 
@@ -462,6 +466,10 @@ msgstr "Visualisierung ihrer Kenntnisse"
 #: static/tpl/homepage.html:87
 msgid "Vizualizace znalostí - text"
 msgstr "Aufgrund der Antworten, schätzt das Spielsystem ihre Kenntnisse über die verschiedene Staaten und Bundesländer ein, und veranschaulicht es auf Karte der Kenntnisse. Dies soll ihnen helfen sich darüber im Klaren zu sein, welches Wissen Sie bereits besitzen."
+
+#: static/js/services.js:348
+msgid "Vodní nádrže"
+msgstr ""
 
 #: static/js/services.js:264
 msgid "Vodstvo"
