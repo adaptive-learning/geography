@@ -89,7 +89,7 @@ angular.module('proso.geography.map', [])
         }
       };
 
-      angular.forEach(stateAlternatives.concat('island', 'mountains'), function(sa){
+      angular.forEach(stateAlternatives.concat('island', 'mountains', 'surface'), function(sa){
         layerConfig[sa] = angular.copy(layerConfig.state);
       });
 
