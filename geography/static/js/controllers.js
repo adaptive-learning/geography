@@ -148,7 +148,15 @@ angular.module('proso.geography.controllers', [])
             $scope.imageController.highLightLayer($scope.layer);
             $scope.imageController.placeToFront(active.description);
             if ($filter('isPickNameOfType')($scope.question)) {
-                $scope.imageController.highlightItem(active.description, colors.NEUTRAL);
+                var callback = function() {
+                  $scope.imageController.highlightItem(active.description, colors.NEUTRAL);
+                  $timeout(function() {
+                    if (!active.responseTime) {
+                      callback();
+                    }
+                  }, 2000);
+                };
+                callback();
             }
             if ($filter('isFindOnMapType')($scope.question) && active.options) {
                 var codes = active.options.map(function(option) {

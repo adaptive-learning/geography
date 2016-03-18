@@ -224,7 +224,7 @@ angular.module('proso.geography.map', [])
         bboxCache.setKey(placePath.svgPath.node.id, placePath.data.code);
         var bbox = placePath.svgPath.getBBox();
         var bboxArea = bbox.width * bbox.height;
-        var zoomRatio = Math.max(1.2, 70 / Math.sqrt(bboxArea));
+        var zoomRatio = Math.max(4, 140 / Math.sqrt(bboxArea));
         return zoomRatio;
       },
       initMapZoom : function(paper) {
@@ -242,15 +242,14 @@ angular.module('proso.geography.map', [])
         });
         return panZoom;
       },
-      getHighlightAnimationAttributes : function(placePath, layer, origStroke, color, zoomRatio) {
-        zoomRatio = zoomRatio || that.getZoomRatio(placePath);
-        var animAttrs = {
-            transform : 's' + zoomRatio,
-            'stroke-width' : Math.min(6, zoomRatio) * origStroke
-          };
+      getHighlightAnimationAttributes : function(placePath, layer, origStroke, color) {
+        var animAttrs = { };
         if (color) {
           if (layer.id == 'river') {
             animAttrs.stroke = color;
+          } else if (layer.id == 'reservoir') {
+            animAttrs.stroke = color;
+            animAttrs.fill = color;
           } else {
             animAttrs.fill = color;
           }
@@ -459,12 +458,31 @@ angular.module('proso.geography.map', [])
             placePath.svgPath.toFront();
             var origStroke = layers.getConfig(layer).styles['stroke-width'];
             var animAttrs = mapFunctions.getHighlightAnimationAttributes(placePath, layer,
-                origStroke, color, zoomRatio);
+                origStroke, color);
+
+            if (!bboxCache.get(placePath.data.code)) {
+              bboxCache.set(placePath.data.code, placePath.svgPath.getBBox());
+            }
+            bboxCache.setKey(placePath.svgPath.node.id, placePath.data.code);
+            var bbox = placePath.svgPath.getBBox();
+            var highlightEllipse = myMap.map.paper.circle(
+              bbox.x + bbox.width / 2,
+              bbox.y + bbox.height / 2,
+              Math.max(bbox.width, bbox.height) / 2);
+            highlightEllipse.attr({
+              'stroke-width' : STROKE_WIDTH * 4,
+              'stroke' : color,
+              'transform' : 's ' + mapFunctions.getZoomRatio(placePath),
+            });
+            var ellAnimAttrs = {
+              transform : '',
+            };
+            console.log('ell', highlightEllipse);
+            highlightEllipse.animate(ellAnimAttrs, ANIMATION_TIME_MS, '>', function() {
+              highlightEllipse.remove();
+            });
+
             placePath.svgPath.animate(animAttrs, ANIMATION_TIME_MS / 2, '>', function() {
-              placePath.svgPath.animate({
-                transform : '',
-                'stroke-width' : origStroke
-              }, ANIMATION_TIME_MS / 2, '<');
               myMap.highlightItems(states, color);
             });
           } else if (states.length > 0) {

@@ -50,12 +50,6 @@
                 ng-disabled="!canNext || checking || error" >
             <i class="glyphicon glyphicon-arrow-right"></i> {{'Pokračovat' | translate }}
         </button>
-        <button class="btn btn-lg btn-default"
-                ng-click="highlight()"
-                ng-disabled="canNext || checking"
-                ng-show="question.options != undefined" >
-            <i class="glyphicon glyphicon-repeat"></i> {{'Znovu zvýraznit' | translate }}
-        </button>
       </div>
     </div>
     <div ng-show="loadingNextQuestion" class="loading-indicator overlay">
