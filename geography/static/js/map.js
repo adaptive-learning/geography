@@ -459,6 +459,9 @@ angular.module('proso.geography.map', [])
             var origStroke = layers.getConfig(layer).styles['stroke-width'];
             var animAttrs = mapFunctions.getHighlightAnimationAttributes(placePath, layer,
                 origStroke, color);
+            placePath.svgPath.animate(animAttrs, ANIMATION_TIME_MS / 2, '>', function() {
+              myMap.highlightItems(states, color);
+            });
 
             if (!bboxCache.get(placePath.data.code)) {
               bboxCache.set(placePath.data.code, placePath.svgPath.getBBox());
@@ -477,13 +480,8 @@ angular.module('proso.geography.map', [])
             var ellAnimAttrs = {
               transform : '',
             };
-            console.log('ell', highlightEllipse);
             highlightEllipse.animate(ellAnimAttrs, ANIMATION_TIME_MS, '>', function() {
               highlightEllipse.remove();
-            });
-
-            placePath.svgPath.animate(animAttrs, ANIMATION_TIME_MS / 2, '>', function() {
-              myMap.highlightItems(states, color);
             });
           } else if (states.length > 0) {
             myMap.highlightItems(states, color);
@@ -557,7 +555,10 @@ angular.module('proso.geography.map', [])
         },
         highLightLayer : function(layer) {
           angular.forEach(layers.getAll(), function(l) {
-            if (l == layer || (layer && layer.id == 'city' && mapFunctions.isStateAlternative(l.id))) {
+            if (l == layer || 
+                (layer && layer.id == 'city' &&
+                  mapFunctions.isStateAlternative(l.id)) ||
+                (layer && layer.id == 'reservoir' && l.id == 'river')) {
               layers.showLayer(l);
             }
             else {
