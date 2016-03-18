@@ -1,7 +1,12 @@
 var STROKE_WIDTH = 1.5;
 var RIVER_WIDTH = STROKE_WIDTH * 2;
 var ANIMATION_TIME_MS = 500;
-var hash = function(x) {return x;};
+var hash = function(x) {
+  if (window.mapFileHashes) {
+    return window.mapFileHashes[x] || x;
+  }
+  return x;
+};
 
 angular.module('proso.geography.map', [])
 

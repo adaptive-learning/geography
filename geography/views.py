@@ -51,6 +51,7 @@ def home(request, hack=None):
         'map': get_map_from_url(hack),
         'is_production': settings.ON_PRODUCTION,
         'css_files': CSS_FILES,
+        'map_files': get_map_files(),
         'js_files': JS_FILES,
         'continents': Category.objects.filter(
             lang=get_language(), type='continent').order_by('name'),
@@ -69,6 +70,13 @@ def home(request, hack=None):
         'screenshot_files': get_screenshot_files(request, hack),
     }
     return render_to_response('home.html', c)
+
+
+def get_map_files():
+    path = os.path.join(settings.STATICFILES_DIRS[0], 'map')
+    dirs = os.listdir(path)
+    map_files = ['/static/map/' + file for file in dirs]
+    return map_files
 
 
 def get_screenshot_files(request, hack):

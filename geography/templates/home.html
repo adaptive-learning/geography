@@ -287,6 +287,12 @@
     </script>
 
 
+    <script type="text/javascript">
+      window.mapFileHashes = {
+      {% for file in map_files %} "{{file}}" : "{% static file %}", {% endfor %}
+      }
+    </script>
+
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
