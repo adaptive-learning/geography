@@ -145,6 +145,11 @@ angular.module('proso.geography.map', [])
           colors.WATER_COLOR;
       };
       layerConfig.sea = angular.copy(layerConfig.lake, {});
+
+      layerConfig.reservoir = angular.copy(layerConfig.river, {});
+      layerConfig.reservoir.styles['stroke-width'] = 5;
+      layerConfig.reservoir.styles.fill = layerConfig.lake.styles.fill;
+
       return layerConfig;
     };
   }])
@@ -528,6 +533,8 @@ angular.module('proso.geography.map', [])
           layers.showLayer(l);
           if (l && l.id == "city") {
             layers.showLayer(layers.getStateAlternative());
+          } else if (l && l.id == "reservoir") {
+            layers.showLayer(layers.getLayerBySlug('river'));
           }
         },
         highLightLayer : function(layer) {

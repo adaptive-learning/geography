@@ -272,12 +272,12 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
       },{
         slug : 'water',
         name : gettextCatalog.getString('Vodstvo'),
-        types : ['river', 'lake', 'sea'],
+        types : ['river', 'lake', 'reservoir', 'sea'],
         hidden:true
       },{
-        slug : 'surface',
-        name : gettextCatalog.getString('Povrch'),
-        types : ['mountains', 'island'],
+        slug : 'land',
+        name : gettextCatalog.getString('Souš'),
+        types : ['surface', 'mountains', 'island'],
         hidden:true
       }
     ];
@@ -355,9 +355,11 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
           'city' : gettextCatalog.getString('Města'),
           'city-by-state' : gettextCatalog.getString('Hlavní města skrze státy'),
           'river' : gettextCatalog.getString('Řeky'),
+          'reservoir' : gettextCatalog.getString('Vodní nádrže'),
           'lake' : gettextCatalog.getString('Jezera'),
           'sea' : gettextCatalog.getString('Moře'),
           'mountains' : gettextCatalog.getString('Pohoří'),
+          'surface' : gettextCatalog.getString('Povrch'),
           'island' : gettextCatalog.getString('Ostrovy'),
       };
       placeTypes = [];
