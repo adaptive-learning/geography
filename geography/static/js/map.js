@@ -1,5 +1,6 @@
 var STROKE_WIDTH = 1.5;
 var RIVER_WIDTH = STROKE_WIDTH * 2;
+var RESERVOIR_WIDTH = STROKE_WIDTH * 4;
 var ANIMATION_TIME_MS = 500;
 var hash = function(x) {
   if (window.mapFileHashes) {
@@ -146,8 +147,18 @@ angular.module('proso.geography.map', [])
       };
       layerConfig.sea = angular.copy(layerConfig.lake, {});
 
-      layerConfig.reservoir = angular.copy(layerConfig.river, {});
-      layerConfig.reservoir.styles['stroke-width'] = 5;
+      layerConfig.reservoir = angular.copy(layerConfig.river, {
+        'mouseenter' : function(data, path) {
+          var zoomRatio = 4;
+          var animAttrs = { 'stroke-width' : zoomRatio * RESERVOIR_WIDTH };
+          path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
+        },
+        'mouseleave' : function(data, path) {
+          var animAttrs = { 'stroke-width' : RESERVOIR_WIDTH };
+          path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
+        }
+      });
+      layerConfig.reservoir.styles['stroke-width'] = RESERVOIR_WIDTH;
       layerConfig.reservoir.styles.fill = layerConfig.lake.styles.fill;
 
       return layerConfig;
@@ -560,6 +571,9 @@ angular.module('proso.geography.map', [])
                   mapFunctions.isStateAlternative(l.id)) ||
                 (layer && layer.id == 'reservoir' && l.id == 'river')) {
               layers.showLayer(l);
+              if (layer && layer.id == 'reservoir' && l.id == 'river') {
+                reservoirRiverHack(l);
+              }
             }
             else {
               layers.hideLayer(l);
@@ -580,6 +594,18 @@ angular.module('proso.geography.map', [])
           });
         }
       };
+
+      function reservoirRiverHack(l) {
+        l.style('stroke-width', STROKE_WIDTH);
+        var hoverFn = function(data, path) {
+          path.animate({
+            'stroke-width' : STROKE_WIDTH,
+            'cursor' : 'default',
+          }, ANIMATION_TIME_MS, '>');
+        };
+        l.on('mouseenter', hoverFn);
+        l.on('mouseleave', hoverFn);
+      }
 
       myMap.map.loadCSS(hash('/static/dist/css/map.css'), function() {
         myMap.map.loadMap(hash('/static/map/' + mapCode + '.svg'), function() {
