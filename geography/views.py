@@ -75,7 +75,7 @@ def home(request, hack=None):
 def get_map_files():
     path = os.path.join(settings.STATICFILES_DIRS[0], 'map')
     dirs = os.listdir(path)
-    map_files = ['/static/map/' + file for file in dirs]
+    map_files = ['map/' + file for file in dirs]
     return map_files
 
 
