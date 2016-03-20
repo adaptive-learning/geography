@@ -6,4 +6,4 @@ class PartialyFourOptionsNumber(OptionsNumber):
         if prediction >= target_probability:
             return 0
         else:
-            return 4
+            return 3
