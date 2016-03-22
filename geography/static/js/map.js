@@ -90,7 +90,7 @@ angular.module('proso.geography.map', [])
         }
       };
 
-      angular.forEach(stateAlternatives.concat('island', 'mountains', 'surface'), function(sa){
+      angular.forEach(stateAlternatives.concat('district', 'island', 'surface', 'mountains'), function(sa){
         layerConfig[sa] = angular.copy(layerConfig.state);
       });
 
