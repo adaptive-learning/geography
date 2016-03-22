@@ -147,17 +147,16 @@ angular.module('proso.geography.map', [])
       };
       layerConfig.sea = angular.copy(layerConfig.lake, {});
 
-      layerConfig.reservoir = angular.copy(layerConfig.river, {
-        'mouseenter' : function(data, path) {
-          var zoomRatio = 4;
-          var animAttrs = { 'stroke-width' : zoomRatio * RESERVOIR_WIDTH };
-          path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
-        },
-        'mouseleave' : function(data, path) {
-          var animAttrs = { 'stroke-width' : RESERVOIR_WIDTH };
-          path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
-        }
-      });
+      layerConfig.reservoir = angular.copy(layerConfig.river, {});
+      layerConfig.reservoir.mouseenter = function(data, path) {
+        var zoomRatio = 2;
+        var animAttrs = { 'stroke-width' : zoomRatio * RESERVOIR_WIDTH };
+        path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
+      };
+      layerConfig.reservoir.mouseleave = function(data, path) {
+        var animAttrs = { 'stroke-width' : RESERVOIR_WIDTH };
+        path.animate(animAttrs, ANIMATION_TIME_MS / 2, '>');
+      };
       layerConfig.reservoir.styles['stroke-width'] = RESERVOIR_WIDTH;
       layerConfig.reservoir.styles.fill = layerConfig.lake.styles.fill;
 
