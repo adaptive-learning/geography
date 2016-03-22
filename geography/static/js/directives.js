@@ -349,7 +349,7 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
   .directive('contentAdminBanner', [function() {
     return {
       restrict: 'A',
-      templateUrl : '/static/tpl/content_admin_banner.html',
+      templateUrl : 'static/tpl/content_admin_banner.html',
     };
   }])
 
@@ -368,7 +368,7 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
       function(userService, signupModal) {
     return {
       restrict: 'A',
-      templateUrl : '/static/tpl/sign_in_banner.html',
+      templateUrl : 'static/tpl/sign_in_banner.html',
       link: function ($scope) {
         $scope.userService = userService;
         $scope.openSignupModal = function() {
