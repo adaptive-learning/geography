@@ -16,6 +16,7 @@ angular.module('proso.geography', [
     'proso.apps',
     'angularDjangoCsrf',
     'gettext',
+    'ngLocationUpdate',
 ])
 
 .constant('domain', window.domain || '')
@@ -36,7 +37,7 @@ angular.module('proso.geography', [
             templateUrl : 'static/tpl/content-admin-offer.html'
         }).when('/view/', {
             redirectTo : '/view/world/'
-        }).when('/view/:part/:user?', {
+        }).when('/view/:part/:type?/:user?', {
             controller : 'AppView',
             templateUrl : 'static/tpl/view_tpl.html'
         }).when('/practice/', {

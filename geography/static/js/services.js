@@ -45,29 +45,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
       getName : function(code) {
         return names[code];
       },
-      getCategories : function(part) {
-        if (!categoriesCache[part]) {
-          categoriesCache[part] = angular.copy(categories);
-        }
-        var allHidden = 0 === categoriesCache[part].filter(function(c){
-          return !c.hidden;
-        }).length;
-        if (allHidden) {
-          categoriesCache[part][0].hidden = false;
-        }
-        return categoriesCache[part];
-      },
-      _setActiveCategory : function (part, active) {
-        that.getCategories(part, active);
-        angular.forEach(categoriesCache[part], function(cat) {
-          cat.hidden = cat.slug != active &&
-            0 === cat.types.filter(function(t){
-              return t == active;
-            }).length;
-        });
-      },
-      practicing : function (part, type) {
-        that._setActiveCategory(part, type);
+      practicing : function (part) {
         // To fetch names of all places on map and be able to show name of wrongly answered place
         var process = function(placesTypes){
           addToNames(part, placesTypes);
@@ -255,33 +233,6 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
     'use strict';
     var flashcardCache = {};
     var categoriesCache = {};
-    var categories = [
-      {
-        slug :'political',
-        name : gettextCatalog.getString('Politická mapa'),
-        types : [
-          'state',
-          'region',
-          'province',
-          'district',
-          'region_cz',
-          'region_it',
-          'autonomous_Comunity',
-          'bundesland',
-          'city',
-        ]
-      },{
-        slug : 'water',
-        name : gettextCatalog.getString('Vodstvo'),
-        types : ['river', 'lake', 'reservoir', 'sea'],
-        hidden:true
-      },{
-        slug : 'land',
-        name : gettextCatalog.getString('Souš'),
-        types : ['surface', 'mountains', 'island'],
-        hidden:true
-      }
-    ];
 
     function updateFlashcardCache(flashcards) {
       for (var i = 0; i < flashcards.length; i++) {
@@ -310,27 +261,6 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
       },
       getFlashcardByDescription : function (description) {
         return flashcardCache[description];
-      },
-      getCategories : function(part) {
-        if (!categoriesCache[part]) {
-          categoriesCache[part] = angular.copy(categories);
-        }
-        var allHidden = 0 === categoriesCache[part].filter(function(c){
-          return !c.hidden;
-        }).length;
-        if (allHidden) {
-          categoriesCache[part][0].hidden = false;
-        }
-        return categoriesCache[part];
-      },
-      _setActiveCategory : function (part, active) {
-        that.getCategories(part, active);
-        angular.forEach(categoriesCache[part], function(cat) {
-          cat.hidden = cat.slug != active &&
-            0 === cat.types.filter(function(t){
-              return t == active;
-            }).length;
-        });
       },
     };
     return that;

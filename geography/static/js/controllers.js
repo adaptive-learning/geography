@@ -39,12 +39,16 @@ angular.module('proso.geography.controllers', [])
 
 }])
 
-.controller('AppView', ['$scope', '$routeParams', '$filter', 'flashcardService', 'mapTitle', 'placeTypeService',
-    function($scope, $routeParams, $filter, flashcardService, mapTitle, placeTypeService) {
+.controller('AppView', ['$scope', '$routeParams', '$filter', 'flashcardService', 'mapTitle', 'placeTypeService', '$location',
+    function($scope, $routeParams, $filter, flashcardService, mapTitle, placeTypeService, $location) {
         'use strict';
         $scope.part = $routeParams.part;
         var user = $routeParams.user || '';
-        $scope.typeCategories = flashcardService.getCategories($scope.part);
+        var type = $routeParams.type || '';
+        var activePlaceType = placeTypeService.getBySlug(type);
+        if (type && !activePlaceType) {
+          user = type;
+        }
 
         var filter = {
             contexts : [$routeParams.part],
@@ -63,14 +67,25 @@ angular.module('proso.geography.controllers', [])
               flashcard.prediction = Math.ceil(flashcard.prediction * 10) / 10;
             });
             var placeTypes = placeTypeService.getTypes();
+
+            var fcsById = {};
             placeTypes = placeTypes.map(function(pt) {
+                if (pt.name == activePlaceType){
+                  activePlaceType = pt;
+                }
                 pt.places = data.filter(function(fc) {
                     return fc.term.type == pt.identifier;
+                });
+                pt.places.map(function(p) {
+                  fcsById[p.description] = p;
                 });
                 pt.subtypes = pt.subtypes || [];
                 pt.subtypes = pt.subtypes.map(function(st) {
                     st.places = data.filter(function(fc) {
                         return fc.term.type == st.identifier;
+                    });
+                    st.places.map(function(p) {
+                      fcsById[p.description][p.term.type] = p.term.name;
                     });
                     return st;
                 }).filter(function(pt) {
@@ -81,7 +96,8 @@ angular.module('proso.geography.controllers', [])
             }).filter(function(pt) {
                 return pt.places.length;
             });
-            updateItems(placeTypes);
+            $scope.placesTypes = placeTypes;
+            $scope.updateMap(activePlaceType, true);
         }, function(){
             $scope.error = true;
         });
@@ -90,42 +106,28 @@ angular.module('proso.geography.controllers', [])
             $scope.imageController.highlightItem(place.description);
         };
 
-        $scope.setClickHack = function() {
-          $scope.clickHack = true;
-        };
+        $scope.updateMap = function(type, dataChanged) {
 
-        $scope.updateMap = function(type) {
-            if ($scope.clickHack) {
-              $scope.clickHack = false;
-              return;
-            }
-            type.hidden = !type.hidden;
-            $scope.imageController.updateItems($scope.placesTypes);
-        };
-
-        $scope.updateCat = function(category) {
-            var newHidden = !category.hidden;
-            angular.forEach($scope.typeCategories, function(type) {
-                type.hidden = true;
-            });
             angular.forEach($scope.placesTypes, function(type) {
                 type.hidden = true;
             });
-            category.hidden = newHidden;
-            updateItems($scope.placesTypes);
-        };
-
-        function updateItems(data) {
-            $scope.placesTypes = data;
-            angular.forEach($scope.typeCategories, function(category) {
-                var filteredTypes = $filter('isTypeCategory')($scope.placesTypes, category);
-                angular.forEach(filteredTypes, function(type) {
-                    type.hidden = category.hidden;
-                });
-            });
-            $scope.imageController.updateItems($scope.placesTypes);
+            if (!type && $scope.placesTypes) {
+              type = $scope.placesTypes[0];
+            }
+            if (type) {
+              type.hidden = false;
+            }
+            $scope.imageController.updateItems($scope.placesTypes, dataChanged);
             $scope.name = mapTitle($scope.part, user);
-        }
+
+            var newPath = '/' + [
+              'view',
+              $routeParams.part,
+              type.identifier,
+              user,
+            ].join('/').replace('//', '/');
+            $location.update_path(newPath);
+        };
     }
 ])
 

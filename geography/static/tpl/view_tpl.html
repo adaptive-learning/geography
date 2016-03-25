@@ -4,36 +4,29 @@
   </div>
   <div ng-show="error" error-message ></div>
   <div ng-show="placesTypes.length" class="layers-tabs">
-    <div class="tab col-sm-{{(typeCategories | filter:{'empty' : false}).length|colNum}}"
-        ng-class="{'active' : !typeCat.hidden}"
-        ng-repeat="typeCat in typeCategories" 
-        ng-hide="typeCat.empty = ((placesTypes|isTypeCategory:typeCat).length == 0)"
-        ng-click="typeCat.hidden && updateCat(typeCat)">
-        <!-- TODO this practice doesn't work yet
-      <a href="/practice/{{part}}/{{typeCat.slug}}" 
-         class="btn btn-primary pull-right" 
-         ng-hide="typeCat.hidden || filteredTypes.length == 1" >
-        <i class="glyphicon glyphicon-check"></i> {{'Procvičovat' | translate }}
-      </a>
-      -->
+    <div class="tab inline-tab"
+        ng-class="{'active' : !type.hidden}"
+        ng-repeat="type in placesTypes" 
+        ng-hide="(placesTypes.length == 0)"
+        ng-click="updateMap(type)">
       <h2>
-        {{typeCat.name}}
+        {{type.name}}
       </h2>
     </div>
     <div class="clearfix"></div>
   </div>
-  <ul ng-show="placesTypes.length && (filteredTypes = (placesTypes|isTypeCategory:typeCat)).length" 
-      class="thumbnails fade-show-hide"
-      ng-repeat="typeCat in typeCategories">
-    <div collapse="typeCat.hidden">
-      <li class="col-sm-{{filteredTypes.length|colNum}} long-background" 
-          ng-repeat="type in filteredTypes">
-        <div ng-click="updateMap(type)"
-            class="collapse-control">
-          <h3>
-            <i class="glyphicon {{type.hidden && 'glyphicon-plus-sign' || 'glyphicon-minus-sign'}}"></i>
-            {{type.name}}
-          </h3>
+  <div ng-show="placesTypes.length" class="layers-tabs"
+      ng-if="!type.hidden"
+      ng-repeat="type in placesTypes" >
+        <div class="col-sm-12">
+          <div class="map-progress" 
+             skills="{{ {
+               number_of_flashcards: type.places.length,
+               number_of_practiced_flashcards: (type.places|filter:{practiced:true}).length,
+               number_of_mastered_flashcards: (type.places|filter:{mastered:true, practiced:true}).length
+             } }}"></div>
+        </div>
+        <div class="col-sm-12">
           <a href="/practice/{{part}}/{{type.identifier}}" 
               ng-if="!type.subtypes || part != 'europe'"
               ng-click="setClickHack()"
@@ -62,15 +55,9 @@
               </li>
             </ul>
           </span>
-          <div class="clearfix"></div>
         </div>
-        <div class="map-progress" 
-             skills="{{ {
-               number_of_flashcards: type.places.length,
-               number_of_practiced_flashcards: (type.places|filter:{practiced:true}).length,
-               number_of_mastered_flashcards: (type.places|filter:{mastered:true, practiced:true}).length
-             } }}"></div>
-        <div class="view-places" collapse="type.hidden">
+        <div class="clearfix"></div>
+        <div class="view-places">
           <div ng-hide="(type.places|filter:{practiced:true}).length" class="alert alert-info">
             {{'Zde zatím nebylo nic procvičováno.' | translate }}
           </div>
@@ -81,8 +68,5 @@
           </span>
           <div class="clearfix"></div>
         </div>
-      </li>
-    </div>
-  </ul>
-  <div class="clearfix"></div>
+  </div>
 </div>

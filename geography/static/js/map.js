@@ -193,6 +193,11 @@ angular.module('proso.geography.map', [])
           angular.forEach(paths, function(path) {
             path.svgPath.show();
           });
+          if (layer && layer.id == "city") {
+            that.showLayer(that.getStateAlternative());
+          } else if (layer && layer.id == "reservoir") {
+            that.showLayer(that.getLayerBySlug('river'));
+          }
         },
         getLayerBySlug: function(slug) {
           var ret;
@@ -507,7 +512,7 @@ angular.module('proso.geography.map', [])
             layers.showLayer(layer);
           });
         },
-        updateItems : function(placesByTypes) {
+        updateItems : function(placesByTypes, dataChanged) {
           if (layers === undefined) {
             _placesByTypes = placesByTypes;
             return;
@@ -521,16 +526,18 @@ angular.module('proso.geography.map', [])
             }
           });
 
-          var places = $filter('StatesFromPlaces')(placesByTypes);
-          config.places = places;
-          angular.forEach(layers.getAll(), function(layer) {
-            var layerConfig = layers.getConfig(layer);
-            layer.style('fill', layerConfig.styles.fill);
-            layer.style('stroke', layerConfig.styles.stroke);
-            if (config.showTooltips) {
-              layer.tooltips(getTooltipGetter(places));
-            }
-          });
+          if (dataChanged) {
+            var places = $filter('StatesFromPlaces')(placesByTypes);
+            config.places = places;
+            angular.forEach(layers.getAll(), function(layer) {
+              var layerConfig = layers.getConfig(layer);
+              layer.style('fill', layerConfig.styles.fill);
+              layer.style('stroke', layerConfig.styles.stroke);
+              if (config.showTooltips) {
+                layer.tooltips(getTooltipGetter(places));
+              }
+            });
+          }
         },
         showSummaryTooltips : function(questions) {
           var places = {};
@@ -557,11 +564,6 @@ angular.module('proso.geography.map', [])
         showLayerContaining : function(placeCode) {
           var l = myMap.getLayerContaining(placeCode);
           layers.showLayer(l);
-          if (l && l.id == "city") {
-            layers.showLayer(layers.getStateAlternative());
-          } else if (l && l.id == "reservoir") {
-            layers.showLayer(layers.getLayerBySlug('river'));
-          }
         },
         highLightLayer : function(layer) {
           angular.forEach(layers.getAll(), function(l) {
@@ -611,7 +613,7 @@ angular.module('proso.geography.map', [])
           highlighted.clear();
           layers = initLayers(myMap.map, config);
           if (_placesByTypes !== undefined) {
-            myMap.updateItems(_placesByTypes);
+            myMap.updateItems(_placesByTypes, true);
           }
           myMap.panZoom = mapFunctions.initMapZoom(myMap.map.paper);
           callback(myMap);
