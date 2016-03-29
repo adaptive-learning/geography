@@ -34282,8 +34282,8 @@
       ]
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Tirana", 
+      "type": "state-by-city", 
       "id": "al-by-city", 
       "categories": [
         "europe"
@@ -34291,8 +34291,8 @@
       "name-cs": "Tirana"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Brussels", 
+      "type": "state-by-city", 
       "id": "be-by-city", 
       "categories": [
         "europe"
@@ -34300,8 +34300,8 @@
       "name-cs": "Brusel"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Minsk", 
+      "type": "state-by-city", 
       "id": "by-by-city", 
       "categories": [
         "europe"
@@ -34309,8 +34309,8 @@
       "name-cs": "Minsk"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Sarajevo", 
+      "type": "state-by-city", 
       "id": "ba-by-city", 
       "categories": [
         "europe"
@@ -34318,8 +34318,8 @@
       "name-cs": "Sarajevo"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Sofia", 
+      "type": "state-by-city", 
       "id": "bg-by-city", 
       "categories": [
         "europe"
@@ -34327,8 +34327,8 @@
       "name-cs": "Sofie"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Podgorica", 
+      "type": "state-by-city", 
       "id": "me-by-city", 
       "categories": [
         "europe"
@@ -34336,8 +34336,8 @@
       "name-cs": "Podgorica"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Prague", 
+      "type": "state-by-city", 
       "id": "cz-by-city", 
       "categories": [
         "europe"
@@ -34345,8 +34345,8 @@
       "name-cs": "Praha"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "K\u00f8benhavn", 
+      "type": "state-by-city", 
       "id": "dk-by-city", 
       "categories": [
         "europe"
@@ -34354,8 +34354,8 @@
       "name-cs": "Koda\u0148"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Tallinn", 
+      "type": "state-by-city", 
       "id": "ee-by-city", 
       "categories": [
         "europe"
@@ -34363,8 +34363,8 @@
       "name-cs": "Talinn"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Helsinki", 
+      "type": "state-by-city", 
       "id": "fi-by-city", 
       "categories": [
         "europe"
@@ -34372,8 +34372,8 @@
       "name-cs": "Helsinki"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Paris", 
+      "type": "state-by-city", 
       "id": "fr-by-city", 
       "categories": [
         "europe"
@@ -34381,8 +34381,8 @@
       "name-cs": "Pa\u0159\u00ed\u017e"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Zagreb", 
+      "type": "state-by-city", 
       "id": "hr-by-city", 
       "categories": [
         "europe"
@@ -34390,8 +34390,8 @@
       "name-cs": "Z\u00e1h\u0159eb"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Dublin", 
+      "type": "state-by-city", 
       "id": "ie-by-city", 
       "categories": [
         "europe"
@@ -34399,8 +34399,8 @@
       "name-cs": "Dublin"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Reykjav\u00edk", 
+      "type": "state-by-city", 
       "id": "is-by-city", 
       "categories": [
         "europe"
@@ -34408,8 +34408,8 @@
       "name-cs": "Reykjav\u00edk"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Rome", 
+      "type": "state-by-city", 
       "id": "it-by-city", 
       "categories": [
         "europe"
@@ -34417,8 +34417,8 @@
       "name-cs": "\u0158\u00edm"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Vilnius", 
+      "type": "state-by-city", 
       "id": "lt-by-city", 
       "categories": [
         "europe"
@@ -34426,8 +34426,8 @@
       "name-cs": "Vilnius"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Riga", 
+      "type": "state-by-city", 
       "id": "lv-by-city", 
       "categories": [
         "europe"
@@ -34435,8 +34435,8 @@
       "name-cs": "Riga"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Luxembourg", 
+      "type": "state-by-city", 
       "id": "lu-by-city", 
       "categories": [
         "europe"
@@ -34444,8 +34444,8 @@
       "name-cs": "Lucemburk"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Budapest", 
+      "type": "state-by-city", 
       "id": "hu-by-city", 
       "categories": [
         "europe"
@@ -34453,8 +34453,8 @@
       "name-cs": "Budape\u0161\u0165"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Skopje", 
+      "type": "state-by-city", 
       "id": "mk-by-city", 
       "categories": [
         "europe"
@@ -34462,8 +34462,8 @@
       "name-cs": "Skopje"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Chisinau", 
+      "type": "state-by-city", 
       "id": "md-by-city", 
       "categories": [
         "europe"
@@ -34471,8 +34471,8 @@
       "name-cs": "Ki\u0161in\u011bv"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Berlin", 
+      "type": "state-by-city", 
       "id": "de-by-city", 
       "categories": [
         "europe"
@@ -34480,8 +34480,8 @@
       "name-cs": "Berl\u00edn"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Amsterdam", 
+      "type": "state-by-city", 
       "id": "nl-by-city", 
       "categories": [
         "europe"
@@ -34489,8 +34489,8 @@
       "name-cs": "Amsterdam"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Oslo", 
+      "type": "state-by-city", 
       "id": "no-by-city", 
       "categories": [
         "europe"
@@ -34498,8 +34498,8 @@
       "name-cs": "Oslo"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Warsaw", 
+      "type": "state-by-city", 
       "id": "pl-by-city", 
       "categories": [
         "europe"
@@ -34507,8 +34507,8 @@
       "name-cs": "Var\u0161ava"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Lisbon", 
+      "type": "state-by-city", 
       "id": "pt-by-city", 
       "categories": [
         "europe"
@@ -34516,8 +34516,8 @@
       "name-cs": "Lisabon"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Vienna", 
+      "type": "state-by-city", 
       "id": "at-by-city", 
       "categories": [
         "europe"
@@ -34525,8 +34525,8 @@
       "name-cs": "V\u00edde\u0148"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Bucharest", 
+      "type": "state-by-city", 
       "id": "ro-by-city", 
       "categories": [
         "europe"
@@ -34534,8 +34534,8 @@
       "name-cs": "Bukure\u0161\u0165"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Moscow", 
+      "type": "state-by-city", 
       "id": "ru-by-city", 
       "categories": [
         "europe"
@@ -34543,8 +34543,8 @@
       "name-cs": "Moskva"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Athens", 
+      "type": "state-by-city", 
       "id": "gr-by-city", 
       "categories": [
         "europe"
@@ -34552,8 +34552,8 @@
       "name-cs": "Ath\u00e9ny"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Bratislava", 
+      "type": "state-by-city", 
       "id": "sk-by-city", 
       "categories": [
         "europe"
@@ -34561,8 +34561,8 @@
       "name-cs": "Bratislava"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Ljubljana", 
+      "type": "state-by-city", 
       "id": "si-by-city", 
       "categories": [
         "europe"
@@ -34570,8 +34570,8 @@
       "name-cs": "Lubla\u0148"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "London", 
+      "type": "state-by-city", 
       "id": "gb-by-city", 
       "categories": [
         "europe"
@@ -34579,8 +34579,8 @@
       "name-cs": "Lond\u00fdn"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Belgrade", 
+      "type": "state-by-city", 
       "id": "rs-by-city", 
       "categories": [
         "europe"
@@ -34588,8 +34588,8 @@
       "name-cs": "B\u011blehrad"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Madrid", 
+      "type": "state-by-city", 
       "id": "es-by-city", 
       "categories": [
         "europe"
@@ -34597,8 +34597,8 @@
       "name-cs": "Madrid"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Stockholm", 
+      "type": "state-by-city", 
       "id": "se-by-city", 
       "categories": [
         "europe"
@@ -34606,8 +34606,8 @@
       "name-cs": "Stockholm"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Bern", 
+      "type": "state-by-city", 
       "id": "ch-by-city", 
       "categories": [
         "europe"
@@ -34615,8 +34615,8 @@
       "name-cs": "Bern"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Kiev", 
+      "type": "state-by-city", 
       "id": "ua-by-city", 
       "categories": [
         "europe"
@@ -34624,8 +34624,8 @@
       "name-cs": "Kyjev"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Pristina", 
+      "type": "state-by-city", 
       "id": "xk-by-city", 
       "categories": [
         "europe"
@@ -34633,8 +34633,8 @@
       "name-cs": "Pri\u0161tina"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Luxembourg", 
+      "type": "city-by-state", 
       "id": "Luxembourg-by-state", 
       "categories": [
         "europe"
@@ -34642,8 +34642,8 @@
       "name-cs": "Lucembursko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Slovenia", 
+      "type": "city-by-state", 
       "id": "Ljubljana-by-state", 
       "categories": [
         "europe"
@@ -34651,8 +34651,8 @@
       "name-cs": "Slovinsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Slovakia", 
+      "type": "city-by-state", 
       "id": "Bratislava-by-state", 
       "categories": [
         "europe"
@@ -34660,8 +34660,8 @@
       "name-cs": "Slovensko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Montenegro", 
+      "type": "city-by-state", 
       "id": "Podgorica-by-state", 
       "categories": [
         "europe"
@@ -34669,8 +34669,8 @@
       "name-cs": "\u010cern\u00e1 Hora"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Switzerland", 
+      "type": "city-by-state", 
       "id": "Bern-by-state", 
       "categories": [
         "europe"
@@ -34678,8 +34678,8 @@
       "name-cs": "\u0160v\u00fdcarsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Kosovo", 
+      "type": "city-by-state", 
       "id": "Pristina-by-state", 
       "categories": [
         "europe"
@@ -34687,8 +34687,8 @@
       "name-cs": "Kosovo"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Macedonia", 
+      "type": "city-by-state", 
       "id": "Skopje-by-state", 
       "categories": [
         "europe"
@@ -34696,8 +34696,8 @@
       "name-cs": "Makedonie"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Iceland", 
+      "type": "city-by-state", 
       "id": "Reykjavik-by-state", 
       "categories": [
         "europe"
@@ -34705,8 +34705,8 @@
       "name-cs": "Island"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Moldova", 
+      "type": "city-by-state", 
       "id": "Chisinau-by-state", 
       "categories": [
         "europe"
@@ -34714,8 +34714,8 @@
       "name-cs": "Moldavsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Lithuania", 
+      "type": "city-by-state", 
       "id": "Vilnius-by-state", 
       "categories": [
         "europe"
@@ -34723,8 +34723,8 @@
       "name-cs": "Litva"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Latvia", 
+      "type": "city-by-state", 
       "id": "Riga-by-state", 
       "categories": [
         "europe"
@@ -34732,8 +34732,8 @@
       "name-cs": "Loty\u0161sko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Croatia", 
+      "type": "city-by-state", 
       "id": "Zagreb-by-state", 
       "categories": [
         "europe"
@@ -34741,8 +34741,8 @@
       "name-cs": "Chorvatsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Estonia", 
+      "type": "city-by-state", 
       "id": "Tallinn-by-state", 
       "categories": [
         "europe"
@@ -34750,8 +34750,8 @@
       "name-cs": "Estonsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Serbia", 
+      "type": "city-by-state", 
       "id": "Belgrade-by-state", 
       "categories": [
         "europe"
@@ -34759,8 +34759,8 @@
       "name-cs": "Srbsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Albania", 
+      "type": "city-by-state", 
       "id": "Tirana-by-state", 
       "categories": [
         "europe"
@@ -34768,8 +34768,8 @@
       "name-cs": "Alb\u00e1nie"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Bulgaria", 
+      "type": "city-by-state", 
       "id": "Sofia-by-state", 
       "categories": [
         "europe"
@@ -34777,8 +34777,8 @@
       "name-cs": "Bulharsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Belarus", 
+      "type": "city-by-state", 
       "id": "Minsk-by-state", 
       "categories": [
         "europe"
@@ -34786,8 +34786,8 @@
       "name-cs": "B\u011blorusko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Bosnia and Herz.", 
+      "type": "city-by-state", 
       "id": "Sarajevo-by-state", 
       "categories": [
         "europe"
@@ -34795,8 +34795,8 @@
       "name-cs": "Bosna a Hercegovina"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Hungary", 
+      "type": "city-by-state", 
       "id": "Budapest-by-state", 
       "categories": [
         "europe"
@@ -34804,8 +34804,8 @@
       "name-cs": "Ma\u010farsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Romania", 
+      "type": "city-by-state", 
       "id": "Bucharest-by-state", 
       "categories": [
         "europe"
@@ -34813,8 +34813,8 @@
       "name-cs": "Rumunsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Portugal", 
+      "type": "city-by-state", 
       "id": "Lisbon-by-state", 
       "categories": [
         "europe"
@@ -34822,8 +34822,8 @@
       "name-cs": "Portugalsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Norway", 
+      "type": "city-by-state", 
       "id": "Oslo-by-state", 
       "categories": [
         "europe"
@@ -34831,8 +34831,8 @@
       "name-cs": "Norsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Poland", 
+      "type": "city-by-state", 
       "id": "Warsaw-by-state", 
       "categories": [
         "europe"
@@ -34840,8 +34840,8 @@
       "name-cs": "Polsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Ireland", 
+      "type": "city-by-state", 
       "id": "Dublin-by-state", 
       "categories": [
         "europe"
@@ -34849,8 +34849,8 @@
       "name-cs": "Irsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Czech Rep.", 
+      "type": "city-by-state", 
       "id": "Prague-by-state", 
       "categories": [
         "europe"
@@ -34858,8 +34858,8 @@
       "name-cs": "\u010cesk\u00e1 republika"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Finland", 
+      "type": "city-by-state", 
       "id": "Helsinki-by-state", 
       "categories": [
         "europe"
@@ -34867,8 +34867,8 @@
       "name-cs": "Finsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Denmark", 
+      "type": "city-by-state", 
       "id": "Kobenhavn-by-state", 
       "categories": [
         "europe"
@@ -34876,8 +34876,8 @@
       "name-cs": "D\u00e1nsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Belgium", 
+      "type": "city-by-state", 
       "id": "Brussels-by-state", 
       "categories": [
         "europe"
@@ -34885,8 +34885,8 @@
       "name-cs": "Belgie"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Ukraine", 
+      "type": "city-by-state", 
       "id": "Kiev-by-state", 
       "categories": [
         "europe"
@@ -34894,8 +34894,8 @@
       "name-cs": "Ukrajina"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Spain", 
+      "type": "city-by-state", 
       "id": "Madrid-by-state", 
       "categories": [
         "europe"
@@ -34903,8 +34903,8 @@
       "name-cs": "\u0160pan\u011blsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Sweden", 
+      "type": "city-by-state", 
       "id": "Stockholm-by-state", 
       "categories": [
         "europe"
@@ -34912,8 +34912,8 @@
       "name-cs": "\u0160v\u00e9dsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Netherlands", 
+      "type": "city-by-state", 
       "id": "Amsterdam-by-state", 
       "categories": [
         "europe"
@@ -34921,8 +34921,8 @@
       "name-cs": "Nizozemsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Germany", 
+      "type": "city-by-state", 
       "id": "Berlin-by-state", 
       "categories": [
         "europe"
@@ -34930,8 +34930,8 @@
       "name-cs": "N\u011bmecko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Greece", 
+      "type": "city-by-state", 
       "id": "Athens-by-state", 
       "categories": [
         "europe"
@@ -34939,8 +34939,8 @@
       "name-cs": "\u0158ecko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Austria", 
+      "type": "city-by-state", 
       "id": "Vienna-by-state", 
       "categories": [
         "europe"
@@ -34948,8 +34948,8 @@
       "name-cs": "Rakousko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "United Kingdom", 
+      "type": "city-by-state", 
       "id": "London-by-state", 
       "categories": [
         "europe"
@@ -34957,8 +34957,8 @@
       "name-cs": "Spojen\u00e9 kr\u00e1lovstv\u00ed"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Russia", 
+      "type": "city-by-state", 
       "id": "Moscow-by-state", 
       "categories": [
         "europe"
@@ -34966,8 +34966,8 @@
       "name-cs": "Rusko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Italy", 
+      "type": "city-by-state", 
       "id": "Rome-by-state", 
       "categories": [
         "europe"
@@ -34975,8 +34975,8 @@
       "name-cs": "It\u00e1lie"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "France", 
+      "type": "city-by-state", 
       "id": "Paris-by-state", 
       "categories": [
         "europe"
@@ -35700,7 +35700,607 @@
         "cz"
       ], 
       "name-cs": "Hlavn\u00ed m\u011bsto Praha"
-  }
+    }, 
+    {
+      "type": "surface", 
+      "id": "Moravskoslezske_Beskydy", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Moravskoslezsk\u00e9 Beskydy"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Brdska_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Brdsk\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Taborska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "T\u00e1borsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Vserubska_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "V\u0161erubsk\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Podceskoleska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Pod\u010deskolesk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Novohradske_podhuri", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Novohradsk\u00e9 podh\u016f\u0159\u00ed"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Sumavske_podhuri", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u0160umavsk\u00e9 podh\u016f\u0159\u00ed"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Blatenska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Blatensk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Vlasimska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Vla\u0161imsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Benesovska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Bene\u0161ovsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Ceskobudejovicka_panev", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u010ceskobud\u011bjovick\u00e1 p\u00e1nev"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Jevisovicka_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Jevi\u0161ovick\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Javoricka_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Javo\u0159ick\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Krizanovska_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "K\u0159i\u017eanovsk\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Hornosvratecka_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Hornosvrateck\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Zelezne_hory", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u017delezn\u00e9 hory"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Hornosazavska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Hornos\u00e1zavsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Kremesnicka_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "K\u0159eme\u0161nick\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Trebonska_panev", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "T\u0159ebo\u0148sk\u00e1 p\u00e1nev"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Boskovicka_brazda", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Boskovick\u00e1 br\u00e1zda"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Bobravska_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Bobravsk\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Chebska_panev", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Chebsk\u00e1 p\u00e1nev"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Decinska_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "D\u011b\u010d\u00ednsk\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Smrciny", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Smr\u010diny"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Mostecka_panev", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Mosteck\u00e1 p\u00e1nev"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Sokolovska_panev", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Sokolovsk\u00e1 p\u00e1nev"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Frydlantska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Fr\u00fddlantsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Zitavska_panev", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u017ditavsk\u00e1 p\u00e1nev"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Sluknovska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u0160luknovsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Tepelska_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Tepelsk\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Slavkovsky_les", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Slavkovsk\u00fd les"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Krkonosske_podhuri", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Krkono\u0161sk\u00e9 podh\u016f\u0159\u00ed"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Broumovska_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Broumovsk\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Podorlicka_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Podorlick\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Kladska_kotlina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Kladsk\u00e1 kotlina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Zabrezska_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Z\u00e1b\u0159e\u017esk\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Mohelnicka_brazda", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Mohelnick\u00e1 br\u00e1zda"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Kralicky_Sneznik", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Kr\u00e1lick\u00fd Sn\u011b\u017en\u00edk"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Hanusovicka_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Hanu\u0161ovick\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Zlatohorska_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Zlatohorsk\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Horovicka_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Ho\u0159ovick\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Krivoklatska_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "K\u0159ivokl\u00e1tsk\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Prazska_plosina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Pra\u017esk\u00e1 plo\u0161ina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Dzban", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "D\u017eb\u00e1n"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Zulovska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u017dulovsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Vidnavska_nizina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Vidnavsk\u00e1 n\u00ed\u017eina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Jicinska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Ji\u010d\u00ednsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Ralska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Ralsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Svihovska_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u0160vihovsk\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Plaska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Plask\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Rakovnicka_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Rakovnick\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Stredolabska_tabule", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "St\u0159edolabsk\u00e1 tabule"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Jizerska_tabule", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Jizersk\u00e1 tabule"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Dolnooharska_tabule", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Dolnooharsk\u00e1 tabule"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Opavska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Opavsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Svitavska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Svitavsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Orlicka_tabule", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Orlick\u00e1 tabule"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Vychodolabska_tabule", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "V\u00fdchodolabsk\u00e1 tabule"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Dyjsko-svratecky_uval", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Dyjsko-svrateck\u00fd \u00faval"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Vyskovska_brana", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Vy\u0161kovsk\u00e1 br\u00e1na"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Hornomoravsky_uval", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Hornomoravsk\u00fd \u00faval"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Moravska_brana", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Moravsk\u00e1 br\u00e1na"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Ostravska_panev", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Ostravsk\u00e1 p\u00e1nev"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Zdanicky_les", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u017dd\u00e1nick\u00fd les"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Mikulovska_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Mikulovsk\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Litencicka_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Liten\u010dick\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Kyjovska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Kyjovsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Vizovicka_vrchovina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Vizovick\u00e1 vrchovina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Podbeskydska_pahorkatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Podbeskydsk\u00e1 pahorkatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Roznovska_brazda", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Ro\u017enovsk\u00e1 br\u00e1zda"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Hostynsko-vsetinska_hornatina", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Host\u00fdnsko-vset\u00ednsk\u00e1 hornatina"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Jablunkovska_brazda", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Jablunkovsk\u00e1 br\u00e1zda"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Dolnomoravsky_uval", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Dolnomoravsk\u00fd \u00faval"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Jablunkovske_mezihori", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Jablunkovsk\u00e9 meziho\u0159\u00ed"
+    }, 
+    {
+      "type": "surface", 
+      "id": "Slezske_Beskydy", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Slezsk\u00e9 Beskydy"
+    }
   ], 
   "categories": [
     {
