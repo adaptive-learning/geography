@@ -13212,6 +13212,432 @@
       "id": "cz-Hlavni_mesto_Praha", 
       "context": "cz", 
       "description": "Hlavni_mesto_Praha"
+    }, 
+    {
+      "term": "Litomerice-district", 
+      "id": "cz-Litomerice-district", 
+      "context": "cz", 
+      "description": "Litomerice-district"
+    }, 
+    {
+      "term": "Decin-district", 
+      "id": "cz-Decin-district", 
+      "context": "cz", 
+      "description": "Decin-district"
+    }, 
+    {
+      "term": "Usti_nad_Labem-district", 
+      "id": "cz-Usti_nad_Labem-district", 
+      "context": "cz", 
+      "description": "Usti_nad_Labem-district"
+    }, 
+    {
+      "term": "Teplice-district", 
+      "id": "cz-Teplice-district", 
+      "context": "cz", 
+      "description": "Teplice-district"
+    }, 
+    {
+      "term": "Louny-district", 
+      "id": "cz-Louny-district", 
+      "context": "cz", 
+      "description": "Louny-district"
+    }, 
+    {
+      "term": "Mlada_Boleslav-district", 
+      "id": "cz-Mlada_Boleslav-district", 
+      "context": "cz", 
+      "description": "Mlada_Boleslav-district"
+    }, 
+    {
+      "term": "Liberec-district", 
+      "id": "cz-Liberec-district", 
+      "context": "cz", 
+      "description": "Liberec-district"
+    }, 
+    {
+      "term": "Ceska_Lipa-district", 
+      "id": "cz-Ceska_Lipa-district", 
+      "context": "cz", 
+      "description": "Ceska_Lipa-district"
+    }, 
+    {
+      "term": "Most-district", 
+      "id": "cz-Most-district", 
+      "context": "cz", 
+      "description": "Most-district"
+    }, 
+    {
+      "term": "Melnik-district", 
+      "id": "cz-Melnik-district", 
+      "context": "cz", 
+      "description": "Melnik-district"
+    }, 
+    {
+      "term": "Jicin-district", 
+      "id": "cz-Jicin-district", 
+      "context": "cz", 
+      "description": "Jicin-district"
+    }, 
+    {
+      "term": "Kladno-district", 
+      "id": "cz-Kladno-district", 
+      "context": "cz", 
+      "description": "Kladno-district"
+    }, 
+    {
+      "term": "Trutnov-district", 
+      "id": "cz-Trutnov-district", 
+      "context": "cz", 
+      "description": "Trutnov-district"
+    }, 
+    {
+      "term": "Hradec_Kralove-district", 
+      "id": "cz-Hradec_Kralove-district", 
+      "context": "cz", 
+      "description": "Hradec_Kralove-district"
+    }, 
+    {
+      "term": "Nymburk-district", 
+      "id": "cz-Nymburk-district", 
+      "context": "cz", 
+      "description": "Nymburk-district"
+    }, 
+    {
+      "term": "Rakovnik-district", 
+      "id": "cz-Rakovnik-district", 
+      "context": "cz", 
+      "description": "Rakovnik-district"
+    }, 
+    {
+      "term": "Nachod-district", 
+      "id": "cz-Nachod-district", 
+      "context": "cz", 
+      "description": "Nachod-district"
+    }, 
+    {
+      "term": "Cheb-district", 
+      "id": "cz-Cheb-district", 
+      "context": "cz", 
+      "description": "Cheb-district"
+    }, 
+    {
+      "term": "Karlovy_Vary-district", 
+      "id": "cz-Karlovy_Vary-district", 
+      "context": "cz", 
+      "description": "Karlovy_Vary-district"
+    }, 
+    {
+      "term": "Tachov-district", 
+      "id": "cz-Tachov-district", 
+      "context": "cz", 
+      "description": "Tachov-district"
+    }, 
+    {
+      "term": "Rychnov_nad_Kneznou-district", 
+      "id": "cz-Rychnov_nad_Kneznou-district", 
+      "context": "cz", 
+      "description": "Rychnov_nad_Kneznou-district"
+    }, 
+    {
+      "term": "Kolin-district", 
+      "id": "cz-Kolin-district", 
+      "context": "cz", 
+      "description": "Kolin-district"
+    }, 
+    {
+      "term": "Pardubice-district", 
+      "id": "cz-Pardubice-district", 
+      "context": "cz", 
+      "description": "Pardubice-district"
+    }, 
+    {
+      "term": "Rokycany-district", 
+      "id": "cz-Rokycany-district", 
+      "context": "cz", 
+      "description": "Rokycany-district"
+    }, 
+    {
+      "term": "Usti_nad_Orlici-district", 
+      "id": "cz-Usti_nad_Orlici-district", 
+      "context": "cz", 
+      "description": "Usti_nad_Orlici-district"
+    }, 
+    {
+      "term": "Sumperk-district", 
+      "id": "cz-Sumperk-district", 
+      "context": "cz", 
+      "description": "Sumperk-district"
+    }, 
+    {
+      "term": "Jesenik-district", 
+      "id": "cz-Jesenik-district", 
+      "context": "cz", 
+      "description": "Jesenik-district"
+    }, 
+    {
+      "term": "Beroun-district", 
+      "id": "cz-Beroun-district", 
+      "context": "cz", 
+      "description": "Beroun-district"
+    }, 
+    {
+      "term": "Kutna_Hora-district", 
+      "id": "cz-Kutna_Hora-district", 
+      "context": "cz", 
+      "description": "Kutna_Hora-district"
+    }, 
+    {
+      "term": "Benesov-district", 
+      "id": "cz-Benesov-district", 
+      "context": "cz", 
+      "description": "Benesov-district"
+    }, 
+    {
+      "term": "Chrudim-district", 
+      "id": "cz-Chrudim-district", 
+      "context": "cz", 
+      "description": "Chrudim-district"
+    }, 
+    {
+      "term": "Pribram-district", 
+      "id": "cz-Pribram-district", 
+      "context": "cz", 
+      "description": "Pribram-district"
+    }, 
+    {
+      "term": "Havlickuv_Brod-district", 
+      "id": "cz-Havlickuv_Brod-district", 
+      "context": "cz", 
+      "description": "Havlickuv_Brod-district"
+    }, 
+    {
+      "term": "Svitavy-district", 
+      "id": "cz-Svitavy-district", 
+      "context": "cz", 
+      "description": "Svitavy-district"
+    }, 
+    {
+      "term": "Domazlice-district", 
+      "id": "cz-Domazlice-district", 
+      "context": "cz", 
+      "description": "Domazlice-district"
+    }, 
+    {
+      "term": "Zdar_nad_Sazavou-district", 
+      "id": "cz-Zdar_nad_Sazavou-district", 
+      "context": "cz", 
+      "description": "Zdar_nad_Sazavou-district"
+    }, 
+    {
+      "term": "Opava-district", 
+      "id": "cz-Opava-district", 
+      "context": "cz", 
+      "description": "Opava-district"
+    }, 
+    {
+      "term": "Pisek-district", 
+      "id": "cz-Pisek-district", 
+      "context": "cz", 
+      "description": "Pisek-district"
+    }, 
+    {
+      "term": "Olomouc-district", 
+      "id": "cz-Olomouc-district", 
+      "context": "cz", 
+      "description": "Olomouc-district"
+    }, 
+    {
+      "term": "Pelhrimov-district", 
+      "id": "cz-Pelhrimov-district", 
+      "context": "cz", 
+      "description": "Pelhrimov-district"
+    }, 
+    {
+      "term": "Tabor-district", 
+      "id": "cz-Tabor-district", 
+      "context": "cz", 
+      "description": "Tabor-district"
+    }, 
+    {
+      "term": "Novy_Jicin-district", 
+      "id": "cz-Novy_Jicin-district", 
+      "context": "cz", 
+      "description": "Novy_Jicin-district"
+    }, 
+    {
+      "term": "Strakonice-district", 
+      "id": "cz-Strakonice-district", 
+      "context": "cz", 
+      "description": "Strakonice-district"
+    }, 
+    {
+      "term": "Klatovy-district", 
+      "id": "cz-Klatovy-district", 
+      "context": "cz", 
+      "description": "Klatovy-district"
+    }, 
+    {
+      "term": "Frydek-Mistek-district", 
+      "id": "cz-Frydek-Mistek-district", 
+      "context": "cz", 
+      "description": "Frydek-Mistek-district"
+    }, 
+    {
+      "term": "Prostejov-district", 
+      "id": "cz-Prostejov-district", 
+      "context": "cz", 
+      "description": "Prostejov-district"
+    }, 
+    {
+      "term": "Blansko-district", 
+      "id": "cz-Blansko-district", 
+      "context": "cz", 
+      "description": "Blansko-district"
+    }, 
+    {
+      "term": "Jihlava-district", 
+      "id": "cz-Jihlava-district", 
+      "context": "cz", 
+      "description": "Jihlava-district"
+    }, 
+    {
+      "term": "Prerov-district", 
+      "id": "cz-Prerov-district", 
+      "context": "cz", 
+      "description": "Prerov-district"
+    }, 
+    {
+      "term": "Vsetin-district", 
+      "id": "cz-Vsetin-district", 
+      "context": "cz", 
+      "description": "Vsetin-district"
+    }, 
+    {
+      "term": "Prachatice-district", 
+      "id": "cz-Prachatice-district", 
+      "context": "cz", 
+      "description": "Prachatice-district"
+    }, 
+    {
+      "term": "Ceske_Budejovice-district", 
+      "id": "cz-Ceske_Budejovice-district", 
+      "context": "cz", 
+      "description": "Ceske_Budejovice-district"
+    }, 
+    {
+      "term": "Jindrichuv_Hradec-district", 
+      "id": "cz-Jindrichuv_Hradec-district", 
+      "context": "cz", 
+      "description": "Jindrichuv_Hradec-district"
+    }, 
+    {
+      "term": "Kromeriz-district", 
+      "id": "cz-Kromeriz-district", 
+      "context": "cz", 
+      "description": "Kromeriz-district"
+    }, 
+    {
+      "term": "Trebic-district", 
+      "id": "cz-Trebic-district", 
+      "context": "cz", 
+      "description": "Trebic-district"
+    }, 
+    {
+      "term": "Vyskov-district", 
+      "id": "cz-Vyskov-district", 
+      "context": "cz", 
+      "description": "Vyskov-district"
+    }, 
+    {
+      "term": "Zlin-district", 
+      "id": "cz-Zlin-district", 
+      "context": "cz", 
+      "description": "Zlin-district"
+    }, 
+    {
+      "term": "Uherske_Hradiste-district", 
+      "id": "cz-Uherske_Hradiste-district", 
+      "context": "cz", 
+      "description": "Uherske_Hradiste-district"
+    }, 
+    {
+      "term": "Hodonin-district", 
+      "id": "cz-Hodonin-district", 
+      "context": "cz", 
+      "description": "Hodonin-district"
+    }, 
+    {
+      "term": "Znojmo-district", 
+      "id": "cz-Znojmo-district", 
+      "context": "cz", 
+      "description": "Znojmo-district"
+    }, 
+    {
+      "term": "Breclav-district", 
+      "id": "cz-Breclav-district", 
+      "context": "cz", 
+      "description": "Breclav-district"
+    }, 
+    {
+      "term": "Cesky_Krumlov-district", 
+      "id": "cz-Cesky_Krumlov-district", 
+      "context": "cz", 
+      "description": "Cesky_Krumlov-district"
+    }, 
+    {
+      "term": "Chomutov-district", 
+      "id": "cz-Chomutov-district", 
+      "context": "cz", 
+      "description": "Chomutov-district"
+    }, 
+    {
+      "term": "Jablonec_nad_Nisou-district", 
+      "id": "cz-Jablonec_nad_Nisou-district", 
+      "context": "cz", 
+      "description": "Jablonec_nad_Nisou-district"
+    }, 
+    {
+      "term": "Bruntal-district", 
+      "id": "cz-Bruntal-district", 
+      "context": "cz", 
+      "description": "Bruntal-district"
+    }, 
+    {
+      "term": "Karvina-district", 
+      "id": "cz-Karvina-district", 
+      "context": "cz", 
+      "description": "Karvina-district"
+    }, 
+    {
+      "term": "Sokolov-district", 
+      "id": "cz-Sokolov-district", 
+      "context": "cz", 
+      "description": "Sokolov-district"
+    }, 
+    {
+      "term": "Bilina-river", 
+      "id": "cz-Bilina-river", 
+      "context": "cz", 
+      "description": "Bilina-river"
+    }, 
+    {
+      "term": "Jihlava-river", 
+      "id": "cz-Jihlava-river", 
+      "context": "cz", 
+      "description": "Jihlava-river"
+    }, 
+    {
+      "term": "Opava-river", 
+      "id": "cz-Opava-river", 
+      "context": "cz", 
+      "description": "Opava-river"
+    }, 
+    {
+      "term": "Trnava-river", 
+      "id": "cz-Trnava-river", 
+      "context": "cz", 
+      "description": "Trnava-river"
     }
   ], 
   "terms": [
@@ -34282,8 +34708,8 @@
       ]
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Tirana", 
+      "type": "state-by-city", 
       "id": "al-by-city", 
       "categories": [
         "europe"
@@ -34291,8 +34717,8 @@
       "name-cs": "Tirana"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Brussels", 
+      "type": "state-by-city", 
       "id": "be-by-city", 
       "categories": [
         "europe"
@@ -34300,8 +34726,8 @@
       "name-cs": "Brusel"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Minsk", 
+      "type": "state-by-city", 
       "id": "by-by-city", 
       "categories": [
         "europe"
@@ -34309,8 +34735,8 @@
       "name-cs": "Minsk"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Sarajevo", 
+      "type": "state-by-city", 
       "id": "ba-by-city", 
       "categories": [
         "europe"
@@ -34318,8 +34744,8 @@
       "name-cs": "Sarajevo"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Sofia", 
+      "type": "state-by-city", 
       "id": "bg-by-city", 
       "categories": [
         "europe"
@@ -34327,8 +34753,8 @@
       "name-cs": "Sofie"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Podgorica", 
+      "type": "state-by-city", 
       "id": "me-by-city", 
       "categories": [
         "europe"
@@ -34336,8 +34762,8 @@
       "name-cs": "Podgorica"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Prague", 
+      "type": "state-by-city", 
       "id": "cz-by-city", 
       "categories": [
         "europe"
@@ -34345,8 +34771,8 @@
       "name-cs": "Praha"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "K\u00f8benhavn", 
+      "type": "state-by-city", 
       "id": "dk-by-city", 
       "categories": [
         "europe"
@@ -34354,8 +34780,8 @@
       "name-cs": "Koda\u0148"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Tallinn", 
+      "type": "state-by-city", 
       "id": "ee-by-city", 
       "categories": [
         "europe"
@@ -34363,8 +34789,8 @@
       "name-cs": "Talinn"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Helsinki", 
+      "type": "state-by-city", 
       "id": "fi-by-city", 
       "categories": [
         "europe"
@@ -34372,8 +34798,8 @@
       "name-cs": "Helsinki"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Paris", 
+      "type": "state-by-city", 
       "id": "fr-by-city", 
       "categories": [
         "europe"
@@ -34381,8 +34807,8 @@
       "name-cs": "Pa\u0159\u00ed\u017e"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Zagreb", 
+      "type": "state-by-city", 
       "id": "hr-by-city", 
       "categories": [
         "europe"
@@ -34390,8 +34816,8 @@
       "name-cs": "Z\u00e1h\u0159eb"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Dublin", 
+      "type": "state-by-city", 
       "id": "ie-by-city", 
       "categories": [
         "europe"
@@ -34399,8 +34825,8 @@
       "name-cs": "Dublin"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Reykjav\u00edk", 
+      "type": "state-by-city", 
       "id": "is-by-city", 
       "categories": [
         "europe"
@@ -34408,8 +34834,8 @@
       "name-cs": "Reykjav\u00edk"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Rome", 
+      "type": "state-by-city", 
       "id": "it-by-city", 
       "categories": [
         "europe"
@@ -34417,8 +34843,8 @@
       "name-cs": "\u0158\u00edm"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Vilnius", 
+      "type": "state-by-city", 
       "id": "lt-by-city", 
       "categories": [
         "europe"
@@ -34426,8 +34852,8 @@
       "name-cs": "Vilnius"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Riga", 
+      "type": "state-by-city", 
       "id": "lv-by-city", 
       "categories": [
         "europe"
@@ -34435,8 +34861,8 @@
       "name-cs": "Riga"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Luxembourg", 
+      "type": "state-by-city", 
       "id": "lu-by-city", 
       "categories": [
         "europe"
@@ -34444,8 +34870,8 @@
       "name-cs": "Lucemburk"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Budapest", 
+      "type": "state-by-city", 
       "id": "hu-by-city", 
       "categories": [
         "europe"
@@ -34453,8 +34879,8 @@
       "name-cs": "Budape\u0161\u0165"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Skopje", 
+      "type": "state-by-city", 
       "id": "mk-by-city", 
       "categories": [
         "europe"
@@ -34462,8 +34888,8 @@
       "name-cs": "Skopje"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Chisinau", 
+      "type": "state-by-city", 
       "id": "md-by-city", 
       "categories": [
         "europe"
@@ -34471,8 +34897,8 @@
       "name-cs": "Ki\u0161in\u011bv"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Berlin", 
+      "type": "state-by-city", 
       "id": "de-by-city", 
       "categories": [
         "europe"
@@ -34480,8 +34906,8 @@
       "name-cs": "Berl\u00edn"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Amsterdam", 
+      "type": "state-by-city", 
       "id": "nl-by-city", 
       "categories": [
         "europe"
@@ -34489,8 +34915,8 @@
       "name-cs": "Amsterdam"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Oslo", 
+      "type": "state-by-city", 
       "id": "no-by-city", 
       "categories": [
         "europe"
@@ -34498,8 +34924,8 @@
       "name-cs": "Oslo"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Warsaw", 
+      "type": "state-by-city", 
       "id": "pl-by-city", 
       "categories": [
         "europe"
@@ -34507,8 +34933,8 @@
       "name-cs": "Var\u0161ava"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Lisbon", 
+      "type": "state-by-city", 
       "id": "pt-by-city", 
       "categories": [
         "europe"
@@ -34516,8 +34942,8 @@
       "name-cs": "Lisabon"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Vienna", 
+      "type": "state-by-city", 
       "id": "at-by-city", 
       "categories": [
         "europe"
@@ -34525,8 +34951,8 @@
       "name-cs": "V\u00edde\u0148"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Bucharest", 
+      "type": "state-by-city", 
       "id": "ro-by-city", 
       "categories": [
         "europe"
@@ -34534,8 +34960,8 @@
       "name-cs": "Bukure\u0161\u0165"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Moscow", 
+      "type": "state-by-city", 
       "id": "ru-by-city", 
       "categories": [
         "europe"
@@ -34543,8 +34969,8 @@
       "name-cs": "Moskva"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Athens", 
+      "type": "state-by-city", 
       "id": "gr-by-city", 
       "categories": [
         "europe"
@@ -34552,8 +34978,8 @@
       "name-cs": "Ath\u00e9ny"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Bratislava", 
+      "type": "state-by-city", 
       "id": "sk-by-city", 
       "categories": [
         "europe"
@@ -34561,8 +34987,8 @@
       "name-cs": "Bratislava"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Ljubljana", 
+      "type": "state-by-city", 
       "id": "si-by-city", 
       "categories": [
         "europe"
@@ -34570,8 +34996,8 @@
       "name-cs": "Lubla\u0148"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "London", 
+      "type": "state-by-city", 
       "id": "gb-by-city", 
       "categories": [
         "europe"
@@ -34579,8 +35005,8 @@
       "name-cs": "Lond\u00fdn"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Belgrade", 
+      "type": "state-by-city", 
       "id": "rs-by-city", 
       "categories": [
         "europe"
@@ -34588,8 +35014,8 @@
       "name-cs": "B\u011blehrad"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Madrid", 
+      "type": "state-by-city", 
       "id": "es-by-city", 
       "categories": [
         "europe"
@@ -34597,8 +35023,8 @@
       "name-cs": "Madrid"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Stockholm", 
+      "type": "state-by-city", 
       "id": "se-by-city", 
       "categories": [
         "europe"
@@ -34606,8 +35032,8 @@
       "name-cs": "Stockholm"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Bern", 
+      "type": "state-by-city", 
       "id": "ch-by-city", 
       "categories": [
         "europe"
@@ -34615,8 +35041,8 @@
       "name-cs": "Bern"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Kiev", 
+      "type": "state-by-city", 
       "id": "ua-by-city", 
       "categories": [
         "europe"
@@ -34624,8 +35050,8 @@
       "name-cs": "Kyjev"
     }, 
     {
-      "type": "state-by-city", 
       "name-en": "Pristina", 
+      "type": "state-by-city", 
       "id": "xk-by-city", 
       "categories": [
         "europe"
@@ -34633,8 +35059,8 @@
       "name-cs": "Pri\u0161tina"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Luxembourg", 
+      "type": "city-by-state", 
       "id": "Luxembourg-by-state", 
       "categories": [
         "europe"
@@ -34642,8 +35068,8 @@
       "name-cs": "Lucembursko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Slovenia", 
+      "type": "city-by-state", 
       "id": "Ljubljana-by-state", 
       "categories": [
         "europe"
@@ -34651,8 +35077,8 @@
       "name-cs": "Slovinsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Slovakia", 
+      "type": "city-by-state", 
       "id": "Bratislava-by-state", 
       "categories": [
         "europe"
@@ -34660,8 +35086,8 @@
       "name-cs": "Slovensko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Montenegro", 
+      "type": "city-by-state", 
       "id": "Podgorica-by-state", 
       "categories": [
         "europe"
@@ -34669,8 +35095,8 @@
       "name-cs": "\u010cern\u00e1 Hora"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Switzerland", 
+      "type": "city-by-state", 
       "id": "Bern-by-state", 
       "categories": [
         "europe"
@@ -34678,8 +35104,8 @@
       "name-cs": "\u0160v\u00fdcarsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Kosovo", 
+      "type": "city-by-state", 
       "id": "Pristina-by-state", 
       "categories": [
         "europe"
@@ -34687,8 +35113,8 @@
       "name-cs": "Kosovo"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Macedonia", 
+      "type": "city-by-state", 
       "id": "Skopje-by-state", 
       "categories": [
         "europe"
@@ -34696,8 +35122,8 @@
       "name-cs": "Makedonie"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Iceland", 
+      "type": "city-by-state", 
       "id": "Reykjavik-by-state", 
       "categories": [
         "europe"
@@ -34705,8 +35131,8 @@
       "name-cs": "Island"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Moldova", 
+      "type": "city-by-state", 
       "id": "Chisinau-by-state", 
       "categories": [
         "europe"
@@ -34714,8 +35140,8 @@
       "name-cs": "Moldavsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Lithuania", 
+      "type": "city-by-state", 
       "id": "Vilnius-by-state", 
       "categories": [
         "europe"
@@ -34723,8 +35149,8 @@
       "name-cs": "Litva"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Latvia", 
+      "type": "city-by-state", 
       "id": "Riga-by-state", 
       "categories": [
         "europe"
@@ -34732,8 +35158,8 @@
       "name-cs": "Loty\u0161sko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Croatia", 
+      "type": "city-by-state", 
       "id": "Zagreb-by-state", 
       "categories": [
         "europe"
@@ -34741,8 +35167,8 @@
       "name-cs": "Chorvatsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Estonia", 
+      "type": "city-by-state", 
       "id": "Tallinn-by-state", 
       "categories": [
         "europe"
@@ -34750,8 +35176,8 @@
       "name-cs": "Estonsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Serbia", 
+      "type": "city-by-state", 
       "id": "Belgrade-by-state", 
       "categories": [
         "europe"
@@ -34759,8 +35185,8 @@
       "name-cs": "Srbsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Albania", 
+      "type": "city-by-state", 
       "id": "Tirana-by-state", 
       "categories": [
         "europe"
@@ -34768,8 +35194,8 @@
       "name-cs": "Alb\u00e1nie"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Bulgaria", 
+      "type": "city-by-state", 
       "id": "Sofia-by-state", 
       "categories": [
         "europe"
@@ -34777,8 +35203,8 @@
       "name-cs": "Bulharsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Belarus", 
+      "type": "city-by-state", 
       "id": "Minsk-by-state", 
       "categories": [
         "europe"
@@ -34786,8 +35212,8 @@
       "name-cs": "B\u011blorusko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Bosnia and Herz.", 
+      "type": "city-by-state", 
       "id": "Sarajevo-by-state", 
       "categories": [
         "europe"
@@ -34795,8 +35221,8 @@
       "name-cs": "Bosna a Hercegovina"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Hungary", 
+      "type": "city-by-state", 
       "id": "Budapest-by-state", 
       "categories": [
         "europe"
@@ -34804,8 +35230,8 @@
       "name-cs": "Ma\u010farsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Romania", 
+      "type": "city-by-state", 
       "id": "Bucharest-by-state", 
       "categories": [
         "europe"
@@ -34813,8 +35239,8 @@
       "name-cs": "Rumunsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Portugal", 
+      "type": "city-by-state", 
       "id": "Lisbon-by-state", 
       "categories": [
         "europe"
@@ -34822,8 +35248,8 @@
       "name-cs": "Portugalsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Norway", 
+      "type": "city-by-state", 
       "id": "Oslo-by-state", 
       "categories": [
         "europe"
@@ -34831,8 +35257,8 @@
       "name-cs": "Norsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Poland", 
+      "type": "city-by-state", 
       "id": "Warsaw-by-state", 
       "categories": [
         "europe"
@@ -34840,8 +35266,8 @@
       "name-cs": "Polsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Ireland", 
+      "type": "city-by-state", 
       "id": "Dublin-by-state", 
       "categories": [
         "europe"
@@ -34849,8 +35275,8 @@
       "name-cs": "Irsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Czech Rep.", 
+      "type": "city-by-state", 
       "id": "Prague-by-state", 
       "categories": [
         "europe"
@@ -34858,8 +35284,8 @@
       "name-cs": "\u010cesk\u00e1 republika"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Finland", 
+      "type": "city-by-state", 
       "id": "Helsinki-by-state", 
       "categories": [
         "europe"
@@ -34867,8 +35293,8 @@
       "name-cs": "Finsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Denmark", 
+      "type": "city-by-state", 
       "id": "Kobenhavn-by-state", 
       "categories": [
         "europe"
@@ -34876,8 +35302,8 @@
       "name-cs": "D\u00e1nsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Belgium", 
+      "type": "city-by-state", 
       "id": "Brussels-by-state", 
       "categories": [
         "europe"
@@ -34885,8 +35311,8 @@
       "name-cs": "Belgie"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Ukraine", 
+      "type": "city-by-state", 
       "id": "Kiev-by-state", 
       "categories": [
         "europe"
@@ -34894,8 +35320,8 @@
       "name-cs": "Ukrajina"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Spain", 
+      "type": "city-by-state", 
       "id": "Madrid-by-state", 
       "categories": [
         "europe"
@@ -34903,8 +35329,8 @@
       "name-cs": "\u0160pan\u011blsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Sweden", 
+      "type": "city-by-state", 
       "id": "Stockholm-by-state", 
       "categories": [
         "europe"
@@ -34912,8 +35338,8 @@
       "name-cs": "\u0160v\u00e9dsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Netherlands", 
+      "type": "city-by-state", 
       "id": "Amsterdam-by-state", 
       "categories": [
         "europe"
@@ -34921,8 +35347,8 @@
       "name-cs": "Nizozemsko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Germany", 
+      "type": "city-by-state", 
       "id": "Berlin-by-state", 
       "categories": [
         "europe"
@@ -34930,8 +35356,8 @@
       "name-cs": "N\u011bmecko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Greece", 
+      "type": "city-by-state", 
       "id": "Athens-by-state", 
       "categories": [
         "europe"
@@ -34939,8 +35365,8 @@
       "name-cs": "\u0158ecko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Austria", 
+      "type": "city-by-state", 
       "id": "Vienna-by-state", 
       "categories": [
         "europe"
@@ -34948,8 +35374,8 @@
       "name-cs": "Rakousko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "United Kingdom", 
+      "type": "city-by-state", 
       "id": "London-by-state", 
       "categories": [
         "europe"
@@ -34957,8 +35383,8 @@
       "name-cs": "Spojen\u00e9 kr\u00e1lovstv\u00ed"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Russia", 
+      "type": "city-by-state", 
       "id": "Moscow-by-state", 
       "categories": [
         "europe"
@@ -34966,8 +35392,8 @@
       "name-cs": "Rusko"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "Italy", 
+      "type": "city-by-state", 
       "id": "Rome-by-state", 
       "categories": [
         "europe"
@@ -34975,8 +35401,8 @@
       "name-cs": "It\u00e1lie"
     }, 
     {
-      "type": "city-by-state", 
       "name-en": "France", 
+      "type": "city-by-state", 
       "id": "Paris-by-state", 
       "categories": [
         "europe"
@@ -35700,7 +36126,575 @@
         "cz"
       ], 
       "name-cs": "Hlavn\u00ed m\u011bsto Praha"
-  }
+    }, 
+    {
+      "type": "district", 
+      "id": "Litomerice-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Litom\u011b\u0159ice"
+    }, 
+    {
+      "type": "district", 
+      "id": "Decin-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "D\u011b\u010d\u00edn"
+    }, 
+    {
+      "type": "district", 
+      "id": "Usti_nad_Labem-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u00dast\u00ed nad Labem"
+    }, 
+    {
+      "type": "district", 
+      "id": "Teplice-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Teplice"
+    }, 
+    {
+      "type": "district", 
+      "id": "Louny-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Louny"
+    }, 
+    {
+      "type": "district", 
+      "id": "Mlada_Boleslav-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Mlad\u00e1 Boleslav"
+    }, 
+    {
+      "type": "district", 
+      "id": "Liberec-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Liberec"
+    }, 
+    {
+      "type": "district", 
+      "id": "Ceska_Lipa-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u010cesk\u00e1 L\u00edpa"
+    }, 
+    {
+      "type": "district", 
+      "id": "Most-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Most"
+    }, 
+    {
+      "type": "district", 
+      "id": "Melnik-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "M\u011bln\u00edk"
+    }, 
+    {
+      "type": "district", 
+      "id": "Jicin-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Ji\u010d\u00edn"
+    }, 
+    {
+      "type": "district", 
+      "id": "Kladno-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Kladno"
+    }, 
+    {
+      "type": "district", 
+      "id": "Trutnov-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Trutnov"
+    }, 
+    {
+      "type": "district", 
+      "id": "Hradec_Kralove-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Hradec Kr\u00e1lov\u00e9"
+    }, 
+    {
+      "type": "district", 
+      "id": "Nymburk-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Nymburk"
+    }, 
+    {
+      "type": "district", 
+      "id": "Rakovnik-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Rakovn\u00edk"
+    }, 
+    {
+      "type": "district", 
+      "id": "Nachod-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "N\u00e1chod"
+    }, 
+    {
+      "type": "district", 
+      "id": "Cheb-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Cheb"
+    }, 
+    {
+      "type": "district", 
+      "id": "Karlovy_Vary-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Karlovy Vary"
+    }, 
+    {
+      "type": "district", 
+      "id": "Tachov-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Tachov"
+    }, 
+    {
+      "type": "district", 
+      "id": "Rychnov_nad_Kneznou-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Rychnov nad Kn\u011b\u013enou"
+    }, 
+    {
+      "type": "district", 
+      "id": "Kolin-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Kol\u00edn"
+    }, 
+    {
+      "type": "district", 
+      "id": "Pardubice-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Pardubice"
+    }, 
+    {
+      "type": "district", 
+      "id": "Rokycany-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Rokycany"
+    }, 
+    {
+      "type": "district", 
+      "id": "Usti_nad_Orlici-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u00dast\u00ed nad Orlic\u00ed"
+    }, 
+    {
+      "type": "district", 
+      "id": "Sumperk-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u00a9umperk"
+    }, 
+    {
+      "type": "district", 
+      "id": "Jesenik-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Jesen\u00edk"
+    }, 
+    {
+      "type": "district", 
+      "id": "Beroun-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Beroun"
+    }, 
+    {
+      "type": "district", 
+      "id": "Kutna_Hora-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Kutn\u00e1 Hora"
+    }, 
+    {
+      "type": "district", 
+      "id": "Benesov-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Bene\u0105ov"
+    }, 
+    {
+      "type": "district", 
+      "id": "Chrudim-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Chrudim"
+    }, 
+    {
+      "type": "district", 
+      "id": "Pribram-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "P\u0159\u00edbram"
+    }, 
+    {
+      "type": "district", 
+      "id": "Havlickuv_Brod-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Havl\u00ed\u010dk\u016fv Brod"
+    }, 
+    {
+      "type": "district", 
+      "id": "Svitavy-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Svitavy"
+    }, 
+    {
+      "type": "district", 
+      "id": "Domazlice-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Doma\u013elice"
+    }, 
+    {
+      "type": "district", 
+      "id": "Zdar_nad_Sazavou-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u00ae\u010f\u00e1r nad S\u00e1zavou"
+    }, 
+    {
+      "type": "district", 
+      "id": "Opava-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Opava"
+    }, 
+    {
+      "type": "district", 
+      "id": "Pisek-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "P\u00edsek"
+    }, 
+    {
+      "type": "district", 
+      "id": "Olomouc-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Olomouc"
+    }, 
+    {
+      "type": "district", 
+      "id": "Pelhrimov-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Pelh\u0159imov"
+    }, 
+    {
+      "type": "district", 
+      "id": "Tabor-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "T\u00e1bor"
+    }, 
+    {
+      "type": "district", 
+      "id": "Novy_Jicin-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Nov\u00fd Ji\u010d\u00edn"
+    }, 
+    {
+      "type": "district", 
+      "id": "Strakonice-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Strakonice"
+    }, 
+    {
+      "type": "district", 
+      "id": "Klatovy-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Klatovy"
+    }, 
+    {
+      "type": "district", 
+      "id": "Frydek-Mistek-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Fr\u00fddek-M\u00edstek"
+    }, 
+    {
+      "type": "district", 
+      "id": "Prostejov-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Prost\u011bjov"
+    }, 
+    {
+      "type": "district", 
+      "id": "Blansko-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Blansko"
+    }, 
+    {
+      "type": "district", 
+      "id": "Jihlava-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Jihlava"
+    }, 
+    {
+      "type": "district", 
+      "id": "Prerov-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "P\u0159erov"
+    }, 
+    {
+      "type": "district", 
+      "id": "Vsetin-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Vset\u00edn"
+    }, 
+    {
+      "type": "district", 
+      "id": "Prachatice-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Prachatice"
+    }, 
+    {
+      "type": "district", 
+      "id": "Ceske_Budejovice-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u010cesk\u00e9 Bud\u011bjovice"
+    }, 
+    {
+      "type": "district", 
+      "id": "Jindrichuv_Hradec-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Jind\u0159ich\u016fv Hradec"
+    }, 
+    {
+      "type": "district", 
+      "id": "Kromeriz-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Krom\u011b\u0159\u00ed\u013e"
+    }, 
+    {
+      "type": "district", 
+      "id": "Trebic-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "T\u0159eb\u00ed\u010d"
+    }, 
+    {
+      "type": "district", 
+      "id": "Vyskov-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Vy\u0105kov"
+    }, 
+    {
+      "type": "district", 
+      "id": "Zlin-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Zl\u00edn"
+    }, 
+    {
+      "type": "district", 
+      "id": "Uherske_Hradiste-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Uhersk\u00e9 Hradi\u0105t\u011b"
+    }, 
+    {
+      "type": "district", 
+      "id": "Hodonin-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Hodon\u00edn"
+    }, 
+    {
+      "type": "district", 
+      "id": "Znojmo-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Znojmo"
+    }, 
+    {
+      "type": "district", 
+      "id": "Breclav-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "B\u0159eclav"
+    }, 
+    {
+      "type": "district", 
+      "id": "Cesky_Krumlov-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "\u010cesk\u00fd Krumlov"
+    }, 
+    {
+      "type": "district", 
+      "id": "Chomutov-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Chomutov"
+    }, 
+    {
+      "type": "district", 
+      "id": "Jablonec_nad_Nisou-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Jablonec nad Nisou"
+    }, 
+    {
+      "type": "district", 
+      "id": "Bruntal-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Brunt\u00e1l"
+    }, 
+    {
+      "type": "district", 
+      "id": "Karvina-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Karvin\u00e1"
+    }, 
+    {
+      "type": "district", 
+      "id": "Sokolov-district", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Sokolov"
+    }, 
+    {
+      "type": "river", 
+      "id": "Bilina-river", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "B\u00edlina"
+    }, 
+    {
+      "type": "river", 
+      "id": "Jihlava-river", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Jihlava"
+    }, 
+    {
+      "type": "river", 
+      "id": "Opava-river", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Opava"
+    }, 
+    {
+      "type": "river", 
+      "id": "Trnava-river", 
+      "categories": [
+        "cz"
+      ], 
+      "name-cs": "Trnava"
+    }
   ], 
   "categories": [
     {
