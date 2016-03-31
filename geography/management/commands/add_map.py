@@ -139,33 +139,45 @@ class Command(BaseCommand):
                 for path in paths:
                     code = unicode(path.attributes['data-code'].value).encode("utf-8")
                     name = unicode(path.attributes['data-name'].value).encode("utf-8")
-                    if code != '' and code not in terms_by_id:
-                        term = {
-                            'id': code,
-                            'type': group_id,
-                            'categories': [map_code],
-                        }
-                        if self.lang == 'all':
-                            languages = [l[0] for l in settings.LANGUAGES]
-                        else:
-                            languages = [self.lang]
-                        for lang in languages:
-                            term.update({
-                                'name-' + lang: name,
-                            })
-                        data['terms'].append(term)
-                        terms_by_id[code] = term
-                        print('Term added: ' + name + ' ' + code)
-                    flashcard_id = map_code + '-' + code
-                    if code != '' and flashcard_id not in flashcards_by_id:
-                        flashcard = {
-                            'id': flashcard_id,
-                            'term': code,
-                            'context': map_code,
-                            'description': code,
-                        }
-                        data['flashcards'].append(flashcard)
-                        flashcards_by_id[flashcard_id] = flashcard
-                        print('Flashcard added: ' + name + ' ' + code)
-                    if code != '' and map_code not in terms_by_id[code]['categories']:
-                        terms_by_id[code]['categories'].append(map_code)
+                    if code != '':
+                        if code not in terms_by_id:
+                            term = self.create_term(code, group_id, map_code, name)
+                            data['terms'].append(term)
+                            terms_by_id[code] = term
+                            print('Term added: ' + name + ' ' + code)
+                        elif (code in terms_by_id and
+                                terms_by_id[code]['type'] != group_id):
+                            code = code + '-' + group_id
+                            term = self.create_term(code, group_id, map_code, name)
+                            data['terms'].append(term)
+                            terms_by_id[code] = term
+                            print('Term added: ' + ' ' + code)
+                        flashcard_id = map_code + '-' + code
+                        if flashcard_id not in flashcards_by_id:
+                            flashcard = {
+                                'id': flashcard_id,
+                                'term': code,
+                                'context': map_code,
+                                'description': code,
+                            }
+                            data['flashcards'].append(flashcard)
+                            flashcards_by_id[flashcard_id] = flashcard
+                            print('Flashcard added: ' + ' ' + code)
+                        if map_code not in terms_by_id[code]['categories']:
+                            terms_by_id[code]['categories'].append(map_code)
+
+    def create_term(self, code, group_id, map_code, name):
+        term = {
+            'id': code,
+            'type': group_id,
+            'categories': [map_code],
+        }
+        if self.lang == 'all':
+            languages = [l[0] for l in settings.LANGUAGES]
+        else:
+            languages = [self.lang]
+        for lang in languages:
+            term.update({
+                'name-' + lang: name,
+            })
+        return term
