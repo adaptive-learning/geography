@@ -145,13 +145,6 @@ class Command(BaseCommand):
                             data['terms'].append(term)
                             terms_by_id[code] = term
                             print('Term added: ' + name + ' ' + code)
-                        elif (code in terms_by_id and
-                                terms_by_id[code]['type'] != group_id):
-                            code = code + '-' + group_id
-                            term = self.create_term(code, group_id, map_code, name)
-                            data['terms'].append(term)
-                            terms_by_id[code] = term
-                            print('Term added: ' + ' ' + code)
                         flashcard_id = map_code + '-' + code
                         if flashcard_id not in flashcards_by_id:
                             flashcard = {
@@ -162,7 +155,7 @@ class Command(BaseCommand):
                             }
                             data['flashcards'].append(flashcard)
                             flashcards_by_id[flashcard_id] = flashcard
-                            print('Flashcard added: ' + ' ' + code)
+                            print('Flashcard added: ' + name + ' ' + code)
                         if map_code not in terms_by_id[code]['categories']:
                             terms_by_id[code]['categories'].append(map_code)
 
