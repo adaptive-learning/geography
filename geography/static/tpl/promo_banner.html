@@ -1,26 +1,26 @@
 <div class="bottom-alert text-center alert alert-info" 
-  ng-if="!('promo1'|cookieExists)">
+  ng-if="!('promo2'|cookieExists)">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"
-      set-cookie-on-click="promo1"
-      track-click="close promo1 banner">
+      set-cookie-on-click="promo2"
+      track-click="close promo2 banner">
     <span aria-hidden="true">&times;</span>
     <span class="sr-only" translate>Zavřít</span>
   </button>
   Už jste vyzkoušeli naše další systémy
+  <a href="http://zlomky-hrave.cz/"
+     track-click="zlomky banner"
+     target="_blank"
+     class="btn btn-primary"
+    >
+    Zlomky hravě
+    </a>
+    a
   <a href="http://www.poznavackaprirody.cz/"
-     track-click="poznavackaprirody banner 2"
+     track-click="poznavackaprirody banner 3"
      target="_blank"
      class="btn btn-primary"
     >
   Poznávačka přírody
-    </a>
-    a
-  <a href="http://www.umimecesky.cz/"
-     track-click="umimecesky banner 2"
-     target="_blank"
-     class="btn btn-primary"
-    >
-    Umíme Česky
     </a>
     ?
 </div>
