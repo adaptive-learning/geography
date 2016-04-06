@@ -80,8 +80,8 @@ class Command(BaseCommand):
                 for lang in languages:
                     translation = gettext.translation('djangojs', "conf/locale/", [lang])
                     concept["names"][lang] = "{} - {}".format(_get_lang(lang_map, lang), translation.gettext(self.place_type_names[type]))
-                    concept["actions"]["practice"][lang] = "{}/practice/{}/{}".format(domains[lang], context, type)
-                    concept["actions"]["view"][lang] = "{}/view/{}/{}".format(domains[lang], context, type)
+                    concept["actions"]["practice"][lang] = "http://{}/practice/{}/{}".format(domains[lang], context, type)
+                    concept["actions"]["view"][lang] = "http://{}/view/{}/{}".format(domains[lang], context, type)
 
                 data["concepts"].append(concept)
 
