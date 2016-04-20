@@ -22,18 +22,21 @@ class Command(BaseCommand):
         if len(args) < 1:
             raise CommandError(
                 "Not enough arguments. Two arguments required: " +
-                " <flashcards-file> [<map-code>] [<lang-code>]")
+                " <flashcards-file> [<map-code>] [<map-type>] [<lang-code>]")
         map_code = None
         if len(args) > 1:
             map_code = args[1]
+        map_type = 'state'
+        if len(args) > 2:
+            map_type = args[2]
         with open(args[0], 'r') as json_file:
             data = json.load(json_file, 'utf-8')
             data['contexts'] = data.get('contexts', [])
             data['terms'] = data.get('terms', [])
             data['categories'] = data.get('categories', [])
             data['flashcards'] = data.get('flashcards', [])
-        if len(args) > 2:
-            self.lang = args[2]
+        if len(args) > 3:
+            self.lang = args[3]
         else:
             self.lang = 'all'
 
@@ -53,7 +56,7 @@ class Command(BaseCommand):
         else:
             self.add_map(map_code, data, terms_by_id)
             if map_code not in contexts_by_id:
-                self.add_context(data, map_code)
+                self.add_context(data, map_code, map_type)
 
         self.update_translations(data, terms_by_id, categories_by_id)
         # self.generate_translations_file(data)
@@ -63,7 +66,7 @@ class Command(BaseCommand):
             print(('Updated flashcards written to file: \'%s\'' %
                    options['output']))
 
-    def add_context(self, data, map_code):
+    def add_context(self, data, map_code, map_type):
         names = {}
         for lang in settings.LANGUAGES:
             names[lang[0]] = self.get_translation(map_code, lang[0])
@@ -72,7 +75,7 @@ class Command(BaseCommand):
         }
         category = {
             'id': map_code,
-            'type': 'state',  # TODO migh be not true in future
+            'type': map_type,
         }
         for lang in names.keys():
             context.update({
