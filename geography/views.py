@@ -14,21 +14,26 @@ import django.contrib.auth as auth
 from proso.django.request import is_user_id_overridden
 import os
 import random
+from django.template import RequestContext
+from django.core import management
+from django.contrib.admin.views.decorators import staff_member_required
+
+
+JS_FILES = (
+    "dist/js/bower-libs.min.js",
+    "dist/js/proso-apps-all.js",
+    "dist/js/geography.min.js",
+    "dist/js/geography.html.js",
+)
+CSS_FILES = (
+    "dist/css/bower-libs.css",
+    "dist/css/app.css",
+    "dist/css/map.css"
+)
 
 
 @ensure_csrf_cookie
 def home(request, hack=None):
-    JS_FILES = (
-        "dist/js/bower-libs.min.js",
-        "dist/js/proso-apps-all.js",
-        "dist/js/geography.min.js",
-        "dist/js/geography.html.js",
-    )
-    CSS_FILES = (
-        "dist/css/bower-libs.css",
-        "dist/css/app.css",
-        "dist/css/map.css"
-    )
     if not hasattr(request.user, "userprofile") or request.user.userprofile is None:
         environment = get_environment()
         user = json.dumps({
@@ -140,3 +145,58 @@ def resolve_map_type(code):
         'island': _('Ostrovy'),
     }
     return types.get(code, '')
+
+
+@staff_member_required
+def load_data(request):
+    c = RequestContext(request, {
+        'css_files': CSS_FILES,
+        'alerts': [],
+    })
+
+    if request.method == 'POST':
+        if 'svg' not in request.FILES:
+            c['alerts'].append({
+                'text': 'Chybí SVG soubor',
+                'type': 'danger',
+            })
+        if 'json' not in request.FILES:
+            c['alerts'].append({
+                'text': 'Chybí JSON soubor',
+                'type': 'danger',
+            })
+
+        if len(c['alerts']) == 0:
+            json_file = request.FILES['json']
+            filepath = os.path.join(settings.DATA_DIR, json_file.name)
+            handle_uploaded_file(json_file, filepath)
+
+            management.call_command(
+                'load_flashcards',
+                filepath,
+                ignored_flashcards='disable',
+                skip_language_check=True,
+                verbosity=0,
+                interactive=False)
+
+            svg_file = request.FILES['svg']
+            filepath = os.path.join(settings.STATICFILES_DIRS[0], 'map', svg_file.name)
+            handle_uploaded_file(svg_file, filepath)
+
+            management.call_command(
+                'collectstatic',
+                verbosity=0,
+                interactive=False)
+            c['alerts'].append({
+                'type': 'success',
+                'text': 'Mapa byla úspěšně nahrána',
+            })
+
+    return render_to_response('load_data.html', c)
+
+
+def handle_uploaded_file(f, filepath):
+    destination = open(filepath, 'wb+')
+    for chunk in f.chunks():
+        destination.write(chunk)
+    destination.close()

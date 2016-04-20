@@ -38,6 +38,8 @@ urlpatterns = patterns(
     url(r'^flashcards/', include('proso_flashcards.urls')),
     url(r'^concepts/', include('proso_concepts.urls', namespace="concepts")),
 
+    url(r'^loaddata/$', 'geography.views.load_data', name='load_data'),
+
     # legacy hack
     url(r'^login/google/$', RedirectView.as_view(url='/login/google-oauth2/')),
 

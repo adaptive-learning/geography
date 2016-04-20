@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="svg">SVG</label>
+            <input type="file" id="svg" name="svg">
+          </div>
+          <div class="form-group">
+            <label for="json">JSON</label>
+            <input type="file" id="json" name="json">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+          <br>
+          <br>
+          {% for message in alerts %}
+            <div class="alert alert-{{message.type}}" role="alert">{{message.text}}</div>
+          {% endfor %}
+        </form>
+      </div>
+    </div>
+  </div>
+  </body>
+    {% for file in css_files %}
+    <link href="{% static file %}" rel="stylesheet">
+    {% endfor %}
+</html>
+
