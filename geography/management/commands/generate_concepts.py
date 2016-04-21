@@ -72,7 +72,7 @@ class Command(BaseCommand):
         types = Term.objects.all().values_list("type", flat=True).distinct()
 
         for lang in langs:
-            translation = gettext.translation('djangojs', "conf/locale/", [lang])
+            translation = gettext.translation('djangojs', os.path.join(settings.BASE_DIR, "conf" , "locale"), [lang])
             data["action_names"]["practice"][lang] = translation.gettext("Procvičovat")
             data["action_names"]["view"][lang] = translation.gettext("Přehled map")
 
@@ -94,7 +94,7 @@ class Command(BaseCommand):
                     }
                 }
                 for lang in languages:
-                    translation = gettext.translation('djangojs', "conf/locale/", [lang])
+                    translation = gettext.translation('djangojs', os.path.join(settings.BASE_DIR, "conf" , "locale"), [lang])
                     name = translation.gettext(self.place_type_names[type])
                     concept["names"][lang] = "{} - {}".format(_get_lang(lang_map, lang), name)
                     data["tags"]["type"]["values"][type][lang] = name
