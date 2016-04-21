@@ -20,4 +20,4 @@ $WORKSPACE/manage.py load_flashcards --skip-language-check $WORKSPACE/data/geogr
 $WORKSPACE/manage.py load_configab_experiments $WORKSPACE/ab_experiments.json
 
 $WORKSPACE/manage.py generate_concepts
-$WORKSPACE/manage.py load_concepts $WORKSPACE/data/concepts.json
+$WORKSPACE/manage.py load_concepts $WORKSPACE/source/data/concepts.json

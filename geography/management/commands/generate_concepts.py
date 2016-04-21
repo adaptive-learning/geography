@@ -34,6 +34,7 @@ class Command(BaseCommand):
         'mountains' : 'Pohoří',
         'surface' : 'Povrch',
         'island' : 'Ostrovy',
+        'district' : 'Okresy',
     }
 
     def handle(self, *args, **options):
@@ -42,28 +43,44 @@ class Command(BaseCommand):
                 return obj[lang]
             return obj[self.default_lang]
 
-        data = {"concepts": [], "action_names": {
-            "practice": {},
-            "view": {},
-        }}
+
+        domains = settings.LANGUAGE_DOMAINS
+        langs = domains.keys()
+        self.prepare_mo_files(langs)
+        data = {
+                    "concepts": [],
+                    "action_names": {
+                        "practice": {},
+                        "view": {},
+                    },
+                    "tags": {
+                        "context": {
+                            "names": {lang: "Oblast" for lang in langs},
+                            "values": defaultdict(lambda: {})
+                        },
+                        "type": {
+                            "names": {lang: "Typ místa" for lang in langs},
+                            "values": defaultdict(lambda: {})
+                        },
+                    }
+                }
+        # TODO - add translations of tag names
 
         contexts = defaultdict(lambda: {})
         for context in Context.objects.all().values("identifier", "name", "lang"):
             contexts[context["identifier"]][context["lang"]] = context["name"]
+            data["tags"]["context"]["values"][context["identifier"]][context["lang"]] = context["name"]
         types = Term.objects.all().values_list("type", flat=True).distinct()
-        domains = settings.LANGUAGE_DOMAINS
 
-        self.prepare_mo_files(domains.keys())
-
-        for lang in domains.keys():
-            translation = gettext.translation('djangojs', "conf/locale/", [lang])
+        for lang in langs:
+            translation = gettext.translation('djangojs', os.path.join(settings.BASE_DIR, "conf" , "locale"), [lang])
             data["action_names"]["practice"][lang] = translation.gettext("Procvičovat")
             data["action_names"]["view"][lang] = translation.gettext("Přehled map")
 
         for context, lang_map in contexts.items():
             for type in types:
                 languages = []
-                for lang in domains.keys():
+                for lang in langs:
                     if len(Flashcard.objects.filtered_ids([], [context], [type], [], lang)[0]) > 0:
                         languages.append(lang)
                 if len(languages) == 0:
@@ -78,15 +95,17 @@ class Command(BaseCommand):
                     }
                 }
                 for lang in languages:
-                    translation = gettext.translation('djangojs', "conf/locale/", [lang])
-                    concept["names"][lang] = "{} - {}".format(_get_lang(lang_map, lang), translation.gettext(self.place_type_names[type]))
-                    concept["actions"]["practice"][lang] = "{}/practice/{}/{}".format(domains[lang], context, type)
-                    concept["actions"]["view"][lang] = "{}/view/{}/{}".format(domains[lang], context, type)
+                    translation = gettext.translation('djangojs', os.path.join(settings.BASE_DIR, "conf" , "locale"), [lang])
+                    name = translation.gettext(self.place_type_names[type])
+                    concept["names"][lang] = "{} - {}".format(_get_lang(lang_map, lang), name)
+                    data["tags"]["type"]["values"][type][lang] = name
+                    concept["actions"]["practice"][lang] = "http://{}/practice/{}/{}".format(domains[lang], context, type)
+                    concept["actions"]["view"][lang] = "http://{}/view/{}/{}".format(domains[lang], context, type)
 
                 data["concepts"].append(concept)
 
         json.dump(data, open(os.path.join(settings.BASE_DIR, "data", "concepts.json"), "w"), indent=4, ensure_ascii=False)
-        self.clean_up(domains.keys())
+        self.clean_up(langs)
 
     def prepare_mo_files(self, languages):
         for lang in languages:
