@@ -34,6 +34,7 @@ class Command(BaseCommand):
         'mountains' : 'Pohoří',
         'surface' : 'Povrch',
         'island' : 'Ostrovy',
+        'district' : 'Okresy',
     }
 
     def handle(self, *args, **options):
