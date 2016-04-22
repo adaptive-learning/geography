@@ -36922,12 +36922,12 @@
         "cz"
       ], 
       "id": "district-Rychnov_nad_Kneznou", 
-      "name-cs": "Rychnov nad Kn\u011b\u013enou", 
-      "name-de": "Rychnov nad Kn\u011b\u013enou", 
-      "name-en": "Rychnov nad Kn\u011b\u013enou", 
-      "name-es": "Rychnov nad Kn\u011b\u013enou", 
-      "name-ru": "Rychnov nad Kn\u011b\u013enou", 
-      "name-sk": "Rychnov nad Kn\u011b\u013enou", 
+      "name-cs": "Rychnov nad Kn\u011b\u017enou", 
+      "name-de": "Rychnov nad Kn\u011b\u017enou", 
+      "name-en": "Rychnov nad Kn\u011b\u017enou", 
+      "name-es": "Rychnov nad Kn\u011b\u017enou", 
+      "name-ru": "Rychnov nad Kn\u011b\u017enou", 
+      "name-sk": "Rychnov nad Kn\u011b\u017enou", 
       "type": "district"
     }, 
     {
@@ -36987,12 +36987,12 @@
         "cz"
       ], 
       "id": "district-Sumperk", 
-      "name-cs": "\u00a9umperk", 
-      "name-de": "\u00a9umperk", 
-      "name-en": "\u00a9umperk", 
-      "name-es": "\u00a9umperk", 
-      "name-ru": "\u00a9umperk", 
-      "name-sk": "\u00a9umperk", 
+      "name-cs": "\u0160umperk", 
+      "name-de": "\u0160umperk", 
+      "name-en": "\u0160umperk", 
+      "name-es": "\u0160umperk", 
+      "name-ru": "\u0160umperk", 
+      "name-sk": "\u0160umperk", 
       "type": "district"
     }, 
     {
@@ -37039,12 +37039,12 @@
         "cz"
       ], 
       "id": "district-Benesov", 
-      "name-cs": "Bene\u0105ov", 
-      "name-de": "Bene\u0105ov", 
-      "name-en": "Bene\u0105ov", 
-      "name-es": "Bene\u0105ov", 
-      "name-ru": "Bene\u0105ov", 
-      "name-sk": "Bene\u0105ov", 
+      "name-cs": "Bene\u0161ov", 
+      "name-de": "Bene\u0161ov", 
+      "name-en": "Bene\u0161ov", 
+      "name-es": "Bene\u0161ov", 
+      "name-ru": "Bene\u0161ov", 
+      "name-sk": "Bene\u0161ov", 
       "type": "district"
     }, 
     {
@@ -37143,12 +37143,12 @@
         "cz"
       ], 
       "id": "district-Zdar_nad_Sazavou", 
-      "name-cs": "\u00ae\u010f\u00e1r nad S\u00e1zavou", 
-      "name-de": "\u00ae\u010f\u00e1r nad S\u00e1zavou", 
-      "name-en": "\u00ae\u010f\u00e1r nad S\u00e1zavou", 
-      "name-es": "\u00ae\u010f\u00e1r nad S\u00e1zavou", 
-      "name-ru": "\u00ae\u010f\u00e1r nad S\u00e1zavou", 
-      "name-sk": "\u00ae\u010f\u00e1r nad S\u00e1zavou", 
+      "name-cs": "\u017d\u010f\u00e1r nad S\u00e1zavou", 
+      "name-de": "\u017d\u010f\u00e1r nad S\u00e1zavou", 
+      "name-en": "\u017d\u010f\u00e1r nad S\u00e1zavou", 
+      "name-es": "\u017d\u010f\u00e1r nad S\u00e1zavou", 
+      "name-ru": "\u017d\u010f\u00e1r nad S\u00e1zavou", 
+      "name-sk": "\u017d\u010f\u00e1r nad S\u00e1zavou", 
       "type": "district"
     }, 
     {
@@ -37403,12 +37403,12 @@
         "cz"
       ], 
       "id": "district-Kromeriz", 
-      "name-cs": "Krom\u011b\u0159\u00ed\u013e", 
-      "name-de": "Krom\u011b\u0159\u00ed\u013e", 
-      "name-en": "Krom\u011b\u0159\u00ed\u013e", 
-      "name-es": "Krom\u011b\u0159\u00ed\u013e", 
-      "name-ru": "Krom\u011b\u0159\u00ed\u013e", 
-      "name-sk": "Krom\u011b\u0159\u00ed\u013e", 
+      "name-cs": "Krom\u011b\u0159\u00ed\u017e", 
+      "name-de": "Krom\u011b\u0159\u00ed\u017e", 
+      "name-en": "Krom\u011b\u0159\u00ed\u017e", 
+      "name-es": "Krom\u011b\u0159\u00ed\u017e", 
+      "name-ru": "Krom\u011b\u0159\u00ed\u017e", 
+      "name-sk": "Krom\u011b\u0159\u00ed\u017e", 
       "type": "district"
     }, 
     {
@@ -37442,12 +37442,12 @@
         "cz"
       ], 
       "id": "district-Vyskov", 
-      "name-cs": "Vy\u0105kov", 
-      "name-de": "Vy\u0105kov", 
-      "name-en": "Vy\u0105kov", 
-      "name-es": "Vy\u0105kov", 
-      "name-ru": "Vy\u0105kov", 
-      "name-sk": "Vy\u0105kov", 
+      "name-cs": "Vy\u0161kov", 
+      "name-de": "Vy\u0161kov", 
+      "name-en": "Vy\u0161kov", 
+      "name-es": "Vy\u0161kov", 
+      "name-ru": "Vy\u0161kov", 
+      "name-sk": "Vy\u0161kov", 
       "type": "district"
     }, 
     {
