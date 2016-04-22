@@ -1,26 +1,17 @@
 svg
-  .state,
-  .province,
-  .region,
-  .region_cz,
-  .district,
-  .region_it,
-  .autonomous_comunity,
-  .bundesland,
-  .mountains,
-  .island,
-  .lake,
-  .reservoir,
-  .sea
+  path
     cursor: pointer
     fill-opacity: 1
     &:hover
       fill-opacity: 0.8
+  path.bg,
+    cursor: default
+    &:hover
+      fill-opacity: 1
   .city, 
   .river
-    cursor: pointer
-  .city
-    fill-opacity: 1
+    &:hover
+      fill-opacity: 1
   .lake,
   .sea
     stroke: #53a5df

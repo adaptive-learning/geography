@@ -280,6 +280,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
           'region' : gettextCatalog.getString('Regiony'),
           'province' : gettextCatalog.getString('Provincie'),
           'region_cz' : gettextCatalog.getString('Kraje'),
+          'district' : gettextCatalog.getString('Okresy'),
           'region_it' : gettextCatalog.getString('Oblasti'),
           'autonomous_Comunity' : gettextCatalog.getString('Autonomní společenství'),
           'bundesland' : gettextCatalog.getString('Spolkové země'),
@@ -292,6 +293,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
           'mountains' : gettextCatalog.getString('Pohoří'),
           'surface' : gettextCatalog.getString('Povrch'),
           'island' : gettextCatalog.getString('Ostrovy'),
+          'chko' : gettextCatalog.getString('CHKO'),
       };
       placeTypes = [];
       for(var i in placeTypeNames) {
