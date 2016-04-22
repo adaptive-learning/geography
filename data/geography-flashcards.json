@@ -14116,6 +14116,564 @@
       "description": "chko-Krkonossky_narodni_park", 
       "id": "cz-chko-Krkonossky_narodni_park", 
       "term": "chko-Krkonossky_narodni_park"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Sumava", 
+      "id": "cz-surface-Sumava", 
+      "term": "surface-Sumava"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Krusne_hory", 
+      "id": "cz-surface-Krusne_hory", 
+      "term": "surface-Krusne_hory"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Ceske_Stredohori", 
+      "id": "cz-surface-Ceske_Stredohori", 
+      "term": "surface-Ceske_Stredohori"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Krkonose", 
+      "id": "cz-surface-Krkonose", 
+      "term": "surface-Krkonose"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Jizerske_hory", 
+      "id": "cz-surface-Jizerske_hory", 
+      "term": "surface-Jizerske_hory"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Orlicke_hory", 
+      "id": "cz-surface-Orlicke_hory", 
+      "term": "surface-Orlicke_hory"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Hruby_Jesenik", 
+      "id": "cz-surface-Hruby_Jesenik", 
+      "term": "surface-Hruby_Jesenik"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Moravskoslezske_Beskydy", 
+      "id": "cz-surface-Moravskoslezske_Beskydy", 
+      "term": "surface-Moravskoslezske_Beskydy"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Bile_Karpaty", 
+      "id": "cz-surface-Bile_Karpaty", 
+      "term": "surface-Bile_Karpaty"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Cesky_les", 
+      "id": "cz-surface-Cesky_les", 
+      "term": "surface-Cesky_les"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Rychlebske_hory", 
+      "id": "cz-surface-Rychlebske_hory", 
+      "term": "surface-Rychlebske_hory"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Nizky_Jesenik", 
+      "id": "cz-surface-Nizky_Jesenik", 
+      "term": "surface-Nizky_Jesenik"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Novohradske_hory", 
+      "id": "cz-surface-Novohradske_hory", 
+      "term": "surface-Novohradske_hory"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Chriby", 
+      "id": "cz-surface-Chriby", 
+      "term": "surface-Chriby"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Doupovske_hory", 
+      "id": "cz-surface-Doupovske_hory", 
+      "term": "surface-Doupovske_hory"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Brdska_vrchovina", 
+      "id": "cz-surface-Brdska_vrchovina", 
+      "term": "surface-Brdska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Jestedsko-kozakovsky_hrbet", 
+      "id": "cz-surface-Jestedsko-kozakovsky_hrbet", 
+      "term": "surface-Jestedsko-kozakovsky_hrbet"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Luzicke_hory", 
+      "id": "cz-surface-Luzicke_hory", 
+      "term": "surface-Luzicke_hory"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Javorniky", 
+      "id": "cz-surface-Javorniky", 
+      "term": "surface-Javorniky"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Taborska_pahorkatina", 
+      "id": "cz-surface-Taborska_pahorkatina", 
+      "term": "surface-Taborska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Vserubska_vrchovina", 
+      "id": "cz-surface-Vserubska_vrchovina", 
+      "term": "surface-Vserubska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Podceskoleska_pahorkatina", 
+      "id": "cz-surface-Podceskoleska_pahorkatina", 
+      "term": "surface-Podceskoleska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Novohradske_podhuri", 
+      "id": "cz-surface-Novohradske_podhuri", 
+      "term": "surface-Novohradske_podhuri"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Sumavske_podhuri", 
+      "id": "cz-surface-Sumavske_podhuri", 
+      "term": "surface-Sumavske_podhuri"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Blatenska_pahorkatina", 
+      "id": "cz-surface-Blatenska_pahorkatina", 
+      "term": "surface-Blatenska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Vlasimska_pahorkatina", 
+      "id": "cz-surface-Vlasimska_pahorkatina", 
+      "term": "surface-Vlasimska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Benesovska_pahorkatina", 
+      "id": "cz-surface-Benesovska_pahorkatina", 
+      "term": "surface-Benesovska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Ceskobudejovicka_panev", 
+      "id": "cz-surface-Ceskobudejovicka_panev", 
+      "term": "surface-Ceskobudejovicka_panev"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Jevisovicka_pahorkatina", 
+      "id": "cz-surface-Jevisovicka_pahorkatina", 
+      "term": "surface-Jevisovicka_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Javoricka_vrchovina", 
+      "id": "cz-surface-Javoricka_vrchovina", 
+      "term": "surface-Javoricka_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Krizanovska_vrchovina", 
+      "id": "cz-surface-Krizanovska_vrchovina", 
+      "term": "surface-Krizanovska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Hornosvratecka_vrchovina", 
+      "id": "cz-surface-Hornosvratecka_vrchovina", 
+      "term": "surface-Hornosvratecka_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Zelezne_hory", 
+      "id": "cz-surface-Zelezne_hory", 
+      "term": "surface-Zelezne_hory"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Hornosazavska_pahorkatina", 
+      "id": "cz-surface-Hornosazavska_pahorkatina", 
+      "term": "surface-Hornosazavska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Kremesnicka_vrchovina", 
+      "id": "cz-surface-Kremesnicka_vrchovina", 
+      "term": "surface-Kremesnicka_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Trebonska_panev", 
+      "id": "cz-surface-Trebonska_panev", 
+      "term": "surface-Trebonska_panev"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Drahanska_vrchovina", 
+      "id": "cz-surface-Drahanska_vrchovina", 
+      "term": "surface-Drahanska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Bobravska_vrchovina", 
+      "id": "cz-surface-Bobravska_vrchovina", 
+      "term": "surface-Bobravska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Chebska_panev", 
+      "id": "cz-surface-Chebska_panev", 
+      "term": "surface-Chebska_panev"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Decinska_vrchovina", 
+      "id": "cz-surface-Decinska_vrchovina", 
+      "term": "surface-Decinska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Smrciny", 
+      "id": "cz-surface-Smrciny", 
+      "term": "surface-Smrciny"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Mostecka_panev", 
+      "id": "cz-surface-Mostecka_panev", 
+      "term": "surface-Mostecka_panev"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Sokolovska_panev", 
+      "id": "cz-surface-Sokolovska_panev", 
+      "term": "surface-Sokolovska_panev"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Frydlantska_pahorkatina", 
+      "id": "cz-surface-Frydlantska_pahorkatina", 
+      "term": "surface-Frydlantska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Zitavska_panev", 
+      "id": "cz-surface-Zitavska_panev", 
+      "term": "surface-Zitavska_panev"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Sluknovska_pahorkatina", 
+      "id": "cz-surface-Sluknovska_pahorkatina", 
+      "term": "surface-Sluknovska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Tepelska_vrchovina", 
+      "id": "cz-surface-Tepelska_vrchovina", 
+      "term": "surface-Tepelska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Slavkovsky_les", 
+      "id": "cz-surface-Slavkovsky_les", 
+      "term": "surface-Slavkovsky_les"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Krkonosske_podhuri", 
+      "id": "cz-surface-Krkonosske_podhuri", 
+      "term": "surface-Krkonosske_podhuri"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Broumovska_vrchovina", 
+      "id": "cz-surface-Broumovska_vrchovina", 
+      "term": "surface-Broumovska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Podorlicka_pahorkatina", 
+      "id": "cz-surface-Podorlicka_pahorkatina", 
+      "term": "surface-Podorlicka_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Kladska_kotlina", 
+      "id": "cz-surface-Kladska_kotlina", 
+      "term": "surface-Kladska_kotlina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Zabrezska_vrchovina", 
+      "id": "cz-surface-Zabrezska_vrchovina", 
+      "term": "surface-Zabrezska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Mohelnicka_brazda", 
+      "id": "cz-surface-Mohelnicka_brazda", 
+      "term": "surface-Mohelnicka_brazda"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Kralicky_Sneznik", 
+      "id": "cz-surface-Kralicky_Sneznik", 
+      "term": "surface-Kralicky_Sneznik"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Hanusovicka_vrchovina", 
+      "id": "cz-surface-Hanusovicka_vrchovina", 
+      "term": "surface-Hanusovicka_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Zlatohorska_vrchovina", 
+      "id": "cz-surface-Zlatohorska_vrchovina", 
+      "term": "surface-Zlatohorska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Horovicka_pahorkatina", 
+      "id": "cz-surface-Horovicka_pahorkatina", 
+      "term": "surface-Horovicka_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Krivoklatska_vrchovina", 
+      "id": "cz-surface-Krivoklatska_vrchovina", 
+      "term": "surface-Krivoklatska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Prazska_plosina", 
+      "id": "cz-surface-Prazska_plosina", 
+      "term": "surface-Prazska_plosina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Dzban", 
+      "id": "cz-surface-Dzban", 
+      "term": "surface-Dzban"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Zulovska_pahorkatina", 
+      "id": "cz-surface-Zulovska_pahorkatina", 
+      "term": "surface-Zulovska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Vidnavska_nizina", 
+      "id": "cz-surface-Vidnavska_nizina", 
+      "term": "surface-Vidnavska_nizina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Jicinska_pahorkatina", 
+      "id": "cz-surface-Jicinska_pahorkatina", 
+      "term": "surface-Jicinska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Ralska_pahorkatina", 
+      "id": "cz-surface-Ralska_pahorkatina", 
+      "term": "surface-Ralska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Svihovska_vrchovina", 
+      "id": "cz-surface-Svihovska_vrchovina", 
+      "term": "surface-Svihovska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Plaska_pahorkatina", 
+      "id": "cz-surface-Plaska_pahorkatina", 
+      "term": "surface-Plaska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Rakovnicka_pahorkatina", 
+      "id": "cz-surface-Rakovnicka_pahorkatina", 
+      "term": "surface-Rakovnicka_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Stredolabska_tabule", 
+      "id": "cz-surface-Stredolabska_tabule", 
+      "term": "surface-Stredolabska_tabule"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Jizerska_tabule", 
+      "id": "cz-surface-Jizerska_tabule", 
+      "term": "surface-Jizerska_tabule"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Dolnooharska_tabule", 
+      "id": "cz-surface-Dolnooharska_tabule", 
+      "term": "surface-Dolnooharska_tabule"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Opavska_pahorkatina", 
+      "id": "cz-surface-Opavska_pahorkatina", 
+      "term": "surface-Opavska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Svitavska_pahorkatina", 
+      "id": "cz-surface-Svitavska_pahorkatina", 
+      "term": "surface-Svitavska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Orlicka_tabule", 
+      "id": "cz-surface-Orlicka_tabule", 
+      "term": "surface-Orlicka_tabule"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Vychodolabska_tabule", 
+      "id": "cz-surface-Vychodolabska_tabule", 
+      "term": "surface-Vychodolabska_tabule"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Dyjsko-svratecky_uval", 
+      "id": "cz-surface-Dyjsko-svratecky_uval", 
+      "term": "surface-Dyjsko-svratecky_uval"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Vyskovska_brana", 
+      "id": "cz-surface-Vyskovska_brana", 
+      "term": "surface-Vyskovska_brana"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Hornomoravsky_uval", 
+      "id": "cz-surface-Hornomoravsky_uval", 
+      "term": "surface-Hornomoravsky_uval"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Moravska_brana", 
+      "id": "cz-surface-Moravska_brana", 
+      "term": "surface-Moravska_brana"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Ostravska_panev", 
+      "id": "cz-surface-Ostravska_panev", 
+      "term": "surface-Ostravska_panev"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Zdanicky_les", 
+      "id": "cz-surface-Zdanicky_les", 
+      "term": "surface-Zdanicky_les"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Mikulovska_vrchovina", 
+      "id": "cz-surface-Mikulovska_vrchovina", 
+      "term": "surface-Mikulovska_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Litencicka_pahorkatina", 
+      "id": "cz-surface-Litencicka_pahorkatina", 
+      "term": "surface-Litencicka_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Kyjovska_pahorkatina", 
+      "id": "cz-surface-Kyjovska_pahorkatina", 
+      "term": "surface-Kyjovska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Vizovicka_vrchovina", 
+      "id": "cz-surface-Vizovicka_vrchovina", 
+      "term": "surface-Vizovicka_vrchovina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Podbeskydska_pahorkatina", 
+      "id": "cz-surface-Podbeskydska_pahorkatina", 
+      "term": "surface-Podbeskydska_pahorkatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Roznovska_brazda", 
+      "id": "cz-surface-Roznovska_brazda", 
+      "term": "surface-Roznovska_brazda"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Hostynsko-vsetinska_hornatina", 
+      "id": "cz-surface-Hostynsko-vsetinska_hornatina", 
+      "term": "surface-Hostynsko-vsetinska_hornatina"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Jablunkovska_brazda", 
+      "id": "cz-surface-Jablunkovska_brazda", 
+      "term": "surface-Jablunkovska_brazda"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Dolnomoravsky_uval", 
+      "id": "cz-surface-Dolnomoravsky_uval", 
+      "term": "surface-Dolnomoravsky_uval"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Jablunkovske_mezihori", 
+      "id": "cz-surface-Jablunkovske_mezihori", 
+      "term": "surface-Jablunkovske_mezihori"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Slezske_Beskydy", 
+      "id": "cz-surface-Slezske_Beskydy", 
+      "term": "surface-Slezske_Beskydy"
+    }, 
+    {
+      "context": "cz", 
+      "description": "surface-Boskovicka_brazda", 
+      "id": "cz-surface-Boskovicka_brazda", 
+      "term": "surface-Boskovicka_brazda"
     }
   ], 
   "terms": [
@@ -37995,6 +38553,1215 @@
       "name-ru": "Krkono\u0161sk\u00fd n\u00e1rodn\u00ed park", 
       "name-sk": "Krkono\u0161sk\u00fd n\u00e1rodn\u00ed park", 
       "type": "chko"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Sumava", 
+      "name-cs": "Sumava", 
+      "name-de": "Sumava", 
+      "name-en": "Sumava", 
+      "name-es": "Sumava", 
+      "name-ru": "Sumava", 
+      "name-sk": "Sumava", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Krusne_hory", 
+      "name-cs": "Krusn\u00e9 hory", 
+      "name-de": "Krusn\u00e9 hory", 
+      "name-en": "Krusn\u00e9 hory", 
+      "name-es": "Krusn\u00e9 hory", 
+      "name-ru": "Krusn\u00e9 hory", 
+      "name-sk": "Krusn\u00e9 hory", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Ceske_Stredohori", 
+      "name-cs": "Cesk\u00e9 Stredohor\u00ed", 
+      "name-de": "Cesk\u00e9 Stredohor\u00ed", 
+      "name-en": "Cesk\u00e9 Stredohor\u00ed", 
+      "name-es": "Cesk\u00e9 Stredohor\u00ed", 
+      "name-ru": "Cesk\u00e9 Stredohor\u00ed", 
+      "name-sk": "Cesk\u00e9 Stredohor\u00ed", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Krkonose", 
+      "name-cs": "Krkonose", 
+      "name-de": "Krkonose", 
+      "name-en": "Krkonose", 
+      "name-es": "Krkonose", 
+      "name-ru": "Krkonose", 
+      "name-sk": "Krkonose", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Jizerske_hory", 
+      "name-cs": "Jizersk\u00e9 hory", 
+      "name-de": "Jizersk\u00e9 hory", 
+      "name-en": "Jizersk\u00e9 hory", 
+      "name-es": "Jizersk\u00e9 hory", 
+      "name-ru": "Jizersk\u00e9 hory", 
+      "name-sk": "Jizersk\u00e9 hory", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Orlicke_hory", 
+      "name-cs": "Orlick\u00e9 hory", 
+      "name-de": "Orlick\u00e9 hory", 
+      "name-en": "Orlick\u00e9 hory", 
+      "name-es": "Orlick\u00e9 hory", 
+      "name-ru": "Orlick\u00e9 hory", 
+      "name-sk": "Orlick\u00e9 hory", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Hruby_Jesenik", 
+      "name-cs": "Hrub\u00fd Jesen\u00edk", 
+      "name-de": "Hrub\u00fd Jesen\u00edk", 
+      "name-en": "Hrub\u00fd Jesen\u00edk", 
+      "name-es": "Hrub\u00fd Jesen\u00edk", 
+      "name-ru": "Hrub\u00fd Jesen\u00edk", 
+      "name-sk": "Hrub\u00fd Jesen\u00edk", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Moravskoslezske_Beskydy", 
+      "name-cs": "Moravskoslezsk\u00e9 Beskydy", 
+      "name-de": "Moravskoslezsk\u00e9 Beskydy", 
+      "name-en": "Moravskoslezsk\u00e9 Beskydy", 
+      "name-es": "Moravskoslezsk\u00e9 Beskydy", 
+      "name-ru": "Moravskoslezsk\u00e9 Beskydy", 
+      "name-sk": "Moravskoslezsk\u00e9 Beskydy", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Bile_Karpaty", 
+      "name-cs": "B\u00edl\u00e9 Karpaty", 
+      "name-de": "B\u00edl\u00e9 Karpaty", 
+      "name-en": "B\u00edl\u00e9 Karpaty", 
+      "name-es": "B\u00edl\u00e9 Karpaty", 
+      "name-ru": "B\u00edl\u00e9 Karpaty", 
+      "name-sk": "B\u00edl\u00e9 Karpaty", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Cesky_les", 
+      "name-cs": "Cesk\u00fd les", 
+      "name-de": "Cesk\u00fd les", 
+      "name-en": "Cesk\u00fd les", 
+      "name-es": "Cesk\u00fd les", 
+      "name-ru": "Cesk\u00fd les", 
+      "name-sk": "Cesk\u00fd les", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Rychlebske_hory", 
+      "name-cs": "Rychlebsk\u00e9 hory", 
+      "name-de": "Rychlebsk\u00e9 hory", 
+      "name-en": "Rychlebsk\u00e9 hory", 
+      "name-es": "Rychlebsk\u00e9 hory", 
+      "name-ru": "Rychlebsk\u00e9 hory", 
+      "name-sk": "Rychlebsk\u00e9 hory", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Nizky_Jesenik", 
+      "name-cs": "N\u00edzk\u00fd Jesen\u00edk", 
+      "name-de": "N\u00edzk\u00fd Jesen\u00edk", 
+      "name-en": "N\u00edzk\u00fd Jesen\u00edk", 
+      "name-es": "N\u00edzk\u00fd Jesen\u00edk", 
+      "name-ru": "N\u00edzk\u00fd Jesen\u00edk", 
+      "name-sk": "N\u00edzk\u00fd Jesen\u00edk", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Novohradske_hory", 
+      "name-cs": "Novohradsk\u00e9 hory", 
+      "name-de": "Novohradsk\u00e9 hory", 
+      "name-en": "Novohradsk\u00e9 hory", 
+      "name-es": "Novohradsk\u00e9 hory", 
+      "name-ru": "Novohradsk\u00e9 hory", 
+      "name-sk": "Novohradsk\u00e9 hory", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Chriby", 
+      "name-cs": "Chriby", 
+      "name-de": "Chriby", 
+      "name-en": "Chriby", 
+      "name-es": "Chriby", 
+      "name-ru": "Chriby", 
+      "name-sk": "Chriby", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Doupovske_hory", 
+      "name-cs": "Doupovsk\u00e9 hory", 
+      "name-de": "Doupovsk\u00e9 hory", 
+      "name-en": "Doupovsk\u00e9 hory", 
+      "name-es": "Doupovsk\u00e9 hory", 
+      "name-ru": "Doupovsk\u00e9 hory", 
+      "name-sk": "Doupovsk\u00e9 hory", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Brdska_vrchovina", 
+      "name-cs": "Brdsk\u00e1 vrchovina", 
+      "name-de": "Brdsk\u00e1 vrchovina", 
+      "name-en": "Brdsk\u00e1 vrchovina", 
+      "name-es": "Brdsk\u00e1 vrchovina", 
+      "name-ru": "Brdsk\u00e1 vrchovina", 
+      "name-sk": "Brdsk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Jestedsko-kozakovsky_hrbet", 
+      "name-cs": "Jestedsko-koz\u00e1kovsk\u00fd hrbet", 
+      "name-de": "Jestedsko-koz\u00e1kovsk\u00fd hrbet", 
+      "name-en": "Jestedsko-koz\u00e1kovsk\u00fd hrbet", 
+      "name-es": "Jestedsko-koz\u00e1kovsk\u00fd hrbet", 
+      "name-ru": "Jestedsko-koz\u00e1kovsk\u00fd hrbet", 
+      "name-sk": "Jestedsko-koz\u00e1kovsk\u00fd hrbet", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Luzicke_hory", 
+      "name-cs": "Luzick\u00e9 hory", 
+      "name-de": "Luzick\u00e9 hory", 
+      "name-en": "Luzick\u00e9 hory", 
+      "name-es": "Luzick\u00e9 hory", 
+      "name-ru": "Luzick\u00e9 hory", 
+      "name-sk": "Luzick\u00e9 hory", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Javorniky", 
+      "name-cs": "Javorn\u00edky", 
+      "name-de": "Javorn\u00edky", 
+      "name-en": "Javorn\u00edky", 
+      "name-es": "Javorn\u00edky", 
+      "name-ru": "Javorn\u00edky", 
+      "name-sk": "Javorn\u00edky", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Taborska_pahorkatina", 
+      "name-cs": "T\u00e1borsk\u00e1 pahorkatina", 
+      "name-de": "T\u00e1borsk\u00e1 pahorkatina", 
+      "name-en": "T\u00e1borsk\u00e1 pahorkatina", 
+      "name-es": "T\u00e1borsk\u00e1 pahorkatina", 
+      "name-ru": "T\u00e1borsk\u00e1 pahorkatina", 
+      "name-sk": "T\u00e1borsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Vserubska_vrchovina", 
+      "name-cs": "V\u0161erubsk\u00e1 vrchovina", 
+      "name-de": "V\u0161erubsk\u00e1 vrchovina", 
+      "name-en": "V\u0161erubsk\u00e1 vrchovina", 
+      "name-es": "V\u0161erubsk\u00e1 vrchovina", 
+      "name-ru": "V\u0161erubsk\u00e1 vrchovina", 
+      "name-sk": "V\u0161erubsk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Podceskoleska_pahorkatina", 
+      "name-cs": "Pod\u010deskolesk\u00e1 pahorkatina", 
+      "name-de": "Pod\u010deskolesk\u00e1 pahorkatina", 
+      "name-en": "Pod\u010deskolesk\u00e1 pahorkatina", 
+      "name-es": "Pod\u010deskolesk\u00e1 pahorkatina", 
+      "name-ru": "Pod\u010deskolesk\u00e1 pahorkatina", 
+      "name-sk": "Pod\u010deskolesk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Novohradske_podhuri", 
+      "name-cs": "Novohradsk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-de": "Novohradsk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-en": "Novohradsk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-es": "Novohradsk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-ru": "Novohradsk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-sk": "Novohradsk\u00e9 podh\u016f\u0159\u00ed", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Sumavske_podhuri", 
+      "name-cs": "\u0160umavsk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-de": "\u0160umavsk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-en": "\u0160umavsk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-es": "\u0160umavsk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-ru": "\u0160umavsk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-sk": "\u0160umavsk\u00e9 podh\u016f\u0159\u00ed", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Blatenska_pahorkatina", 
+      "name-cs": "Blatensk\u00e1 pahorkatina", 
+      "name-de": "Blatensk\u00e1 pahorkatina", 
+      "name-en": "Blatensk\u00e1 pahorkatina", 
+      "name-es": "Blatensk\u00e1 pahorkatina", 
+      "name-ru": "Blatensk\u00e1 pahorkatina", 
+      "name-sk": "Blatensk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Vlasimska_pahorkatina", 
+      "name-cs": "Vla\u0161imsk\u00e1 pahorkatina", 
+      "name-de": "Vla\u0161imsk\u00e1 pahorkatina", 
+      "name-en": "Vla\u0161imsk\u00e1 pahorkatina", 
+      "name-es": "Vla\u0161imsk\u00e1 pahorkatina", 
+      "name-ru": "Vla\u0161imsk\u00e1 pahorkatina", 
+      "name-sk": "Vla\u0161imsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Benesovska_pahorkatina", 
+      "name-cs": "Bene\u0161ovsk\u00e1 pahorkatina", 
+      "name-de": "Bene\u0161ovsk\u00e1 pahorkatina", 
+      "name-en": "Bene\u0161ovsk\u00e1 pahorkatina", 
+      "name-es": "Bene\u0161ovsk\u00e1 pahorkatina", 
+      "name-ru": "Bene\u0161ovsk\u00e1 pahorkatina", 
+      "name-sk": "Bene\u0161ovsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Ceskobudejovicka_panev", 
+      "name-cs": "\u010ceskobud\u011bjovick\u00e1 p\u00e1nev", 
+      "name-de": "\u010ceskobud\u011bjovick\u00e1 p\u00e1nev", 
+      "name-en": "\u010ceskobud\u011bjovick\u00e1 p\u00e1nev", 
+      "name-es": "\u010ceskobud\u011bjovick\u00e1 p\u00e1nev", 
+      "name-ru": "\u010ceskobud\u011bjovick\u00e1 p\u00e1nev", 
+      "name-sk": "\u010ceskobud\u011bjovick\u00e1 p\u00e1nev", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Jevisovicka_pahorkatina", 
+      "name-cs": "Jevi\u0161ovick\u00e1 pahorkatina", 
+      "name-de": "Jevi\u0161ovick\u00e1 pahorkatina", 
+      "name-en": "Jevi\u0161ovick\u00e1 pahorkatina", 
+      "name-es": "Jevi\u0161ovick\u00e1 pahorkatina", 
+      "name-ru": "Jevi\u0161ovick\u00e1 pahorkatina", 
+      "name-sk": "Jevi\u0161ovick\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Javoricka_vrchovina", 
+      "name-cs": "Javo\u0159ick\u00e1 vrchovina", 
+      "name-de": "Javo\u0159ick\u00e1 vrchovina", 
+      "name-en": "Javo\u0159ick\u00e1 vrchovina", 
+      "name-es": "Javo\u0159ick\u00e1 vrchovina", 
+      "name-ru": "Javo\u0159ick\u00e1 vrchovina", 
+      "name-sk": "Javo\u0159ick\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Krizanovska_vrchovina", 
+      "name-cs": "K\u0159i\u017eanovsk\u00e1 vrchovina", 
+      "name-de": "K\u0159i\u017eanovsk\u00e1 vrchovina", 
+      "name-en": "K\u0159i\u017eanovsk\u00e1 vrchovina", 
+      "name-es": "K\u0159i\u017eanovsk\u00e1 vrchovina", 
+      "name-ru": "K\u0159i\u017eanovsk\u00e1 vrchovina", 
+      "name-sk": "K\u0159i\u017eanovsk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Hornosvratecka_vrchovina", 
+      "name-cs": "Hornosvrateck\u00e1 vrchovina", 
+      "name-de": "Hornosvrateck\u00e1 vrchovina", 
+      "name-en": "Hornosvrateck\u00e1 vrchovina", 
+      "name-es": "Hornosvrateck\u00e1 vrchovina", 
+      "name-ru": "Hornosvrateck\u00e1 vrchovina", 
+      "name-sk": "Hornosvrateck\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Zelezne_hory", 
+      "name-cs": "\u017delezn\u00e9 hory", 
+      "name-de": "\u017delezn\u00e9 hory", 
+      "name-en": "\u017delezn\u00e9 hory", 
+      "name-es": "\u017delezn\u00e9 hory", 
+      "name-ru": "\u017delezn\u00e9 hory", 
+      "name-sk": "\u017delezn\u00e9 hory", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Hornosazavska_pahorkatina", 
+      "name-cs": "Hornos\u00e1zavsk\u00e1 pahorkatina", 
+      "name-de": "Hornos\u00e1zavsk\u00e1 pahorkatina", 
+      "name-en": "Hornos\u00e1zavsk\u00e1 pahorkatina", 
+      "name-es": "Hornos\u00e1zavsk\u00e1 pahorkatina", 
+      "name-ru": "Hornos\u00e1zavsk\u00e1 pahorkatina", 
+      "name-sk": "Hornos\u00e1zavsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Kremesnicka_vrchovina", 
+      "name-cs": "K\u0159eme\u0161nick\u00e1 vrchovina", 
+      "name-de": "K\u0159eme\u0161nick\u00e1 vrchovina", 
+      "name-en": "K\u0159eme\u0161nick\u00e1 vrchovina", 
+      "name-es": "K\u0159eme\u0161nick\u00e1 vrchovina", 
+      "name-ru": "K\u0159eme\u0161nick\u00e1 vrchovina", 
+      "name-sk": "K\u0159eme\u0161nick\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Trebonska_panev", 
+      "name-cs": "T\u0159ebo\u0148sk\u00e1 p\u00e1nev", 
+      "name-de": "T\u0159ebo\u0148sk\u00e1 p\u00e1nev", 
+      "name-en": "T\u0159ebo\u0148sk\u00e1 p\u00e1nev", 
+      "name-es": "T\u0159ebo\u0148sk\u00e1 p\u00e1nev", 
+      "name-ru": "T\u0159ebo\u0148sk\u00e1 p\u00e1nev", 
+      "name-sk": "T\u0159ebo\u0148sk\u00e1 p\u00e1nev", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Drahanska_vrchovina", 
+      "name-cs": "Drahansk\u00e1 vrchovina", 
+      "name-de": "Drahansk\u00e1 vrchovina", 
+      "name-en": "Drahansk\u00e1 vrchovina", 
+      "name-es": "Drahansk\u00e1 vrchovina", 
+      "name-ru": "Drahansk\u00e1 vrchovina", 
+      "name-sk": "Drahansk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Bobravska_vrchovina", 
+      "name-cs": "Bobravsk\u00e1 vrchovina", 
+      "name-de": "Bobravsk\u00e1 vrchovina", 
+      "name-en": "Bobravsk\u00e1 vrchovina", 
+      "name-es": "Bobravsk\u00e1 vrchovina", 
+      "name-ru": "Bobravsk\u00e1 vrchovina", 
+      "name-sk": "Bobravsk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Chebska_panev", 
+      "name-cs": "Chebsk\u00e1 p\u00e1nev", 
+      "name-de": "Chebsk\u00e1 p\u00e1nev", 
+      "name-en": "Chebsk\u00e1 p\u00e1nev", 
+      "name-es": "Chebsk\u00e1 p\u00e1nev", 
+      "name-ru": "Chebsk\u00e1 p\u00e1nev", 
+      "name-sk": "Chebsk\u00e1 p\u00e1nev", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Decinska_vrchovina", 
+      "name-cs": "D\u011b\u010d\u00ednsk\u00e1 vrchovina", 
+      "name-de": "D\u011b\u010d\u00ednsk\u00e1 vrchovina", 
+      "name-en": "D\u011b\u010d\u00ednsk\u00e1 vrchovina", 
+      "name-es": "D\u011b\u010d\u00ednsk\u00e1 vrchovina", 
+      "name-ru": "D\u011b\u010d\u00ednsk\u00e1 vrchovina", 
+      "name-sk": "D\u011b\u010d\u00ednsk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Smrciny", 
+      "name-cs": "Smr\u010diny", 
+      "name-de": "Smr\u010diny", 
+      "name-en": "Smr\u010diny", 
+      "name-es": "Smr\u010diny", 
+      "name-ru": "Smr\u010diny", 
+      "name-sk": "Smr\u010diny", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Mostecka_panev", 
+      "name-cs": "Mosteck\u00e1 p\u00e1nev", 
+      "name-de": "Mosteck\u00e1 p\u00e1nev", 
+      "name-en": "Mosteck\u00e1 p\u00e1nev", 
+      "name-es": "Mosteck\u00e1 p\u00e1nev", 
+      "name-ru": "Mosteck\u00e1 p\u00e1nev", 
+      "name-sk": "Mosteck\u00e1 p\u00e1nev", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Sokolovska_panev", 
+      "name-cs": "Sokolovsk\u00e1 p\u00e1nev", 
+      "name-de": "Sokolovsk\u00e1 p\u00e1nev", 
+      "name-en": "Sokolovsk\u00e1 p\u00e1nev", 
+      "name-es": "Sokolovsk\u00e1 p\u00e1nev", 
+      "name-ru": "Sokolovsk\u00e1 p\u00e1nev", 
+      "name-sk": "Sokolovsk\u00e1 p\u00e1nev", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Frydlantska_pahorkatina", 
+      "name-cs": "Fr\u00fddlantsk\u00e1 pahorkatina", 
+      "name-de": "Fr\u00fddlantsk\u00e1 pahorkatina", 
+      "name-en": "Fr\u00fddlantsk\u00e1 pahorkatina", 
+      "name-es": "Fr\u00fddlantsk\u00e1 pahorkatina", 
+      "name-ru": "Fr\u00fddlantsk\u00e1 pahorkatina", 
+      "name-sk": "Fr\u00fddlantsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Zitavska_panev", 
+      "name-cs": "\u017ditavsk\u00e1 p\u00e1nev", 
+      "name-de": "\u017ditavsk\u00e1 p\u00e1nev", 
+      "name-en": "\u017ditavsk\u00e1 p\u00e1nev", 
+      "name-es": "\u017ditavsk\u00e1 p\u00e1nev", 
+      "name-ru": "\u017ditavsk\u00e1 p\u00e1nev", 
+      "name-sk": "\u017ditavsk\u00e1 p\u00e1nev", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Sluknovska_pahorkatina", 
+      "name-cs": "\u0160luknovsk\u00e1 pahorkatina", 
+      "name-de": "\u0160luknovsk\u00e1 pahorkatina", 
+      "name-en": "\u0160luknovsk\u00e1 pahorkatina", 
+      "name-es": "\u0160luknovsk\u00e1 pahorkatina", 
+      "name-ru": "\u0160luknovsk\u00e1 pahorkatina", 
+      "name-sk": "\u0160luknovsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Tepelska_vrchovina", 
+      "name-cs": "Tepelsk\u00e1 vrchovina", 
+      "name-de": "Tepelsk\u00e1 vrchovina", 
+      "name-en": "Tepelsk\u00e1 vrchovina", 
+      "name-es": "Tepelsk\u00e1 vrchovina", 
+      "name-ru": "Tepelsk\u00e1 vrchovina", 
+      "name-sk": "Tepelsk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Slavkovsky_les", 
+      "name-cs": "Slavkovsk\u00fd les", 
+      "name-de": "Slavkovsk\u00fd les", 
+      "name-en": "Slavkovsk\u00fd les", 
+      "name-es": "Slavkovsk\u00fd les", 
+      "name-ru": "Slavkovsk\u00fd les", 
+      "name-sk": "Slavkovsk\u00fd les", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Krkonosske_podhuri", 
+      "name-cs": "Krkono\u0161sk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-de": "Krkono\u0161sk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-en": "Krkono\u0161sk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-es": "Krkono\u0161sk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-ru": "Krkono\u0161sk\u00e9 podh\u016f\u0159\u00ed", 
+      "name-sk": "Krkono\u0161sk\u00e9 podh\u016f\u0159\u00ed", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Broumovska_vrchovina", 
+      "name-cs": "Broumovsk\u00e1 vrchovina", 
+      "name-de": "Broumovsk\u00e1 vrchovina", 
+      "name-en": "Broumovsk\u00e1 vrchovina", 
+      "name-es": "Broumovsk\u00e1 vrchovina", 
+      "name-ru": "Broumovsk\u00e1 vrchovina", 
+      "name-sk": "Broumovsk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Podorlicka_pahorkatina", 
+      "name-cs": "Podorlick\u00e1 pahorkatina", 
+      "name-de": "Podorlick\u00e1 pahorkatina", 
+      "name-en": "Podorlick\u00e1 pahorkatina", 
+      "name-es": "Podorlick\u00e1 pahorkatina", 
+      "name-ru": "Podorlick\u00e1 pahorkatina", 
+      "name-sk": "Podorlick\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Kladska_kotlina", 
+      "name-cs": "Kladsk\u00e1 kotlina", 
+      "name-de": "Kladsk\u00e1 kotlina", 
+      "name-en": "Kladsk\u00e1 kotlina", 
+      "name-es": "Kladsk\u00e1 kotlina", 
+      "name-ru": "Kladsk\u00e1 kotlina", 
+      "name-sk": "Kladsk\u00e1 kotlina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Zabrezska_vrchovina", 
+      "name-cs": "Z\u00e1b\u0159e\u017esk\u00e1 vrchovina", 
+      "name-de": "Z\u00e1b\u0159e\u017esk\u00e1 vrchovina", 
+      "name-en": "Z\u00e1b\u0159e\u017esk\u00e1 vrchovina", 
+      "name-es": "Z\u00e1b\u0159e\u017esk\u00e1 vrchovina", 
+      "name-ru": "Z\u00e1b\u0159e\u017esk\u00e1 vrchovina", 
+      "name-sk": "Z\u00e1b\u0159e\u017esk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Mohelnicka_brazda", 
+      "name-cs": "Mohelnick\u00e1 br\u00e1zda", 
+      "name-de": "Mohelnick\u00e1 br\u00e1zda", 
+      "name-en": "Mohelnick\u00e1 br\u00e1zda", 
+      "name-es": "Mohelnick\u00e1 br\u00e1zda", 
+      "name-ru": "Mohelnick\u00e1 br\u00e1zda", 
+      "name-sk": "Mohelnick\u00e1 br\u00e1zda", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Kralicky_Sneznik", 
+      "name-cs": "Kr\u00e1lick\u00fd Sn\u011b\u017en\u00edk", 
+      "name-de": "Kr\u00e1lick\u00fd Sn\u011b\u017en\u00edk", 
+      "name-en": "Kr\u00e1lick\u00fd Sn\u011b\u017en\u00edk", 
+      "name-es": "Kr\u00e1lick\u00fd Sn\u011b\u017en\u00edk", 
+      "name-ru": "Kr\u00e1lick\u00fd Sn\u011b\u017en\u00edk", 
+      "name-sk": "Kr\u00e1lick\u00fd Sn\u011b\u017en\u00edk", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Hanusovicka_vrchovina", 
+      "name-cs": "Hanu\u0161ovick\u00e1 vrchovina", 
+      "name-de": "Hanu\u0161ovick\u00e1 vrchovina", 
+      "name-en": "Hanu\u0161ovick\u00e1 vrchovina", 
+      "name-es": "Hanu\u0161ovick\u00e1 vrchovina", 
+      "name-ru": "Hanu\u0161ovick\u00e1 vrchovina", 
+      "name-sk": "Hanu\u0161ovick\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Zlatohorska_vrchovina", 
+      "name-cs": "Zlatohorsk\u00e1 vrchovina", 
+      "name-de": "Zlatohorsk\u00e1 vrchovina", 
+      "name-en": "Zlatohorsk\u00e1 vrchovina", 
+      "name-es": "Zlatohorsk\u00e1 vrchovina", 
+      "name-ru": "Zlatohorsk\u00e1 vrchovina", 
+      "name-sk": "Zlatohorsk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Horovicka_pahorkatina", 
+      "name-cs": "Ho\u0159ovick\u00e1 pahorkatina", 
+      "name-de": "Ho\u0159ovick\u00e1 pahorkatina", 
+      "name-en": "Ho\u0159ovick\u00e1 pahorkatina", 
+      "name-es": "Ho\u0159ovick\u00e1 pahorkatina", 
+      "name-ru": "Ho\u0159ovick\u00e1 pahorkatina", 
+      "name-sk": "Ho\u0159ovick\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Krivoklatska_vrchovina", 
+      "name-cs": "K\u0159ivokl\u00e1tsk\u00e1 vrchovina", 
+      "name-de": "K\u0159ivokl\u00e1tsk\u00e1 vrchovina", 
+      "name-en": "K\u0159ivokl\u00e1tsk\u00e1 vrchovina", 
+      "name-es": "K\u0159ivokl\u00e1tsk\u00e1 vrchovina", 
+      "name-ru": "K\u0159ivokl\u00e1tsk\u00e1 vrchovina", 
+      "name-sk": "K\u0159ivokl\u00e1tsk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Prazska_plosina", 
+      "name-cs": "Pra\u017esk\u00e1 plo\u0161ina", 
+      "name-de": "Pra\u017esk\u00e1 plo\u0161ina", 
+      "name-en": "Pra\u017esk\u00e1 plo\u0161ina", 
+      "name-es": "Pra\u017esk\u00e1 plo\u0161ina", 
+      "name-ru": "Pra\u017esk\u00e1 plo\u0161ina", 
+      "name-sk": "Pra\u017esk\u00e1 plo\u0161ina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Dzban", 
+      "name-cs": "D\u017eb\u00e1n", 
+      "name-de": "D\u017eb\u00e1n", 
+      "name-en": "D\u017eb\u00e1n", 
+      "name-es": "D\u017eb\u00e1n", 
+      "name-ru": "D\u017eb\u00e1n", 
+      "name-sk": "D\u017eb\u00e1n", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Zulovska_pahorkatina", 
+      "name-cs": "\u017dulovsk\u00e1 pahorkatina", 
+      "name-de": "\u017dulovsk\u00e1 pahorkatina", 
+      "name-en": "\u017dulovsk\u00e1 pahorkatina", 
+      "name-es": "\u017dulovsk\u00e1 pahorkatina", 
+      "name-ru": "\u017dulovsk\u00e1 pahorkatina", 
+      "name-sk": "\u017dulovsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Vidnavska_nizina", 
+      "name-cs": "Vidnavsk\u00e1 n\u00ed\u017eina", 
+      "name-de": "Vidnavsk\u00e1 n\u00ed\u017eina", 
+      "name-en": "Vidnavsk\u00e1 n\u00ed\u017eina", 
+      "name-es": "Vidnavsk\u00e1 n\u00ed\u017eina", 
+      "name-ru": "Vidnavsk\u00e1 n\u00ed\u017eina", 
+      "name-sk": "Vidnavsk\u00e1 n\u00ed\u017eina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Jicinska_pahorkatina", 
+      "name-cs": "Ji\u010d\u00ednsk\u00e1 pahorkatina", 
+      "name-de": "Ji\u010d\u00ednsk\u00e1 pahorkatina", 
+      "name-en": "Ji\u010d\u00ednsk\u00e1 pahorkatina", 
+      "name-es": "Ji\u010d\u00ednsk\u00e1 pahorkatina", 
+      "name-ru": "Ji\u010d\u00ednsk\u00e1 pahorkatina", 
+      "name-sk": "Ji\u010d\u00ednsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Ralska_pahorkatina", 
+      "name-cs": "Ralsk\u00e1 pahorkatina", 
+      "name-de": "Ralsk\u00e1 pahorkatina", 
+      "name-en": "Ralsk\u00e1 pahorkatina", 
+      "name-es": "Ralsk\u00e1 pahorkatina", 
+      "name-ru": "Ralsk\u00e1 pahorkatina", 
+      "name-sk": "Ralsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Svihovska_vrchovina", 
+      "name-cs": "\u0160vihovsk\u00e1 vrchovina", 
+      "name-de": "\u0160vihovsk\u00e1 vrchovina", 
+      "name-en": "\u0160vihovsk\u00e1 vrchovina", 
+      "name-es": "\u0160vihovsk\u00e1 vrchovina", 
+      "name-ru": "\u0160vihovsk\u00e1 vrchovina", 
+      "name-sk": "\u0160vihovsk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Plaska_pahorkatina", 
+      "name-cs": "Plask\u00e1 pahorkatina", 
+      "name-de": "Plask\u00e1 pahorkatina", 
+      "name-en": "Plask\u00e1 pahorkatina", 
+      "name-es": "Plask\u00e1 pahorkatina", 
+      "name-ru": "Plask\u00e1 pahorkatina", 
+      "name-sk": "Plask\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Rakovnicka_pahorkatina", 
+      "name-cs": "Rakovnick\u00e1 pahorkatina", 
+      "name-de": "Rakovnick\u00e1 pahorkatina", 
+      "name-en": "Rakovnick\u00e1 pahorkatina", 
+      "name-es": "Rakovnick\u00e1 pahorkatina", 
+      "name-ru": "Rakovnick\u00e1 pahorkatina", 
+      "name-sk": "Rakovnick\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Stredolabska_tabule", 
+      "name-cs": "St\u0159edolabsk\u00e1 tabule", 
+      "name-de": "St\u0159edolabsk\u00e1 tabule", 
+      "name-en": "St\u0159edolabsk\u00e1 tabule", 
+      "name-es": "St\u0159edolabsk\u00e1 tabule", 
+      "name-ru": "St\u0159edolabsk\u00e1 tabule", 
+      "name-sk": "St\u0159edolabsk\u00e1 tabule", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Jizerska_tabule", 
+      "name-cs": "Jizersk\u00e1 tabule", 
+      "name-de": "Jizersk\u00e1 tabule", 
+      "name-en": "Jizersk\u00e1 tabule", 
+      "name-es": "Jizersk\u00e1 tabule", 
+      "name-ru": "Jizersk\u00e1 tabule", 
+      "name-sk": "Jizersk\u00e1 tabule", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Dolnooharska_tabule", 
+      "name-cs": "Dolnooharsk\u00e1 tabule", 
+      "name-de": "Dolnooharsk\u00e1 tabule", 
+      "name-en": "Dolnooharsk\u00e1 tabule", 
+      "name-es": "Dolnooharsk\u00e1 tabule", 
+      "name-ru": "Dolnooharsk\u00e1 tabule", 
+      "name-sk": "Dolnooharsk\u00e1 tabule", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Opavska_pahorkatina", 
+      "name-cs": "Opavsk\u00e1 pahorkatina", 
+      "name-de": "Opavsk\u00e1 pahorkatina", 
+      "name-en": "Opavsk\u00e1 pahorkatina", 
+      "name-es": "Opavsk\u00e1 pahorkatina", 
+      "name-ru": "Opavsk\u00e1 pahorkatina", 
+      "name-sk": "Opavsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Svitavska_pahorkatina", 
+      "name-cs": "Svitavsk\u00e1 pahorkatina", 
+      "name-de": "Svitavsk\u00e1 pahorkatina", 
+      "name-en": "Svitavsk\u00e1 pahorkatina", 
+      "name-es": "Svitavsk\u00e1 pahorkatina", 
+      "name-ru": "Svitavsk\u00e1 pahorkatina", 
+      "name-sk": "Svitavsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Orlicka_tabule", 
+      "name-cs": "Orlick\u00e1 tabule", 
+      "name-de": "Orlick\u00e1 tabule", 
+      "name-en": "Orlick\u00e1 tabule", 
+      "name-es": "Orlick\u00e1 tabule", 
+      "name-ru": "Orlick\u00e1 tabule", 
+      "name-sk": "Orlick\u00e1 tabule", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Vychodolabska_tabule", 
+      "name-cs": "V\u00fdchodolabsk\u00e1 tabule", 
+      "name-de": "V\u00fdchodolabsk\u00e1 tabule", 
+      "name-en": "V\u00fdchodolabsk\u00e1 tabule", 
+      "name-es": "V\u00fdchodolabsk\u00e1 tabule", 
+      "name-ru": "V\u00fdchodolabsk\u00e1 tabule", 
+      "name-sk": "V\u00fdchodolabsk\u00e1 tabule", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Dyjsko-svratecky_uval", 
+      "name-cs": "Dyjsko-svrateck\u00fd \u00faval", 
+      "name-de": "Dyjsko-svrateck\u00fd \u00faval", 
+      "name-en": "Dyjsko-svrateck\u00fd \u00faval", 
+      "name-es": "Dyjsko-svrateck\u00fd \u00faval", 
+      "name-ru": "Dyjsko-svrateck\u00fd \u00faval", 
+      "name-sk": "Dyjsko-svrateck\u00fd \u00faval", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Vyskovska_brana", 
+      "name-cs": "Vy\u0161kovsk\u00e1 br\u00e1na", 
+      "name-de": "Vy\u0161kovsk\u00e1 br\u00e1na", 
+      "name-en": "Vy\u0161kovsk\u00e1 br\u00e1na", 
+      "name-es": "Vy\u0161kovsk\u00e1 br\u00e1na", 
+      "name-ru": "Vy\u0161kovsk\u00e1 br\u00e1na", 
+      "name-sk": "Vy\u0161kovsk\u00e1 br\u00e1na", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Hornomoravsky_uval", 
+      "name-cs": "Hornomoravsk\u00fd \u00faval", 
+      "name-de": "Hornomoravsk\u00fd \u00faval", 
+      "name-en": "Hornomoravsk\u00fd \u00faval", 
+      "name-es": "Hornomoravsk\u00fd \u00faval", 
+      "name-ru": "Hornomoravsk\u00fd \u00faval", 
+      "name-sk": "Hornomoravsk\u00fd \u00faval", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Moravska_brana", 
+      "name-cs": "Moravsk\u00e1 br\u00e1na", 
+      "name-de": "Moravsk\u00e1 br\u00e1na", 
+      "name-en": "Moravsk\u00e1 br\u00e1na", 
+      "name-es": "Moravsk\u00e1 br\u00e1na", 
+      "name-ru": "Moravsk\u00e1 br\u00e1na", 
+      "name-sk": "Moravsk\u00e1 br\u00e1na", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Ostravska_panev", 
+      "name-cs": "Ostravsk\u00e1 p\u00e1nev", 
+      "name-de": "Ostravsk\u00e1 p\u00e1nev", 
+      "name-en": "Ostravsk\u00e1 p\u00e1nev", 
+      "name-es": "Ostravsk\u00e1 p\u00e1nev", 
+      "name-ru": "Ostravsk\u00e1 p\u00e1nev", 
+      "name-sk": "Ostravsk\u00e1 p\u00e1nev", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Zdanicky_les", 
+      "name-cs": "\u017dd\u00e1nick\u00fd les", 
+      "name-de": "\u017dd\u00e1nick\u00fd les", 
+      "name-en": "\u017dd\u00e1nick\u00fd les", 
+      "name-es": "\u017dd\u00e1nick\u00fd les", 
+      "name-ru": "\u017dd\u00e1nick\u00fd les", 
+      "name-sk": "\u017dd\u00e1nick\u00fd les", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Mikulovska_vrchovina", 
+      "name-cs": "Mikulovsk\u00e1 vrchovina", 
+      "name-de": "Mikulovsk\u00e1 vrchovina", 
+      "name-en": "Mikulovsk\u00e1 vrchovina", 
+      "name-es": "Mikulovsk\u00e1 vrchovina", 
+      "name-ru": "Mikulovsk\u00e1 vrchovina", 
+      "name-sk": "Mikulovsk\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Litencicka_pahorkatina", 
+      "name-cs": "Liten\u010dick\u00e1 pahorkatina", 
+      "name-de": "Liten\u010dick\u00e1 pahorkatina", 
+      "name-en": "Liten\u010dick\u00e1 pahorkatina", 
+      "name-es": "Liten\u010dick\u00e1 pahorkatina", 
+      "name-ru": "Liten\u010dick\u00e1 pahorkatina", 
+      "name-sk": "Liten\u010dick\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Kyjovska_pahorkatina", 
+      "name-cs": "Kyjovsk\u00e1 pahorkatina", 
+      "name-de": "Kyjovsk\u00e1 pahorkatina", 
+      "name-en": "Kyjovsk\u00e1 pahorkatina", 
+      "name-es": "Kyjovsk\u00e1 pahorkatina", 
+      "name-ru": "Kyjovsk\u00e1 pahorkatina", 
+      "name-sk": "Kyjovsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Vizovicka_vrchovina", 
+      "name-cs": "Vizovick\u00e1 vrchovina", 
+      "name-de": "Vizovick\u00e1 vrchovina", 
+      "name-en": "Vizovick\u00e1 vrchovina", 
+      "name-es": "Vizovick\u00e1 vrchovina", 
+      "name-ru": "Vizovick\u00e1 vrchovina", 
+      "name-sk": "Vizovick\u00e1 vrchovina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Podbeskydska_pahorkatina", 
+      "name-cs": "Podbeskydsk\u00e1 pahorkatina", 
+      "name-de": "Podbeskydsk\u00e1 pahorkatina", 
+      "name-en": "Podbeskydsk\u00e1 pahorkatina", 
+      "name-es": "Podbeskydsk\u00e1 pahorkatina", 
+      "name-ru": "Podbeskydsk\u00e1 pahorkatina", 
+      "name-sk": "Podbeskydsk\u00e1 pahorkatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Roznovska_brazda", 
+      "name-cs": "Ro\u017enovsk\u00e1 br\u00e1zda", 
+      "name-de": "Ro\u017enovsk\u00e1 br\u00e1zda", 
+      "name-en": "Ro\u017enovsk\u00e1 br\u00e1zda", 
+      "name-es": "Ro\u017enovsk\u00e1 br\u00e1zda", 
+      "name-ru": "Ro\u017enovsk\u00e1 br\u00e1zda", 
+      "name-sk": "Ro\u017enovsk\u00e1 br\u00e1zda", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Hostynsko-vsetinska_hornatina", 
+      "name-cs": "Host\u00fdnsko-vset\u00ednsk\u00e1 hornatina", 
+      "name-de": "Host\u00fdnsko-vset\u00ednsk\u00e1 hornatina", 
+      "name-en": "Host\u00fdnsko-vset\u00ednsk\u00e1 hornatina", 
+      "name-es": "Host\u00fdnsko-vset\u00ednsk\u00e1 hornatina", 
+      "name-ru": "Host\u00fdnsko-vset\u00ednsk\u00e1 hornatina", 
+      "name-sk": "Host\u00fdnsko-vset\u00ednsk\u00e1 hornatina", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Jablunkovska_brazda", 
+      "name-cs": "Jablunkovsk\u00e1 br\u00e1zda", 
+      "name-de": "Jablunkovsk\u00e1 br\u00e1zda", 
+      "name-en": "Jablunkovsk\u00e1 br\u00e1zda", 
+      "name-es": "Jablunkovsk\u00e1 br\u00e1zda", 
+      "name-ru": "Jablunkovsk\u00e1 br\u00e1zda", 
+      "name-sk": "Jablunkovsk\u00e1 br\u00e1zda", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Dolnomoravsky_uval", 
+      "name-cs": "Dolnomoravsk\u00fd \u00faval", 
+      "name-de": "Dolnomoravsk\u00fd \u00faval", 
+      "name-en": "Dolnomoravsk\u00fd \u00faval", 
+      "name-es": "Dolnomoravsk\u00fd \u00faval", 
+      "name-ru": "Dolnomoravsk\u00fd \u00faval", 
+      "name-sk": "Dolnomoravsk\u00fd \u00faval", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Jablunkovske_mezihori", 
+      "name-cs": "Jablunkovsk\u00e9 meziho\u0159\u00ed", 
+      "name-de": "Jablunkovsk\u00e9 meziho\u0159\u00ed", 
+      "name-en": "Jablunkovsk\u00e9 meziho\u0159\u00ed", 
+      "name-es": "Jablunkovsk\u00e9 meziho\u0159\u00ed", 
+      "name-ru": "Jablunkovsk\u00e9 meziho\u0159\u00ed", 
+      "name-sk": "Jablunkovsk\u00e9 meziho\u0159\u00ed", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Slezske_Beskydy", 
+      "name-cs": "Slezsk\u00e9 Beskydy", 
+      "name-de": "Slezsk\u00e9 Beskydy", 
+      "name-en": "Slezsk\u00e9 Beskydy", 
+      "name-es": "Slezsk\u00e9 Beskydy", 
+      "name-ru": "Slezsk\u00e9 Beskydy", 
+      "name-sk": "Slezsk\u00e9 Beskydy", 
+      "type": "surface"
+    }, 
+    {
+      "categories": [
+        "cz"
+      ], 
+      "id": "surface-Boskovicka_brazda", 
+      "name-cs": "Boskovick\u00e1 br\u00e1zda", 
+      "name-de": "Boskovick\u00e1 br\u00e1zda", 
+      "name-en": "Boskovick\u00e1 br\u00e1zda", 
+      "name-es": "Boskovick\u00e1 br\u00e1zda", 
+      "name-ru": "Boskovick\u00e1 br\u00e1zda", 
+      "name-sk": "Boskovick\u00e1 br\u00e1zda", 
+      "type": "surface"
     }
   ]
 }
