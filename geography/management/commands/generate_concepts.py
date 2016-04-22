@@ -17,24 +17,24 @@ class Command(BaseCommand):
     help = "Generate concepts to JSON file"
     default_lang = "cs"
     place_type_names = {
-        'state' : 'Státy',
-        'state-by-city' : 'Státy skrze hlavní města',
-        'region' : 'Regiony',
-        'province' : 'Provincie',
-        'region_cz' : 'Kraje',
-        'region_it' : 'Oblasti',
-        'autonomous_Comunity' : 'Autonomní společenství',
-        'bundesland' : 'Spolkové země',
-        'city' : 'Města',
-        'city-by-state' : 'Hlavní města skrze státy',
-        'river' : 'Řeky',
-        'reservoir' : 'Vodní nádrže',
-        'lake' : 'Jezera',
-        'sea' : 'Moře',
-        'mountains' : 'Pohoří',
-        'surface' : 'Povrch',
-        'island' : 'Ostrovy',
-        'district' : 'Okresy',
+        'state': 'Státy',
+        'state-by-city': 'Státy skrze hlavní města',
+        'region': 'Regiony',
+        'province': 'Provincie',
+        'region_cz': 'Kraje',
+        'region_it': 'Oblasti',
+        'autonomous_Comunity': 'Autonomní společenství',
+        'bundesland': 'Spolkové země',
+        'city': 'Města',
+        'city-by-state': 'Hlavní města skrze státy',
+        'river': 'Řeky',
+        'reservoir': 'Vodní nádrže',
+        'lake': 'Jezera',
+        'sea': 'Moře',
+        'mountains': 'Pohoří',
+        'surface': 'Povrch',
+        'island': 'Ostrovy',
+        'district': 'Okresy',
     }
 
     def handle(self, *args, **options):
@@ -43,27 +43,26 @@ class Command(BaseCommand):
                 return obj[lang]
             return obj[self.default_lang]
 
-
         domains = settings.LANGUAGE_DOMAINS
         langs = domains.keys()
         self.prepare_mo_files(langs)
         data = {
-                    "concepts": [],
-                    "action_names": {
-                        "practice": {},
-                        "view": {},
-                    },
-                    "tags": {
-                        "context": {
-                            "names": {lang: "Oblast" for lang in langs},
-                            "values": defaultdict(lambda: {})
-                        },
-                        "type": {
-                            "names": {lang: "Typ místa" for lang in langs},
-                            "values": defaultdict(lambda: {})
-                        },
-                    }
-                }
+            "concepts": [],
+            "action_names": {
+                "practice": {},
+                "view": {},
+            },
+            "tags": {
+                "context": {
+                    "names": {lang: "Oblast" for lang in langs},
+                    "values": defaultdict(lambda: {})
+                },
+                "type": {
+                    "names": {lang: "Typ místa" for lang in langs},
+                    "values": defaultdict(lambda: {})
+                },
+            }
+        }
         # TODO - add translations of tag names
 
         contexts = defaultdict(lambda: {})
@@ -73,7 +72,7 @@ class Command(BaseCommand):
         types = Term.objects.all().values_list("type", flat=True).distinct()
 
         for lang in langs:
-            translation = gettext.translation('djangojs', os.path.join(settings.BASE_DIR, "conf" , "locale"), [lang])
+            translation = gettext.translation('djangojs', os.path.join(settings.BASE_DIR, "conf", "locale"), [lang])
             data["action_names"]["practice"][lang] = translation.gettext("Procvičovat")
             data["action_names"]["view"][lang] = translation.gettext("Přehled map")
 
@@ -95,7 +94,7 @@ class Command(BaseCommand):
                     }
                 }
                 for lang in languages:
-                    translation = gettext.translation('djangojs', os.path.join(settings.BASE_DIR, "conf" , "locale"), [lang])
+                    translation = gettext.translation('djangojs', os.path.join(settings.BASE_DIR, "conf", "locale"), [lang])
                     name = translation.gettext(self.place_type_names[type])
                     concept["names"][lang] = "{} - {}".format(_get_lang(lang_map, lang), name)
                     data["tags"]["type"]["values"][type][lang] = name
