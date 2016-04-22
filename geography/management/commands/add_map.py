@@ -62,7 +62,7 @@ class Command(BaseCommand):
         # self.generate_translations_file(data)
 
         with open(options['output'], 'w') as f:
-            json.dump(data, f, indent=2)
+            json.dump(data, f, indent=2, sort_keys=True)
             print(('Updated flashcards written to file: \'%s\'' %
                    options['output']))
 
