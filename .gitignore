@@ -22,3 +22,6 @@ bower-libs*.js.map
 geography/static/dist
 geography/templates/generated
 data/concepts.json
+data/_versions/
+data/thumbs/
+data/userthumbs/
