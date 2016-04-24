@@ -105,6 +105,9 @@
       <a class="navbar-brand" href="/">{% trans "Slepé mapy" %}</a>
       <div id="nav-main" class="collapse navbar-collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav  pull-left">
+                <li ng-class="'/overview/'|isActive">
+                  <a href="/overview/">{% trans "Přehled map" %}</a>
+                </li>
                 <li ng-class="'/view/world/'|isActive">
                   <a href="/view/world/">{% trans "Svět" %}</a>
                 </li>
@@ -127,9 +130,6 @@
                     <li><a href="/view/{{ state.identifier }}/">{{ state.name }}</a></li>
                     {% endfor %}
                   </ul>
-                </li>
-                <li ng-class="'/overview/'|isActive">
-                  <a href="/overview/">{% trans "Přehled map" %}</a>
                 </li>
         </ul>
           ...
