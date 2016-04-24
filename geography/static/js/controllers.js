@@ -337,6 +337,7 @@ angular.module('proso.geography.controllers', [])
         }
 
         $scope.user = $routeParams.user || '';
+        $scope.refreshthumbs = $routeParams.refreshthumbs || '';
         categoryService.getAll().then(function(categories){
             $scope.mapCategories = addNamesAndSort(categories);
             var maps = [];
