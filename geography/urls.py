@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.views.generic import RedirectView
 from django.http import HttpResponse
+from filebrowser.sites import site
 
 admin.autodiscover()
 
@@ -27,11 +28,14 @@ urlpatterns = patterns(
     url(r'^favicon\.ico$', RedirectView.as_view(url='static/img/favicon.png')),
     url(r'^robots.txt$', lambda r: HttpResponse(
         "User-agent: *\nDisallow:", content_type="text/plain")),
+    url(r'^savescreenshot/', 'geography.views.save_screenshot', name='save_screenshot'),
 
     url(r'^user/', include('proso_user.urls')),
     url(r'^models/', include('proso_models.urls')),
     url(r'^configab/', include('proso_configab.urls')),
     url(r'^common/', include('proso_common.urls')),
+    url(r'^admin/filebrowser/', include(site.urls)),
+    url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^convert/', include('lazysignup.urls')),
     url(r'^feedback/', include('proso_feedback.urls')),

@@ -289,6 +289,9 @@ angular.module('proso.geography.controllers', [])
               practiceService.getFlashcard().then(function(q) {
                   $scope.questions = [];
                   setQuestion(q);
+                  var imageName = $routeParams.part + '-' + $routeParams.place_type + (
+                    q.direction == 'd2t' ? '-' + q.description : '');
+                  $rootScope.$emit('imageDisplayed', imageName);
               }, function(){
                   $scope.error = true;
               });
@@ -304,7 +307,7 @@ angular.module('proso.geography.controllers', [])
                     $scope.checkAnswer(code);
                     $scope.$apply();
                 }
-      });
+            });
     };
   }])
 

@@ -616,6 +616,9 @@ angular.module('proso.geography.map', [])
             myMap.updateItems(_placesByTypes, true);
           }
           myMap.panZoom = mapFunctions.initMapZoom(myMap.map.paper);
+          myMap.map.paper.rect(-100, -100, 10000, 10000).attr({
+              'fill' : '#6cf',
+          }).toBack();
           callback(myMap);
         });
       });

@@ -17,6 +17,8 @@ import random
 from django.template import RequestContext
 from django.core import management
 from django.contrib.admin.views.decorators import staff_member_required
+from django.http import HttpResponse
+import base64
 
 
 JS_FILES = (
@@ -200,3 +202,36 @@ def handle_uploaded_file(f, filepath):
     for chunk in f.chunks():
         destination.write(chunk)
     destination.close()
+
+
+def save_screenshot(request):
+    if request.body:
+        data = json.loads(request.body.decode("utf-8"))
+        image = data['image']
+        filename = os.path.join(
+            settings.MEDIA_ROOT, 'thumbs', data['name'] + '.png')
+        save_base64_to_file(filename, image)
+        if hasattr(request.user, "username"):
+            filename = os.path.join(
+                settings.MEDIA_ROOT,
+                'userthumbs',
+                request.user.username + '--' + data['name'] + '.png')
+            save_base64_to_file(filename, image)
+
+        response = """{
+            "type": "success",
+            "msg" : "Obrázek byl úspěšně nahrán"
+        }"""
+        return HttpResponse(response, content_type='application/javascript')
+
+
+def save_base64_to_file(filename, image):
+    directory = os.path.dirname(filename)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    head = 'data:image/png;base64,'
+    if head in image:
+        image = image[len(head):]
+        fh = open(filename, "wb")
+        fh.write(base64.b64decode(image))
+        fh.close()
