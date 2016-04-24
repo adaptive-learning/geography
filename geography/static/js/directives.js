@@ -119,7 +119,8 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
       restrict : 'C',
       template : '<div class="progress overview-progress">' +
                     '<div class="progress-bar progress-bar-learned" style="' +
-                        'width: {{100 * skills.number_of_mastered_flashcards / skills.number_of_flashcards}}%;">' +
+                        'width: {{100 * skills.number_of_mastered_flashcards / skills.number_of_flashcards}}%;"' +
+                        'ng-if="skills.number_of_practiced_flashcards">' +
                     '</div>' +
                     '<div class="progress-bar progress-bar-practiced" style="' +
                         'width: {{100 * skills.number_of_nonmastered_practiced_flashcards / skills.number_of_flashcards}}%;">' +
