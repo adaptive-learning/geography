@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 import json
 from django.utils.translation import ugettext as _
 from django.utils.translation import get_language
@@ -45,6 +45,8 @@ def home(request, hack=None):
         })
         email = ''
     else:
+        if hack is None:
+            return redirect('/overview/')
         if get_config('proso_user', 'google.openid.migration', default=True) and not is_user_id_overridden(request):
             migrated_user = migrate_google_openid_user(request.user)
             if migrated_user is not None:
