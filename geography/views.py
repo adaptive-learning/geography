@@ -104,6 +104,13 @@ def get_screenshot_files(request, hack):
     random.shuffle(screenshot_files)
 
     if hack is not None:
+        thumb_file_name = hack.replace('/', '-').replace(
+            'practice-', '').replace('view-', '') + '.png'
+        thumb_file = os.path.join(
+            settings.MEDIA_ROOT, 'thumbs', thumb_file_name)
+        if os.path.exists(thumb_file):
+            screenshot_files[0] = "/media/thumbs/" + thumb_file_name
+
         thumb_file_name = hack.replace('/', '-') + '-' + get_language() +'.png'
         thumb_file = os.path.join(settings.STATICFILES_DIRS[0], 'img', 'thumb', thumb_file_name)
         if os.path.exists(thumb_file):
