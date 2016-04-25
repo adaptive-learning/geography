@@ -43,11 +43,13 @@ angular.module('proso.geography.controllers', [])
     function($scope, $routeParams, $filter, flashcardService, mapTitle, placeTypeService, $location) {
         'use strict';
         $scope.part = $routeParams.part;
+        $scope.type = $routeParams.type;
         var user = $routeParams.user || '';
         var type = $routeParams.type || '';
         var activePlaceType = placeTypeService.getBySlug(type);
         if (type && !activePlaceType) {
           user = type;
+          $scope.type = undefined;
         }
 
         var filter = {
@@ -116,6 +118,7 @@ angular.module('proso.geography.controllers', [])
             }
             if (type) {
               type.hidden = false;
+              $scope.type = type.identifier;
             }
             $scope.imageController.updateItems($scope.placesTypes, dataChanged);
             $scope.name = mapTitle($scope.part, user);

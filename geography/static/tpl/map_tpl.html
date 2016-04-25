@@ -4,15 +4,15 @@
   </div>
   <h1 ng-bind="name" ng-show="!practice"></h1>
   <div class="btn-group-vertical map-switch" data-toggle="buttons" ng-show="!practice" >
-    <a class="btn btn-default" href="/view/{{part}}/"
-        ng-class="'/view/'+part+'/'|isActive"
+    <a class="btn btn-default" href="/view/{{part}}/{{type}}/"
+        ng-class="'/view/'+part+'/'+type+'/'|isActive"
         tooltip-append-to-body="true"
         tooltip-placement="right"
         tooltip="{{'Moje znalosti' | translate }}">
       <i class="glyphicon glyphicon-user"></i>
     </a>
-    <a class="btn btn-default" href="/view/{{part}}/average"
-        ng-class="'/view/'+part+'/average'|isActive"
+    <a class="btn btn-default" href="/view/{{part}}/{{type}}/average"
+        ng-class="'/view/'+part+'/'+type+'/average'|isActive"
         tooltip-append-to-body="true"
         tooltip-placement="right"
         tooltip="{{'Průměrný nový uživatel' | translate }}">
