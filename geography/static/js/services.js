@@ -293,7 +293,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
           'mountains' : gettextCatalog.getString('Pohoří'),
           'surface' : gettextCatalog.getString('Povrch'),
           'island' : gettextCatalog.getString('Ostrovy'),
-          'chko' : gettextCatalog.getString('CHKO'),
+          'chko' : gettextCatalog.getString('CHKO a NP'),
       };
       placeTypes = [];
       for(var i in placeTypeNames) {
