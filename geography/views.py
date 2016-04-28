@@ -220,13 +220,6 @@ def save_screenshot(request):
         filename = os.path.join(
             settings.MEDIA_ROOT, 'thumbs', data['name'] + '.png')
         save_base64_to_file(filename, image)
-        if hasattr(request.user, "username"):
-            filename = os.path.join(
-                settings.MEDIA_ROOT,
-                'userthumbs',
-                request.user.username + '--' + data['name'] + '.png')
-            save_base64_to_file(filename, image)
-
         response = """{
             "type": "success",
             "msg" : "Obrázek byl úspěšně nahrán"
