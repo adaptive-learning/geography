@@ -68,8 +68,12 @@ class Command(BaseCommand):
 
     def add_context(self, data, map_code, map_type):
         names = {}
-        for lang in settings.LANGUAGES:
-            names[lang[0]] = self.get_translation(map_code, lang[0])
+        if self.lang == 'all':
+            languages = [l[0] for l in settings.LANGUAGES]
+        else:
+            languages = [self.lang]
+        for lang in languages:
+            names[lang] = self.get_translation(map_code, lang)
         context = {
             'id': map_code,
         }
