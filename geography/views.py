@@ -19,6 +19,7 @@ from django.core import management
 from django.contrib.admin.views.decorators import staff_member_required
 from django.http import HttpResponse
 import base64
+from proso_user.models import UserProfile
 
 
 JS_FILES = (
@@ -240,3 +241,11 @@ def save_base64_to_file(filename, image):
             fh = open(filename, "wb")
             fh.write(image_encoded)
             fh.close()
+
+
+def unsubscribe(request):
+    profile = UserProfile.objects.get(user__email=request.GET['mail'])
+    profile.send_emails = False
+    profile.save()
+    response = """Odhlášení problěhlo úspěšně"""
+    return HttpResponse(response, content_type='application/javascript')

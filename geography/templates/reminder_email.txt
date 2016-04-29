@@ -1,0 +1,17 @@
+{% load i18n %}
+Pěkný den,
+posíláme vybrané otázky ze SlepeMapy.cz na tento týden:
+
+  {% for q in questions %}
+{% trans "Kde leží" %} {{q.term.name}}?
+
+{% trans "Zjistit odpověď" %}:
+{{domain}}/practice/{{q.context.identifier}}/{{q.term.type}}/?q={{q.id}}
+
+
+{% endfor %}
+
+{{domain}}
+
+=============
+{% trans "Odhlásit z rozesílky" %}: {{domain}}/unsubscribe?mail={{mail}}

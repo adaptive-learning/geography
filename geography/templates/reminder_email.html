@@ -1,0 +1,46 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+      <p>
+      Pěkný den,<br>
+      posíláme vybrané otázky ze 
+        <a href="{{domain}}">
+          {% trans "Slepé mapy.cz" %}
+        </a>
+      na tento týden:
+      </p>
+        <h2>{{ subject }}</h2>
+        {% for q in questions %}
+        <p>
+          <h2>
+            {% trans "Kde leží" %}
+            <strong> {{q.term.name}}</strong>?
+          </h2>
+          <a
+          href="{{domain}}/practice/{{q.context.identifier}}/{{q.term.type}}/?q={{q.id}}">
+            <img style="max-width: 90%;"
+              alt="{{q.context.name}}"
+              src="{{domain}}/media/thumbs/{{q.context.identifier}}-{{q.term.type}}.png"/>
+            <br>
+            {% trans "Zjistit odpověď" %}
+          </a>
+        </p>
+        <br>
+        <br>
+        {% endfor %}
+        
+        <a href="{{domain}}">
+          {% trans "Slepé mapy.cz" %}
+        </a>
+        <br>
+
+        =============
+        <br>
+        <a href="{{domain}}/unsubscribe?mail={{mail}}">
+        {% trans "Odhlásit z rozesílky" %}
+        </a>
+    </body>
+</html>

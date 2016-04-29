@@ -29,6 +29,7 @@ urlpatterns = patterns(
     url(r'^robots.txt$', lambda r: HttpResponse(
         "User-agent: *\nDisallow:", content_type="text/plain")),
     url(r'^savescreenshot/', 'geography.views.save_screenshot', name='save_screenshot'),
+    url(r'^unsubscribe/', 'geography.views.unsubscribe', name='unsubscribe'),
 
     url(r'^user/', include('proso_user.urls')),
     url(r'^models/', include('proso_models.urls')),
