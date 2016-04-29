@@ -262,6 +262,17 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
       getFlashcardByDescription : function (description) {
         return flashcardCache[description];
       },
+      getFlashcardById : function (id) {
+        var deferredFlashcards = $q.defer();
+        $http.get('/flashcards/flashcard/' + id, {
+          params: {}
+        }).success(function(data) {
+          deferredFlashcards.resolve(data.data);
+        }).error(function(data) {
+          deferredFlashcards.reject(data);
+        });
+        return deferredFlashcards.promise;
+      },
     };
     return that;
   }])
