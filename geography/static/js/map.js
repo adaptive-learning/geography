@@ -177,11 +177,13 @@ angular.module('proso.geography.map', [])
       var layersConfig = getLayerConfig(config);
       var layersArray = [];
       for (var i in layersConfig) {
-        map.addLayer(i, layersConfig[i]);
-        var l = map.getLayer(i);
-        if (l && l.id != 'bg' && l.id != 'border') {
-          layersArray.push(l);
-          _hideLayer(l);
+        if (!config.layerId || config.layerId == i || i == 'bg') {
+          map.addLayer(i, layersConfig[i]);
+          var l = map.getLayer(i);
+          if (l && l.id != 'bg' && l.id != 'border') {
+            layersArray.push(l);
+            _hideLayer(l);
+          }
         }
       }
       var that = {
@@ -446,13 +448,12 @@ angular.module('proso.geography.map', [])
       function($, $K, mapFunctions, initLayers, $filter, getTooltipGetter, highlighted) {
     $.fn.qtip.defaults.style.classes = 'qtip-dark';
 
-    return function(mapCode, showTooltips, holder, callback) {
-      var config = { state : [] };
+    return function(holder, config, callback) {
       var layers;
       var _placesByTypes;
 
-      config.showTooltips = showTooltips;
-      config.isPractise = !showTooltips;
+      config.state = [];
+      config.isPractise = !config.showTooltips;
       config.places = [];
 
       var myMap = {
@@ -609,7 +610,7 @@ angular.module('proso.geography.map', [])
       }
 
       myMap.map.loadCSS(hash('/static/dist/css/map.css'), function() {
-        myMap.map.loadMap(hash('map/' + mapCode + '.svg'), function() {
+        myMap.map.loadMap(hash('map/' + config.mapCode + '.svg'), function() {
           highlighted.clear();
           layers = initLayers(myMap.map, config);
           if (_placesByTypes !== undefined) {

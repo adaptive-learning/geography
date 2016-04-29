@@ -71,8 +71,13 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
         $scope.name = places.getName($scope.part);
         $scope.practice = !attrs.showTooltips;
         var showTooltips = attrs.showTooltips !== undefined;
+        var config = {
+          showTooltips: attrs.showTooltips !== undefined,
+          mapCode : $scope.part,
+          layerId : $scope.placeType,
+        };
 
-        var map = mapControler($scope.part, showTooltips, elem, function(m) {
+        var map = mapControler(elem, config, function(m) {
           $scope.loading = false;
           var resize = getMapResizeFunction(m, elem, $scope.practice);
           singleWindowResizeFn(resize);
