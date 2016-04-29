@@ -136,11 +136,11 @@ angular.module('proso.geography.controllers', [])
 
 .controller('AppPractice', ['$scope', '$routeParams', '$timeout', '$filter',
     'practiceService', 'userService', '$rootScope', 'colors', '$', 'highlighted',
-    'categoryService', 'flashcardService',
+    'categoryService', 'flashcardService', '$http',
 
     function($scope, $routeParams, $timeout, $filter,
         practiceService, userService, $rootScope, colors, $, highlighted,
-        categoryService, flashcardService) {
+        categoryService, flashcardService, $http) {
         'use strict';
 
         $scope.part = $routeParams.part;
@@ -182,7 +182,11 @@ angular.module('proso.geography.controllers', [])
             $scope.question.answered_code = selected;
             $scope.question.responseTime = new Date().valueOf() - $scope.question.startTime;
             var selectedFC = flashcardService.getFlashcardByDescription(selected);
-            practiceService.saveAnswerToCurrentFC(selectedFC ? selectedFC.id : null, $scope.question.responseTime);
+            if ($scope.question.meta != 'email') {
+              practiceService.saveAnswerToCurrentFC(selectedFC ? selectedFC.id : null, $scope.question.responseTime);
+            } else {
+              saveEmailAnswer($scope.question, selectedFC ? selectedFC.id : null, $scope.question.responseTime);
+            }
             $scope.progress = 100 * (practiceService.getSummary().count / practiceService.getConfig().set_length);
             //user.addAnswer(asked == selected);
             if (asked == selected) {
@@ -278,6 +282,19 @@ angular.module('proso.geography.controllers', [])
             return $scope.layer == $scope.imageController.getLayerContaining(code);
         }
 
+        function saveEmailAnswer(question, answeredId, responseTime) {
+          var answer = {
+            "flashcard_id": question.id,
+            "flashcard_answered_id": answeredId,
+            "response_time": responseTime,
+            "direction": question.direction,
+            "meta": {"referer" : "email"},
+          };
+          $http.post("/flashcards/answer/",
+            {answer: answer},
+            {params : question.filter});
+        }
+
         $scope.mapCallback = function() {
             practiceService.initSet('common');
             var filter = {
@@ -289,15 +306,26 @@ angular.module('proso.geography.controllers', [])
             }
             flashcardService.getFlashcards(filter).then(function() {
               practiceService.setFilter(filter);
-              practiceService.getFlashcard().then(function(q) {
+              if ($routeParams.q) {
+                flashcardService.getFlashcardById($routeParams.q).then(function(q) {
+                  q.direction = $routeParams.d || 't2d';
+                  q.options = [];
+                  q.meta = 'email';
+                  q.filter = filter;
                   $scope.questions = [];
                   setQuestion(q);
-                  var imageName = $routeParams.part + '-' + $routeParams.place_type + (
-                    q.direction == 'd2t' ? '-' + q.description : '');
-                  $rootScope.$emit('imageDisplayed', imageName);
-              }, function(){
-                  $scope.error = true;
-              });
+                });
+              } else {
+                practiceService.getFlashcard().then(function(q) {
+                    $scope.questions = [];
+                    setQuestion(q);
+                    var imageName = $routeParams.part + '-' + $routeParams.place_type + (
+                      q.direction == 'd2t' ? '-' + q.description : '');
+                    $rootScope.$emit('imageDisplayed', imageName);
+                }, function(){
+                    $scope.error = true;
+                });
+              }
             }, function(){
                 $scope.error = true;
             });
