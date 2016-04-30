@@ -152,6 +152,9 @@ class Command(BaseCommand):
                             data['terms'].append(term)
                             terms_by_id[code] = term
                             print('Term added: ' + name + ' ' + code)
+                        else:
+                            term = terms_by_id[code]
+                            self.add_name(term, name)
                         flashcard_id = map_code + '-' + code
                         if flashcard_id not in flashcards_by_id:
                             flashcard = {
@@ -172,6 +175,10 @@ class Command(BaseCommand):
             'type': group_id,
             'categories': [map_code],
         }
+        self.add_name(term, name)
+        return term
+
+    def add_name(self, term, name):
         if self.lang == 'all':
             languages = [l[0] for l in settings.LANGUAGES]
         else:
@@ -180,4 +187,3 @@ class Command(BaseCommand):
             term.update({
                 'name-' + lang: name,
             })
-        return term
