@@ -43,7 +43,7 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
       template : '<i class="flag-{{code}}"></i> {{name}}',
       link : function($scope, elem, attrs) {
         var term = angular.fromJson(attrs.termLabel);
-        $scope.code = term.description;
+        $scope.code = term.identifier;
         $scope.name = term.name;
         if (term.type == 'state-by-city') {
           $scope.code = 'none';
