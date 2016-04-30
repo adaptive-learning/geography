@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-02 15:15+0000\n"
-"PO-Revision-Date: 2016-02-27 08:16+0000\n"
-"Last-Translator: Miroslav Fic <mirko.fic@gmail.com>\n"
+"POT-Creation-Date: 2016-04-30 18:43+0000\n"
+"PO-Revision-Date: 2016-04-30 18:44+0000\n"
+"Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Slovak (http://www.transifex.com/adaptive-learning/slepemapycz/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,183 +19,283 @@ msgstr ""
 "Language: sk\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: templates/create_goal.html:5
-msgid "Vytvořit cíl"
-msgstr "Vytvoriť cieľ"
+#: geography/management/commands/generate_concepts.py:76
+msgid "Procvičovat"
+msgstr ""
 
-#: templates/create_goal.html:9
-msgid "Mapa"
-msgstr "Mapa"
-
-#: templates/create_goal.html:36
-msgid "Datum splnění cíle"
-msgstr "Dátum splnenia cieľa"
-
-#: templates/create_goal.html:64
-msgid "Vytvořit"
-msgstr "Vytvoriť"
-
-#: templates/create_goal.html:67
-msgid "Zavřít"
-msgstr "Zavrieť"
-
-#: templates/generated/homepage.html:19 templates/home.html:60 views.py:35
-msgid "Slepé mapy"
-msgstr "Slepé mapy"
-
-#: templates/generated/homepage.html:21
-msgid "Vyberte si mapu k procvičování:"
-msgstr "Vyberte si mapu k precvičovaniu:"
-
-#: templates/generated/homepage.html:26
-msgid "Státy Evropy"
-msgstr "Státy Európy"
-
-#: templates/generated/homepage.html:31
-msgid "Řeky ČR"
-msgstr "Rieky ČR"
-
-#: templates/generated/homepage.html:36
-msgid "Státy USA"
-msgstr "Štáty USA"
-
-#: templates/generated/homepage.html:41
-msgid "Pohoří ČR"
-msgstr "Pohoria ČR"
-
-#: templates/generated/homepage.html:46
-msgid "Státy Asie"
-msgstr "Štáty Ázie"
-
-#: templates/generated/homepage.html:51
-msgid "Řeky Afriky"
-msgstr "Rieky Afriky"
-
-#: templates/generated/homepage.html:54
-msgid "Chcete jinou? Podívejte se na"
-msgstr "Chcete inú? Pozrite sa na"
-
-#: templates/generated/homepage.html:57
-msgid "další mapy"
-msgstr "ďalšie mapy"
-
-#: templates/generated/homepage.html:67
-msgid "Jak to funguje?"
-msgstr "Ako to funguje?"
-
-#: templates/generated/homepage.html:71
-msgid "Zeměpis hrou"
-msgstr "Zemepis hrou"
-
-#: templates/generated/homepage.html:72
-msgid "Zeměpis hrou - text"
-msgstr "Precvičte si svoje vedomosti zemepisu hravou formou. V aktuálnej verzii zatiaľ súťažíte len sami so sebou, respektíve proti systému. Dokážete zafarbiť na zeleno celú mapu Európy? Celú ČR? A čo celý svet?"
-
-#: templates/generated/homepage.html:76
-msgid "Adaptabilní procvičování"
-msgstr "Adaptabilné precvičovanie"
-
-#: templates/generated/homepage.html:77
-msgid "Adaptabilní procvičování - text"
-msgstr "Každá slepá mapa ponúka adaptabilné precvičovanie - podľa toho, aké máte vedomosti, aplikácia volí podobu otázok (otvorená, výber z možností) a frekvenciu opakovania. Aplikácia vám tak predkladá štáty, ktorých precvičenie je pre vás najužitočnejšie."
-
-#: templates/generated/homepage.html:79
-msgid "Ukázka procvičování"
-msgstr "Ukážka precvičovania"
-
-#: templates/generated/homepage.html:83
-msgid "Specializovaný systém"
-msgstr "Špecializovaný systém"
-
-#: templates/generated/homepage.html:84
-msgid "Specializovaný systém - text"
-msgstr "Precvičovanie slepých máp ponúka aj rad iných výukových systémov, tie však väčšinou pokrývajú veľa čiastkových oblastí. Náš systém sa sústreďuje iba na slepé mapy, vďaka čomu je pre učenie v tejto oblasti optimalizovaný."
-
-#: templates/generated/homepage.html:88
-msgid "Vizualizace znalostí"
-msgstr "Vizualizácia vedomostí"
-
-#: templates/generated/homepage.html:89
-msgid "Vizualizace znalostí - text"
-msgstr "Na základe odpovedí systém odhadne ako dobre poznáte rôzne štáty a znázorní vám mapu vašich vedomostí, čo vám pomôže ujasniť si, čo vlastne viete."
-
-#: templates/generated/homepage.html:91
-msgid "Ukázka mapy znalostí"
-msgstr "Ukážka mapy vedomostí"
-
-#: templates/generated/homepage.html:95
-msgid "Učení z dat"
-msgstr "Učenie z dát"
-
-#: templates/generated/homepage.html:96
-msgid "Učení z dat - text"
-msgstr "Aplikácia sa učí z dát od všetkých užívateľov. Výber otázok je založený na týchto dátach, nie na vedomostiach experta na zemepis, ktorý \"vie\", či je ťažšie poznať Keňu alebo Nigériu."
-
-#: templates/home.html:27
-msgid "meta content"
-msgstr "Inteligentná aplikácia na precvičovanie štátov, miest, pohorí a riek na slepej mape sveta, Európy, Ázie, Afriky, Amerika, ČR, USA a ďalšich štátov"
-
-#: templates/home.html:28
-msgid "meta keywords"
-msgstr "slepá mapa, štáty, mestá, čr, svet, európa, amerika, afrika, ázia, pohoria, rieky, zemepis, usa, hry"
-
-#: templates/home.html:64
-msgid "Svět"
-msgstr "Svet"
-
-#: templates/home.html:68
-msgid "Kontinenty"
-msgstr "Kontinenty"
-
-#: templates/home.html:78
-msgid "Státy"
-msgstr "Štáty"
-
-#: templates/home.html:87
+#: geography/management/commands/generate_concepts.py:77
+#: geography/templates/home.html:109
 msgid "Přehled map"
 msgstr "Prehľad máp"
 
-#: templates/home.html:98
+#: geography/management/commands/send_reminder_emails.py:33
+msgid "Víš kde leží"
+msgstr ""
+
+#: geography/templates/create_goal.html:5
+msgid "Vytvořit cíl"
+msgstr "Vytvoriť cieľ"
+
+#: geography/templates/create_goal.html:9
+msgid "Mapa"
+msgstr "Mapa"
+
+#: geography/templates/create_goal.html:36
+msgid "Datum splnění cíle"
+msgstr "Dátum splnenia cieľa"
+
+#: geography/templates/create_goal.html:64
+msgid "Vytvořit"
+msgstr "Vytvoriť"
+
+#: geography/templates/create_goal.html:67
+msgid "Zavřít"
+msgstr "Zavrieť"
+
+#: geography/templates/generated/homepage.html:19
+#: geography/templates/home.html:105 geography/views.py:60
+msgid "Slepé mapy"
+msgstr "Slepé mapy"
+
+#: geography/templates/generated/homepage.html:21
+msgid "Vyberte si mapu k procvičování:"
+msgstr "Vyberte si mapu k precvičovaniu:"
+
+#: geography/templates/generated/homepage.html:26
+msgid "Státy Evropy"
+msgstr "Státy Európy"
+
+#: geography/templates/generated/homepage.html:31
+msgid "Řeky ČR"
+msgstr "Rieky ČR"
+
+#: geography/templates/generated/homepage.html:36
+msgid "Státy USA"
+msgstr "Štáty USA"
+
+#: geography/templates/generated/homepage.html:41
+#| msgid "Státy Asie"
+msgid "Státy Afriky"
+msgstr ""
+
+#: geography/templates/generated/homepage.html:46
+#| msgid "Státy Evropy"
+msgid "Města Evropy"
+msgstr ""
+
+#: geography/templates/generated/homepage.html:51
+#| msgid "Státy USA"
+msgid "Státy Světa"
+msgstr ""
+
+#: geography/templates/generated/homepage.html:54
+msgid "Chcete jinou? Podívejte se na"
+msgstr "Chcete inú? Pozrite sa na"
+
+#: geography/templates/generated/homepage.html:59
+msgid "další mapy"
+msgstr "ďalšie mapy"
+
+#: geography/templates/generated/homepage.html:65
+msgid "Jak to funguje?"
+msgstr "Ako to funguje?"
+
+#: geography/templates/generated/homepage.html:69
+msgid "Zeměpis hrou"
+msgstr "Zemepis hrou"
+
+#: geography/templates/generated/homepage.html:70
+msgid "Zeměpis hrou - text"
+msgstr "Precvičte si svoje vedomosti zemepisu hravou formou. V aktuálnej verzii zatiaľ súťažíte len sami so sebou, respektíve proti systému. Dokážete zafarbiť na zeleno celú mapu Európy? Celú ČR? A čo celý svet?"
+
+#: geography/templates/generated/homepage.html:74
+msgid "Adaptabilní procvičování"
+msgstr "Adaptabilné precvičovanie"
+
+#: geography/templates/generated/homepage.html:75
+msgid "Adaptabilní procvičování - text"
+msgstr "Každá slepá mapa ponúka adaptabilné precvičovanie - podľa toho, aké máte vedomosti, aplikácia volí podobu otázok (otvorená, výber z možností) a frekvenciu opakovania. Aplikácia vám tak predkladá štáty, ktorých precvičenie je pre vás najužitočnejšie."
+
+#: geography/templates/generated/homepage.html:77
+msgid "Ukázka procvičování"
+msgstr "Ukážka precvičovania"
+
+#: geography/templates/generated/homepage.html:81
+msgid "Specializovaný systém"
+msgstr "Špecializovaný systém"
+
+#: geography/templates/generated/homepage.html:82
+msgid "Specializovaný systém - text"
+msgstr "Precvičovanie slepých máp ponúka aj rad iných výukových systémov, tie však väčšinou pokrývajú veľa čiastkových oblastí. Náš systém sa sústreďuje iba na slepé mapy, vďaka čomu je pre učenie v tejto oblasti optimalizovaný."
+
+#: geography/templates/generated/homepage.html:86
+msgid "Vizualizace znalostí"
+msgstr "Vizualizácia vedomostí"
+
+#: geography/templates/generated/homepage.html:87
+msgid "Vizualizace znalostí - text"
+msgstr "Na základe odpovedí systém odhadne ako dobre poznáte rôzne štáty a znázorní vám mapu vašich vedomostí, čo vám pomôže ujasniť si, čo vlastne viete."
+
+#: geography/templates/generated/homepage.html:89
+msgid "Ukázka mapy znalostí"
+msgstr "Ukážka mapy vedomostí"
+
+#: geography/templates/generated/homepage.html:93
+msgid "Učení z dat"
+msgstr "Učenie z dát"
+
+#: geography/templates/generated/homepage.html:94
+msgid "Učení z dat - text"
+msgstr "Aplikácia sa učí z dát od všetkých užívateľov. Výber otázok je založený na týchto dátach, nie na vedomostiach experta na zemepis, ktorý \"vie\", či je ťažšie poznať Keňu alebo Nigériu."
+
+#: geography/templates/home.html:27
+msgid "meta content"
+msgstr "Inteligentná aplikácia na precvičovanie štátov, miest, pohorí a riek na slepej mape sveta, Európy, Ázie, Afriky, Amerika, ČR, USA a ďalšich štátov"
+
+#: geography/templates/home.html:28
+msgid "meta keywords"
+msgstr "slepá mapa, štáty, mestá, čr, svet, európa, amerika, afrika, ázia, pohoria, rieky, zemepis, usa, hry"
+
+#: geography/templates/home.html:112
+msgid "Svět"
+msgstr "Svet"
+
+#: geography/templates/home.html:116
+msgid "Kontinenty"
+msgstr "Kontinenty"
+
+#: geography/templates/home.html:126 geography/views.py:147
+msgid "Státy"
+msgstr "Štáty"
+
+#: geography/templates/home.html:138
+msgid "Kraje ČR"
+msgstr ""
+
+#: geography/templates/home.html:156
 msgid ""
 "Přihlašte se jednoduše přes Google nebo Facebook, aby si systém váše "
 "znalosti pamatoval i příště."
 msgstr "Prihláste sa jednoducho cez Google alebo Facebook, aby si systém vaše vedomosti pamätal aj nabudúce."
 
-#: templates/home.html:101
+#: geography/templates/home.html:159
 msgid "Přihlásit se"
 msgstr "Prihlásiť sa"
 
-#: templates/home.html:114
+#: geography/templates/home.html:172
 msgid "Můj profil"
 msgstr "Môj profil"
 
-#: templates/home.html:120
+#: geography/templates/home.html:178
 msgid "Moje časté chyby"
 msgstr "Moje časté chyby"
 
-#: templates/home.html:125
+#: geography/templates/home.html:183
 msgid "Osobní cíle"
 msgstr "Osobné ciele"
 
-#: templates/home.html:130
+#: geography/templates/home.html:188
 msgid "Nastavení"
 msgstr "Nastavenia"
 
-#: templates/home.html:136
+#: geography/templates/home.html:194
 msgid "Odhlásit se"
 msgstr "Odhlásiť sa"
 
-#: templates/home.html:177 templates/home.html.py:192
+#: geography/templates/home.html:247 geography/templates/home.html.py:274
 msgid "Napište nám"
 msgstr "Napíšte nám"
 
-#: templates/home.html:187
+#: geography/templates/home.html:249
+msgid "Skrýt tlačítko"
+msgstr ""
+
+#: geography/templates/home.html:270
 msgid "O projektu"
 msgstr "O projekte"
 
-#: views.py:35
+#: geography/templates/reminder_email.html:10
+#| msgid "Slepé mapy"
+msgid "SlepeMapy.cz"
+msgstr ""
+
+#: geography/templates/reminder_email.html:17
+#: geography/templates/reminder_email.txt:6
+msgid "Kde leží"
+msgstr ""
+
+#: geography/templates/reminder_email.html:26
+#: geography/templates/reminder_email.txt:8
+msgid "Zjistit odpověď"
+msgstr ""
+
+#: geography/templates/reminder_email.html:34
+#| msgid "Slepé mapy"
+msgid "Slepé mapy.cz"
+msgstr ""
+
+#: geography/templates/reminder_email.html:41
+#: geography/templates/reminder_email.txt:17
+#| msgid "Odhlásit se"
+msgid "Odhlásit z rozesílky"
+msgstr ""
+
+#: geography/views.py:60
 msgid "inteligentní aplikace na procvičování zeměpisu"
 msgstr "Inteligentná aplikácia na precvičovanie zemepisu"
+
+#: geography/views.py:148
+msgid "Regiony"
+msgstr ""
+
+#: geography/views.py:149
+msgid "Provincie"
+msgstr ""
+
+#: geography/views.py:150
+msgid "Kraje"
+msgstr ""
+
+#: geography/views.py:151
+msgid "Oblasti"
+msgstr ""
+
+#: geography/views.py:152
+msgid "Autonomní společenství"
+msgstr ""
+
+#: geography/views.py:153
+msgid "Spolkové země"
+msgstr ""
+
+#: geography/views.py:154
+msgid "Města"
+msgstr ""
+
+#: geography/views.py:155
+#| msgid "Řeky ČR"
+msgid "Řeky"
+msgstr ""
+
+#: geography/views.py:156
+msgid "Jezera"
+msgstr ""
+
+#: geography/views.py:157
+msgid "Moře"
+msgstr ""
+
+#: geography/views.py:158
+#| msgid "Pohoří ČR"
+msgid "Pohoří"
+msgstr ""
+
+#: geography/views.py:159
+msgid "Ostrovy"
+msgstr ""
+
+#~ msgid "Řeky Afriky"
+#~ msgstr "Řeky Afriky"
 
 #~ msgid "Feedback confirmed"
 #~ msgstr ""

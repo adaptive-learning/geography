@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-04-23 04:36+0000\n"
+"PO-Revision-Date: 2016-04-30 18:41+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Slovak (http://www.transifex.com/adaptive-learning/slepemapycz/language/sk/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,7 +80,7 @@ msgstr "Každá slepá mapa ponúka adaptabilné precvičovanie - podľa toho, a
 msgid "Adresa profilu"
 msgstr "Adresa profilu"
 
-#: static/js/directives.js:193
+#: static/js/directives.js:199
 msgid "Aktuální úroveň"
 msgstr "Aktuálna úroveň"
 
@@ -92,7 +92,7 @@ msgid ""
 "      <a href=\"http://www.motejl.cz/\">Fondem Otakara Motejla</a>."
 msgstr "Aplikácia bola ocenená v Súťaži\n<a href=\"http://www.otevrenadata.cz/\">Společně otevíráme data</a>,\norganizovanej\n<a href=\"http://www.motejl.cz/\">Fondem Otakara Motejla</a>."
 
-#: static/js/services.js:285
+#: static/js/services.js:296
 msgid "Autonomní společenství"
 msgstr "Autonómne spoločenstvo"
 
@@ -100,8 +100,8 @@ msgstr "Autonómne spoločenstvo"
 msgid "Body"
 msgstr "Body"
 
-#: static/js/services.js:296
-msgid "CHKO"
+#: static/js/services.js:307
+msgid "CHKO a NP"
 msgstr ""
 
 #: static/tpl/homepage.html:54
@@ -132,15 +132,15 @@ msgstr "Do prípravy máp sa zapojili:"
 msgid "E-mail"
 msgstr "E-mail"
 
-#: static/js/services.js:288
+#: static/js/services.js:299
 msgid "Hlavní města skrze státy"
 msgstr "Hlavné mestá cez štáty"
 
-#: static/js/directives.js:25 static/js/map.js:295
+#: static/js/directives.js:25 static/js/map.js:297
 msgid "Hlavní město"
 msgstr "Hlavné mesto"
 
-#: static/js/controllers.js:437
+#: static/js/controllers.js:472
 msgid "Hledaný profil neexistuje."
 msgstr "Hľadaný profil neexistuje."
 
@@ -148,7 +148,7 @@ msgstr "Hľadaný profil neexistuje."
 msgid "Jak to funguje?"
 msgstr "Ako to funguje?"
 
-#: static/js/services.js:291
+#: static/js/services.js:302
 msgid "Jezera"
 msgstr "Jazerá"
 
@@ -166,11 +166,11 @@ msgstr "Meno"
 msgid "Kdo za tím stojí"
 msgstr "Kto za tým stojí"
 
-#: static/js/controllers.js:319
+#: static/js/controllers.js:353
 msgid "Kontinenty"
 msgstr "Kontinenty"
 
-#: static/js/services.js:282
+#: static/js/services.js:293
 msgid "Kraje"
 msgstr "Kraje"
 
@@ -190,7 +190,7 @@ msgstr "Moje vedomosti"
 msgid "Moje časté chyby"
 msgstr "Moje časté chyby"
 
-#: static/js/services.js:292
+#: static/js/services.js:303
 msgid "Moře"
 msgstr "Moria"
 
@@ -198,7 +198,7 @@ msgstr "Moria"
 msgid "Moře Evropy"
 msgstr "Moria Európy"
 
-#: static/js/services.js:287
+#: static/js/services.js:298
 msgid "Města"
 msgstr "Mestá"
 
@@ -215,11 +215,11 @@ msgid ""
 "Na vývoji Slepých map se podílí především Vít Stanislav a Jan Papoušek."
 msgstr "Na vývoji Slepých máp sa podieľa predovšetkým Vít Stanislav a Jan Papoušek."
 
-#: static/js/directives.js:141
+#: static/js/directives.js:147
 msgid "Naučeno"
 msgstr "Naučené"
 
-#: static/js/map.js:326
+#: static/js/map.js:328
 msgid "Neprocvičováno"
 msgstr "Neprecvičované"
 
@@ -241,7 +241,7 @@ msgstr "Námety k rozvoju systému zasielajte na\n<span class=\"email contact\">
 msgid "O projektu"
 msgstr "O projekte"
 
-#: static/js/services.js:284
+#: static/js/services.js:295
 msgid "Oblasti"
 msgstr "Oblasti"
 
@@ -249,11 +249,11 @@ msgstr "Oblasti"
 msgid "Ocenění"
 msgstr "Ocenenia"
 
-#: static/js/directives.js:17 static/js/map.js:316
+#: static/js/directives.js:17 static/js/map.js:318
 msgid "Odhad znalosti"
 msgstr "Odhad vedomosti"
 
-#: static/js/services.js:283
+#: static/js/services.js:294
 msgid "Okresy"
 msgstr ""
 
@@ -269,11 +269,11 @@ msgstr "Osobné ciele"
 msgid "Ostatní mapy"
 msgstr "Ostatné mapy"
 
-#: static/js/services.js:295
+#: static/js/services.js:306
 msgid "Ostrovy"
 msgstr "Ostrovy"
 
-#: static/js/services.js:293
+#: static/js/services.js:304
 msgid "Pohoří"
 msgstr "Pohoria"
 
@@ -285,7 +285,7 @@ msgstr "Pokračovať"
 msgid "Pokračovat v procvičování"
 msgstr "Pokračovať v precvičovaní"
 
-#: static/js/directives.js:319
+#: static/js/directives.js:325
 msgid "Pokud problém přetrval zkuste to znovu později nebo"
 msgstr "Pokiaľ problém pretrval skúste to znovu neskôr alebo"
 
@@ -303,7 +303,7 @@ msgid ""
 "    <a href=\"http://www.muni.cz/people/4297\">Radka Pelánka</a>."
 msgstr "Pokiaľ študujete na FI a máte záujem sa zapojiť do vývoja podobného typu systémov,\nprípadne pokiaľ máte záujem o výskumnú spoluprácu, kontaktujte\n<a href=\"http://www.muni.cz/people/4297\">Radka Pelánka</a>."
 
-#: static/js/services.js:294
+#: static/js/services.js:305
 msgid "Povrch"
 msgstr "Povrch"
 
@@ -311,24 +311,24 @@ msgstr "Povrch"
 msgid "Povrch ČR"
 msgstr "Povrch ČR"
 
-#: static/js/map.js:291
+#: static/js/map.js:293
 msgid "Počet obyvatel"
 msgstr "Počet obyvateľov"
 
-#: static/js/directives.js:313
+#: static/js/directives.js:319
 msgid "Pro vyřešení problému zkuste"
 msgstr "Pre vyriešenie problému skúste"
 
-#: static/tpl/confused_tpl.html:23 static/tpl/overview_tpl.html:20
+#: static/tpl/confused_tpl.html:23 static/tpl/overview_tpl.html:22
 #: static/tpl/view_tpl.html:34 static/tpl/view_tpl.html:41
 msgid "Procvičovat"
 msgstr "Precvičovať"
 
-#: static/js/directives.js:149
+#: static/js/directives.js:155
 msgid "Procvičováno"
 msgstr "Precvičované"
 
-#: static/js/services.js:281
+#: static/js/services.js:292
 msgid "Provincie"
 msgstr "Provincie"
 
@@ -360,11 +360,11 @@ msgstr "Priezvisko"
 msgid "Příprava map"
 msgstr "Príprava máp"
 
-#: static/js/directives.js:205
+#: static/js/directives.js:211
 msgid "Příští úroveň"
 msgstr "Ďalšia úroveň"
 
-#: static/js/services.js:280
+#: static/js/services.js:291
 msgid "Regiony"
 msgstr "Regióny"
 
@@ -399,7 +399,7 @@ msgstr "Špecializovaný systém"
 msgid "Specializovaný systém - text"
 msgstr "Precvičovanie slepých máp ponúka aj rad iných výukových systémov, tie však väčšinou pokrývajú veľa čiastkových oblastí. Náš systém sa sústreďuje iba na slepé mapy, vďaka čomu je pre učenie v tejto oblasti optimalizovaný."
 
-#: static/js/services.js:286
+#: static/js/services.js:297
 msgid "Spolkové země"
 msgstr "Spolkové krajiny"
 
@@ -407,11 +407,11 @@ msgstr "Spolkové krajiny"
 msgid "Správné odpovědi"
 msgstr "Správne odpovede"
 
-#: static/js/directives.js:30 static/js/map.js:299
+#: static/js/directives.js:30 static/js/map.js:301
 msgid "Stát"
 msgstr "Štát"
 
-#: static/js/controllers.js:318 static/js/services.js:278
+#: static/js/controllers.js:352 static/js/services.js:289
 msgid "Státy"
 msgstr "Štáty"
 
@@ -431,7 +431,7 @@ msgstr "Štáty Sveta"
 msgid "Státy USA"
 msgstr "Štáty USA"
 
-#: static/js/services.js:279
+#: static/js/services.js:290
 msgid "Státy skrze hlavní města"
 msgstr "Štáty cez hlavné mestá"
 
@@ -467,7 +467,7 @@ msgstr "Učenie z dát"
 msgid "Učení z dat - text"
 msgstr "Aplikácia sa učí z dát od všetkých užívateľov. Výber otázok je založený na týchto dátach, nie na vedomostiach experta na zemepis, ktorý \"vie\", či je ťažšie poznať Keňu alebo Nigériu."
 
-#: static/js/controllers.js:450 static/js/directives.js:310
+#: static/js/controllers.js:485 static/js/directives.js:316
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "V aplikácii bohužiaľ nastala chyba."
 
@@ -479,7 +479,7 @@ msgstr "Vizualizácia vedomostí"
 msgid "Vizualizace znalostí - text"
 msgstr "Na základe odpovedí systém odhadne ako dobre poznáte rôzne štáty a znázorní vám mapu vašich vedomostí, čo vám pomôže ujasniť si, čo vlastne viete."
 
-#: static/js/services.js:290
+#: static/js/services.js:301
 msgid "Vodní nádrže"
 msgstr "Vodné nádrže"
 
@@ -524,7 +524,7 @@ msgstr "Precvičte si svoje vedomosti zemepisu hravou formou. V aktuálnej verzi
 msgid "Zrušit"
 msgstr "Zrušiť"
 
-#: static/js/directives.js:198
+#: static/js/directives.js:204
 msgid "bodů do příští úrovně"
 msgstr "bodov do ďalšej úrovne"
 
@@ -536,11 +536,11 @@ msgstr "ďalšie mapy"
 msgid "hl. město státu"
 msgstr "hl. mesto štátu"
 
-#: static/js/directives.js:321
+#: static/js/directives.js:327
 msgid "nám napište"
 msgstr "nám napíšte"
 
-#: static/js/directives.js:316
+#: static/js/directives.js:322
 msgid "obnovit stránku"
 msgstr "obnoviť stránku"
 
@@ -556,7 +556,7 @@ msgstr "štát s hl. mestom"
 msgid "Úspěšnost"
 msgstr "Úspešnosť"
 
-#: static/js/services.js:289
+#: static/js/services.js:300
 msgid "Řeky"
 msgstr "Rieky"
 
