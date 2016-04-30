@@ -305,6 +305,9 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
           'surface' : gettextCatalog.getString('Povrch'),
           'island' : gettextCatalog.getString('Ostrovy'),
           'chko' : gettextCatalog.getString('CHKO a NP'),
+          'soorp' : gettextCatalog.getString('Obce s rozšířenou působností'),
+          'soopu' : gettextCatalog.getString('Obce s pověřeným obecním úřadem'),
+          'mzchu' : gettextCatalog.getString('Maloplošná zvláštně chráněná území'),
       };
       placeTypes = [];
       for(var i in placeTypeNames) {

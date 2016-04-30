@@ -351,13 +351,14 @@ angular.module('proso.geography.controllers', [])
           var categoryNames = {
             'state' : gettextCatalog.getString('Státy'),
             'continent' : gettextCatalog.getString('Kontinenty'),
+            'region' : gettextCatalog.getString('Kraje ČR'),
           };
           var categoriesByIdentifier = {};
           for (var i = 0; i < categories.length; i++) {
             categories[i].name = categoryNames[categories[i].identifier];
             categoriesByIdentifier[categories[i].identifier] = categories[i];
           }
-          var categoryTypes = ['world', 'continent', 'state'];
+          var categoryTypes = ['world', 'continent', 'state', 'region'];
           var ret = [];
           for (i = 0; i < categoryTypes.length; i++) {
             if (categoriesByIdentifier[categoryTypes[i]]) {

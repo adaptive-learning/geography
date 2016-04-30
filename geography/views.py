@@ -67,6 +67,8 @@ def home(request, hack=None):
             lang=get_language(), type='continent').order_by('name'),
         'states': Category.objects.filter(
             lang=get_language(), type='state').order_by('name'),
+        'regions': Category.objects.filter(
+            lang=get_language(), type='region').order_by('name'),
         'user_json': user,
         'email': email,
         'LANGUAGE_CODE': get_language(),

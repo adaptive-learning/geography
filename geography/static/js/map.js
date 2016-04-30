@@ -90,7 +90,7 @@ angular.module('proso.geography.map', [])
         }
       };
 
-      angular.forEach(stateAlternatives.concat('district', 'island', 'surface', 'mountains', 'chko'), function(sa){
+      angular.forEach(stateAlternatives.concat('district', 'island', 'surface', 'mountains', 'chko', 'soorp', 'soopu', 'mzchu'), function(sa){
         layerConfig[sa] = angular.copy(layerConfig.state);
       });
 
@@ -159,6 +159,10 @@ angular.module('proso.geography.map', [])
       };
       layerConfig.reservoir.styles['stroke-width'] = RESERVOIR_WIDTH;
       layerConfig.reservoir.styles.fill = layerConfig.lake.styles.fill;
+
+      layerConfig.mzchu.mouseenter = layerConfig.reservoir.mouseenter;
+      layerConfig.mzchu.mouseleave = layerConfig.reservoir.mouseleave;
+      layerConfig.mzchu.styles['stroke-width'] = RESERVOIR_WIDTH;
 
       return layerConfig;
     };
