@@ -30,7 +30,7 @@ class Command(BaseCommand):
         message = loader.render_to_string(
             os.path.join(settings.BASE_DIR,
                          'geography/templates/reminder_email.txt'), data)
-        subject = _(u'Víš kde leží') + ' ' + questions[0].term.name + '?'
+        subject = _(u'Víš, kde leží') + ' ' + questions[0].term.name + '?'
         from_email = 'SlepeMapy.cz <info@slepemapy.cz>'
         send_mail(subject, message, from_email, (to,),
                   fail_silently=True, html_message=html_message)
