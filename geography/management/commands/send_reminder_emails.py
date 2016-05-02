@@ -16,11 +16,11 @@ class Command(BaseCommand):
         to_list = self.get_subscribers()
         for to in to_list:
             self.send_mail(to, questions)
-        print 'Mail sent to %d users' % len(to_list)
+        print('Mail sent to {} users'.format(len(to_list)))
 
     def send_mail(self, to, questions):
         data = {
-            'domain': settings.LANGUAGE_DOMAINS[settings.LANGUAGE_CODE],
+            'domain': 'http://' + settings.LANGUAGE_DOMAINS[settings.LANGUAGE_CODE],
             'questions': questions,
             'mail': to,
         }
