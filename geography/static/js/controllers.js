@@ -321,7 +321,9 @@ angular.module('proso.geography.controllers', [])
                     setQuestion(q);
                     var imageName = $routeParams.part + '-' + $routeParams.place_type + (
                       q.direction == 'd2t' ? '-' + q.description : '');
-                    $rootScope.$emit('imageDisplayed', imageName);
+                    if (! q.options || q.options.length === 0) {
+                      $rootScope.$emit('imageDisplayed', imageName);
+                    }
                 }, function(){
                     $scope.error = true;
                 });
