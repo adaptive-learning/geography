@@ -74,7 +74,7 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
         var config = {
           showTooltips: attrs.showTooltips !== undefined,
           mapCode : $scope.part,
-          layerId : $scope.placeType,
+          layerId : ($scope.placeType || '').split('-by-')[0],
         };
 
         var map = mapControler(elem, config, function(m) {
