@@ -177,11 +177,19 @@ angular.module('proso.geography.map', [])
       });
     }
 
+    function shouldShowLayer(config, i) {
+      return !config.layerId ||
+        config.layerId == i ||
+        (config.layerId == 'city' && stateAlternatives.concat(['state']).indexOf(i) != -1) ||
+        (config.layerId == 'reservoir' && i == 'river') ||
+        i == 'bg';
+    }
+
     return function(map, config) {
       var layersConfig = getLayerConfig(config);
       var layersArray = [];
       for (var i in layersConfig) {
-        if (!config.layerId || config.layerId == i || i == 'bg') {
+        if (shouldShowLayer(config ,i)) {
           map.addLayer(i, layersConfig[i]);
           var l = map.getLayer(i);
           if (l && l.id != 'bg' && l.id != 'border') {
