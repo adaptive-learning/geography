@@ -149,7 +149,7 @@ def resolve_map_type(code):
         'province': _('Provincie'),
         'region_cz': _('Kraje'),
         'region_it': _('Oblasti'),
-        'autonomous_Comunity': _(u'Autonomní společenství'),
+        'autonomous_comunity': _(u'Autonomní společenství'),
         'bundesland': _(u'Spolkové země'),
         'city': _(u'Města'),
         'river': _(u'Řeky'),

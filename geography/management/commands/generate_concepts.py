@@ -23,7 +23,7 @@ class Command(BaseCommand):
         'province': 'Provincie',
         'region_cz': 'Kraje',
         'region_it': 'Oblasti',
-        'autonomous_Comunity': 'Autonomní společenství',
+        'autonomous_comunity': 'Autonomní společenství',
         'bundesland': 'Spolkové země',
         'city': 'Města',
         'city-by-state': 'Hlavní města skrze státy',

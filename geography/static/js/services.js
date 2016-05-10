@@ -293,7 +293,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
           'region_cz' : gettextCatalog.getString('Kraje'),
           'district' : gettextCatalog.getString('Okresy'),
           'region_it' : gettextCatalog.getString('Oblasti'),
-          'autonomous_Comunity' : gettextCatalog.getString('Autonomní společenství'),
+          'autonomous_comunity' : gettextCatalog.getString('Autonomní společenství'),
           'bundesland' : gettextCatalog.getString('Spolkové země'),
           'city' : gettextCatalog.getString('Města'),
           'city-by-state' : gettextCatalog.getString('Hlavní města skrze státy'),
