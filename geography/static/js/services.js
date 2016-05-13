@@ -249,7 +249,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
         }
         filter = angular.copy(filter);
         filter.all = 'True';
-        $http.get('/flashcards/flashcards', {
+        $http.get('/models/to_practice', {
           params: filter
         }).success(function(data) {
           deferredFlashcards.resolve(data.data);
