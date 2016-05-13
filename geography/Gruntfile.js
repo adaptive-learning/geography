@@ -191,6 +191,10 @@ module.exports = function(grunt) {
                 files: '<%= concat.geography.src %>',
                 tasks: ['process-javascript']
             },
+            'proso-apps-js': {
+                files: 'bower_components/proso-apps-js/proso-apps-all.js',
+                tasks: ['copy:proso-apps-js']
+            },
             'geography-css': {
                 files: 'static/sass/*.sass',
                 tasks: ['sass:geography', 'copy:above-fold']
