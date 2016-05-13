@@ -1,7 +1,9 @@
 import gettext
 import json
+import logging
 
 from django.core.management import call_command
+from proso_models.models import Item
 from shutil import copyfile
 
 import os
@@ -10,7 +12,10 @@ from collections import defaultdict
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from proso_flashcards.models import Context, Term, Flashcard
+from proso_flashcards.models import Context, Category
+
+
+LOGGER = logging.getLogger('django.request')
 
 
 class Command(BaseCommand):
@@ -69,7 +74,7 @@ class Command(BaseCommand):
         for context in Context.objects.all().values("identifier", "name", "lang"):
             contexts[context["identifier"]][context["lang"]] = context["name"]
             data["tags"]["context"]["values"][context["identifier"]][context["lang"]] = context["name"]
-        types = Term.objects.all().values_list("type", flat=True).distinct()
+        types = Category.objects.filter(type='flashcard_type').values_list("identifier", flat=True).distinct()
 
         for lang in langs:
             translation = gettext.translation('djangojs', os.path.join(settings.BASE_DIR, "conf", "locale"), [lang])
@@ -80,12 +85,16 @@ class Command(BaseCommand):
             for type in types:
                 languages = []
                 for lang in langs:
-                    if len(Flashcard.objects.filtered_ids([], [context], [type], [], lang)[0]) > 0:
-                        languages.append(lang)
+                    try:
+                        if len(Item.objects.filter_all_reachable_leaves(
+                                [["context/"+context, "category/"+type]], lang)) > 0:
+                            languages.append(lang)
+                    except Exception:
+                        pass
                 if len(languages) == 0:
                     continue
                 concept = {
-                    "query": 'contexts=["{}"]&categories=[]&types=["{}"]'.format(context, type),
+                    "query": '[["context/{}", "category/{}"]]'.format(context, type),
                     "tags": ["type:{}".format(type), "context:{}".format(context)],
                     "names": {},
                     "actions": {
