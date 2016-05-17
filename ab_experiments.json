@@ -238,6 +238,48 @@
         }
       ],
       "id": "options-construction-2",
+      "disabled": true
+    },
+    {
+      "variables": [
+        {
+          "values": [
+            {
+              "probability": 20,
+              "value": "2"
+            },
+            {
+              "probability": 20,
+              "value": "3"
+            },
+            {
+              "probability": 20,
+              "value": "4"
+            },
+            {
+              "probability": 20,
+              "value": "6"
+            },
+            {
+              "probability": 20,
+              "value": "8"
+            }
+          ],
+          "name": "options_count.parameters.max_options",
+          "app_name": "proso_models"
+        },
+        {
+          "values": [
+            {
+              "probability": 100,
+              "value": "false"
+            }
+          ],
+          "name": "item_selector.parameters.history_adjustment",
+          "app_name": "proso_models"
+        }
+      ],
+      "id": "max-options-count",
       "disabled": false
     }
   ]
