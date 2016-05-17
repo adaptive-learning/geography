@@ -6,8 +6,8 @@ default:
             class: proso.models.prediction.PriorCurrentPredictiveModel
         option_selector:
             class: proso.models.option_selection.AdjustedOptionSelection
-        options_number:
-            class: AdjustedOptionsNumber
+        options_count:
+            class: proso.models.option_selection.AdjustedOptionsNumber
             parameters:
                 allow_zero_options_restriction: true
     proso_flashcards:
