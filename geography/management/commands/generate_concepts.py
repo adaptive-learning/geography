@@ -46,23 +46,32 @@ class Command(BaseCommand):
         for context in Context.objects.all().values("identifier", "name", "lang"):
             contexts[context["identifier"]][context["lang"]] = context["name"]
             data["tags"]["context"]["values"][context["identifier"]][context["lang"]] = context["name"]
-        types = Category.objects.filter(type='flashcard_type').values_list("identifier", flat=True).distinct()
+        types = Category.objects.filter(type='flashcard_type').values_list("identifier", "lang", 'name')
+        place_type_names = defaultdict(lambda: {})
+        for identifier, lang, name in types:
+            place_type_names[lang][identifier] = name
 
         for lang in langs:
             translation = gettext.translation('djangojs', os.path.join(settings.BASE_DIR, "conf", "locale"), [lang])
             data["action_names"]["practice"][lang] = translation.gettext("Procvičovat")
             data["action_names"]["view"][lang] = translation.gettext("Přehled map")
 
+        item_counts = defaultdict(lambda: 0)
+        for lang in langs:
+            filters = []
+            keys = []
+            for context, _ in contexts.items():
+                for type in place_type_names[lang]:
+                    filters.append([["context/" + context, "category/" + type]])
+                    keys.append((context, type, lang))
+            item_counts.update(zip(keys, map(len, Item.objects.filter_all_reachable_leaves_many(filters, lang))))
+
         for context, lang_map in contexts.items():
-            for type in types:
+            for type in set([t[0] for t in types]):
                 languages = []
                 for lang in langs:
-                    try:
-                        if len(Item.objects.filter_all_reachable_leaves(
-                                [["context/"+context, "category/"+type]], lang)) > 0:
-                            languages.append(lang)
-                    except Exception:
-                        pass
+                    if item_counts[(context, type, lang)] > 0:
+                        languages.append(lang)
                 if len(languages) == 0:
                     continue
                 concept = {
@@ -75,8 +84,7 @@ class Command(BaseCommand):
                     }
                 }
                 for lang in languages:
-                    translation = gettext.translation('djangojs', os.path.join(settings.BASE_DIR, "conf", "locale"), [lang])
-                    name = translation.gettext(get_place_types()[type])
+                    name = place_type_names[lang][type]
                     concept["names"][lang] = "{} - {}".format(_get_lang(lang_map, lang), name)
                     data["tags"]["type"]["values"][type][lang] = name
                     concept["actions"]["practice"][lang] = "http://{}/practice/{}/{}".format(domains[lang], context, type)
