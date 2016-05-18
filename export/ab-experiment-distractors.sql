@@ -48,6 +48,7 @@ DROP TABLE tmp_ip_address;
 
 CREATE TABLE tmp_context AS (
     SELECT
+        proso_flashcards_flashcard.id AS id,
         proso_flashcards_flashcard.item_id AS item_id,
         proso_flashcards_term.type AS term_type,
         proso_flashcards_term.name AS term_name,
@@ -73,3 +74,18 @@ CREATE TABLE tmp_difficulty AS (
 );
 \copy tmp_difficulty TO '/tmp/difficulty.csv' DELIMITER ',' CSV HEADER;
 DROP TABLE tmp_difficulty;
+
+CREATE TABLE tmp_option AS (
+    SELECT proso_flashcards_flashcardanswer_options.*
+    FROM proso_models_answer
+    INNER JOIN proso_configab_answerexperimentsetup
+        ON proso_models_answer.id = answer_id
+    INNER JOIN proso_flashcards_flashcardanswer
+        ON proso_models_answer.id = answer_ptr_id
+    INNER JOIN proso_flashcards_flashcardanswer_options
+        ON proso_models_answer.id = flashcardanswer_id
+    WHERE experiment_setup_id IN (18, 19, 20, 21, 22, 23)
+    ORDER BY proso_models_answer.id
+);
+\copy tmp_option TO '/tmp/options.csv' DELIMITER ',' CSV HEADER;
+DROP TABLE tmp_option;
