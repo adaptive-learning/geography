@@ -202,6 +202,7 @@ AUTHENTICATION_BACKENDS = (
     'lazysignup.backends.LazySignupBackend',
     'social.backends.facebook.FacebookOAuth2',
     'social.backends.google.GoogleOAuth2',
+    'proso.django.edookit.EdookitOAuth2',
 )
 
 SOCIAL_AUTH_FACEBOOK_KEY = os.getenv('PROSO_FACEBOOK_APP_ID', '')
@@ -218,6 +219,11 @@ SOCIAL_AUTH_SESSION_EXPIRATION = False
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv('PROSO_GOOGLE_OAUTH2_CLIENT_ID', '')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv('PROSO_GOOGLE_OAUTH2_CLIENT_SECRET', '')
 
+SOCIAL_AUTH_EDOOKIT_KEY = os.getenv('PROSO_EDOOKIT_APP_ID', '')
+SOCIAL_AUTH_EDOOKIT_SECRET = os.getenv('PROSO_EDOOKIT_API_SECRET', '')
+USER_STATS_API_KEY = {
+    'edookit': os.getenv('PROSO_EDOOKIT_API_KEY', '')
+}
 # http://stackoverflow.com/questions/22005841/is-not-json-serializable-django-social-auth-facebook-login
 SESSION_SERIALIZER='django.contrib.sessions.serializers.PickleSerializer'
 
