@@ -142,8 +142,8 @@ def get_map_from_url(hack):
     return map_string
 
 
-def resolve_map_type(code):
-    types = {
+def get_place_types():
+    return {
         'state': _(u'Státy'),
         'region': _('Regiony'),
         'province': _('Provincie'),
@@ -157,8 +157,20 @@ def resolve_map_type(code):
         'sea': _(u'Moře'),
         'mountains': _(u'Pohoří'),
         'island': _('Ostrovy'),
+        'state-by-city': _('Státy skrze hlavní města'),
+        'district': _('Okresy'),
+        'city-by-state': _('Hlavní města skrze státy'),
+        'reservoir': _('Vodní nádrže'),
+        'surface': _('Povrch'),
+        'chko': _('CHKO a NP'),
+        'soorp': _('Obce s rozšířenou působností'),
+        'soopu': _('Obce s pověřeným obecním úřadem'),
+        'mzchu': _('Maloplošná zvláštně chráněná území'),
     }
-    return types.get(code, '')
+
+
+def resolve_map_type(code):
+    return get_place_types().get(code, '')
 
 
 @staff_member_required
