@@ -11,31 +11,12 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 
 from proso_flashcards.models import Context, Term, Flashcard
+from geography.views import get_place_types
 
 
 class Command(BaseCommand):
     help = "Generate concepts to JSON file"
     default_lang = "cs"
-    place_type_names = {
-        'state': 'Státy',
-        'state-by-city': 'Státy skrze hlavní města',
-        'region': 'Regiony',
-        'province': 'Provincie',
-        'region_cz': 'Kraje',
-        'region_it': 'Oblasti',
-        'autonomous_comunity': 'Autonomní společenství',
-        'bundesland': 'Spolkové země',
-        'city': 'Města',
-        'city-by-state': 'Hlavní města skrze státy',
-        'river': 'Řeky',
-        'reservoir': 'Vodní nádrže',
-        'lake': 'Jezera',
-        'sea': 'Moře',
-        'mountains': 'Pohoří',
-        'surface': 'Povrch',
-        'island': 'Ostrovy',
-        'district': 'Okresy',
-    }
 
     def handle(self, *args, **options):
         def _get_lang(obj, lang):
@@ -95,7 +76,7 @@ class Command(BaseCommand):
                 }
                 for lang in languages:
                     translation = gettext.translation('djangojs', os.path.join(settings.BASE_DIR, "conf", "locale"), [lang])
-                    name = translation.gettext(self.place_type_names[type])
+                    name = translation.gettext(get_place_types()[type])
                     concept["names"][lang] = "{} - {}".format(_get_lang(lang_map, lang), name)
                     data["tags"]["type"]["values"][type][lang] = name
                     concept["actions"]["practice"][lang] = "http://{}/practice/{}/{}".format(domains[lang], context, type)
