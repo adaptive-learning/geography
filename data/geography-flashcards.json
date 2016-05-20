@@ -293,26 +293,51 @@
     {
       "id": "chko",
       "name-cs": "CHKO a NP",
+      "name-de": "CHKO a NP",
+      "name-en": "PLA and NP",
+      "name-es": "CHKO a NP",
+      "name-ru": "CHKO a NP",
+      "name-sk": "CHKO a NP",
       "type": "flashcard_type"
     },
     {
       "id": "soopu",
       "name-cs": "Obce s pov\u011b\u0159en\u00fdm obecn\u00edm \u00fa\u0159adem",
+      "name-de": "Obce s pov\u011b\u0159en\u00fdm obecn\u00edm \u00fa\u0159adem",
+      "name-en": "Obce s pov\u011b\u0159en\u00fdm obecn\u00edm \u00fa\u0159adem",
+      "name-es": "Obce s pov\u011b\u0159en\u00fdm obecn\u00edm \u00fa\u0159adem",
+      "name-ru": "Obce s pov\u011b\u0159en\u00fdm obecn\u00edm \u00fa\u0159adem",
+      "name-sk": "Obce s pov\u011b\u0159en\u00fdm obecn\u00edm \u00fa\u0159adem",
       "type": "flashcard_type"
     },
     {
       "id": "region",
       "name-cs": "Regiony",
+      "name-de": "Regionen",
+      "name-en": "Regions",
+      "name-es": "Regiony",
+      "name-ru": "Regiony",
+      "name-sk": "Regi\u00f3ny",
       "type": "flashcard_type"
     },
     {
       "id": "city",
       "name-cs": "M\u011bsta",
+      "name-de": "St\u00e4dte",
+      "name-en": "Cities",
+      "name-es": "M\u011bsta",
+      "name-ru": "M\u011bsta",
+      "name-sk": "Mest\u00e1",
       "type": "flashcard_type"
     },
     {
       "id": "river",
       "name-cs": "\u0158eky",
+      "name-de": "Fl\u00fc\u00dfe",
+      "name-en": "Rivers",
+      "name-es": "\u0158eky",
+      "name-ru": "\u0158eky",
+      "name-sk": "Rieky",
       "type": "flashcard_type"
     },
     {
@@ -323,46 +348,91 @@
     {
       "id": "sea",
       "name-cs": "Mo\u0159e",
+      "name-de": "Mo\u0159e",
+      "name-en": "Seas",
+      "name-es": "Mo\u0159e",
+      "name-ru": "Mo\u0159e",
+      "name-sk": "More",
       "type": "flashcard_type"
     },
     {
       "id": "lake",
       "name-cs": "Jezera",
+      "name-de": "Seen",
+      "name-en": "Lakes",
+      "name-es": "Jezera",
+      "name-ru": "Jezera",
+      "name-sk": "Jazer\u00e1",
       "type": "flashcard_type"
     },
     {
       "id": "province",
       "name-cs": "Provincie",
+      "name-de": "Provinzen",
+      "name-en": "Provinces",
+      "name-es": "Provincie",
+      "name-ru": "Provincie",
+      "name-sk": "Provincie",
       "type": "flashcard_type"
     },
     {
       "id": "region_cz",
       "name-cs": "Kraje",
+      "name-de": "Regionen",
+      "name-en": "Regions",
+      "name-es": "Kraje",
+      "name-ru": "Kraje",
+      "name-sk": "Kraje",
       "type": "flashcard_type"
     },
     {
       "id": "state-by-city",
       "name-cs": "St\u00e1ty skrze hlavn\u00ed m\u011bsta",
+      "name-de": "St\u00e1ty skrze hlavn\u00ed m\u011bsta",
+      "name-en": "States through capitals",
+      "name-es": "St\u00e1ty skrze hlavn\u00ed m\u011bsta",
+      "name-ru": "St\u00e1ty skrze hlavn\u00ed m\u011bsta",
+      "name-sk": "St\u00e1ty skrze hlavn\u00ed m\u011bsta",
       "type": "flashcard_type"
     },
     {
       "id": "autonomous_comunity",
       "name-cs": "Autonomn\u00ed spole\u010denstv\u00ed",
+      "name-de": "Autonomiegebiete",
+      "name-en": "Autonomous Comuninities",
+      "name-es": "Autonomn\u00ed spole\u010denstv\u00ed",
+      "name-ru": "Autonomn\u00ed spole\u010denstv\u00ed",
+      "name-sk": "Auton\u00f3mne spolo\u010denstv\u00e1",
       "type": "flashcard_type"
     },
     {
       "id": "mzchu",
       "name-cs": "Maloplo\u0161n\u00e1 zvl\u00e1\u0161tn\u011b chr\u00e1n\u011bn\u00e1 \u00fazem\u00ed",
+      "name-de": "Maloplo\u0161n\u00e1 zvl\u00e1\u0161tn\u011b chr\u00e1n\u011bn\u00e1 \u00fazem\u00ed",
+      "name-en": "Maloplo\u0161n\u00e1 zvl\u00e1\u0161tn\u011b chr\u00e1n\u011bn\u00e1 \u00fazem\u00ed",
+      "name-es": "Maloplo\u0161n\u00e1 zvl\u00e1\u0161tn\u011b chr\u00e1n\u011bn\u00e1 \u00fazem\u00ed",
+      "name-ru": "Maloplo\u0161n\u00e1 zvl\u00e1\u0161tn\u011b chr\u00e1n\u011bn\u00e1 \u00fazem\u00ed",
+      "name-sk": "Maloplo\u0161n\u00e1 zvl\u00e1\u0161tn\u011b chr\u00e1n\u011bn\u00e1 \u00fazem\u00ed",
       "type": "flashcard_type"
     },
     {
       "id": "city-by-state",
       "name-cs": "Hlavn\u00ed m\u011bsta skrze st\u00e1ty",
+      "name-de": "Hlavn\u00ed m\u011bsta skrze st\u00e1ty",
+      "name-en": "Capitals through states",
+      "name-es": "Hlavn\u00ed m\u011bsta skrze st\u00e1ty",
+      "name-ru": "Hlavn\u00ed m\u011bsta skrze st\u00e1ty",
+      "name-sk": "Hlavn\u00ed m\u011bsta skrze st\u00e1ty",
       "type": "flashcard_type"
     },
     {
       "id": "mountains",
       "name-cs": "Poho\u0159\u00ed",
+      "name-de": "Gebirge",
+      "name-en": "Mountains",
+      "name-es": "Poho\u0159\u00ed",
+      "name-ru": "Poho\u0159\u00ed",
+      "name-sk": "Pohoria",
       "type": "flashcard_type"
     },
     {
@@ -373,41 +443,81 @@
     {
       "id": "state",
       "name-cs": "St\u00e1ty",
+      "name-de": "Staaten",
+      "name-en": "States",
+      "name-es": "Estados",
+      "name-ru": "\u0413\u043e\u0441\u0443\u0434\u0430\u0440\u0441\u0442\u0432\u0430",
+      "name-sk": "\u0160t\u00e1ty",
       "type": "flashcard_type"
     },
     {
       "id": "surface",
       "name-cs": "Povrch",
+      "name-de": "Povrch",
+      "name-en": "Surface",
+      "name-es": "Povrch",
+      "name-ru": "Povrch",
+      "name-sk": "Povrch",
       "type": "flashcard_type"
     },
     {
       "id": "region_it",
       "name-cs": "Oblasti",
+      "name-de": "Gebiete",
+      "name-en": "Provinces",
+      "name-es": "Oblasti",
+      "name-ru": "Oblasti",
+      "name-sk": "Oblasti",
       "type": "flashcard_type"
     },
     {
       "id": "district",
       "name-cs": "Okresy",
+      "name-de": "Okresy",
+      "name-en": "Districts",
+      "name-es": "Okresy",
+      "name-ru": "Okresy",
+      "name-sk": "Okresy",
       "type": "flashcard_type"
     },
     {
       "id": "island",
       "name-cs": "Ostrovy",
+      "name-de": "Inseln",
+      "name-en": "Islands",
+      "name-es": "Ostrovy",
+      "name-ru": "Ostrovy",
+      "name-sk": "Ostrovy",
       "type": "flashcard_type"
     },
     {
       "id": "bundesland",
       "name-cs": "Spolkov\u00e9 zem\u011b",
+      "name-de": "Bundesl\u00e4nder",
+      "name-en": "Federal states",
+      "name-es": "Spolkov\u00e9 zem\u011b",
+      "name-ru": "Spolkov\u00e9 zem\u011b",
+      "name-sk": "Spolkov\u00e9 krajiny",
       "type": "flashcard_type"
     },
     {
       "id": "reservoir",
       "name-cs": "Vodn\u00ed n\u00e1dr\u017ee",
+      "name-de": "Vodn\u00ed n\u00e1dr\u017ee",
+      "name-en": "Reservoirs",
+      "name-es": "Vodn\u00ed n\u00e1dr\u017ee",
+      "name-ru": "Vodn\u00ed n\u00e1dr\u017ee",
+      "name-sk": "Vodn\u00ed n\u00e1dr\u017ee",
       "type": "flashcard_type"
     },
     {
       "id": "soorp",
       "name-cs": "Obce s roz\u0161\u00ed\u0159enou p\u016fsobnost\u00ed",
+      "name-de": "Obce s roz\u0161\u00ed\u0159enou p\u016fsobnost\u00ed",
+      "name-en": "Obce s roz\u0161\u00ed\u0159enou p\u016fsobnost\u00ed",
+      "name-es": "Obce s roz\u0161\u00ed\u0159enou p\u016fsobnost\u00ed",
+      "name-ru": "Obce s roz\u0161\u00ed\u0159enou p\u016fsobnost\u00ed",
+      "name-sk": "Obce s roz\u0161\u00ed\u0159enou p\u016fsobnost\u00ed",
       "type": "flashcard_type"
     }
   ],
