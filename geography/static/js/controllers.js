@@ -133,11 +133,11 @@ angular.module('proso.geography.controllers', [])
 
 .controller('AppPractice', ['$scope', '$routeParams', '$timeout', '$filter',
     'practiceService', 'userService', '$rootScope', 'colors', '$', 'highlighted',
-    'categoryService', 'flashcardService', '$http',
+    'flashcardService', '$http',
 
     function($scope, $routeParams, $timeout, $filter,
         practiceService, userService, $rootScope, colors, $, highlighted,
-        categoryService, flashcardService, $http) {
+        flashcardService, $http) {
         'use strict';
 
         $scope.part = $routeParams.part;
@@ -376,7 +376,8 @@ angular.module('proso.geography.controllers', [])
         $scope.user = $routeParams.user || '';
         $scope.refreshthumbs = $routeParams.refreshthumbs || '';
         categoryService.getAll().then(function(categories){
-            $scope.mapCategories = addNamesAndSort(categories);
+            categories = addNamesAndSort(categories);
+            $scope.mapCategories = categories;
             var maps = [];
             for (var i = 0; i < categories.length; i++) {
               maps = maps.concat(categories[i].maps);
