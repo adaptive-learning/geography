@@ -85,7 +85,9 @@ angular.module('proso.geography.controllers', [])
                 type.hidden = true;
             });
             if (!type && $scope.placesTypes) {
-              type = $scope.placesTypes[0];
+              type = $scope.placesTypes.filter(function(type) {
+                return type.stats.number_of_flashcards;
+              })[0];
             }
             if (type) {
               type.hidden = false;
