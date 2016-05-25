@@ -67,10 +67,10 @@
             </div>
           </div>
           <span ng-repeat="fc in summary.questions"
-                ng-click="map.highlightState(fc.description)"
-                class="label {{fc.description != fc.answered_code &&
+                ng-click="map.highlightState(fc.payload.description)"
+                class="label {{fc.payload.description != fc.payload.answered_code &&
                   'label-unlearned' || 'label-learned' }} ">
-            <span term-label="{{fc.term}}"></span>
+            <span term-label="{{fc.payload.term}}"></span>
           </span>
         </div>
         <div class="col-sm-6" ng-if="userService.user.username" >

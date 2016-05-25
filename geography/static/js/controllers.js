@@ -249,9 +249,9 @@ angular.module('proso.geography.controllers', [])
             $scope.imageController.hideLayers();
             $scope.imageController.showSummaryTooltips($scope.questions);
             angular.forEach($scope.summary.questions, function(q) {
-                var correct = q.description == q.answered_code;
-                $scope.imageController.showLayerContaining(q.description);
-                $scope.imageController.highlightItem(q.description, correct ? colors.GOOD : colors.BAD, 1);
+                var correct = q.payload.description == q.payload.answered_code;
+                $scope.imageController.showLayerContaining(q.payload.description);
+                $scope.imageController.highlightItem(q.payload.description, correct ? colors.GOOD : colors.BAD, 1);
             });
             $("html, body").animate({ scrollTop: "0px" });
             $rootScope.$emit('questionSetFinished');
