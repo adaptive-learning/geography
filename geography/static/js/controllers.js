@@ -39,8 +39,8 @@ angular.module('proso.geography.controllers', [])
 
 }])
 
-.controller('AppView', ['$scope', '$routeParams', '$filter', 'flashcardService', 'mapTitle', 'placeTypeService', '$location',
-    function($scope, $routeParams, $filter, flashcardService, mapTitle, placeTypeService, $location) {
+.controller('AppView', ['$scope', '$routeParams', '$filter', 'flashcardService', 'mapTitle', 'placeTypeService', '$location', 'userStatsService',
+    function($scope, $routeParams, $filter, flashcardService, mapTitle, placeTypeService, $location, userStatsService) {
         'use strict';
         $scope.part = $routeParams.part;
         $scope.type = $routeParams.type;
@@ -52,75 +52,74 @@ angular.module('proso.geography.controllers', [])
           $scope.type = undefined;
         }
 
-        var filter = {
-            contexts : [$routeParams.part],
-            stats : true,
-        };
         if ($routeParams.user == 'average') {
-          filter.new_user_predictions = true;
+          $scope.average = true;
         }
 
-        flashcardService.getFlashcards(filter).then(function(data) {
-            angular.forEach(data, function(flashcard) {
-              if (filter.new_user_predictions) {
-                flashcard.prediction = flashcard.new_user_prediction;
-                flashcard.practiced = true;
-              }
-              flashcard.prediction = Math.ceil(flashcard.prediction * 10) / 10;
-            });
-            var placeTypes = placeTypeService.getTypes();
-
-            var fcsById = {};
-            placeTypes = placeTypes.map(function(pt) {
-                if (pt.name == activePlaceType){
-                  activePlaceType = pt;
-                }
-                pt.places = data.filter(function(fc) {
-                    return fc.term.type == pt.identifier;
-                });
-                pt.places.map(function(p) {
-                  fcsById[p.description] = p;
-                });
-                pt.subtypes = pt.subtypes || [];
-                pt.subtypes = pt.subtypes.map(function(st) {
-                    st.places = data.filter(function(fc) {
-                        return fc.term.type == st.identifier;
-                    });
-                    st.places.map(function(p) {
-                      fcsById[p.description][p.term.type] = p.term.name;
-                    });
-                    return st;
-                }).filter(function(pt) {
-                    return pt.places.length;
-                });
-                pt.subtypes = pt.subtypes.length ? pt.subtypes : undefined;
-                return pt;
-            }).filter(function(pt) {
-                return pt.places.length;
-            });
-            $scope.placesTypes = placeTypes;
-            $scope.updateMap(activePlaceType, true);
-        }, function(){
-            $scope.error = true;
+        var placeTypes = placeTypeService.getTypes();
+        for (var j = 0; j < placeTypes.length; j++) {
+          var pt = placeTypes[j];
+          userStatsService.addGroup(pt.identifier, {});
+          userStatsService.addGroupParams(pt.identifier,
+            [['context/' + $routeParams.part, 'category/' + pt.identifier]], '');
+        }
+        userStatsService.getStatsPost(true).success(function(data) {
+          for (var j = 0; j < placeTypes.length; j++) {
+            var pt = placeTypes[j];
+            pt.stats = data.data[pt.identifier];
+            if (pt.name == activePlaceType){
+              activePlaceType = pt;
+            }
+          }
+          $scope.placesTypes = placeTypes;
+          $scope.updateMap(activePlaceType);
         });
 
         $scope.placeClick = function(place) {
             $scope.imageController.highlightItem(place.description);
         };
 
-        $scope.updateMap = function(type, dataChanged) {
+        $scope.updateMap = function(type) {
 
             angular.forEach($scope.placesTypes, function(type) {
                 type.hidden = true;
             });
             if (!type && $scope.placesTypes) {
-              type = $scope.placesTypes[0];
+              type = $scope.placesTypes.filter(function(type) {
+                return type.stats.number_of_flashcards;
+              })[0];
             }
             if (type) {
               type.hidden = false;
               $scope.type = type.identifier;
+              if (!type.places) {
+                var filter = {
+                    filter : [[
+                      'context/' + $routeParams.part,
+                      'category/' + type.identifier
+                    ]],
+                    stats : true,
+                };
+                if ($routeParams.user == 'average') {
+                  filter.new_user_predictions = true;
+                }
+                flashcardService.getFlashcards(filter).then(function(data) {
+                  type.places = data;
+                  angular.forEach(type.places, function(flashcard) {
+                    if (filter.new_user_predictions) {
+                      flashcard.prediction = flashcard.new_user_prediction;
+                      flashcard.practiced = true;
+                    }
+                    flashcard.prediction = Math.ceil(flashcard.prediction * 10) / 10;
+                  });
+                  type.loaded = true;
+                  $scope.imageController.updateItems($scope.placesTypes, true);
+                }, function(){
+                    $scope.error = true;
+                });
+              }
             }
-            $scope.imageController.updateItems($scope.placesTypes, dataChanged);
+            $scope.imageController.updateItems($scope.placesTypes, false);
             $scope.name = mapTitle($scope.part, user);
 
             var newPath = '/' + [
@@ -183,7 +182,7 @@ angular.module('proso.geography.controllers', [])
             $scope.question.responseTime = new Date().valueOf() - $scope.question.startTime;
             var selectedFC = flashcardService.getFlashcardByDescription(selected);
             if ($scope.question.meta != 'email') {
-              practiceService.saveAnswerToCurrentFC(selectedFC ? selectedFC.id : null, $scope.question.responseTime);
+              practiceService.saveAnswerToCurrentQuestion(selectedFC ? selectedFC.id : null, $scope.question.responseTime);
             } else {
               saveEmailAnswer($scope.question, selectedFC ? selectedFC.id : null, $scope.question.responseTime);
             }
@@ -205,9 +204,10 @@ angular.module('proso.geography.controllers', [])
         $scope.next = function(callback) {
             if ($scope.progress < 100) {
                 $scope.loadingNextQuestion = true;
-                practiceService.getFlashcard().then(function(q) {
+                practiceService.getQuestion().then(function(q) {
                     $scope.loadingNextQuestion = false;
-                    setQuestion(q);
+                    q.payload.question_type = q.question_type;
+                    setQuestion(q.payload);
                     if (callback) callback();
                 }, function(){
                     $scope.loadingNextQuestion = false;
@@ -248,10 +248,10 @@ angular.module('proso.geography.controllers', [])
             $scope.imageController.clearHighlights();
             $scope.imageController.hideLayers();
             $scope.imageController.showSummaryTooltips($scope.questions);
-            angular.forEach($scope.summary.flashcards, function(q) {
-                var correct = q.description == q.answered_code;
-                $scope.imageController.showLayerContaining(q.description);
-                $scope.imageController.highlightItem(q.description, correct ? colors.GOOD : colors.BAD, 1);
+            angular.forEach($scope.summary.questions, function(q) {
+                var correct = q.payload.description == q.payload.answered_code;
+                $scope.imageController.showLayerContaining(q.payload.description);
+                $scope.imageController.highlightItem(q.payload.description, correct ? colors.GOOD : colors.BAD, 1);
             });
             $("html, body").animate({ scrollTop: "0px" });
             $rootScope.$emit('questionSetFinished');
@@ -261,6 +261,7 @@ angular.module('proso.geography.controllers', [])
             if ($scope.question) {
                 $scope.question.slideOut = true;
             }
+            active.term.type = $scope.placeType;
             $scope.question = active;
             $scope.question.startTime = new Date().valueOf();
             $scope.questions.push(active);
@@ -287,10 +288,10 @@ angular.module('proso.geography.controllers', [])
             "flashcard_id": question.id,
             "flashcard_answered_id": answeredId,
             "response_time": responseTime,
-            "direction": question.direction,
+            "question_type": question.question_type,
             "meta": {"referer" : "email"},
           };
-          $http.post("/flashcards/answer/",
+          $http.post("/models/answer/",
             {answer: answer},
             {params : question.filter});
         }
@@ -298,17 +299,20 @@ angular.module('proso.geography.controllers', [])
         $scope.mapCallback = function() {
             practiceService.initSet('common');
             var filter = {
-                contexts : [$routeParams.part],
-                categories : ['-too_small'],
+                filter : [[
+                  'context/' + $routeParams.part,
+                  // TODO fix
+                  // '-category/' + 'too_small',
+                ]]
             };
             if ($routeParams.place_type) {
-                filter.types = [$routeParams.place_type];
+                filter.filter[0].push('category/' +$routeParams.place_type);
             }
             flashcardService.getFlashcards(filter).then(function() {
               practiceService.setFilter(filter);
               if ($routeParams.q) {
                 flashcardService.getFlashcardById($routeParams.q).then(function(q) {
-                  q.direction = $routeParams.d || 't2d';
+                  q.question_type = $routeParams.d || 't2d';
                   q.options = [];
                   q.meta = 'email';
                   q.filter = filter;
@@ -316,12 +320,13 @@ angular.module('proso.geography.controllers', [])
                   setQuestion(q);
                 });
               } else {
-                practiceService.getFlashcard().then(function(q) {
+                practiceService.getQuestion().then(function(q) {
                     $scope.questions = [];
-                    setQuestion(q);
+                    q.payload.question_type = q.question_type;
+                    setQuestion(q.payload);
                     var imageName = $routeParams.part + '-' + $routeParams.place_type + (
-                      q.direction == 'd2t' ? '-' + q.description : '');
-                    if (! q.options || q.options.length === 0) {
+                      q.question_type == 'd2t' ? '-' + q.payload.description : '');
+                    if (! q.payload.options || q.payload.options.length === 0) {
                       $rootScope.$emit('imageDisplayed', imageName);
                     }
                 }, function(){
@@ -385,7 +390,8 @@ angular.module('proso.geography.controllers', [])
                 var pt = placeTypes[j];
                 var id = map.identifier + '-' + pt.identifier;
                 userStatsService.addGroup(id, {});
-                userStatsService.addGroupParams(id, undefined, [map.identifier], [pt.identifier]);
+                userStatsService.addGroupParams(id,
+                  [['context/' +map.identifier, 'category/' + pt.identifier]], '');
               }
             }
 

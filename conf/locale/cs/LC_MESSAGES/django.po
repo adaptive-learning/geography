@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-30 18:43+0000\n"
+"POT-Creation-Date: 2016-05-20 13:03+0000\n"
 "PO-Revision-Date: 2016-02-07 06:26+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Czech (http://www.transifex.com/adaptive-learning/slepemapycz/"
@@ -18,17 +18,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: geography/management/commands/generate_concepts.py:76
+#: geography/management/commands/generate_concepts.py:57
 msgid "Procvičovat"
 msgstr ""
 
-#: geography/management/commands/generate_concepts.py:77
+#: geography/management/commands/generate_concepts.py:58
 #: geography/templates/home.html:109
 msgid "Přehled map"
 msgstr "Přehled map"
 
 #: geography/management/commands/send_reminder_emails.py:33
-msgid "Víš kde leží"
+msgid "Víš, kde leží"
 msgstr ""
 
 #: geography/templates/create_goal.html:5
@@ -320,6 +320,44 @@ msgstr "Pohoří ČR"
 
 #: geography/views.py:159
 msgid "Ostrovy"
+msgstr ""
+
+#: geography/views.py:160
+#, fuzzy
+#| msgid "Státy USA"
+msgid "Státy skrze hlavní města"
+msgstr "Státy USA"
+
+#: geography/views.py:161
+msgid "Okresy"
+msgstr ""
+
+#: geography/views.py:162
+msgid "Hlavní města skrze státy"
+msgstr ""
+
+#: geography/views.py:163
+msgid "Vodní nádrže"
+msgstr ""
+
+#: geography/views.py:164
+msgid "Povrch"
+msgstr ""
+
+#: geography/views.py:165
+msgid "CHKO a NP"
+msgstr ""
+
+#: geography/views.py:166
+msgid "Obce s rozšířenou působností"
+msgstr ""
+
+#: geography/views.py:167
+msgid "Obce s pověřeným obecním úřadem"
+msgstr ""
+
+#: geography/views.py:168
+msgid "Maloplošná zvláštně chráněná území"
 msgstr ""
 
 #~ msgid "Řeky Afriky"

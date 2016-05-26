@@ -66,11 +66,11 @@
                  style="width: {{(1 - summary.correctlyAnsweredRatio) | percent }};">
             </div>
           </div>
-          <span ng-repeat="fc in summary.flashcards"
-                ng-click="map.highlightState(fc.description)"
-                class="label {{fc.description != fc.answered_code &&
+          <span ng-repeat="fc in summary.questions"
+                ng-click="map.highlightState(fc.payload.description)"
+                class="label {{fc.payload.description != fc.payload.answered_code &&
                   'label-unlearned' || 'label-learned' }} ">
-            <span term-label="{{fc.term}}"></span>
+            <span term-label="{{fc.payload.term}}"></span>
           </span>
         </div>
         <div class="col-sm-6" ng-if="userService.user.username" >

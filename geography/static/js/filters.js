@@ -42,13 +42,13 @@ angular.module('proso.geography.filters', [])
 
   .filter('isFindOnMapType', function() {
     return function(question) {
-      return question && question.direction == "t2d";
+      return question && question.question_type == "t2d";
     };
   })
 
   .filter('isPickNameOfType', function() {
     return function(question) {
-      return question && question.direction == "d2t";
+      return question && question.question_type == "d2t";
     };
   })
 
@@ -64,12 +64,12 @@ angular.module('proso.geography.filters', [])
 
   .filter('questionText', ['gettextCatalog', function(gettextCatalog) {
     return function(question) {
-      if (question && question.direction == "t2d") {
+      if (question && question.question_type == "t2d") {
         return gettextCatalog.getString("Vyber na mapě");
-      } else if (question && question.direction == "d2t") {
+      } else if (question && question.question_type == "d2t") {
         return gettextCatalog.getString("Co je zvýrazněno?");
       }
-      return "Error";
+      return "Error: unknown question type: " + (question && question.question_type);
     };
   }])
 

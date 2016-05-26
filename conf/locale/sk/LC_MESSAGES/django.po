@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-30 18:43+0000\n"
-"PO-Revision-Date: 2016-04-30 18:44+0000\n"
+"POT-Creation-Date: 2016-05-20 13:03+0000\n"
+"PO-Revision-Date: 2016-05-20 13:06+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Slovak (http://www.transifex.com/adaptive-learning/slepemapycz/language/sk/)\n"
 "MIME-Version: 1.0\n"
@@ -19,17 +19,17 @@ msgstr ""
 "Language: sk\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: geography/management/commands/generate_concepts.py:76
+#: geography/management/commands/generate_concepts.py:57
 msgid "Procvičovat"
-msgstr ""
+msgstr "Precvičovať"
 
-#: geography/management/commands/generate_concepts.py:77
+#: geography/management/commands/generate_concepts.py:58
 #: geography/templates/home.html:109
 msgid "Přehled map"
 msgstr "Prehľad máp"
 
 #: geography/management/commands/send_reminder_emails.py:33
-msgid "Víš kde leží"
+msgid "Víš, kde leží"
 msgstr ""
 
 #: geography/templates/create_goal.html:5
@@ -76,17 +76,17 @@ msgstr "Štáty USA"
 #: geography/templates/generated/homepage.html:41
 #| msgid "Státy Asie"
 msgid "Státy Afriky"
-msgstr ""
+msgstr "Štáty Afriky"
 
 #: geography/templates/generated/homepage.html:46
 #| msgid "Státy Evropy"
 msgid "Města Evropy"
-msgstr ""
+msgstr "Mestá Európy"
 
 #: geography/templates/generated/homepage.html:51
 #| msgid "Státy USA"
 msgid "Státy Světa"
-msgstr ""
+msgstr "Štáty sveta"
 
 #: geography/templates/generated/homepage.html:54
 msgid "Chcete jinou? Podívejte se na"
@@ -170,7 +170,7 @@ msgstr "Štáty"
 
 #: geography/templates/home.html:138
 msgid "Kraje ČR"
-msgstr ""
+msgstr "Kraje ČR"
 
 #: geography/templates/home.html:156
 msgid ""
@@ -208,7 +208,7 @@ msgstr "Napíšte nám"
 
 #: geography/templates/home.html:249
 msgid "Skrýt tlačítko"
-msgstr ""
+msgstr "Skryť tlačidlo"
 
 #: geography/templates/home.html:270
 msgid "O projektu"
@@ -217,28 +217,28 @@ msgstr "O projekte"
 #: geography/templates/reminder_email.html:10
 #| msgid "Slepé mapy"
 msgid "SlepeMapy.cz"
-msgstr ""
+msgstr "SlepeMapy.cz"
 
 #: geography/templates/reminder_email.html:17
 #: geography/templates/reminder_email.txt:6
 msgid "Kde leží"
-msgstr ""
+msgstr "Kde leží"
 
 #: geography/templates/reminder_email.html:26
 #: geography/templates/reminder_email.txt:8
 msgid "Zjistit odpověď"
-msgstr ""
+msgstr "Zistiť odpoveď"
 
 #: geography/templates/reminder_email.html:34
 #| msgid "Slepé mapy"
 msgid "Slepé mapy.cz"
-msgstr ""
+msgstr "Slepé mapy.cz"
 
 #: geography/templates/reminder_email.html:41
 #: geography/templates/reminder_email.txt:17
 #| msgid "Odhlásit se"
 msgid "Odhlásit z rozesílky"
-msgstr ""
+msgstr "Odhlásiť z rozosielky"
 
 #: geography/views.py:60
 msgid "inteligentní aplikace na procvičování zeměpisu"
@@ -246,52 +246,89 @@ msgstr "Inteligentná aplikácia na precvičovanie zemepisu"
 
 #: geography/views.py:148
 msgid "Regiony"
-msgstr ""
+msgstr "Regióny"
 
 #: geography/views.py:149
 msgid "Provincie"
-msgstr ""
+msgstr "Provincie"
 
 #: geography/views.py:150
 msgid "Kraje"
-msgstr ""
+msgstr "Kraje"
 
 #: geography/views.py:151
 msgid "Oblasti"
-msgstr ""
+msgstr "Oblasti"
 
 #: geography/views.py:152
 msgid "Autonomní společenství"
-msgstr ""
+msgstr "Autonómne spoločenstvá"
 
 #: geography/views.py:153
 msgid "Spolkové země"
-msgstr ""
+msgstr "Spolkové krajiny"
 
 #: geography/views.py:154
 msgid "Města"
-msgstr ""
+msgstr "Mestá"
 
 #: geography/views.py:155
 #| msgid "Řeky ČR"
 msgid "Řeky"
-msgstr ""
+msgstr "Rieky"
 
 #: geography/views.py:156
 msgid "Jezera"
-msgstr ""
+msgstr "Jazerá"
 
 #: geography/views.py:157
 msgid "Moře"
-msgstr ""
+msgstr "More"
 
 #: geography/views.py:158
 #| msgid "Pohoří ČR"
 msgid "Pohoří"
-msgstr ""
+msgstr "Pohoria"
 
 #: geography/views.py:159
 msgid "Ostrovy"
+msgstr "Ostrovy"
+
+#: geography/views.py:160
+#| msgid "Státy USA"
+msgid "Státy skrze hlavní města"
+msgstr ""
+
+#: geography/views.py:161
+msgid "Okresy"
+msgstr ""
+
+#: geography/views.py:162
+msgid "Hlavní města skrze státy"
+msgstr ""
+
+#: geography/views.py:163
+msgid "Vodní nádrže"
+msgstr ""
+
+#: geography/views.py:164
+msgid "Povrch"
+msgstr ""
+
+#: geography/views.py:165
+msgid "CHKO a NP"
+msgstr ""
+
+#: geography/views.py:166
+msgid "Obce s rozšířenou působností"
+msgstr ""
+
+#: geography/views.py:167
+msgid "Obce s pověřeným obecním úřadem"
+msgstr ""
+
+#: geography/views.py:168
+msgid "Maloplošná zvláštně chráněná území"
 msgstr ""
 
 #~ msgid "Řeky Afriky"
