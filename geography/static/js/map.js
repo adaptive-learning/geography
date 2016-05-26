@@ -580,7 +580,7 @@ angular.module('proso.geography.map', [])
         },
         highLightLayer : function(layer) {
           angular.forEach(layers.getAll(), function(l) {
-            if (l == layer || 
+            if (l == layer ||
                 (layer && layer.id == 'city' &&
                   mapFunctions.isStateAlternative(l.id)) ||
                 (layer && layer.id == 'reservoir' && l.id == 'river')) {

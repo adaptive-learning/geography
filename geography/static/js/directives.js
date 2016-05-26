@@ -134,9 +134,9 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
         attrs.$observe('skills', function(skills) {
           if(skills !== '') {
             $scope.skills = angular.fromJson(skills);
-            $scope.skills.number_of_nonmastered_practiced_flashcards = 
-              Math.max(0, $scope.skills.number_of_practiced_flashcards - 
-              ($scope.skills.number_of_mastered_flashcards || 0)); 
+            $scope.skills.number_of_nonmastered_practiced_flashcards =
+              Math.max(0, $scope.skills.number_of_practiced_flashcards -
+              ($scope.skills.number_of_mastered_flashcards || 0));
             if($scope.skills.number_of_mastered_flashcards !== undefined) {
               elem.tooltip({
                 html : true,
@@ -189,7 +189,7 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
         levelRange += rangeIncrease;
         rangeIncrease += 10;
       }
-      
+
     }
     return {
       restrict : 'C',

@@ -277,7 +277,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
   .service('placeTypeService', ["gettextCatalog", function (gettextCatalog) {
     'use strict';
     var self = this;
-    
+
     var placeTypeNames = {};
     var placeTypes = [];
     function hackForCorrectLanguage() {
@@ -313,7 +313,7 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
             identifier : i,
           });
         } else {
-          placeTypes[placeTypes.length - 1].subtypes = 
+          placeTypes[placeTypes.length - 1].subtypes =
             placeTypes[placeTypes.length - 1].subtypes || [];
           placeTypes[placeTypes.length - 1].subtypes.push({
             name : placeTypeNames[i],
