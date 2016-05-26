@@ -251,7 +251,7 @@ angular.module('proso.geography.controllers', [])
             angular.forEach($scope.summary.questions, function(q) {
                 var correct = q.payload.description == q.payload.answered_code;
                 $scope.imageController.showLayerContaining(q.payload.description);
-                $scope.imageController.highlightItem(q.payload.description, correct ? colors.GOOD : colors.BAD, 1);
+                $scope.imageController.highlightItem(q.payload.description, correct ? colors.GOOD : colors.BAD);
             });
             $("html, body").animate({ scrollTop: "0px" });
             $rootScope.$emit('questionSetFinished');

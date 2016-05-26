@@ -478,7 +478,7 @@ angular.module('proso.geography.map', [])
             }
           };
         },
-        highlightItems : function(states, color, zoomRatio) {
+        highlightItems : function(states, color) {
           var state = states.pop();
           var layer = this.getLayerContaining(state);
           var placePath = layer ? layer.getPaths({ code : state })[0] : undefined;
@@ -515,8 +515,8 @@ angular.module('proso.geography.map', [])
             myMap.highlightItems(states, color);
           }
         },
-        highlightItem : function(state, color, zoomRatio) {
-          myMap.highlightItems([state], color, zoomRatio);
+        highlightItem : function(state, color) {
+          myMap.highlightItems([state], color);
         },
         clearHighlights : function() {
           highlighted.clear();

@@ -6,13 +6,10 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
     'use strict';
     var cache = {};
     var mapCache = {};
-    var categoriesCache = {};
     var names = {
         'us' : gettextCatalog.getString('USA'),
         'world' : gettextCatalog.getString('Svět')
       };
-    var categories = [
-    ];
     var placeTypeNames = {};
 
     function addOneToNames(code, name) {
@@ -228,11 +225,10 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
     return that;
   }])
 
-  .factory('flashcardService', ["$http", "$q", "gettextCatalog",
-      function ($http, $q, gettextCatalog) {
+  .factory('flashcardService', ["$http", "$q",
+      function ($http, $q) {
     'use strict';
     var flashcardCache = {};
-    var categoriesCache = {};
 
     function updateFlashcardCache(flashcards) {
       for (var i = 0; i < flashcards.length; i++) {

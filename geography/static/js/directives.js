@@ -70,7 +70,6 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
         $scope.loading = true;
         $scope.name = places.getName($scope.part);
         $scope.practice = !attrs.showTooltips;
-        var showTooltips = attrs.showTooltips !== undefined;
         var config = {
           showTooltips: attrs.showTooltips !== undefined,
           mapCode : $scope.part,
