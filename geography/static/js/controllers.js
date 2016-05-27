@@ -64,13 +64,13 @@ angular.module('proso.geography.controllers', [])
             [['context/' + $routeParams.part, 'category/' + pt.identifier]], '');
         }
         userStatsService.getToPracticeCounts().success(function(data) {
-          processStats(data);
+          processStats(data, true);
           userStatsService.getStatsPost(true).success(function(data) {
-            processStats(data);
+            processStats(data, false);
           });
         });
 
-        function processStats(data) {
+        function processStats(data, loadPlaces) {
           for (var j = 0; j < placeTypes.length; j++) {
             var pt = placeTypes[j];
             pt.stats = data.data[pt.identifier];
@@ -79,7 +79,9 @@ angular.module('proso.geography.controllers', [])
             }
           }
           $scope.placesTypes = placeTypes;
-          $scope.updateMap(activePlaceType);
+          if (loadPlaces) {
+            $scope.updateMap(activePlaceType);
+          }
         }
 
         $scope.placeClick = function(place) {
