@@ -7,7 +7,7 @@
     <div class="tab inline-tab"
         ng-class="{'active' : !type.hidden}"
         ng-repeat="type in placesTypes" 
-        ng-show="type.stats.number_of_flashcards"
+        ng-show="type.stats.number_of_items"
         ng-click="updateMap(type)">
       <h2>
         {{type.name}}
@@ -16,7 +16,7 @@
     <div class="clearfix"></div>
   </div>
   <div ng-show="placesTypes.length" class="layers-tabs"
-      ng-if="!type.hidden && type.stats.number_of_flashcards"
+      ng-if="!type.hidden && type.stats.number_of_items"
       ng-repeat="type in placesTypes" >
         <div class="col-sm-12" ng-if="type.stats && !average" >
           <div class="map-progress" skills="{{ type.stats }}"></div>

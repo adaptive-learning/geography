@@ -95,7 +95,7 @@ angular.module('proso.geography.controllers', [])
             });
             if (!type && $scope.placesTypes) {
               type = $scope.placesTypes.filter(function(type) {
-                return type.stats.number_of_flashcards || type.stats.number_of_items;
+                return type.stats.number_of_items;
               })[0];
             }
             if (type) {
@@ -401,7 +401,7 @@ angular.module('proso.geography.controllers', [])
                 var id = map.identifier + '-' + pt.identifier;
                 userStatsService.addGroup(id, {});
                 userStatsService.addGroupParams(id,
-                  [['context/' +map.identifier, 'category/' + pt.identifier]], '');
+                  [['context/' + map.identifier, 'category/' + pt.identifier]], '');
               }
             }
 
@@ -417,9 +417,7 @@ angular.module('proso.geography.controllers', [])
                 angular.forEach(angular.copy(placeTypes), function(pt) {
                   var key = map.identifier + '-' + pt.identifier;
                   pt.stats = data.data[key];
-                  if (pt.stats && (
-                      pt.stats.number_of_flashcards > 0 ||
-                      pt.stats.number_of_items > 0)) {
+                  if (pt.stats && pt.stats.number_of_items > 0) {
                     map.placeTypes.push(pt);
                   }
                 });

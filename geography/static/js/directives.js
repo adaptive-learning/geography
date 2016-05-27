@@ -123,21 +123,21 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
       restrict : 'C',
       template : '<div class="progress overview-progress">' +
                     '<div class="progress-bar progress-bar-learned" style="' +
-                        'width: {{100 * skills.number_of_mastered_flashcards / skills.number_of_flashcards}}%;"' +
-                        'ng-if="skills.number_of_practiced_flashcards">' +
+                        'width: {{100 * skills.number_of_mastered_items / skills.number_of_items}}%;"' +
+                        'ng-if="skills.number_of_practiced_items">' +
                     '</div>' +
                     '<div class="progress-bar progress-bar-practiced" style="' +
-                        'width: {{100 * skills.number_of_nonmastered_practiced_flashcards / skills.number_of_flashcards}}%;">' +
+                        'width: {{100 * skills.number_of_nonmastered_practiced_items / skills.number_of_items}}%;">' +
                     '</div>' +
                   '</div>',
       link : function($scope, elem, attrs) {
         attrs.$observe('skills', function(skills) {
           if(skills !== '') {
             $scope.skills = angular.fromJson(skills);
-            $scope.skills.number_of_nonmastered_practiced_flashcards =
-              Math.max(0, $scope.skills.number_of_practiced_flashcards -
-              ($scope.skills.number_of_mastered_flashcards || 0));
-            if($scope.skills.number_of_mastered_flashcards !== undefined) {
+            $scope.skills.number_of_nonmastered_practiced_items =
+              Math.max(0, $scope.skills.number_of_practiced_items -
+              ($scope.skills.number_of_mastered_items || 0));
+            if($scope.skills.number_of_mastered_items !== undefined) {
               elem.tooltip({
                 html : true,
                 placement: 'bottom',
@@ -146,16 +146,16 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
                        gettextCatalog.getString('Naučeno') + ' ' +
                        '<span class="badge badge-default">' +
                          '<i class="color-indicator learned"></i>' +
-                         $scope.skills.number_of_mastered_flashcards + ' / ' +
-                         $scope.skills.number_of_flashcards +
+                         $scope.skills.number_of_mastered_items + ' / ' +
+                         $scope.skills.number_of_items +
                        '</span>' +
                      '</div>' +
                      '<div class="skill-tooltip">' +
                        gettextCatalog.getString('Procvičováno') + ' ' +
                        '<span class="badge badge-default">' +
                          '<i class="color-indicator practiced"></i>' +
-                         ($scope.skills.number_of_nonmastered_practiced_flashcards || 0) + ' / ' +
-                         $scope.skills.number_of_flashcards +
+                         ($scope.skills.number_of_nonmastered_practiced_items || 0) + ' / ' +
+                         $scope.skills.number_of_items +
                        '</span>' +
                      '</div>'
               });
