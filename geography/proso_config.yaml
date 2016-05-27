@@ -10,7 +10,6 @@ default:
             class: proso.models.option_selection.AdjustedOptionsNumber
             parameters:
                 allow_zero_options_restriction: true
-    proso_flashcards:
         practice:
             common:
                 set_length: 10
