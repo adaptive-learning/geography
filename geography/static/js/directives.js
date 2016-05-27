@@ -123,11 +123,10 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
       restrict : 'C',
       template : '<div class="progress overview-progress">' +
                     '<div class="progress-bar progress-bar-learned" style="' +
-                        'width: {{100 * skills.number_of_mastered_items / skills.number_of_items}}%;"' +
-                        'ng-if="skills.number_of_practiced_items">' +
+                        'width: {{100 * (skills.number_of_mastered_items || 0) / skills.number_of_items}}%;">' +
                     '</div>' +
                     '<div class="progress-bar progress-bar-practiced" style="' +
-                        'width: {{100 * skills.number_of_nonmastered_practiced_items / skills.number_of_items}}%;">' +
+                        'width: {{100 * (skills.number_of_nonmastered_practiced_items || 0) / skills.number_of_items}}%;">' +
                     '</div>' +
                   '</div>',
       link : function($scope, elem, attrs) {
@@ -137,6 +136,9 @@ angular.module('proso.geography.directives', ['proso.geography.templates'])
             $scope.skills.number_of_nonmastered_practiced_items =
               Math.max(0, $scope.skills.number_of_practiced_items -
               ($scope.skills.number_of_mastered_items || 0));
+            if ($scope.skills.number_of_practiced_items === 0) {
+              $scope.skills.number_of_mastered_items = 0;
+            }
             if($scope.skills.number_of_mastered_items !== undefined) {
               elem.tooltip({
                 html : true,

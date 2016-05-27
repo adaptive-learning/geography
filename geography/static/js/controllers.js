@@ -413,13 +413,10 @@ angular.module('proso.geography.controllers', [])
             function processStats(data) {
               $scope.userStats = data.data;
               angular.forEach(maps, function(map) {
-                map.placeTypes = [];
-                angular.forEach(angular.copy(placeTypes), function(pt) {
+                map.placeTypes = map.placeTypes || angular.copy(placeTypes);
+                angular.forEach(map.placeTypes, function(pt) {
                   var key = map.identifier + '-' + pt.identifier;
                   pt.stats = data.data[key];
-                  if (pt.stats && pt.stats.number_of_items > 0) {
-                    map.placeTypes.push(pt);
-                  }
                 });
               });
               $scope.statsLoaded = true;
