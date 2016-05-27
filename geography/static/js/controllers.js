@@ -61,7 +61,7 @@ angular.module('proso.geography.controllers', [])
           var pt = placeTypes[j];
           userStatsService.addGroup(pt.identifier, {});
           userStatsService.addGroupParams(pt.identifier,
-            [['context/' + $routeParams.part, 'category/' + pt.identifier]], '');
+            [['context/' + $scope.part, 'category/' + pt.identifier]], '');
         }
         userStatsService.getToPracticeCounts().success(function(data) {
           processStats(data, true);
@@ -104,7 +104,7 @@ angular.module('proso.geography.controllers', [])
               if (!type.places) {
                 var filter = {
                     filter : [[
-                      'context/' + $routeParams.part,
+                      'context/' + $scope.part,
                       'category/' + type.identifier
                     ]],
                     stats : true,
@@ -133,7 +133,7 @@ angular.module('proso.geography.controllers', [])
 
             var newPath = '/' + [
               'view',
-              $routeParams.part,
+              $scope.part,
               type.identifier,
               user,
             ].join('/').replace('//', '/');
@@ -309,7 +309,7 @@ angular.module('proso.geography.controllers', [])
             practiceService.initSet('common');
             var filter = {
                 filter : [[
-                  'context/' + $routeParams.part,
+                  'context/' + $scope.part,
                   // TODO fix
                   // '-category/' + 'too_small',
                 ]]
@@ -333,7 +333,7 @@ angular.module('proso.geography.controllers', [])
                     $scope.questions = [];
                     q.payload.question_type = q.question_type;
                     setQuestion(q.payload);
-                    var imageName = $routeParams.part + '-' + $routeParams.place_type + (
+                    var imageName = $scope.part + '-' + $routeParams.place_type + (
                       q.question_type == 'd2t' ? '-' + q.payload.description : '');
                     if (! q.payload.options || q.payload.options.length === 0) {
                       $rootScope.$emit('imageDisplayed', imageName);
