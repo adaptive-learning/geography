@@ -63,7 +63,14 @@ angular.module('proso.geography.controllers', [])
           userStatsService.addGroupParams(pt.identifier,
             [['context/' + $routeParams.part, 'category/' + pt.identifier]], '');
         }
-        userStatsService.getStatsPost(true).success(function(data) {
+        userStatsService.getToPracticeCounts().success(function(data) {
+          processStats(data);
+          userStatsService.getStatsPost(true).success(function(data) {
+            processStats(data);
+          });
+        });
+
+        function processStats(data) {
           for (var j = 0; j < placeTypes.length; j++) {
             var pt = placeTypes[j];
             pt.stats = data.data[pt.identifier];
@@ -73,7 +80,7 @@ angular.module('proso.geography.controllers', [])
           }
           $scope.placesTypes = placeTypes;
           $scope.updateMap(activePlaceType);
-        });
+        }
 
         $scope.placeClick = function(place) {
             $scope.imageController.highlightItem(place.description);
@@ -86,7 +93,7 @@ angular.module('proso.geography.controllers', [])
             });
             if (!type && $scope.placesTypes) {
               type = $scope.placesTypes.filter(function(type) {
-                return type.stats.number_of_flashcards;
+                return type.stats.number_of_flashcards || type.stats.number_of_items;
               })[0];
             }
             if (type) {
@@ -396,7 +403,7 @@ angular.module('proso.geography.controllers', [])
               }
             }
 
-            userStatsService.getStatsPost().success(function(data) {
+            userStatsService.getToPracticeCounts().success(function(data) {
               processStats(data);
               userStatsService.getStatsPost(true).success(processStats);
             });
@@ -408,7 +415,9 @@ angular.module('proso.geography.controllers', [])
                 angular.forEach(angular.copy(placeTypes), function(pt) {
                   var key = map.identifier + '-' + pt.identifier;
                   pt.stats = data.data[key];
-                  if (pt.stats && pt.stats.number_of_flashcards > 0) {
+                  if (pt.stats && (
+                      pt.stats.number_of_flashcards > 0 ||
+                      pt.stats.number_of_items > 0)) {
                     map.placeTypes.push(pt);
                   }
                 });
