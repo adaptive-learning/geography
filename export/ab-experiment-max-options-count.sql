@@ -1,7 +1,7 @@
 SET SCHEMA 'web_slepemapy_prod' ;
 
 CREATE TABLE tmp_answer AS (
-    SELECT proso_models_answer.*, proso_flashcards_flashcardanswer.direction, proso_configab_answerexperimentsetup.experiment_setup_id
+    SELECT proso_models_answer.*, proso_models_answer.type AS direction, proso_configab_answerexperimentsetup.experiment_setup_id
     FROM proso_models_answer
     INNER JOIN proso_configab_answerexperimentsetup
         ON proso_models_answer.id = answer_id
@@ -10,6 +10,7 @@ CREATE TABLE tmp_answer AS (
     WHERE experiment_setup_id IN (30, 31, 32, 33, 34)
     ORDER BY proso_models_answer.id
 );
+ALTER TABLE tmp_answer DROP column type;
 \copy tmp_answer TO '/tmp/answers.csv' DELIMITER ',' CSV HEADER;
 DROP TABLE tmp_answer;
 
@@ -49,13 +50,16 @@ DROP TABLE tmp_ip_address;
 CREATE TABLE tmp_context AS (
     SELECT
         proso_flashcards_flashcard.item_id AS item_id,
-        proso_flashcards_term.type AS term_type,
+        proso_flashcards_category.identifier AS term_type,
         proso_flashcards_term.name AS term_name,
         proso_flashcards_context.name AS context_name
     FROM proso_flashcards_flashcard
     INNER JOIN proso_flashcards_term ON term_id = proso_flashcards_term.id
     INNER JOIN proso_flashcards_context ON context_id = proso_flashcards_context.id
-    WHERE proso_flashcards_term.lang = 'en' AND proso_flashcards_context.lang = 'en'
+    INNER JOIN proso_models_itemrelation ON proso_flashcards_term.item_id = child_id
+    INNER JOIN proso_flashcards_category ON proso_flashcards_category.item_id = parent_id
+    WHERE proso_flashcards_term.lang = 'en' AND proso_flashcards_context.lang = 'en' AND
+      proso_flashcards_category.lang = 'en' AND proso_flashcards_category.type = 'flashcard_type' 
 );
 \copy tmp_context TO '/tmp/flashcards.csv' DELIMITER ',' CSV HEADER;
 DROP TABLE tmp_context;
