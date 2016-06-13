@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-04-30 18:41+0000\n"
-"Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
+"PO-Revision-Date: 2016-06-07 21:09+0000\n"
+"Last-Translator: Дарья Пожидаева <dasha.anime@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.com/adaptive-learning/slepemapycz/language/ru/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -62,12 +62,12 @@ msgstr "<i class=\"flag-es\"></i>  На испанский язык переве
 
 #: static/tpl/about.html:103
 msgid "<i class=\"flag-ru\"></i> Ruský překlad vytvořila Daria Pozhidaeva."
-msgstr ""
+msgstr "<i class=\"flag-ru\"></i> На русский язык перевела Дарья Пожидаева"
 
 #: static/tpl/about.html:106
 msgid ""
 "<i class=\"flag-sk\"></i> Slovenský překlad vytvořil především Miroslav Fic."
-msgstr ""
+msgstr "<i class=\"flag-sk\"></i> На словацкий язык перевел Мирослав Фиц"
 
 #: static/tpl/homepage.html:74
 msgid "Adaptabilní procvičování"
@@ -103,7 +103,7 @@ msgstr "Очки"
 
 #: static/js/services.js:307
 msgid "CHKO a NP"
-msgstr ""
+msgstr "РЛП и НП"
 
 #: static/tpl/homepage.html:54
 msgid "Chcete jinou? Podívejte se na"
@@ -115,7 +115,7 @@ msgstr "Неверные ответы"
 
 #: static/js/filters.js:70
 msgid "Co je zvýrazněno?"
-msgstr ""
+msgstr "Что выделено?"
 
 #: static/tpl/about.html:120
 msgid ""
@@ -127,7 +127,7 @@ msgstr "Данные об ответах сохраняются и исполь�
 
 #: static/tpl/about.html:61
 msgid "Do přípravy map se zapojili:"
-msgstr ""
+msgstr "При создании карт участвовали:"
 
 #: static/tpl/user_tpl.html:30
 msgid "E-mail"
@@ -135,13 +135,13 @@ msgstr "E-mail"
 
 #: static/js/services.js:299
 msgid "Hlavní města skrze státy"
-msgstr ""
+msgstr "Столицы через государства"
 
-#: static/js/directives.js:25 static/js/map.js:297
+#: static/js/directives.js:25 static/js/map.js:309
 msgid "Hlavní město"
 msgstr "Столица"
 
-#: static/js/controllers.js:472
+#: static/js/controllers.js:479
 msgid "Hledaný profil neexistuje."
 msgstr "Искомый профиль несуществует"
 
@@ -167,13 +167,21 @@ msgstr "Имя"
 msgid "Kdo za tím stojí"
 msgstr "Кто за этим стоит"
 
-#: static/js/controllers.js:353
+#: static/js/controllers.js:358
 msgid "Kontinenty"
 msgstr "Континенты"
 
 #: static/js/services.js:293
 msgid "Kraje"
 msgstr "Края"
+
+#: static/js/controllers.js:359
+msgid "Kraje ČR"
+msgstr "Края ЧР"
+
+#: static/js/services.js:310
+msgid "Maloplošná zvláštně chráněná území"
+msgstr "Маломасштабные особо охраняемые природные территории"
 
 #: static/tpl/practice_tpl.html:100
 msgid "Mapa znalostí"
@@ -197,7 +205,7 @@ msgstr "Моря"
 
 #: static/tpl/about.html:73
 msgid "Moře Evropy"
-msgstr ""
+msgstr "Моря Европы"
 
 #: static/js/services.js:298
 msgid "Města"
@@ -220,7 +228,7 @@ msgstr "Большой вклад в развитие данного проек�
 msgid "Naučeno"
 msgstr "Изучено"
 
-#: static/js/map.js:328
+#: static/js/map.js:340
 msgid "Neprocvičováno"
 msgstr "Неизучено"
 
@@ -242,6 +250,14 @@ msgstr "Предложения для развития системы присы
 msgid "O projektu"
 msgstr "О проекте"
 
+#: static/js/services.js:309
+msgid "Obce s pověřeným obecním úřadem"
+msgstr "Населенные пункты с муниципалитетом"
+
+#: static/js/services.js:308
+msgid "Obce s rozšířenou působností"
+msgstr "Населенные пункты с расширенными полномочиями"
+
 #: static/js/services.js:295
 msgid "Oblasti"
 msgstr "Области"
@@ -250,7 +266,7 @@ msgstr "Области"
 msgid "Ocenění"
 msgstr "Награды"
 
-#: static/js/directives.js:17 static/js/map.js:318
+#: static/js/directives.js:17 static/js/map.js:330
 msgid "Odhad znalosti"
 msgstr "Определение уровня знаний"
 
@@ -268,7 +284,7 @@ msgstr "Личные цели"
 
 #: static/tpl/about.html:85
 msgid "Ostatní mapy"
-msgstr ""
+msgstr "Остальные карты"
 
 #: static/js/services.js:306
 msgid "Ostrovy"
@@ -310,9 +326,9 @@ msgstr "Рельеф"
 
 #: static/tpl/about.html:77
 msgid "Povrch ČR"
-msgstr ""
+msgstr "Рельеф ЧР"
 
-#: static/js/map.js:293
+#: static/js/map.js:305
 msgid "Počet obyvatel"
 msgstr "Население"
 
@@ -321,7 +337,7 @@ msgid "Pro vyřešení problému zkuste"
 msgstr "Для решения проблемы попробуйте"
 
 #: static/tpl/confused_tpl.html:23 static/tpl/overview_tpl.html:22
-#: static/tpl/view_tpl.html:34 static/tpl/view_tpl.html:41
+#: static/tpl/view_tpl.html:29 static/tpl/view_tpl.html:36
 msgid "Procvičovat"
 msgstr "Тренировать"
 
@@ -408,11 +424,11 @@ msgstr "Федеральные земли"
 msgid "Správné odpovědi"
 msgstr "Правильные ответы"
 
-#: static/js/directives.js:30 static/js/map.js:301
+#: static/js/directives.js:30 static/js/map.js:313
 msgid "Stát"
 msgstr "Страна"
 
-#: static/js/controllers.js:352 static/js/services.js:289
+#: static/js/controllers.js:357 static/js/services.js:289
 msgid "Státy"
 msgstr "Государства"
 
@@ -434,7 +450,7 @@ msgstr "Штаты Америки"
 
 #: static/js/services.js:290
 msgid "Státy skrze hlavní města"
-msgstr ""
+msgstr "Государства через столицы"
 
 #: static/js/services.js:12
 msgid "Svět"
@@ -468,7 +484,7 @@ msgstr "Обучение с базой данных"
 msgid "Učení z dat - text"
 msgstr "Приложение обучается, используя данные от всех пользователей. Выбор вопросов основан именно на этих данных, а не на знаниях \"эксперта\" по географии, который \"знает\", что тяжелее различить - Кению или Нигерию."
 
-#: static/js/controllers.js:485 static/js/directives.js:316
+#: static/js/controllers.js:492 static/js/directives.js:316
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "К сожалению, произошла ошибка в приложении"
 
@@ -482,7 +498,7 @@ msgstr "На основе ваших ответов система распоз�
 
 #: static/js/services.js:301
 msgid "Vodní nádrže"
-msgstr ""
+msgstr "Водохранилища"
 
 #: static/js/filters.js:68
 msgid "Vyber na mapě"
@@ -505,7 +521,7 @@ msgstr "Выбрано"
 msgid "Zavřít"
 msgstr "Закрыть"
 
-#: static/tpl/view_tpl.html:62
+#: static/tpl/view_tpl.html:59
 msgid "Zde zatím nebylo nic procvičováno."
 msgstr "Здесь пока еще ничего неизучено"
 
@@ -563,7 +579,7 @@ msgstr "Реки"
 
 #: static/tpl/about.html:69
 msgid "Řeky Severní Ameriky, rakouské řeky, města Finska, Švédska a Norska"
-msgstr ""
+msgstr "Реки Северной Америки, Австрийские реки, города Финляндии, Швеции и Норвегии"
 
 #: static/tpl/homepage.html:31
 msgid "Řeky ČR"

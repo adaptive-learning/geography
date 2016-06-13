@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-04-30 18:41+0000\n"
+"PO-Revision-Date: 2016-06-13 20:01+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: Slovak (http://www.transifex.com/adaptive-learning/slepemapycz/language/sk/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,7 +94,7 @@ msgstr "Aplikácia bola ocenená v Súťaži\n<a href=\"http://www.otevrenadata.
 
 #: static/js/services.js:296
 msgid "Autonomní společenství"
-msgstr "Autonómne spoločenstvo"
+msgstr "Autonómne spoločenstvá"
 
 #: static/tpl/user_tpl.html:15
 msgid "Body"
@@ -136,11 +136,11 @@ msgstr "E-mail"
 msgid "Hlavní města skrze státy"
 msgstr "Hlavné mestá cez štáty"
 
-#: static/js/directives.js:25 static/js/map.js:297
+#: static/js/directives.js:25 static/js/map.js:309
 msgid "Hlavní město"
 msgstr "Hlavné mesto"
 
-#: static/js/controllers.js:472
+#: static/js/controllers.js:479
 msgid "Hledaný profil neexistuje."
 msgstr "Hľadaný profil neexistuje."
 
@@ -166,13 +166,21 @@ msgstr "Meno"
 msgid "Kdo za tím stojí"
 msgstr "Kto za tým stojí"
 
-#: static/js/controllers.js:353
+#: static/js/controllers.js:358
 msgid "Kontinenty"
 msgstr "Kontinenty"
 
 #: static/js/services.js:293
 msgid "Kraje"
 msgstr "Kraje"
+
+#: static/js/controllers.js:359
+msgid "Kraje ČR"
+msgstr ""
+
+#: static/js/services.js:310
+msgid "Maloplošná zvláštně chráněná území"
+msgstr ""
 
 #: static/tpl/practice_tpl.html:100
 msgid "Mapa znalostí"
@@ -219,7 +227,7 @@ msgstr "Na vývoji Slepých máp sa podieľa predovšetkým Vít Stanislav a Jan
 msgid "Naučeno"
 msgstr "Naučené"
 
-#: static/js/map.js:328
+#: static/js/map.js:340
 msgid "Neprocvičováno"
 msgstr "Neprecvičované"
 
@@ -241,6 +249,14 @@ msgstr "Námety k rozvoju systému zasielajte na\n<span class=\"email contact\">
 msgid "O projektu"
 msgstr "O projekte"
 
+#: static/js/services.js:309
+msgid "Obce s pověřeným obecním úřadem"
+msgstr ""
+
+#: static/js/services.js:308
+msgid "Obce s rozšířenou působností"
+msgstr ""
+
 #: static/js/services.js:295
 msgid "Oblasti"
 msgstr "Oblasti"
@@ -249,7 +265,7 @@ msgstr "Oblasti"
 msgid "Ocenění"
 msgstr "Ocenenia"
 
-#: static/js/directives.js:17 static/js/map.js:318
+#: static/js/directives.js:17 static/js/map.js:330
 msgid "Odhad znalosti"
 msgstr "Odhad vedomosti"
 
@@ -259,7 +275,7 @@ msgstr ""
 
 #: static/tpl/about.html:81
 msgid "Okresy ČR, CHKO ČR"
-msgstr ""
+msgstr "Okresy ČR, CHKO ČR"
 
 #: static/tpl/practice_tpl.html:91
 msgid "Osobní cíle"
@@ -311,7 +327,7 @@ msgstr "Povrch"
 msgid "Povrch ČR"
 msgstr "Povrch ČR"
 
-#: static/js/map.js:293
+#: static/js/map.js:305
 msgid "Počet obyvatel"
 msgstr "Počet obyvateľov"
 
@@ -320,7 +336,7 @@ msgid "Pro vyřešení problému zkuste"
 msgstr "Pre vyriešenie problému skúste"
 
 #: static/tpl/confused_tpl.html:23 static/tpl/overview_tpl.html:22
-#: static/tpl/view_tpl.html:34 static/tpl/view_tpl.html:41
+#: static/tpl/view_tpl.html:29 static/tpl/view_tpl.html:36
 msgid "Procvičovat"
 msgstr "Precvičovať"
 
@@ -407,11 +423,11 @@ msgstr "Spolkové krajiny"
 msgid "Správné odpovědi"
 msgstr "Správne odpovede"
 
-#: static/js/directives.js:30 static/js/map.js:301
+#: static/js/directives.js:30 static/js/map.js:313
 msgid "Stát"
 msgstr "Štát"
 
-#: static/js/controllers.js:352 static/js/services.js:289
+#: static/js/controllers.js:357 static/js/services.js:289
 msgid "Státy"
 msgstr "Štáty"
 
@@ -467,7 +483,7 @@ msgstr "Učenie z dát"
 msgid "Učení z dat - text"
 msgstr "Aplikácia sa učí z dát od všetkých užívateľov. Výber otázok je založený na týchto dátach, nie na vedomostiach experta na zemepis, ktorý \"vie\", či je ťažšie poznať Keňu alebo Nigériu."
 
-#: static/js/controllers.js:485 static/js/directives.js:316
+#: static/js/controllers.js:492 static/js/directives.js:316
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "V aplikácii bohužiaľ nastala chyba."
 
@@ -481,7 +497,7 @@ msgstr "Na základe odpovedí systém odhadne ako dobre poznáte rôzne štáty 
 
 #: static/js/services.js:301
 msgid "Vodní nádrže"
-msgstr "Vodné nádrže"
+msgstr ""
 
 #: static/js/filters.js:68
 msgid "Vyber na mapě"
@@ -504,7 +520,7 @@ msgstr "Vybrané"
 msgid "Zavřít"
 msgstr "Zavrieť"
 
-#: static/tpl/view_tpl.html:62
+#: static/tpl/view_tpl.html:59
 msgid "Zde zatím nebylo nic procvičováno."
 msgstr "Tu zatiaľ nebolo nič precvičované."
 

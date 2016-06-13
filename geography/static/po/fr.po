@@ -1,10 +1,11 @@
 # 
 # Translators:
 # Eliška Hradilová <eliska.hradilova@gmail.com>, 2016
+# Vít Stanislav <slaweet@seznam.cz>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: slepemapy.cz\n"
-"PO-Revision-Date: 2016-04-30 18:41+0000\n"
+"PO-Revision-Date: 2016-06-13 19:59+0000\n"
 "Last-Translator: Vít Stanislav <slaweet@seznam.cz>\n"
 "Language-Team: French (http://www.transifex.com/adaptive-learning/slepemapycz/language/fr/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -135,11 +136,11 @@ msgstr "L'adresse électronique"
 msgid "Hlavní města skrze státy"
 msgstr ""
 
-#: static/js/directives.js:25 static/js/map.js:297
+#: static/js/directives.js:25 static/js/map.js:309
 msgid "Hlavní město"
 msgstr ""
 
-#: static/js/controllers.js:472
+#: static/js/controllers.js:479
 msgid "Hledaný profil neexistuje."
 msgstr "Le profil cherché n'existe pas."
 
@@ -165,13 +166,21 @@ msgstr "Prénom"
 msgid "Kdo za tím stojí"
 msgstr "Qui a fait ça"
 
-#: static/js/controllers.js:353
+#: static/js/controllers.js:358
 msgid "Kontinenty"
 msgstr "Continents"
 
 #: static/js/services.js:293
 msgid "Kraje"
 msgstr "Régions"
+
+#: static/js/controllers.js:359
+msgid "Kraje ČR"
+msgstr ""
+
+#: static/js/services.js:310
+msgid "Maloplošná zvláštně chráněná území"
+msgstr ""
 
 #: static/tpl/practice_tpl.html:100
 msgid "Mapa znalostí"
@@ -218,7 +227,7 @@ msgstr "C'est principalement Vít Stanislav et Jan Papoušek qui participent au 
 msgid "Naučeno"
 msgstr "Appris"
 
-#: static/js/map.js:328
+#: static/js/map.js:340
 msgid "Neprocvičováno"
 msgstr "Pas entraîné"
 
@@ -240,6 +249,14 @@ msgstr "Vous pouvez nous envoyer Votre suggestions à \n<span class=\"email cont
 msgid "O projektu"
 msgstr "À propos de projet"
 
+#: static/js/services.js:309
+msgid "Obce s pověřeným obecním úřadem"
+msgstr ""
+
+#: static/js/services.js:308
+msgid "Obce s rozšířenou působností"
+msgstr ""
+
 #: static/js/services.js:295
 msgid "Oblasti"
 msgstr "Zones"
@@ -248,7 +265,7 @@ msgstr "Zones"
 msgid "Ocenění"
 msgstr "Appréciations"
 
-#: static/js/directives.js:17 static/js/map.js:318
+#: static/js/directives.js:17 static/js/map.js:330
 msgid "Odhad znalosti"
 msgstr "Estimation de connaissance"
 
@@ -310,7 +327,7 @@ msgstr "Surface"
 msgid "Povrch ČR"
 msgstr ""
 
-#: static/js/map.js:293
+#: static/js/map.js:305
 msgid "Počet obyvatel"
 msgstr "Nombre d'habitants"
 
@@ -319,7 +336,7 @@ msgid "Pro vyřešení problému zkuste"
 msgstr "Pour résoudre un problème, essayez"
 
 #: static/tpl/confused_tpl.html:23 static/tpl/overview_tpl.html:22
-#: static/tpl/view_tpl.html:34 static/tpl/view_tpl.html:41
+#: static/tpl/view_tpl.html:29 static/tpl/view_tpl.html:36
 msgid "Procvičovat"
 msgstr "Entraîner"
 
@@ -406,11 +423,11 @@ msgstr "États fédérés"
 msgid "Správné odpovědi"
 msgstr "Réponses correctes"
 
-#: static/js/directives.js:30 static/js/map.js:301
+#: static/js/directives.js:30 static/js/map.js:313
 msgid "Stát"
 msgstr ""
 
-#: static/js/controllers.js:352 static/js/services.js:289
+#: static/js/controllers.js:357 static/js/services.js:289
 msgid "Státy"
 msgstr "États"
 
@@ -466,7 +483,7 @@ msgstr "Étudiér en utilisant les données"
 msgid "Učení z dat - text"
 msgstr "Étudiér en utilisant les données - texte"
 
-#: static/js/controllers.js:485 static/js/directives.js:316
+#: static/js/controllers.js:492 static/js/directives.js:316
 msgid "V aplikaci bohužel nastala chyba."
 msgstr "Malheureusement une erreur s'est produite dans l'application."
 
@@ -503,7 +520,7 @@ msgstr "Choisi"
 msgid "Zavřít"
 msgstr "Fermer"
 
-#: static/tpl/view_tpl.html:62
+#: static/tpl/view_tpl.html:59
 msgid "Zde zatím nebylo nic procvičováno."
 msgstr "Rien n'était entraîné ici."
 
