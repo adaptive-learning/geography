@@ -172,8 +172,7 @@ class Command(BaseCommand):
     def create_term(self, code, group_id, map_code, name):
         term = {
             'id': code,
-            'type': group_id,
-            'categories': [map_code],
+            'categories': [map_code, group_id],
         }
         self.add_name(term, name)
         return term
