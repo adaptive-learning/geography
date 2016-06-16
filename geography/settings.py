@@ -30,7 +30,10 @@ ADMINS = (
     ('Vít Stanislav', 'slaweet@gmail.com'),
 )
 
-EMAIL_SUBJECT_PREFIX = '[slepemapy.cz] '
+if ON_PRODUCTION:
+    EMAIL_SUBJECT_PREFIX = '[slepemapy.cz] '
+else:
+    EMAIL_SUBJECT_PREFIX = '[devel.slepemapy.cz] '
 
 ALLOWED_HOSTS = [
     'slepemapy.cz',
