@@ -315,7 +315,7 @@ angular.module('proso.geography.controllers', [])
                 ]]
             };
             if ($routeParams.place_type) {
-                filter.filter[0].push('category/' +$routeParams.place_type);
+                filter.filter.push(['category/' +$routeParams.place_type]);
             }
             flashcardService.getFlashcards(filter).then(function() {
               practiceService.setFilter(filter);
