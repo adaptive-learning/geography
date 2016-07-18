@@ -61,7 +61,7 @@ angular.module('proso.geography.controllers', [])
           var pt = placeTypes[j];
           userStatsService.addGroup(pt.identifier, {});
           userStatsService.addGroupParams(pt.identifier,
-            [['context/' + $scope.part, 'category/' + pt.identifier]], '');
+            [['context/' + $scope.part], ['category/' + pt.identifier]], '');
         }
         userStatsService.getToPracticeCounts().success(function(data) {
           processStats(data, true);
@@ -105,6 +105,7 @@ angular.module('proso.geography.controllers', [])
                 var filter = {
                     filter : [[
                       'context/' + $scope.part,
+                    ], [
                       'category/' + type.identifier
                     ]],
                     stats : true,
@@ -401,7 +402,7 @@ angular.module('proso.geography.controllers', [])
                 var id = map.identifier + '-' + pt.identifier;
                 userStatsService.addGroup(id, {});
                 userStatsService.addGroupParams(id,
-                  [['context/' + map.identifier, 'category/' + pt.identifier]], '');
+                  [['context/' + map.identifier], ['category/' + pt.identifier]], '');
               }
             }
 
