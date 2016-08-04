@@ -178,7 +178,7 @@ msgid "Kraje ČR"
 msgstr ""
 
 #: static/js/services.js:310
-msgid "Maloplošná zvláštně chráněná území"
+msgid "Maloplošná zvláště chráněná území"
 msgstr ""
 
 #: static/tpl/practice_tpl.html:100

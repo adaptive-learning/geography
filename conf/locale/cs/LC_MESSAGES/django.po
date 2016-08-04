@@ -357,7 +357,7 @@ msgid "Obce s pověřeným obecním úřadem"
 msgstr ""
 
 #: geography/views.py:168
-msgid "Maloplošná zvláštně chráněná území"
+msgid "Maloplošná zvláště chráněná území"
 msgstr ""
 
 #~ msgid "Řeky Afriky"

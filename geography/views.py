@@ -165,7 +165,7 @@ def get_place_types():
         'chko': _('CHKO a NP'),
         'soorp': _('Obce s rozšířenou působností'),
         'soopu': _('Obce s pověřeným obecním úřadem'),
-        'mzchu': _('Maloplošná zvláštně chráněná území'),
+        'mzchu': _('Maloplošná zvláště chráněná území'),
     }
 
 
