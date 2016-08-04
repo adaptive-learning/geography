@@ -54,9 +54,11 @@ class Command(BaseCommand):
         if map_code is None:
             self.update_all_maps(data, terms_by_id)
         else:
-            self.add_map(map_code, data, terms_by_id)
             if map_code not in contexts_by_id:
                 self.add_context(data, map_code, map_type)
+            else:
+                self.disable_flashcards_on_context(data, map_code)
+            self.add_map(map_code, data, terms_by_id)
 
         self.update_translations(data, terms_by_id, categories_by_id)
         # self.generate_translations_file(data)
@@ -65,6 +67,10 @@ class Command(BaseCommand):
             json.dump(data, f, indent=2, sort_keys=True)
             print(('Updated flashcards written to file: \'%s\'' %
                    options['output']))
+
+    def disable_flashcards_on_context(self, data, map_code):
+        for fc in data['flashcards']:
+            fc['active'] = False
 
     def add_context(self, data, map_code, map_type):
         names = {}
@@ -166,6 +172,10 @@ class Command(BaseCommand):
                             data['flashcards'].append(flashcard)
                             flashcards_by_id[flashcard_id] = flashcard
                             print('Flashcard added: ' + name + ' ' + code)
+                        else:
+                            flashcard = flashcards_by_id[flashcard_id]
+                            if 'active' in flashcard:
+                                del flashcard['active']
                         if map_code not in terms_by_id[code]['categories']:
                             terms_by_id[code]['categories'].append(map_code)
 
