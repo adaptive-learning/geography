@@ -70,7 +70,8 @@ class Command(BaseCommand):
 
     def disable_flashcards_on_context(self, data, map_code):
         for fc in data['flashcards']:
-            fc['active'] = False
+            if fc['context'] == map_code:
+                fc['active'] = False
 
     def add_context(self, data, map_code, map_type):
         names = {}
