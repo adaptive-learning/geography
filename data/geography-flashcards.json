@@ -10370,6 +10370,7 @@
       "term": "Odra"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Ostravice",
       "id": "cz-Ostravice",
@@ -12128,12 +12129,14 @@
       "term": "Raba"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Bela_(Cechy)",
       "id": "cz-Bela_(Cechy)",
       "term": "Bela_(Cechy)"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Bela_(Morava)",
       "id": "cz-Bela_(Morava)",
@@ -12146,30 +12149,35 @@
       "term": "Blanice_(J._Cechy)"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Blanice_(Sazava)",
       "id": "cz-Blanice_(Sazava)",
       "term": "Blanice_(Sazava)"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Blata",
       "id": "cz-Blata",
       "term": "Blata"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Blsanka",
       "id": "cz-Blsanka",
       "term": "Blsanka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Bobruvka",
       "id": "cz-Bobruvka",
       "term": "Bobruvka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Branna",
       "id": "cz-Branna",
@@ -12182,6 +12190,7 @@
       "term": "Bystrice_(Cechy)"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Bystrice_(Morava)",
       "id": "cz-Bystrice_(Morava)",
@@ -12194,6 +12203,7 @@
       "term": "Cidlina"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Desna",
       "id": "cz-Desna",
@@ -12212,18 +12222,21 @@
       "term": "Doubrava"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Drevnice",
       "id": "cz-Drevnice",
       "term": "Drevnice"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Hana",
       "id": "cz-Hana",
       "term": "Hana"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Chomutovka",
       "id": "cz-Chomutovka",
@@ -12242,36 +12255,42 @@
       "term": "Jevisovka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Kamenice_(J._Cechy)",
       "id": "cz-Kamenice_(J._Cechy)",
       "term": "Kamenice_(J._Cechy)"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Kamenice_(S._Cechy)",
       "id": "cz-Kamenice_(S._Cechy)",
       "term": "Kamenice_(S._Cechy)"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Klabava",
       "id": "cz-Klabava",
       "term": "Klabava"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Kocaba",
       "id": "cz-Kocaba",
       "term": "Kocaba"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Krupa",
       "id": "cz-Krupa",
       "term": "Krupa"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Kremelna",
       "id": "cz-Kremelna",
@@ -12290,6 +12309,7 @@
       "term": "Litava"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Litavka",
       "id": "cz-Litavka",
@@ -12314,6 +12334,7 @@
       "term": "Loucna"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Luzicka_Nisa",
       "id": "cz-Luzicka_Nisa",
@@ -12338,42 +12359,49 @@
       "term": "Moravice"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Moravska_Dyje",
       "id": "cz-Moravska_Dyje",
       "term": "Moravska_Dyje"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Moravska_Sazava",
       "id": "cz-Moravska_Sazava",
       "term": "Moravska_Sazava"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Mostenka",
       "id": "cz-Mostenka",
       "term": "Mostenka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Mrlina",
       "id": "cz-Mrlina",
       "term": "Mrlina"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Nezarka",
       "id": "cz-Nezarka",
       "term": "Nezarka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Novohradka",
       "id": "cz-Novohradka",
       "term": "Novohradka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Olsava",
       "id": "cz-Olsava",
@@ -12386,12 +12414,14 @@
       "term": "Olse"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Opavice",
       "id": "cz-Opavice",
       "term": "Opavice"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Oskava",
       "id": "cz-Oskava",
@@ -12410,6 +12440,7 @@
       "term": "Ploucnice"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Punkva",
       "id": "cz-Punkva",
@@ -12422,12 +12453,14 @@
       "term": "Rokytna"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Rolava",
       "id": "cz-Rolava",
       "term": "Rolava"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Romze",
       "id": "cz-Romze",
@@ -12440,24 +12473,28 @@
       "term": "Roznovska_Becva"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Skalice",
       "id": "cz-Skalice",
       "term": "Skalice"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Smeda",
       "id": "cz-Smeda",
       "term": "Smeda"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Stenava",
       "id": "cz-Stenava",
       "term": "Stenava"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Stropnice",
       "id": "cz-Stropnice",
@@ -12470,12 +12507,14 @@
       "term": "Strela"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Svatava",
       "id": "cz-Svatava",
       "term": "Svatava"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Tepla",
       "id": "cz-Tepla",
@@ -12488,24 +12527,28 @@
       "term": "Ticha_Orlice"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Trkmanka",
       "id": "cz-Trkmanka",
       "term": "Trkmanka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Trnava",
       "id": "cz-Trnava",
       "term": "Trnava"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Trebuvka",
       "id": "cz-Trebuvka",
       "term": "Trebuvka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Tremosna",
       "id": "cz-Tremosna",
@@ -12518,24 +12561,28 @@
       "term": "Upa"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Velicka",
       "id": "cz-Velicka",
       "term": "Velicka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Vidnavka",
       "id": "cz-Vidnavka",
       "term": "Vidnavka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Vlara",
       "id": "cz-Vlara",
       "term": "Vlara"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Volynka",
       "id": "cz-Volynka",
@@ -12548,24 +12595,28 @@
       "term": "Vsetinska_Becva"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Vydra",
       "id": "cz-Vydra",
       "term": "Vydra"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Vyrovka",
       "id": "cz-Vyrovka",
       "term": "Vyrovka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Zlata_stoka",
       "id": "cz-Zlata_stoka",
       "term": "Zlata_stoka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Zeletavka",
       "id": "cz-Zeletavka",
@@ -12578,6 +12629,7 @@
       "term": "Zelivka"
     },
     {
+      "active": false,
       "context": "cz",
       "description": "Zirovnice",
       "id": "cz-Zirovnice",
@@ -38568,6 +38620,7 @@
       "name-cs": "Litava",
       "name-de": "Leitha",
       "name-en": "Litava",
+      "name-es": "Litava",
       "name-ru": "\u041b\u0438\u0442\u0430\u0432\u0430",
       "name-sk": "Litava"
     },
@@ -38581,6 +38634,7 @@
       "name-cs": "Mal\u0161e",
       "name-de": "Maltsch",
       "name-en": "Mal\u0161e",
+      "name-es": "Mal\u0161e",
       "name-ru": "\u041c\u0430\u043b\u0448\u0435",
       "name-sk": "Mal\u0161e"
     },
@@ -38721,7 +38775,9 @@
       ],
       "id": "Blanice_(J._Cechy)",
       "name-cs": "Blanice (J. \u010cechy)",
+      "name-de": "Blanice (J. \u010cechy)",
       "name-en": "Blanice (J. \u010cechy)",
+      "name-es": "Blanice (J. \u010cechy)",
       "name-ru": "\u0411\u043b\u0430\u043d\u0438\u0446\u0435 (\u042e\u0436\u043d\u043e\u0447\u0435\u0448\u0441\u043a\u0438\u0439 \u043a\u0440\u0430\u0439)",
       "name-sk": "Blanice (J. \u010cechy)"
     },
@@ -38787,7 +38843,9 @@
       ],
       "id": "Bystrice_(Cechy)",
       "name-cs": "Byst\u0159ice (\u010cechy)",
+      "name-de": "Byst\u0159ice (\u010cechy)",
       "name-en": "Byst\u0159ice (\u010cechy)",
+      "name-es": "Byst\u0159ice (\u010cechy)",
       "name-ru": "\u0411\u0438\u0441\u0442\u0440\u0448\u0438\u0446\u0435 (\u0411\u043e\u0433\u0435\u043c\u0438\u044f)",
       "name-sk": "Byst\u0159ice (\u010cechy)"
     },
@@ -38809,7 +38867,9 @@
       ],
       "id": "Cidlina",
       "name-cs": "Cidlina",
+      "name-de": "Cidlina",
       "name-en": "Cidlina",
+      "name-es": "Cidlina",
       "name-ru": "\u0426\u0438\u0434\u043b\u0438\u043d\u0430",
       "name-sk": "Cidlina"
     },
@@ -38831,7 +38891,9 @@
       ],
       "id": "Divoka_Orlice",
       "name-cs": "Divok\u00e1 Orlice",
+      "name-de": "Divok\u00e1 Orlice",
       "name-en": "Divok\u00e1 Orlice",
+      "name-es": "Divok\u00e1 Orlice",
       "name-ru": "\u0414\u0438\u0432\u043e\u043a\u0430-\u041e\u0440\u043b\u0438\u0446\u0435",
       "name-sk": "Divok\u00e1 Orlice"
     },
@@ -38842,7 +38904,9 @@
       ],
       "id": "Doubrava",
       "name-cs": "Doubrava",
+      "name-de": "Doubrava",
       "name-en": "Doubrava",
+      "name-es": "Doubrava",
       "name-ru": "\u0414\u043e\u0443\u0431\u0440\u0430\u0432\u0430",
       "name-sk": "Doubrava"
     },
@@ -38886,7 +38950,9 @@
       ],
       "id": "Chrudimka",
       "name-cs": "Chrudimka",
+      "name-de": "Chrudimka",
       "name-en": "Chrudimka",
+      "name-es": "Chrudimka",
       "name-ru": "\u0425\u0440\u0443\u0434\u0438\u043c\u043a\u0430",
       "name-sk": "Chrudimka"
     },
@@ -38897,7 +38963,9 @@
       ],
       "id": "Jevisovka",
       "name-cs": "Jevi\u0161ovka",
+      "name-de": "Jevi\u0161ovka",
       "name-en": "Jevi\u0161ovka",
+      "name-es": "Jevi\u0161ovka",
       "name-ru": "\u0415\u0432\u0438\u0448\u043e\u0432\u043a\u0430",
       "name-sk": "Jevi\u0161ovka"
     },
@@ -38974,7 +39042,9 @@
       ],
       "id": "Kyjovka",
       "name-cs": "Kyjovka",
+      "name-de": "Kyjovka",
       "name-en": "Kyjovka",
+      "name-es": "Kyjovka",
       "name-ru": "\u041a\u0438\u0451\u0432\u043a\u0430",
       "name-sk": "Kyjovka"
     },
@@ -38996,7 +39066,9 @@
       ],
       "id": "Lodenice",
       "name-cs": "Lod\u011bnice",
+      "name-de": "Lod\u011bnice",
       "name-en": "Lod\u011bnice",
+      "name-es": "Lod\u011bnice",
       "name-ru": "\u041b\u043e\u0434\u0435\u043d\u0438\u0446\u0435",
       "name-sk": "Lod\u011bnice"
     },
@@ -39007,7 +39079,9 @@
       ],
       "id": "Lomnice",
       "name-cs": "Lomnice",
+      "name-de": "Lomnice",
       "name-en": "Lomnice",
+      "name-es": "Lomnice",
       "name-ru": "\u041b\u043e\u043c\u043d\u0438\u0446\u0435",
       "name-sk": "Lomnice"
     },
@@ -39018,7 +39092,9 @@
       ],
       "id": "Loucna",
       "name-cs": "Lou\u010dn\u00e1",
+      "name-de": "Lou\u010dn\u00e1",
       "name-en": "Lou\u010dn\u00e1",
+      "name-es": "Lou\u010dn\u00e1",
       "name-ru": "\u041b\u043e\u0443\u0447\u043d\u0430",
       "name-sk": "Lou\u010dn\u00e1"
     },
@@ -39040,7 +39116,9 @@
       ],
       "id": "Metuje",
       "name-cs": "Metuje",
+      "name-de": "Metuje",
       "name-en": "Metuje",
+      "name-es": "Metuje",
       "name-ru": "\u041c\u0435\u0442\u0443\u0435",
       "name-sk": "Metuje"
     },
@@ -39051,7 +39129,9 @@
       ],
       "id": "Moravice",
       "name-cs": "Moravice",
+      "name-de": "Moravice",
       "name-en": "Moravice",
+      "name-es": "Moravice",
       "name-ru": "\u041c\u043e\u0440\u0430\u0432\u0438\u0446\u0435",
       "name-sk": "Moravice"
     },
@@ -39139,7 +39219,9 @@
       ],
       "id": "Olse",
       "name-cs": "Ol\u0161e",
+      "name-de": "Ol\u0161e",
       "name-en": "Ol\u0161e",
+      "name-es": "Ol\u0161e",
       "name-ru": "\u041e\u043b\u0448\u0435",
       "name-sk": "Ol\u0161e"
     },
@@ -39172,7 +39254,9 @@
       ],
       "id": "Oslava",
       "name-cs": "Oslava",
+      "name-de": "Oslava",
       "name-en": "Oslava",
+      "name-es": "Oslava",
       "name-ru": "\u041e\u0441\u043b\u0430\u0432\u0430",
       "name-sk": "Oslava"
     },
@@ -39183,7 +39267,9 @@
       ],
       "id": "Ploucnice",
       "name-cs": "Plou\u010dnice",
+      "name-de": "Plou\u010dnice",
       "name-en": "Plou\u010dnice",
+      "name-es": "Plou\u010dnice",
       "name-ru": "\u041f\u043b\u043e\u0443\u0447\u043d\u0438\u0446\u0435",
       "name-sk": "Plou\u010dnice"
     },
@@ -39205,7 +39291,9 @@
       ],
       "id": "Rokytna",
       "name-cs": "Rokytn\u00e1",
+      "name-de": "Rokytn\u00e1",
       "name-en": "Rokytn\u00e1",
+      "name-es": "Rokytn\u00e1",
       "name-ru": "\u0420\u043e\u043a\u0438\u0442\u043d\u0430",
       "name-sk": "Rokytn\u00e1"
     },
@@ -39238,7 +39326,9 @@
       ],
       "id": "Roznovska_Becva",
       "name-cs": "Ro\u017enovsk\u00e1 Be\u010dva",
+      "name-de": "Ro\u017enovsk\u00e1 Be\u010dva",
       "name-en": "Ro\u017enovsk\u00e1 Be\u010dva",
+      "name-es": "Ro\u017enovsk\u00e1 Be\u010dva",
       "name-ru": "\u0420\u043e\u0436\u043d\u043e\u0432\u0441\u043a\u0430 \u0411\u0435\u0447\u0432\u0430",
       "name-sk": "Ro\u017enovsk\u00e1 Be\u010dva"
     },
@@ -39293,7 +39383,9 @@
       ],
       "id": "Strela",
       "name-cs": "St\u0159ela",
+      "name-de": "St\u0159ela",
       "name-en": "St\u0159ela",
+      "name-es": "St\u0159ela",
       "name-ru": "\u0421\u0442\u0440\u0448\u0435\u043b\u0430",
       "name-sk": "St\u0159ela"
     },
@@ -39326,7 +39418,9 @@
       ],
       "id": "Ticha_Orlice",
       "name-cs": "Tich\u00e1 Orlice",
+      "name-de": "Tich\u00e1 Orlice",
       "name-en": "Tich\u00e1 Orlice",
+      "name-es": "Tich\u00e1 Orlice",
       "name-ru": "\u0422\u0438\u0445\u0430-\u041e\u0440\u043b\u0438\u0446\u0435",
       "name-sk": "Tich\u00e1 Orlice"
     },
@@ -39370,7 +39464,9 @@
       ],
       "id": "Upa",
       "name-cs": "\u00dapa",
+      "name-de": "\u00dapa",
       "name-en": "\u00dapa",
+      "name-es": "\u00dapa",
       "name-ru": "\u0423\u043f\u0430",
       "name-sk": "\u00dapa"
     },
@@ -39414,7 +39510,9 @@
       ],
       "id": "Vsetinska_Becva",
       "name-cs": "Vset\u00ednsk\u00e1 Be\u010dva",
+      "name-de": "Vset\u00ednsk\u00e1 Be\u010dva",
       "name-en": "Vset\u00ednsk\u00e1 Be\u010dva",
+      "name-es": "Vset\u00ednsk\u00e1 Be\u010dva",
       "name-ru": "\u0412\u0441\u0435\u0442\u0438\u043d\u0441\u043a\u0430 \u0411\u0435\u0447\u0432\u0430",
       "name-sk": "Vset\u00ednsk\u00e1 Be\u010dva"
     },
@@ -39469,7 +39567,9 @@
       ],
       "id": "Zelivka",
       "name-cs": "\u017delivka",
+      "name-de": "\u017delivka",
       "name-en": "\u017delivka",
+      "name-es": "\u017delivka",
       "name-ru": "\u0416\u0435\u043b\u0438\u0432\u043a\u0430",
       "name-sk": "\u017delivka"
     },
@@ -41172,7 +41272,12 @@
         "reservoir"
       ],
       "id": "v.n.Rozkos",
-      "name-cs": "v.n.Rozko\u0161"
+      "name-cs": "v.n.Rozko\u0161",
+      "name-de": "v.n.Rozko\u0161",
+      "name-en": "v.n.Rozko\u0161",
+      "name-es": "v.n.Rozko\u0161",
+      "name-ru": "v.n.Rozko\u0161",
+      "name-sk": "v.n.Rozko\u0161"
     },
     {
       "categories": [
@@ -41180,7 +41285,12 @@
         "reservoir"
       ],
       "id": "v.n.Dalesice",
-      "name-cs": "v.n.Dale\u0161ice"
+      "name-cs": "v.n.Dale\u0161ice",
+      "name-de": "v.n.Dale\u0161ice",
+      "name-en": "v.n.Dale\u0161ice",
+      "name-es": "v.n.Dale\u0161ice",
+      "name-ru": "v.n.Dale\u0161ice",
+      "name-sk": "v.n.Dale\u0161ice"
     },
     {
       "categories": [
@@ -41188,7 +41298,12 @@
         "reservoir"
       ],
       "id": "v.n.Nove_Mlyny",
-      "name-cs": "v.n.Nov\u00e9 Ml\u00fdny"
+      "name-cs": "v.n.Nov\u00e9 Ml\u00fdny",
+      "name-de": "v.n.Nov\u00e9 Ml\u00fdny",
+      "name-en": "v.n.Nov\u00e9 Ml\u00fdny",
+      "name-es": "v.n.Nov\u00e9 Ml\u00fdny",
+      "name-ru": "v.n.Nov\u00e9 Ml\u00fdny",
+      "name-sk": "v.n.Nov\u00e9 Ml\u00fdny"
     },
     {
       "categories": [
@@ -41196,7 +41311,12 @@
         "reservoir"
       ],
       "id": "v.n.Terlicko",
-      "name-cs": "v.n.T\u011brlicko"
+      "name-cs": "v.n.T\u011brlicko",
+      "name-de": "v.n.T\u011brlicko",
+      "name-en": "v.n.T\u011brlicko",
+      "name-es": "v.n.T\u011brlicko",
+      "name-ru": "v.n.T\u011brlicko",
+      "name-sk": "v.n.T\u011brlicko"
     },
     {
       "categories": [
@@ -41204,7 +41324,12 @@
         "reservoir"
       ],
       "id": "Dehtar",
-      "name-cs": "Deht\u00e1\u0159"
+      "name-cs": "Deht\u00e1\u0159",
+      "name-de": "Deht\u00e1\u0159",
+      "name-en": "Deht\u00e1\u0159",
+      "name-es": "Deht\u00e1\u0159",
+      "name-ru": "Deht\u00e1\u0159",
+      "name-sk": "Deht\u00e1\u0159"
     },
     {
       "categories": [
@@ -41212,7 +41337,12 @@
         "reservoir"
       ],
       "id": "Bezdrev",
-      "name-cs": "Bezdrev"
+      "name-cs": "Bezdrev",
+      "name-de": "Bezdrev",
+      "name-en": "Bezdrev",
+      "name-es": "Bezdrev",
+      "name-ru": "Bezdrev",
+      "name-sk": "Bezdrev"
     },
     {
       "categories": [
@@ -41220,7 +41350,12 @@
         "reservoir"
       ],
       "id": "v.n.Slapy",
-      "name-cs": "v.n.Slapy"
+      "name-cs": "v.n.Slapy",
+      "name-de": "v.n.Slapy",
+      "name-en": "v.n.Slapy",
+      "name-es": "v.n.Slapy",
+      "name-ru": "v.n.Slapy",
+      "name-sk": "v.n.Slapy"
     },
     {
       "categories": [
@@ -41228,7 +41363,12 @@
         "reservoir"
       ],
       "id": "v.n._Kamyk",
-      "name-cs": "v.n. Kam\u00fdk"
+      "name-cs": "v.n. Kam\u00fdk",
+      "name-de": "v.n. Kam\u00fdk",
+      "name-en": "v.n. Kam\u00fdk",
+      "name-es": "v.n. Kam\u00fdk",
+      "name-ru": "v.n. Kam\u00fdk",
+      "name-sk": "v.n. Kam\u00fdk"
     },
     {
       "categories": [
@@ -41236,7 +41376,12 @@
         "reservoir"
       ],
       "id": "Dvoriste",
-      "name-cs": "Dvo\u0159i\u0161t\u011b"
+      "name-cs": "Dvo\u0159i\u0161t\u011b",
+      "name-de": "Dvo\u0159i\u0161t\u011b",
+      "name-en": "Dvo\u0159i\u0161t\u011b",
+      "name-es": "Dvo\u0159i\u0161t\u011b",
+      "name-ru": "Dvo\u0159i\u0161t\u011b",
+      "name-sk": "Dvo\u0159i\u0161t\u011b"
     },
     {
       "categories": [
@@ -41244,7 +41389,12 @@
         "reservoir"
       ],
       "id": "v.n.Vranov",
-      "name-cs": "v.n.Vranov"
+      "name-cs": "v.n.Vranov",
+      "name-de": "v.n.Vranov",
+      "name-en": "v.n.Vranov",
+      "name-es": "v.n.Vranov",
+      "name-ru": "v.n.Vranov",
+      "name-sk": "v.n.Vranov"
     },
     {
       "categories": [
@@ -41252,7 +41402,12 @@
         "reservoir"
       ],
       "id": "Rozmberk",
-      "name-cs": "Ro\u017emberk"
+      "name-cs": "Ro\u017emberk",
+      "name-de": "Ro\u017emberk",
+      "name-en": "Ro\u017emberk",
+      "name-es": "Ro\u017emberk",
+      "name-ru": "Ro\u017emberk",
+      "name-sk": "Ro\u017emberk"
     },
     {
       "categories": [
@@ -41260,7 +41415,12 @@
         "reservoir"
       ],
       "id": "Velke_Darko",
-      "name-cs": "Velk\u00e9 D\u00e1\u0159ko"
+      "name-cs": "Velk\u00e9 D\u00e1\u0159ko",
+      "name-de": "Velk\u00e9 D\u00e1\u0159ko",
+      "name-en": "Velk\u00e9 D\u00e1\u0159ko",
+      "name-es": "Velk\u00e9 D\u00e1\u0159ko",
+      "name-ru": "Velk\u00e9 D\u00e1\u0159ko",
+      "name-sk": "Velk\u00e9 D\u00e1\u0159ko"
     },
     {
       "categories": [
@@ -41268,7 +41428,12 @@
         "reservoir"
       ],
       "id": "v.n.Slezska_Harta",
-      "name-cs": "v.n.Slezsk\u00e1 Harta"
+      "name-cs": "v.n.Slezsk\u00e1 Harta",
+      "name-de": "v.n.Slezsk\u00e1 Harta",
+      "name-en": "v.n.Slezsk\u00e1 Harta",
+      "name-es": "v.n.Slezsk\u00e1 Harta",
+      "name-ru": "v.n.Slezsk\u00e1 Harta",
+      "name-sk": "v.n.Slezsk\u00e1 Harta"
     },
     {
       "categories": [
@@ -41276,7 +41441,12 @@
         "reservoir"
       ],
       "id": "v.n._Jesenice",
-      "name-cs": "v.n. Jesenice"
+      "name-cs": "v.n. Jesenice",
+      "name-de": "v.n. Jesenice",
+      "name-en": "v.n. Jesenice",
+      "name-es": "v.n. Jesenice",
+      "name-ru": "v.n. Jesenice",
+      "name-sk": "v.n. Jesenice"
     },
     {
       "categories": [
@@ -41284,7 +41454,12 @@
         "reservoir"
       ],
       "id": "Horusicky_rybnik",
-      "name-cs": "Horusick\u00fd rybn\u00edk"
+      "name-cs": "Horusick\u00fd rybn\u00edk",
+      "name-de": "Horusick\u00fd rybn\u00edk",
+      "name-en": "Horusick\u00fd rybn\u00edk",
+      "name-es": "Horusick\u00fd rybn\u00edk",
+      "name-ru": "Horusick\u00fd rybn\u00edk",
+      "name-sk": "Horusick\u00fd rybn\u00edk"
     },
     {
       "categories": [
@@ -41292,7 +41467,12 @@
         "reservoir"
       ],
       "id": "v.n.Zermanice",
-      "name-cs": "v.n.\u017dermanice"
+      "name-cs": "v.n.\u017dermanice",
+      "name-de": "v.n.\u017dermanice",
+      "name-en": "v.n.\u017dermanice",
+      "name-es": "v.n.\u017dermanice",
+      "name-ru": "v.n.\u017dermanice",
+      "name-sk": "v.n.\u017dermanice"
     },
     {
       "categories": [
@@ -41300,7 +41480,12 @@
         "reservoir"
       ],
       "id": "v.n._Nechranice",
-      "name-cs": "v.n. Nechranice"
+      "name-cs": "v.n. Nechranice",
+      "name-de": "v.n. Nechranice",
+      "name-en": "v.n. Nechranice",
+      "name-es": "v.n. Nechranice",
+      "name-ru": "v.n. Nechranice",
+      "name-sk": "v.n. Nechranice"
     },
     {
       "categories": [
@@ -41308,7 +41493,12 @@
         "reservoir"
       ],
       "id": "v.n.Orlik",
-      "name-cs": "v.n.Orl\u00edk"
+      "name-cs": "v.n.Orl\u00edk",
+      "name-de": "v.n.Orl\u00edk",
+      "name-en": "v.n.Orl\u00edk",
+      "name-es": "v.n.Orl\u00edk",
+      "name-ru": "v.n.Orl\u00edk",
+      "name-sk": "v.n.Orl\u00edk"
     },
     {
       "categories": [
@@ -41316,7 +41506,12 @@
         "reservoir"
       ],
       "id": "v.n.Sance",
-      "name-cs": "v.n.\u0160ance"
+      "name-cs": "v.n.\u0160ance",
+      "name-de": "v.n.\u0160ance",
+      "name-en": "v.n.\u0160ance",
+      "name-es": "v.n.\u0160ance",
+      "name-ru": "v.n.\u0160ance",
+      "name-sk": "v.n.\u0160ance"
     },
     {
       "categories": [
@@ -41324,7 +41519,12 @@
         "reservoir"
       ],
       "id": "Nesyt",
-      "name-cs": "Nesyt"
+      "name-cs": "Nesyt",
+      "name-de": "Nesyt",
+      "name-en": "Nesyt",
+      "name-es": "Nesyt",
+      "name-ru": "Nesyt",
+      "name-sk": "Nesyt"
     },
     {
       "categories": [
@@ -41332,7 +41532,12 @@
         "reservoir"
       ],
       "id": "Machovo_jezero",
-      "name-cs": "M\u00e1chovo jezero"
+      "name-cs": "M\u00e1chovo jezero",
+      "name-de": "M\u00e1chovo jezero",
+      "name-en": "M\u00e1chovo jezero",
+      "name-es": "M\u00e1chovo jezero",
+      "name-ru": "M\u00e1chovo jezero",
+      "name-sk": "M\u00e1chovo jezero"
     },
     {
       "categories": [
@@ -41340,7 +41545,12 @@
         "reservoir"
       ],
       "id": "v.n.Vir_I",
-      "name-cs": "v.n.V\u00edr I"
+      "name-cs": "v.n.V\u00edr I",
+      "name-de": "v.n.V\u00edr I",
+      "name-en": "v.n.V\u00edr I",
+      "name-es": "v.n.V\u00edr I",
+      "name-ru": "v.n.V\u00edr I",
+      "name-sk": "v.n.V\u00edr I"
     },
     {
       "categories": [
@@ -41348,7 +41558,12 @@
         "reservoir"
       ],
       "id": "v.n._Lipno_I",
-      "name-cs": "v.n. Lipno I"
+      "name-cs": "v.n. Lipno I",
+      "name-de": "v.n. Lipno I",
+      "name-en": "v.n. Lipno I",
+      "name-es": "v.n. Lipno I",
+      "name-ru": "v.n. Lipno I",
+      "name-sk": "v.n. Lipno I"
     },
     {
       "categories": [
@@ -41356,7 +41571,12 @@
         "reservoir"
       ],
       "id": "v.n.Svihov",
-      "name-cs": "v.n.\u0160vihov"
+      "name-cs": "v.n.\u0160vihov",
+      "name-de": "v.n.\u0160vihov",
+      "name-en": "v.n.\u0160vihov",
+      "name-es": "v.n.\u0160vihov",
+      "name-ru": "v.n.\u0160vihov",
+      "name-sk": "v.n.\u0160vihov"
     },
     {
       "categories": [
@@ -41364,7 +41584,12 @@
         "reservoir"
       ],
       "id": "v.n._Hracholusky",
-      "name-cs": "v.n. Hracholusky"
+      "name-cs": "v.n. Hracholusky",
+      "name-de": "v.n. Hracholusky",
+      "name-en": "v.n. Hracholusky",
+      "name-es": "v.n. Hracholusky",
+      "name-ru": "v.n. Hracholusky",
+      "name-sk": "v.n. Hracholusky"
     },
     {
       "categories": [
@@ -41372,7 +41597,12 @@
         "reservoir"
       ],
       "id": "v.n.Dlouhe_strane",
-      "name-cs": "v.n.Dlouh\u00e9 str\u00e1n\u011b"
+      "name-cs": "v.n.Dlouh\u00e9 str\u00e1n\u011b",
+      "name-de": "v.n.Dlouh\u00e9 str\u00e1n\u011b",
+      "name-en": "v.n.Dlouh\u00e9 str\u00e1n\u011b",
+      "name-es": "v.n.Dlouh\u00e9 str\u00e1n\u011b",
+      "name-ru": "v.n.Dlouh\u00e9 str\u00e1n\u011b",
+      "name-sk": "v.n.Dlouh\u00e9 str\u00e1n\u011b"
     },
     {
       "categories": [
@@ -42852,11 +43082,11 @@
       ],
       "id": "surface-Sumava",
       "name-cs": "\u0160umava",
-      "name-de": "Sumava",
-      "name-en": "Sumava",
-      "name-es": "Sumava",
-      "name-ru": "Sumava",
-      "name-sk": "Sumava"
+      "name-de": "\u0160umava",
+      "name-en": "\u0160umava",
+      "name-es": "\u0160umava",
+      "name-ru": "\u0160umava",
+      "name-sk": "\u0160umava"
     },
     {
       "categories": [
@@ -42865,11 +43095,11 @@
       ],
       "id": "surface-Krusne_hory",
       "name-cs": "Kru\u0161n\u00e9 hory",
-      "name-de": "Krusn\u00e9 hory",
-      "name-en": "Krusn\u00e9 hory",
-      "name-es": "Krusn\u00e9 hory",
-      "name-ru": "Krusn\u00e9 hory",
-      "name-sk": "Krusn\u00e9 hory"
+      "name-de": "Kru\u0161n\u00e9 hory",
+      "name-en": "Kru\u0161n\u00e9 hory",
+      "name-es": "Kru\u0161n\u00e9 hory",
+      "name-ru": "Kru\u0161n\u00e9 hory",
+      "name-sk": "Kru\u0161n\u00e9 hory"
     },
     {
       "categories": [
@@ -42878,11 +43108,11 @@
       ],
       "id": "surface-Ceske_Stredohori",
       "name-cs": "\u010cesk\u00e9 St\u0159edoho\u0159\u00ed",
-      "name-de": "Cesk\u00e9 Stredohor\u00ed",
-      "name-en": "Cesk\u00e9 Stredohor\u00ed",
-      "name-es": "Cesk\u00e9 Stredohor\u00ed",
-      "name-ru": "Cesk\u00e9 Stredohor\u00ed",
-      "name-sk": "Cesk\u00e9 Stredohor\u00ed"
+      "name-de": "\u010cesk\u00e9 St\u0159edoho\u0159\u00ed",
+      "name-en": "\u010cesk\u00e9 St\u0159edoho\u0159\u00ed",
+      "name-es": "\u010cesk\u00e9 St\u0159edoho\u0159\u00ed",
+      "name-ru": "\u010cesk\u00e9 St\u0159edoho\u0159\u00ed",
+      "name-sk": "\u010cesk\u00e9 St\u0159edoho\u0159\u00ed"
     },
     {
       "categories": [
@@ -42891,11 +43121,11 @@
       ],
       "id": "surface-Krkonose",
       "name-cs": "Krkono\u0161e",
-      "name-de": "Krkonose",
-      "name-en": "Krkonose",
-      "name-es": "Krkonose",
-      "name-ru": "Krkonose",
-      "name-sk": "Krkonose"
+      "name-de": "Krkono\u0161e",
+      "name-en": "Krkono\u0161e",
+      "name-es": "Krkono\u0161e",
+      "name-ru": "Krkono\u0161e",
+      "name-sk": "Krkono\u0161e"
     },
     {
       "categories": [
@@ -42969,11 +43199,11 @@
       ],
       "id": "surface-Cesky_les",
       "name-cs": "\u010cesk\u00fd les",
-      "name-de": "Cesk\u00fd les",
-      "name-en": "Cesk\u00fd les",
-      "name-es": "Cesk\u00fd les",
-      "name-ru": "Cesk\u00fd les",
-      "name-sk": "Cesk\u00fd les"
+      "name-de": "\u010cesk\u00fd les",
+      "name-en": "\u010cesk\u00fd les",
+      "name-es": "\u010cesk\u00fd les",
+      "name-ru": "\u010cesk\u00fd les",
+      "name-sk": "\u010cesk\u00fd les"
     },
     {
       "categories": [
@@ -43021,11 +43251,11 @@
       ],
       "id": "surface-Chriby",
       "name-cs": "Ch\u0159iby",
-      "name-de": "Chriby",
-      "name-en": "Chriby",
-      "name-es": "Chriby",
-      "name-ru": "Chriby",
-      "name-sk": "Chriby"
+      "name-de": "Ch\u0159iby",
+      "name-en": "Ch\u0159iby",
+      "name-es": "Ch\u0159iby",
+      "name-ru": "Ch\u0159iby",
+      "name-sk": "Ch\u0159iby"
     },
     {
       "categories": [
@@ -43060,11 +43290,11 @@
       ],
       "id": "surface-Jestedsko-kozakovsky_hrbet",
       "name-cs": "Je\u0161tedsko-koz\u00e1kovsk\u00fd h\u0159bet",
-      "name-de": "Jestedsko-koz\u00e1kovsk\u00fd hrbet",
-      "name-en": "Jestedsko-koz\u00e1kovsk\u00fd hrbet",
-      "name-es": "Jestedsko-koz\u00e1kovsk\u00fd hrbet",
-      "name-ru": "Jestedsko-koz\u00e1kovsk\u00fd hrbet",
-      "name-sk": "Jestedsko-koz\u00e1kovsk\u00fd hrbet"
+      "name-de": "Je\u0161tedsko-koz\u00e1kovsk\u00fd h\u0159bet",
+      "name-en": "Je\u0161tedsko-koz\u00e1kovsk\u00fd h\u0159bet",
+      "name-es": "Je\u0161tedsko-koz\u00e1kovsk\u00fd h\u0159bet",
+      "name-ru": "Je\u0161tedsko-koz\u00e1kovsk\u00fd h\u0159bet",
+      "name-sk": "Je\u0161tedsko-koz\u00e1kovsk\u00fd h\u0159bet"
     },
     {
       "categories": [
@@ -43073,11 +43303,11 @@
       ],
       "id": "surface-Luzicke_hory",
       "name-cs": "Lu\u017eick\u00e9 hory",
-      "name-de": "Luzick\u00e9 hory",
-      "name-en": "Luzick\u00e9 hory",
-      "name-es": "Luzick\u00e9 hory",
-      "name-ru": "Luzick\u00e9 hory",
-      "name-sk": "Luzick\u00e9 hory"
+      "name-de": "Lu\u017eick\u00e9 hory",
+      "name-en": "Lu\u017eick\u00e9 hory",
+      "name-es": "Lu\u017eick\u00e9 hory",
+      "name-ru": "Lu\u017eick\u00e9 hory",
+      "name-sk": "Lu\u017eick\u00e9 hory"
     },
     {
       "categories": [
