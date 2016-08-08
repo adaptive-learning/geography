@@ -604,6 +604,16 @@
       "name-ru": "\u0412\u044b\u0441\u043e\u0447\u0438\u043d\u0430",
       "name-sk": "Vyso\u010dina",
       "type": "region"
+    },
+    {
+      "id": "cz-jc",
+      "name-cs": "Jiho\u010desk\u00fd",
+      "name-de": "S\u00fcdb\u00f6hmische Region",
+      "name-en": "Jiho\u010desk\u00fd",
+      "name-es": "Bohemia Meridional",
+      "name-ru": "\u042e\u0436\u043d\u043e\u0447\u0435\u0448\u0441\u043a\u0438\u0439",
+      "name-sk": "Juho\u010desk\u00fd",
+      "type": "state"
     }
   ],
   "contexts": [
@@ -1176,6 +1186,21 @@
       "name-es": "Vyso\u010dina",
       "name-ru": "\u0412\u044b\u0441\u043e\u0447\u0438\u043d\u0430",
       "name-sk": "Vyso\u010dina"
+    },
+    {
+      "content-cs": "cz-jc.svg",
+      "content-de": "cz-jc.svg",
+      "content-en": "cz-jc.svg",
+      "content-es": "cz-jc.svg",
+      "content-ru": "cz-jc.svg",
+      "content-sk": "cz-jc.svg",
+      "id": "cz-jc",
+      "name-cs": "Jiho\u010desk\u00fd",
+      "name-de": "S\u00fcdb\u00f6hmische Region",
+      "name-en": "Jiho\u010desk\u00fd",
+      "name-es": "Bohemia Meridional",
+      "name-ru": "\u042e\u0436\u043d\u043e\u0447\u0435\u0448\u0441\u043a\u0438\u0439",
+      "name-sk": "Juho\u010desk\u00fd"
     }
   ],
   "flashcards": [
@@ -18749,6 +18774,474 @@
       "description": "Svarec",
       "id": "cz-vy-Svarec",
       "term": "Svarec"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Blatna",
+      "id": "cz-jc-soorp-Blatna",
+      "term": "soorp-Blatna"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Ceske_Budejovice",
+      "id": "cz-jc-soorp-Ceske_Budejovice",
+      "term": "soorp-Ceske_Budejovice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Cesky_Krumlov",
+      "id": "cz-jc-soorp-Cesky_Krumlov",
+      "term": "soorp-Cesky_Krumlov"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Dacice",
+      "id": "cz-jc-soorp-Dacice",
+      "term": "soorp-Dacice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Jindrichuv_Hradec",
+      "id": "cz-jc-soorp-Jindrichuv_Hradec",
+      "term": "soorp-Jindrichuv_Hradec"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Kaplice",
+      "id": "cz-jc-soorp-Kaplice",
+      "term": "soorp-Kaplice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Milevsko",
+      "id": "cz-jc-soorp-Milevsko",
+      "term": "soorp-Milevsko"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Pisek",
+      "id": "cz-jc-soorp-Pisek",
+      "term": "soorp-Pisek"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Prachatice",
+      "id": "cz-jc-soorp-Prachatice",
+      "term": "soorp-Prachatice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Sobeslav",
+      "id": "cz-jc-soorp-Sobeslav",
+      "term": "soorp-Sobeslav"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Strakonice",
+      "id": "cz-jc-soorp-Strakonice",
+      "term": "soorp-Strakonice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Tabor",
+      "id": "cz-jc-soorp-Tabor",
+      "term": "soorp-Tabor"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Trhove_Sviny",
+      "id": "cz-jc-soorp-Trhove_Sviny",
+      "term": "soorp-Trhove_Sviny"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-TAeboA?",
+      "id": "cz-jc-soorp-TAeboA?",
+      "term": "soorp-TAeboA?"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Tyn_nad_Vltavou",
+      "id": "cz-jc-soorp-Tyn_nad_Vltavou",
+      "term": "soorp-Tyn_nad_Vltavou"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-Vimperk",
+      "id": "cz-jc-soorp-Vimperk",
+      "term": "soorp-Vimperk"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soorp-VodA?any",
+      "id": "cz-jc-soorp-VodA?any",
+      "term": "soorp-VodA?any"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Blatna",
+      "id": "cz-jc-soopu-Blatna",
+      "term": "soopu-Blatna"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Ceske_Budejovice",
+      "id": "cz-jc-soopu-Ceske_Budejovice",
+      "term": "soopu-Ceske_Budejovice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Hluboka_nad_Vltavou",
+      "id": "cz-jc-soopu-Hluboka_nad_Vltavou",
+      "term": "soopu-Hluboka_nad_Vltavou"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Lisov",
+      "id": "cz-jc-soopu-Lisov",
+      "term": "soopu-Lisov"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Zliv",
+      "id": "cz-jc-soopu-Zliv",
+      "term": "soopu-Zliv"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Cesky_Krumlov",
+      "id": "cz-jc-soopu-Cesky_Krumlov",
+      "term": "soopu-Cesky_Krumlov"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Horni_Plana",
+      "id": "cz-jc-soopu-Horni_Plana",
+      "term": "soopu-Horni_Plana"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Vyssi_Brod",
+      "id": "cz-jc-soopu-Vyssi_Brod",
+      "term": "soopu-Vyssi_Brod"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Vojensky_ujezd_Boletice",
+      "id": "cz-jc-soopu-Vojensky_ujezd_Boletice",
+      "term": "soopu-Vojensky_ujezd_Boletice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Dacice",
+      "id": "cz-jc-soopu-Dacice",
+      "term": "soopu-Dacice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Slavonice",
+      "id": "cz-jc-soopu-Slavonice",
+      "term": "soopu-Slavonice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Jindrichuv_Hradec",
+      "id": "cz-jc-soopu-Jindrichuv_Hradec",
+      "term": "soopu-Jindrichuv_Hradec"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Nova_Bystrice",
+      "id": "cz-jc-soopu-Nova_Bystrice",
+      "term": "soopu-Nova_Bystrice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Kaplice",
+      "id": "cz-jc-soopu-Kaplice",
+      "term": "soopu-Kaplice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Milevsko",
+      "id": "cz-jc-soopu-Milevsko",
+      "term": "soopu-Milevsko"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Mirotice",
+      "id": "cz-jc-soopu-Mirotice",
+      "term": "soopu-Mirotice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Mirovice",
+      "id": "cz-jc-soopu-Mirovice",
+      "term": "soopu-Mirovice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Pisek",
+      "id": "cz-jc-soopu-Pisek",
+      "term": "soopu-Pisek"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Protivin",
+      "id": "cz-jc-soopu-Protivin",
+      "term": "soopu-Protivin"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Netolice",
+      "id": "cz-jc-soopu-Netolice",
+      "term": "soopu-Netolice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Prachatice",
+      "id": "cz-jc-soopu-Prachatice",
+      "term": "soopu-Prachatice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Volary",
+      "id": "cz-jc-soopu-Volary",
+      "term": "soopu-Volary"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Sobeslav",
+      "id": "cz-jc-soopu-Sobeslav",
+      "term": "soopu-Sobeslav"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Veseli_nad_Luznici",
+      "id": "cz-jc-soopu-Veseli_nad_Luznici",
+      "term": "soopu-Veseli_nad_Luznici"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Strakonice",
+      "id": "cz-jc-soopu-Strakonice",
+      "term": "soopu-Strakonice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Volyne",
+      "id": "cz-jc-soopu-Volyne",
+      "term": "soopu-Volyne"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Bechyne",
+      "id": "cz-jc-soopu-Bechyne",
+      "term": "soopu-Bechyne"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Mlada_Vozice",
+      "id": "cz-jc-soopu-Mlada_Vozice",
+      "term": "soopu-Mlada_Vozice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Sezimovo_Usti",
+      "id": "cz-jc-soopu-Sezimovo_Usti",
+      "term": "soopu-Sezimovo_Usti"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Tabor",
+      "id": "cz-jc-soopu-Tabor",
+      "term": "soopu-Tabor"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Nove_Hrady",
+      "id": "cz-jc-soopu-Nove_Hrady",
+      "term": "soopu-Nove_Hrady"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Trhove_Sviny",
+      "id": "cz-jc-soopu-Trhove_Sviny",
+      "term": "soopu-Trhove_Sviny"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Ceske_Velenice",
+      "id": "cz-jc-soopu-Ceske_Velenice",
+      "term": "soopu-Ceske_Velenice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Suchdol_nad_Luznici",
+      "id": "cz-jc-soopu-Suchdol_nad_Luznici",
+      "term": "soopu-Suchdol_nad_Luznici"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Trebon",
+      "id": "cz-jc-soopu-Trebon",
+      "term": "soopu-Trebon"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Tyn_nad_Vltavou",
+      "id": "cz-jc-soopu-Tyn_nad_Vltavou",
+      "term": "soopu-Tyn_nad_Vltavou"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Vimperk",
+      "id": "cz-jc-soopu-Vimperk",
+      "term": "soopu-Vimperk"
+    },
+    {
+      "context": "cz-jc",
+      "description": "soopu-Vodnany",
+      "id": "cz-jc-soopu-Vodnany",
+      "term": "soopu-Vodnany"
+    },
+    {
+      "context": "cz-jc",
+      "description": "HojnA_voda",
+      "id": "cz-jc-HojnA_voda",
+      "term": "HojnA_voda"
+    },
+    {
+      "context": "cz-jc",
+      "description": "RovnA",
+      "id": "cz-jc-RovnA",
+      "term": "RovnA"
+    },
+    {
+      "context": "cz-jc",
+      "description": "StroATov",
+      "id": "cz-jc-StroATov",
+      "term": "StroATov"
+    },
+    {
+      "context": "cz-jc",
+      "description": "LuATnA",
+      "id": "cz-jc-LuATnA",
+      "term": "LuATnA"
+    },
+    {
+      "context": "cz-jc",
+      "description": "VizAr",
+      "id": "cz-jc-VizAr",
+      "term": "VizAr"
+    },
+    {
+      "context": "cz-jc",
+      "description": "Kaproun",
+      "id": "cz-jc-Kaproun",
+      "term": "Kaproun"
+    },
+    {
+      "context": "cz-jc",
+      "description": "U_Hajnice",
+      "id": "cz-jc-U_Hajnice",
+      "term": "U_Hajnice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "ChAnovskA_jeskynA",
+      "id": "cz-jc-ChAnovskA_jeskynA",
+      "term": "ChAnovskA_jeskynA"
+    },
+    {
+      "context": "cz-jc",
+      "description": "VelkA_a_MalA_TisA",
+      "id": "cz-jc-VelkA_a_MalA_TisA",
+      "term": "VelkA_a_MalA_TisA"
+    },
+    {
+      "context": "cz-jc",
+      "description": "Lofinka",
+      "id": "cz-jc-Lofinka",
+      "term": "Lofinka"
+    },
+    {
+      "context": "cz-jc",
+      "description": "VyLenskA_kopce",
+      "id": "cz-jc-VyLenskA_kopce",
+      "term": "VyLenskA_kopce"
+    },
+    {
+      "context": "cz-jc",
+      "description": "Ruda",
+      "id": "cz-jc-Ruda",
+      "term": "Ruda"
+    },
+    {
+      "context": "cz-jc",
+      "description": "StarA_a_NovA_Leka",
+      "id": "cz-jc-StarA_a_NovA_Leka",
+      "term": "StarA_a_NovA_Leka"
+    },
+    {
+      "context": "cz-jc",
+      "description": "TerATino_AsdolA",
+      "id": "cz-jc-TerATino_AsdolA",
+      "term": "TerATino_AsdolA"
+    },
+    {
+      "context": "cz-jc",
+      "description": "BoubAnskA_prales",
+      "id": "cz-jc-BoubAnskA_prales",
+      "term": "BoubAnskA_prales"
+    },
+    {
+      "context": "cz-jc",
+      "description": "AServenA_blato",
+      "id": "cz-jc-AServenA_blato",
+      "term": "AServenA_blato"
+    },
+    {
+      "context": "cz-jc",
+      "description": "VelkA_Niva",
+      "id": "cz-jc-VelkA_Niva",
+      "term": "VelkA_Niva"
+    },
+    {
+      "context": "cz-jc",
+      "description": "LofAnskA_prales",
+      "id": "cz-jc-LofAnskA_prales",
+      "term": "LofAnskA_prales"
+    },
+    {
+      "context": "cz-jc",
+      "description": "BrouskLZv_mlAn",
+      "id": "cz-jc-BrouskLZv_mlAn",
+      "term": "BrouskLZv_mlAn"
+    },
+    {
+      "context": "cz-jc",
+      "description": "Blanice",
+      "id": "cz-jc-Blanice",
+      "term": "Blanice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "ASertova_stAna-LuAT",
+      "id": "cz-jc-ASertova_stAna-LuAT",
+      "term": "ASertova_stAna-LuAT"
+    },
+    {
+      "context": "cz-jc",
+      "description": "PrameniLtA_Blanice",
+      "id": "cz-jc-PrameniLtA_Blanice",
+      "term": "PrameniLtA_Blanice"
+    },
+    {
+      "context": "cz-jc",
+      "description": "LeLlabinec_a_LeLlabineckA_tLZnA",
+      "id": "cz-jc-LeLlabinec_a_LeLlabineckA_tLZnA",
+      "term": "LeLlabinec_a_LeLlabineckA_tLZnA"
     }
   ],
   "terms": [
@@ -52955,6 +53448,1020 @@
       "name-es": "\u0160va\u0159ec",
       "name-ru": "\u0160va\u0159ec",
       "name-sk": "\u0160va\u0159ec"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Blatna",
+      "name-cs": "Blatn\u00e1",
+      "name-de": "Blatn\u00e1",
+      "name-en": "Blatn\u00e1",
+      "name-es": "Blatn\u00e1",
+      "name-ru": "Blatn\u00e1",
+      "name-sk": "Blatn\u00e1"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Ceske_Budejovice",
+      "name-cs": "\u010cesk\u00e9 Bud\u011bjovice",
+      "name-de": "\u010cesk\u00e9 Bud\u011bjovice",
+      "name-en": "\u010cesk\u00e9 Bud\u011bjovice",
+      "name-es": "\u010cesk\u00e9 Bud\u011bjovice",
+      "name-ru": "\u010cesk\u00e9 Bud\u011bjovice",
+      "name-sk": "\u010cesk\u00e9 Bud\u011bjovice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Cesky_Krumlov",
+      "name-cs": "\u010cesk\u00fd Krumlov",
+      "name-de": "\u010cesk\u00fd Krumlov",
+      "name-en": "\u010cesk\u00fd Krumlov",
+      "name-es": "\u010cesk\u00fd Krumlov",
+      "name-ru": "\u010cesk\u00fd Krumlov",
+      "name-sk": "\u010cesk\u00fd Krumlov"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Dacice",
+      "name-cs": "Da\u010dice",
+      "name-de": "Da\u010dice",
+      "name-en": "Da\u010dice",
+      "name-es": "Da\u010dice",
+      "name-ru": "Da\u010dice",
+      "name-sk": "Da\u010dice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Jindrichuv_Hradec",
+      "name-cs": "Jind\u0159ich\u016fv Hradec",
+      "name-de": "Jind\u0159ich\u016fv Hradec",
+      "name-en": "Jind\u0159ich\u016fv Hradec",
+      "name-es": "Jind\u0159ich\u016fv Hradec",
+      "name-ru": "Jind\u0159ich\u016fv Hradec",
+      "name-sk": "Jind\u0159ich\u016fv Hradec"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Kaplice",
+      "name-cs": "Kaplice",
+      "name-de": "Kaplice",
+      "name-en": "Kaplice",
+      "name-es": "Kaplice",
+      "name-ru": "Kaplice",
+      "name-sk": "Kaplice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Milevsko",
+      "name-cs": "Milevsko",
+      "name-de": "Milevsko",
+      "name-en": "Milevsko",
+      "name-es": "Milevsko",
+      "name-ru": "Milevsko",
+      "name-sk": "Milevsko"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Pisek",
+      "name-cs": "P\u00edsek",
+      "name-de": "P\u00edsek",
+      "name-en": "P\u00edsek",
+      "name-es": "P\u00edsek",
+      "name-ru": "P\u00edsek",
+      "name-sk": "P\u00edsek"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Prachatice",
+      "name-cs": "Prachatice",
+      "name-de": "Prachatice",
+      "name-en": "Prachatice",
+      "name-es": "Prachatice",
+      "name-ru": "Prachatice",
+      "name-sk": "Prachatice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Sobeslav",
+      "name-cs": "Sob\u011bslav",
+      "name-de": "Sob\u011bslav",
+      "name-en": "Sob\u011bslav",
+      "name-es": "Sob\u011bslav",
+      "name-ru": "Sob\u011bslav",
+      "name-sk": "Sob\u011bslav"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Strakonice",
+      "name-cs": "Strakonice",
+      "name-de": "Strakonice",
+      "name-en": "Strakonice",
+      "name-es": "Strakonice",
+      "name-ru": "Strakonice",
+      "name-sk": "Strakonice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Tabor",
+      "name-cs": "T\u00e1bor",
+      "name-de": "T\u00e1bor",
+      "name-en": "T\u00e1bor",
+      "name-es": "T\u00e1bor",
+      "name-ru": "T\u00e1bor",
+      "name-sk": "T\u00e1bor"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Trhove_Sviny",
+      "name-cs": "Trhov\u00e9 Sviny",
+      "name-de": "Trhov\u00e9 Sviny",
+      "name-en": "Trhov\u00e9 Sviny",
+      "name-es": "Trhov\u00e9 Sviny",
+      "name-ru": "Trhov\u00e9 Sviny",
+      "name-sk": "Trhov\u00e9 Sviny"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-TAeboA?",
+      "name-cs": "T\u00c5\u0099ebo\u00c5?",
+      "name-de": "T\u00c5\u0099ebo\u00c5?",
+      "name-en": "T\u00c5\u0099ebo\u00c5?",
+      "name-es": "T\u00c5\u0099ebo\u00c5?",
+      "name-ru": "T\u00c5\u0099ebo\u00c5?",
+      "name-sk": "T\u00c5\u0099ebo\u00c5?"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Tyn_nad_Vltavou",
+      "name-cs": "T\u00fdn nad Vltavou",
+      "name-de": "T\u00fdn nad Vltavou",
+      "name-en": "T\u00fdn nad Vltavou",
+      "name-es": "T\u00fdn nad Vltavou",
+      "name-ru": "T\u00fdn nad Vltavou",
+      "name-sk": "T\u00fdn nad Vltavou"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-Vimperk",
+      "name-cs": "Vimperk",
+      "name-de": "Vimperk",
+      "name-en": "Vimperk",
+      "name-es": "Vimperk",
+      "name-ru": "Vimperk",
+      "name-sk": "Vimperk"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soorp"
+      ],
+      "id": "soorp-VodA?any",
+      "name-cs": "Vod\u00c5?any",
+      "name-de": "Vod\u00c5?any",
+      "name-en": "Vod\u00c5?any",
+      "name-es": "Vod\u00c5?any",
+      "name-ru": "Vod\u00c5?any",
+      "name-sk": "Vod\u00c5?any"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Blatna",
+      "name-cs": "Blatn\u00e1",
+      "name-de": "Blatn\u00e1",
+      "name-en": "Blatn\u00e1",
+      "name-es": "Blatn\u00e1",
+      "name-ru": "Blatn\u00e1",
+      "name-sk": "Blatn\u00e1"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Ceske_Budejovice",
+      "name-cs": "\u010cesk\u00e9 Bud\u011bjovice",
+      "name-de": "\u010cesk\u00e9 Bud\u011bjovice",
+      "name-en": "\u010cesk\u00e9 Bud\u011bjovice",
+      "name-es": "\u010cesk\u00e9 Bud\u011bjovice",
+      "name-ru": "\u010cesk\u00e9 Bud\u011bjovice",
+      "name-sk": "\u010cesk\u00e9 Bud\u011bjovice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Hluboka_nad_Vltavou",
+      "name-cs": "Hlubok\u00e1 nad Vltavou",
+      "name-de": "Hlubok\u00e1 nad Vltavou",
+      "name-en": "Hlubok\u00e1 nad Vltavou",
+      "name-es": "Hlubok\u00e1 nad Vltavou",
+      "name-ru": "Hlubok\u00e1 nad Vltavou",
+      "name-sk": "Hlubok\u00e1 nad Vltavou"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Lisov",
+      "name-cs": "Li\u0161ov",
+      "name-de": "Li\u0161ov",
+      "name-en": "Li\u0161ov",
+      "name-es": "Li\u0161ov",
+      "name-ru": "Li\u0161ov",
+      "name-sk": "Li\u0161ov"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Zliv",
+      "name-cs": "Zliv",
+      "name-de": "Zliv",
+      "name-en": "Zliv",
+      "name-es": "Zliv",
+      "name-ru": "Zliv",
+      "name-sk": "Zliv"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Cesky_Krumlov",
+      "name-cs": "\u010cesk\u00fd Krumlov",
+      "name-de": "\u010cesk\u00fd Krumlov",
+      "name-en": "\u010cesk\u00fd Krumlov",
+      "name-es": "\u010cesk\u00fd Krumlov",
+      "name-ru": "\u010cesk\u00fd Krumlov",
+      "name-sk": "\u010cesk\u00fd Krumlov"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Horni_Plana",
+      "name-cs": "Horn\u00ed Plan\u00e1",
+      "name-de": "Horn\u00ed Plan\u00e1",
+      "name-en": "Horn\u00ed Plan\u00e1",
+      "name-es": "Horn\u00ed Plan\u00e1",
+      "name-ru": "Horn\u00ed Plan\u00e1",
+      "name-sk": "Horn\u00ed Plan\u00e1"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Vyssi_Brod",
+      "name-cs": "Vy\u0161\u0161\u00ed Brod",
+      "name-de": "Vy\u0161\u0161\u00ed Brod",
+      "name-en": "Vy\u0161\u0161\u00ed Brod",
+      "name-es": "Vy\u0161\u0161\u00ed Brod",
+      "name-ru": "Vy\u0161\u0161\u00ed Brod",
+      "name-sk": "Vy\u0161\u0161\u00ed Brod"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Vojensky_ujezd_Boletice",
+      "name-cs": "Vojensk\u00fd \u00fajezd Boletice",
+      "name-de": "Vojensk\u00fd \u00fajezd Boletice",
+      "name-en": "Vojensk\u00fd \u00fajezd Boletice",
+      "name-es": "Vojensk\u00fd \u00fajezd Boletice",
+      "name-ru": "Vojensk\u00fd \u00fajezd Boletice",
+      "name-sk": "Vojensk\u00fd \u00fajezd Boletice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Dacice",
+      "name-cs": "Da\u010dice",
+      "name-de": "Da\u010dice",
+      "name-en": "Da\u010dice",
+      "name-es": "Da\u010dice",
+      "name-ru": "Da\u010dice",
+      "name-sk": "Da\u010dice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Slavonice",
+      "name-cs": "Slavonice",
+      "name-de": "Slavonice",
+      "name-en": "Slavonice",
+      "name-es": "Slavonice",
+      "name-ru": "Slavonice",
+      "name-sk": "Slavonice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Jindrichuv_Hradec",
+      "name-cs": "Jind\u0159ich\u016fv Hradec",
+      "name-de": "Jind\u0159ich\u016fv Hradec",
+      "name-en": "Jind\u0159ich\u016fv Hradec",
+      "name-es": "Jind\u0159ich\u016fv Hradec",
+      "name-ru": "Jind\u0159ich\u016fv Hradec",
+      "name-sk": "Jind\u0159ich\u016fv Hradec"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Nova_Bystrice",
+      "name-cs": "Nov\u00e1 Byst\u0159ice",
+      "name-de": "Nov\u00e1 Byst\u0159ice",
+      "name-en": "Nov\u00e1 Byst\u0159ice",
+      "name-es": "Nov\u00e1 Byst\u0159ice",
+      "name-ru": "Nov\u00e1 Byst\u0159ice",
+      "name-sk": "Nov\u00e1 Byst\u0159ice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Kaplice",
+      "name-cs": "Kaplice",
+      "name-de": "Kaplice",
+      "name-en": "Kaplice",
+      "name-es": "Kaplice",
+      "name-ru": "Kaplice",
+      "name-sk": "Kaplice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Milevsko",
+      "name-cs": "Milevsko",
+      "name-de": "Milevsko",
+      "name-en": "Milevsko",
+      "name-es": "Milevsko",
+      "name-ru": "Milevsko",
+      "name-sk": "Milevsko"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Mirotice",
+      "name-cs": "Mirotice",
+      "name-de": "Mirotice",
+      "name-en": "Mirotice",
+      "name-es": "Mirotice",
+      "name-ru": "Mirotice",
+      "name-sk": "Mirotice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Mirovice",
+      "name-cs": "Mirovice",
+      "name-de": "Mirovice",
+      "name-en": "Mirovice",
+      "name-es": "Mirovice",
+      "name-ru": "Mirovice",
+      "name-sk": "Mirovice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Pisek",
+      "name-cs": "P\u00edsek",
+      "name-de": "P\u00edsek",
+      "name-en": "P\u00edsek",
+      "name-es": "P\u00edsek",
+      "name-ru": "P\u00edsek",
+      "name-sk": "P\u00edsek"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Protivin",
+      "name-cs": "Protiv\u00edn",
+      "name-de": "Protiv\u00edn",
+      "name-en": "Protiv\u00edn",
+      "name-es": "Protiv\u00edn",
+      "name-ru": "Protiv\u00edn",
+      "name-sk": "Protiv\u00edn"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Netolice",
+      "name-cs": "Netolice",
+      "name-de": "Netolice",
+      "name-en": "Netolice",
+      "name-es": "Netolice",
+      "name-ru": "Netolice",
+      "name-sk": "Netolice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Prachatice",
+      "name-cs": "Prachatice",
+      "name-de": "Prachatice",
+      "name-en": "Prachatice",
+      "name-es": "Prachatice",
+      "name-ru": "Prachatice",
+      "name-sk": "Prachatice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Volary",
+      "name-cs": "Volary",
+      "name-de": "Volary",
+      "name-en": "Volary",
+      "name-es": "Volary",
+      "name-ru": "Volary",
+      "name-sk": "Volary"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Sobeslav",
+      "name-cs": "Sob\u011bslav",
+      "name-de": "Sob\u011bslav",
+      "name-en": "Sob\u011bslav",
+      "name-es": "Sob\u011bslav",
+      "name-ru": "Sob\u011bslav",
+      "name-sk": "Sob\u011bslav"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Veseli_nad_Luznici",
+      "name-cs": "Vesel\u00ed nad Lu\u017enic\u00ed",
+      "name-de": "Vesel\u00ed nad Lu\u017enic\u00ed",
+      "name-en": "Vesel\u00ed nad Lu\u017enic\u00ed",
+      "name-es": "Vesel\u00ed nad Lu\u017enic\u00ed",
+      "name-ru": "Vesel\u00ed nad Lu\u017enic\u00ed",
+      "name-sk": "Vesel\u00ed nad Lu\u017enic\u00ed"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Strakonice",
+      "name-cs": "Strakonice",
+      "name-de": "Strakonice",
+      "name-en": "Strakonice",
+      "name-es": "Strakonice",
+      "name-ru": "Strakonice",
+      "name-sk": "Strakonice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Volyne",
+      "name-cs": "Volyn\u011b",
+      "name-de": "Volyn\u011b",
+      "name-en": "Volyn\u011b",
+      "name-es": "Volyn\u011b",
+      "name-ru": "Volyn\u011b",
+      "name-sk": "Volyn\u011b"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Bechyne",
+      "name-cs": "Bechyn\u011b",
+      "name-de": "Bechyn\u011b",
+      "name-en": "Bechyn\u011b",
+      "name-es": "Bechyn\u011b",
+      "name-ru": "Bechyn\u011b",
+      "name-sk": "Bechyn\u011b"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Mlada_Vozice",
+      "name-cs": "Mlad\u00e1 Vo\u017eice",
+      "name-de": "Mlad\u00e1 Vo\u017eice",
+      "name-en": "Mlad\u00e1 Vo\u017eice",
+      "name-es": "Mlad\u00e1 Vo\u017eice",
+      "name-ru": "Mlad\u00e1 Vo\u017eice",
+      "name-sk": "Mlad\u00e1 Vo\u017eice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Sezimovo_Usti",
+      "name-cs": "Sezimovo \u00dast\u00ed",
+      "name-de": "Sezimovo \u00dast\u00ed",
+      "name-en": "Sezimovo \u00dast\u00ed",
+      "name-es": "Sezimovo \u00dast\u00ed",
+      "name-ru": "Sezimovo \u00dast\u00ed",
+      "name-sk": "Sezimovo \u00dast\u00ed"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Tabor",
+      "name-cs": "T\u00e1bor",
+      "name-de": "T\u00e1bor",
+      "name-en": "T\u00e1bor",
+      "name-es": "T\u00e1bor",
+      "name-ru": "T\u00e1bor",
+      "name-sk": "T\u00e1bor"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Nove_Hrady",
+      "name-cs": "Nov\u00e9 Hrady",
+      "name-de": "Nov\u00e9 Hrady",
+      "name-en": "Nov\u00e9 Hrady",
+      "name-es": "Nov\u00e9 Hrady",
+      "name-ru": "Nov\u00e9 Hrady",
+      "name-sk": "Nov\u00e9 Hrady"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Trhove_Sviny",
+      "name-cs": "Trhov\u00e9 Sviny",
+      "name-de": "Trhov\u00e9 Sviny",
+      "name-en": "Trhov\u00e9 Sviny",
+      "name-es": "Trhov\u00e9 Sviny",
+      "name-ru": "Trhov\u00e9 Sviny",
+      "name-sk": "Trhov\u00e9 Sviny"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Ceske_Velenice",
+      "name-cs": "\u010cesk\u00e9 Velenice",
+      "name-de": "\u010cesk\u00e9 Velenice",
+      "name-en": "\u010cesk\u00e9 Velenice",
+      "name-es": "\u010cesk\u00e9 Velenice",
+      "name-ru": "\u010cesk\u00e9 Velenice",
+      "name-sk": "\u010cesk\u00e9 Velenice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Suchdol_nad_Luznici",
+      "name-cs": "Suchdol nad Lu\u017enic\u00ed",
+      "name-de": "Suchdol nad Lu\u017enic\u00ed",
+      "name-en": "Suchdol nad Lu\u017enic\u00ed",
+      "name-es": "Suchdol nad Lu\u017enic\u00ed",
+      "name-ru": "Suchdol nad Lu\u017enic\u00ed",
+      "name-sk": "Suchdol nad Lu\u017enic\u00ed"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Trebon",
+      "name-cs": "T\u0159ebo\u0148",
+      "name-de": "T\u0159ebo\u0148",
+      "name-en": "T\u0159ebo\u0148",
+      "name-es": "T\u0159ebo\u0148",
+      "name-ru": "T\u0159ebo\u0148",
+      "name-sk": "T\u0159ebo\u0148"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Tyn_nad_Vltavou",
+      "name-cs": "T\u00fdn nad Vltavou",
+      "name-de": "T\u00fdn nad Vltavou",
+      "name-en": "T\u00fdn nad Vltavou",
+      "name-es": "T\u00fdn nad Vltavou",
+      "name-ru": "T\u00fdn nad Vltavou",
+      "name-sk": "T\u00fdn nad Vltavou"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Vimperk",
+      "name-cs": "Vimperk",
+      "name-de": "Vimperk",
+      "name-en": "Vimperk",
+      "name-es": "Vimperk",
+      "name-ru": "Vimperk",
+      "name-sk": "Vimperk"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "soopu"
+      ],
+      "id": "soopu-Vodnany",
+      "name-cs": "Vod\u0148any",
+      "name-de": "Vod\u0148any",
+      "name-en": "Vod\u0148any",
+      "name-es": "Vod\u0148any",
+      "name-ru": "Vod\u0148any",
+      "name-sk": "Vod\u0148any"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "HojnA_voda",
+      "name-cs": "Hojn\u0102\u02c7 voda",
+      "name-de": "Hojn\u0102\u02c7 voda",
+      "name-en": "Hojn\u0102\u02c7 voda",
+      "name-es": "Hojn\u0102\u02c7 voda",
+      "name-ru": "Hojn\u0102\u02c7 voda",
+      "name-sk": "Hojn\u0102\u02c7 voda"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "RovnA",
+      "name-cs": "Rovn\u0102\u02c7",
+      "name-de": "Rovn\u0102\u02c7",
+      "name-en": "Rovn\u0102\u02c7",
+      "name-es": "Rovn\u0102\u02c7",
+      "name-ru": "Rovn\u0102\u02c7",
+      "name-sk": "Rovn\u0102\u02c7"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "StroATov",
+      "name-cs": "Stro\u00c4\u0164ov",
+      "name-de": "Stro\u00c4\u0164ov",
+      "name-en": "Stro\u00c4\u0164ov",
+      "name-es": "Stro\u00c4\u0164ov",
+      "name-ru": "Stro\u00c4\u0164ov",
+      "name-sk": "Stro\u00c4\u0164ov"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "LuATnA",
+      "name-cs": "Lu\u00c4\u0164n\u0102\u00ad",
+      "name-de": "Lu\u00c4\u0164n\u0102\u00ad",
+      "name-en": "Lu\u00c4\u0164n\u0102\u00ad",
+      "name-es": "Lu\u00c4\u0164n\u0102\u00ad",
+      "name-ru": "Lu\u00c4\u0164n\u0102\u00ad",
+      "name-sk": "Lu\u00c4\u0164n\u0102\u00ad"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "VizAr",
+      "name-cs": "Viz\u0102\u00adr",
+      "name-de": "Viz\u0102\u00adr",
+      "name-en": "Viz\u0102\u00adr",
+      "name-es": "Viz\u0102\u00adr",
+      "name-ru": "Viz\u0102\u00adr",
+      "name-sk": "Viz\u0102\u00adr"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "Kaproun",
+      "name-cs": "Kaproun",
+      "name-de": "Kaproun",
+      "name-en": "Kaproun",
+      "name-es": "Kaproun",
+      "name-ru": "Kaproun",
+      "name-sk": "Kaproun"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "U_Hajnice",
+      "name-cs": "U Hajnice",
+      "name-de": "U Hajnice",
+      "name-en": "U Hajnice",
+      "name-es": "U Hajnice",
+      "name-ru": "U Hajnice",
+      "name-sk": "U Hajnice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "ChAnovskA_jeskynA",
+      "name-cs": "Ch\u0102\u02ddnovsk\u0102\u02c7 jeskyn\u00c4\u203a",
+      "name-de": "Ch\u0102\u02ddnovsk\u0102\u02c7 jeskyn\u00c4\u203a",
+      "name-en": "Ch\u0102\u02ddnovsk\u0102\u02c7 jeskyn\u00c4\u203a",
+      "name-es": "Ch\u0102\u02ddnovsk\u0102\u02c7 jeskyn\u00c4\u203a",
+      "name-ru": "Ch\u0102\u02ddnovsk\u0102\u02c7 jeskyn\u00c4\u203a",
+      "name-sk": "Ch\u0102\u02ddnovsk\u0102\u02c7 jeskyn\u00c4\u203a"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "VelkA_a_MalA_TisA",
+      "name-cs": "Velk\u0102\u02dd a Mal\u0102\u02dd Tis\u0102\u02dd",
+      "name-de": "Velk\u0102\u02dd a Mal\u0102\u02dd Tis\u0102\u02dd",
+      "name-en": "Velk\u0102\u02dd a Mal\u0102\u02dd Tis\u0102\u02dd",
+      "name-es": "Velk\u0102\u02dd a Mal\u0102\u02dd Tis\u0102\u02dd",
+      "name-ru": "Velk\u0102\u02dd a Mal\u0102\u02dd Tis\u0102\u02dd",
+      "name-sk": "Velk\u0102\u02dd a Mal\u0102\u02dd Tis\u0102\u02dd"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "Lofinka",
+      "name-cs": "\u0139\u02ddofinka",
+      "name-de": "\u0139\u02ddofinka",
+      "name-en": "\u0139\u02ddofinka",
+      "name-es": "\u0139\u02ddofinka",
+      "name-ru": "\u0139\u02ddofinka",
+      "name-sk": "\u0139\u02ddofinka"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "VyLenskA_kopce",
+      "name-cs": "Vy\u0139\u02c7ensk\u0102\u00a9 kopce",
+      "name-de": "Vy\u0139\u02c7ensk\u0102\u00a9 kopce",
+      "name-en": "Vy\u0139\u02c7ensk\u0102\u00a9 kopce",
+      "name-es": "Vy\u0139\u02c7ensk\u0102\u00a9 kopce",
+      "name-ru": "Vy\u0139\u02c7ensk\u0102\u00a9 kopce",
+      "name-sk": "Vy\u0139\u02c7ensk\u0102\u00a9 kopce"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "Ruda",
+      "name-cs": "Ruda",
+      "name-de": "Ruda",
+      "name-en": "Ruda",
+      "name-es": "Ruda",
+      "name-ru": "Ruda",
+      "name-sk": "Ruda"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "StarA_a_NovA_Leka",
+      "name-cs": "Star\u0102\u02c7 a Nov\u0102\u02c7 \u0139\u2122eka",
+      "name-de": "Star\u0102\u02c7 a Nov\u0102\u02c7 \u0139\u2122eka",
+      "name-en": "Star\u0102\u02c7 a Nov\u0102\u02c7 \u0139\u2122eka",
+      "name-es": "Star\u0102\u02c7 a Nov\u0102\u02c7 \u0139\u2122eka",
+      "name-ru": "Star\u0102\u02c7 a Nov\u0102\u02c7 \u0139\u2122eka",
+      "name-sk": "Star\u0102\u02c7 a Nov\u0102\u02c7 \u0139\u2122eka"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "TerATino_AsdolA",
+      "name-cs": "Ter\u00c4\u0164ino \u0102\u015fdol\u0102\u00ad",
+      "name-de": "Ter\u00c4\u0164ino \u0102\u015fdol\u0102\u00ad",
+      "name-en": "Ter\u00c4\u0164ino \u0102\u015fdol\u0102\u00ad",
+      "name-es": "Ter\u00c4\u0164ino \u0102\u015fdol\u0102\u00ad",
+      "name-ru": "Ter\u00c4\u0164ino \u0102\u015fdol\u0102\u00ad",
+      "name-sk": "Ter\u00c4\u0164ino \u0102\u015fdol\u0102\u00ad"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "BoubAnskA_prales",
+      "name-cs": "Boub\u0102\u00adnsk\u0102\u02dd prales",
+      "name-de": "Boub\u0102\u00adnsk\u0102\u02dd prales",
+      "name-en": "Boub\u0102\u00adnsk\u0102\u02dd prales",
+      "name-es": "Boub\u0102\u00adnsk\u0102\u02dd prales",
+      "name-ru": "Boub\u0102\u00adnsk\u0102\u02dd prales",
+      "name-sk": "Boub\u0102\u00adnsk\u0102\u02dd prales"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "AServenA_blato",
+      "name-cs": "\u00c4\u015aerven\u0102\u00a9 blato",
+      "name-de": "\u00c4\u015aerven\u0102\u00a9 blato",
+      "name-en": "\u00c4\u015aerven\u0102\u00a9 blato",
+      "name-es": "\u00c4\u015aerven\u0102\u00a9 blato",
+      "name-ru": "\u00c4\u015aerven\u0102\u00a9 blato",
+      "name-sk": "\u00c4\u015aerven\u0102\u00a9 blato"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "VelkA_Niva",
+      "name-cs": "Velk\u0102\u02c7 Niva",
+      "name-de": "Velk\u0102\u02c7 Niva",
+      "name-en": "Velk\u0102\u02c7 Niva",
+      "name-es": "Velk\u0102\u02c7 Niva",
+      "name-ru": "Velk\u0102\u02c7 Niva",
+      "name-sk": "Velk\u0102\u02c7 Niva"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "LofAnskA_prales",
+      "name-cs": "\u0139\u02ddof\u0102\u00adnsk\u0102\u02dd prales",
+      "name-de": "\u0139\u02ddof\u0102\u00adnsk\u0102\u02dd prales",
+      "name-en": "\u0139\u02ddof\u0102\u00adnsk\u0102\u02dd prales",
+      "name-es": "\u0139\u02ddof\u0102\u00adnsk\u0102\u02dd prales",
+      "name-ru": "\u0139\u02ddof\u0102\u00adnsk\u0102\u02dd prales",
+      "name-sk": "\u0139\u02ddof\u0102\u00adnsk\u0102\u02dd prales"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "BrouskLZv_mlAn",
+      "name-cs": "Brousk\u0139\u017bv ml\u0102\u02ddn",
+      "name-de": "Brousk\u0139\u017bv ml\u0102\u02ddn",
+      "name-en": "Brousk\u0139\u017bv ml\u0102\u02ddn",
+      "name-es": "Brousk\u0139\u017bv ml\u0102\u02ddn",
+      "name-ru": "Brousk\u0139\u017bv ml\u0102\u02ddn",
+      "name-sk": "Brousk\u0139\u017bv ml\u0102\u02ddn"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "Blanice",
+      "name-cs": "Blanice",
+      "name-de": "Blanice",
+      "name-en": "Blanice",
+      "name-es": "Blanice",
+      "name-ru": "Blanice",
+      "name-sk": "Blanice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "ASertova_stAna-LuAT",
+      "name-cs": "\u00c4\u015aertova st\u00c4\u203ana-Lu\u00c4\u0164",
+      "name-de": "\u00c4\u015aertova st\u00c4\u203ana-Lu\u00c4\u0164",
+      "name-en": "\u00c4\u015aertova st\u00c4\u203ana-Lu\u00c4\u0164",
+      "name-es": "\u00c4\u015aertova st\u00c4\u203ana-Lu\u00c4\u0164",
+      "name-ru": "\u00c4\u015aertova st\u00c4\u203ana-Lu\u00c4\u0164",
+      "name-sk": "\u00c4\u015aertova st\u00c4\u203ana-Lu\u00c4\u0164"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "PrameniLtA_Blanice",
+      "name-cs": "Prameni\u0139\u02c7t\u00c4\u203a Blanice",
+      "name-de": "Prameni\u0139\u02c7t\u00c4\u203a Blanice",
+      "name-en": "Prameni\u0139\u02c7t\u00c4\u203a Blanice",
+      "name-es": "Prameni\u0139\u02c7t\u00c4\u203a Blanice",
+      "name-ru": "Prameni\u0139\u02c7t\u00c4\u203a Blanice",
+      "name-sk": "Prameni\u0139\u02c7t\u00c4\u203a Blanice"
+    },
+    {
+      "categories": [
+        "cz-jc",
+        "mzchu"
+      ],
+      "id": "LeLlabinec_a_LeLlabineckA_tLZnA",
+      "name-cs": "\u0139\u0098e\u0139\u013eabinec a \u0139\u0098e\u0139\u013eabineck\u0102\u00a9 t\u0139\u017bn\u00c4\u203a",
+      "name-de": "\u0139\u0098e\u0139\u013eabinec a \u0139\u0098e\u0139\u013eabineck\u0102\u00a9 t\u0139\u017bn\u00c4\u203a",
+      "name-en": "\u0139\u0098e\u0139\u013eabinec a \u0139\u0098e\u0139\u013eabineck\u0102\u00a9 t\u0139\u017bn\u00c4\u203a",
+      "name-es": "\u0139\u0098e\u0139\u013eabinec a \u0139\u0098e\u0139\u013eabineck\u0102\u00a9 t\u0139\u017bn\u00c4\u203a",
+      "name-ru": "\u0139\u0098e\u0139\u013eabinec a \u0139\u0098e\u0139\u013eabineck\u0102\u00a9 t\u0139\u017bn\u00c4\u203a",
+      "name-sk": "\u0139\u0098e\u0139\u013eabinec a \u0139\u0098e\u0139\u013eabineck\u0102\u00a9 t\u0139\u017bn\u00c4\u203a"
     }
   ]
 }
