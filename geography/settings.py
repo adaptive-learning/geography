@@ -63,7 +63,6 @@ INSTALLED_APPS = (
     'flatblocks',
     'lazysignup',
     'proso_common',
-    'proso_ab',
     'proso_configab',
     'proso_models',
     'proso_user',
