@@ -54,6 +54,11 @@ workon geography
 apply migrations
 ```
 ./manage.py migrate
+
+```
+load flashcards data to db
+```
+./manage.py load_flashcards data/geography-flashcards.json
 ```
 
 Install client dependencies
@@ -70,11 +75,11 @@ sudo apt-get install nodejs-legacy
 
 ### When developing
 
-Run the server on localhost:8003
+Run the server on localhost:8000
 ```
 cd <path_to_your_local_git_repo>
 workon geography
-./manage.py runserver 8003
+./manage.py runserver 8000
 ```
 In order to see the changes when editing  client files (e.g. `*.sass` and `*.js`) you need to run also
 ```
