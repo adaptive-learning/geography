@@ -264,7 +264,7 @@ angular.module('proso.geography.controllers', [])
                 $scope.imageController.highlightItem(q.payload.description, correct ? colors.GOOD : colors.BAD);
             });
             $("html, body").animate({ scrollTop: "0px" });
-            $rootScope.$emit('questionSetFinished');
+            $rootScope.$emit('questionSetFinished', $scope.filter);
         }
 
         function setQuestion(active) {
@@ -308,7 +308,7 @@ angular.module('proso.geography.controllers', [])
 
         $scope.mapCallback = function() {
             practiceService.initSet('common');
-            var filter = {
+            $scope.filter = {
                 filter : [[
                   'context/' + $scope.part,
                   // TODO fix
@@ -316,10 +316,10 @@ angular.module('proso.geography.controllers', [])
                 ]]
             };
             if ($routeParams.place_type) {
-                filter.filter.push(['category/' +$routeParams.place_type]);
+                $scope.filter.filter.push(['category/' +$routeParams.place_type]);
             }
-            flashcardService.getFlashcards(filter).then(function() {
-              practiceService.setFilter(filter);
+            flashcardService.getFlashcards($scope.filter).then(function() {
+              practiceService.setFilter($scope.filter);
               if ($routeParams.q) {
                 flashcardService.getFlashcardById($routeParams.q).then(function(q) {
                   q.question_type = $routeParams.d || 't2d';
