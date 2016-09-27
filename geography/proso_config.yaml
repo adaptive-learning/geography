@@ -21,9 +21,6 @@ default:
                 save_answer_immediately: false
                 cache_context: false
                 queue_length: 10
-        item_selector:
-            parameters:
-                target_probability: 0.65
     proso_feedback:
         domain: slepemapy.cz
         to: [slepemapy@googlegroups.com]

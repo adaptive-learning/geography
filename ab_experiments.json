@@ -281,6 +281,50 @@
       ],
       "id": "max-options-count",
       "disabled": true
+    },
+    {
+      "variables": [
+        {
+          "values": [
+            {
+              "probability": 50,
+              "value": true
+            },
+            {
+              "probability": 50,
+              "value": false
+            }
+          ],
+          "name": "enable_adjustment_modal",
+          "app_name": "proso_feedback"
+        },
+        {
+          "values": [
+            {
+              "probability": 50,
+              "value": true
+            },
+            {
+              "probability": 50,
+              "value": false
+            }
+          ],
+          "name": "disable_difficulty_adjustment",
+          "app_name": "proso_feedback"
+        },
+        {
+          "values": [
+            {
+              "probability": 100,
+              "value": 0.65
+            }
+          ],
+          "name": "item_selector.parameters.target_probability",
+          "app_name": "proso_models"
+        }
+      ],
+      "id": "adjustment-feedback",
+      "disabled": false
     }
   ]
 }
