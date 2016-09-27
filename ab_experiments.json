@@ -283,44 +283,66 @@
       "disabled": true
     },
     {
-      "variables": [
+      "setups": [
         {
-          "values": [
-            {
-              "probability": 50,
-              "value": true
-            },
-            {
-              "probability": 50,
-              "value": false
-            }
-          ],
-          "name": "enable_adjustment_modal",
-          "app_name": "proso_feedback"
+            "variables": [
+              {
+                "name": "enable_adjustment_modal",
+                "app_name": "proso_feedback",
+                "value": true
+              },
+              {
+                "name": "disable_difficulty_adjustment",
+                "app_name": "proso_feedback",
+                "value": false
+              },
+              {
+                "name": "item_selector.parameters.target_probability",
+                "app_name": "proso_models",
+                "value": 0.65
+              }
+            ],
+            "probability": 33
         },
         {
-          "values": [
-            {
-              "probability": 50,
-              "value": true
-            },
-            {
-              "probability": 50,
-              "value": false
-            }
-          ],
-          "name": "disable_difficulty_adjustment",
-          "app_name": "proso_feedback"
+            "variables": [
+              {
+                "name": "enable_adjustment_modal",
+                "app_name": "proso_feedback",
+                "value": true
+              },
+              {
+                "name": "disable_difficulty_adjustment",
+                "app_name": "proso_feedback",
+                "value": true
+              },
+              {
+                "name": "item_selector.parameters.target_probability",
+                "app_name": "proso_models",
+                "value": 0.65
+              }
+            ],
+            "probability": 33
         },
         {
-          "values": [
-            {
-              "probability": 100,
-              "value": 0.65
-            }
-          ],
-          "name": "item_selector.parameters.target_probability",
-          "app_name": "proso_models"
+            "variables": [
+              {
+                "name": "enable_adjustment_modal",
+                "app_name": "proso_feedback",
+                "value": false
+              },
+              {
+                "name": "disable_difficulty_adjustment",
+                "app_name": "proso_feedback",
+                "value": true
+              },
+              {
+                "name": "item_selector.parameters.target_probability",
+                "app_name": "proso_models",
+                "value": 0.65
+              }
+            ],
+            "probability": 34
         }
       ],
       "id": "adjustment-feedback",
