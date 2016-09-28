@@ -20,6 +20,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.http import HttpResponse
 import base64
 from proso_user.models import UserProfile
+from lazysignup.decorators import allow_lazy_user
 
 
 JS_FILES = (
@@ -36,6 +37,7 @@ CSS_FILES = (
 
 
 @ensure_csrf_cookie
+@allow_lazy_user
 def home(request, hack=None):
     if not hasattr(request.user, "userprofile") or request.user.userprofile is None:
         environment = get_environment()
