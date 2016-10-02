@@ -346,6 +346,72 @@
         }
       ],
       "id": "adjustment-feedback",
+      "disabled": true
+    },
+    {
+      "setups": [
+        {
+            "variables": [
+              {
+                "name": "enable_adjustment_modal",
+                "app_name": "proso_feedback",
+                "value": true
+              },
+              {
+                "name": "disable_difficulty_adjustment",
+                "app_name": "proso_feedback",
+                "value": false
+              },
+              {
+                "name": "item_selector.parameters.target_probability",
+                "app_name": "proso_models",
+                "value": 0.65
+              }
+            ],
+            "probability": 33
+        },
+        {
+            "variables": [
+              {
+                "name": "enable_adjustment_modal",
+                "app_name": "proso_feedback",
+                "value": true
+              },
+              {
+                "name": "disable_difficulty_adjustment",
+                "app_name": "proso_feedback",
+                "value": true
+              },
+              {
+                "name": "item_selector.parameters.target_probability",
+                "app_name": "proso_models",
+                "value": 0.65
+              }
+            ],
+            "probability": 33
+        },
+        {
+            "variables": [
+              {
+                "name": "enable_adjustment_modal",
+                "app_name": "proso_feedback",
+                "value": false
+              },
+              {
+                "name": "disable_difficulty_adjustment",
+                "app_name": "proso_feedback",
+                "value": true
+              },
+              {
+                "name": "item_selector.parameters.target_probability",
+                "app_name": "proso_models",
+                "value": 0.65
+              }
+            ],
+            "probability": 34
+        }
+      ],
+      "id": "adjustment-feedback-2",
       "disabled": false
     }
   ]
