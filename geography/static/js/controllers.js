@@ -264,7 +264,7 @@ angular.module('proso.geography.controllers', [])
                 $scope.imageController.highlightItem(q.payload.description, correct ? colors.GOOD : colors.BAD);
             });
             $("html, body").animate({ scrollTop: "0px" });
-            $rootScope.$emit('questionSetFinished', $scope.filter);
+            $rootScope.$emit('questionSetFinished', angular.fromJson($scope.filter));
         }
 
         function setQuestion(active) {
