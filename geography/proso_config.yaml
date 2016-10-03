@@ -2,6 +2,9 @@ default:
     proso_common:
         config:
           is_custom_config_allowed: true
+        events:
+          source_name: outlinemaps
+          endpoint: https://events.proso.hkar.eu
     proso_models:
         random_test:
             nth: 10
