@@ -240,10 +240,10 @@ angular.module('proso.geography.services', ['ngCookies', 'gettext'])
     var that = {
       getFlashcards: function (filter) {
         var deferredFlashcards = $q.defer();
+        filter = angular.copy(filter);
         for (var i in filter) {
           filter[i] = angular.toJson(filter[i]);
         }
-        filter = angular.copy(filter);
         filter.all = 'True';
         $http.get('/models/to_practice', {
           params: filter
