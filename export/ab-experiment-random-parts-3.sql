@@ -64,6 +64,7 @@ CREATE TABLE tmp_context AS (
     INNER JOIN proso_flashcards_category AS cat ON rel_cat.parent_id = cat.item_id AND cat.type = 'flashcard_type' AND cat.lang = 'en'
     INNER JOIN proso_models_itemrelation AS rel_con ON rel_con.child_id = fc.item_id
     INNER JOIN proso_flashcards_context AS con ON rel_con.parent_id = con.item_id AND con.lang = 'en'
+    WHERE fc.lang = 'en'
 );
 \copy tmp_context TO '/tmp/flashcards.csv' DELIMITER ',' CSV HEADER;
 DROP TABLE tmp_context;
