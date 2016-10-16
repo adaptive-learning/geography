@@ -4,7 +4,8 @@ CREATE TABLE tmp_answer AS (
     SELECT
         proso_models_answer.*,
         proso_models_answer.type AS direction,
-        proso_configab_answerexperimentsetup.experiment_setup_id
+        proso_configab_answerexperimentsetup.experiment_setup_id,
+        (RANK() OVER (PARTITION BY user_id, context_id ORDER BY time)) % 10 = 1 as reference_computed
     FROM proso_models_answer
     INNER JOIN proso_configab_answerexperimentsetup
         ON proso_models_answer.id = answer_id
