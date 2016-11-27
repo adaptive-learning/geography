@@ -1,6 +1,6 @@
 dj-database-url==0.3.0
 django-filebrowser==3.7.1
 django-grappelli==2.8.1
-proso-apps==3.6.5
+proso-apps==3.16.2
 python-memcached==1.57
 transifex-client==0.11
