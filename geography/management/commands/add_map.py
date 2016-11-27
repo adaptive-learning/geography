@@ -30,7 +30,7 @@ class Command(BaseCommand):
         if len(args) > 2:
             map_type = args[2]
         with open(args[0], 'r') as json_file:
-            data = json.load(json_file, 'utf-8')
+            data = json.load(json_file)
             data['contexts'] = data.get('contexts', [])
             data['terms'] = data.get('terms', [])
             data['categories'] = data.get('categories', [])
@@ -151,8 +151,8 @@ class Command(BaseCommand):
             if group_id != 'bg' and group_id != 'border':
                 # print ('## ' + group_id + ':')
                 for path in paths:
-                    code = unicode(path.attributes['data-code'].value).encode("utf-8")
-                    name = unicode(path.attributes['data-name'].value).encode("utf-8")
+                    code = str(path.attributes['data-code'].value)
+                    name = str(path.attributes['data-name'].value)
                     if code != '':
                         if code not in terms_by_id:
                             term = self.create_term(code, group_id, map_code, name)
