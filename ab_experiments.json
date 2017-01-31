@@ -478,7 +478,7 @@
         }
       ],
       "id": "adjustment-feedback-3",
-      "disabled": false
+      "disabled": true
     }
   ]
 }
